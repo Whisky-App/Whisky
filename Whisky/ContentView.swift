@@ -8,19 +8,30 @@
 import SwiftUI
 
 struct ContentView: View {
+    @State var bottles: [Bottle] = []
+    @State var selected: Bottle
+
     var body: some View {
-        VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundColor(.accentColor)
-            Text("Hello, world!")
+        NavigationSplitView {
+            List(bottles, id: \.self, selection: $selected) { bottle in
+                Text(bottle.name)
+            }
+        } detail: {
+            BottleView(bottle: $selected)
+        }.onAppear {
+            selected = bottles[0]
         }
-        .padding()
     }
 }
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView()
+        let bottles = [
+            Bottle("Test"),
+            Bottle("Steam"),
+            Bottle("Genshin Impact")
+        ]
+
+        ContentView(bottles: bottles, selected: bottles[0])
     }
 }
