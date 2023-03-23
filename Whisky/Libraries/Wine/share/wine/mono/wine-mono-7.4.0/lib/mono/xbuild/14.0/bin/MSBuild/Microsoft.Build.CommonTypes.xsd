@@ -1,0 +1,1581 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema targetNamespace="http://schemas.microsoft.com/developer/msbuild/2003" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msb="http://schemas.microsoft.com/developer/msbuild/2003"
+elementFormDefault="qualified">
+
+    <!-- =================== INCLUDE COMMON SCHEMA =========================== -->
+    <xs:include schemaLocation="Microsoft.Build.Core.xsd"/>
+
+    <!-- ======================== ITEMS =====================================-->
+    <!-- Possible Types include SimpleItemType (no meta-data subelements), GenericItemType (any meta-data), or something more specific.-->
+    <xs:element name="Reference" substitutionGroup="msb:Item">
+        <xs:annotation>
+            <xs:documentation>Reference to an assembly</xs:documentation>
+        </xs:annotation>
+        <xs:complexType>
+            <xs:complexContent>
+                <xs:extension base="msb:SimpleItemType">
+                    <xs:sequence minOccurs="0" maxOccurs="unbounded">
+                        <xs:choice>
+                            <xs:element name="HintPath">
+                                <xs:annotation>
+                                    <xs:documentation>Relative or absolute path to the assembly (optional)</xs:documentation>
+                                </xs:annotation>
+                            </xs:element>
+                            <xs:element name="Name">
+                                <xs:annotation>
+                                    <xs:documentation>Friendly display name (optional)</xs:documentation>
+                                </xs:annotation>
+                            </xs:element>
+                            <xs:element name="FusionName">
+                                <xs:annotation>
+                                    <xs:documentation>Fusion name of the assembly (optional)</xs:documentation>
+                                </xs:annotation>
+                            </xs:element>
+                            <xs:element name="SpecificVersion">
+                                <xs:annotation>
+                                    <xs:documentation>Whether only the version in the fusion name should be referenced (optional, boolean)</xs:documentation>
+                                </xs:annotation>
+                            </xs:element>
+                            <xs:element name="Aliases">
+                                <xs:annotation>
+                                    <xs:documentation>Aliases for the reference (optional)</xs:documentation>
+                                </xs:annotation>
+                            </xs:element>
+                            <xs:element name="Private">
+                                <xs:annotation>
+                                    <xs:documentation>Whether the reference should be copied to the output folder (optional, boolean)</xs:documentation>
+                                </xs:annotation>
+                            </xs:element>
+                        </xs:choice>
+                    </xs:sequence>
+                    <!-- redefine Include just to give a specific description -->
+                    <xs:attribute name="Include" type="xs:string" use="required">
+                        <xs:annotation>
+                            <xs:documentation>Assembly name or filename</xs:documentation>
+                        </xs:annotation>
+                    </xs:attribute>
+                </xs:extension>
+            </xs:complexContent>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="COMReference" substitutionGroup="msb:Item">
+        <xs:annotation>
+            <xs:documentation>Reference to a COM component</xs:documentation>
+        </xs:annotation>
+        <xs:complexType>
+            <xs:complexContent>
+                <xs:extension base="msb:SimpleItemType">
+                    <xs:sequence minOccurs="0" maxOccurs="unbounded">
+                        <xs:choice>
+                            <xs:element name="Name">
+                                <xs:annotation>
+                                    <xs:documentation>Friendly display name (optional)</xs:documentation>
+                                </xs:annotation>
+                            </xs:element>
+                            <xs:element name="Guid">
+                                <xs:annotation>
+                                    <xs:documentation>GUID in the form {00000000-0000-0000-0000-000000000000}</xs:documentation>
+                                </xs:annotation>
+                            </xs:element>
+                            <xs:element name="VersionMajor">
+                                <xs:annotation>
+                                    <xs:documentation>Major part of the version number</xs:documentation>
+                                </xs:annotation>
+                            </xs:element>
+                            <xs:element name="VersionMinor">
+                                <xs:annotation>
+                                    <xs:documentation>Minor part of the version number</xs:documentation>
+                                </xs:annotation>
+                            </xs:element>
+                            <xs:element name="Lcid">
+                                <xs:annotation>
+                                    <xs:documentation>Locale ID</xs:documentation>
+                                </xs:annotation>
+                            </xs:element>
+                            <xs:element name="WrapperTool">
+                                <xs:annotation>
+                                    <xs:documentation>Wrapper tool, such as tlbimp</xs:documentation>
+                                </xs:annotation>
+                            </xs:element>
+                            <xs:element name="Isolated">
+                                <xs:annotation>
+                                    <xs:documentation>Is it isolated (boolean)</xs:documentation>
+                                </xs:annotation>
+                            </xs:element>
+                        </xs:choice>
+                    </xs:sequence>
+                    <!-- redefine Include just to give a specific description -->
+                    <xs:attribute name="Include" type="xs:string" use="required">
+                        <xs:annotation>
+                            <xs:documentation>COM component name</xs:documentation>
+                        </xs:annotation>
+                    </xs:attribute>
+                </xs:extension>
+            </xs:complexContent>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="COMFileReference" substitutionGroup="msb:Item">
+        <xs:complexType>
+            <xs:complexContent>
+                <xs:extension base="msb:SimpleItemType">
+                    <xs:sequence minOccurs="0" maxOccurs="unbounded">
+                        <xs:choice>
+                            <xs:element name="WrapperTool"/>
+                        </xs:choice>
+                    </xs:sequence>
+                </xs:extension>
+            </xs:complexContent>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="NativeReference" substitutionGroup="msb:Item">
+        <xs:complexType>
+            <xs:complexContent>
+                <xs:extension base="msb:SimpleItemType">
+                    <xs:sequence minOccurs="0" maxOccurs="unbounded">
+                        <xs:choice>
+                            <xs:element name="Name"/>
+                            <xs:element name="HintPath"/>
+                        </xs:choice>
+                    </xs:sequence>
+                    <!-- redefine Include just to give a specific description -->
+                    <xs:attribute name="Include" type="xs:string" use="required">
+                        <xs:annotation>
+                            <xs:documentation>Path to native reference</xs:documentation>
+                        </xs:annotation>
+                    </xs:attribute>
+                </xs:extension>
+            </xs:complexContent>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="ProjectReference" substitutionGroup="msb:Item">
+        <xs:annotation>
+            <xs:documentation>Reference to another project</xs:documentation>
+        </xs:annotation>
+        <xs:complexType>
+            <xs:complexContent>
+                <xs:extension base="msb:SimpleItemType">
+                    <xs:sequence minOccurs="0" maxOccurs="unbounded">
+                        <xs:choice>
+                            <xs:element name="Name">
+                                <xs:annotation>
+                                    <xs:documentation>Friendly display name (optional)</xs:documentation>
+                                </xs:annotation>
+                            </xs:element>
+                            <xs:element name="Project">
+                                <xs:annotation>
+                                    <xs:documentation>Project GUID, in the form {00000000-0000-0000-0000-000000000000}</xs:documentation>
+                                </xs:annotation>
+                            </xs:element>
+                            <xs:element name="Package"/>
+                        </xs:choice>
+                    </xs:sequence>
+                    <!-- redefine Include just to give a specific description -->
+                    <xs:attribute name="Include" type="xs:string" use="required">
+                        <xs:annotation>
+                            <xs:documentation>Path to project file</xs:documentation>
+                        </xs:annotation>
+                    </xs:attribute>
+                </xs:extension>
+            </xs:complexContent>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="Compile" substitutionGroup="msb:Item">
+        <xs:annotation>
+            <xs:documentation>Source files for compiler</xs:documentation>
+        </xs:annotation>
+        <xs:complexType>
+            <xs:complexContent>
+                <xs:extension base="msb:SimpleItemType">
+                    <xs:sequence minOccurs="0" maxOccurs="unbounded">
+                        <xs:choice>
+                            <xs:element name="SubType"/>
+                            <xs:element name="DependentUpon"/>
+                            <xs:element name="AutoGen">
+                                <xs:annotation>
+                                    <xs:documentation>Whether file was generated from another file (boolean)</xs:documentation>
+                                </xs:annotation>
+                            </xs:element>
+                            <xs:element name="DesignTime"/>
+                            <xs:element name="Link">
+                                <xs:annotation>
+                                    <xs:documentation>Notional path within project to display if the file is physically located outside of the project file's cone (optional)</xs:documentation>
+                                </xs:annotation>
+                            </xs:element>
+                            <xs:element name="DesignTimeSharedInput"/>
+                            <xs:element name="InProject">
+                                <xs:annotation>
+                                    <xs:documentation>Display in user interface (optional, boolean)</xs:documentation>
+                                </xs:annotation>
+                            </xs:element>
+                        </xs:choice>
+                    </xs:sequence>
+                    <!-- redefine Include just to give a specific description -->
+                    <xs:attribute name="Include" type="xs:string" use="required">
+                        <xs:annotation>
+                            <xs:documentation>Semi-colon separated list of source files (wildcards are allowed)</xs:documentation>
+                        </xs:annotation>
+                    </xs:attribute>
+                </xs:extension>
+            </xs:complexContent>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="EmbeddedResource" substitutionGroup="msb:Item">
+        <xs:annotation>
+            <xs:documentation>Resources to be embedded in the generated assembly</xs:documentation>
+        </xs:annotation>
+        <xs:complexType>
+            <xs:complexContent>
+                <xs:extension base="msb:SimpleItemType">
+                    <xs:sequence minOccurs="0" maxOccurs="unbounded">
+                        <xs:choice>
+                            <xs:element name="DependentUpon"/>
+                            <xs:element name="Generator">
+                                <xs:annotation>
+                                    <xs:documentation>Name of any file generator that is run on this item</xs:documentation>
+                                </xs:annotation>
+                            </xs:element>
+                            <xs:element name="LastGenOutput">
+                                <xs:annotation>
+                                    <xs:documentation>File that was created by any file generator that was run on this item</xs:documentation>
+                                </xs:annotation>
+                            </xs:element>
+                            <xs:element name="CustomToolNamespace">
+                                <xs:annotation>
+                                    <xs:documentation>Namespace into which any file generator that is run on this item should create code</xs:documentation>
+                                </xs:annotation>
+                            </xs:element>
+                            <xs:element name="Link">
+                                <xs:annotation>
+                                    <xs:documentation>Notional path within project to display if the file is physically located outside of the project file's cone (optional)</xs:documentation>
+                                </xs:annotation>
+                            </xs:element>
+                            <xs:element name="InProject">
+                                <xs:annotation>
+                                    <xs:documentation>Display in user interface (optional, boolean)</xs:documentation>
+                                </xs:annotation>
+                            </xs:element>
+                            <xs:element name="SubType"/>
+                        </xs:choice>
+                    </xs:sequence>
+                    <!-- redefine Include just to give a specific description -->
+                    <xs:attribute name="Include" type="xs:string" use="required">
+                        <xs:annotation>
+                            <xs:documentation>Semi-colon separated list of resource files (wildcards are allowed)</xs:documentation>
+                        </xs:annotation>
+                    </xs:attribute>
+                </xs:extension>
+            </xs:complexContent>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="Content" substitutionGroup="msb:Item">
+        <xs:annotation>
+            <xs:documentation>Files that are not compiled, but may be embedded or published</xs:documentation>
+        </xs:annotation>
+        <xs:complexType>
+            <xs:complexContent>
+                <xs:extension base="msb:SimpleItemType">
+                    <xs:sequence minOccurs="0" maxOccurs="unbounded">
+                        <xs:choice>
+                            <xs:element name="DependentUpon"/>
+                            <xs:element name="Generator">
+                                <xs:annotation>
+                                    <xs:documentation>Name of any file generator that is run on this item</xs:documentation>
+                                </xs:annotation>
+                            </xs:element>
+                            <xs:element name="LastGenOutput"/>
+                            <xs:element name="CustomToolNamespace"/>
+                            <xs:element name="Link">
+                                <xs:annotation>
+                                    <xs:documentation>Notional path within project to display if the file is physically located outside of the project file's cone (optional)</xs:documentation>
+                                </xs:annotation>
+                            </xs:element>
+                            <xs:element name="Group"/>
+                            <xs:element name="PublishState">
+                            <xs:annotation>
+                                <xs:documentation>Default, Included, Excluded, DataFile, or Prerequisite</xs:documentation>
+                            </xs:annotation>
+                            </xs:element>
+                            <xs:element name="IsAssembly"/>
+                            <xs:element name="InProject">
+                                <xs:annotation>
+                                    <xs:documentation>Display in user interface (optional, boolean)</xs:documentation>
+                                </xs:annotation>
+                            </xs:element>
+                            <xs:element name="SubType"/>
+                            <xs:element name="CopyToOutputDirectory">
+                                <xs:annotation>
+                                    <xs:documentation>Copy file to output directory (optional, boolean, default false)</xs:documentation>
+                                </xs:annotation>
+                            </xs:element>
+                        </xs:choice>
+                    </xs:sequence>
+                    <!-- redefine Include just to give a specific description -->
+                    <xs:attribute name="Include" type="xs:string" use="required">
+                        <xs:annotation>
+                            <xs:documentation>Semi-colon separated list of content files (wildcards are allowed)</xs:documentation>
+                        </xs:annotation>
+                    </xs:attribute>
+                </xs:extension>
+            </xs:complexContent>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="None" substitutionGroup="msb:Item">
+        <xs:annotation>
+            <xs:documentation>Files that should have no role in the build process</xs:documentation>
+        </xs:annotation>
+        <xs:complexType>
+            <xs:complexContent>
+                <xs:extension base="msb:SimpleItemType">
+                    <xs:sequence minOccurs="0" maxOccurs="unbounded">
+                        <xs:choice>
+                            <!-- UNDONE. Remove all but Link when #318721 is fixed-->
+                            <xs:element name="DependentUpon"/>
+                            <xs:element name="Generator">
+                                <xs:annotation>
+                                    <xs:documentation>Name of any file generator that is run on this item</xs:documentation>
+                                </xs:annotation>
+                            </xs:element>
+                            <xs:element name="LastGenOutput"/>
+                            <xs:element name="CustomToolNamespace"/>
+                            <xs:element name="Link">
+                                <xs:annotation>
+                                    <xs:documentation>Notional path within project to display if the file is physically located outside of the project file's cone (optional)</xs:documentation>
+                                </xs:annotation>
+                            </xs:element>
+                            <xs:element name="InProject">
+                                <xs:annotation>
+                                    <xs:documentation>Display in user interface (optional, boolean)</xs:documentation>
+                                </xs:annotation>
+                            </xs:element>
+                        </xs:choice>
+                    </xs:sequence>
+                </xs:extension>
+            </xs:complexContent>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="Folder" type="msb:SimpleItemType" substitutionGroup="msb:Item">
+        <xs:annotation>
+            <xs:documentation>Folder on disk</xs:documentation>
+        </xs:annotation>
+    </xs:element>
+    <xs:element name="Import" type="msb:SimpleItemType" substitutionGroup="msb:Item">
+        <xs:annotation>
+            <xs:documentation>Assemblies whose namespaces should be imported by the Visual Basic compiler</xs:documentation>
+        </xs:annotation>
+    </xs:element>
+    <xs:element name="Service" type="msb:SimpleItemType" substitutionGroup="msb:Item"/>
+    <xs:element name="WebReferences" type="msb:SimpleItemType" substitutionGroup="msb:Item">
+        <xs:annotation>
+            <xs:documentation>Name of Web References folder to display in user interface</xs:documentation>
+        </xs:annotation>
+    </xs:element>
+    <xs:element name="WebReferenceUrl" substitutionGroup="msb:Item">
+        <xs:annotation>
+            <xs:documentation>Represents a reference to a web service</xs:documentation>
+        </xs:annotation>
+            <xs:complexType>
+                <xs:complexContent>
+                    <xs:extension base="msb:SimpleItemType">
+                        <xs:sequence minOccurs="0" maxOccurs="unbounded">
+                            <xs:choice>
+                                <xs:element name="UrlBehavior"/>
+                                <xs:element name="RelPath"/>
+                                <xs:element name="UpdateFromURL"/>
+                                <xs:element name="ServiceLocationURL"/>
+                                <xs:element name="CachedDynamicPropName"/>
+                                <xs:element name="CachedAppSettingsObjectName"/>
+                                <xs:element name="CachedSettingsPropName"/>
+                            </xs:choice>
+                        </xs:sequence>
+                        <!-- redefine Include just to give a specific description -->
+                        <xs:attribute name="Include" type="xs:string" use="required">
+                            <xs:annotation>
+                                <xs:documentation>URL to web service</xs:documentation>
+                            </xs:annotation>
+                        </xs:attribute>
+                    </xs:extension>
+                </xs:complexContent>
+            </xs:complexType>
+    </xs:element>
+    <xs:element name="BootstrapperFile" substitutionGroup="msb:Item">
+        <xs:complexType>
+            <xs:complexContent>
+                <xs:extension base="msb:SimpleItemType">
+                    <xs:sequence minOccurs="0" maxOccurs="unbounded">
+                        <xs:choice>
+                            <xs:element name="InProject">
+                                <xs:annotation>
+                                    <xs:documentation>Display in user interface (optional, boolean)</xs:documentation>
+                                </xs:annotation>
+                            </xs:element>
+                            <xs:element name="ProductName"/>
+                            <xs:element name="Install"/>
+                        </xs:choice>
+                    </xs:sequence>
+                </xs:extension>
+            </xs:complexContent>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="PublishFile" substitutionGroup="msb:Item">
+        <xs:complexType>
+            <xs:complexContent>
+                <xs:extension base="msb:SimpleItemType">
+                    <xs:sequence minOccurs="0" maxOccurs="unbounded">
+                        <xs:choice>
+                            <xs:element name="InProject">
+                                <xs:annotation>
+                                    <xs:documentation>Display in user interface (optional, boolean)</xs:documentation>
+                                </xs:annotation>
+                            </xs:element>
+                            <xs:element name="Group"/>
+                            <xs:element name="IsAssembly">
+                                <xs:annotation>
+                                    <xs:documentation>(boolean)</xs:documentation>
+                                </xs:annotation>
+                            </xs:element>
+                            <xs:element name="PublishState">
+                                <xs:annotation>
+                                    <xs:documentation>Default, Included, Excluded, DataFile, or Prerequisite</xs:documentation>
+                                </xs:annotation>
+                            </xs:element>
+                        </xs:choice>
+                    </xs:sequence>
+                </xs:extension>
+            </xs:complexContent>
+        </xs:complexType>
+    </xs:element>
+    <!-- ======================== PROPERTIES =====================================-->
+    <!-- Possible Types include StringPropertyType (text with no subelements), GenericPropertyType (any content), or something more specific.-->
+    <xs:element name="AllowUnsafeBlocks" type="msb:StringPropertyType" substitutionGroup="msb:Property"/>
+    <xs:element name="ApplicationIcon" type="msb:StringPropertyType" substitutionGroup="msb:Property"/>
+    <xs:element name="ApplicationRevision" type="msb:StringPropertyType" substitutionGroup="msb:Property">
+        <xs:annotation>
+            <xs:documentation>integer</xs:documentation>
+        </xs:annotation>
+    </xs:element>
+    <xs:element name="ApplicationVersion" type="msb:StringPropertyType" substitutionGroup="msb:Property">
+        <xs:annotation>
+            <xs:documentation>Matches the expression "\d\.\d\.\d\.(\d|\*)"</xs:documentation>
+        </xs:annotation>
+    </xs:element>
+    <xs:element name="AppDesignerFolder" type="msb:StringPropertyType" substitutionGroup="msb:Property">
+        <xs:annotation>
+            <xs:documentation>Name of folder for Application Designer</xs:documentation>
+        </xs:annotation>
+    </xs:element>
+    <xs:element name="AssemblyKeyContainerName" type="msb:StringPropertyType" substitutionGroup="msb:Property"/>
+    <xs:element name="AssemblyKeyProviderName" type="msb:StringPropertyType" substitutionGroup="msb:Property"/>
+    <xs:element name="AssemblyName" type="msb:StringPropertyType" substitutionGroup="msb:Property">
+        <xs:annotation>
+            <xs:documentation>Name of output assembly</xs:documentation>
+        </xs:annotation>
+    </xs:element>
+    <xs:element name="AssemblyOriginatorKeyFile" type="msb:StringPropertyType" substitutionGroup="msb:Property"/>
+    <xs:element name="AssemblyOriginatorKeyFileType" type="msb:StringPropertyType" substitutionGroup="msb:Property"/>
+    <xs:element name="AssemblyOriginatorKeyMode" type="msb:StringPropertyType" substitutionGroup="msb:Property"/>
+    <xs:element name="AssemblyType" type="msb:StringPropertyType" substitutionGroup="msb:Property"/>
+    <xs:element name="AutorunEnabled" type="msb:StringPropertyType" substitutionGroup="msb:Property">
+        <xs:annotation>
+            <xs:documentation>boolean</xs:documentation>
+        </xs:annotation>
+    </xs:element>
+    <xs:element name="BaseAddress" type="msb:StringPropertyType" substitutionGroup="msb:Property"/>
+    <xs:element name="BootstrapperComponentsLocation" type="msb:StringPropertyType" substitutionGroup="msb:Property">
+        <xs:annotation>
+            <xs:documentation>HomeSite, Relative, or Absolute</xs:documentation>
+        </xs:annotation>
+    </xs:element>
+    <xs:element name="BootstrapperComponentsUrl" type="msb:StringPropertyType" substitutionGroup="msb:Property"/>
+    <xs:element name="BootstrapperEnabled" type="msb:StringPropertyType" substitutionGroup="msb:Property">
+        <xs:annotation>
+            <xs:documentation>boolean</xs:documentation>
+        </xs:annotation>
+    </xs:element>
+    <xs:element name="CheckForOverflowUnderflow" type="msb:StringPropertyType" substitutionGroup="msb:Property"/>
+    <xs:element name="CodePage" type="msb:StringPropertyType" substitutionGroup="msb:Property"/>
+    <xs:element name="Configuration" type="msb:StringPropertyType" substitutionGroup="msb:Property"/>
+    <xs:element name="ConfigurationOverrideFile" type="msb:StringPropertyType" substitutionGroup="msb:Property"/>
+    <xs:element name="CreateWebPageOnPublish" type="msb:StringPropertyType" substitutionGroup="msb:Property">
+        <xs:annotation>
+            <xs:documentation>boolean</xs:documentation>
+        </xs:annotation>
+    </xs:element>
+    <xs:element name="DebugSecurityZoneURL" type="msb:StringPropertyType" substitutionGroup="msb:Property"/>
+    <xs:element name="DebugSymbols" type="msb:StringPropertyType" substitutionGroup="msb:Property">
+        <xs:annotation>
+            <xs:documentation>Whether to emit symbols (boolean)</xs:documentation>
+        </xs:annotation>
+    </xs:element>
+    <xs:element name="DebugType" type="msb:StringPropertyType" substitutionGroup="msb:Property">
+        <xs:annotation>
+            <xs:documentation>none, pdbonly, or full</xs:documentation>
+        </xs:annotation>
+    </xs:element>
+    <xs:element name="DefaultClientScript" type="msb:StringPropertyType" substitutionGroup="msb:Property"/>
+    <xs:element name="DefaultHTMLPageLayout" type="msb:StringPropertyType" substitutionGroup="msb:Property"/>
+    <xs:element name="DefaultTargetSchema" type="msb:StringPropertyType" substitutionGroup="msb:Property"/>
+    <xs:element name="DefineConstants" type="msb:StringPropertyType" substitutionGroup="msb:Property"/>
+    <xs:element name="DefineDebug" type="msb:StringPropertyType" substitutionGroup="msb:Property">
+        <xs:annotation>
+            <xs:documentation>Whether DEBUG is defined (boolean)</xs:documentation>
+        </xs:annotation>
+    </xs:element>
+    <xs:element name="DefineTrace" type="msb:StringPropertyType" substitutionGroup="msb:Property">
+        <xs:annotation>
+            <xs:documentation>Whether TRACE is defined (boolean)</xs:documentation>
+        </xs:annotation>
+    </xs:element>
+    <xs:element name="DelaySign" type="msb:StringPropertyType" substitutionGroup="msb:Property"/>
+    <xs:element name="DisableLangXtns" type="msb:StringPropertyType" substitutionGroup="msb:Property"/>
+    <xs:element name="DisallowUrlActiviation" type="msb:StringPropertyType" substitutionGroup="msb:Property">
+        <xs:annotation>
+            <xs:documentation>boolean</xs:documentation>
+        </xs:annotation>
+    </xs:element>
+    <xs:element name="DeployDirSuffix" type="msb:StringPropertyType" substitutionGroup="msb:Property"/>
+    <xs:element name="DocumentationFile" type="msb:StringPropertyType" substitutionGroup="msb:Property"/>
+    <xs:element name="EnableASPDebugging" type="msb:StringPropertyType" substitutionGroup="msb:Property"/>
+    <xs:element name="EnableASPXDebugging" type="msb:StringPropertyType" substitutionGroup="msb:Property"/>
+    <xs:element name="EnableSQLServerDebugging" type="msb:StringPropertyType" substitutionGroup="msb:Property"/>
+    <xs:element name="EnableSecurityDebugging" type="msb:StringPropertyType" substitutionGroup="msb:Property"/>
+    <xs:element name="EnableUnmanagedDebugging" type="msb:StringPropertyType" substitutionGroup="msb:Property"/>
+    <xs:element name="ErrorReport" type="msb:StringPropertyType" substitutionGroup="msb:Property"/>
+    <xs:element name="ExcludedPermissions" type="msb:StringPropertyType" substitutionGroup="msb:Property"/>
+    <xs:element name="FallbackCulture" type="msb:StringPropertyType" substitutionGroup="msb:Property"/>
+    <xs:element name="FileAlignment" type="msb:StringPropertyType" substitutionGroup="msb:Property"/>
+    <xs:element name="FileUpgradeFlags" type="msb:StringPropertyType" substitutionGroup="msb:Property"/>
+    <xs:element name="FormFactorID" type="msb:StringPropertyType" substitutionGroup="msb:Property"/>
+    <xs:element name="FxCopLogFile" type="msb:StringPropertyType" substitutionGroup="msb:Property"/>
+    <xs:element name="FxCopProjectFile" type="msb:StringPropertyType" substitutionGroup="msb:Property"/>
+    <xs:element name="FxCopRules" type="msb:StringPropertyType" substitutionGroup="msb:Property"/>
+    <xs:element name="GenerateManifests" type="msb:StringPropertyType" substitutionGroup="msb:Property"/>
+    <xs:element name="GenerateSerializationAssemblies" type="msb:StringPropertyType" substitutionGroup="msb:Property"/>
+    <xs:element name="Install" type="msb:StringPropertyType" substitutionGroup="msb:Property"/>
+    <xs:element name="InstallFrom" type="msb:StringPropertyType" substitutionGroup="msb:Property">
+        <xs:annotation>
+            <xs:documentation>Web, Unc, or Disk</xs:documentation>
+        </xs:annotation>
+    </xs:element>
+    <xs:element name="InstallUrl" type="msb:StringPropertyType" substitutionGroup="msb:Property"/>
+    <xs:element name="IsWebBootstrapper" type="msb:StringPropertyType" substitutionGroup="msb:Property"/>
+    <xs:element name="JCPA" type="msb:StringPropertyType" substitutionGroup="msb:Property"/>
+    <xs:element name="LangVersion" type="msb:StringPropertyType" substitutionGroup="msb:Property"/>
+    <xs:element name="ManifestCertificateThumbprint" type="msb:StringPropertyType" substitutionGroup="msb:Property"/>
+    <xs:element name="ManifestKeyFile" type="msb:StringPropertyType" substitutionGroup="msb:Property"/>
+    <xs:element name="MapFileExtensions" type="msb:StringPropertyType" substitutionGroup="msb:Property">
+        <xs:annotation>
+            <xs:documentation>boolean</xs:documentation>
+        </xs:annotation>
+    </xs:element>
+    <xs:element name="MinimumRequiredVersion" type="msb:StringPropertyType" substitutionGroup="msb:Property">
+        <xs:annotation>
+            <xs:documentation>Matches the expression "\d\.\d\.\d\.\d"</xs:documentation>
+        </xs:annotation>
+    </xs:element>
+    <xs:element name="MyType" type="msb:StringPropertyType" substitutionGroup="msb:Property"/>
+    <xs:element name="NoConfig" type="msb:StringPropertyType" substitutionGroup="msb:Property"/>
+    <xs:element name="NoStandardLibraries" type="msb:StringPropertyType" substitutionGroup="msb:Property"/>
+    <xs:element name="NoStdLib" type="msb:StringPropertyType" substitutionGroup="msb:Property">
+        <xs:annotation>
+            <xs:documentation>Whether standard libraries (such as mscorlib) should be referenced automatically (boolean)</xs:documentation>
+        </xs:annotation>
+    </xs:element>
+    <xs:element name="NoWarn" type="msb:StringPropertyType" substitutionGroup="msb:Property">
+        <xs:annotation>
+            <xs:documentation>Comma separated list of disabled warnings</xs:documentation>
+        </xs:annotation>
+    </xs:element>
+    <xs:element name="OpenBrowserOnPublish" type="msb:StringPropertyType" substitutionGroup="msb:Property">
+        <xs:annotation>
+            <xs:documentation>boolean</xs:documentation>
+        </xs:annotation>
+    </xs:element>
+    <xs:element name="Optimize" type="msb:StringPropertyType" substitutionGroup="msb:Property">
+        <xs:annotation>
+            <xs:documentation>Should compiler optimize output (boolean)</xs:documentation>
+        </xs:annotation>
+    </xs:element>
+    <xs:element name="OptionCompare" type="msb:StringPropertyType" substitutionGroup="msb:Property">
+        <xs:annotation>
+            <xs:documentation>Option Compare setting (Text or Binary)</xs:documentation>
+        </xs:annotation>
+    </xs:element>
+    <xs:element name="OptionExplicit" type="msb:StringPropertyType" substitutionGroup="msb:Property">
+        <xs:annotation>
+            <xs:documentation>Should Option Explicit be set (On or Off)</xs:documentation>
+        </xs:annotation>
+    </xs:element>
+    <xs:element name="OptionStrict" type="msb:StringPropertyType" substitutionGroup="msb:Property">
+        <xs:annotation>
+            <xs:documentation>Should Option Strict be set (On or Off)</xs:documentation>
+        </xs:annotation>
+    </xs:element>
+    <xs:element name="OSVersion" type="msb:StringPropertyType" substitutionGroup="msb:Property"/>
+    <xs:element name="OutputPath" type="msb:StringPropertyType" substitutionGroup="msb:Property">
+        <xs:annotation>
+            <xs:documentation>Path to output folder, with trailing slash</xs:documentation>
+        </xs:annotation>
+    </xs:element>
+    <xs:element name="OutputType" type="msb:StringPropertyType" substitutionGroup="msb:Property">
+        <xs:annotation>
+            <xs:documentation>Type of output to generate (WinExe, Exe, or Library)</xs:documentation>
+        </xs:annotation>
+    </xs:element>
+    <xs:element name="Platform" type="msb:StringPropertyType" substitutionGroup="msb:Property"/>
+    <xs:element name="PlatformFamilyName" type="msb:StringPropertyType" substitutionGroup="msb:Property"/>
+    <xs:element name="PlatformID" type="msb:StringPropertyType" substitutionGroup="msb:Property"/>
+    <xs:element name="PlatformTarget" type="msb:StringPropertyType" substitutionGroup="msb:Property"/>
+    <xs:element name="PostBuildEvent" type="msb:StringPropertyType" substitutionGroup="msb:Property">
+        <xs:annotation>
+            <xs:documentation>Command line to be run at the end of build</xs:documentation>
+        </xs:annotation>
+    </xs:element>
+    <xs:element name="PreBuildEvent" type="msb:StringPropertyType" substitutionGroup="msb:Property">
+        <xs:annotation>
+            <xs:documentation>Command line to be run at the start of build</xs:documentation>
+        </xs:annotation>
+    </xs:element>
+    <xs:element name="ProductName" type="msb:StringPropertyType" substitutionGroup="msb:Property"/>
+    <xs:element name="ProductVersion" type="msb:StringPropertyType" substitutionGroup="msb:Property"/>
+    <xs:element name="ProjectGuid" type="msb:StringPropertyType" substitutionGroup="msb:Property"/>
+    <xs:element name="ProjectType" type="msb:StringPropertyType" substitutionGroup="msb:Property"/>
+    <xs:element name="ProjectTypeGuids" type="msb:StringPropertyType" substitutionGroup="msb:Property"/>
+    <xs:element name="PublisherName" type="msb:StringPropertyType" substitutionGroup="msb:Property"/>
+    <xs:element name="PublishUrl" type="msb:StringPropertyType" substitutionGroup="msb:Property"/>
+    <xs:element name="RecursePath" type="msb:StringPropertyType" substitutionGroup="msb:Property"/>
+    <xs:element name="ReferencePath" type="msb:StringPropertyType" substitutionGroup="msb:Property">
+        <xs:annotation>
+            <xs:documentation>Semi-colon separated list of folders to search during reference resolution</xs:documentation>
+        </xs:annotation>
+    </xs:element>
+    <xs:element name="RegisterForComInterop" type="msb:StringPropertyType" substitutionGroup="msb:Property"/>
+    <xs:element name="RemoteDebugEnabled" type="msb:StringPropertyType" substitutionGroup="msb:Property"/>
+    <xs:element name="RemoteDebugMachine" type="msb:StringPropertyType" substitutionGroup="msb:Property"/>
+    <xs:element name="RemoveIntegerChecks" type="msb:StringPropertyType" substitutionGroup="msb:Property"/>
+    <xs:element name="ResponseFile" type="msb:StringPropertyType" substitutionGroup="msb:Property"/>
+    <xs:element name="RootNamespace" type="msb:StringPropertyType" substitutionGroup="msb:Property"/>
+    <xs:element name="RunFxCop" type="msb:StringPropertyType" substitutionGroup="msb:Property"/>
+    <xs:element name="RunPostBuildEvent" type="msb:StringPropertyType" substitutionGroup="msb:Property"/>
+    <xs:element name="SchemaVersion" type="msb:StringPropertyType" substitutionGroup="msb:Property"/>
+    <xs:element name="SecureScoping" type="msb:StringPropertyType" substitutionGroup="msb:Property"/>
+    <xs:element name="SignAssembly" type="msb:StringPropertyType" substitutionGroup="msb:Property"/>
+    <xs:element name="SignManifests" type="msb:StringPropertyType" substitutionGroup="msb:Property"/>
+    <xs:element name="StartAction" type="msb:StringPropertyType" substitutionGroup="msb:Property"/>
+    <xs:element name="StartArguments" type="msb:StringPropertyType" substitutionGroup="msb:Property"/>
+    <xs:element name="StartPage" type="msb:StringPropertyType" substitutionGroup="msb:Property"/>
+    <xs:element name="StartProgram" type="msb:StringPropertyType" substitutionGroup="msb:Property"/>
+    <xs:element name="StartURL" type="msb:StringPropertyType" substitutionGroup="msb:Property"/>
+    <xs:element name="StartWithIE" type="msb:StringPropertyType" substitutionGroup="msb:Property"/>
+    <xs:element name="StartWorkingDirectory" type="msb:StringPropertyType" substitutionGroup="msb:Property"/>
+    <xs:element name="StartupObject" type="msb:StringPropertyType" substitutionGroup="msb:Property">
+        <xs:annotation>
+            <xs:documentation>Type that contains the main entry point</xs:documentation>
+        </xs:annotation>
+    </xs:element>
+    <xs:element name="SupportUrl" type="msb:StringPropertyType" substitutionGroup="msb:Property"/>
+    <xs:element name="TargetCulture" type="msb:StringPropertyType" substitutionGroup="msb:Property"/>
+    <xs:element name="TargetZone" type="msb:StringPropertyType" substitutionGroup="msb:Property"/>
+    <xs:element name="TreatWarningsAsErrors" type="msb:StringPropertyType" substitutionGroup="msb:Property"/>
+    <xs:element name="TrustUrlParameters" type="msb:StringPropertyType" substitutionGroup="msb:Property">
+        <xs:annotation>
+            <xs:documentation>boolean</xs:documentation>
+        </xs:annotation>
+    </xs:element>
+    <xs:element name="TypeComplianceDiagnostics" type="msb:StringPropertyType" substitutionGroup="msb:Property"/>
+    <xs:element name="UpdateEnabled" type="msb:StringPropertyType" substitutionGroup="msb:Property">
+        <xs:annotation>
+            <xs:documentation>boolean</xs:documentation>
+        </xs:annotation>
+    </xs:element>
+    <xs:element name="UpdateInterval" type="msb:StringPropertyType" substitutionGroup="msb:Property"/>
+    <xs:element name="UpdateIntervalUnits" type="msb:StringPropertyType" substitutionGroup="msb:Property">
+        <xs:annotation>
+            <xs:documentation>Hours, Days, or Weeks</xs:documentation>
+        </xs:annotation>
+    </xs:element>
+    <xs:element name="UpdateMode" type="msb:StringPropertyType" substitutionGroup="msb:Property">
+        <xs:annotation>
+            <xs:documentation>Foreground or Background</xs:documentation>
+        </xs:annotation>
+    </xs:element>
+    <xs:element name="UpdatePeriodically" type="msb:StringPropertyType" substitutionGroup="msb:Property">
+        <xs:annotation>
+            <xs:documentation>boolean</xs:documentation>
+        </xs:annotation>
+    </xs:element>
+    <xs:element name="UpdateRequired" type="msb:StringPropertyType" substitutionGroup="msb:Property">
+        <xs:annotation>
+            <xs:documentation>boolean</xs:documentation>
+        </xs:annotation>
+    </xs:element>
+    <xs:element name="UpdateUrl" type="msb:StringPropertyType" substitutionGroup="msb:Property"/>
+    <xs:element name="UTF8OutPut" type="msb:StringPropertyType" substitutionGroup="msb:Property"/>
+    <xs:element name="UseVSHostingProcess" type="msb:StringPropertyType" substitutionGroup="msb:Property"/>
+    <xs:element name="VSTO_TrustAssembliesLocation" type="msb:StringPropertyType" substitutionGroup="msb:Property"/>
+    <xs:element name="WarningLevel" type="msb:StringPropertyType" substitutionGroup="msb:Property">
+        <xs:annotation>
+            <xs:documentation>integer between 0 and 4 inclusive</xs:documentation>
+        </xs:annotation>
+    </xs:element>
+    <xs:element name="WarningsAsErrors" type="msb:StringPropertyType" substitutionGroup="msb:Property">
+        <xs:annotation>
+            <xs:documentation>Comma separated list of warning numbers to treat as errors</xs:documentation>
+        </xs:annotation>
+    </xs:element>
+    <xs:element name="WebPage" type="msb:StringPropertyType" substitutionGroup="msb:Property"/>
+    <xs:element name="Win32ResourceFile" type="msb:StringPropertyType" substitutionGroup="msb:Property"/>
+    <!-- ======================== TASKS =====================================-->
+    <xs:element name="AL" substitutionGroup="msb:Task">
+        <xs:complexType>
+            <xs:complexContent>
+                <xs:extension base="msb:TaskType">
+                    <xs:attribute name="OutputAssembly" use="required" />
+                    <xs:attribute name="AlgorithmId" />
+                    <xs:attribute name="BaseAddress" />
+                    <xs:attribute name="CompanyName" />
+                    <xs:attribute name="Configuration" />
+                    <xs:attribute name="Copyright" />
+                    <xs:attribute name="Culture" />
+                    <xs:attribute name="DelaySign" />
+                    <xs:attribute name="Description" />
+                    <xs:attribute name="EmbedResources" />
+                    <xs:attribute name="EvidenceFile" />
+                    <xs:attribute name="FileVersion" />
+                    <xs:attribute name="Flags" />
+                    <xs:attribute name="GenerateFullPaths" />
+                    <xs:attribute name="KeyContainer" />
+                    <xs:attribute name="KeyFile" />
+                    <xs:attribute name="LinkResources" />
+                    <xs:attribute name="MainEntryPoint" />
+                    <xs:attribute name="Platform" />
+                    <xs:attribute name="ProductName" />
+                    <xs:attribute name="ProductVersion" />
+                    <xs:attribute name="ResponseFiles" />
+                    <xs:attribute name="SourceModules" />
+                    <xs:attribute name="TargetType" />
+                    <xs:attribute name="TemplateFile" />
+                    <xs:attribute name="Timeout" />
+                    <xs:attribute name="Title" />
+                    <xs:attribute name="ToolPath" />
+                    <xs:attribute name="Trademark" />
+                    <xs:attribute name="Version" />
+                    <xs:attribute name="Win32Icon" />
+                    <xs:attribute name="Win32Resource" />
+                </xs:extension>
+            </xs:complexContent>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="AspNetCompiler" substitutionGroup="msb:Task">
+        <xs:complexType>
+            <xs:complexContent>
+                <xs:extension base="msb:TaskType">
+                    <xs:attribute name="Clean" />
+                    <xs:attribute name="Debug" />
+                    <xs:attribute name="Force" />
+                    <xs:attribute name="MetabasePath" />
+                    <xs:attribute name="PhysicalPath" />
+                    <xs:attribute name="TargetPath" />
+                    <xs:attribute name="Timeout" />
+                    <xs:attribute name="ToolPath" />
+                    <xs:attribute name="Updateable" />
+                    <xs:attribute name="VirtualPath" />
+                </xs:extension>
+            </xs:complexContent>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="AssignCulture" substitutionGroup="msb:Task">
+        <xs:complexType>
+            <xs:complexContent>
+                <xs:extension base="msb:TaskType">
+                    <xs:attribute name="Files" />
+                </xs:extension>
+            </xs:complexContent>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="AssignTargetPath" substitutionGroup="msb:Task">
+        <xs:complexType>
+            <xs:complexContent>
+                <xs:extension base="msb:TaskType">
+                    <xs:attribute name="RootFolder" use="required" />
+                    <xs:attribute name="Files" />
+                </xs:extension>
+            </xs:complexContent>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="Copy" substitutionGroup="msb:Task">
+        <xs:complexType>
+            <xs:complexContent>
+                <xs:extension base="msb:TaskType">
+                    <xs:attribute name="DestinationFiles" />
+                    <xs:attribute name="DestinationFolder" />
+                    <xs:attribute name="SkipUnchangedFiles" />
+                    <xs:attribute name="SourceFiles" />
+                </xs:extension>
+            </xs:complexContent>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="CreateCSharpManifestResourceName" substitutionGroup="msb:Task">
+        <xs:complexType>
+            <xs:complexContent>
+                <xs:extension base="msb:TaskType">
+                    <xs:attribute name="ResourceFiles" use="required" />
+                    <xs:attribute name="RootNamespace" />
+                </xs:extension>
+            </xs:complexContent>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="CreateItem" substitutionGroup="msb:Task">
+        <xs:complexType>
+            <xs:complexContent>
+                <xs:extension base="msb:TaskType">
+                    <xs:attribute name="AdditionalMetadata" />
+                    <xs:attribute name="Exclude" />
+                    <xs:attribute name="Include" />
+                </xs:extension>
+            </xs:complexContent>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="CreateJSharpManifestResourceName" substitutionGroup="msb:Task">
+        <xs:complexType>
+            <xs:complexContent>
+                <xs:extension base="msb:TaskType">
+                    <xs:attribute name="ResourceFiles" use="required" />
+                    <xs:attribute name="RootNamespace" />
+                </xs:extension>
+            </xs:complexContent>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="CreateProperty" substitutionGroup="msb:Task">
+        <xs:complexType>
+            <xs:complexContent>
+                <xs:extension base="msb:TaskType">
+                    <xs:attribute name="Value" />
+                    <xs:attribute name="ValueSetByTask" />
+                </xs:extension>
+            </xs:complexContent>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="CreateVisualBasicManifestResourceName" substitutionGroup="msb:Task">
+        <xs:complexType>
+            <xs:complexContent>
+                <xs:extension base="msb:TaskType">
+                    <xs:attribute name="ResourceFiles" use="required" />
+                    <xs:attribute name="RootNamespace" />
+                </xs:extension>
+            </xs:complexContent>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="Csc" substitutionGroup="msb:Task">
+        <xs:complexType>
+            <xs:complexContent>
+                <xs:extension base="msb:TaskType">
+                    <xs:attribute name="AdditionalLibPaths" />
+                    <xs:attribute name="AddModules" />
+                    <xs:attribute name="AllowUnsafeBlocks" />
+                    <xs:attribute name="BaseAddress" />
+                    <xs:attribute name="CheckForOverflowUnderflow" />
+                    <xs:attribute name="CodePage" />
+                    <xs:attribute name="DebugType" />
+                    <xs:attribute name="DefineConstants" />
+                    <xs:attribute name="DelaySign" />
+                    <xs:attribute name="DisabledWarnings" />
+                    <xs:attribute name="DocumentationFile" />
+                    <xs:attribute name="EmitDebugInformation" />
+                    <xs:attribute name="ErrorReport" />
+                    <xs:attribute name="FileAlignment" />
+                    <xs:attribute name="GenerateFullPaths" />
+                    <xs:attribute name="KeyContainer" />
+                    <xs:attribute name="KeyFile" />
+                    <xs:attribute name="LangVersion" />
+                    <xs:attribute name="LinkResources" />
+                    <xs:attribute name="MainEntryPoint" />
+                    <xs:attribute name="NoConfig" />
+                    <xs:attribute name="NoLogo" />
+                    <xs:attribute name="NoStandardLib" />
+                    <xs:attribute name="Optimize" />
+                    <xs:attribute name="OutputAssembly" />
+                    <xs:attribute name="Platform" />
+                    <xs:attribute name="References" />
+                    <xs:attribute name="Resources" />
+                    <xs:attribute name="ResponseFiles" />
+                    <xs:attribute name="Sources" />
+                    <xs:attribute name="TargetType" />
+                    <xs:attribute name="Timeout" />
+                    <xs:attribute name="ToolPath" />
+                    <xs:attribute name="TreatWarningsAsErrors" />
+                    <xs:attribute name="UseHostCompilerIfAvailable" />
+                    <xs:attribute name="Utf8Output" />
+                    <xs:attribute name="WarningLevel" />
+                    <xs:attribute name="WarningsAsErrors" />
+                    <xs:attribute name="WarningsNotAsErrors" />
+                    <xs:attribute name="Win32Icon" />
+                    <xs:attribute name="Win32Resource" />
+                </xs:extension>
+            </xs:complexContent>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="Delete" substitutionGroup="msb:Task">
+        <xs:complexType>
+            <xs:complexContent>
+                <xs:extension base="msb:TaskType">
+                    <xs:attribute name="Files" use="required" />
+                    <xs:attribute name="DeletedFiles" />
+                    <xs:attribute name="TreatErrorsAsWarnings" />
+                </xs:extension>
+            </xs:complexContent>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="Error" substitutionGroup="msb:Task">
+        <xs:complexType>
+            <xs:complexContent>
+                <xs:extension base="msb:TaskType">
+                    <xs:attribute name="Text" />
+                </xs:extension>
+            </xs:complexContent>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="Exec" substitutionGroup="msb:Task">
+        <xs:complexType>
+            <xs:complexContent>
+                <xs:extension base="msb:TaskType">
+                    <xs:attribute name="Command" use="required" />
+                    <xs:attribute name="IgnoreExitCode" />
+                    <xs:attribute name="Outputs" />
+                    <xs:attribute name="StandardErrorEncoding" />
+                    <xs:attribute name="StandardOutputEncoding" />
+                    <xs:attribute name="Timeout" />
+                    <xs:attribute name="WorkingDirectory" />
+                </xs:extension>
+            </xs:complexContent>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="FindUnderPath" substitutionGroup="msb:Task">
+        <xs:complexType>
+            <xs:complexContent>
+                <xs:extension base="msb:TaskType">
+                    <xs:attribute name="Path" use="required" />
+                    <xs:attribute name="Files" />
+                    <xs:attribute name="InPath" />
+                    <xs:attribute name="OutOfPath" />
+                </xs:extension>
+            </xs:complexContent>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="FormatUrl" substitutionGroup="msb:Task">
+        <xs:complexType>
+            <xs:complexContent>
+                <xs:extension base="msb:TaskType">
+                    <xs:attribute name="InputUrl" />
+                    <xs:attribute name="OutputUrl" />
+                </xs:extension>
+            </xs:complexContent>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="FormatVersion" substitutionGroup="msb:Task">
+        <xs:complexType>
+            <xs:complexContent>
+                <xs:extension base="msb:TaskType">
+                    <xs:attribute name="FormatType" />
+                    <xs:attribute name="OutputVersion" />
+                    <xs:attribute name="Revision" />
+                    <xs:attribute name="Version" />
+                </xs:extension>
+            </xs:complexContent>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="FxCop" substitutionGroup="msb:Task">
+        <xs:complexType>
+            <xs:complexContent>
+                <xs:extension base="msb:TaskType">
+                    <xs:attribute name="ApplyLogFileXsl" />
+                    <xs:attribute name="Assemblies" />
+                    <xs:attribute name="ConsoleXsl" />
+                    <xs:attribute name="DependentAssemblyPaths" />
+                    <xs:attribute name="Imports" />
+                    <xs:attribute name="LogFile" />
+                    <xs:attribute name="LogFileXsl" />
+                    <xs:attribute name="OutputToConsole" />
+                    <xs:attribute name="PlatformPath" />
+                    <xs:attribute name="Project" />
+                    <xs:attribute name="RuleAssemblies" />
+                    <xs:attribute name="Rules" />
+                    <xs:attribute name="Summary" />
+                    <xs:attribute name="ToolPath" />
+                    <xs:attribute name="UpdateProjectFile" />
+                    <xs:attribute name="Verbose" />
+                </xs:extension>
+            </xs:complexContent>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="GenerateApplicationManifest" substitutionGroup="msb:Task">
+        <xs:complexType>
+            <xs:complexContent>
+                <xs:extension base="msb:TaskType">
+                    <xs:attribute name="AssemblyName" />
+                    <xs:attribute name="AssemblyVersion" />
+                    <xs:attribute name="ClrVersion" />
+                    <xs:attribute name="ConfigFile" />
+                    <xs:attribute name="Dependencies" />
+                    <xs:attribute name="Description" />
+                    <xs:attribute name="EntryPoint" />
+                    <xs:attribute name="Files" />
+                    <xs:attribute name="IconFile" />
+                    <xs:attribute name="InputManifest" />
+                    <xs:attribute name="IsolatedComReferences" />
+                    <xs:attribute name="ManifestType" />
+                    <xs:attribute name="MaxTargetPath" />
+                    <xs:attribute name="OSVersion" />
+                    <xs:attribute name="OutputManifest" />
+                    <xs:attribute name="Platform" />
+                    <xs:attribute name="TargetCulture" />
+                    <xs:attribute name="TrustInfoFile" />
+                </xs:extension>
+            </xs:complexContent>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="GenerateBootstrapper" substitutionGroup="msb:Task">
+        <xs:complexType>
+            <xs:complexContent>
+                <xs:extension base="msb:TaskType">
+                    <xs:attribute name="ApplicationFile" />
+                    <xs:attribute name="ApplicationName" />
+                    <xs:attribute name="ApplicationUrl" />
+                    <xs:attribute name="BootstrapperComponentFiles" />
+                    <xs:attribute name="BootstrapperItems" />
+                    <xs:attribute name="BootstrapperKeyFile" />
+                    <xs:attribute name="ComponentsLocation" />
+                    <xs:attribute name="ComponentsUrl" />
+                    <xs:attribute name="CopyComponents" />
+                    <xs:attribute name="Culture" />
+                    <xs:attribute name="FallbackCulture" />
+                    <xs:attribute name="OutputPath" />
+                    <xs:attribute name="Path" />
+                    <xs:attribute name="SupportUrl" />
+                    <xs:attribute name="Validate" />
+                </xs:extension>
+            </xs:complexContent>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="GenerateDeploymentManifest" substitutionGroup="msb:Task">
+        <xs:complexType>
+            <xs:complexContent>
+                <xs:extension base="msb:TaskType">
+                    <xs:attribute name="AssemblyName" />
+                    <xs:attribute name="AssemblyVersion" />
+                    <xs:attribute name="DeploymentUrl" />
+                    <xs:attribute name="Description" />
+                    <xs:attribute name="DisallowUrlActivation" />
+                    <xs:attribute name="EntryPoint" />
+                    <xs:attribute name="InputManifest" />
+                    <xs:attribute name="Install" />
+                    <xs:attribute name="MaxTargetPath" />
+                    <xs:attribute name="MapFileExtensions" />
+                    <xs:attribute name="MinimumRequiredVersion" />
+                    <xs:attribute name="OutputManifest" />
+                    <xs:attribute name="Platform" />
+                    <xs:attribute name="Product" />
+                    <xs:attribute name="Publisher" />
+                    <xs:attribute name="SupportUrl" />
+                    <xs:attribute name="TargetCulture" />
+                    <xs:attribute name="TrustUrlParameters" />
+                    <xs:attribute name="UpdateEnabled" />
+                    <xs:attribute name="UpdateInterval" />
+                    <xs:attribute name="UpdateMode" />
+                    <xs:attribute name="UpdateUnit" />
+                </xs:extension>
+            </xs:complexContent>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="GenerateResource" substitutionGroup="msb:Task">
+        <xs:complexType>
+            <xs:complexContent>
+                <xs:extension base="msb:TaskType">
+                    <xs:attribute name="Sources" use="required" />
+                    <xs:attribute name="FilesWritten" />
+                    <xs:attribute name="NeverLockTypeAssemblies" />
+                    <xs:attribute name="OutputResources" />
+	            <xs:attribute name="References" />
+                    <xs:attribute name="StateFile" />
+                    <xs:attribute name="Timeout" />
+                    <xs:attribute name="UseSourcePath" />
+                </xs:extension>
+            </xs:complexContent>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="GetAssemblyIdentity" substitutionGroup="msb:Task">
+        <xs:complexType>
+            <xs:complexContent>
+                <xs:extension base="msb:TaskType">
+                    <xs:attribute name="AssemblyFiles" use="required" />
+                    <xs:attribute name="Assemblies" />
+                </xs:extension>
+            </xs:complexContent>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="GetFrameworkPath" substitutionGroup="msb:Task">
+        <xs:complexType>
+            <xs:complexContent>
+                <xs:extension base="msb:TaskType">
+                    <xs:attribute name="Path" />
+                </xs:extension>
+            </xs:complexContent>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="GetFrameworkSdkPath" substitutionGroup="msb:Task">
+        <xs:complexType>
+            <xs:complexContent>
+                <xs:extension base="msb:TaskType">
+                    <xs:attribute name="Path" />
+                </xs:extension>
+            </xs:complexContent>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="GetLinkedFilesFromResX" substitutionGroup="msb:Task">
+        <xs:complexType>
+            <xs:complexContent>
+                <xs:extension base="msb:TaskType">
+                    <xs:attribute name="Sources" use="required" />
+                    <xs:attribute name="StateFile" />
+                    <xs:attribute name="UseSourcePath" />
+                </xs:extension>
+            </xs:complexContent>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="LC" substitutionGroup="msb:Task">
+        <xs:complexType>
+            <xs:complexContent>
+                <xs:extension base="msb:TaskType">
+                    <xs:attribute name="LicenseTarget" use="required" />
+                    <xs:attribute name="Sources" use="required" />
+                    <xs:attribute name="NoLogo" />
+                    <xs:attribute name="OutputDirectory" />
+                    <xs:attribute name="OutputLicense" />
+                    <xs:attribute name="ReferencedAssemblies" />
+                    <xs:attribute name="Timeout" />
+                    <xs:attribute name="ToolPath" />
+                </xs:extension>
+            </xs:complexContent>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="MakeDir" substitutionGroup="msb:Task">
+        <xs:complexType>
+            <xs:complexContent>
+                <xs:extension base="msb:TaskType">
+                    <xs:attribute name="Directories" use="required" />
+                </xs:extension>
+            </xs:complexContent>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="Message" substitutionGroup="msb:Task">
+        <xs:complexType>
+            <xs:complexContent>
+                <xs:extension base="msb:TaskType">
+                    <xs:attribute name="Importance" />
+                    <xs:attribute name="Text" />
+                </xs:extension>
+            </xs:complexContent>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="MSBuild" substitutionGroup="msb:Task">
+        <xs:complexType>
+            <xs:complexContent>
+                <xs:extension base="msb:TaskType">
+                    <xs:attribute name="Projects" use="required" />
+                    <xs:attribute name="RebaseOutputs" />
+                    <xs:attribute name="StopOnFirstFailure" />
+                    <xs:attribute name="RunEachTargetSeparately" />
+                    <xs:attribute name="Targets" />
+                    <xs:attribute name="Properties" />
+                </xs:extension>
+            </xs:complexContent>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="ReadLinesFromFile" substitutionGroup="msb:Task">
+        <xs:complexType>
+            <xs:complexContent>
+                <xs:extension base="msb:TaskType">
+                    <xs:attribute name="File" use="required" />
+                    <xs:attribute name="Lines" />
+                </xs:extension>
+            </xs:complexContent>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="RegisterAssembly" substitutionGroup="msb:Task">
+        <xs:complexType>
+            <xs:complexContent>
+                <xs:extension base="msb:TaskType">
+                    <xs:attribute name="Assemblies" use="required" />
+                    <xs:attribute name="CreateCodeBase" />
+                    <xs:attribute name="StateFile" />
+                    <xs:attribute name="TypeLibFiles" />
+                </xs:extension>
+            </xs:complexContent>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="RemoveDir" substitutionGroup="msb:Task">
+        <xs:complexType>
+            <xs:complexContent>
+                <xs:extension base="msb:TaskType">
+                    <xs:attribute name="Directories" use="required" />
+                    <xs:attribute name="RemovedDirectories" />
+                </xs:extension>
+            </xs:complexContent>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="RemoveDuplicates" substitutionGroup="msb:Task">
+        <xs:complexType>
+            <xs:complexContent>
+                <xs:extension base="msb:TaskType">
+                    <xs:attribute name="Filtered" />
+                    <xs:attribute name="Inputs" />
+                </xs:extension>
+            </xs:complexContent>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="ResGen" substitutionGroup="msb:Task">
+        <xs:complexType>
+            <xs:complexContent>
+                <xs:extension base="msb:TaskType">
+                    <xs:attribute name="Sources" use="required" />
+                    <xs:attribute name="FilesWritten" />
+                    <xs:attribute name="OutputResources" />
+                    <xs:attribute name="References" />
+                    <xs:attribute name="StateFile" />
+                    <xs:attribute name="Timeout" />
+                    <xs:attribute name="ToolPath" />
+                    <xs:attribute name="UseSourcePath" />
+                </xs:extension>
+            </xs:complexContent>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="ResolveAssemblyReference" substitutionGroup="msb:Task">
+        <xs:complexType>
+            <xs:complexContent>
+                <xs:extension base="msb:TaskType">
+                    <xs:attribute name="SearchPaths" use="required" />
+                    <xs:attribute name="AppConfigFile" />
+                    <xs:attribute name="Assemblies" />
+                    <xs:attribute name="AssemblyFiles" />
+                    <xs:attribute name="AutoUnify" />
+                    <xs:attribute name="CandidateAssemblyFiles" />
+                    <xs:attribute name="FilesWritten" />
+                    <xs:attribute name="FindDependencies" />
+                    <xs:attribute name="FindRelatedFiles" />
+                    <xs:attribute name="FindSatellites" />
+                    <xs:attribute name="InstalledAssemblyTables" />
+                    <xs:attribute name="Silent" />
+                    <xs:attribute name="StateFile" />
+                    <xs:attribute name="TargetFrameworkDirectory" />
+                    <xs:attribute name="TargetProcessorArchitecture" />
+                </xs:extension>
+            </xs:complexContent>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="ResolveComReference" substitutionGroup="msb:Task">
+        <xs:complexType>
+            <xs:complexContent>
+                <xs:extension base="msb:TaskType">
+                    <xs:attribute name="DelaySign" />
+                    <xs:attribute name="KeyContainer" />
+                    <xs:attribute name="KeyFile" />
+                    <xs:attribute name="NoClassMembers" />
+                    <xs:attribute name="ResolvedAssemblyReferences" />
+                    <xs:attribute name="ResolvedFiles" />
+                    <xs:attribute name="ResolvedModules" />
+                    <xs:attribute name="StateFile" />
+                    <xs:attribute name="TypeLibFiles" />
+                    <xs:attribute name="TypeLibNames" />
+                    <xs:attribute name="WrapperOutputDirectory" />
+                </xs:extension>
+            </xs:complexContent>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="ResolveKeySource" substitutionGroup="msb:Task">
+        <xs:complexType>
+            <xs:complexContent>
+                <xs:extension base="msb:TaskType">
+                    <xs:attribute name="AutoClosePasswordPromptShow" />
+                    <xs:attribute name="AutoClosePasswordPromptTimeout" />
+                    <xs:attribute name="CertificateFile" />
+                    <xs:attribute name="CertificateThumbprint" />
+                    <xs:attribute name="KeyFile" />
+                    <xs:attribute name="ResolvedKeyContainer" />
+                    <xs:attribute name="ResolvedKeyFile" />
+                    <xs:attribute name="ResolvedThumbprint" />
+                    <xs:attribute name="SuppressAutoClosePasswordPrompt" />
+                </xs:extension>
+            </xs:complexContent>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="GenerateTrustInfo" substitutionGroup="msb:Task">
+        <xs:complexType>
+            <xs:complexContent>
+                <xs:extension base="msb:TaskType">
+                    <xs:attribute name="BaseManifest" />
+                    <xs:attribute name="ExcludedPermissions" />
+                    <xs:attribute name="TargetZone" use="required" />
+                    <xs:attribute name="TrustInfoFile" use="required" />
+                </xs:extension>
+            </xs:complexContent>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="ResolveManifestFiles" substitutionGroup="msb:Task">
+        <xs:complexType>
+            <xs:complexContent>
+                <xs:extension base="msb:TaskType">
+                    <xs:attribute name="EntryPoint" />
+                    <xs:attribute name="TrustInfoFile" />
+                    <xs:attribute name="Dependencies" /> <!-- obsolete -->
+                    <xs:attribute name="ExtraFiles" />
+                    <xs:attribute name="Files" />
+                    <xs:attribute name="ManagedAssemblies" />
+                    <xs:attribute name="NativeAssemblies" />
+                    <xs:attribute name="OutputAssemblies" />
+                    <xs:attribute name="OutputDependencies" /> <!-- obsolete -->
+                    <xs:attribute name="OutputFiles" />
+                    <xs:attribute name="OutputPrerequisites" /> <!-- obsolete -->
+                    <xs:attribute name="OutputSatellites" /> <!-- obsolete -->
+                    <xs:attribute name="PublishFiles" />
+                    <xs:attribute name="Satellites" /> <!-- obsolete -->
+                    <xs:attribute name="SatelliteAssemblies" />
+                    <xs:attribute name="TargetCulture" />
+                </xs:extension>
+            </xs:complexContent>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="ResolveNativeReference" substitutionGroup="msb:Task">
+        <xs:complexType>
+            <xs:complexContent>
+                <xs:extension base="msb:TaskType">
+                    <xs:attribute name="NativeReferences" use="required" />
+                    <xs:attribute name="ContainedComComponents" />
+                    <xs:attribute name="ContainedLooseEtcFiles" />
+                    <xs:attribute name="ContainedLooseTlbFiles" />
+                    <xs:attribute name="ContainedNetAssemblies" />
+                    <xs:attribute name="ContainedTypeLibraries" />
+                    <xs:attribute name="ContainingReferenceFiles" />
+                </xs:extension>
+            </xs:complexContent>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="ResolveVCProjectOutput" substitutionGroup="msb:Task">
+        <xs:complexType>
+            <xs:complexContent>
+                <xs:extension base="msb:TaskType">
+                    <xs:attribute name="ProjectReferences" use="required" />
+                    <xs:attribute name="Configuration" />
+                    <xs:attribute name="PreresolvedVCOutputs" />
+                    <xs:attribute name="ResolvedOutputPaths" />
+                </xs:extension>
+            </xs:complexContent>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="SGen" substitutionGroup="msb:Task">
+        <xs:complexType>
+            <xs:complexContent>
+                <xs:extension base="msb:TaskType">
+                    <xs:attribute name="BuildAssemblyName" use="required" />
+                    <xs:attribute name="BuildAssemblyPath" use="required" />
+                    <xs:attribute name="ShouldGenerateSerializer" use="required" />
+                    <xs:attribute name="DelaySign" />
+                    <xs:attribute name="KeyContainer" />
+                    <xs:attribute name="KeyFile" />
+                    <xs:attribute name="References" />
+                    <xs:attribute name="SerializationAssembly" />
+                    <xs:attribute name="Timeout" />
+                    <xs:attribute name="ToolPath" />
+                </xs:extension>
+            </xs:complexContent>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="SignFile" substitutionGroup="msb:Task">
+        <xs:complexType>
+            <xs:complexContent>
+                <xs:extension base="msb:TaskType">
+                    <xs:attribute name="CertificateThumbprint" use="required" />
+                    <xs:attribute name="SigningTarget" use="required" />
+                    <xs:attribute name="TimestampUrl" />
+                </xs:extension>
+            </xs:complexContent>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="Touch" substitutionGroup="msb:Task">
+        <xs:complexType>
+            <xs:complexContent>
+                <xs:extension base="msb:TaskType">
+                    <xs:attribute name="Files" use="required" />
+                    <xs:attribute name="AlwaysCreate" />
+                    <xs:attribute name="ForceTouch" />
+                    <xs:attribute name="Time" />
+                    <xs:attribute name="TouchedFiles" />
+                </xs:extension>
+            </xs:complexContent>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="UnregisterAssembly" substitutionGroup="msb:Task">
+        <xs:complexType>
+            <xs:complexContent>
+                <xs:extension base="msb:TaskType">
+                    <xs:attribute name="Assemblies" />
+                    <xs:attribute name="StateFile" />
+                    <xs:attribute name="TypeLibFiles" />
+                </xs:extension>
+            </xs:complexContent>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="UpdateManifest" substitutionGroup="msb:Task">
+        <xs:complexType>
+            <xs:complexContent>
+                <xs:extension base="msb:TaskType">
+                    <xs:attribute name="InputManifest" use="required" />
+                    <xs:attribute name="ApplicationManifest" />
+                    <xs:attribute name="ApplicationPath" />
+                    <xs:attribute name="OutputManifest" />
+                </xs:extension>
+            </xs:complexContent>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="Vbc" substitutionGroup="msb:Task">
+        <xs:complexType>
+            <xs:complexContent>
+                <xs:extension base="msb:TaskType">
+                    <xs:attribute name="AdditionalLibPaths" />
+                    <xs:attribute name="AddModules" />
+                    <xs:attribute name="BaseAddress" />
+                    <xs:attribute name="CodePage" />
+                    <xs:attribute name="DebugType" />
+                    <xs:attribute name="DefineConstants" />
+                    <xs:attribute name="DelaySign" />
+                    <xs:attribute name="DisabledWarnings" />
+                    <xs:attribute name="DocumentationFile" />
+                    <xs:attribute name="EmitDebugInformation" />
+                    <xs:attribute name="ErrorReport" />
+                    <xs:attribute name="FileAlignment" />
+                    <xs:attribute name="GenerateDocumentation" />
+                    <xs:attribute name="Imports" />
+                    <xs:attribute name="KeyContainer" />
+                    <xs:attribute name="KeyFile" />
+                    <xs:attribute name="LinkResources" />
+                    <xs:attribute name="MainEntryPoint" />
+                    <xs:attribute name="NoConfig" />
+                    <xs:attribute name="NoLogo" />
+                    <xs:attribute name="NoStandardLib" />
+                    <xs:attribute name="NoWarnings" />
+                    <xs:attribute name="Optimize" />
+                    <xs:attribute name="OptionCompare" />
+                    <xs:attribute name="OptionExplicit" />
+                    <xs:attribute name="OptionStrict" />
+                    <xs:attribute name="OutputAssembly" />
+                    <xs:attribute name="Platform" />
+                    <xs:attribute name="References" />
+                    <xs:attribute name="RemoveIntegerChecks" />
+                    <xs:attribute name="Resources" />
+                    <xs:attribute name="ResponseFiles" />
+                    <xs:attribute name="RootNamespace" />
+                    <xs:attribute name="SdkPath" />
+                    <xs:attribute name="Sources" />
+                    <xs:attribute name="TargetCompactFramework" />
+                    <xs:attribute name="TargetType" />
+                    <xs:attribute name="Timeout" />
+                    <xs:attribute name="ToolPath" />
+                    <xs:attribute name="TreatWarningsAsErrors" />
+                    <xs:attribute name="UseHostCompilerIfAvailable" />
+                    <xs:attribute name="Utf8Output" />
+                    <xs:attribute name="Verbosity" />
+                    <xs:attribute name="WarningsAsErrors" />
+                    <xs:attribute name="WarningsNotAsErrors" />
+                    <xs:attribute name="Win32Icon" />
+                    <xs:attribute name="Win32Resource" />
+                </xs:extension>
+            </xs:complexContent>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="VCBuild" substitutionGroup="msb:Task">
+        <xs:complexType>
+            <xs:complexContent>
+                <xs:extension base="msb:TaskType">
+                    <xs:attribute name="Projects" use="required" />
+                    <xs:attribute name="Clean" />
+                    <xs:attribute name="Configuration" />
+                    <xs:attribute name="Override" />
+                    <xs:attribute name="Rebuild" />
+                    <xs:attribute name="Timeout" />
+                    <xs:attribute name="ToolPath" />
+                </xs:extension>
+            </xs:complexContent>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="Vjc" substitutionGroup="msb:Task">
+        <xs:complexType>
+            <xs:complexContent>
+                <xs:extension base="msb:TaskType">
+                    <xs:attribute name="AdditionalLibPaths" />
+                    <xs:attribute name="AddModules" />
+                    <xs:attribute name="BaseAddress" />
+                    <xs:attribute name="CodePage" />
+                    <xs:attribute name="DebugType" />
+                    <xs:attribute name="DefineConstants" />
+                    <xs:attribute name="DelaySign" />
+                    <xs:attribute name="DisabledWarnings" />
+                    <xs:attribute name="DisableExtensions" />
+                    <xs:attribute name="DocumentationFile" />
+                    <xs:attribute name="EmitDebugInformation" />
+                    <xs:attribute name="FileAlignment" />
+                    <xs:attribute name="Jcpa" />
+                    <xs:attribute name="KeyContainer" />
+                    <xs:attribute name="KeyFile" />
+                    <xs:attribute name="LinkResources" />
+                    <xs:attribute name="MainEntryPoint" />
+                    <xs:attribute name="NoConfig" />
+                    <xs:attribute name="NoLogo" />
+                    <xs:attribute name="Optimize" />
+                    <xs:attribute name="OutputAssembly" />
+                    <xs:attribute name="References" />
+                    <xs:attribute name="Resources" />
+                    <xs:attribute name="ResponseFiles" />
+                    <xs:attribute name="SecureScoping" />
+                    <xs:attribute name="Sources" />
+                    <xs:attribute name="TargetType" />
+                    <xs:attribute name="Timeout" />
+                    <xs:attribute name="ToolPath" />
+                    <xs:attribute name="TreatWarningsAsErrors" />
+                    <xs:attribute name="Utf8Output" />
+                    <xs:attribute name="WarningLevel" />
+                    <xs:attribute name="Win32Icon" />
+                    <xs:attribute name="Win32Resource" />
+                </xs:extension>
+            </xs:complexContent>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="VjsResGen" substitutionGroup="msb:Task">
+        <xs:complexType>
+            <xs:complexContent>
+                <xs:extension base="msb:TaskType">
+                    <xs:attribute name="Sources" use="required" />
+                    <xs:attribute name="OutputResx" />
+                    <xs:attribute name="WildCards" />
+                </xs:extension>
+            </xs:complexContent>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="Warning" substitutionGroup="msb:Task">
+        <xs:complexType>
+            <xs:complexContent>
+                <xs:extension base="msb:TaskType">
+                    <xs:attribute name="Text" />
+                </xs:extension>
+            </xs:complexContent>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="WriteLinesToFile" substitutionGroup="msb:Task">
+        <xs:complexType>
+            <xs:complexContent>
+                <xs:extension base="msb:TaskType">
+                    <xs:attribute name="File" use="required" />
+                    <xs:attribute name="Lines" />
+                    <xs:attribute name="Overwrite" />
+                </xs:extension>
+            </xs:complexContent>
+        </xs:complexType>
+    </xs:element>
+</xs:schema>

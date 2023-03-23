@@ -1,0 +1,39 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Framework
+    Identifier=".NETCore"
+    Profile="*"
+    MinimumVersion="5.0"
+    Family="Windows"
+    MinimumVisualStudioVersion="14.0"
+    DisplayName="Windows Universal"
+    MinimumVersionDisplayName="10.0"
+    PlatformArchitectures="AnyCPU;x86;x64;ARM"
+    IsBuiltIn="true"
+    IsHidden="false">
+    <RetargetData
+        ProjectLanguage="CSharp">
+        <NuGet
+            Identifier="uwp.10.0.app"
+            PortableTargetMoniker="win81">
+            <Package
+                Identifier="Microsoft.NETCore"
+                Version="5.0.0" />
+            <Package
+                Identifier="Microsoft.NETCore.Portable.Compatibility"
+                Version="1.0.0" />
+        </NuGet>
+    </RetargetData>
+    <RetargetData
+        ProjectLanguage="VisualBasic">
+        <NuGet
+            Identifier="uwp.10.0.app"
+            PortableTargetMoniker="win81">
+            <Package
+                Identifier="Microsoft.NETCore"
+                Version="5.0.0" />
+            <Package
+                Identifier="Microsoft.NETCore.Portable.Compatibility"
+                Version="1.0.0" />
+        </NuGet>
+    </RetargetData>
+</Framework>

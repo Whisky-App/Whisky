@@ -1,0 +1,142 @@
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+	<PropertyGroup>
+		<DefaultLanguageSourceExtension>.cs</DefaultLanguageSourceExtension>
+		<Language>C#</Language>
+	</PropertyGroup>
+
+	<PropertyGroup>
+		<DebugSymbols Condition=" '$(DebugType)' == 'none' ">false</DebugSymbols>
+		<DebugType    Condition=" '$(DebugType)' == 'none' "></DebugType>
+	</PropertyGroup>
+
+	<PropertyGroup>
+		<CreateManifestResourceNamesDependsOn></CreateManifestResourceNamesDependsOn>
+		<CoreCompileDependsOn></CoreCompileDependsOn>
+
+		<MSBuildAllProjects>$(MSBuildAllProjects);$(MSBuildToolsPath)\Microsoft.CSharp.targets</MSBuildAllProjects>
+	</PropertyGroup>
+
+	<PropertyGroup>
+		<NoCompilerStandardLib Condition="'$(NoCompilerStandardLib)'==''">true</NoCompilerStandardLib>
+	</PropertyGroup>
+
+	<ItemGroup>
+		<DocFileItem Include="$(DocumentationFile)" Condition="'$(DocumentationFile)' != ''"/>
+	</ItemGroup>
+
+	<Target Name="_AddCorlibReference" DependsOnTargets="GetReferenceAssemblyPaths">
+		<!--
+		HACK: We don't yet support property functions, so can't calculate FrameworkPathOverride
+		by calling ToolLocationHelper.GetPathToStandardLibraries. Instead, we search the framework
+		directories for mscorlib.dll by constructing a filtered item set, and assume it only has
+		one item.
+		-->
+		<ItemGroup Condition="'$(MonoUseMicrosoftBuildDll)' != 'True'">
+			<_ExplicitReference Include="@(_TargetFrameworkDirectories->'%(FullPath)\mscorlib.dll')" Condition="Exists('%(FullPath)\mscorlib.dll')">
+				<Private>false</Private>
+			</_ExplicitReference>
+		</ItemGroup>
+		<PropertyGroup Condition="'$(MonoUseMicrosoftBuildDll)' == 'True'">
+			<_ExplicitMSCorlibPath>$([Microsoft.Build.Utilities.ToolLocationHelper]::GetPathToStandardLibraries ('$(TargetFrameworkIdentifier)', '$(TargetFrameworkVersion)', '$(TargetFrameworkProfile)'))\mscorlib.dll</_ExplicitMSCorlibPath>
+		</PropertyGroup>
+		<ItemGroup Condition="'$(MonoUseMicrosoftBuildDll)' == 'True'">
+			<_ExplicitReference Include="@(_TargetFrameworkDirectories->'%(FullPath)\mscorlib.dll')" Condition="Exists('%(FullPath)\mscorlib.dll')">
+				<Private>false</Private>
+			</_ExplicitReference>
+		</ItemGroup>
+		<ItemGroup Condition="'$(MonoUseMicrosoftBuildDll)' == 'True'">
+			<_ExplicitReference Include="$(_ExplicitMSCorlibPath)" Condition="Exists('$(_ExplicitMSCorlibPath)')">
+				<Private>false</Private>
+			</_ExplicitReference>
+		</ItemGroup>
+	</Target>
+
+	<Target
+		Name="CoreCompile"
+		Inputs="$(MSBuildAllProjects);@(Compile);@(ManifestResourceWithNoCulture);@(ManifestNonResxWithNoCultureOnDisk);@(CompiledLicenseFile);
+			$(KeyOriginatorFile);@(ReferencePath);$(ApplicationIcon);$(Win32Resource)"
+		Outputs="@(DocFileItem);@(IntermediateAssembly)"
+		DependsOnTargets="$(CoreCompileDependsOn)"
+	>
+		<Csc
+			AdditionalLibPaths="$(AdditionalLibPaths)"
+			AddModules="@(AddModules)"
+			AllowUnsafeBlocks="$(AllowUnsafeBlocks)"
+			BaseAddress="$(BaseAddress)"
+			CheckForOverflowUnderflow="$(CheckForOverflowUnderflow)"
+			CodePage="$(CodePage)"
+			DebugType="$(DebugType)"
+			DefineConstants="$(DefineConstants)"
+			DelaySign="$(DelaySign)"
+			DisabledWarnings="$(NoWarn)"
+			DocumentationFile="@(DocFileItem)"
+			EmitDebugInformation="$(DebugSymbols)"
+			ErrorReport="$(ErrorReport)"
+			FileAlignment="$(FileAlignment)"
+			GenerateFullPaths="$(GenerateFullPaths)"
+			KeyContainer="$(KeyContainerName)"
+			KeyFile="$(KeyOriginatorFile)"
+			LangVersion="$(LangVersion)"
+			MainEntryPoint="$(StartupObject)"
+			ModuleAssemblyName="$(ModuleAssemblyName)"
+			NoConfig="true"
+			NoLogo="$(NoLogo)"
+			NoStandardLib="$(NoCompilerStandardLib)"
+			Optimize="$(Optimize)"
+			OutputAssembly="@(IntermediateAssembly)"
+			PdbFile="$(PdbFile)"
+			Platform="$(PlatformTarget)"
+			References="@(ReferencePath)"
+			ResponseFiles="$(CompilerResponseFile)"
+			Sources="@(Compile)"
+			TargetType="$(OutputType)"
+			TreatWarningsAsErrors="$(TreatWarningsAsErrors)"
+			UseHostCompilerIfAvailable="$(UseHostCompilerIfAvailable)"
+			Utf8Output="$(Utf8Output)"
+			WarningLevel="$(WarningLevel)"
+			WarningsAsErrors="$(WarningsAsErrors)"
+			WarningsNotAsErrors="$(WarningsNotAsErrors)"
+			Win32Icon="$(ApplicationIcon)"
+			Win32Resource="$(Win32Resource)"
+			Resources="@(ManifestResourceWithNoCulture);@(ManifestNonResxWithNoCultureOnDisk);@(CompiledLicenseFile)"
+			ToolExe="$(CscToolExe)"
+			ToolPath="$(CscToolPath)" />
+
+	</Target>
+
+	<Target Name="CreateManifestResourceNames">
+		<CreateCSharpManifestResourceName Condition="'@(ResxWithNoCulture)' != ''"
+			ResourceFiles="@(ResxWithNoCulture)" RootNamespace="$(RootNamespace)">
+			<Output TaskParameter = "ManifestResourceNames" ItemName = "ManifestResourceWithNoCultureName" />
+		</CreateCSharpManifestResourceName>
+
+		<CreateCSharpManifestResourceName Condition="'@(NonResxWithNoCulture)' != ''"
+			ResourceFiles="@(NonResxWithNoCulture)" RootNamespace="$(RootNamespace)">
+			<Output TaskParameter = "ManifestResourceNames" ItemName = "ManifestNonResxWithNoCulture" />
+		</CreateCSharpManifestResourceName>
+
+		<CreateCSharpManifestResourceName Condition="'@(ResxWithCulture)' != ''"
+			ResourceFiles="@(ResxWithCulture)" RootNamespace="$(RootNamespace)">
+			<Output TaskParameter = "ManifestResourceNames" ItemName = "ManifestResourceWithCultureName" />
+		</CreateCSharpManifestResourceName>
+
+		<CreateCSharpManifestResourceName Condition="'@(NonResxWithCulture)' != ''"
+			ResourceFiles="@(NonResxWithCulture)" RootNamespace="$(RootNamespace)">
+			<Output TaskParameter = "ManifestResourceNames" ItemName = "ManifestNonResxWithCulture" />
+		</CreateCSharpManifestResourceName>
+	</Target>
+
+	<Import Project="Microsoft.Common.targets" />
+
+	<PropertyGroup Condition="'$(NoCompilerStandardLib)'=='true' and '$(NoStdLib)'!='true'">
+		<ResolveAssemblyReferencesDependsOn>$(ResolveAssemblyReferencesDependsOn);_AddCorlibReference</ResolveAssemblyReferencesDependsOn>
+	</PropertyGroup>
+
+	<PropertyGroup>
+		<TargetFrameworkMonikerAssemblyAttributeText Condition="'$(TargetFrameworkMoniker)' != '' and '$(TargetingClr2Framework)' != 'true'">
+// &lt;autogenerated /&gt;
+[assembly: global::System.Runtime.Versioning.TargetFrameworkAttribute(&quot;$(TargetFrameworkMoniker)&quot;, FrameworkDisplayName = &quot;$(TargetFrameworkMonikerDisplayName)&quot;)]
+		</TargetFrameworkMonikerAssemblyAttributeText>
+	</PropertyGroup>
+
+</Project>

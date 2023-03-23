@@ -1,0 +1,49 @@
+﻿<!--
+***********************************************************************************************
+Microsoft.Portable.VisualBasic.targets
+
+Contains common properties and targets that are shared by all v4.5 Portable Library VB projects.
+
+WARNING:  DO NOT MODIFY this file unless you are knowledgeable about MSBuild and have
+          created a backup copy.  Incorrect changes to this file will make it
+          impossible to load or build your projects from the command-line or the IDE.
+
+***********************************************************************************************
+-->
+
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+
+    <PropertyGroup>
+        <NoConfig>true</NoConfig>
+        <MyType>Empty</MyType>
+    </PropertyGroup>
+
+    <!-- Turns on VB runtime embedding if not already set and Microsoft.VisualBasic.dll does not exist in the target framework -->
+    <Target
+        Name="GetVBRuntime"
+        BeforeTargets="CoreCompile"
+        Condition="'$(VBRuntime)' == ''">
+
+        <ItemGroup>
+            <!-- Turn TargetFrameworkDirectory (which is a property with one or more directories) into an item -->
+            <_VBRuntimeSearchDirectories Include="$(TargetFrameworkDirectory)" />
+        </ItemGroup>
+
+        <PropertyGroup>
+            <_VBRuntimeFound Condition="Exists('%(_VBRuntimeSearchDirectories.Identity)Microsoft.VisualBasic.dll')">true</_VBRuntimeFound>
+        </PropertyGroup>
+
+        <PropertyGroup Condition="$(_VBRuntimeFound) != 'true'">
+            <VBRuntime>Embed</VBRuntime>
+        </PropertyGroup>
+    </Target>
+
+    <PropertyGroup>
+        <PortableEnableXamlTargets>true</PortableEnableXamlTargets>
+    </PropertyGroup>
+
+    <Import Project="Microsoft.Portable.Common.targets" />
+    <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
+    <Import Project="..\Microsoft.Portable.Core.targets" />
+
+</Project>

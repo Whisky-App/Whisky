@@ -1,0 +1,64 @@
+#!/bin/sh
+#
+# Wrapper script to start a Winelib application once it is installed
+#
+# Copyright (C) 2002 Alexandre Julliard
+#
+# This library is free software; you can redistribute it and/or
+# modify it under the terms of the GNU Lesser General Public
+# License as published by the Free Software Foundation; either
+# version 2.1 of the License, or (at your option) any later version.
+#
+# This library is distributed in the hope that it will be useful,
+# but WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+# Lesser General Public License for more details.
+#
+# You should have received a copy of the GNU Lesser General Public
+# License along with this library; if not, write to the Free Software
+# Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA 02110-1301, USA
+#
+
+# determine the app Winelib library name
+appname=`basename "$0" .exe`.exe
+
+# first try explicit WINELOADER
+if [ -x "$WINELOADER" ]; then exec "$WINELOADER" "$appname" "$@"; fi
+
+# now try the directory containing $0
+appdir=""
+case "$0" in
+  */*)
+    # $0 contains a path, use it
+    appdir=`dirname "$0"`
+    ;;
+  *)
+    # no directory in $0, search in PATH
+    saved_ifs=$IFS
+    IFS=:
+    for d in $PATH
+    do
+      IFS=$saved_ifs
+      if [ -x "$d/$0" ]; then appdir="$d"; break; fi
+    done
+    ;;
+esac
+if [ -x "$appdir/wine" ]; then exec "$appdir/wine" "$appname" "$@"; fi
+if [ -x "$appdir/wine64" ]; then exec "$appdir/wine64" "$appname" "$@"; fi
+
+# now look in PATH
+saved_ifs=$IFS
+IFS=:
+for d in $PATH
+do
+  IFS=$saved_ifs
+  if [ -x "$d/wine" ]; then exec "$d/wine" "$appname" "$@"; fi
+  if [ -x "$d/wine64" ]; then exec "$d/wine64" "$appname" "$@"; fi
+done
+
+# finally, the default bin directory
+if [ -x "/bin/wine" ]; then exec "/bin/wine" "$appname" "$@"; fi
+if [ -x "/bin/wine64" ]; then exec "/bin/wine64" "$appname" "$@"; fi
+
+echo "$0: the Wine loader is missing"
+exit 1
