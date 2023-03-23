@@ -9,6 +9,7 @@ import SwiftUI
 
 struct BottleView: View {
     @Binding var bottle: Bottle
+    @State var wineVersion: String = "Wine Version: "
 
     var body: some View {
         VStack {
@@ -20,10 +21,21 @@ struct BottleView: View {
                 Spacer()
             }
             Divider()
+            HStack {
+                Text(wineVersion)
+                Spacer()
+            }
             Spacer()
         }
         .padding()
         .navigationTitle(bottle.name)
+        .onAppear() {
+            do {
+                try wineVersion += Wine.version()
+            } catch {
+                wineVersion += "Failed"
+            }
+        }
     }
 }
 
