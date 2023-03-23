@@ -1,0 +1,2701 @@
+;; .INF script for the basic Wine configuration
+;; Version: Wine 8.3
+;;
+;; This should be run through setupapi:
+;;   rundll32 setupapi.dll,InstallHinfSection DefaultInstall 128 wine.inf
+;;
+;; Copyright (C) 2004 Chris Morgan
+;; Copyright (C) 2004 Brian Vincent
+;; Copyright (C) 2004 Alexandre Julliard
+;;
+;; This library is free software; you can redistribute it and/or
+;; modify it under the terms of the GNU Lesser General Public
+;; License as published by the Free Software Foundation; either
+;; version 2.1 of the License, or (at your option) any later version.
+;;
+;; This library is distributed in the hope that it will be useful,
+;; but WITHOUT ANY WARRANTY; without even the implied warranty of
+;; MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+;; Lesser General Public License for more details.
+;;
+;; You should have received a copy of the GNU Lesser General Public
+;; License along with this library; if not, write to the Free Software
+;; Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA 02110-1301, USA
+;;
+
+[version]
+signature="$CHICAGO$"
+
+[PreInstall]
+WineFakeDlls=FakeDllsPreInstall
+
+[PreInstall.ntamd64]
+WineFakeDlls=FakeDllsPreInstall
+AddReg=Wow64
+
+[PreInstall.ntarm64]
+WineFakeDlls=FakeDllsPreInstall
+AddReg=Wow64
+
+[PreInstall.Services]
+AddService=MountMgr,0x800,MountMgrService
+
+[PreInstall.ntamd64.Services]
+AddService=MountMgr,0x800,MountMgrService
+
+[PreInstall.ntarm64.Services]
+AddService=MountMgr,0x800,MountMgrService
+
+[FakeDllsPreInstall]
+11,,winedevice.exe
+12,,mountmgr.sys
+
+[DefaultInstall]
+RegisterDlls=RegisterDllsSection
+WineFakeDlls=FakeDllsWin32,FakeDlls
+UpdateInis=SystemIni
+CopyFiles=ColorFiles,EtcFiles,InfFiles,NlsFiles,SortFiles
+AddReg=\
+    Classes,\
+    ContentIndex,\
+    ControlClass,\
+    CurrentVersion,\
+    Debugger,\
+    DirectX,\
+    Fonts,\
+    MCI,\
+    Misc,\
+    OLE,\
+    Printing,\
+    Services, \
+    SessionMgr,\
+    Tapi,\
+    ThemeManager,\
+    LicenseInformation
+
+[DefaultInstall.NT]
+RegisterDlls=RegisterDllsSection
+WineFakeDlls=FakeDllsWin32,FakeDlls
+UpdateInis=SystemIni
+CopyFiles=ColorFiles,EtcFiles,InfFiles,NlsFiles,SortFiles
+AddReg=\
+    Classes,\
+    ContentIndex,\
+    ControlClass,\
+    CurrentVersion,\
+    Debugger,\
+    DirectX,\
+    Fonts,\
+    MCI,\
+    Misc,\
+    OLE,\
+    Printing,\
+    Services, \
+    SessionMgr,\
+    Tapi,\
+    ThemeManager,\
+    VersionInfo,\
+    LicenseInformation
+
+[DefaultInstall.ntamd64]
+RegisterDlls=RegisterDllsSection
+WineFakeDlls=FakeDllsWin64,FakeDlls
+UpdateInis=SystemIni
+CopyFiles=ColorFiles,EtcFiles,InfFiles,NlsFiles,SortFiles
+AddReg=\
+    Classes,\
+    ContentIndex,\
+    ControlClass,\
+    CurrentVersion,\
+    CurrentVersionWow64.ntamd64,\
+    Debugger,\
+    DirectX,\
+    Fonts,\
+    MCI,\
+    Misc,\
+    OLE,\
+    Printing,\
+    Services, \
+    SessionMgr,\
+    Tapi,\
+    ThemeManager,\
+    VersionInfo,\
+    LicenseInformation
+
+[DefaultInstall.ntarm64]
+RegisterDlls=RegisterDllsSection
+WineFakeDlls=FakeDllsWin64,FakeDlls
+UpdateInis=SystemIni
+CopyFiles=ColorFiles,EtcFiles,InfFiles,NlsFiles,SortFiles
+AddReg=\
+    Classes,\
+    ContentIndex,\
+    ControlClass,\
+    CurrentVersion,\
+    CurrentVersionWow64.ntarm64,\
+    Debugger,\
+    DirectX,\
+    Fonts,\
+    MCI,\
+    Misc,\
+    OLE,\
+    Printing,\
+    Services, \
+    SessionMgr,\
+    Tapi,\
+    ThemeManager,\
+    VersionInfo,\
+    LicenseInformation
+
+[Wow64Install.ntx86]
+RegisterDlls=RegisterDllsSection
+WineFakeDlls=FakeDllsWin32,FakeDllsWow64
+CopyFiles=NlsFiles
+AddReg=\
+    CurrentVersion,\
+    CurrentVersionWow64.ntx86,\
+    Debugger,\
+    DirectX,\
+    MCI,\
+    Misc,\
+    Tapi,\
+    VersionInfo,\
+    LicenseInformation
+
+[Wow64Install.ntarm]
+RegisterDlls=RegisterDllsSection
+WineFakeDlls=FakeDllsWin32,FakeDllsWow64
+CopyFiles=NlsFiles
+AddReg=\
+    CurrentVersion,\
+    CurrentVersionWow64.ntarm,\
+    Debugger,\
+    DirectX,\
+    MCI,\
+    Misc,\
+    Tapi,\
+    VersionInfo,\
+    LicenseInformation
+
+[DefaultInstall.Services]
+AddService=BITS,0,BITSService
+AddService=EventLog,0x800,EventLogService
+AddService=HTTP,0,HTTPService
+AddService=MSIServer,0,MSIService
+AddService=RpcSs,0,RpcSsService
+AddService=scardsvr,0,ScardSvrService
+AddService=Spooler,0,SpoolerService
+AddService=StiSvc,0,StiService
+AddService=TermService,0,TerminalServices
+AddService=PlugPlay,0x800,PlugPlayService
+AddService=FontCache3.0.0.0,0,WPFFontCacheService
+AddService=LanmanServer,0,LanmanServerService
+AddService=FontCache,0,FontCacheService
+AddService=Schedule,0,TaskSchedulerService
+AddService=Winmgmt,0,WinmgmtService
+AddService=wuauserv,0,wuauService
+AddService=NDIS,0x800,NDISService
+AddService=nsiproxy,0x800,NsiProxyService
+
+[DefaultInstall.NT.Services]
+AddService=BITS,0,BITSService
+AddService=EventLog,0x800,EventLogService
+AddService=HTTP,0,HTTPService
+AddService=MSIServer,0,MSIService
+AddService=RpcSs,0,RpcSsService
+AddService=scardsvr,0,ScardSvrService
+AddService=Spooler,0,SpoolerService
+AddService=StiSvc,0,StiService
+AddService=TermService,0,TerminalServices
+AddService=PlugPlay,0x800,PlugPlayService
+AddService=FontCache3.0.0.0,0,WPFFontCacheService
+AddService=LanmanServer,0,LanmanServerService
+AddService=FontCache,0,FontCacheService
+AddService=Schedule,0,TaskSchedulerService
+AddService=Winmgmt,0,WinmgmtService
+AddService=wuauserv,0,wuauService
+AddService=NDIS,0x800,NDISService
+AddService=nsiproxy,0x800,NsiProxyService
+
+[DefaultInstall.ntamd64.Services]
+AddService=BITS,0,BITSService
+AddService=EventLog,0x800,EventLogService
+AddService=HTTP,0,HTTPService
+AddService=MSIServer,0,MSIService
+AddService=RpcSs,0,RpcSsService
+AddService=scardsvr,0,ScardSvrService
+AddService=Spooler,0,SpoolerService
+AddService=StiSvc,0,StiService
+AddService=TermService,0,TerminalServices
+AddService=PlugPlay,0x800,PlugPlayService
+AddService=FontCache3.0.0.0,0,WPFFontCacheService
+AddService=LanmanServer,0,LanmanServerService
+AddService=FontCache,0,FontCacheService
+AddService=Schedule,0,TaskSchedulerService
+AddService=Winmgmt,0,WinmgmtService
+AddService=wuauserv,0,wuauService
+AddService=NDIS,0x800,NDISService
+AddService=nsiproxy,0x800,NsiProxyService
+
+[DefaultInstall.ntarm64.Services]
+AddService=BITS,0,BITSService
+AddService=EventLog,0x800,EventLogService
+AddService=HTTP,0,HTTPService
+AddService=MSIServer,0,MSIService
+AddService=RpcSs,0,RpcSsService
+AddService=scardsvr,0,ScardSvrService
+AddService=Spooler,0,SpoolerService
+AddService=StiSvc,0,StiService
+AddService=TermService,0,TerminalServices
+AddService=PlugPlay,0x800,PlugPlayService
+AddService=FontCache3.0.0.0,0,WPFFontCacheService
+AddService=LanmanServer,0,LanmanServerService
+AddService=FontCache,0,FontCacheService
+AddService=Schedule,0,TaskSchedulerService
+AddService=Winmgmt,0,WinmgmtService
+AddService=wuauserv,0,wuauService
+AddService=NDIS,0x800,NDISService
+AddService=nsiproxy,0x800,NsiProxyService
+
+[Strings]
+MciExtStr="Software\Microsoft\Windows NT\CurrentVersion\MCI Extensions"
+Mci32Str="Software\Microsoft\Windows NT\CurrentVersion\MCI32"
+CurrentVersion="Software\Microsoft\Windows\CurrentVersion"
+CurrentVersionNT="Software\Microsoft\Windows NT\CurrentVersion"
+FontSubStr="Software\Microsoft\Windows NT\CurrentVersion\FontSubstitutes"
+Control="System\CurrentControlSet\Control"
+
+[Classes]
+HKCR,.chm,,2,"chm.file"
+HKCR,.cpl,,2,"cplfile"
+HKCR,.hlp,,2,"hlpfile"
+HKCR,.inf,,2,"inffile"
+HKCR,.ini,,2,"inifile"
+HKCR,.lnk,,2,"lnkfile"
+HKCR,.msi,,2,"Msi.Package"
+HKCR,.msp,,2,"Msi.Patch"
+HKCR,.pdf,,2,"pdffile"
+HKCR,.rtf,,2,"rtffile"
+HKCR,.wri,,2,"wrifile"
+HKCR,*\shellex\ContextMenuHandlers,,16
+HKCR,chm.file,,2,"Compiled HTML Help File"
+HKCR,chm.file\DefaultIcon,,2,"%10%\hh.exe,0"
+HKCR,chm.file\shell\open\command,,2,"""%10%\hh.exe"" ""%1"""
+HKCR,cplfile,,2,"Control Panel Item"
+HKCR,cplfile\shell\cplopen,,2,"Open with Control Panel"
+HKCR,cplfile\shell\cplopen\command,,2,"rundll32.exe shell32.dll,Control_RunDLL ""%1"",%*"
+HKCR,DirectShow,,16
+HKCR,exefile,,2,"Application"
+HKCR,exefile\DefaultIcon,,2,"%1"
+HKCR,exefile\shell\open\command,,2,"""%1"" %*"
+HKCR,exefile\shell\runas\command,,2,"""%1"" %*"
+HKCR,folder\shell\open\ddeexec,,2,"[ViewFolder("%l", %I, %S)]"
+HKCR,folder\shell\open\ddeexec,"NoActivateHandler",2,""
+HKCR,folder\shell\open\ddeexec\application,,2,"Folders"
+HKCR,folder\shellex\ContextMenuHandlers,,16
+HKCR,hlpfile,,2,"Help File"
+HKCR,hlpfile\shell\open\command,,2,"""%11%\winhlp32.exe"" ""%1"""
+HKCR,htmlfile\shell\open\command,,2,"""%11%\winebrowser.exe"" ""%1"""
+HKCR,inffile,,2,"Setup Information"
+HKCR,inffile\shell\install\command,,2,"%11%\rundll32.exe setupapi,InstallHinfSection DefaultInstall 132 %1"
+HKCR,inifile,,2,"Configuration Settings"
+HKCR,inifile\shell\open\command,,2,"""%11%\notepad.exe"" ""%1"""
+HKCR,inifile\shell\print\command,,2,"""%11%\notepad.exe"" /p ""%1"""
+HKCR,lnkfile,,2,"Shortcut"
+HKCR,lnkfile,"NeverShowExt",2,""
+HKCR,lnkfile,"IsShortcut",2,"yes"
+HKCR,lnkfile\CLSID,,2,"{00021401-0000-0000-C000-000000000046}"
+HKCR,lnkfile\shellex\IconHandler,,2,"{00021401-0000-0000-C000-000000000046}"
+HKCR,lnkfile\shellex\ContextMenuHandlers\{00021401-0000-0000-C000-000000000046},,0x10,
+HKCR,MediaFoundation,,16
+HKCR,Msi.Package,,2,"Windows Installer Package"
+HKCR,Msi.Package\DefaultIcon,,2,"msiexec.exe"
+HKCR,Msi.Package\shell\Open\command,,2,"%11%\msiexec.exe /i ""%1"""
+HKCR,Msi.Package\shell\Repair\command,,2,"%11%\msiexec.exe /f ""%1"""
+HKCR,Msi.Package\shell\Uninstall\command,,2,"%11%\msiexec.exe /x ""%1"""
+HKCR,Msi.Patch,,2,"Windows Installer Patch"
+HKCR,Msi.Patch\DefaultIcon,,2,"msiexec.exe"
+HKCR,Msi.Patch\shell\Open\command,,2,"%11%\msiexec.exe /p ""%1"""
+HKCR,pdffile,,2,"PDF Document"
+HKCR,pdffile\shell\open\command,,2,"""%11%\winebrowser.exe"" ""%1"""
+HKCR,rtffile,,2,"Rich Text Document"
+HKCR,rtffile\shell\open\command,,2,"""%16422%\Windows NT\Accessories\wordpad.exe"" ""%1"""
+HKCR,rtffile\shell\print\command,,2,"""%16422%\Windows NT\Accessories\wordpad.exe"" /p ""%1"""
+HKCR,txtfile,,2,"Text Document"
+HKCR,txtfile\shell\open\command,,2,"""%11%\notepad.exe"" ""%1"""
+HKCR,txtfile\shell\print\command,,2,"""%11%\notepad.exe"" /p ""%1"""
+HKCR,wrifile\shell\open\command,,2,"""%16422%\Windows NT\Accessories\wordpad.exe"" ""%1"""
+HKCR,wrifile\shell\print\command,,2,"""%16422%\Windows NT\Accessories\wordpad.exe"" /p ""%1"""
+HKCR,xmlfile,,2,"XML Document"
+HKCR,xmlfile\shell\open\command,,2,"""%11%\winebrowser.exe"" ""%1"""
+HKCR,ftp\shell\open\command,,2,"""%11%\winebrowser.exe"" ""%1"""
+HKCR,http\shell\open\command,,2,"""%11%\winebrowser.exe"" ""%1"""
+HKCR,https\shell\open\command,,2,"""%11%\winebrowser.exe"" ""%1"""
+HKCR,mailto\shell\open\command,,2,"""%11%\winebrowser.exe"" ""%1"""
+
+[ContentIndex]
+HKLM,System\CurrentControlSet\Control\ContentIndex\Language\Neutral,"WBreakerClass",,"{369647e0-17b0-11ce-9950-00aa004bbb1f}"
+HKLM,System\CurrentControlSet\Control\ContentIndex\Language\Neutral,"StemmerClass",,""
+HKLM,System\CurrentControlSet\Control\ContentIndex\Language\Neutral,"Locale",0x10003,0
+
+[ControlClass]
+HKLM,System\CurrentControlSet\Control\Class\{4d36e967-e325-11ce-bfc1-08002be10318},,,"Disk drives"
+HKLM,System\CurrentControlSet\Control\Class\{4d36e967-e325-11ce-bfc1-08002be10318},"Class",,"DiskDrive"
+HKLM,System\CurrentControlSet\Control\Class\{4d36e968-e325-11ce-bfc1-08002be10318},,,"Display adapters"
+HKLM,System\CurrentControlSet\Control\Class\{4d36e968-e325-11ce-bfc1-08002be10318},"Class",,"Display"
+HKLM,System\CurrentControlSet\Control\Class\{4d36e96e-e325-11ce-bfc1-08002be10318},,,"Monitors"
+HKLM,System\CurrentControlSet\Control\Class\{4d36e96e-e325-11ce-bfc1-08002be10318},"Class",,"Monitor"
+HKLM,System\CurrentControlSet\Control\Class\{4d36e978-e325-11ce-bfc1-08002be10318},,,"Ports (COM & LPT)"
+HKLM,System\CurrentControlSet\Control\Class\{4d36e978-e325-11ce-bfc1-08002be10318},"Class",,"Ports"
+HKLM,System\CurrentControlSet\Control\Class\{4d36e97d-e325-11ce-bfc1-08002be10318},,,"System devices"
+HKLM,System\CurrentControlSet\Control\Class\{4d36e97d-e325-11ce-bfc1-08002be10318},"Class",,"System"
+HKLM,System\CurrentControlSet\Control\Class\{6bdd1fc6-810f-11d0-bec7-08002be2092f},,,"Imaging devices"
+HKLM,System\CurrentControlSet\Control\Class\{6bdd1fc6-810f-11d0-bec7-08002be2092f},"Class",,"Image"
+HKLM,System\CurrentControlSet\Control\Class\{745a17a0-74d3-11d0-b6fe-00a0c90f57da},,,"Human Interface Devices"
+HKLM,System\CurrentControlSet\Control\Class\{745a17a0-74d3-11d0-b6fe-00a0c90f57da},"Class",,"HIDClass"
+
+[CurrentVersion]
+HKCU,%CurrentVersion%\Run,,16
+HKCU,%CurrentVersionNT%\Winlogon,,16
+HKLM,%CurrentVersion%,"CommonFilesDir",,"%16427%"
+HKLM,%CurrentVersion%,"FirstInstallDateTime",1,21,81,7c,23
+HKLM,%CurrentVersion%,"ProductId",,"12345-oem-0000001-54321"
+HKLM,%CurrentVersion%,"ProgramFilesDir",,"%16422%"
+HKLM,%CurrentVersion%,"ProgramFilesPath",0x20000,"%%ProgramFiles%%"
+HKLM,%CurrentVersion%,"RegisteredOrganization",2,""
+HKLM,%CurrentVersion%,"RegisteredOwner",2,""
+HKLM,%CurrentVersion%\App Paths,,16
+HKLM,%CurrentVersion%\Control Panel\Cursors\Schemes,,16
+HKLM,%CurrentVersion%\Controls Folder\PowerCfg,"DiskSpinDownMax",,"3600"
+HKLM,%CurrentVersion%\Controls Folder\PowerCfg,"DiskSpinDownMin",,"3"
+HKLM,%CurrentVersion%\Controls Folder\PowerCfg,"LastID",,"5"
+HKLM,%CurrentVersion%\Explorer\AutoplayHandlers,,16
+HKLM,%CurrentVersion%\Explorer\DriveIcons,,16
+HKLM,%CurrentVersion%\Explorer\KindMap,,16
+HKLM,%CurrentVersion%\Group Policy,,16
+HKLM,%CurrentVersion%\Installer,"InstallerLocation",,"%11%"
+HKLM,%CurrentVersion%\Policies\System,"EnableLUA",0x10003,0
+HKLM,%CurrentVersion%\PreviewHandlers,,16
+HKLM,%CurrentVersion%\Run,,16
+HKLM,%CurrentVersion%\Setup,"BootDir",,"%30%"
+HKLM,%CurrentVersion%\Setup,"SharedDir",,"%25%"
+HKLM,%CurrentVersion%\Setup\WindowsFeatures\WindowsMediaVersion,,,"12.0.7601.18840"
+HKLM,%CurrentVersion%\Shell Extensions\Approved,,16
+HKLM,%CurrentVersion%\Time Zones,"SymbolicLinkValue",0x60000,"\Registry\Machine\%CurrentVersionNT%\Time Zones"
+HKLM,%CurrentVersion%\Uninstall,,16
+HKLM,%CurrentVersionNT%,"InstallDate",0x10003,1273299354
+HKLM,%CurrentVersionNT%,"ProductId",,"12345-oem-0000001-54321"
+HKLM,%CurrentVersionNT%,"RegisteredOrganization",2,""
+HKLM,%CurrentVersionNT%,"RegisteredOwner",2,""
+HKLM,%CurrentVersionNT%,"SystemRoot",,"%10%"
+HKLM,%CurrentVersionNT%\Console,,16
+HKLM,%CurrentVersionNT%\Drivers32,,16
+HKLM,%CurrentVersionNT%\FontDpi,,16
+HKLM,%CurrentVersionNT%\FontLink,,16
+HKLM,%CurrentVersionNT%\FontMapper,,16
+HKLM,%CurrentVersionNT%\Fonts,,16
+HKLM,%CurrentVersionNT%\FontSubstitutes,,16
+HKLM,%CurrentVersionNT%\Gre_Initialize,,16
+HKLM,%CurrentVersionNT%\Hotfix\Q246009,"Installed",,"1"
+HKLM,%CurrentVersionNT%\Image File Execution Options,,16
+HKLM,%CurrentVersionNT%\IniFileMapping\win.ini,"desktop",,"USR:Control Panel\Desktop"
+HKLM,%CurrentVersionNT%\IniFileMapping\win.ini,"devices",,"USR:Software\Microsoft\Windows NT\CurrentVersion\Devices"
+HKLM,%CurrentVersionNT%\IniFileMapping\win.ini,"extensions",,"USR:Software\Microsoft\Windows NT\CurrentVersion\Extensions"
+HKLM,%CurrentVersionNT%\IniFileMapping\win.ini,"intl",,"USR:Control Panel\International"
+HKLM,%CurrentVersionNT%\IniFileMapping\win.ini,"printerports",,"USR:Software\Microsoft\Windows NT\CurrentVersion\PrinterPorts"
+HKLM,%CurrentVersionNT%\IniFileMapping\win.ini,"sounds",,"USR:Control Panel\Sounds"
+HKLM,%CurrentVersionNT%\IniFileMapping\win.ini\windows,,,"USR:Software\Microsoft\Windows NT\CurrentVersion\Windows"
+HKLM,%CurrentVersionNT%\IniFileMapping\win.ini\windows,"CursorBlinkRate",,"USR:Control Panel\Desktop"
+HKLM,%CurrentVersionNT%\LanguagePack,,16
+HKLM,%CurrentVersionNT%\NetworkCards,,16
+HKLM,%CurrentVersionNT%\OpenGLDrivers,,16
+HKLM,%CurrentVersionNT%\Perflib,,16
+HKLM,%CurrentVersionNT%\Ports,,16
+HKLM,%CurrentVersionNT%\Print,,16
+HKLM,%CurrentVersionNT%\ProfileList,,16
+HKLM,%CurrentVersionNT%\Winlogon,"Shell",,"explorer.exe"
+
+[CurrentVersionWow64.ntamd64]
+HKLM,%CurrentVersion%,"ProgramFilesDir (x86)",,"%16426%"
+HKLM,%CurrentVersion%,"CommonFilesDir (x86)",,"%16428%"
+HKLM,Software\Microsoft\Wow64\x86,,2,"wow64cpu.dll"
+
+[CurrentVersionWow64.ntarm64]
+HKLM,%CurrentVersion%,"ProgramFilesDir (x86)",,"%16426%"
+HKLM,%CurrentVersion%,"CommonFilesDir (x86)",,"%16428%"
+HKLM,%CurrentVersion%,"ProgramFilesDir (Arm)",,"C:\Program Files (Arm)"
+HKLM,%CurrentVersion%,"CommonFilesDir (Arm)",,"C:\Program Files (Arm)\Common Files"
+HKLM,Software\Microsoft\Wow64\arm,,2,"wowarmhw.dll"
+HKLM,Software\Microsoft\Wow64\x86,,2,"xtajit.dll"
+
+[CurrentVersionWow64.ntx86]
+HKLM,%CurrentVersion%,"ProgramFilesDir (x86)",,"%16422%"
+HKLM,%CurrentVersion%,"CommonFilesDir (x86)",,"%16427%"
+
+[CurrentVersionWow64.ntarm]
+HKLM,%CurrentVersion%,"ProgramFilesDir (Arm)",,"%16422%"
+HKLM,%CurrentVersion%,"CommonFilesDir (Arm)",,"%16427%"
+
+[Debugger]
+HKLM,%CurrentVersionNT%\AeDebug,"Debugger",2,"winedbg --auto %ld %ld"
+HKLM,%CurrentVersionNT%\AeDebug,"Auto",2,"1"
+HKCU,Software\Wine\Debug,"RelayExclude",2,"ntdll.RtlEnterCriticalSection;ntdll.RtlTryEnterCriticalSection;ntdll.RtlLeaveCriticalSection;kernel32.48;kernel32.49;kernel32.94;kernel32.95;kernel32.96;kernel32.97;kernel32.98;kernel32.TlsGetValue;kernel32.TlsSetValue;kernel32.FlsGetValue;kernel32.FlsSetValue;kernel32.SetLastError"
+HKCU,Software\Wine\Debug,"RelayFromExclude",2,"winex11.drv;winemac.drv;user32;gdi32;advapi32;kernel32"
+
+[DirectX]
+HKLM,Software\Microsoft\DirectX,"Version",,"4.09.00.0904"
+HKLM,Software\Microsoft\DirectX,"InstalledVersion",1,00,00,00,09,00,00,00,00
+HKLM,Software\Microsoft\DirectMusic,GMFilePath,,"%12%\gm.dls"
+HKLM,Software\Microsoft\DirectMusic\Defaults,DefaultOutputPort,,"{58C2B4D0-46E7-11D1-89AC-00A0C9054129}"
+HKLM,Software\Microsoft\DirectMusic\SoftwareSynths\{58C2B4D0-46E7-11D1-89AC-00A0C9054129},Description,,"Microsoft Software Synthesizer"
+HKLM,Software\Microsoft\DirectPlay\Service Providers\Internet TCP/IP Connection For DirectPlay,"DescriptionA",,"Internet TCP/IP Connection For DirectPlay"
+HKLM,Software\Microsoft\DirectPlay\Service Providers\Internet TCP/IP Connection For DirectPlay,"DescriptionW",,"Internet TCP/IP Connection For DirectPlay"
+HKLM,Software\Microsoft\DirectPlay\Service Providers\Internet TCP/IP Connection For DirectPlay,"dwReserved1",0x10001,0x000001f4
+HKLM,Software\Microsoft\DirectPlay\Service Providers\Internet TCP/IP Connection For DirectPlay,"dwReserved2",0x10001,0x00000000
+HKLM,Software\Microsoft\DirectPlay\Service Providers\Internet TCP/IP Connection For DirectPlay,"Guid",,"{36E95EE0-8577-11cf-960C-0080C7534E82}"
+HKLM,Software\Microsoft\DirectPlay\Service Providers\Internet TCP/IP Connection For DirectPlay,"NATHelp",,"dpnhupnp.dll"
+HKLM,Software\Microsoft\DirectPlay\Service Providers\Internet TCP/IP Connection For DirectPlay,"Path",,"dpwsockx.dll"
+HKLM,Software\Microsoft\DirectPlay\Service Providers\IPX Connection For DirectPlay,"DescriptionA",,"IPX Connection For DirectPlay"
+HKLM,Software\Microsoft\DirectPlay\Service Providers\IPX Connection For DirectPlay,"DescriptionW",,"IPX Connection For DirectPlay"
+HKLM,Software\Microsoft\DirectPlay\Service Providers\IPX Connection For DirectPlay,"dwReserved1",0x10001,0x00000032
+HKLM,Software\Microsoft\DirectPlay\Service Providers\IPX Connection For DirectPlay,"dwReserved2",0x10001,0x00000000
+HKLM,Software\Microsoft\DirectPlay\Service Providers\IPX Connection For DirectPlay,"Guid",,"{685BC400-9D2C-11cf-A9CD-00AA006886E3}"
+HKLM,Software\Microsoft\DirectPlay\Service Providers\IPX Connection For DirectPlay,"Path",,"dpwsockx.dll"
+HKLM,Software\Microsoft\DirectPlay\Service Providers\Modem Connection For DirectPlay,"DescriptionA",,"Modem Connection For DirectPlay"
+HKLM,Software\Microsoft\DirectPlay\Service Providers\Modem Connection For DirectPlay,"DescriptionW",,"Modem Connection For DirectPlay"
+HKLM,Software\Microsoft\DirectPlay\Service Providers\Modem Connection For DirectPlay,"dwReserved1",0x10001,0x00000000
+HKLM,Software\Microsoft\DirectPlay\Service Providers\Modem Connection For DirectPlay,"dwReserved2",0x10001,0x00000000
+HKLM,Software\Microsoft\DirectPlay\Service Providers\Modem Connection For DirectPlay,"Guid",,"{44EAA760-CB68-11cf-9C4E-00A0C905425E}"
+HKLM,Software\Microsoft\DirectPlay\Service Providers\Modem Connection For DirectPlay,"Path",,"dpmodemx.dll"
+HKLM,Software\Microsoft\DirectPlay\Service Providers\Serial Connection For DirectPlay,"DescriptionA",,"Serial Connection For DirectPlay"
+HKLM,Software\Microsoft\DirectPlay\Service Providers\Serial Connection For DirectPlay,"DescriptionW",,"Serial Connection For DirectPlay"
+HKLM,Software\Microsoft\DirectPlay\Service Providers\Serial Connection For DirectPlay,"dwReserved1",0x10001,0x00000000
+HKLM,Software\Microsoft\DirectPlay\Service Providers\Serial Connection For DirectPlay,"dwReserved2",0x10001,0x00000000
+HKLM,Software\Microsoft\DirectPlay\Service Providers\Serial Connection For DirectPlay,"Guid",,"{0F1D6860-88D9-11cf-9C4E-00A0C905425E}"
+HKLM,Software\Microsoft\DirectPlay\Service Providers\Serial Connection For DirectPlay,"Path",,"dpmodemx.dll"
+
+[SessionMgr]
+HKLM,%Control%\Session Manager,CriticalSectionTimeout,0x00040002,0x00278d00
+HKLM,%Control%\Session Manager,GlobalFlag,0x00040002,0
+HKLM,%Control%\Session Manager,HeapDeCommitFreeBlockThreshold,0x00040002,0
+HKLM,%Control%\Session Manager,HeapDeCommitTotalFreeThreshold,0x00040002,0
+HKLM,%Control%\Session Manager,HeapSegmentCommit,0x00040002,0
+HKLM,%Control%\Session Manager,HeapSegmentReserve,0x00040002,0
+HKLM,%Control%\Session Manager\Environment,"ComSpec",0x00020000,"%SystemRoot%\system32\cmd.exe"
+HKLM,%Control%\Session Manager\Environment,"PATH",0x00020002,"%SystemRoot%\system32;%SystemRoot%;%SystemRoot%\system32\wbem;%SystemRoot%\system32\WindowsPowershell\v1.0"
+HKLM,%Control%\Session Manager\Environment,"PATHEXT",,".com;.exe;.bat;.cmd;.vbs;.vbe;.js;.jse;.wsf;.wsh"
+HKLM,%Control%\Session Manager\Environment,"TEMP",0x00020002,"%SystemRoot%\temp"
+HKLM,%Control%\Session Manager\Environment,"TMP",0x00020002,"%SystemRoot%\temp"
+HKLM,%Control%\Session Manager\Environment,"windir",0x00020000,"%SystemRoot%"
+HKLM,%Control%\Session Manager\Environment,"winsysdir",,"%11%"
+HKLM,%Control%\Session Manager\Memory Management,PagingFiles,,"%24%\pagefile.sys 27 77"
+HKLM,%Control%\Session Manager\Memory Management,WriteWatch,0x00040002,1
+
+[Fonts]
+HKLM,%FontSubStr%,"Arial Baltic,186",,"Arial,186"
+HKLM,%FontSubStr%,"Arial CE,238",,"Arial,238"
+HKLM,%FontSubStr%,"Arial CYR,204",,"Arial,204"
+HKLM,%FontSubStr%,"Arial Greek,161",,"Arial,161"
+HKLM,%FontSubStr%,"Arial TUR,162",,"Arial,162"
+HKLM,%FontSubStr%,"Courier New Baltic,186",,"Courier New,186"
+HKLM,%FontSubStr%,"Courier New CE,238",,"Courier New,238"
+HKLM,%FontSubStr%,"Courier New CYR,204",,"Courier New,204"
+HKLM,%FontSubStr%,"Courier New Greek,161",,"Courier New,161"
+HKLM,%FontSubStr%,"Courier New TUR,162",,"Courier New,162"
+HKLM,%FontSubStr%,"Helv",,"MS Sans Serif"
+HKLM,%FontSubStr%,"Helvetica",,"Arial"
+HKLM,%FontSubStr%,"MS Shell Dlg 2",,"Tahoma"
+HKLM,%FontSubStr%,"Times",,"Times New Roman"
+HKLM,%FontSubStr%,"Times New Roman Baltic,186",,"Times New Roman,186"
+HKLM,%FontSubStr%,"Times New Roman CE,238",,"Times New Roman,238"
+HKLM,%FontSubStr%,"Times New Roman CYR,204",,"Times New Roman,204"
+HKLM,%FontSubStr%,"Times New Roman Greek,161",,"Times New Roman,161"
+HKLM,%FontSubStr%,"Times New Roman TUR,162",,"Times New Roman,162"
+HKLM,System\CurrentControlSet\Hardware Profiles\Current\Software\Fonts,"LogPixels",0x10003,0x00000060
+
+[MCI]
+HKLM,%Mci32Str%,"AVIVideo",,"mciavi32.dll"
+HKLM,%Mci32Str%,"CDAudio",,"mcicda.dll"
+HKLM,%Mci32Str%,"Sequencer",,"mciseq.dll"
+HKLM,%Mci32Str%,"WaveAudio",,"mciwave.dll"
+HKLM,%Mci32Str%,"MPEGVideo",,"mciqtz32.dll"
+
+HKLM,%MciExtStr%,"aifc",,"MPEGVideo"
+HKLM,%MciExtStr%,"asf",,"MPEGVideo"
+HKLM,%MciExtStr%,"asx",,"MPEGVideo"
+HKLM,%MciExtStr%,"au",,"MPEGVideo"
+HKLM,%MciExtStr%,"avi",,"AVIVideo"
+HKLM,%MciExtStr%,"cda",,"CDAudio"
+HKLM,%MciExtStr%,"lsf",,"MPEGVideo"
+HKLM,%MciExtStr%,"lsx",,"MPEGVideo"
+HKLM,%MciExtStr%,"m1v",,"MPEGVideo"
+HKLM,%MciExtStr%,"m3u",,"MPEGVideo"
+HKLM,%MciExtStr%,"mid",,"Sequencer"
+HKLM,%MciExtStr%,"midi",,"Sequencer"
+HKLM,%MciExtStr%,"mp2",,"MPEGVideo"
+HKLM,%MciExtStr%,"mp2v",,"MPEGVideo"
+HKLM,%MciExtStr%,"mp3",,"MPEGVideo"
+HKLM,%MciExtStr%,"mpa",,"MPEGVideo"
+HKLM,%MciExtStr%,"mpe",,"MPEGVideo"
+HKLM,%MciExtStr%,"mpeg",,"MPEGVideo"
+HKLM,%MciExtStr%,"mpg",,"MPEGVideo"
+HKLM,%MciExtStr%,"mpv",,"MPEGVideo"
+HKLM,%MciExtStr%,"mpv2",,"MPEGVideo"
+HKLM,%MciExtStr%,"rmi",,"Sequencer"
+HKLM,%MciExtStr%,"snd",,"MPEGVideo"
+HKLM,%MciExtStr%,"wav",,"WaveAudio"
+HKLM,%MciExtStr%,"wax",,"MPEGVideo"
+HKLM,%MciExtStr%,"wm",,"MPEGVideo"
+HKLM,%MciExtStr%,"wma",,"MPEGVideo"
+HKLM,%MciExtStr%,"wmp",,"MPEGVideo"
+HKLM,%MciExtStr%,"wmv",,"MPEGVideo"
+HKLM,%MciExtStr%,"wmx",,"MPEGVideo"
+HKLM,%MciExtStr%,"wvx",,"MPEGVideo"
+
+[Misc]
+HKLM,Software\Borland\Database Engine\Settings\SYSTEM\INIT,SHAREDMEMLOCATION,,9000
+HKLM,Software\Clients\Mail,,2,"Native Mail Client"
+HKLM,Software\Clients\Mail\Native Mail Client,,2,"Native Mail Client"
+HKLM,Software\Clients\Mail\Native Mail Client,"DLLPath",2,"%11%\winemapi.dll"
+HKLM,Software\Microsoft\Advanced INF Setup,,16
+HKLM,Software\Microsoft\Clients,,16
+HKLM,Software\Microsoft\Cryptography\Calais\Current,,16
+HKLM,Software\Microsoft\Cryptography\Calais\Readers,,16
+HKLM,Software\Microsoft\Cryptography\Services,,16
+HKLM,Software\Microsoft\CTF\SystemShared,,16
+HKLM,Software\Microsoft\CTF\TIP,,16
+HKLM,Software\Microsoft\DFS,,16
+HKLM,Software\Microsoft\Driver Signing,,16
+HKLM,Software\Microsoft\EnterpriseCertificates,,16
+HKLM,Software\Microsoft\EventSystem,,16
+HKLM,Software\Microsoft\MediaPlayer,"Installation DirectoryLFN",2,"%16422%\Windows Media Player"
+HKLM,Software\Microsoft\MediaPlayer\PlayerUpgrade,"PlayerVersion",2,"12,0,7601,18840"
+HKLM,Software\Microsoft\MSMQ,,16
+HKLM,Software\Microsoft\Non-Driver Signing,,16
+HKLM,Software\Microsoft\Notepad\DefaultFonts,,16
+HKLM,Software\Microsoft\RAS,,16
+HKLM,Software\Microsoft\Rpc\SecurityService,1,2,"secur32.dll"
+HKLM,Software\Microsoft\Rpc\SecurityService,10,2,"secur32.dll"
+HKLM,Software\Microsoft\Rpc\SecurityService,14,2,"schannel.dll"
+HKLM,Software\Microsoft\Rpc\SecurityService,16,2,"secur32.dll"
+HKLM,Software\Microsoft\Rpc\SecurityService,18,2,"secur32.dll"
+HKLM,Software\Microsoft\Rpc\SecurityService,68,2,"netlogon.dll"
+HKLM,Software\Microsoft\Rpc\SecurityService,9,2,"secur32.dll"
+HKLM,Software\Microsoft\Shared Tools\MSInfo,,16
+HKLM,Software\Microsoft\SystemCertificates,,16
+HKLM,Software\Microsoft\TermServLicensing,,16
+HKLM,Software\Microsoft\Transaction Server,,16
+HKLM,Software\Microsoft\WBEM,"Installation Directory",2,"%11%\wbem"
+HKLM,Software\Microsoft\Windows Messaging Subsystem,"MAPI",2,"1"
+HKLM,Software\Policies,,16
+HKLM,Software\Registered Applications,,16
+HKLM,System\CurrentControlSet\Control\hivelist,,16
+HKLM,System\CurrentControlSet\Control\Lsa,"Security Packages",0x10002,kerberos,schannel
+HKLM,System\CurrentControlSet\Control\Lsa\Kerberos,,16
+HKLM,System\CurrentControlSet\Control\Lsa\MSV1_0,,16
+HKLM,System\CurrentControlSet\Control\Nls\Language,"Default",,"0409"
+HKLM,System\CurrentControlSet\Control\Nls\Language,"InstallLanguage",,"0409"
+HKLM,System\CurrentControlSet\Control\SecurityProviders\Schannel\Protocols\SSL 2.0\Client,"DisabledByDefault",0x10003,1
+HKLM,System\CurrentControlSet\Control\ServiceGroupOrder,"List",0x00010000,"TDI"
+HKLM,System\CurrentControlSet\Control\TimeZoneInformation,"StandardName",2,""
+HKLM,System\CurrentControlSet\Control\TimeZoneInformation,"TimeZoneKeyName",2,""
+HKLM,System\CurrentControlSet\Control\VirtualDeviceDrivers,,16
+HKLM,System\CurrentControlSet\Control\VMM32Files,,16
+HKLM,System\Select,"Current",0x10003,1
+HKCU,AppEvents\Schemes\Apps\Explorer\Navigating\.Current,,,""
+HKCU,Software\Microsoft\Protected Storage System Provider,,16
+; Some apps requires at least four subkeys of Active Setup\Installed Components
+HKLM,SOFTWARE\Microsoft\Active Setup\Installed Components\{44BBA855-CC51-11CF-AAFA-00AA00B6015F},,2,"DirectDrawEx"
+HKLM,SOFTWARE\Microsoft\Active Setup\Installed Components\{44BBA855-CC51-11CF-AAFA-00AA00B6015F},"ComponentID",2,"DirectDrawEx"
+HKLM,SOFTWARE\Microsoft\Active Setup\Installed Components\{44BBA855-CC51-11CF-AAFA-00AA00B6015F},"IsInstalled",0x10003,1
+HKLM,SOFTWARE\Microsoft\Active Setup\Installed Components\{44BBA855-CC51-11CF-AAFA-00AA00B6015F},"Locale",2,"*"
+HKLM,SOFTWARE\Microsoft\Active Setup\Installed Components\{44BBA855-CC51-11CF-AAFA-00AA00B6015F},"Version",2,"4,71,1113,0"
+
+HKLM,SOFTWARE\Microsoft\Active Setup\Installed Components\{de5aed00-a4bf-11d1-9948-00c04f98bbc9},,2,"HTML Help"
+HKLM,SOFTWARE\Microsoft\Active Setup\Installed Components\{de5aed00-a4bf-11d1-9948-00c04f98bbc9},"ComponentID",2,"HTMLHelp"
+HKLM,SOFTWARE\Microsoft\Active Setup\Installed Components\{de5aed00-a4bf-11d1-9948-00c04f98bbc9},"IsInstalled",0x10003,1
+HKLM,SOFTWARE\Microsoft\Active Setup\Installed Components\{de5aed00-a4bf-11d1-9948-00c04f98bbc9},"Locale",2,"*"
+HKLM,SOFTWARE\Microsoft\Active Setup\Installed Components\{de5aed00-a4bf-11d1-9948-00c04f98bbc9},"Version",2,"4,74,9273,0"
+
+HKLM,SOFTWARE\Microsoft\Active Setup\Installed Components\{6BF52A52-394A-11d3-B153-00C04F79FAA6},,2,"Windows Media Player"
+HKLM,SOFTWARE\Microsoft\Active Setup\Installed Components\{6BF52A52-394A-11d3-B153-00C04F79FAA6},"ComponentID",2,"wmp"
+HKLM,SOFTWARE\Microsoft\Active Setup\Installed Components\{6BF52A52-394A-11d3-B153-00C04F79FAA6},"IsInstalled",0x10003,1
+HKLM,SOFTWARE\Microsoft\Active Setup\Installed Components\{6BF52A52-394A-11d3-B153-00C04F79FAA6},"Locale",2,"*"
+HKLM,SOFTWARE\Microsoft\Active Setup\Installed Components\{6BF52A52-394A-11d3-B153-00C04F79FAA6},"Version",2,"12,0,7601,18840"
+
+; URL Associations
+HKCU,Software\Microsoft\Windows\Shell\Associations\UrlAssociations\ftp\UserChoice,"ProgId",,"ftp"
+HKCU,Software\Microsoft\Windows\Shell\Associations\UrlAssociations\http\UserChoice,"ProgId",,"http"
+HKCU,Software\Microsoft\Windows\Shell\Associations\UrlAssociations\https\UserChoice,"ProgId",,"https"
+
+[OLE]
+HKLM,"Software\Microsoft\OLE","EnableDCOM",,"Y"
+HKLM,"Software\Microsoft\OLE","EnableRemoteConnect",,"N"
+
+[Printing]
+HKLM,%Control%\Print\Monitors\Local Port,"Driver",2,"localspl.dll"
+HKLM,%Control%\Print\Printers,"DefaultSpoolDirectory",2,"%11%\spool\printers"
+HKLM,%CurrentVersionNT%\Ports,"FILE:",,""
+HKLM,%CurrentVersionNT%\Ports,"LPT1:",,""
+HKLM,%CurrentVersionNT%\Ports,"LPT2:",,""
+HKLM,%CurrentVersionNT%\Ports,"LPT3:",,""
+HKLM,%CurrentVersionNT%\Ports,"COM1:",2,"9600,n,8,1"
+HKLM,%CurrentVersionNT%\Ports,"COM2:",2,"9600,n,8,1"
+HKLM,%CurrentVersionNT%\Ports,"COM3:",2,"9600,n,8,1"
+HKLM,%CurrentVersionNT%\Ports,"COM4:",2,"9600,n,8,1"
+
+[Tapi]
+HKLM,%CurrentVersion%\Telephony,"Perf1",0x10001,0x5045524a
+HKLM,%CurrentVersion%\Telephony,"Perf2",0x10001,0x50455246
+HKLM,%CurrentVersion%\Telephony\Locations,,16
+
+HKLM,%CurrentVersion%\Telephony\Country List,"CountryListVersion",0x10001,0x00000019
+
+HKLM,%CurrentVersion%\Telephony\Country List\1,"CountryCode",0x10001,0x00000001
+HKLM,%CurrentVersion%\Telephony\Country List\1,"InternationalRule",,"011EFG"
+HKLM,%CurrentVersion%\Telephony\Country List\1,"LongDistanceRule",," 1FG"
+HKLM,%CurrentVersion%\Telephony\Country List\1,"Name",,"United States of America"
+HKLM,%CurrentVersion%\Telephony\Country List\1,"SameAreaRule",,"G"
+
+HKLM,%CurrentVersion%\Telephony\Country List\101,"CountryCode",0x10001,0x00000001
+HKLM,%CurrentVersion%\Telephony\Country List\101,"InternationalRule",,"011EFG"
+HKLM,%CurrentVersion%\Telephony\Country List\101,"LongDistanceRule",," 1FG"
+HKLM,%CurrentVersion%\Telephony\Country List\101,"Name",,"Anguilla"
+HKLM,%CurrentVersion%\Telephony\Country List\101,"SameAreaRule",,"G"
+
+HKLM,%CurrentVersion%\Telephony\Country List\102,"CountryCode",0x10001,0x00000001
+HKLM,%CurrentVersion%\Telephony\Country List\102,"InternationalRule",,"011EFG"
+HKLM,%CurrentVersion%\Telephony\Country List\102,"LongDistanceRule",," 1FG"
+HKLM,%CurrentVersion%\Telephony\Country List\102,"Name",,"Antigua"
+HKLM,%CurrentVersion%\Telephony\Country List\102,"SameAreaRule",,"G"
+
+HKLM,%CurrentVersion%\Telephony\Country List\103,"CountryCode",0x10001,0x00000001
+HKLM,%CurrentVersion%\Telephony\Country List\103,"InternationalRule",,"011EFG"
+HKLM,%CurrentVersion%\Telephony\Country List\103,"LongDistanceRule",," 1FG"
+HKLM,%CurrentVersion%\Telephony\Country List\103,"Name",,"Bahamas"
+HKLM,%CurrentVersion%\Telephony\Country List\103,"SameAreaRule",,"G"
+
+HKLM,%CurrentVersion%\Telephony\Country List\104,"CountryCode",0x10001,0x00000001
+HKLM,%CurrentVersion%\Telephony\Country List\104,"InternationalRule",,"011EFG"
+HKLM,%CurrentVersion%\Telephony\Country List\104,"LongDistanceRule",," 1FG"
+HKLM,%CurrentVersion%\Telephony\Country List\104,"Name",,"Barbados"
+HKLM,%CurrentVersion%\Telephony\Country List\104,"SameAreaRule",,"G"
+
+HKLM,%CurrentVersion%\Telephony\Country List\105,"CountryCode",0x10001,0x00000001
+HKLM,%CurrentVersion%\Telephony\Country List\105,"InternationalRule",,"011EFG"
+HKLM,%CurrentVersion%\Telephony\Country List\105,"LongDistanceRule",," 1FG"
+HKLM,%CurrentVersion%\Telephony\Country List\105,"Name",,"Bermuda"
+HKLM,%CurrentVersion%\Telephony\Country List\105,"SameAreaRule",,"G"
+
+HKLM,%CurrentVersion%\Telephony\Country List\106,"CountryCode",0x10001,0x00000001
+HKLM,%CurrentVersion%\Telephony\Country List\106,"InternationalRule",,"011EFG"
+HKLM,%CurrentVersion%\Telephony\Country List\106,"LongDistanceRule",," 1FG"
+HKLM,%CurrentVersion%\Telephony\Country List\106,"Name",,"British Virgin Islands"
+HKLM,%CurrentVersion%\Telephony\Country List\106,"SameAreaRule",,"G"
+
+HKLM,%CurrentVersion%\Telephony\Country List\107,"CountryCode",0x10001,0x00000001
+HKLM,%CurrentVersion%\Telephony\Country List\107,"InternationalRule",,"011EFG"
+HKLM,%CurrentVersion%\Telephony\Country List\107,"LongDistanceRule",," 1FG"
+HKLM,%CurrentVersion%\Telephony\Country List\107,"Name",,"Canada"
+HKLM,%CurrentVersion%\Telephony\Country List\107,"SameAreaRule",,"G"
+
+HKLM,%CurrentVersion%\Telephony\Country List\108,"CountryCode",0x10001,0x00000001
+HKLM,%CurrentVersion%\Telephony\Country List\108,"InternationalRule",,"011EFG"
+HKLM,%CurrentVersion%\Telephony\Country List\108,"LongDistanceRule",," 1FG"
+HKLM,%CurrentVersion%\Telephony\Country List\108,"Name",,"Cayman Islands"
+HKLM,%CurrentVersion%\Telephony\Country List\108,"SameAreaRule",,"G"
+
+HKLM,%CurrentVersion%\Telephony\Country List\109,"CountryCode",0x10001,0x00000001
+HKLM,%CurrentVersion%\Telephony\Country List\109,"InternationalRule",,"011EFG"
+HKLM,%CurrentVersion%\Telephony\Country List\109,"LongDistanceRule",," 1FG"
+HKLM,%CurrentVersion%\Telephony\Country List\109,"Name",,"Dominica"
+HKLM,%CurrentVersion%\Telephony\Country List\109,"SameAreaRule",,"G"
+
+HKLM,%CurrentVersion%\Telephony\Country List\110,"CountryCode",0x10001,0x00000001
+HKLM,%CurrentVersion%\Telephony\Country List\110,"InternationalRule",,"011EFG"
+HKLM,%CurrentVersion%\Telephony\Country List\110,"LongDistanceRule",," 1FG"
+HKLM,%CurrentVersion%\Telephony\Country List\110,"Name",,"Dominican Republic"
+HKLM,%CurrentVersion%\Telephony\Country List\110,"SameAreaRule",,"G"
+
+HKLM,%CurrentVersion%\Telephony\Country List\111,"CountryCode",0x10001,0x00000001
+HKLM,%CurrentVersion%\Telephony\Country List\111,"InternationalRule",,"011EFG"
+HKLM,%CurrentVersion%\Telephony\Country List\111,"LongDistanceRule",," 1FG"
+HKLM,%CurrentVersion%\Telephony\Country List\111,"Name",,"Grenada"
+HKLM,%CurrentVersion%\Telephony\Country List\111,"SameAreaRule",,"G"
+
+HKLM,%CurrentVersion%\Telephony\Country List\112,"CountryCode",0x10001,0x00000001
+HKLM,%CurrentVersion%\Telephony\Country List\112,"InternationalRule",,"011EFG"
+HKLM,%CurrentVersion%\Telephony\Country List\112,"LongDistanceRule",," 1FG"
+HKLM,%CurrentVersion%\Telephony\Country List\112,"Name",,"Jamaica"
+HKLM,%CurrentVersion%\Telephony\Country List\112,"SameAreaRule",,"G"
+
+HKLM,%CurrentVersion%\Telephony\Country List\113,"CountryCode",0x10001,0x00000001
+HKLM,%CurrentVersion%\Telephony\Country List\113,"InternationalRule",,"011EFG"
+HKLM,%CurrentVersion%\Telephony\Country List\113,"LongDistanceRule",," 1FG"
+HKLM,%CurrentVersion%\Telephony\Country List\113,"Name",,"Montserrat"
+HKLM,%CurrentVersion%\Telephony\Country List\113,"SameAreaRule",,"G"
+
+HKLM,%CurrentVersion%\Telephony\Country List\115,"CountryCode",0x10001,0x00000001
+HKLM,%CurrentVersion%\Telephony\Country List\115,"InternationalRule",,"011EFG"
+HKLM,%CurrentVersion%\Telephony\Country List\115,"LongDistanceRule",," 1FG"
+HKLM,%CurrentVersion%\Telephony\Country List\115,"Name",,"St. Kitts and Nevis"
+HKLM,%CurrentVersion%\Telephony\Country List\115,"SameAreaRule",,"G"
+
+HKLM,%CurrentVersion%\Telephony\Country List\116,"CountryCode",0x10001,0x00000001
+HKLM,%CurrentVersion%\Telephony\Country List\116,"InternationalRule",,"0EFG"
+HKLM,%CurrentVersion%\Telephony\Country List\116,"LongDistanceRule",," 1FG"
+HKLM,%CurrentVersion%\Telephony\Country List\116,"Name",,"St. Vincent and the Grenadines"
+HKLM,%CurrentVersion%\Telephony\Country List\116,"SameAreaRule",,"G"
+
+HKLM,%CurrentVersion%\Telephony\Country List\117,"CountryCode",0x10001,0x00000001
+HKLM,%CurrentVersion%\Telephony\Country List\117,"InternationalRule",,"011EFG"
+HKLM,%CurrentVersion%\Telephony\Country List\117,"LongDistanceRule",," 1FG"
+HKLM,%CurrentVersion%\Telephony\Country List\117,"Name",,"Trinidad and Tobago"
+HKLM,%CurrentVersion%\Telephony\Country List\117,"SameAreaRule",,"G"
+
+HKLM,%CurrentVersion%\Telephony\Country List\118,"CountryCode",0x10001,0x00000001
+HKLM,%CurrentVersion%\Telephony\Country List\118,"InternationalRule",,"0EFG"
+HKLM,%CurrentVersion%\Telephony\Country List\118,"LongDistanceRule",," 1FG"
+HKLM,%CurrentVersion%\Telephony\Country List\118,"Name",,"Turks and Caicos Islands"
+HKLM,%CurrentVersion%\Telephony\Country List\118,"SameAreaRule",,"G"
+
+HKLM,%CurrentVersion%\Telephony\Country List\120,"CountryCode",0x10001,0x00000001
+HKLM,%CurrentVersion%\Telephony\Country List\120,"InternationalRule",,"011EFG"
+HKLM,%CurrentVersion%\Telephony\Country List\120,"LongDistanceRule",," 1FG"
+HKLM,%CurrentVersion%\Telephony\Country List\120,"Name",,"Barbuda"
+HKLM,%CurrentVersion%\Telephony\Country List\120,"SameAreaRule",,"G"
+
+HKLM,%CurrentVersion%\Telephony\Country List\121,"CountryCode",0x10001,0x00000001
+HKLM,%CurrentVersion%\Telephony\Country List\121,"InternationalRule",,"011EFG"
+HKLM,%CurrentVersion%\Telephony\Country List\121,"LongDistanceRule",," 1FG"
+HKLM,%CurrentVersion%\Telephony\Country List\121,"Name",,"Puerto Rico"
+HKLM,%CurrentVersion%\Telephony\Country List\121,"SameAreaRule",,"G"
+
+HKLM,%CurrentVersion%\Telephony\Country List\122,"CountryCode",0x10001,0x00000001
+HKLM,%CurrentVersion%\Telephony\Country List\122,"InternationalRule",,"011EFG"
+HKLM,%CurrentVersion%\Telephony\Country List\122,"LongDistanceRule",," 1FG"
+HKLM,%CurrentVersion%\Telephony\Country List\122,"Name",,"Saint Lucia"
+HKLM,%CurrentVersion%\Telephony\Country List\122,"SameAreaRule",,"G"
+
+HKLM,%CurrentVersion%\Telephony\Country List\123,"CountryCode",0x10001,0x00000001
+HKLM,%CurrentVersion%\Telephony\Country List\123,"InternationalRule",,"011EFG"
+HKLM,%CurrentVersion%\Telephony\Country List\123,"LongDistanceRule",," 1FG"
+HKLM,%CurrentVersion%\Telephony\Country List\123,"Name",,"United States Virgin Islands"
+HKLM,%CurrentVersion%\Telephony\Country List\123,"SameAreaRule",,"G"
+
+HKLM,%CurrentVersion%\Telephony\Country List\124,"CountryCode",0x10001,0x00000001
+HKLM,%CurrentVersion%\Telephony\Country List\124,"InternationalRule",,"011EFG"
+HKLM,%CurrentVersion%\Telephony\Country List\124,"LongDistanceRule",," 1FG"
+HKLM,%CurrentVersion%\Telephony\Country List\124,"Name",,"Guam"
+HKLM,%CurrentVersion%\Telephony\Country List\124,"SameAreaRule",,"G"
+
+HKLM,%CurrentVersion%\Telephony\Country List\20,"CountryCode",0x10001,0x00000014
+HKLM,%CurrentVersion%\Telephony\Country List\20,"InternationalRule",,"00EFG"
+HKLM,%CurrentVersion%\Telephony\Country List\20,"LongDistanceRule",,"0FG"
+HKLM,%CurrentVersion%\Telephony\Country List\20,"Name",,"Egypt"
+HKLM,%CurrentVersion%\Telephony\Country List\20,"SameAreaRule",,"G"
+
+HKLM,%CurrentVersion%\Telephony\Country List\212,"CountryCode",0x10001,0x000000d4
+HKLM,%CurrentVersion%\Telephony\Country List\212,"InternationalRule",,"00EFG"
+HKLM,%CurrentVersion%\Telephony\Country List\212,"LongDistanceRule",,"0FG"
+HKLM,%CurrentVersion%\Telephony\Country List\212,"Name",,"Morocco"
+HKLM,%CurrentVersion%\Telephony\Country List\212,"SameAreaRule",,"G"
+
+HKLM,%CurrentVersion%\Telephony\Country List\213,"CountryCode",0x10001,0x000000d5
+HKLM,%CurrentVersion%\Telephony\Country List\213,"InternationalRule",,"00,EFG"
+HKLM,%CurrentVersion%\Telephony\Country List\213,"LongDistanceRule",,"0FG"
+HKLM,%CurrentVersion%\Telephony\Country List\213,"Name",,"Algeria"
+HKLM,%CurrentVersion%\Telephony\Country List\213,"SameAreaRule",,"G"
+
+HKLM,%CurrentVersion%\Telephony\Country List\216,"CountryCode",0x10001,0x000000d8
+HKLM,%CurrentVersion%\Telephony\Country List\216,"InternationalRule",,"00EFG"
+HKLM,%CurrentVersion%\Telephony\Country List\216,"LongDistanceRule",,"0FG"
+HKLM,%CurrentVersion%\Telephony\Country List\216,"Name",,"Tunisia"
+HKLM,%CurrentVersion%\Telephony\Country List\216,"SameAreaRule",,"G"
+
+HKLM,%CurrentVersion%\Telephony\Country List\218,"CountryCode",0x10001,0x000000da
+HKLM,%CurrentVersion%\Telephony\Country List\218,"InternationalRule",,"00EFG"
+HKLM,%CurrentVersion%\Telephony\Country List\218,"LongDistanceRule",,"0FG"
+HKLM,%CurrentVersion%\Telephony\Country List\218,"Name",,"Libya"
+HKLM,%CurrentVersion%\Telephony\Country List\218,"SameAreaRule",,"G"
+
+HKLM,%CurrentVersion%\Telephony\Country List\220,"CountryCode",0x10001,0x000000dc
+HKLM,%CurrentVersion%\Telephony\Country List\220,"InternationalRule",,"00EFG"
+HKLM,%CurrentVersion%\Telephony\Country List\220,"LongDistanceRule",,""
+HKLM,%CurrentVersion%\Telephony\Country List\220,"Name",,"Gambia"
+HKLM,%CurrentVersion%\Telephony\Country List\220,"SameAreaRule",,"G"
+
+HKLM,%CurrentVersion%\Telephony\Country List\221,"CountryCode",0x10001,0x000000dd
+HKLM,%CurrentVersion%\Telephony\Country List\221,"InternationalRule",,"00EFG"
+HKLM,%CurrentVersion%\Telephony\Country List\221,"LongDistanceRule",,""
+HKLM,%CurrentVersion%\Telephony\Country List\221,"Name",,"Senegal Republic"
+HKLM,%CurrentVersion%\Telephony\Country List\221,"SameAreaRule",,"G"
+
+HKLM,%CurrentVersion%\Telephony\Country List\222,"CountryCode",0x10001,0x000000de
+HKLM,%CurrentVersion%\Telephony\Country List\222,"InternationalRule",,"00EFG"
+HKLM,%CurrentVersion%\Telephony\Country List\222,"LongDistanceRule",,""
+HKLM,%CurrentVersion%\Telephony\Country List\222,"Name",,"Mauritania"
+HKLM,%CurrentVersion%\Telephony\Country List\222,"SameAreaRule",,"G"
+
+HKLM,%CurrentVersion%\Telephony\Country List\223,"CountryCode",0x10001,0x000000df
+HKLM,%CurrentVersion%\Telephony\Country List\223,"InternationalRule",,"00EFG"
+HKLM,%CurrentVersion%\Telephony\Country List\223,"LongDistanceRule",,""
+HKLM,%CurrentVersion%\Telephony\Country List\223,"Name",,"Mali"
+HKLM,%CurrentVersion%\Telephony\Country List\223,"SameAreaRule",,"G"
+
+HKLM,%CurrentVersion%\Telephony\Country List\224,"CountryCode",0x10001,0x000000e0
+HKLM,%CurrentVersion%\Telephony\Country List\224,"InternationalRule",,"00EFG"
+HKLM,%CurrentVersion%\Telephony\Country List\224,"LongDistanceRule",,""
+HKLM,%CurrentVersion%\Telephony\Country List\224,"Name",,"Guinea"
+HKLM,%CurrentVersion%\Telephony\Country List\224,"SameAreaRule",,"G"
+
+HKLM,%CurrentVersion%\Telephony\Country List\225,"CountryCode",0x10001,0x000000e1
+HKLM,%CurrentVersion%\Telephony\Country List\225,"InternationalRule",,"00EFG"
+HKLM,%CurrentVersion%\Telephony\Country List\225,"LongDistanceRule",,""
+HKLM,%CurrentVersion%\Telephony\Country List\225,"Name",,"Cote d'Ivoire"
+HKLM,%CurrentVersion%\Telephony\Country List\225,"SameAreaRule",,"G"
+
+HKLM,%CurrentVersion%\Telephony\Country List\226,"CountryCode",0x10001,0x000000e2
+HKLM,%CurrentVersion%\Telephony\Country List\226,"InternationalRule",,"00EFG"
+HKLM,%CurrentVersion%\Telephony\Country List\226,"LongDistanceRule",,""
+HKLM,%CurrentVersion%\Telephony\Country List\226,"Name",,"Burkina Faso"
+HKLM,%CurrentVersion%\Telephony\Country List\226,"SameAreaRule",,"G"
+
+HKLM,%CurrentVersion%\Telephony\Country List\227,"CountryCode",0x10001,0x000000e3
+HKLM,%CurrentVersion%\Telephony\Country List\227,"InternationalRule",,"00EFG"
+HKLM,%CurrentVersion%\Telephony\Country List\227,"LongDistanceRule",,""
+HKLM,%CurrentVersion%\Telephony\Country List\227,"Name",,"Niger"
+HKLM,%CurrentVersion%\Telephony\Country List\227,"SameAreaRule",,"G"
+
+HKLM,%CurrentVersion%\Telephony\Country List\228,"CountryCode",0x10001,0x000000e4
+HKLM,%CurrentVersion%\Telephony\Country List\228,"InternationalRule",,"00EFG"
+HKLM,%CurrentVersion%\Telephony\Country List\228,"LongDistanceRule",,""
+HKLM,%CurrentVersion%\Telephony\Country List\228,"Name",,"Togo"
+HKLM,%CurrentVersion%\Telephony\Country List\228,"SameAreaRule",,"G"
+
+HKLM,%CurrentVersion%\Telephony\Country List\229,"CountryCode",0x10001,0x000000e5
+HKLM,%CurrentVersion%\Telephony\Country List\229,"InternationalRule",,"00EFG"
+HKLM,%CurrentVersion%\Telephony\Country List\229,"LongDistanceRule",,""
+HKLM,%CurrentVersion%\Telephony\Country List\229,"Name",,"Benin"
+HKLM,%CurrentVersion%\Telephony\Country List\229,"SameAreaRule",,"G"
+
+HKLM,%CurrentVersion%\Telephony\Country List\230,"CountryCode",0x10001,0x000000e6
+HKLM,%CurrentVersion%\Telephony\Country List\230,"InternationalRule",,"00EFG"
+HKLM,%CurrentVersion%\Telephony\Country List\230,"LongDistanceRule",,""
+HKLM,%CurrentVersion%\Telephony\Country List\230,"Name",,"Mauritius"
+HKLM,%CurrentVersion%\Telephony\Country List\230,"SameAreaRule",,"G"
+
+HKLM,%CurrentVersion%\Telephony\Country List\231,"CountryCode",0x10001,0x000000e7
+HKLM,%CurrentVersion%\Telephony\Country List\231,"InternationalRule",,"0EFG"
+HKLM,%CurrentVersion%\Telephony\Country List\231,"LongDistanceRule",,""
+HKLM,%CurrentVersion%\Telephony\Country List\231,"Name",,"Liberia"
+HKLM,%CurrentVersion%\Telephony\Country List\231,"SameAreaRule",,"G"
+
+HKLM,%CurrentVersion%\Telephony\Country List\232,"CountryCode",0x10001,0x000000e8
+HKLM,%CurrentVersion%\Telephony\Country List\232,"InternationalRule",,"00EFG"
+HKLM,%CurrentVersion%\Telephony\Country List\232,"LongDistanceRule",,"IG"
+HKLM,%CurrentVersion%\Telephony\Country List\232,"Name",,"Sierra Leone"
+HKLM,%CurrentVersion%\Telephony\Country List\232,"SameAreaRule",,"G"
+
+HKLM,%CurrentVersion%\Telephony\Country List\233,"CountryCode",0x10001,0x000000e9
+HKLM,%CurrentVersion%\Telephony\Country List\233,"InternationalRule",,"00EFG"
+HKLM,%CurrentVersion%\Telephony\Country List\233,"LongDistanceRule",,""
+HKLM,%CurrentVersion%\Telephony\Country List\233,"Name",,"Ghana"
+HKLM,%CurrentVersion%\Telephony\Country List\233,"SameAreaRule",,"G"
+
+HKLM,%CurrentVersion%\Telephony\Country List\234,"CountryCode",0x10001,0x000000ea
+HKLM,%CurrentVersion%\Telephony\Country List\234,"InternationalRule",,"009EFG"
+HKLM,%CurrentVersion%\Telephony\Country List\234,"LongDistanceRule",,"0FG"
+HKLM,%CurrentVersion%\Telephony\Country List\234,"Name",,"Nigeria"
+HKLM,%CurrentVersion%\Telephony\Country List\234,"SameAreaRule",,"G"
+
+HKLM,%CurrentVersion%\Telephony\Country List\235,"CountryCode",0x10001,0x000000eb
+HKLM,%CurrentVersion%\Telephony\Country List\235,"InternationalRule",,"15EFG"
+HKLM,%CurrentVersion%\Telephony\Country List\235,"LongDistanceRule",,""
+HKLM,%CurrentVersion%\Telephony\Country List\235,"Name",,"Chad"
+HKLM,%CurrentVersion%\Telephony\Country List\235,"SameAreaRule",,"G"
+
+HKLM,%CurrentVersion%\Telephony\Country List\236,"CountryCode",0x10001,0x000000ec
+HKLM,%CurrentVersion%\Telephony\Country List\236,"InternationalRule",,"19EFG"
+HKLM,%CurrentVersion%\Telephony\Country List\236,"LongDistanceRule",,""
+HKLM,%CurrentVersion%\Telephony\Country List\236,"Name",,"Central African Republic"
+HKLM,%CurrentVersion%\Telephony\Country List\236,"SameAreaRule",,"G"
+
+HKLM,%CurrentVersion%\Telephony\Country List\237,"CountryCode",0x10001,0x000000ed
+HKLM,%CurrentVersion%\Telephony\Country List\237,"InternationalRule",,"00EFG"
+HKLM,%CurrentVersion%\Telephony\Country List\237,"LongDistanceRule",,""
+HKLM,%CurrentVersion%\Telephony\Country List\237,"Name",,"Cameroon"
+HKLM,%CurrentVersion%\Telephony\Country List\237,"SameAreaRule",,"G"
+
+HKLM,%CurrentVersion%\Telephony\Country List\238,"CountryCode",0x10001,0x000000ee
+HKLM,%CurrentVersion%\Telephony\Country List\238,"InternationalRule",,"0EFG"
+HKLM,%CurrentVersion%\Telephony\Country List\238,"LongDistanceRule",,""
+HKLM,%CurrentVersion%\Telephony\Country List\238,"Name",,"Cape Verde Islands"
+HKLM,%CurrentVersion%\Telephony\Country List\238,"SameAreaRule",,"G"
+
+HKLM,%CurrentVersion%\Telephony\Country List\239,"CountryCode",0x10001,0x000000ef
+HKLM,%CurrentVersion%\Telephony\Country List\239,"InternationalRule",,"00EFG"
+HKLM,%CurrentVersion%\Telephony\Country List\239,"LongDistanceRule",,""
+HKLM,%CurrentVersion%\Telephony\Country List\239,"Name",,"Sao Tome and Principe"
+HKLM,%CurrentVersion%\Telephony\Country List\239,"SameAreaRule",,"G"
+
+HKLM,%CurrentVersion%\Telephony\Country List\240,"CountryCode",0x10001,0x000000f0
+HKLM,%CurrentVersion%\Telephony\Country List\240,"InternationalRule",,"00EFG"
+HKLM,%CurrentVersion%\Telephony\Country List\240,"LongDistanceRule",,""
+HKLM,%CurrentVersion%\Telephony\Country List\240,"Name",,"Equatorial Guinea"
+HKLM,%CurrentVersion%\Telephony\Country List\240,"SameAreaRule",,"G"
+
+HKLM,%CurrentVersion%\Telephony\Country List\241,"CountryCode",0x10001,0x000000f1
+HKLM,%CurrentVersion%\Telephony\Country List\241,"InternationalRule",,"00EFG"
+HKLM,%CurrentVersion%\Telephony\Country List\241,"LongDistanceRule",,""
+HKLM,%CurrentVersion%\Telephony\Country List\241,"Name",,"Gabon"
+HKLM,%CurrentVersion%\Telephony\Country List\241,"SameAreaRule",,"G"
+
+HKLM,%CurrentVersion%\Telephony\Country List\242,"CountryCode",0x10001,0x000000f2
+HKLM,%CurrentVersion%\Telephony\Country List\242,"InternationalRule",,"00EFG"
+HKLM,%CurrentVersion%\Telephony\Country List\242,"LongDistanceRule",,""
+HKLM,%CurrentVersion%\Telephony\Country List\242,"Name",,"Congo"
+HKLM,%CurrentVersion%\Telephony\Country List\242,"SameAreaRule",,"G"
+
+HKLM,%CurrentVersion%\Telephony\Country List\243,"CountryCode",0x10001,0x000000f3
+HKLM,%CurrentVersion%\Telephony\Country List\243,"InternationalRule",,"00EFG"
+HKLM,%CurrentVersion%\Telephony\Country List\243,"LongDistanceRule",,""
+HKLM,%CurrentVersion%\Telephony\Country List\243,"Name",,"Congo, Democratic Republic of the"
+HKLM,%CurrentVersion%\Telephony\Country List\243,"SameAreaRule",,"G"
+
+HKLM,%CurrentVersion%\Telephony\Country List\244,"CountryCode",0x10001,0x000000f4
+HKLM,%CurrentVersion%\Telephony\Country List\244,"InternationalRule",,"00EFG"
+HKLM,%CurrentVersion%\Telephony\Country List\244,"LongDistanceRule",,"0FG"
+HKLM,%CurrentVersion%\Telephony\Country List\244,"Name",,"Angola"
+HKLM,%CurrentVersion%\Telephony\Country List\244,"SameAreaRule",,"G"
+
+HKLM,%CurrentVersion%\Telephony\Country List\245,"CountryCode",0x10001,0x000000f5
+HKLM,%CurrentVersion%\Telephony\Country List\245,"InternationalRule",,"099EFG"
+HKLM,%CurrentVersion%\Telephony\Country List\245,"LongDistanceRule",,""
+HKLM,%CurrentVersion%\Telephony\Country List\245,"Name",,"Guinea-Bissau"
+HKLM,%CurrentVersion%\Telephony\Country List\245,"SameAreaRule",,"G"
+
+HKLM,%CurrentVersion%\Telephony\Country List\246,"CountryCode",0x10001,0x000000f6
+HKLM,%CurrentVersion%\Telephony\Country List\246,"InternationalRule",,"00EFG"
+HKLM,%CurrentVersion%\Telephony\Country List\246,"LongDistanceRule",,""
+HKLM,%CurrentVersion%\Telephony\Country List\246,"Name",,"Diego Garcia"
+HKLM,%CurrentVersion%\Telephony\Country List\246,"SameAreaRule",,"G"
+
+HKLM,%CurrentVersion%\Telephony\Country List\247,"CountryCode",0x10001,0x000000f7
+HKLM,%CurrentVersion%\Telephony\Country List\247,"InternationalRule",,"01EFG"
+HKLM,%CurrentVersion%\Telephony\Country List\247,"LongDistanceRule",,""
+HKLM,%CurrentVersion%\Telephony\Country List\247,"Name",,"Ascension Island"
+HKLM,%CurrentVersion%\Telephony\Country List\247,"SameAreaRule",,"G"
+
+HKLM,%CurrentVersion%\Telephony\Country List\248,"CountryCode",0x10001,0x000000f8
+HKLM,%CurrentVersion%\Telephony\Country List\248,"InternationalRule",,"00EFG"
+HKLM,%CurrentVersion%\Telephony\Country List\248,"LongDistanceRule",,""
+HKLM,%CurrentVersion%\Telephony\Country List\248,"Name",,"Seychelles"
+HKLM,%CurrentVersion%\Telephony\Country List\248,"SameAreaRule",,"G"
+
+HKLM,%CurrentVersion%\Telephony\Country List\249,"CountryCode",0x10001,0x000000f9
+HKLM,%CurrentVersion%\Telephony\Country List\249,"InternationalRule",,"00EFG"
+HKLM,%CurrentVersion%\Telephony\Country List\249,"LongDistanceRule",,"0FG"
+HKLM,%CurrentVersion%\Telephony\Country List\249,"Name",,"Sudan"
+HKLM,%CurrentVersion%\Telephony\Country List\249,"SameAreaRule",,"G"
+
+HKLM,%CurrentVersion%\Telephony\Country List\250,"CountryCode",0x10001,0x000000fa
+HKLM,%CurrentVersion%\Telephony\Country List\250,"InternationalRule",,"00EFG"
+HKLM,%CurrentVersion%\Telephony\Country List\250,"LongDistanceRule",,""
+HKLM,%CurrentVersion%\Telephony\Country List\250,"Name",,"Rwanda"
+HKLM,%CurrentVersion%\Telephony\Country List\250,"SameAreaRule",,"G"
+
+HKLM,%CurrentVersion%\Telephony\Country List\251,"CountryCode",0x10001,0x000000fb
+HKLM,%CurrentVersion%\Telephony\Country List\251,"InternationalRule",,"00EFG"
+HKLM,%CurrentVersion%\Telephony\Country List\251,"LongDistanceRule",,"0FG"
+HKLM,%CurrentVersion%\Telephony\Country List\251,"Name",,"Ethiopia"
+HKLM,%CurrentVersion%\Telephony\Country List\251,"SameAreaRule",,"G"
+
+HKLM,%CurrentVersion%\Telephony\Country List\252,"CountryCode",0x10001,0x000000fc
+HKLM,%CurrentVersion%\Telephony\Country List\252,"InternationalRule",,"19,EFG"
+HKLM,%CurrentVersion%\Telephony\Country List\252,"LongDistanceRule",,""
+HKLM,%CurrentVersion%\Telephony\Country List\252,"Name",,"Somalia"
+HKLM,%CurrentVersion%\Telephony\Country List\252,"SameAreaRule",,"G"
+
+HKLM,%CurrentVersion%\Telephony\Country List\253,"CountryCode",0x10001,0x000000fd
+HKLM,%CurrentVersion%\Telephony\Country List\253,"InternationalRule",,"00EFG"
+HKLM,%CurrentVersion%\Telephony\Country List\253,"LongDistanceRule",,""
+HKLM,%CurrentVersion%\Telephony\Country List\253,"Name",,"Djibouti"
+HKLM,%CurrentVersion%\Telephony\Country List\253,"SameAreaRule",,"G"
+
+HKLM,%CurrentVersion%\Telephony\Country List\254,"CountryCode",0x10001,0x000000fe
+HKLM,%CurrentVersion%\Telephony\Country List\254,"InternationalRule",,"000EFG"
+HKLM,%CurrentVersion%\Telephony\Country List\254,"LongDistanceRule",,"0FG"
+HKLM,%CurrentVersion%\Telephony\Country List\254,"Name",,"Kenya"
+HKLM,%CurrentVersion%\Telephony\Country List\254,"SameAreaRule",,"G"
+
+HKLM,%CurrentVersion%\Telephony\Country List\255,"CountryCode",0x10001,0x000000ff
+HKLM,%CurrentVersion%\Telephony\Country List\255,"InternationalRule",,"0900EFG"
+HKLM,%CurrentVersion%\Telephony\Country List\255,"LongDistanceRule",,"0FG"
+HKLM,%CurrentVersion%\Telephony\Country List\255,"Name",,"Tanzania"
+HKLM,%CurrentVersion%\Telephony\Country List\255,"SameAreaRule",,"G"
+
+HKLM,%CurrentVersion%\Telephony\Country List\256,"CountryCode",0x10001,0x00000100
+HKLM,%CurrentVersion%\Telephony\Country List\256,"InternationalRule",,"00EFG"
+HKLM,%CurrentVersion%\Telephony\Country List\256,"LongDistanceRule",,"0FG"
+HKLM,%CurrentVersion%\Telephony\Country List\256,"Name",,"Uganda"
+HKLM,%CurrentVersion%\Telephony\Country List\256,"SameAreaRule",,"G"
+
+HKLM,%CurrentVersion%\Telephony\Country List\257,"CountryCode",0x10001,0x00000101
+HKLM,%CurrentVersion%\Telephony\Country List\257,"InternationalRule",,"90EFG"
+HKLM,%CurrentVersion%\Telephony\Country List\257,"LongDistanceRule",,""
+HKLM,%CurrentVersion%\Telephony\Country List\257,"Name",,"Burundi"
+HKLM,%CurrentVersion%\Telephony\Country List\257,"SameAreaRule",,"G"
+
+HKLM,%CurrentVersion%\Telephony\Country List\258,"CountryCode",0x10001,0x00000102
+HKLM,%CurrentVersion%\Telephony\Country List\258,"InternationalRule",,"00EFG"
+HKLM,%CurrentVersion%\Telephony\Country List\258,"LongDistanceRule",,""
+HKLM,%CurrentVersion%\Telephony\Country List\258,"Name",,"Mozambique"
+HKLM,%CurrentVersion%\Telephony\Country List\258,"SameAreaRule",,"G"
+
+HKLM,%CurrentVersion%\Telephony\Country List\260,"CountryCode",0x10001,0x00000104
+HKLM,%CurrentVersion%\Telephony\Country List\260,"InternationalRule",,"00EFG"
+HKLM,%CurrentVersion%\Telephony\Country List\260,"LongDistanceRule",,"0FG"
+HKLM,%CurrentVersion%\Telephony\Country List\260,"Name",,"Zambia"
+HKLM,%CurrentVersion%\Telephony\Country List\260,"SameAreaRule",,"G"
+
+HKLM,%CurrentVersion%\Telephony\Country List\261,"CountryCode",0x10001,0x00000105
+HKLM,%CurrentVersion%\Telephony\Country List\261,"InternationalRule",,"00EFG"
+HKLM,%CurrentVersion%\Telephony\Country List\261,"LongDistanceRule",,""
+HKLM,%CurrentVersion%\Telephony\Country List\261,"Name",,"Madagascar"
+HKLM,%CurrentVersion%\Telephony\Country List\261,"SameAreaRule",,"G"
+
+HKLM,%CurrentVersion%\Telephony\Country List\262,"CountryCode",0x10001,0x00000106
+HKLM,%CurrentVersion%\Telephony\Country List\262,"InternationalRule",,"00EFG"
+HKLM,%CurrentVersion%\Telephony\Country List\262,"LongDistanceRule",,""
+HKLM,%CurrentVersion%\Telephony\Country List\262,"Name",,"Reunion Island"
+HKLM,%CurrentVersion%\Telephony\Country List\262,"SameAreaRule",,"G"
+
+HKLM,%CurrentVersion%\Telephony\Country List\263,"CountryCode",0x10001,0x00000107
+HKLM,%CurrentVersion%\Telephony\Country List\263,"InternationalRule",,"00EFG"
+HKLM,%CurrentVersion%\Telephony\Country List\263,"LongDistanceRule",,"0FG"
+HKLM,%CurrentVersion%\Telephony\Country List\263,"Name",,"Zimbabwe"
+HKLM,%CurrentVersion%\Telephony\Country List\263,"SameAreaRule",,"G"
+
+HKLM,%CurrentVersion%\Telephony\Country List\264,"CountryCode",0x10001,0x00000108
+HKLM,%CurrentVersion%\Telephony\Country List\264,"InternationalRule",,"00EFG"
+HKLM,%CurrentVersion%\Telephony\Country List\264,"LongDistanceRule",,"0FG"
+HKLM,%CurrentVersion%\Telephony\Country List\264,"Name",,"Namibia"
+HKLM,%CurrentVersion%\Telephony\Country List\264,"SameAreaRule",,"G"
+
+HKLM,%CurrentVersion%\Telephony\Country List\265,"CountryCode",0x10001,0x00000109
+HKLM,%CurrentVersion%\Telephony\Country List\265,"InternationalRule",,"101EFG"
+HKLM,%CurrentVersion%\Telephony\Country List\265,"LongDistanceRule",,""
+HKLM,%CurrentVersion%\Telephony\Country List\265,"Name",,"Malawi"
+HKLM,%CurrentVersion%\Telephony\Country List\265,"SameAreaRule",,"G"
+
+HKLM,%CurrentVersion%\Telephony\Country List\266,"CountryCode",0x10001,0x0000010a
+HKLM,%CurrentVersion%\Telephony\Country List\266,"InternationalRule",,"00EFG"
+HKLM,%CurrentVersion%\Telephony\Country List\266,"LongDistanceRule",,""
+HKLM,%CurrentVersion%\Telephony\Country List\266,"Name",,"Lesotho"
+HKLM,%CurrentVersion%\Telephony\Country List\266,"SameAreaRule",,"G"
+
+HKLM,%CurrentVersion%\Telephony\Country List\267,"CountryCode",0x10001,0x0000010b
+HKLM,%CurrentVersion%\Telephony\Country List\267,"InternationalRule",,"00EFG"
+HKLM,%CurrentVersion%\Telephony\Country List\267,"LongDistanceRule",,"0FG"
+HKLM,%CurrentVersion%\Telephony\Country List\267,"Name",,"Botswana"
+HKLM,%CurrentVersion%\Telephony\Country List\267,"SameAreaRule",,"G"
+
+HKLM,%CurrentVersion%\Telephony\Country List\268,"CountryCode",0x10001,0x0000010c
+HKLM,%CurrentVersion%\Telephony\Country List\268,"InternationalRule",,"00EFG"
+HKLM,%CurrentVersion%\Telephony\Country List\268,"LongDistanceRule",,""
+HKLM,%CurrentVersion%\Telephony\Country List\268,"Name",,"Swaziland"
+HKLM,%CurrentVersion%\Telephony\Country List\268,"SameAreaRule",,"G"
+
+HKLM,%CurrentVersion%\Telephony\Country List\269,"CountryCode",0x10001,0x0000010d
+HKLM,%CurrentVersion%\Telephony\Country List\269,"InternationalRule",,"00EFG"
+HKLM,%CurrentVersion%\Telephony\Country List\269,"LongDistanceRule",,""
+HKLM,%CurrentVersion%\Telephony\Country List\269,"Name",,"Mayotte Island"
+HKLM,%CurrentVersion%\Telephony\Country List\269,"SameAreaRule",,"G"
+
+HKLM,%CurrentVersion%\Telephony\Country List\2691,"CountryCode",0x10001,0x0000010d
+HKLM,%CurrentVersion%\Telephony\Country List\2691,"InternationalRule",,"10EFG"
+HKLM,%CurrentVersion%\Telephony\Country List\2691,"LongDistanceRule",,""
+HKLM,%CurrentVersion%\Telephony\Country List\2691,"Name",,"Comoros"
+HKLM,%CurrentVersion%\Telephony\Country List\2691,"SameAreaRule",,"G"
+
+HKLM,%CurrentVersion%\Telephony\Country List\27,"CountryCode",0x10001,0x0000001b
+HKLM,%CurrentVersion%\Telephony\Country List\27,"InternationalRule",,"09EFG"
+HKLM,%CurrentVersion%\Telephony\Country List\27,"LongDistanceRule",,"0FG"
+HKLM,%CurrentVersion%\Telephony\Country List\27,"Name",,"South Africa"
+HKLM,%CurrentVersion%\Telephony\Country List\27,"SameAreaRule",,"G"
+
+HKLM,%CurrentVersion%\Telephony\Country List\290,"CountryCode",0x10001,0x00000122
+HKLM,%CurrentVersion%\Telephony\Country List\290,"InternationalRule",,"01EFG"
+HKLM,%CurrentVersion%\Telephony\Country List\290,"LongDistanceRule",,""
+HKLM,%CurrentVersion%\Telephony\Country List\290,"Name",,"St. Helena"
+HKLM,%CurrentVersion%\Telephony\Country List\290,"SameAreaRule",,"G"
+
+HKLM,%CurrentVersion%\Telephony\Country List\291,"CountryCode",0x10001,0x00000123
+HKLM,%CurrentVersion%\Telephony\Country List\291,"InternationalRule",,"00EFG"
+HKLM,%CurrentVersion%\Telephony\Country List\291,"LongDistanceRule",,"0FG"
+HKLM,%CurrentVersion%\Telephony\Country List\291,"Name",,"Eritrea"
+HKLM,%CurrentVersion%\Telephony\Country List\291,"SameAreaRule",,"G"
+
+HKLM,%CurrentVersion%\Telephony\Country List\297,"CountryCode",0x10001,0x00000129
+HKLM,%CurrentVersion%\Telephony\Country List\297,"InternationalRule",,"00EFG"
+HKLM,%CurrentVersion%\Telephony\Country List\297,"LongDistanceRule",,""
+HKLM,%CurrentVersion%\Telephony\Country List\297,"Name",,"Aruba"
+HKLM,%CurrentVersion%\Telephony\Country List\297,"SameAreaRule",,"G"
+
+HKLM,%CurrentVersion%\Telephony\Country List\298,"CountryCode",0x10001,0x0000012a
+HKLM,%CurrentVersion%\Telephony\Country List\298,"InternationalRule",,"009EFG"
+HKLM,%CurrentVersion%\Telephony\Country List\298,"LongDistanceRule",,""
+HKLM,%CurrentVersion%\Telephony\Country List\298,"Name",,"Faroe Islands"
+HKLM,%CurrentVersion%\Telephony\Country List\298,"SameAreaRule",,"G"
+
+HKLM,%CurrentVersion%\Telephony\Country List\299,"CountryCode",0x10001,0x0000012b
+HKLM,%CurrentVersion%\Telephony\Country List\299,"InternationalRule",,"009EFG"
+HKLM,%CurrentVersion%\Telephony\Country List\299,"LongDistanceRule",,""
+HKLM,%CurrentVersion%\Telephony\Country List\299,"Name",,"Greenland"
+HKLM,%CurrentVersion%\Telephony\Country List\299,"SameAreaRule",,"G"
+
+HKLM,%CurrentVersion%\Telephony\Country List\30,"CountryCode",0x10001,0x0000001e
+HKLM,%CurrentVersion%\Telephony\Country List\30,"InternationalRule",,"00EFG"
+HKLM,%CurrentVersion%\Telephony\Country List\30,"LongDistanceRule",,"0FG"
+HKLM,%CurrentVersion%\Telephony\Country List\30,"Name",,"Greece"
+HKLM,%CurrentVersion%\Telephony\Country List\30,"SameAreaRule",,"G"
+
+HKLM,%CurrentVersion%\Telephony\Country List\31,"CountryCode",0x10001,0x0000001f
+HKLM,%CurrentVersion%\Telephony\Country List\31,"InternationalRule",,"00EFG"
+HKLM,%CurrentVersion%\Telephony\Country List\31,"LongDistanceRule",,"0FG"
+HKLM,%CurrentVersion%\Telephony\Country List\31,"Name",,"Netherlands"
+HKLM,%CurrentVersion%\Telephony\Country List\31,"SameAreaRule",,"G"
+
+HKLM,%CurrentVersion%\Telephony\Country List\32,"CountryCode",0x10001,0x00000020
+HKLM,%CurrentVersion%\Telephony\Country List\32,"InternationalRule",,"00EFG"
+HKLM,%CurrentVersion%\Telephony\Country List\32,"LongDistanceRule",,"0FG"
+HKLM,%CurrentVersion%\Telephony\Country List\32,"Name",,"Belgium"
+HKLM,%CurrentVersion%\Telephony\Country List\32,"SameAreaRule",,"G"
+
+HKLM,%CurrentVersion%\Telephony\Country List\33,"CountryCode",0x10001,0x00000021
+HKLM,%CurrentVersion%\Telephony\Country List\33,"InternationalRule",,"00EFG"
+HKLM,%CurrentVersion%\Telephony\Country List\33,"LongDistanceRule",,"0FG"
+HKLM,%CurrentVersion%\Telephony\Country List\33,"Name",,"France"
+HKLM,%CurrentVersion%\Telephony\Country List\33,"SameAreaRule",,"0FG"
+
+HKLM,%CurrentVersion%\Telephony\Country List\34,"CountryCode",0x10001,0x00000022
+HKLM,%CurrentVersion%\Telephony\Country List\34,"InternationalRule",,"00,EFG"
+HKLM,%CurrentVersion%\Telephony\Country List\34,"LongDistanceRule",,"IG"
+HKLM,%CurrentVersion%\Telephony\Country List\34,"Name",,"Spain"
+HKLM,%CurrentVersion%\Telephony\Country List\34,"SameAreaRule",,"IG"
+
+HKLM,%CurrentVersion%\Telephony\Country List\350,"CountryCode",0x10001,0x0000015e
+HKLM,%CurrentVersion%\Telephony\Country List\350,"InternationalRule",,"00EFG"
+HKLM,%CurrentVersion%\Telephony\Country List\350,"LongDistanceRule",,""
+HKLM,%CurrentVersion%\Telephony\Country List\350,"Name",,"Gibraltar"
+HKLM,%CurrentVersion%\Telephony\Country List\350,"SameAreaRule",,"G"
+
+HKLM,%CurrentVersion%\Telephony\Country List\351,"CountryCode",0x10001,0x0000015f
+HKLM,%CurrentVersion%\Telephony\Country List\351,"InternationalRule",,"00EFG"
+HKLM,%CurrentVersion%\Telephony\Country List\351,"LongDistanceRule",,"IG"
+HKLM,%CurrentVersion%\Telephony\Country List\351,"Name",,"Portugal"
+HKLM,%CurrentVersion%\Telephony\Country List\351,"SameAreaRule",,"IG"
+
+HKLM,%CurrentVersion%\Telephony\Country List\352,"CountryCode",0x10001,0x00000160
+HKLM,%CurrentVersion%\Telephony\Country List\352,"InternationalRule",,"00EFG"
+HKLM,%CurrentVersion%\Telephony\Country List\352,"LongDistanceRule",,""
+HKLM,%CurrentVersion%\Telephony\Country List\352,"Name",,"Luxembourg"
+HKLM,%CurrentVersion%\Telephony\Country List\352,"SameAreaRule",,"G"
+
+HKLM,%CurrentVersion%\Telephony\Country List\353,"CountryCode",0x10001,0x00000161
+HKLM,%CurrentVersion%\Telephony\Country List\353,"InternationalRule",,"00EFG"
+HKLM,%CurrentVersion%\Telephony\Country List\353,"LongDistanceRule",,"0FG"
+HKLM,%CurrentVersion%\Telephony\Country List\353,"Name",,"Ireland"
+HKLM,%CurrentVersion%\Telephony\Country List\353,"SameAreaRule",,"G"
+
+HKLM,%CurrentVersion%\Telephony\Country List\354,"CountryCode",0x10001,0x00000162
+HKLM,%CurrentVersion%\Telephony\Country List\354,"InternationalRule",,"00EFG"
+HKLM,%CurrentVersion%\Telephony\Country List\354,"LongDistanceRule",,"0FG"
+HKLM,%CurrentVersion%\Telephony\Country List\354,"Name",,"Iceland"
+HKLM,%CurrentVersion%\Telephony\Country List\354,"SameAreaRule",,"G"
+
+HKLM,%CurrentVersion%\Telephony\Country List\355,"CountryCode",0x10001,0x00000163
+HKLM,%CurrentVersion%\Telephony\Country List\355,"InternationalRule",,"00EFG"
+HKLM,%CurrentVersion%\Telephony\Country List\355,"LongDistanceRule",,"0FG"
+HKLM,%CurrentVersion%\Telephony\Country List\355,"Name",,"Albania"
+HKLM,%CurrentVersion%\Telephony\Country List\355,"SameAreaRule",,"G"
+
+HKLM,%CurrentVersion%\Telephony\Country List\356,"CountryCode",0x10001,0x00000164
+HKLM,%CurrentVersion%\Telephony\Country List\356,"InternationalRule",,"00EFG"
+HKLM,%CurrentVersion%\Telephony\Country List\356,"LongDistanceRule",,""
+HKLM,%CurrentVersion%\Telephony\Country List\356,"Name",,"Malta"
+HKLM,%CurrentVersion%\Telephony\Country List\356,"SameAreaRule",,"G"
+
+HKLM,%CurrentVersion%\Telephony\Country List\357,"CountryCode",0x10001,0x00000165
+HKLM,%CurrentVersion%\Telephony\Country List\357,"InternationalRule",,"00EFG"
+HKLM,%CurrentVersion%\Telephony\Country List\357,"LongDistanceRule",,"0FG"
+HKLM,%CurrentVersion%\Telephony\Country List\357,"Name",,"Cyprus"
+HKLM,%CurrentVersion%\Telephony\Country List\357,"SameAreaRule",,"G"
+
+HKLM,%CurrentVersion%\Telephony\Country List\358,"CountryCode",0x10001,0x00000166
+HKLM,%CurrentVersion%\Telephony\Country List\358,"InternationalRule",,"00EFG"
+HKLM,%CurrentVersion%\Telephony\Country List\358,"LongDistanceRule",,"0FG"
+HKLM,%CurrentVersion%\Telephony\Country List\358,"Name",,"Finland"
+HKLM,%CurrentVersion%\Telephony\Country List\358,"SameAreaRule",,"G"
+
+HKLM,%CurrentVersion%\Telephony\Country List\359,"CountryCode",0x10001,0x00000167
+HKLM,%CurrentVersion%\Telephony\Country List\359,"InternationalRule",,"00EFG"
+HKLM,%CurrentVersion%\Telephony\Country List\359,"LongDistanceRule",,"0FG"
+HKLM,%CurrentVersion%\Telephony\Country List\359,"Name",,"Bulgaria"
+HKLM,%CurrentVersion%\Telephony\Country List\359,"SameAreaRule",,"G"
+
+HKLM,%CurrentVersion%\Telephony\Country List\36,"CountryCode",0x10001,0x00000024
+HKLM,%CurrentVersion%\Telephony\Country List\36,"InternationalRule",,"00EFG"
+HKLM,%CurrentVersion%\Telephony\Country List\36,"LongDistanceRule",," 06,FG"
+HKLM,%CurrentVersion%\Telephony\Country List\36,"Name",,"Hungary"
+HKLM,%CurrentVersion%\Telephony\Country List\36,"SameAreaRule",,"G"
+
+HKLM,%CurrentVersion%\Telephony\Country List\370,"CountryCode",0x10001,0x00000172
+HKLM,%CurrentVersion%\Telephony\Country List\370,"InternationalRule",,"8W10EFG"
+HKLM,%CurrentVersion%\Telephony\Country List\370,"LongDistanceRule",," 8WFG"
+HKLM,%CurrentVersion%\Telephony\Country List\370,"Name",,"Lithuania"
+HKLM,%CurrentVersion%\Telephony\Country List\370,"SameAreaRule",,"G"
+
+HKLM,%CurrentVersion%\Telephony\Country List\371,"CountryCode",0x10001,0x00000173
+HKLM,%CurrentVersion%\Telephony\Country List\371,"InternationalRule",,"00EFG"
+HKLM,%CurrentVersion%\Telephony\Country List\371,"LongDistanceRule",," 8,FG"
+HKLM,%CurrentVersion%\Telephony\Country List\371,"Name",,"Latvia"
+HKLM,%CurrentVersion%\Telephony\Country List\371,"SameAreaRule",,"G"
+
+HKLM,%CurrentVersion%\Telephony\Country List\372,"CountryCode",0x10001,0x00000174
+HKLM,%CurrentVersion%\Telephony\Country List\372,"InternationalRule",,"8,00EFG"
+HKLM,%CurrentVersion%\Telephony\Country List\372,"LongDistanceRule",," 8,2IG"
+HKLM,%CurrentVersion%\Telephony\Country List\372,"Name",,"Estonia"
+HKLM,%CurrentVersion%\Telephony\Country List\372,"SameAreaRule",,"G"
+
+HKLM,%CurrentVersion%\Telephony\Country List\373,"CountryCode",0x10001,0x00000175
+HKLM,%CurrentVersion%\Telephony\Country List\373,"InternationalRule",,"8W10EFG"
+HKLM,%CurrentVersion%\Telephony\Country List\373,"LongDistanceRule",," 8WFG"
+HKLM,%CurrentVersion%\Telephony\Country List\373,"Name",,"Moldova"
+HKLM,%CurrentVersion%\Telephony\Country List\373,"SameAreaRule",,"G"
+
+HKLM,%CurrentVersion%\Telephony\Country List\374,"CountryCode",0x10001,0x00000176
+HKLM,%CurrentVersion%\Telephony\Country List\374,"InternationalRule",,"8,10EFG"
+HKLM,%CurrentVersion%\Telephony\Country List\374,"LongDistanceRule",," 8,IG"
+HKLM,%CurrentVersion%\Telephony\Country List\374,"Name",,"Armenia"
+HKLM,%CurrentVersion%\Telephony\Country List\374,"SameAreaRule",,"G"
+
+HKLM,%CurrentVersion%\Telephony\Country List\375,"CountryCode",0x10001,0x00000177
+HKLM,%CurrentVersion%\Telephony\Country List\375,"InternationalRule",,"8W10EFG"
+HKLM,%CurrentVersion%\Telephony\Country List\375,"LongDistanceRule",," 8WFG"
+HKLM,%CurrentVersion%\Telephony\Country List\375,"Name",,"Belarus"
+HKLM,%CurrentVersion%\Telephony\Country List\375,"SameAreaRule",,"G"
+
+HKLM,%CurrentVersion%\Telephony\Country List\376,"CountryCode",0x10001,0x00000178
+HKLM,%CurrentVersion%\Telephony\Country List\376,"InternationalRule",,"00EFG"
+HKLM,%CurrentVersion%\Telephony\Country List\376,"LongDistanceRule",,""
+HKLM,%CurrentVersion%\Telephony\Country List\376,"Name",,"Andorra"
+HKLM,%CurrentVersion%\Telephony\Country List\376,"SameAreaRule",,"G"
+
+HKLM,%CurrentVersion%\Telephony\Country List\377,"CountryCode",0x10001,0x00000179
+HKLM,%CurrentVersion%\Telephony\Country List\377,"InternationalRule",,"00EFG"
+HKLM,%CurrentVersion%\Telephony\Country List\377,"LongDistanceRule",,""
+HKLM,%CurrentVersion%\Telephony\Country List\377,"Name",,"Monaco"
+HKLM,%CurrentVersion%\Telephony\Country List\377,"SameAreaRule",,"G"
+
+HKLM,%CurrentVersion%\Telephony\Country List\378,"CountryCode",0x10001,0x0000017a
+HKLM,%CurrentVersion%\Telephony\Country List\378,"InternationalRule",,"00EFG"
+HKLM,%CurrentVersion%\Telephony\Country List\378,"LongDistanceRule",,"IG"
+HKLM,%CurrentVersion%\Telephony\Country List\378,"Name",,"San Marino"
+HKLM,%CurrentVersion%\Telephony\Country List\378,"SameAreaRule",,"IG"
+
+HKLM,%CurrentVersion%\Telephony\Country List\379,"CountryCode",0x10001,0x00000027
+HKLM,%CurrentVersion%\Telephony\Country List\379,"InternationalRule",,"00EFG"
+HKLM,%CurrentVersion%\Telephony\Country List\379,"LongDistanceRule",,"IG"
+HKLM,%CurrentVersion%\Telephony\Country List\379,"Name",,"Vatican City"
+HKLM,%CurrentVersion%\Telephony\Country List\379,"SameAreaRule",,"IG"
+
+HKLM,%CurrentVersion%\Telephony\Country List\380,"CountryCode",0x10001,0x0000017c
+HKLM,%CurrentVersion%\Telephony\Country List\380,"InternationalRule",,"8W10EFG"
+HKLM,%CurrentVersion%\Telephony\Country List\380,"LongDistanceRule",," 8WFG"
+HKLM,%CurrentVersion%\Telephony\Country List\380,"Name",,"Ukraine"
+HKLM,%CurrentVersion%\Telephony\Country List\380,"SameAreaRule",,"G"
+
+HKLM,%CurrentVersion%\Telephony\Country List\381,"CountryCode",0x10001,0x0000017d
+HKLM,%CurrentVersion%\Telephony\Country List\381,"InternationalRule",,"99EFG"
+HKLM,%CurrentVersion%\Telephony\Country List\381,"LongDistanceRule",,"0FG"
+HKLM,%CurrentVersion%\Telephony\Country List\381,"Name",,"Yugoslavia"
+HKLM,%CurrentVersion%\Telephony\Country List\381,"SameAreaRule",,"G"
+
+HKLM,%CurrentVersion%\Telephony\Country List\385,"CountryCode",0x10001,0x00000181
+HKLM,%CurrentVersion%\Telephony\Country List\385,"InternationalRule",,"00EFG"
+HKLM,%CurrentVersion%\Telephony\Country List\385,"LongDistanceRule",,"0FG"
+HKLM,%CurrentVersion%\Telephony\Country List\385,"Name",,"Croatia"
+HKLM,%CurrentVersion%\Telephony\Country List\385,"SameAreaRule",,"G"
+
+HKLM,%CurrentVersion%\Telephony\Country List\386,"CountryCode",0x10001,0x00000182
+HKLM,%CurrentVersion%\Telephony\Country List\386,"InternationalRule",,"00EFG"
+HKLM,%CurrentVersion%\Telephony\Country List\386,"LongDistanceRule",,"0FG"
+HKLM,%CurrentVersion%\Telephony\Country List\386,"Name",,"Slovenia"
+HKLM,%CurrentVersion%\Telephony\Country List\386,"SameAreaRule",,"G"
+
+HKLM,%CurrentVersion%\Telephony\Country List\387,"CountryCode",0x10001,0x00000183
+HKLM,%CurrentVersion%\Telephony\Country List\387,"InternationalRule",,"00EFG"
+HKLM,%CurrentVersion%\Telephony\Country List\387,"LongDistanceRule",,"0FG"
+HKLM,%CurrentVersion%\Telephony\Country List\387,"Name",,"Bosnia and Herzegovina"
+HKLM,%CurrentVersion%\Telephony\Country List\387,"SameAreaRule",,"G"
+
+HKLM,%CurrentVersion%\Telephony\Country List\389,"CountryCode",0x10001,0x00000185
+HKLM,%CurrentVersion%\Telephony\Country List\389,"InternationalRule",,"99EFG"
+HKLM,%CurrentVersion%\Telephony\Country List\389,"LongDistanceRule",,"0FG"
+HKLM,%CurrentVersion%\Telephony\Country List\389,"Name",,"F.Y.R.O.M. (Former Yugoslav Republic of Macedonia)"
+HKLM,%CurrentVersion%\Telephony\Country List\389,"SameAreaRule",,"G"
+
+HKLM,%CurrentVersion%\Telephony\Country List\39,"CountryCode",0x10001,0x00000027
+HKLM,%CurrentVersion%\Telephony\Country List\39,"InternationalRule",,"00EFG"
+HKLM,%CurrentVersion%\Telephony\Country List\39,"LongDistanceRule",,"IG"
+HKLM,%CurrentVersion%\Telephony\Country List\39,"Name",,"Italy"
+HKLM,%CurrentVersion%\Telephony\Country List\39,"SameAreaRule",,"IG"
+
+HKLM,%CurrentVersion%\Telephony\Country List\40,"CountryCode",0x10001,0x00000028
+HKLM,%CurrentVersion%\Telephony\Country List\40,"InternationalRule",,"00EFG"
+HKLM,%CurrentVersion%\Telephony\Country List\40,"LongDistanceRule",," 0FG"
+HKLM,%CurrentVersion%\Telephony\Country List\40,"Name",,"Romania"
+HKLM,%CurrentVersion%\Telephony\Country List\40,"SameAreaRule",,"G"
+
+HKLM,%CurrentVersion%\Telephony\Country List\41,"CountryCode",0x10001,0x00000029
+HKLM,%CurrentVersion%\Telephony\Country List\41,"InternationalRule",,"00EFG"
+HKLM,%CurrentVersion%\Telephony\Country List\41,"LongDistanceRule",,"0FG"
+HKLM,%CurrentVersion%\Telephony\Country List\41,"Name",,"Switzerland"
+HKLM,%CurrentVersion%\Telephony\Country List\41,"SameAreaRule",,"G"
+
+HKLM,%CurrentVersion%\Telephony\Country List\420,"CountryCode",0x10001,0x000001a4
+HKLM,%CurrentVersion%\Telephony\Country List\420,"InternationalRule",,"00EFG"
+HKLM,%CurrentVersion%\Telephony\Country List\420,"LongDistanceRule",,"0FG"
+HKLM,%CurrentVersion%\Telephony\Country List\420,"Name",,"Czech Republic"
+HKLM,%CurrentVersion%\Telephony\Country List\420,"SameAreaRule",,"G"
+
+HKLM,%CurrentVersion%\Telephony\Country List\421,"CountryCode",0x10001,0x000001a5
+HKLM,%CurrentVersion%\Telephony\Country List\421,"InternationalRule",,"00EFG"
+HKLM,%CurrentVersion%\Telephony\Country List\421,"LongDistanceRule",,"0FG"
+HKLM,%CurrentVersion%\Telephony\Country List\421,"Name",,"Slovakia"
+HKLM,%CurrentVersion%\Telephony\Country List\421,"SameAreaRule",,"G"
+
+HKLM,%CurrentVersion%\Telephony\Country List\423,"CountryCode",0x10001,0x000001a7
+HKLM,%CurrentVersion%\Telephony\Country List\423,"InternationalRule",,"00EFG"
+HKLM,%CurrentVersion%\Telephony\Country List\423,"LongDistanceRule",,"G"
+HKLM,%CurrentVersion%\Telephony\Country List\423,"Name",,"Liechtenstein"
+HKLM,%CurrentVersion%\Telephony\Country List\423,"SameAreaRule",,"G"
+
+HKLM,%CurrentVersion%\Telephony\Country List\43,"CountryCode",0x10001,0x0000002b
+HKLM,%CurrentVersion%\Telephony\Country List\43,"InternationalRule",,"00EFG"
+HKLM,%CurrentVersion%\Telephony\Country List\43,"LongDistanceRule",,"0FG"
+HKLM,%CurrentVersion%\Telephony\Country List\43,"Name",,"Austria"
+HKLM,%CurrentVersion%\Telephony\Country List\43,"SameAreaRule",,"G"
+
+HKLM,%CurrentVersion%\Telephony\Country List\44,"CountryCode",0x10001,0x0000002c
+HKLM,%CurrentVersion%\Telephony\Country List\44,"InternationalRule",,"00EFG"
+HKLM,%CurrentVersion%\Telephony\Country List\44,"LongDistanceRule",,"0FG"
+HKLM,%CurrentVersion%\Telephony\Country List\44,"Name",,"United Kingdom"
+HKLM,%CurrentVersion%\Telephony\Country List\44,"SameAreaRule",,"G"
+
+HKLM,%CurrentVersion%\Telephony\Country List\45,"CountryCode",0x10001,0x0000002d
+HKLM,%CurrentVersion%\Telephony\Country List\45,"InternationalRule",,"00EFG"
+HKLM,%CurrentVersion%\Telephony\Country List\45,"LongDistanceRule",,""
+HKLM,%CurrentVersion%\Telephony\Country List\45,"Name",,"Denmark"
+HKLM,%CurrentVersion%\Telephony\Country List\45,"SameAreaRule",,"G"
+
+HKLM,%CurrentVersion%\Telephony\Country List\46,"CountryCode",0x10001,0x0000002e
+HKLM,%CurrentVersion%\Telephony\Country List\46,"InternationalRule",,"00EFG"
+HKLM,%CurrentVersion%\Telephony\Country List\46,"LongDistanceRule",,"0FG"
+HKLM,%CurrentVersion%\Telephony\Country List\46,"Name",,"Sweden"
+HKLM,%CurrentVersion%\Telephony\Country List\46,"SameAreaRule",,"G"
+
+HKLM,%CurrentVersion%\Telephony\Country List\47,"CountryCode",0x10001,0x0000002f
+HKLM,%CurrentVersion%\Telephony\Country List\47,"InternationalRule",,"00EFG"
+HKLM,%CurrentVersion%\Telephony\Country List\47,"LongDistanceRule",,""
+HKLM,%CurrentVersion%\Telephony\Country List\47,"Name",,"Norway"
+HKLM,%CurrentVersion%\Telephony\Country List\47,"SameAreaRule",,"G"
+
+HKLM,%CurrentVersion%\Telephony\Country List\48,"CountryCode",0x10001,0x00000030
+HKLM,%CurrentVersion%\Telephony\Country List\48,"InternationalRule",,"00EFG"
+HKLM,%CurrentVersion%\Telephony\Country List\48,"LongDistanceRule",,"0FG"
+HKLM,%CurrentVersion%\Telephony\Country List\48,"Name",,"Poland"
+HKLM,%CurrentVersion%\Telephony\Country List\48,"SameAreaRule",,"G"
+
+HKLM,%CurrentVersion%\Telephony\Country List\49,"CountryCode",0x10001,0x00000031
+HKLM,%CurrentVersion%\Telephony\Country List\49,"InternationalRule",,"00EFG"
+HKLM,%CurrentVersion%\Telephony\Country List\49,"LongDistanceRule",,"0FG"
+HKLM,%CurrentVersion%\Telephony\Country List\49,"Name",,"Germany"
+HKLM,%CurrentVersion%\Telephony\Country List\49,"SameAreaRule",,"G"
+
+HKLM,%CurrentVersion%\Telephony\Country List\500,"CountryCode",0x10001,0x000001f4
+HKLM,%CurrentVersion%\Telephony\Country List\500,"InternationalRule",,"0EFG"
+HKLM,%CurrentVersion%\Telephony\Country List\500,"LongDistanceRule",,""
+HKLM,%CurrentVersion%\Telephony\Country List\500,"Name",,"Falkland Islands (Islas Malvinas)"
+HKLM,%CurrentVersion%\Telephony\Country List\500,"SameAreaRule",,"G"
+
+HKLM,%CurrentVersion%\Telephony\Country List\501,"CountryCode",0x10001,0x000001f5
+HKLM,%CurrentVersion%\Telephony\Country List\501,"InternationalRule",,"00EFG"
+HKLM,%CurrentVersion%\Telephony\Country List\501,"LongDistanceRule",,"0FG"
+HKLM,%CurrentVersion%\Telephony\Country List\501,"Name",,"Belize"
+HKLM,%CurrentVersion%\Telephony\Country List\501,"SameAreaRule",,"G"
+
+HKLM,%CurrentVersion%\Telephony\Country List\502,"CountryCode",0x10001,0x000001f6
+HKLM,%CurrentVersion%\Telephony\Country List\502,"InternationalRule",,"00EFG"
+HKLM,%CurrentVersion%\Telephony\Country List\502,"LongDistanceRule",,"0FG"
+HKLM,%CurrentVersion%\Telephony\Country List\502,"Name",,"Guatemala"
+HKLM,%CurrentVersion%\Telephony\Country List\502,"SameAreaRule",,"G"
+
+HKLM,%CurrentVersion%\Telephony\Country List\503,"CountryCode",0x10001,0x000001f7
+HKLM,%CurrentVersion%\Telephony\Country List\503,"InternationalRule",,"0EFG"
+HKLM,%CurrentVersion%\Telephony\Country List\503,"LongDistanceRule",,""
+HKLM,%CurrentVersion%\Telephony\Country List\503,"Name",,"El Salvador"
+HKLM,%CurrentVersion%\Telephony\Country List\503,"SameAreaRule",,"G"
+
+HKLM,%CurrentVersion%\Telephony\Country List\504,"CountryCode",0x10001,0x000001f8
+HKLM,%CurrentVersion%\Telephony\Country List\504,"InternationalRule",,"00EFG"
+HKLM,%CurrentVersion%\Telephony\Country List\504,"LongDistanceRule",,""
+HKLM,%CurrentVersion%\Telephony\Country List\504,"Name",,"Honduras"
+HKLM,%CurrentVersion%\Telephony\Country List\504,"SameAreaRule",,"G"
+
+HKLM,%CurrentVersion%\Telephony\Country List\505,"CountryCode",0x10001,0x000001f9
+HKLM,%CurrentVersion%\Telephony\Country List\505,"InternationalRule",,"00EFG"
+HKLM,%CurrentVersion%\Telephony\Country List\505,"LongDistanceRule",,"0FG"
+HKLM,%CurrentVersion%\Telephony\Country List\505,"Name",,"Nicaragua"
+HKLM,%CurrentVersion%\Telephony\Country List\505,"SameAreaRule",,"G"
+
+HKLM,%CurrentVersion%\Telephony\Country List\506,"CountryCode",0x10001,0x000001fa
+HKLM,%CurrentVersion%\Telephony\Country List\506,"InternationalRule",,"00EFG"
+HKLM,%CurrentVersion%\Telephony\Country List\506,"LongDistanceRule",,""
+HKLM,%CurrentVersion%\Telephony\Country List\506,"Name",,"Costa Rica"
+HKLM,%CurrentVersion%\Telephony\Country List\506,"SameAreaRule",,"G"
+
+HKLM,%CurrentVersion%\Telephony\Country List\507,"CountryCode",0x10001,0x000001fb
+HKLM,%CurrentVersion%\Telephony\Country List\507,"InternationalRule",,"00EFG"
+HKLM,%CurrentVersion%\Telephony\Country List\507,"LongDistanceRule",,""
+HKLM,%CurrentVersion%\Telephony\Country List\507,"Name",,"Panama"
+HKLM,%CurrentVersion%\Telephony\Country List\507,"SameAreaRule",,"G"
+
+HKLM,%CurrentVersion%\Telephony\Country List\508,"CountryCode",0x10001,0x000001fc
+HKLM,%CurrentVersion%\Telephony\Country List\508,"InternationalRule",,"00,EFG"
+HKLM,%CurrentVersion%\Telephony\Country List\508,"LongDistanceRule",,""
+HKLM,%CurrentVersion%\Telephony\Country List\508,"Name",,"St. Pierre and Miquelon"
+HKLM,%CurrentVersion%\Telephony\Country List\508,"SameAreaRule",,"G"
+
+HKLM,%CurrentVersion%\Telephony\Country List\509,"CountryCode",0x10001,0x000001fd
+HKLM,%CurrentVersion%\Telephony\Country List\509,"InternationalRule",,"00EFG"
+HKLM,%CurrentVersion%\Telephony\Country List\509,"LongDistanceRule",,""
+HKLM,%CurrentVersion%\Telephony\Country List\509,"Name",,"Haiti"
+HKLM,%CurrentVersion%\Telephony\Country List\509,"SameAreaRule",,"G"
+
+HKLM,%CurrentVersion%\Telephony\Country List\51,"CountryCode",0x10001,0x00000033
+HKLM,%CurrentVersion%\Telephony\Country List\51,"InternationalRule",,"00EFG"
+HKLM,%CurrentVersion%\Telephony\Country List\51,"LongDistanceRule",,"0FG"
+HKLM,%CurrentVersion%\Telephony\Country List\51,"Name",,"Peru"
+HKLM,%CurrentVersion%\Telephony\Country List\51,"SameAreaRule",,"G"
+
+HKLM,%CurrentVersion%\Telephony\Country List\52,"CountryCode",0x10001,0x00000034
+HKLM,%CurrentVersion%\Telephony\Country List\52,"InternationalRule",,"00EFG"
+HKLM,%CurrentVersion%\Telephony\Country List\52,"LongDistanceRule",," 01FG"
+HKLM,%CurrentVersion%\Telephony\Country List\52,"Name",,"Mexico"
+HKLM,%CurrentVersion%\Telephony\Country List\52,"SameAreaRule",,"G"
+
+HKLM,%CurrentVersion%\Telephony\Country List\53,"CountryCode",0x10001,0x00000035
+HKLM,%CurrentVersion%\Telephony\Country List\53,"InternationalRule",,"119EFG"
+HKLM,%CurrentVersion%\Telephony\Country List\53,"LongDistanceRule",,"0FG"
+HKLM,%CurrentVersion%\Telephony\Country List\53,"Name",,"Cuba"
+HKLM,%CurrentVersion%\Telephony\Country List\53,"SameAreaRule",,"G"
+
+HKLM,%CurrentVersion%\Telephony\Country List\5399,"CountryCode",0x10001,0x00000035
+HKLM,%CurrentVersion%\Telephony\Country List\5399,"InternationalRule",,"00EFG"
+HKLM,%CurrentVersion%\Telephony\Country List\5399,"LongDistanceRule",,"0FG"
+HKLM,%CurrentVersion%\Telephony\Country List\5399,"Name",,"Guantanamo Bay"
+HKLM,%CurrentVersion%\Telephony\Country List\5399,"SameAreaRule",,"G"
+
+HKLM,%CurrentVersion%\Telephony\Country List\54,"CountryCode",0x10001,0x00000036
+HKLM,%CurrentVersion%\Telephony\Country List\54,"InternationalRule",,"00EFG"
+HKLM,%CurrentVersion%\Telephony\Country List\54,"LongDistanceRule",,"0FG"
+HKLM,%CurrentVersion%\Telephony\Country List\54,"Name",,"Argentina"
+HKLM,%CurrentVersion%\Telephony\Country List\54,"SameAreaRule",,"G"
+
+HKLM,%CurrentVersion%\Telephony\Country List\55,"CountryCode",0x10001,0x00000037
+HKLM,%CurrentVersion%\Telephony\Country List\55,"InternationalRule",,"00EFG"
+HKLM,%CurrentVersion%\Telephony\Country List\55,"LongDistanceRule",,"0FG"
+HKLM,%CurrentVersion%\Telephony\Country List\55,"Name",,"Brazil"
+HKLM,%CurrentVersion%\Telephony\Country List\55,"SameAreaRule",,"G"
+
+HKLM,%CurrentVersion%\Telephony\Country List\56,"CountryCode",0x10001,0x00000038
+HKLM,%CurrentVersion%\Telephony\Country List\56,"InternationalRule",,"00EFG"
+HKLM,%CurrentVersion%\Telephony\Country List\56,"LongDistanceRule",,"FG"
+HKLM,%CurrentVersion%\Telephony\Country List\56,"Name",,"Chile"
+HKLM,%CurrentVersion%\Telephony\Country List\56,"SameAreaRule",,"G"
+
+HKLM,%CurrentVersion%\Telephony\Country List\57,"CountryCode",0x10001,0x00000039
+HKLM,%CurrentVersion%\Telephony\Country List\57,"InternationalRule",,"009EFG"
+HKLM,%CurrentVersion%\Telephony\Country List\57,"LongDistanceRule",,"09FG"
+HKLM,%CurrentVersion%\Telephony\Country List\57,"Name",,"Colombia"
+HKLM,%CurrentVersion%\Telephony\Country List\57,"SameAreaRule",,"G"
+
+HKLM,%CurrentVersion%\Telephony\Country List\58,"CountryCode",0x10001,0x0000003a
+HKLM,%CurrentVersion%\Telephony\Country List\58,"InternationalRule",,"00EFG"
+HKLM,%CurrentVersion%\Telephony\Country List\58,"LongDistanceRule",,"0FG"
+HKLM,%CurrentVersion%\Telephony\Country List\58,"Name",,"Venezuela"
+HKLM,%CurrentVersion%\Telephony\Country List\58,"SameAreaRule",,"G"
+
+HKLM,%CurrentVersion%\Telephony\Country List\590,"CountryCode",0x10001,0x0000024e
+HKLM,%CurrentVersion%\Telephony\Country List\590,"InternationalRule",,"00,EFG"
+HKLM,%CurrentVersion%\Telephony\Country List\590,"LongDistanceRule",,""
+HKLM,%CurrentVersion%\Telephony\Country List\590,"Name",,"Guadeloupe"
+HKLM,%CurrentVersion%\Telephony\Country List\590,"SameAreaRule",,"G"
+
+HKLM,%CurrentVersion%\Telephony\Country List\5901,"CountryCode",0x10001,0x0000024e
+HKLM,%CurrentVersion%\Telephony\Country List\5901,"InternationalRule",,"00,EFG"
+HKLM,%CurrentVersion%\Telephony\Country List\5901,"LongDistanceRule",,""
+HKLM,%CurrentVersion%\Telephony\Country List\5901,"Name",,"French Antilles"
+HKLM,%CurrentVersion%\Telephony\Country List\5901,"SameAreaRule",,"G"
+
+HKLM,%CurrentVersion%\Telephony\Country List\591,"CountryCode",0x10001,0x0000024f
+HKLM,%CurrentVersion%\Telephony\Country List\591,"InternationalRule",,"00EFG"
+HKLM,%CurrentVersion%\Telephony\Country List\591,"LongDistanceRule",,"0FG"
+HKLM,%CurrentVersion%\Telephony\Country List\591,"Name",,"Bolivia"
+HKLM,%CurrentVersion%\Telephony\Country List\591,"SameAreaRule",,"G"
+
+HKLM,%CurrentVersion%\Telephony\Country List\592,"CountryCode",0x10001,0x00000250
+HKLM,%CurrentVersion%\Telephony\Country List\592,"InternationalRule",,"001EFG"
+HKLM,%CurrentVersion%\Telephony\Country List\592,"LongDistanceRule",,"0FG"
+HKLM,%CurrentVersion%\Telephony\Country List\592,"Name",,"Guyana"
+HKLM,%CurrentVersion%\Telephony\Country List\592,"SameAreaRule",,"G"
+
+HKLM,%CurrentVersion%\Telephony\Country List\593,"CountryCode",0x10001,0x00000251
+HKLM,%CurrentVersion%\Telephony\Country List\593,"InternationalRule",,"00EFG"
+HKLM,%CurrentVersion%\Telephony\Country List\593,"LongDistanceRule",,"0FG"
+HKLM,%CurrentVersion%\Telephony\Country List\593,"Name",,"Ecuador"
+HKLM,%CurrentVersion%\Telephony\Country List\593,"SameAreaRule",,"G"
+
+HKLM,%CurrentVersion%\Telephony\Country List\594,"CountryCode",0x10001,0x00000252
+HKLM,%CurrentVersion%\Telephony\Country List\594,"InternationalRule",,"00,EFG"
+HKLM,%CurrentVersion%\Telephony\Country List\594,"LongDistanceRule",,""
+HKLM,%CurrentVersion%\Telephony\Country List\594,"Name",,"French Guiana"
+HKLM,%CurrentVersion%\Telephony\Country List\594,"SameAreaRule",,"G"
+
+HKLM,%CurrentVersion%\Telephony\Country List\595,"CountryCode",0x10001,0x00000253
+HKLM,%CurrentVersion%\Telephony\Country List\595,"InternationalRule",,"00EFG"
+HKLM,%CurrentVersion%\Telephony\Country List\595,"LongDistanceRule",,"0FG"
+HKLM,%CurrentVersion%\Telephony\Country List\595,"Name",,"Paraguay"
+HKLM,%CurrentVersion%\Telephony\Country List\595,"SameAreaRule",,"G"
+
+HKLM,%CurrentVersion%\Telephony\Country List\596,"CountryCode",0x10001,0x00000254
+HKLM,%CurrentVersion%\Telephony\Country List\596,"InternationalRule",,"00,EFG"
+HKLM,%CurrentVersion%\Telephony\Country List\596,"LongDistanceRule",,""
+HKLM,%CurrentVersion%\Telephony\Country List\596,"Name",,"Martinique"
+HKLM,%CurrentVersion%\Telephony\Country List\596,"SameAreaRule",,"G"
+
+HKLM,%CurrentVersion%\Telephony\Country List\597,"CountryCode",0x10001,0x00000255
+HKLM,%CurrentVersion%\Telephony\Country List\597,"InternationalRule",,"00EFG"
+HKLM,%CurrentVersion%\Telephony\Country List\597,"LongDistanceRule",,""
+HKLM,%CurrentVersion%\Telephony\Country List\597,"Name",,"Suriname"
+HKLM,%CurrentVersion%\Telephony\Country List\597,"SameAreaRule",,"G"
+
+HKLM,%CurrentVersion%\Telephony\Country List\598,"CountryCode",0x10001,0x00000256
+HKLM,%CurrentVersion%\Telephony\Country List\598,"InternationalRule",,"00EFG"
+HKLM,%CurrentVersion%\Telephony\Country List\598,"LongDistanceRule",,"0FG"
+HKLM,%CurrentVersion%\Telephony\Country List\598,"Name",,"Uruguay"
+HKLM,%CurrentVersion%\Telephony\Country List\598,"SameAreaRule",,"G"
+
+HKLM,%CurrentVersion%\Telephony\Country List\599,"CountryCode",0x10001,0x00000257
+HKLM,%CurrentVersion%\Telephony\Country List\599,"InternationalRule",,"00EFG"
+HKLM,%CurrentVersion%\Telephony\Country List\599,"LongDistanceRule",,"0FG"
+HKLM,%CurrentVersion%\Telephony\Country List\599,"Name",,"Netherlands Antilles"
+HKLM,%CurrentVersion%\Telephony\Country List\599,"SameAreaRule",,"G"
+
+HKLM,%CurrentVersion%\Telephony\Country List\60,"CountryCode",0x10001,0x0000003c
+HKLM,%CurrentVersion%\Telephony\Country List\60,"InternationalRule",,"00EFG"
+HKLM,%CurrentVersion%\Telephony\Country List\60,"LongDistanceRule",,""
+HKLM,%CurrentVersion%\Telephony\Country List\60,"Name",,"Malaysia"
+HKLM,%CurrentVersion%\Telephony\Country List\60,"SameAreaRule",,"G"
+
+HKLM,%CurrentVersion%\Telephony\Country List\61,"CountryCode",0x10001,0x0000003d
+HKLM,%CurrentVersion%\Telephony\Country List\61,"InternationalRule",,"0011EFG"
+HKLM,%CurrentVersion%\Telephony\Country List\61,"LongDistanceRule",," 0FG"
+HKLM,%CurrentVersion%\Telephony\Country List\61,"Name",,"Australia"
+HKLM,%CurrentVersion%\Telephony\Country List\61,"SameAreaRule",,"G"
+
+HKLM,%CurrentVersion%\Telephony\Country List\6101,"CountryCode",0x10001,0x0000003d
+HKLM,%CurrentVersion%\Telephony\Country List\6101,"InternationalRule",,"00EFG"
+HKLM,%CurrentVersion%\Telephony\Country List\6101,"LongDistanceRule",," 0FG"
+HKLM,%CurrentVersion%\Telephony\Country List\6101,"Name",,"Cocos-Keeling Islands"
+HKLM,%CurrentVersion%\Telephony\Country List\6101,"SameAreaRule",,"G"
+
+HKLM,%CurrentVersion%\Telephony\Country List\62,"CountryCode",0x10001,0x0000003e
+HKLM,%CurrentVersion%\Telephony\Country List\62,"InternationalRule",,"001EFG"
+HKLM,%CurrentVersion%\Telephony\Country List\62,"LongDistanceRule",,"0FG"
+HKLM,%CurrentVersion%\Telephony\Country List\62,"Name",,"Indonesia"
+HKLM,%CurrentVersion%\Telephony\Country List\62,"SameAreaRule",,"G"
+
+HKLM,%CurrentVersion%\Telephony\Country List\63,"CountryCode",0x10001,0x0000003f
+HKLM,%CurrentVersion%\Telephony\Country List\63,"InternationalRule",,"00EFG"
+HKLM,%CurrentVersion%\Telephony\Country List\63,"LongDistanceRule",,"0FG"
+HKLM,%CurrentVersion%\Telephony\Country List\63,"Name",,"Philippines"
+HKLM,%CurrentVersion%\Telephony\Country List\63,"SameAreaRule",,"G"
+
+HKLM,%CurrentVersion%\Telephony\Country List\64,"CountryCode",0x10001,0x00000040
+HKLM,%CurrentVersion%\Telephony\Country List\64,"InternationalRule",,"00EFG"
+HKLM,%CurrentVersion%\Telephony\Country List\64,"LongDistanceRule",,"0FG"
+HKLM,%CurrentVersion%\Telephony\Country List\64,"Name",,"New Zealand"
+HKLM,%CurrentVersion%\Telephony\Country List\64,"SameAreaRule",,"G"
+
+HKLM,%CurrentVersion%\Telephony\Country List\65,"CountryCode",0x10001,0x00000041
+HKLM,%CurrentVersion%\Telephony\Country List\65,"InternationalRule",,"001EFG"
+HKLM,%CurrentVersion%\Telephony\Country List\65,"LongDistanceRule",,""
+HKLM,%CurrentVersion%\Telephony\Country List\65,"Name",,"Singapore"
+HKLM,%CurrentVersion%\Telephony\Country List\65,"SameAreaRule",,"G"
+
+HKLM,%CurrentVersion%\Telephony\Country List\66,"CountryCode",0x10001,0x00000042
+HKLM,%CurrentVersion%\Telephony\Country List\66,"InternationalRule",,"001EFG"
+HKLM,%CurrentVersion%\Telephony\Country List\66,"LongDistanceRule",,"0FG"
+HKLM,%CurrentVersion%\Telephony\Country List\66,"Name",,"Thailand"
+HKLM,%CurrentVersion%\Telephony\Country List\66,"SameAreaRule",,"G"
+
+HKLM,%CurrentVersion%\Telephony\Country List\670,"CountryCode",0x10001,0x0000029e
+HKLM,%CurrentVersion%\Telephony\Country List\670,"InternationalRule",,"011EFG"
+HKLM,%CurrentVersion%\Telephony\Country List\670,"LongDistanceRule",," 1FG"
+HKLM,%CurrentVersion%\Telephony\Country List\670,"Name",,"Saipan Island"
+HKLM,%CurrentVersion%\Telephony\Country List\670,"SameAreaRule",,"G"
+
+HKLM,%CurrentVersion%\Telephony\Country List\6701,"CountryCode",0x10001,0x0000029e
+HKLM,%CurrentVersion%\Telephony\Country List\6701,"InternationalRule",,"011EFG"
+HKLM,%CurrentVersion%\Telephony\Country List\6701,"LongDistanceRule",," 1FG"
+HKLM,%CurrentVersion%\Telephony\Country List\6701,"Name",,"Rota Island"
+HKLM,%CurrentVersion%\Telephony\Country List\6701,"SameAreaRule",,"G"
+
+HKLM,%CurrentVersion%\Telephony\Country List\6702,"CountryCode",0x10001,0x0000029e
+HKLM,%CurrentVersion%\Telephony\Country List\6702,"InternationalRule",,"011EFG"
+HKLM,%CurrentVersion%\Telephony\Country List\6702,"LongDistanceRule",," 1FG"
+HKLM,%CurrentVersion%\Telephony\Country List\6702,"Name",,"Tinian Island"
+HKLM,%CurrentVersion%\Telephony\Country List\6702,"SameAreaRule",,"G"
+
+HKLM,%CurrentVersion%\Telephony\Country List\672,"CountryCode",0x10001,0x000002a0
+HKLM,%CurrentVersion%\Telephony\Country List\672,"InternationalRule",,"00EFG"
+HKLM,%CurrentVersion%\Telephony\Country List\672,"LongDistanceRule",,"0FG"
+HKLM,%CurrentVersion%\Telephony\Country List\672,"Name",,"Christmas Island"
+HKLM,%CurrentVersion%\Telephony\Country List\672,"SameAreaRule",,"G"
+
+HKLM,%CurrentVersion%\Telephony\Country List\6722,"CountryCode",0x10001,0x000002a0
+HKLM,%CurrentVersion%\Telephony\Country List\6722,"InternationalRule",,"0101EFG"
+HKLM,%CurrentVersion%\Telephony\Country List\6722,"LongDistanceRule",,""
+HKLM,%CurrentVersion%\Telephony\Country List\6722,"Name",,"Norfolk Island"
+HKLM,%CurrentVersion%\Telephony\Country List\6722,"SameAreaRule",,"G"
+
+HKLM,%CurrentVersion%\Telephony\Country List\673,"CountryCode",0x10001,0x000002a1
+HKLM,%CurrentVersion%\Telephony\Country List\673,"InternationalRule",,"00EFG"
+HKLM,%CurrentVersion%\Telephony\Country List\673,"LongDistanceRule",,"0FG"
+HKLM,%CurrentVersion%\Telephony\Country List\673,"Name",,"Brunei"
+HKLM,%CurrentVersion%\Telephony\Country List\673,"SameAreaRule",,"G"
+
+HKLM,%CurrentVersion%\Telephony\Country List\674,"CountryCode",0x10001,0x000002a2
+HKLM,%CurrentVersion%\Telephony\Country List\674,"InternationalRule",,"00EFG"
+HKLM,%CurrentVersion%\Telephony\Country List\674,"LongDistanceRule",,""
+HKLM,%CurrentVersion%\Telephony\Country List\674,"Name",,"Nauru"
+HKLM,%CurrentVersion%\Telephony\Country List\674,"SameAreaRule",,"G"
+
+HKLM,%CurrentVersion%\Telephony\Country List\675,"CountryCode",0x10001,0x000002a3
+HKLM,%CurrentVersion%\Telephony\Country List\675,"InternationalRule",,"05EFG"
+HKLM,%CurrentVersion%\Telephony\Country List\675,"LongDistanceRule",,""
+HKLM,%CurrentVersion%\Telephony\Country List\675,"Name",,"Papua New Guinea"
+HKLM,%CurrentVersion%\Telephony\Country List\675,"SameAreaRule",,"G"
+
+HKLM,%CurrentVersion%\Telephony\Country List\676,"CountryCode",0x10001,0x000002a4
+HKLM,%CurrentVersion%\Telephony\Country List\676,"InternationalRule",,"00EFG"
+HKLM,%CurrentVersion%\Telephony\Country List\676,"LongDistanceRule",,""
+HKLM,%CurrentVersion%\Telephony\Country List\676,"Name",,"Tonga"
+HKLM,%CurrentVersion%\Telephony\Country List\676,"SameAreaRule",,"G"
+
+HKLM,%CurrentVersion%\Telephony\Country List\677,"CountryCode",0x10001,0x000002a5
+HKLM,%CurrentVersion%\Telephony\Country List\677,"InternationalRule",,"00EFG"
+HKLM,%CurrentVersion%\Telephony\Country List\677,"LongDistanceRule",,""
+HKLM,%CurrentVersion%\Telephony\Country List\677,"Name",,"Solomon Islands"
+HKLM,%CurrentVersion%\Telephony\Country List\677,"SameAreaRule",,"G"
+
+HKLM,%CurrentVersion%\Telephony\Country List\678,"CountryCode",0x10001,0x000002a6
+HKLM,%CurrentVersion%\Telephony\Country List\678,"InternationalRule",,"00EFG"
+HKLM,%CurrentVersion%\Telephony\Country List\678,"LongDistanceRule",,""
+HKLM,%CurrentVersion%\Telephony\Country List\678,"Name",,"Vanuatu"
+HKLM,%CurrentVersion%\Telephony\Country List\678,"SameAreaRule",,"G"
+
+HKLM,%CurrentVersion%\Telephony\Country List\679,"CountryCode",0x10001,0x000002a7
+HKLM,%CurrentVersion%\Telephony\Country List\679,"InternationalRule",,"05EFG"
+HKLM,%CurrentVersion%\Telephony\Country List\679,"LongDistanceRule",,""
+HKLM,%CurrentVersion%\Telephony\Country List\679,"Name",,"Fiji Islands"
+HKLM,%CurrentVersion%\Telephony\Country List\679,"SameAreaRule",,"G"
+
+HKLM,%CurrentVersion%\Telephony\Country List\680,"CountryCode",0x10001,0x000002a8
+HKLM,%CurrentVersion%\Telephony\Country List\680,"InternationalRule",,"00EFG"
+HKLM,%CurrentVersion%\Telephony\Country List\680,"LongDistanceRule",,""
+HKLM,%CurrentVersion%\Telephony\Country List\680,"Name",,"Palau"
+HKLM,%CurrentVersion%\Telephony\Country List\680,"SameAreaRule",,"G"
+
+HKLM,%CurrentVersion%\Telephony\Country List\681,"CountryCode",0x10001,0x000002a9
+HKLM,%CurrentVersion%\Telephony\Country List\681,"InternationalRule",,"00,EFG"
+HKLM,%CurrentVersion%\Telephony\Country List\681,"LongDistanceRule",,""
+HKLM,%CurrentVersion%\Telephony\Country List\681,"Name",,"Wallis and Futuna Islands"
+HKLM,%CurrentVersion%\Telephony\Country List\681,"SameAreaRule",,"G"
+
+HKLM,%CurrentVersion%\Telephony\Country List\682,"CountryCode",0x10001,0x000002aa
+HKLM,%CurrentVersion%\Telephony\Country List\682,"InternationalRule",,"00EFG"
+HKLM,%CurrentVersion%\Telephony\Country List\682,"LongDistanceRule",,""
+HKLM,%CurrentVersion%\Telephony\Country List\682,"Name",,"Cook Islands"
+HKLM,%CurrentVersion%\Telephony\Country List\682,"SameAreaRule",,"G"
+
+HKLM,%CurrentVersion%\Telephony\Country List\683,"CountryCode",0x10001,0x000002ab
+HKLM,%CurrentVersion%\Telephony\Country List\683,"InternationalRule",,"00EFG"
+HKLM,%CurrentVersion%\Telephony\Country List\683,"LongDistanceRule",,""
+HKLM,%CurrentVersion%\Telephony\Country List\683,"Name",,"Niue"
+HKLM,%CurrentVersion%\Telephony\Country List\683,"SameAreaRule",,"G"
+
+HKLM,%CurrentVersion%\Telephony\Country List\684,"CountryCode",0x10001,0x000002ac
+HKLM,%CurrentVersion%\Telephony\Country List\684,"InternationalRule",,"1EFG"
+HKLM,%CurrentVersion%\Telephony\Country List\684,"LongDistanceRule",,""
+HKLM,%CurrentVersion%\Telephony\Country List\684,"Name",,"American Samoa"
+HKLM,%CurrentVersion%\Telephony\Country List\684,"SameAreaRule",,"G"
+
+HKLM,%CurrentVersion%\Telephony\Country List\685,"CountryCode",0x10001,0x000002ad
+HKLM,%CurrentVersion%\Telephony\Country List\685,"InternationalRule",,"0EFG"
+HKLM,%CurrentVersion%\Telephony\Country List\685,"LongDistanceRule",,""
+HKLM,%CurrentVersion%\Telephony\Country List\685,"Name",,"Samoa"
+HKLM,%CurrentVersion%\Telephony\Country List\685,"SameAreaRule",,"G"
+
+HKLM,%CurrentVersion%\Telephony\Country List\686,"CountryCode",0x10001,0x000002ae
+HKLM,%CurrentVersion%\Telephony\Country List\686,"InternationalRule",,"00EFG"
+HKLM,%CurrentVersion%\Telephony\Country List\686,"LongDistanceRule",,""
+HKLM,%CurrentVersion%\Telephony\Country List\686,"Name",,"Kiribati"
+HKLM,%CurrentVersion%\Telephony\Country List\686,"SameAreaRule",,"G"
+
+HKLM,%CurrentVersion%\Telephony\Country List\687,"CountryCode",0x10001,0x000002af
+HKLM,%CurrentVersion%\Telephony\Country List\687,"InternationalRule",,"00EFG"
+HKLM,%CurrentVersion%\Telephony\Country List\687,"LongDistanceRule",,""
+HKLM,%CurrentVersion%\Telephony\Country List\687,"Name",,"New Caledonia"
+HKLM,%CurrentVersion%\Telephony\Country List\687,"SameAreaRule",,"G"
+
+HKLM,%CurrentVersion%\Telephony\Country List\688,"CountryCode",0x10001,0x000002b0
+HKLM,%CurrentVersion%\Telephony\Country List\688,"InternationalRule",,"00EFG"
+HKLM,%CurrentVersion%\Telephony\Country List\688,"LongDistanceRule",,""
+HKLM,%CurrentVersion%\Telephony\Country List\688,"Name",,"Tuvalu"
+HKLM,%CurrentVersion%\Telephony\Country List\688,"SameAreaRule",,"G"
+
+HKLM,%CurrentVersion%\Telephony\Country List\689,"CountryCode",0x10001,0x000002b1
+HKLM,%CurrentVersion%\Telephony\Country List\689,"InternationalRule",,"00EFG"
+HKLM,%CurrentVersion%\Telephony\Country List\689,"LongDistanceRule",,""
+HKLM,%CurrentVersion%\Telephony\Country List\689,"Name",,"French Polynesia"
+HKLM,%CurrentVersion%\Telephony\Country List\689,"SameAreaRule",,"G"
+
+HKLM,%CurrentVersion%\Telephony\Country List\690,"CountryCode",0x10001,0x000002b2
+HKLM,%CurrentVersion%\Telephony\Country List\690,"InternationalRule",,"00EFG"
+HKLM,%CurrentVersion%\Telephony\Country List\690,"LongDistanceRule",,""
+HKLM,%CurrentVersion%\Telephony\Country List\690,"Name",,"Tokelau"
+HKLM,%CurrentVersion%\Telephony\Country List\690,"SameAreaRule",,"G"
+
+HKLM,%CurrentVersion%\Telephony\Country List\691,"CountryCode",0x10001,0x000002b3
+HKLM,%CurrentVersion%\Telephony\Country List\691,"InternationalRule",,"011EFG"
+HKLM,%CurrentVersion%\Telephony\Country List\691,"LongDistanceRule",,""
+HKLM,%CurrentVersion%\Telephony\Country List\691,"Name",,"Micronesia, Federated States of"
+HKLM,%CurrentVersion%\Telephony\Country List\691,"SameAreaRule",,"G"
+
+HKLM,%CurrentVersion%\Telephony\Country List\692,"CountryCode",0x10001,0x000002b4
+HKLM,%CurrentVersion%\Telephony\Country List\692,"InternationalRule",,"011EFG"
+HKLM,%CurrentVersion%\Telephony\Country List\692,"LongDistanceRule",,"1FG"
+HKLM,%CurrentVersion%\Telephony\Country List\692,"Name",,"Marshall Islands"
+HKLM,%CurrentVersion%\Telephony\Country List\692,"SameAreaRule",,"G"
+
+HKLM,%CurrentVersion%\Telephony\Country List\7,"CountryCode",0x10001,0x00000007
+HKLM,%CurrentVersion%\Telephony\Country List\7,"InternationalRule",,"8W10EFG"
+HKLM,%CurrentVersion%\Telephony\Country List\7,"LongDistanceRule",," 8WFG"
+HKLM,%CurrentVersion%\Telephony\Country List\7,"Name",,"Russia"
+HKLM,%CurrentVersion%\Telephony\Country List\7,"SameAreaRule",,"G"
+
+HKLM,%CurrentVersion%\Telephony\Country List\705,"CountryCode",0x10001,0x00000007
+HKLM,%CurrentVersion%\Telephony\Country List\705,"InternationalRule",,"8W10EFG"
+HKLM,%CurrentVersion%\Telephony\Country List\705,"LongDistanceRule",," 8WFG"
+HKLM,%CurrentVersion%\Telephony\Country List\705,"Name",,"Kazakhstan"
+HKLM,%CurrentVersion%\Telephony\Country List\705,"SameAreaRule",,"G"
+
+HKLM,%CurrentVersion%\Telephony\Country List\708,"CountryCode",0x10001,0x00000007
+HKLM,%CurrentVersion%\Telephony\Country List\708,"InternationalRule",,"8W10EFG"
+HKLM,%CurrentVersion%\Telephony\Country List\708,"LongDistanceRule",," 8WFG"
+HKLM,%CurrentVersion%\Telephony\Country List\708,"Name",,"Tajikistan"
+HKLM,%CurrentVersion%\Telephony\Country List\708,"SameAreaRule",,"G"
+
+HKLM,%CurrentVersion%\Telephony\Country List\800,"CountryCode",0x10001,0x00000320
+HKLM,%CurrentVersion%\Telephony\Country List\800,"InternationalRule",,""
+HKLM,%CurrentVersion%\Telephony\Country List\800,"LongDistanceRule",,""
+HKLM,%CurrentVersion%\Telephony\Country List\800,"Name",,"International Freephone Service"
+HKLM,%CurrentVersion%\Telephony\Country List\800,"SameAreaRule",,""
+
+HKLM,%CurrentVersion%\Telephony\Country List\81,"CountryCode",0x10001,0x00000051
+HKLM,%CurrentVersion%\Telephony\Country List\81,"InternationalRule",,"001EFG"
+HKLM,%CurrentVersion%\Telephony\Country List\81,"LongDistanceRule",,"0FG"
+HKLM,%CurrentVersion%\Telephony\Country List\81,"Name",,"Japan"
+HKLM,%CurrentVersion%\Telephony\Country List\81,"SameAreaRule",,"G"
+
+HKLM,%CurrentVersion%\Telephony\Country List\82,"CountryCode",0x10001,0x00000052
+HKLM,%CurrentVersion%\Telephony\Country List\82,"InternationalRule",,"001EFG"
+HKLM,%CurrentVersion%\Telephony\Country List\82,"LongDistanceRule",,"0FG"
+HKLM,%CurrentVersion%\Telephony\Country List\82,"Name",,"Korea (Republic of)"
+HKLM,%CurrentVersion%\Telephony\Country List\82,"SameAreaRule",,"G"
+
+HKLM,%CurrentVersion%\Telephony\Country List\84,"CountryCode",0x10001,0x00000054
+HKLM,%CurrentVersion%\Telephony\Country List\84,"InternationalRule",,"00EFG"
+HKLM,%CurrentVersion%\Telephony\Country List\84,"LongDistanceRule",,"0FG"
+HKLM,%CurrentVersion%\Telephony\Country List\84,"Name",,"Vietnam"
+HKLM,%CurrentVersion%\Telephony\Country List\84,"SameAreaRule",,"G"
+
+HKLM,%CurrentVersion%\Telephony\Country List\850,"CountryCode",0x10001,0x00000352
+HKLM,%CurrentVersion%\Telephony\Country List\850,"InternationalRule",,"00EFG"
+HKLM,%CurrentVersion%\Telephony\Country List\850,"LongDistanceRule",,""
+HKLM,%CurrentVersion%\Telephony\Country List\850,"Name",,"Korea (North)"
+HKLM,%CurrentVersion%\Telephony\Country List\850,"SameAreaRule",,"G"
+
+HKLM,%CurrentVersion%\Telephony\Country List\852,"CountryCode",0x10001,0x00000354
+HKLM,%CurrentVersion%\Telephony\Country List\852,"InternationalRule",,"001EFG"
+HKLM,%CurrentVersion%\Telephony\Country List\852,"LongDistanceRule",,""
+HKLM,%CurrentVersion%\Telephony\Country List\852,"Name",,"Hong Kong S.A.R."
+HKLM,%CurrentVersion%\Telephony\Country List\852,"SameAreaRule",,"G"
+
+HKLM,%CurrentVersion%\Telephony\Country List\853,"CountryCode",0x10001,0x00000355
+HKLM,%CurrentVersion%\Telephony\Country List\853,"InternationalRule",,"00EFG"
+HKLM,%CurrentVersion%\Telephony\Country List\853,"LongDistanceRule",,""
+HKLM,%CurrentVersion%\Telephony\Country List\853,"Name",,"Macau S.A.R."
+HKLM,%CurrentVersion%\Telephony\Country List\853,"SameAreaRule",,"G"
+
+HKLM,%CurrentVersion%\Telephony\Country List\855,"CountryCode",0x10001,0x00000357
+HKLM,%CurrentVersion%\Telephony\Country List\855,"InternationalRule",,"00EFG"
+HKLM,%CurrentVersion%\Telephony\Country List\855,"LongDistanceRule",,"0FG"
+HKLM,%CurrentVersion%\Telephony\Country List\855,"Name",,"Cambodia"
+HKLM,%CurrentVersion%\Telephony\Country List\855,"SameAreaRule",,"G"
+
+HKLM,%CurrentVersion%\Telephony\Country List\856,"CountryCode",0x10001,0x00000358
+HKLM,%CurrentVersion%\Telephony\Country List\856,"InternationalRule",,"14EFG"
+HKLM,%CurrentVersion%\Telephony\Country List\856,"LongDistanceRule",,""
+HKLM,%CurrentVersion%\Telephony\Country List\856,"Name",,"Laos"
+HKLM,%CurrentVersion%\Telephony\Country List\856,"SameAreaRule",,"G"
+
+HKLM,%CurrentVersion%\Telephony\Country List\86,"CountryCode",0x10001,0x00000056
+HKLM,%CurrentVersion%\Telephony\Country List\86,"InternationalRule",,"00EFG"
+HKLM,%CurrentVersion%\Telephony\Country List\86,"LongDistanceRule",,"0FG"
+HKLM,%CurrentVersion%\Telephony\Country List\86,"Name",,"China"
+HKLM,%CurrentVersion%\Telephony\Country List\86,"SameAreaRule",,"G"
+
+HKLM,%CurrentVersion%\Telephony\Country List\870,"CountryCode",0x10001,0x00000366
+HKLM,%CurrentVersion%\Telephony\Country List\870,"InternationalRule",,"00EFG#"
+HKLM,%CurrentVersion%\Telephony\Country List\870,"LongDistanceRule",,"00EFG#"
+HKLM,%CurrentVersion%\Telephony\Country List\870,"Name",,"INMARSAT"
+HKLM,%CurrentVersion%\Telephony\Country List\870,"SameAreaRule",,"00EFG#"
+
+HKLM,%CurrentVersion%\Telephony\Country List\871,"CountryCode",0x10001,0x00000367
+HKLM,%CurrentVersion%\Telephony\Country List\871,"InternationalRule",,"00EFG#"
+HKLM,%CurrentVersion%\Telephony\Country List\871,"LongDistanceRule",,"00EFG#"
+HKLM,%CurrentVersion%\Telephony\Country List\871,"Name",,"INMARSAT (Atlantic-East)"
+HKLM,%CurrentVersion%\Telephony\Country List\871,"SameAreaRule",,"00EFG#"
+
+HKLM,%CurrentVersion%\Telephony\Country List\872,"CountryCode",0x10001,0x00000368
+HKLM,%CurrentVersion%\Telephony\Country List\872,"InternationalRule",,"00EFG#"
+HKLM,%CurrentVersion%\Telephony\Country List\872,"LongDistanceRule",,"00EFG#"
+HKLM,%CurrentVersion%\Telephony\Country List\872,"Name",,"INMARSAT (Pacific)"
+HKLM,%CurrentVersion%\Telephony\Country List\872,"SameAreaRule",,"00EFG#"
+
+HKLM,%CurrentVersion%\Telephony\Country List\873,"CountryCode",0x10001,0x00000369
+HKLM,%CurrentVersion%\Telephony\Country List\873,"InternationalRule",,"00EFG#"
+HKLM,%CurrentVersion%\Telephony\Country List\873,"LongDistanceRule",,"00EFG#"
+HKLM,%CurrentVersion%\Telephony\Country List\873,"Name",,"INMARSAT (Indian)"
+HKLM,%CurrentVersion%\Telephony\Country List\873,"SameAreaRule",,"00EFG#"
+
+HKLM,%CurrentVersion%\Telephony\Country List\874,"CountryCode",0x10001,0x0000036a
+HKLM,%CurrentVersion%\Telephony\Country List\874,"InternationalRule",,"00EFG#"
+HKLM,%CurrentVersion%\Telephony\Country List\874,"LongDistanceRule",,"00EFG#"
+HKLM,%CurrentVersion%\Telephony\Country List\874,"Name",,"INMARSAT (Atlantic-West)"
+HKLM,%CurrentVersion%\Telephony\Country List\874,"SameAreaRule",,"00EFG#"
+
+HKLM,%CurrentVersion%\Telephony\Country List\880,"CountryCode",0x10001,0x00000370
+HKLM,%CurrentVersion%\Telephony\Country List\880,"InternationalRule",,"00EFG"
+HKLM,%CurrentVersion%\Telephony\Country List\880,"LongDistanceRule",,"0FG"
+HKLM,%CurrentVersion%\Telephony\Country List\880,"Name",,"Bangladesh"
+HKLM,%CurrentVersion%\Telephony\Country List\880,"SameAreaRule",,"G"
+
+HKLM,%CurrentVersion%\Telephony\Country List\886,"CountryCode",0x10001,0x00000376
+HKLM,%CurrentVersion%\Telephony\Country List\886,"InternationalRule",,"002EFG"
+HKLM,%CurrentVersion%\Telephony\Country List\886,"LongDistanceRule",,"0FG"
+HKLM,%CurrentVersion%\Telephony\Country List\886,"Name",,"Taiwan"
+HKLM,%CurrentVersion%\Telephony\Country List\886,"SameAreaRule",,"G"
+
+HKLM,%CurrentVersion%\Telephony\Country List\90,"CountryCode",0x10001,0x0000005a
+HKLM,%CurrentVersion%\Telephony\Country List\90,"InternationalRule",,"00EFG"
+HKLM,%CurrentVersion%\Telephony\Country List\90,"LongDistanceRule",,"0FG"
+HKLM,%CurrentVersion%\Telephony\Country List\90,"Name",,"Turkey"
+HKLM,%CurrentVersion%\Telephony\Country List\90,"SameAreaRule",,"G"
+
+HKLM,%CurrentVersion%\Telephony\Country List\91,"CountryCode",0x10001,0x0000005b
+HKLM,%CurrentVersion%\Telephony\Country List\91,"InternationalRule",,"00EFG"
+HKLM,%CurrentVersion%\Telephony\Country List\91,"LongDistanceRule",,"0FG"
+HKLM,%CurrentVersion%\Telephony\Country List\91,"Name",,"India"
+HKLM,%CurrentVersion%\Telephony\Country List\91,"SameAreaRule",,"G"
+
+HKLM,%CurrentVersion%\Telephony\Country List\92,"CountryCode",0x10001,0x0000005c
+HKLM,%CurrentVersion%\Telephony\Country List\92,"InternationalRule",,"00EFG"
+HKLM,%CurrentVersion%\Telephony\Country List\92,"LongDistanceRule",,"0FG"
+HKLM,%CurrentVersion%\Telephony\Country List\92,"Name",,"Pakistan"
+HKLM,%CurrentVersion%\Telephony\Country List\92,"SameAreaRule",,"G"
+
+HKLM,%CurrentVersion%\Telephony\Country List\93,"CountryCode",0x10001,0x0000005d
+HKLM,%CurrentVersion%\Telephony\Country List\93,"InternationalRule",,"00EFG"
+HKLM,%CurrentVersion%\Telephony\Country List\93,"LongDistanceRule",,"0FG"
+HKLM,%CurrentVersion%\Telephony\Country List\93,"Name",,"Afghanistan"
+HKLM,%CurrentVersion%\Telephony\Country List\93,"SameAreaRule",,"G"
+
+HKLM,%CurrentVersion%\Telephony\Country List\94,"CountryCode",0x10001,0x0000005e
+HKLM,%CurrentVersion%\Telephony\Country List\94,"InternationalRule",,"00EFG"
+HKLM,%CurrentVersion%\Telephony\Country List\94,"LongDistanceRule",,"0FG"
+HKLM,%CurrentVersion%\Telephony\Country List\94,"Name",,"Sri Lanka"
+HKLM,%CurrentVersion%\Telephony\Country List\94,"SameAreaRule",,"G"
+
+HKLM,%CurrentVersion%\Telephony\Country List\95,"CountryCode",0x10001,0x0000005f
+HKLM,%CurrentVersion%\Telephony\Country List\95,"InternationalRule",,"0EFG"
+HKLM,%CurrentVersion%\Telephony\Country List\95,"LongDistanceRule",,""
+HKLM,%CurrentVersion%\Telephony\Country List\95,"Name",,"Myanmar"
+HKLM,%CurrentVersion%\Telephony\Country List\95,"SameAreaRule",,"G"
+
+HKLM,%CurrentVersion%\Telephony\Country List\960,"CountryCode",0x10001,0x000003c0
+HKLM,%CurrentVersion%\Telephony\Country List\960,"InternationalRule",,"00EFG"
+HKLM,%CurrentVersion%\Telephony\Country List\960,"LongDistanceRule",,""
+HKLM,%CurrentVersion%\Telephony\Country List\960,"Name",,"Maldives"
+HKLM,%CurrentVersion%\Telephony\Country List\960,"SameAreaRule",,"G"
+
+HKLM,%CurrentVersion%\Telephony\Country List\961,"CountryCode",0x10001,0x000003c1
+HKLM,%CurrentVersion%\Telephony\Country List\961,"InternationalRule",,"00EFG"
+HKLM,%CurrentVersion%\Telephony\Country List\961,"LongDistanceRule",,"0FG"
+HKLM,%CurrentVersion%\Telephony\Country List\961,"Name",,"Lebanon"
+HKLM,%CurrentVersion%\Telephony\Country List\961,"SameAreaRule",,"G"
+
+HKLM,%CurrentVersion%\Telephony\Country List\962,"CountryCode",0x10001,0x000003c2
+HKLM,%CurrentVersion%\Telephony\Country List\962,"InternationalRule",,"00EFG"
+HKLM,%CurrentVersion%\Telephony\Country List\962,"LongDistanceRule",,"0FG"
+HKLM,%CurrentVersion%\Telephony\Country List\962,"Name",,"Jordan"
+HKLM,%CurrentVersion%\Telephony\Country List\962,"SameAreaRule",,"G"
+
+HKLM,%CurrentVersion%\Telephony\Country List\963,"CountryCode",0x10001,0x000003c3
+HKLM,%CurrentVersion%\Telephony\Country List\963,"InternationalRule",,"00EFG"
+HKLM,%CurrentVersion%\Telephony\Country List\963,"LongDistanceRule",,"0FG"
+HKLM,%CurrentVersion%\Telephony\Country List\963,"Name",,"Syria"
+HKLM,%CurrentVersion%\Telephony\Country List\963,"SameAreaRule",,"G"
+
+HKLM,%CurrentVersion%\Telephony\Country List\964,"CountryCode",0x10001,0x000003c4
+HKLM,%CurrentVersion%\Telephony\Country List\964,"InternationalRule",,"00EFG"
+HKLM,%CurrentVersion%\Telephony\Country List\964,"LongDistanceRule",,"FG"
+HKLM,%CurrentVersion%\Telephony\Country List\964,"Name",,"Iraq"
+HKLM,%CurrentVersion%\Telephony\Country List\964,"SameAreaRule",,"G"
+
+HKLM,%CurrentVersion%\Telephony\Country List\965,"CountryCode",0x10001,0x000003c5
+HKLM,%CurrentVersion%\Telephony\Country List\965,"InternationalRule",,"00EFG"
+HKLM,%CurrentVersion%\Telephony\Country List\965,"LongDistanceRule",,""
+HKLM,%CurrentVersion%\Telephony\Country List\965,"Name",,"Kuwait"
+HKLM,%CurrentVersion%\Telephony\Country List\965,"SameAreaRule",,"G"
+
+HKLM,%CurrentVersion%\Telephony\Country List\966,"CountryCode",0x10001,0x000003c6
+HKLM,%CurrentVersion%\Telephony\Country List\966,"InternationalRule",,"00EFG"
+HKLM,%CurrentVersion%\Telephony\Country List\966,"LongDistanceRule",,"0FG"
+HKLM,%CurrentVersion%\Telephony\Country List\966,"Name",,"Saudi Arabia"
+HKLM,%CurrentVersion%\Telephony\Country List\966,"SameAreaRule",,"G"
+
+HKLM,%CurrentVersion%\Telephony\Country List\967,"CountryCode",0x10001,0x000003c7
+HKLM,%CurrentVersion%\Telephony\Country List\967,"InternationalRule",,"00EFG"
+HKLM,%CurrentVersion%\Telephony\Country List\967,"LongDistanceRule",,"0FG"
+HKLM,%CurrentVersion%\Telephony\Country List\967,"Name",,"Yemen"
+HKLM,%CurrentVersion%\Telephony\Country List\967,"SameAreaRule",,"G"
+
+HKLM,%CurrentVersion%\Telephony\Country List\968,"CountryCode",0x10001,0x000003c8
+HKLM,%CurrentVersion%\Telephony\Country List\968,"InternationalRule",,"00EFG"
+HKLM,%CurrentVersion%\Telephony\Country List\968,"LongDistanceRule",,""
+HKLM,%CurrentVersion%\Telephony\Country List\968,"Name",,"Oman"
+HKLM,%CurrentVersion%\Telephony\Country List\968,"SameAreaRule",,"G"
+
+HKLM,%CurrentVersion%\Telephony\Country List\971,"CountryCode",0x10001,0x000003cb
+HKLM,%CurrentVersion%\Telephony\Country List\971,"InternationalRule",,"00EFG"
+HKLM,%CurrentVersion%\Telephony\Country List\971,"LongDistanceRule",,"0FG"
+HKLM,%CurrentVersion%\Telephony\Country List\971,"Name",,"United Arab Emirates"
+HKLM,%CurrentVersion%\Telephony\Country List\971,"SameAreaRule",,"G"
+
+HKLM,%CurrentVersion%\Telephony\Country List\972,"CountryCode",0x10001,0x000003cc
+HKLM,%CurrentVersion%\Telephony\Country List\972,"InternationalRule",,"00EFG"
+HKLM,%CurrentVersion%\Telephony\Country List\972,"LongDistanceRule",,"0FG"
+HKLM,%CurrentVersion%\Telephony\Country List\972,"Name",,"Israel"
+HKLM,%CurrentVersion%\Telephony\Country List\972,"SameAreaRule",,"G"
+
+HKLM,%CurrentVersion%\Telephony\Country List\973,"CountryCode",0x10001,0x000003cd
+HKLM,%CurrentVersion%\Telephony\Country List\973,"InternationalRule",,"0EFG"
+HKLM,%CurrentVersion%\Telephony\Country List\973,"LongDistanceRule",,""
+HKLM,%CurrentVersion%\Telephony\Country List\973,"Name",,"Bahrain"
+HKLM,%CurrentVersion%\Telephony\Country List\973,"SameAreaRule",,"G"
+
+HKLM,%CurrentVersion%\Telephony\Country List\974,"CountryCode",0x10001,0x000003ce
+HKLM,%CurrentVersion%\Telephony\Country List\974,"InternationalRule",,"0EFG"
+HKLM,%CurrentVersion%\Telephony\Country List\974,"LongDistanceRule",,""
+HKLM,%CurrentVersion%\Telephony\Country List\974,"Name",,"Qatar"
+HKLM,%CurrentVersion%\Telephony\Country List\974,"SameAreaRule",,"G"
+
+HKLM,%CurrentVersion%\Telephony\Country List\975,"CountryCode",0x10001,0x000003cf
+HKLM,%CurrentVersion%\Telephony\Country List\975,"InternationalRule",,"00EFG"
+HKLM,%CurrentVersion%\Telephony\Country List\975,"LongDistanceRule",,""
+HKLM,%CurrentVersion%\Telephony\Country List\975,"Name",,"Bhutan"
+HKLM,%CurrentVersion%\Telephony\Country List\975,"SameAreaRule",,"G"
+
+HKLM,%CurrentVersion%\Telephony\Country List\976,"CountryCode",0x10001,0x000003d0
+HKLM,%CurrentVersion%\Telephony\Country List\976,"InternationalRule",,"00EFG"
+HKLM,%CurrentVersion%\Telephony\Country List\976,"LongDistanceRule",,"0FG"
+HKLM,%CurrentVersion%\Telephony\Country List\976,"Name",,"Mongolia"
+HKLM,%CurrentVersion%\Telephony\Country List\976,"SameAreaRule",,"G"
+
+HKLM,%CurrentVersion%\Telephony\Country List\977,"CountryCode",0x10001,0x000003d1
+HKLM,%CurrentVersion%\Telephony\Country List\977,"InternationalRule",,"00EFG"
+HKLM,%CurrentVersion%\Telephony\Country List\977,"LongDistanceRule",,""
+HKLM,%CurrentVersion%\Telephony\Country List\977,"Name",,"Nepal"
+HKLM,%CurrentVersion%\Telephony\Country List\977,"SameAreaRule",,"G"
+
+HKLM,%CurrentVersion%\Telephony\Country List\98,"CountryCode",0x10001,0x00000062
+HKLM,%CurrentVersion%\Telephony\Country List\98,"InternationalRule",,"00EFG"
+HKLM,%CurrentVersion%\Telephony\Country List\98,"LongDistanceRule",,"FG"
+HKLM,%CurrentVersion%\Telephony\Country List\98,"Name",,"Iran"
+HKLM,%CurrentVersion%\Telephony\Country List\98,"SameAreaRule",,"G"
+
+HKLM,%CurrentVersion%\Telephony\Country List\993,"CountryCode",0x10001,0x000003e1
+HKLM,%CurrentVersion%\Telephony\Country List\993,"InternationalRule",,"8W10EFG"
+HKLM,%CurrentVersion%\Telephony\Country List\993,"LongDistanceRule",," 8WFG"
+HKLM,%CurrentVersion%\Telephony\Country List\993,"Name",,"Turkmenistan"
+HKLM,%CurrentVersion%\Telephony\Country List\993,"SameAreaRule",,"G"
+
+HKLM,%CurrentVersion%\Telephony\Country List\994,"CountryCode",0x10001,0x000003e2
+HKLM,%CurrentVersion%\Telephony\Country List\994,"InternationalRule",,"8W10EFG"
+HKLM,%CurrentVersion%\Telephony\Country List\994,"LongDistanceRule",," 8WFG"
+HKLM,%CurrentVersion%\Telephony\Country List\994,"Name",,"Azerbaijan"
+HKLM,%CurrentVersion%\Telephony\Country List\994,"SameAreaRule",,"G"
+
+HKLM,%CurrentVersion%\Telephony\Country List\995,"CountryCode",0x10001,0x000003e3
+HKLM,%CurrentVersion%\Telephony\Country List\995,"InternationalRule",,"8W10EFG"
+HKLM,%CurrentVersion%\Telephony\Country List\995,"LongDistanceRule",," 8WFG"
+HKLM,%CurrentVersion%\Telephony\Country List\995,"Name",,"Georgia"
+HKLM,%CurrentVersion%\Telephony\Country List\995,"SameAreaRule",,"G"
+
+HKLM,%CurrentVersion%\Telephony\Country List\996,"CountryCode",0x10001,0x000003e4
+HKLM,%CurrentVersion%\Telephony\Country List\996,"InternationalRule",,"00EFG"
+HKLM,%CurrentVersion%\Telephony\Country List\996,"LongDistanceRule",,"8FG"
+HKLM,%CurrentVersion%\Telephony\Country List\996,"Name",,"Kyrgyzstan"
+HKLM,%CurrentVersion%\Telephony\Country List\996,"SameAreaRule",,"G"
+
+HKLM,%CurrentVersion%\Telephony\Country List\998,"CountryCode",0x10001,0x000003e6
+HKLM,%CurrentVersion%\Telephony\Country List\998,"InternationalRule",,"8W10EFG"
+HKLM,%CurrentVersion%\Telephony\Country List\998,"LongDistanceRule",," 8WFG"
+HKLM,%CurrentVersion%\Telephony\Country List\998,"Name",,"Uzbekistan"
+HKLM,%CurrentVersion%\Telephony\Country List\998,"SameAreaRule",,"G"
+
+[RegisterDllsSection]
+;;some dlls have to be registered first
+11,,shell32.dll,1
+11,,quartz.dll,1
+
+11,,cryptdlg.dll,1
+11,,cryptnet.dll,1
+11,,devenum.dll,1
+11,,mp3dmod.dll,1
+11,,mscoree.dll,1
+11,,mshtml.dll,1
+11,,msisip.dll,1
+11,,qcap.dll,1
+11,,qedit.dll,1
+11,,urlmon.dll,1
+11,,windowscodecs.dll,1
+11,,winegstreamer.dll,1
+55,,wineps.drv,1
+11,,wineqtdecoder.dll,1
+11,,winevulkan.dll,1
+55,,winprint.dll,1
+11,,wintrust.dll,1
+11,,iexplore.exe,1
+
+; 32bit-only fake dlls
+[FakeDllsWin32]
+10,,rundll.exe,rundll.exe16
+10,,twain.dll,twain.dll16
+10,,twain_32.dll
+10,twain_32,sane.ds
+10,twain_32,gphoto2.ds
+10,,winhelp.exe,winhelp.exe16
+10,,winhlp32.exe
+10,command,start.exe
+10,system,ddeml.dll,ddeml.dll16
+10,system,mmsystem.dll,mmsystem.dll16
+11,,ddhelp.exe
+11,,dosx.exe
+11,,dsound.vxd
+11,,start.exe
+11,,winhlp32.exe
+52,win40\0,wineps16.drv,wineps16.drv16
+
+; 64bit-only fake dlls
+[FakeDllsWin64]
+10,twain_64,sane.ds
+10,twain_64,gphoto2.ds
+
+; Wow64-only fake dlls
+[FakeDllsWow64]
+; create some directories first
+11,mui,
+11,gecko\plugin,npmshtml.dll
+11,Speech\Common,sapi.dll
+11,wbem,mofcomp.exe
+11,wbem,wbemdisp.dll
+11,wbem,wbemprox.dll
+11,wbem,wmic.exe
+11,wbem,wmiutils.dll
+11,WindowsPowerShell\v1.0,powershell.exe
+10,syswow64,stdole2.tlb
+11,,iexplore.exe
+11,,winetest.exe,-
+; skip .NET fake dlls in Wine Mono package
+11,,aspnet_regiis.exe,-
+11,,ngen.exe,-
+11,,fusion.dll,-
+11,,diasymreader.dll,-
+11,,mscorwks.dll,-
+11,,regsvcs.exe,-
+11,,regasm.exe,-
+11,,servicemodelreg.exe,-
+11,,presentationfontcache.exe,-
+; some programs are 64-bit only
+11,,conhost.exe,-
+11,,services.exe,-
+11,,spoolsv.exe,-
+11,,winemenubuilder.exe,-
+; registration order matters for these
+11,,msxml.dll
+11,,msxml2.dll
+11,,msxml3.dll
+11,,msxml4.dll
+11,,msxml6.dll
+11,,shdocvw.dll
+16422,Internet Explorer,iexplore.exe
+16422,Windows Media Player,wmplayer.exe
+16422,Windows NT\Accessories,wordpad.exe
+16427,System\OLE DB,oledb32.dll
+16427,System\OLE DB,msdaps.dll
+16427,System\OLE DB,msdasql.dll
+16427,System\ADO,msado15.dll
+55,,wineps.drv
+66000,3,wineps.drv
+55,,winprint.dll
+12,,*.sys,-
+11,,*.msstyles,-
+11,,*
+
+[FakeDlls]
+; create some directories first
+10,help,
+10,logs,
+10,performance\winsat\datastore,
+10,tasks,
+10,temp,
+11,catroot,
+11,mui,
+11,tasks,
+11,spool\printers,
+10,,explorer.exe
+10,,hh.exe
+10,,notepad.exe
+10,,regedit.exe
+11,,explorer.exe
+11,,iexplore.exe
+11,,notepad.exe
+11,,winetest.exe,-
+; themes
+10,resources\themes\light,light.msstyles
+; skip .NET fake dlls in Wine Mono package
+11,,aspnet_regiis.exe,-
+11,,ngen.exe,-
+11,,fusion.dll,-
+11,,diasymreader.dll,-
+11,,mscorwks.dll,-
+11,,regsvcs.exe,-
+11,,regasm.exe,-
+11,,servicemodelreg.exe,-
+11,,presentationfontcache.exe,-
+; registration order matters for these
+11,,msxml.dll
+11,,msxml2.dll
+11,,msxml3.dll
+11,,msxml4.dll
+11,,msxml6.dll
+11,,shdocvw.dll
+11,gecko\plugin,npmshtml.dll
+11,Speech\Common,sapi.dll
+11,wbem,mofcomp.exe
+11,wbem,wbemdisp.dll
+11,wbem,wbemprox.dll
+11,wbem,wmic.exe
+11,wbem,wmiutils.dll
+11,WindowsPowerShell\v1.0,powershell.exe
+; empty folders to make sure the parent dirs are not removed
+16410,Microsoft,
+16412,Microsoft,
+16422,Internet Explorer,iexplore.exe
+16422,Windows Media Player,wmplayer.exe
+16422,Windows NT\Accessories,wordpad.exe
+16427,Microsoft Shared\TextConv,
+16427,System\OLE DB,oledb32.dll
+16427,System\OLE DB,msdaps.dll
+16427,System\OLE DB,msdasql.dll
+16427,System\ADO,msado15.dll
+55,,wineps.drv
+66000,3,wineps.drv
+55,,winprint.dll
+12,,*.sys
+11,,*
+
+[SystemIni]
+system.ini, mci,,"MPEGVideo=mciqtz32.dll"
+system.ini, mci,,"MPEGVideo2=mciqtz32.dll"
+system.ini, mci,,"avivideo=mciavi32.dll"
+system.ini, mci,,"cdaudio=mcicda.dll"
+system.ini, mci,,"sequencer=mciseq.dll"
+system.ini, mci,,"vcr=mcivisca.drv"
+system.ini, mci,,"; videodisc=mcipionr.drv"
+system.ini, mci,,"waveaudio=mciwave.dll"
+
+system.ini, drivers32,,"msacm.imaadpcm=imaadp32.acm"
+system.ini, drivers32,,"msacm.msadpcm=msadp32.acm"
+system.ini, drivers32,,"msacm.msg711=msg711.acm"
+system.ini, drivers32,,"msacm.l3acm=l3codeca.acm"
+system.ini, drivers32,,"msacm.msgsm610=msgsm32.acm"
+system.ini, drivers32,,"vidc.mrle=msrle32.dll"
+system.ini, drivers32,,"vidc.msvc=msvidc32.dll"
+system.ini, drivers32,,"vidc.cvid=iccvid.dll"
+system.ini, drivers32,,"vidc.IV50=ir50_32.dll"
+system.ini, drivers32,,"; vidc.IV31=ir32_32.dll"
+system.ini, drivers32,,"; vidc.IV32=ir32_32.dll"
+
+win.ini, mail,,"mapi=1"
+
+[BITSService]
+AddReg=BITSServiceKeys
+Description="BITS Service"
+DisplayName="BITS Service"
+ServiceBinary="%11%\svchost.exe -k netsvcs"
+ServiceType=16
+StartType=3
+ErrorControl=1
+
+[EventLogService]
+AddReg=EventLogServiceKeys
+Description="Event Log"
+DisplayName="Event Log"
+ServiceBinary="%11%\svchost.exe -k LocalServiceNetworkRestricted"
+ServiceType=32
+StartType=2
+ErrorControl=1
+
+[HTTPService]
+Description="HTTP server"
+DisplayName="HTTP"
+ServiceBinary="%12%\http.sys"
+ServiceType=1
+StartType=3
+ErrorControl=1
+
+[MSIService]
+Description="MSI Installer Server"
+DisplayName="MSIServer"
+ServiceBinary="%11%\msiexec.exe /V"
+ServiceType=32
+StartType=3
+ErrorControl=1
+
+[MountMgrService]
+Description="Device mounting service"
+DisplayName="Mount Manager"
+ServiceBinary="%12%\mountmgr.sys"
+ServiceType=1
+StartType=2
+ErrorControl=1
+LoadOrderGroup="System Bus Extender"
+
+[NDISService]
+AddReg=NDISServiceKeys
+Description="NDIS service"
+DisplayName="NDIS"
+ServiceBinary="%12%\ndis.sys"
+ServiceType=1
+StartType=2
+ErrorControl=1
+LoadOrderGroup="System Bus Extender"
+
+[NDISServiceKeys]
+HKR,,"Tag",0x10001,2
+
+[NsiProxyService]
+AddReg=NsiProxyServiceKeys
+Description="NSI proxy service"
+DisplayName="NSI Proxy"
+ServiceBinary="%12%\nsiproxy.sys"
+ServiceType=1
+StartType=2
+ErrorControl=1
+LoadOrderGroup="System Bus Extender"
+
+[NsiProxyServiceKeys]
+HKR,,"Tag",0x10001,1
+
+[RpcSsService]
+Description="RPC service"
+DisplayName="Remote Procedure Call (RPC)"
+ServiceBinary="%11%\rpcss.exe"
+ServiceType=32
+StartType=3
+ErrorControl=1
+
+[ScardSvrService]
+AddReg=ScardSvrServiceKeys
+DisplayName="Smart card server"
+ServiceBinary="%11%\svchost.exe -k netsvcs"
+ServiceType=32
+StartType=3
+ErrorControl=1
+
+[ScardSvrServiceKeys]
+HKR,Parameters,"ServiceDll",,"%11%\scardsvr.dll"
+HKR,Parameters,"ServiceMain",,"CalaisMain"
+HKLM,%CurrentVersionNT%\SvcHost,"netsvcs",0x00010008,"scardsvr"
+
+[SpoolerService]
+AddReg=SpoolerServiceKeys
+Description="Loads files to memory for later printing"
+DisplayName="Print Spooler"
+ServiceBinary="%11%\spoolsv.exe"
+ServiceType=0x110
+StartType=3
+ErrorControl=1
+LoadOrderGroup="SpoolerGroup"
+
+[SpoolerServiceKeys]
+HKLM,"System\CurrentControlSet\Services\Spooler\Performance","Library",,"winspool.drv"
+HKLM,"System\CurrentControlSet\Services\Spooler\Performance","Open",,"PerfOpen"
+HKLM,"System\CurrentControlSet\Services\Spooler\Performance","Close",,"PerfClose"
+HKLM,"System\CurrentControlSet\Services\Spooler\Performance","Collect",,"PerfCollect"
+
+[TerminalServices]
+Description="Remote desktop access"
+DisplayName="Terminal Services"
+ServiceBinary="%11%\termsv.exe"
+ServiceType=32
+StartType=3
+ErrorControl=1
+
+[ThemeManager]
+HKCU,"Software\Microsoft\Windows\CurrentVersion\ThemeManager","ThemeActive",2,"1"
+HKCU,"Software\Microsoft\Windows\CurrentVersion\ThemeManager","DllName",2,"%10%\resources\themes\light\light.msstyles"
+HKCU,"Software\Microsoft\Windows\CurrentVersion\ThemeManager","ColorName",2,"Blue"
+HKCU,"Software\Microsoft\Windows\CurrentVersion\ThemeManager","SizeName",2,"NormalSize"
+
+[WinmgmtService]
+Description="Provides access to Windows Management Instrumentation"
+DisplayName="Windows Management Instrumentation Service"
+ServiceBinary="%11%\winmgmt.exe"
+ServiceType=32
+StartType=3
+ErrorControl=1
+
+[StiService]
+AddReg=StiServiceKeys
+Description="WIA Service"
+DisplayName="WIA Service"
+ServiceBinary="%11%\svchost.exe -k imgsvc"
+ServiceType=16
+StartType=3
+ErrorControl=1
+
+[BITSServiceKeys]
+HKR,Parameters,"ServiceDll",,"%11%\qmgr.dll"
+HKLM,%CurrentVersionNT%\SvcHost,"netsvcs",0x00010008,"BITS"
+
+[EventLogServiceKeys]
+HKR,Parameters,"ServiceDll",,"%11%\wevtsvc.dll"
+HKLM,%CurrentVersionNT%\SvcHost,"LocalServiceNetworkRestricted",0x00010008,"EventLog"
+
+[StiServiceKeys]
+HKR,Parameters,"ServiceDll",,"%11%\wiaservc.dll"
+HKLM,%CurrentVersionNT%\SvcHost,"imgsvc",0x00010008,"StiSvc"
+
+[PlugPlayService]
+Description="Enables automatic configuration of devices"
+DisplayName="Plug and Play Service"
+ServiceBinary="%11%\plugplay.exe"
+ServiceType=32
+StartType=2
+ErrorControl=1
+
+[WPFFontCacheService]
+Description="Windows Presentation Foundation font cache service"
+DisplayName="Windows Presentation Foundation Font Cache 3.0.0.0"
+ServiceBinary="%10%\Microsoft.Net\Framework\v3.0\wpf\presentationfontcache.exe"
+ServiceType=16
+StartType=3
+ErrorControl=1
+
+[LanmanServerService]
+AddReg=LanmanServerServiceKeys
+Description="Lanman Server"
+DisplayName="Lanman Server"
+ServiceBinary="%11%\svchost.exe -k netsvcs"
+ServiceType=32
+StartType=4
+ErrorControl=1
+
+[LanmanServerServiceKeys]
+HKR,Parameters,"ServiceDll",,"%11%\srvsvc.dll"
+;; HKLM,%CurrentVersionNT%\SvcHost,"netsvcs",0x00010008,"lanmanserver"
+
+[FontCacheService]
+AddReg=FontCacheServiceKeys
+Description="Windows Font Cache Service"
+DisplayName="Windows Font Cache Service"
+ServiceBinary="%11%\svchost.exe -k netsvcs"
+ServiceType=32
+StartType=3
+ErrorControl=1
+
+[FontCacheServiceKeys]
+HKR,Parameters,"ServiceDll",,"%11%\fntcache.dll"
+HKLM,%CurrentVersionNT%\SvcHost,"netsvcs",0x00010008,"fontcache"
+
+[TaskSchedulerService]
+AddReg=TaskSchedulerServiceKeys
+Description="Task Scheduler"
+DisplayName="Task Scheduler"
+ServiceBinary="%11%\svchost.exe -k netsvcs"
+ServiceType=32
+StartType=3
+ErrorControl=1
+
+[TaskSchedulerServiceKeys]
+HKR,Parameters,"ServiceDll",,"%11%\schedsvc.dll"
+HKLM,%CurrentVersionNT%\SvcHost,"netsvcs",0x00010008,"Schedule"
+
+[wuauService]
+Description="wuauserv"
+DisplayName="Automatic Updates"
+ServiceBinary="%11%\wuauserv.exe"
+ServiceType=32
+StartType=3
+ErrorControl=1
+
+[Services]
+HKLM,%CurrentVersion%\RunServices,"winemenubuilder",2,"%11%\winemenubuilder.exe -a -r"
+HKLM,"System\CurrentControlSet\Services\Eventlog\Application",,16
+HKLM,"System\CurrentControlSet\Services\Eventlog\System","Sources",0x10000,""
+HKLM,"System\CurrentControlSet\Services\Tcpip\Parameters","DataBasePath",,"%12%\etc"
+HKLM,"System\CurrentControlSet\Services\VxD\MSTCP",,16
+HKLM,"System\CurrentControlSet\Services\Winsock\Parameters",,16
+HKLM,"System\CurrentControlSet\Services\Winsock2\Parameters\Protocol_Catalog9\Catalog_Entries",,16
+
+[VersionInfo]
+HKLM,%CurrentVersionNT%,"CurrentVersion",2,"6.3"
+HKLM,%CurrentVersionNT%,"CurrentMajorVersionNumber",0x10001,10
+HKLM,%CurrentVersionNT%,"CurrentMinorVersionNumber",0x10001,0
+HKLM,%CurrentVersionNT%,"CurrentBuild",2,"18362"
+HKLM,%CurrentVersionNT%,"CurrentBuildNumber",2,"18362"
+HKLM,%CurrentVersionNT%,"CurrentType",2,"Multiprocessor Free"
+HKLM,%CurrentVersionNT%,"DigitalProductId",1,00,00,00,00,00,00,00,00,00,00,00,\
+00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,\
+00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,\
+00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,\
+00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,\
+00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,\
+00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00
+HKLM,%CurrentVersionNT%,"ProductName",2,"Windows 10 Pro"
+HKLM,%Control%\ProductOptions,"ProductType",2,"WinNT"
+HKLM,%Control%\Windows,"CSDVersion",0x10003,0
+HKLM,%Control%\Session Manager\Environment,"OS",2,"Windows_NT"
+
+[Wow64]
+; Wow6432Node symlinks
+HKLM,Software\Classes\Wow6432Node\AppId,"SymbolicLinkValue",0x60000,"\Registry\Machine\Software\Classes\AppId"
+HKLM,Software\Classes\Wow6432Node\Protocols,"SymbolicLinkValue",0x60000,"\Registry\Machine\Software\Classes\Protocols"
+HKLM,Software\Classes\Wow6432Node\TypeLib,"SymbolicLinkValue",0x60000,"\Registry\Machine\Software\Classes\TypeLib"
+HKLM,Software\Wow6432Node\Classes,"SymbolicLinkValue",0x60000,"\Registry\Machine\Software\Classes\Wow6432Node"
+; 32-bit redirected keys under HKLM\Software\Classes
+HKLM,Software\Classes\Wow6432Node\CLSID,,16
+HKLM,Software\Classes\Wow6432Node\DirectShow,,16
+HKLM,Software\Classes\Wow6432Node\Interface,,16
+HKLM,Software\Classes\Wow6432Node\Media Type,,16
+HKLM,Software\Classes\Wow6432Node\MediaFoundation,,16
+; symlinks for shared keys under HKLM\Software
+HKLM,Software\Wow6432Node\Microsoft\Clients,"SymbolicLinkValue",0x60000,"\Registry\Machine\Software\Microsoft\Clients"
+HKLM,Software\Wow6432Node\Microsoft\Cryptography\Calais\Current,"SymbolicLinkValue",0x60000,"\Registry\Machine\Software\Microsoft\Cryptography\Calais\Current"
+HKLM,Software\Wow6432Node\Microsoft\Cryptography\Calais\Readers,"SymbolicLinkValue",0x60000,"\Registry\Machine\Software\Microsoft\Cryptography\Calais\Readers"
+HKLM,Software\Wow6432Node\Microsoft\Cryptography\Services,"SymbolicLinkValue",0x60000,"\Registry\Machine\Software\Microsoft\Cryptography\Services"
+HKLM,Software\Wow6432Node\Microsoft\CTF\SystemShared,"SymbolicLinkValue",0x60000,"\Registry\Machine\Software\Microsoft\CTF\SystemShared"
+HKLM,Software\Wow6432Node\Microsoft\CTF\TIP,"SymbolicLinkValue",0x60000,"\Registry\Machine\Software\Microsoft\CTF\TIP"
+HKLM,Software\Wow6432Node\Microsoft\DFS,"SymbolicLinkValue",0x60000,"\Registry\Machine\Software\Microsoft\DFS"
+HKLM,Software\Wow6432Node\Microsoft\Driver Signing,"SymbolicLinkValue",0x60000,"\Registry\Machine\Software\Microsoft\Driver Signing"
+HKLM,Software\Wow6432Node\Microsoft\EnterpriseCertificates,"SymbolicLinkValue",0x60000,"\Registry\Machine\Software\Microsoft\EnterpriseCertificates"
+HKLM,Software\Wow6432Node\Microsoft\EventSystem,"SymbolicLinkValue",0x60000,"\Registry\Machine\Software\Microsoft\EventSystem"
+HKLM,Software\Wow6432Node\Microsoft\MSMQ,"SymbolicLinkValue",0x60000,"\Registry\Machine\Software\Microsoft\MSMQ"
+HKLM,Software\Wow6432Node\Microsoft\Non-Driver Signing,"SymbolicLinkValue",0x60000,"\Registry\Machine\Software\Microsoft\Non-Driver Signing"
+HKLM,Software\Wow6432Node\Microsoft\Notepad\DefaultFonts,"SymbolicLinkValue",0x60000,"\Registry\Machine\Software\Microsoft\Notepad\DefaultFonts"
+HKLM,Software\Wow6432Node\Microsoft\OLE,"SymbolicLinkValue",0x60000,"\Registry\Machine\Software\Microsoft\OLE"
+HKLM,Software\Wow6432Node\Microsoft\RAS,"SymbolicLinkValue",0x60000,"\Registry\Machine\Software\Microsoft\RAS"
+HKLM,Software\Wow6432Node\Microsoft\RPC,"SymbolicLinkValue",0x60000,"\Registry\Machine\Software\Microsoft\RPC"
+HKLM,Software\Wow6432Node\Microsoft\Software\Microsoft\Shared Tools\MSInfo,"SymbolicLinkValue",0x60000,"\Registry\Machine\Software\Microsoft\Shared Tools\MSInfo"
+HKLM,Software\Wow6432Node\Microsoft\SystemCertificates,"SymbolicLinkValue",0x60000,"\Registry\Machine\Software\Microsoft\SystemCertificates"
+HKLM,Software\Wow6432Node\Microsoft\TermServLicensing,"SymbolicLinkValue",0x60000,"\Registry\Machine\Software\Microsoft\TermServLicensing"
+HKLM,Software\Wow6432Node\Microsoft\Transaction Server,"SymbolicLinkValue",0x60000,"\Registry\Machine\Software\Microsoft\Transaction Server"
+HKLM,Software\Wow6432Node\Microsoft\Windows\CurrentVersion\App Paths,"SymbolicLinkValue",0x60000,"\Registry\Machine\Software\Microsoft\Windows\CurrentVersion\App Paths"
+HKLM,Software\Wow6432Node\Microsoft\Windows\CurrentVersion\Control Panel\Cursors\Schemes,"SymbolicLinkValue",0x60000,"\Registry\Machine\Software\Microsoft\Windows\CurrentVersion\Control Panel\Cursors\Schemes"
+HKLM,Software\Wow6432Node\Microsoft\Windows\CurrentVersion\Explorer\AutoplayHandlers,"SymbolicLinkValue",0x60000,"\Registry\Machine\Software\Microsoft\Windows\CurrentVersion\Explorer\AutoplayHandlers"
+HKLM,Software\Wow6432Node\Microsoft\Windows\CurrentVersion\Explorer\DriveIcons,"SymbolicLinkValue",0x60000,"\Registry\Machine\Software\Microsoft\Windows\CurrentVersion\Explorer\DriveIcons"
+HKLM,Software\Wow6432Node\Microsoft\Windows\CurrentVersion\Explorer\KindMap,"SymbolicLinkValue",0x60000,"\Registry\Machine\Software\Microsoft\Windows\CurrentVersion\Explorer\KindMap"
+HKLM,Software\Wow6432Node\Microsoft\Windows\CurrentVersion\Group Policy,"SymbolicLinkValue",0x60000,"\Registry\Machine\Software\Microsoft\Windows\CurrentVersion\Group Policy"
+HKLM,Software\Wow6432Node\Microsoft\Windows\CurrentVersion\Policies,"SymbolicLinkValue",0x60000,"\Registry\Machine\Software\Microsoft\Windows\CurrentVersion\Policies"
+HKLM,Software\Wow6432Node\Microsoft\Windows\CurrentVersion\PreviewHandlers,"SymbolicLinkValue",0x60000,"\Registry\Machine\Software\Microsoft\Windows\CurrentVersion\PreviewHandlers"
+HKLM,Software\Wow6432Node\Microsoft\Windows\CurrentVersion\Setup,"SymbolicLinkValue",0x60000,"\Registry\Machine\Software\Microsoft\Windows\CurrentVersion\Setup"
+HKLM,Software\Wow6432Node\Microsoft\Windows\CurrentVersion\Telephony\Locations,"SymbolicLinkValue",0x60000,"\Registry\Machine\Software\Microsoft\Windows\CurrentVersion\Telephony\Locations"
+HKLM,Software\Wow6432Node\Microsoft\Windows NT\CurrentVersion\Console,"SymbolicLinkValue",0x60000,"\Registry\Machine\Software\Microsoft\Windows NT\CurrentVersion\Console"
+HKLM,Software\Wow6432Node\Microsoft\Windows NT\CurrentVersion\FontDpi,"SymbolicLinkValue",0x60000,"\Registry\Machine\Software\Microsoft\Windows NT\CurrentVersion\FontDpi"
+HKLM,Software\Wow6432Node\Microsoft\Windows NT\CurrentVersion\FontLink,"SymbolicLinkValue",0x60000,"\Registry\Machine\Software\Microsoft\Windows NT\CurrentVersion\FontLink"
+HKLM,Software\Wow6432Node\Microsoft\Windows NT\CurrentVersion\FontMapper,"SymbolicLinkValue",0x60000,"\Registry\Machine\Software\Microsoft\Windows NT\CurrentVersion\FontMapper"
+HKLM,Software\Wow6432Node\Microsoft\Windows NT\CurrentVersion\Fonts,"SymbolicLinkValue",0x60000,"\Registry\Machine\Software\Microsoft\Windows NT\CurrentVersion\Fonts"
+HKLM,Software\Wow6432Node\Microsoft\Windows NT\CurrentVersion\FontSubstitutes,"SymbolicLinkValue",0x60000,"\Registry\Machine\Software\Microsoft\Windows NT\CurrentVersion\FontSubstitutes"
+HKLM,Software\Wow6432Node\Microsoft\Windows NT\CurrentVersion\Gre_Initialize,"SymbolicLinkValue",0x60000,"\Registry\Machine\Software\Microsoft\Windows NT\CurrentVersion\Gre_Initialize"
+HKLM,Software\Wow6432Node\Microsoft\Windows NT\CurrentVersion\Image File Execution Options,"SymbolicLinkValue",0x60000,"\Registry\Machine\Software\Microsoft\Windows NT\CurrentVersion\Image File Execution Options"
+HKLM,Software\Wow6432Node\Microsoft\Windows NT\CurrentVersion\LanguagePack,"SymbolicLinkValue",0x60000,"\Registry\Machine\Software\Microsoft\Windows NT\CurrentVersion\LanguagePack"
+HKLM,Software\Wow6432Node\Microsoft\Windows NT\CurrentVersion\NetworkCards,"SymbolicLinkValue",0x60000,"\Registry\Machine\Software\Microsoft\Windows NT\CurrentVersion\NetworkCards"
+HKLM,Software\Wow6432Node\Microsoft\Windows NT\CurrentVersion\Perflib,"SymbolicLinkValue",0x60000,"\Registry\Machine\Software\Microsoft\Windows NT\CurrentVersion\Perflib"
+HKLM,Software\Wow6432Node\Microsoft\Windows NT\CurrentVersion\Ports,"SymbolicLinkValue",0x60000,"\Registry\Machine\Software\Microsoft\Windows NT\CurrentVersion\Ports"
+HKLM,Software\Wow6432Node\Microsoft\Windows NT\CurrentVersion\Print,"SymbolicLinkValue",0x60000,"\Registry\Machine\Software\Microsoft\Windows NT\CurrentVersion\Print"
+HKLM,Software\Wow6432Node\Microsoft\Windows NT\CurrentVersion\ProfileList,"SymbolicLinkValue",0x60000,"\Registry\Machine\Software\Microsoft\Windows NT\CurrentVersion\ProfileList"
+HKLM,Software\Wow6432Node\Microsoft\Windows NT\CurrentVersion\Time Zones,"SymbolicLinkValue",0x60000,"\Registry\Machine\Software\Microsoft\Windows NT\CurrentVersion\Time Zones"
+HKLM,Software\Wow6432Node\Microsoft\Windows\CurrentVersion\Time Zones,"SymbolicLinkValue",0x60000,"\Registry\Machine\Software\Microsoft\Windows NT\CurrentVersion\Time Zones"
+HKLM,Software\Wow6432Node\Policies,"SymbolicLinkValue",0x60000,"\Registry\Machine\Software\Policies"
+HKLM,Software\Wow6432Node\Registered Applications,"SymbolicLinkValue",0x60000,"\Registry\Machine\Software\Registered Applications"
+
+[LicenseInformation]
+; based on information from http://www.geoffchappell.com/notes/windows/license/install.htm
+HKLM,Software\Wine\LicenseInformation,"Kernel-MUI-Language-Allowed",,"EMPTY"
+HKLM,Software\Wine\LicenseInformation,"Kernel-MUI-Language-Disallowed",,"EMPTY"
+HKLM,Software\Wine\LicenseInformation,"Kernel-MUI-Number-Allowed",0x10001,1000
+HKLM,Software\Wine\LicenseInformation,"Shell-InBoxGames-FreeCell-EnableGame",0x10001,0x00000001
+HKLM,Software\Wine\LicenseInformation,"Shell-InBoxGames-Hearts-EnableGame",0x10001,0x00000001
+HKLM,Software\Wine\LicenseInformation,"Shell-InBoxGames-Minesweeper-EnableGame",0x10001,0x00000001
+HKLM,Software\Wine\LicenseInformation,"Shell-InBoxGames-PurblePlace-EnableGame",0x10001,0x00000001
+HKLM,Software\Wine\LicenseInformation,"Shell-InBoxGames-Shanghai-EnableGame",0x10001,0x00000001
+HKLM,Software\Wine\LicenseInformation,"Shell-InBoxGames-Solitaire-EnableGame",0x10001,0x00000001
+HKLM,Software\Wine\LicenseInformation,"Shell-InBoxGames-SpiderSolitaire-EnableGame",0x10001,0x00000001
+HKLM,Software\Wine\LicenseInformation,"Shell-PremiumInBoxGames-Chess-EnableGame",0x10001,0x00000001
+
+[ColorFiles]
+srgb color space profile.icm,"@%11%\mscms.dll,-1"
+
+[EtcFiles]
+hosts,"@%11%\ws2_32.dll,-1"
+networks,"@%11%\ws2_32.dll,-2"
+protocol,"@%11%\ws2_32.dll,-3"
+services,"@%11%\ws2_32.dll,-4"
+
+[InfFiles]
+input.inf,"@%12%\hidclass.sys,-1"
+winebus.inf,"@%12%\winebus.sys,-1"
+winehid.inf,"@%12%\winehid.sys,-1"
+wineusb.inf,"@%12%\wineusb.sys,-1"
+winexinput.inf,"@%12%\winexinput.sys,-1"
+
+[NlsFiles]
+c_037.nls
+c_10000.nls
+c_10001.nls
+c_10002.nls
+c_10003.nls
+c_10004.nls
+c_10005.nls
+c_10006.nls
+c_10007.nls
+c_10008.nls
+c_10010.nls
+c_10017.nls
+c_10021.nls
+c_10029.nls
+c_10079.nls
+c_10081.nls
+c_10082.nls
+c_1026.nls
+c_1250.nls
+c_1251.nls
+c_1252.nls
+c_1253.nls
+c_1254.nls
+c_1255.nls
+c_1256.nls
+c_1257.nls
+c_1258.nls
+c_1361.nls
+c_20127.nls
+c_20866.nls
+c_20932.nls
+c_20949.nls
+c_21866.nls
+c_28591.nls
+c_28592.nls
+c_28593.nls
+c_28594.nls
+c_28595.nls
+c_28596.nls
+c_28597.nls
+c_28598.nls
+c_28599.nls
+c_28603.nls
+c_28605.nls
+c_437.nls
+c_500.nls
+c_708.nls
+c_720.nls
+c_737.nls
+c_775.nls
+c_850.nls
+c_852.nls
+c_855.nls
+c_857.nls
+c_860.nls
+c_861.nls
+c_862.nls
+c_863.nls
+c_864.nls
+c_865.nls
+c_866.nls
+c_869.nls
+c_874.nls
+c_875.nls
+c_932.nls
+c_936.nls
+c_949.nls
+c_950.nls
+l_intl.nls
+locale.nls
+normidna.nls
+normnfc.nls
+normnfd.nls
+normnfkc.nls
+normnfkd.nls
+
+[SortFiles]
+sortdefault.nls
+
+[WineSourceDirs]
+NlsFiles  = nls
+SortFiles = nls
+
+[DestinationDirs]
+ColorFiles = 23
+EtcFiles  = 12,etc
+InfFiles  = 17
+NlsFiles  = 11
+SortFiles = 10,globalization\sorting

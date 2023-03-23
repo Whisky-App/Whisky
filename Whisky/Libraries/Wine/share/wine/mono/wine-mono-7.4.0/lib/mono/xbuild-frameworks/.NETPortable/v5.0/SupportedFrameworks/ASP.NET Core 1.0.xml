@@ -1,0 +1,37 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Framework
+    Identifier="DNXCore"
+    Profile="*"
+    MinimumVersion="5.0"
+    Family="DNXCore"
+    MinimumVisualStudioVersion="14.0"
+    DisplayName="ASP.NET Core"
+    MinimumVersionDisplayName="1.0"
+    PlatformArchitectures="AnyCPU;x86;x64"
+    IsBuiltIn="true"
+    IsHidden="true">
+    <RetargetData
+        ProjectLanguage="CSharp">
+        <NuGet
+            Identifier="dnxcore50.app">
+            <Package
+                Identifier="Microsoft.NETCore"
+                Version="5.0.0" />
+            <Package
+                Identifier="Microsoft.NETCore.Portable.Compatibility"
+                Version="1.0.0" />
+        </NuGet>
+    </RetargetData>
+    <RetargetData
+        ProjectLanguage="VisualBasic">
+        <NuGet
+            Identifier="dnxcore50.app">
+            <Package
+                Identifier="Microsoft.NETCore"
+                Version="5.0.0" />
+            <Package
+                Identifier="Microsoft.NETCore.Portable.Compatibility"
+                Version="1.0.0" />
+        </NuGet>
+    </RetargetData>
+</Framework>
