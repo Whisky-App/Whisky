@@ -3,3 +3,6 @@
 > Wine but a bit stronger
 
 A modern Wine wrapper for macOS built with SwiftUI.
+
+Uses:
+- Wine 8.3
