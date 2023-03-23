@@ -23,7 +23,7 @@ struct BottleView: View {
             Divider()
             HStack {
                 Text(wineVersion)
-                Button("wincfg") {
+                Button("winecfg") {
                     do {
                         try print(Wine.cfg())
                     } catch {

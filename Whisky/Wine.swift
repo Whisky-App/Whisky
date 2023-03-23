@@ -45,13 +45,15 @@ class Wine {
         let pipe = Pipe()
 
         process.executableURL = wineBinary
-        process.arguments = [winecfg.path]
+        process.arguments = ["start", "/unix", "\"\(winecfg.path)\""]
         process.standardOutput = pipe
         process.standardError = pipe
 
         try process.run()
 
         let output = try pipe.fileHandleForReading.readToEnd()!
+        
+        print(String(decoding: output, as: UTF8.self))
         process.waitUntilExit()
         let status = process.terminationStatus
         if status != 0 {
