@@ -36,7 +36,7 @@ struct BottleView: View {
         }
         .padding()
         .navigationTitle(bottle.name)
-        .onAppear() {
+        .onAppear {
             do {
                 try wineVersion += Wine.version()
             } catch {

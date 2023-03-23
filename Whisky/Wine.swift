@@ -15,7 +15,7 @@ class Wine {
 
     static let wineBinary: URL = binFolder
         .appendingPathComponent("wine64")
-    
+
     static let winecfg: URL = binFolder
         .appendingPathComponent("winecfg")
 
@@ -52,7 +52,7 @@ class Wine {
         try process.run()
 
         let output = try pipe.fileHandleForReading.readToEnd()!
-        
+
         print(String(decoding: output, as: UTF8.self))
         process.waitUntilExit()
         let status = process.terminationStatus
