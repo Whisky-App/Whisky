@@ -1,0 +1,581 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		6E40495629CCA19C006E3F1B /* WhiskyApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E40495529CCA19C006E3F1B /* WhiskyApp.swift */; };
+		6E40495829CCA19C006E3F1B /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E40495729CCA19C006E3F1B /* ContentView.swift */; };
+		6E40495A29CCA19C006E3F1B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6E40495929CCA19C006E3F1B /* Assets.xcassets */; };
+		6E40495D29CCA19C006E3F1B /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6E40495C29CCA19C006E3F1B /* Preview Assets.xcassets */; };
+		6E40496829CCA19C006E3F1B /* WhiskyTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E40496729CCA19C006E3F1B /* WhiskyTests.swift */; };
+		6E40497229CCA19D006E3F1B /* WhiskyUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E40497129CCA19D006E3F1B /* WhiskyUITests.swift */; };
+		6E40497429CCA19D006E3F1B /* WhiskyUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E40497329CCA19D006E3F1B /* WhiskyUITestsLaunchTests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		6E40496429CCA19C006E3F1B /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 6E40494A29CCA19C006E3F1B /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 6E40495129CCA19C006E3F1B;
+			remoteInfo = Whisky;
+		};
+		6E40496E29CCA19D006E3F1B /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 6E40494A29CCA19C006E3F1B /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 6E40495129CCA19C006E3F1B;
+			remoteInfo = Whisky;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		6E40495229CCA19C006E3F1B /* Whisky.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Whisky.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		6E40495529CCA19C006E3F1B /* WhiskyApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WhiskyApp.swift; sourceTree = "<group>"; };
+		6E40495729CCA19C006E3F1B /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		6E40495929CCA19C006E3F1B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		6E40495C29CCA19C006E3F1B /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		6E40495E29CCA19C006E3F1B /* Whisky.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Whisky.entitlements; sourceTree = "<group>"; };
+		6E40496329CCA19C006E3F1B /* WhiskyTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WhiskyTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		6E40496729CCA19C006E3F1B /* WhiskyTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WhiskyTests.swift; sourceTree = "<group>"; };
+		6E40496D29CCA19D006E3F1B /* WhiskyUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WhiskyUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		6E40497129CCA19D006E3F1B /* WhiskyUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WhiskyUITests.swift; sourceTree = "<group>"; };
+		6E40497329CCA19D006E3F1B /* WhiskyUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WhiskyUITestsLaunchTests.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		6E40494F29CCA19C006E3F1B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6E40496029CCA19C006E3F1B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6E40496A29CCA19D006E3F1B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		6E40494929CCA19C006E3F1B = {
+			isa = PBXGroup;
+			children = (
+				6E40495429CCA19C006E3F1B /* Whisky */,
+				6E40496629CCA19C006E3F1B /* WhiskyTests */,
+				6E40497029CCA19D006E3F1B /* WhiskyUITests */,
+				6E40495329CCA19C006E3F1B /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		6E40495329CCA19C006E3F1B /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				6E40495229CCA19C006E3F1B /* Whisky.app */,
+				6E40496329CCA19C006E3F1B /* WhiskyTests.xctest */,
+				6E40496D29CCA19D006E3F1B /* WhiskyUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		6E40495429CCA19C006E3F1B /* Whisky */ = {
+			isa = PBXGroup;
+			children = (
+				6E40495529CCA19C006E3F1B /* WhiskyApp.swift */,
+				6E40495729CCA19C006E3F1B /* ContentView.swift */,
+				6E40495929CCA19C006E3F1B /* Assets.xcassets */,
+				6E40495E29CCA19C006E3F1B /* Whisky.entitlements */,
+				6E40495B29CCA19C006E3F1B /* Preview Content */,
+			);
+			path = Whisky;
+			sourceTree = "<group>";
+		};
+		6E40495B29CCA19C006E3F1B /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				6E40495C29CCA19C006E3F1B /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		6E40496629CCA19C006E3F1B /* WhiskyTests */ = {
+			isa = PBXGroup;
+			children = (
+				6E40496729CCA19C006E3F1B /* WhiskyTests.swift */,
+			);
+			path = WhiskyTests;
+			sourceTree = "<group>";
+		};
+		6E40497029CCA19D006E3F1B /* WhiskyUITests */ = {
+			isa = PBXGroup;
+			children = (
+				6E40497129CCA19D006E3F1B /* WhiskyUITests.swift */,
+				6E40497329CCA19D006E3F1B /* WhiskyUITestsLaunchTests.swift */,
+			);
+			path = WhiskyUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		6E40495129CCA19C006E3F1B /* Whisky */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 6E40497729CCA19D006E3F1B /* Build configuration list for PBXNativeTarget "Whisky" */;
+			buildPhases = (
+				6E40494E29CCA19C006E3F1B /* Sources */,
+				6E40494F29CCA19C006E3F1B /* Frameworks */,
+				6E40495029CCA19C006E3F1B /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Whisky;
+			productName = Whisky;
+			productReference = 6E40495229CCA19C006E3F1B /* Whisky.app */;
+			productType = "com.apple.product-type.application";
+		};
+		6E40496229CCA19C006E3F1B /* WhiskyTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 6E40497A29CCA19D006E3F1B /* Build configuration list for PBXNativeTarget "WhiskyTests" */;
+			buildPhases = (
+				6E40495F29CCA19C006E3F1B /* Sources */,
+				6E40496029CCA19C006E3F1B /* Frameworks */,
+				6E40496129CCA19C006E3F1B /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				6E40496529CCA19C006E3F1B /* PBXTargetDependency */,
+			);
+			name = WhiskyTests;
+			productName = WhiskyTests;
+			productReference = 6E40496329CCA19C006E3F1B /* WhiskyTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		6E40496C29CCA19D006E3F1B /* WhiskyUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 6E40497D29CCA19D006E3F1B /* Build configuration list for PBXNativeTarget "WhiskyUITests" */;
+			buildPhases = (
+				6E40496929CCA19D006E3F1B /* Sources */,
+				6E40496A29CCA19D006E3F1B /* Frameworks */,
+				6E40496B29CCA19D006E3F1B /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				6E40496F29CCA19D006E3F1B /* PBXTargetDependency */,
+			);
+			name = WhiskyUITests;
+			productName = WhiskyUITests;
+			productReference = 6E40496D29CCA19D006E3F1B /* WhiskyUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		6E40494A29CCA19C006E3F1B /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1420;
+				LastUpgradeCheck = 1420;
+				TargetAttributes = {
+					6E40495129CCA19C006E3F1B = {
+						CreatedOnToolsVersion = 14.2;
+					};
+					6E40496229CCA19C006E3F1B = {
+						CreatedOnToolsVersion = 14.2;
+						TestTargetID = 6E40495129CCA19C006E3F1B;
+					};
+					6E40496C29CCA19D006E3F1B = {
+						CreatedOnToolsVersion = 14.2;
+						TestTargetID = 6E40495129CCA19C006E3F1B;
+					};
+				};
+			};
+			buildConfigurationList = 6E40494D29CCA19C006E3F1B /* Build configuration list for PBXProject "Whisky" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 6E40494929CCA19C006E3F1B;
+			productRefGroup = 6E40495329CCA19C006E3F1B /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				6E40495129CCA19C006E3F1B /* Whisky */,
+				6E40496229CCA19C006E3F1B /* WhiskyTests */,
+				6E40496C29CCA19D006E3F1B /* WhiskyUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		6E40495029CCA19C006E3F1B /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6E40495D29CCA19C006E3F1B /* Preview Assets.xcassets in Resources */,
+				6E40495A29CCA19C006E3F1B /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6E40496129CCA19C006E3F1B /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6E40496B29CCA19D006E3F1B /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		6E40494E29CCA19C006E3F1B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6E40495829CCA19C006E3F1B /* ContentView.swift in Sources */,
+				6E40495629CCA19C006E3F1B /* WhiskyApp.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6E40495F29CCA19C006E3F1B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6E40496829CCA19C006E3F1B /* WhiskyTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6E40496929CCA19D006E3F1B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6E40497229CCA19D006E3F1B /* WhiskyUITests.swift in Sources */,
+				6E40497429CCA19D006E3F1B /* WhiskyUITestsLaunchTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		6E40496529CCA19C006E3F1B /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 6E40495129CCA19C006E3F1B /* Whisky */;
+			targetProxy = 6E40496429CCA19C006E3F1B /* PBXContainerItemProxy */;
+		};
+		6E40496F29CCA19D006E3F1B /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 6E40495129CCA19C006E3F1B /* Whisky */;
+			targetProxy = 6E40496E29CCA19D006E3F1B /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		6E40497529CCA19D006E3F1B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 13.1;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		6E40497629CCA19D006E3F1B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 13.1;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = macosx;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+			};
+			name = Release;
+		};
+		6E40497829CCA19D006E3F1B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = Whisky/Whisky.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"Whisky/Preview Content\"";
+				DEVELOPMENT_TEAM = 92S3SG4PTH;
+				ENABLE_HARDENED_RUNTIME = YES;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.isaacmarovitz.Whisky;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		6E40497929CCA19D006E3F1B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = Whisky/Whisky.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"Whisky/Preview Content\"";
+				DEVELOPMENT_TEAM = 92S3SG4PTH;
+				ENABLE_HARDENED_RUNTIME = YES;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.isaacmarovitz.Whisky;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
+		6E40497B29CCA19D006E3F1B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 92S3SG4PTH;
+				GENERATE_INFOPLIST_FILE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 13.1;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.isaacmarovitz.WhiskyTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Whisky.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Whisky";
+			};
+			name = Debug;
+		};
+		6E40497C29CCA19D006E3F1B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 92S3SG4PTH;
+				GENERATE_INFOPLIST_FILE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 13.1;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.isaacmarovitz.WhiskyTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Whisky.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Whisky";
+			};
+			name = Release;
+		};
+		6E40497E29CCA19D006E3F1B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 92S3SG4PTH;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.isaacmarovitz.WhiskyUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TEST_TARGET_NAME = Whisky;
+			};
+			name = Debug;
+		};
+		6E40497F29CCA19D006E3F1B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 92S3SG4PTH;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.isaacmarovitz.WhiskyUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TEST_TARGET_NAME = Whisky;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		6E40494D29CCA19C006E3F1B /* Build configuration list for PBXProject "Whisky" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				6E40497529CCA19D006E3F1B /* Debug */,
+				6E40497629CCA19D006E3F1B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		6E40497729CCA19D006E3F1B /* Build configuration list for PBXNativeTarget "Whisky" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				6E40497829CCA19D006E3F1B /* Debug */,
+				6E40497929CCA19D006E3F1B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		6E40497A29CCA19D006E3F1B /* Build configuration list for PBXNativeTarget "WhiskyTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				6E40497B29CCA19D006E3F1B /* Debug */,
+				6E40497C29CCA19D006E3F1B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		6E40497D29CCA19D006E3F1B /* Build configuration list for PBXNativeTarget "WhiskyUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				6E40497E29CCA19D006E3F1B /* Debug */,
+				6E40497F29CCA19D006E3F1B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 6E40494A29CCA19C006E3F1B /* Project object */;
+}
