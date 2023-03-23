@@ -13,6 +13,7 @@
 		6E40495D29CCA19C006E3F1B /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6E40495C29CCA19C006E3F1B /* Preview Assets.xcassets */; };
 		6E40498129CCA8B0006E3F1B /* BottleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E40498029CCA8B0006E3F1B /* BottleView.swift */; };
 		6E40498329CCA91B006E3F1B /* Bottle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E40498229CCA91B006E3F1B /* Bottle.swift */; };
+		6E50D97E29CD0755008C39F6 /* Libraries in Resources */ = {isa = PBXBuildFile; fileRef = 6E50D97D29CD0755008C39F6 /* Libraries */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,7 @@
 		6E40495E29CCA19C006E3F1B /* Whisky.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Whisky.entitlements; sourceTree = "<group>"; };
 		6E40498029CCA8B0006E3F1B /* BottleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottleView.swift; sourceTree = "<group>"; };
 		6E40498229CCA91B006E3F1B /* Bottle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bottle.swift; sourceTree = "<group>"; };
+		6E50D97D29CD0755008C39F6 /* Libraries */ = {isa = PBXFileReference; lastKnownFileType = folder; name = Libraries; path = Whisky/Libraries; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -40,6 +42,7 @@
 		6E40494929CCA19C006E3F1B = {
 			isa = PBXGroup;
 			children = (
+				6E50D97D29CD0755008C39F6 /* Libraries */,
 				6E40495429CCA19C006E3F1B /* Whisky */,
 				6E40495329CCA19C006E3F1B /* Products */,
 			);
@@ -133,6 +136,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6E50D97E29CD0755008C39F6 /* Libraries in Resources */,
 				6E40495D29CCA19C006E3F1B /* Preview Assets.xcassets in Resources */,
 				6E40495A29CCA19C006E3F1B /* Assets.xcassets in Resources */,
 			);
