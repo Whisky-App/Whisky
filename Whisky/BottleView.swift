@@ -23,6 +23,13 @@ struct BottleView: View {
             Divider()
             HStack {
                 Text(wineVersion)
+                Button("wincfg") {
+                    do {
+                        try print(Wine.cfg())
+                    } catch {
+                        print("Failed to launch winecfg")
+                    }
+                }
                 Spacer()
             }
             Spacer()
