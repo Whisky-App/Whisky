@@ -31,6 +31,16 @@ public class Bottle: Hashable {
         NSWorkspace.shared.activateFileViewerSelecting([cDrive])
     }
 
+    @MainActor
+    func delete() {
+        do {
+            try FileManager.default.removeItem(at: path)
+            BottleVM.shared.loadBottles()
+        } catch {
+            print("Failed to delete bottle")
+        }
+    }
+
     init() {}
 
     init(path: URL) {
