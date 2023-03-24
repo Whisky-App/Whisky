@@ -16,6 +16,7 @@
 		6E50D97E29CD0755008C39F6 /* Libraries in Resources */ = {isa = PBXBuildFile; fileRef = 6E50D97D29CD0755008C39F6 /* Libraries */; };
 		6E50D98029CD0850008C39F6 /* Wine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E50D97F29CD0850008C39F6 /* Wine.swift */; };
 		6E50D98329CD6066008C39F6 /* BottleVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E50D98229CD6066008C39F6 /* BottleVM.swift */; };
+		6E50D98529CDF25B008C39F6 /* BottleCreationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E50D98429CDF25B008C39F6 /* BottleCreationView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +31,7 @@
 		6E50D97D29CD0755008C39F6 /* Libraries */ = {isa = PBXFileReference; lastKnownFileType = folder; name = Libraries; path = Whisky/Libraries; sourceTree = "<group>"; };
 		6E50D97F29CD0850008C39F6 /* Wine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Wine.swift; sourceTree = "<group>"; };
 		6E50D98229CD6066008C39F6 /* BottleVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottleVM.swift; sourceTree = "<group>"; };
+		6E50D98429CDF25B008C39F6 /* BottleCreationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottleCreationView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -66,6 +68,7 @@
 				6E40495529CCA19C006E3F1B /* WhiskyApp.swift */,
 				6E40495729CCA19C006E3F1B /* ContentView.swift */,
 				6E40498029CCA8B0006E3F1B /* BottleView.swift */,
+				6E50D98429CDF25B008C39F6 /* BottleCreationView.swift */,
 				6E50D98229CD6066008C39F6 /* BottleVM.swift */,
 				6E40498229CCA91B006E3F1B /* Bottle.swift */,
 				6E50D97F29CD0850008C39F6 /* Wine.swift */,
@@ -180,6 +183,7 @@
 			files = (
 				6E40495829CCA19C006E3F1B /* ContentView.swift in Sources */,
 				6E50D98029CD0850008C39F6 /* Wine.swift in Sources */,
+				6E50D98529CDF25B008C39F6 /* BottleCreationView.swift in Sources */,
 				6E40498329CCA91B006E3F1B /* Bottle.swift in Sources */,
 				6E40495629CCA19C006E3F1B /* WhiskyApp.swift in Sources */,
 				6E50D98329CD6066008C39F6 /* BottleVM.swift in Sources */,
