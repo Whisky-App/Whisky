@@ -1,5 +1,5 @@
 # Whisky 🥃 
-![](https://img.shields.io/github/actions/workflow/status/IsaacMarovitz/Whisky/SwiftLint?style=for-the-badge)
+![](https://img.shields.io/github/actions/workflow/status/IsaacMarovitz/Whisky/SwiftLint.yml?style=for-the-badge)
 
 > Wine but a bit stronger
 
