@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct BottleView: View {
-    @Binding var bottle: Bottle
+    @State var bottle: Bottle
     @State var wineVersion: String = ""
     @State var windowsVersion: WinVersion?
     @State var showBottleCreation: Bool = false
@@ -100,7 +100,7 @@ struct BottleView_Previews: PreviewProvider {
     static var previews: some View {
         let bottle = Bottle()
 
-        BottleView(bottle: .constant(bottle))
+        BottleView(bottle: Bottle())
             .frame(width: 500, height: 300)
     }
 }

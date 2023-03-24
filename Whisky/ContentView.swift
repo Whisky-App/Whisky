@@ -9,16 +9,17 @@ import SwiftUI
 
 struct ContentView: View {
     @EnvironmentObject var bottleVM: BottleVM
-
-    @State var selected: Bottle
+    @State var selected: Bottle?
 
     var body: some View {
         NavigationSplitView {
-            List(bottleVM.bottles, id: \.path, selection: $selected) { bottle in
+            List(bottleVM.bottles, id: \.self, selection: $selected) { bottle in
                 Text(bottle.name)
             }
         } detail: {
-            BottleView(bottle: $selected)
+            if let bottle = selected {
+                BottleView(bottle: bottle)
+            }
         }
         .onAppear {
             bottleVM.loadBottles()
@@ -28,7 +29,7 @@ struct ContentView: View {
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView(selected: BottleVM.shared.bottles[0])
+        ContentView()
             .environmentObject(BottleVM.shared)
     }
 }
