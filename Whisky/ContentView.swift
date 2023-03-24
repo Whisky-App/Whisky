@@ -19,6 +19,7 @@ struct ContentView: View {
         } detail: {
             if let bottle = selected {
                 BottleView(bottle: bottle)
+                    .id(bottle.path)
             }
         }
         .onAppear {
