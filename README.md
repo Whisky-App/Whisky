@@ -6,6 +6,7 @@ A modern Wine wrapper for macOS built with SwiftUI.
 
 Uses:
 - Wine 8.3
+- MoltenVK 1.2.3
 
 TODO: 
 - [ ] Add bottle management and creation
