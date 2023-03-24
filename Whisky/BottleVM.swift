@@ -38,7 +38,7 @@ class BottleVM: ObservableObject {
         }
     }
 
-    func createNewBottle(bottleName: String) {
+    func createNewBottle(bottleName: String, winVersion: WinVersion) {
         Task(priority: .userInitiated) {
             do {
                 if !FileManager.default.fileExists(atPath: BottleVM.bottleDir.path) {
@@ -50,7 +50,8 @@ class BottleVM: ObservableObject {
                 try FileManager.default.createDirectory(atPath: newBottleDir.path, withIntermediateDirectories: true)
 
                 let bottle = Bottle(path: newBottleDir)
-                try await Wine.cfg(bottle: bottle)
+                try await Wine.changeWinVersion(bottle: bottle, win: winVersion)
+                await loadBottles()
             } catch {
                 print("Failed to create new bottle")
             }
