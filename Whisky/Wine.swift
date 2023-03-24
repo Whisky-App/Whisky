@@ -74,6 +74,11 @@ class Wine {
     static func changeWinVersion(bottle: Bottle, win: WinVersion) async throws -> String {
         return try await run(["winecfg", "-v", win.rawValue], bottle: bottle)
     }
+
+    @discardableResult
+    static func runProgram(bottle: Bottle, path: String) async throws -> String {
+        return try await run(["start", "/unix", path])
+    }
 }
 
 extension String: Error {}

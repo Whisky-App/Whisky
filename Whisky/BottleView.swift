@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import UniformTypeIdentifiers
 
 struct BottleView: View {
     @State var bottle: Bottle
@@ -45,6 +46,7 @@ struct BottleView: View {
                 }
                 Spacer()
             }
+            Spacer()
             HStack {
                 Button("Open Wine Configuration") {
                     Task(priority: .userInitiated) {
@@ -58,9 +60,28 @@ struct BottleView: View {
                 Button("Open C Drive") {
                     bottle.openCDrive()
                 }
+                Button("Run...") {
+                    let panel = NSOpenPanel()
+                    panel.allowsMultipleSelection = false
+                    panel.canChooseDirectories = false
+                    panel.canChooseFiles = true
+                    panel.allowedContentTypes = [UTType.exe]
+                    panel.begin { result in
+                        Task(priority: .userInitiated) {
+                            if result == .OK {
+                                if let url = panel.urls.first {
+                                    do {
+                                        try await Wine.runProgram(bottle: bottle, path: url.path)
+                                    } catch {
+                                        print("Failed to open program at \(url.path)")
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
                 Spacer()
             }
-            Spacer()
         }
         .toolbar {
             ToolbarItem(placement: .primaryAction) {
@@ -74,32 +95,27 @@ struct BottleView: View {
         .padding()
         .navigationTitle(bottle.name)
         .onAppear {
-            Task(priority: .background) {
-                do {
-                    try await wineVersion = Wine.wineVersion()
-                } catch {
-                    wineVersion = "Failed"
-                }
-            }
-
-            Task(priority: .background) {
-                do {
-                    try await windowsVersion = Wine.winVersion(bottle: bottle)
-                } catch {
-                    print("Failed")
-                }
-            }
+            resolveWineInfo()
         }
         .sheet(isPresented: $showBottleCreation) {
             BottleCreationView()
+        }
+    }
+
+    func resolveWineInfo() {
+        Task(priority: .background) {
+            do {
+                try await wineVersion = Wine.wineVersion()
+                try await windowsVersion = Wine.winVersion(bottle: bottle)
+            } catch {
+                print("Failed")
+            }
         }
     }
 }
 
 struct BottleView_Previews: PreviewProvider {
     static var previews: some View {
-        let bottle = Bottle()
-
         BottleView(bottle: Bottle())
             .frame(width: 500, height: 300)
     }
