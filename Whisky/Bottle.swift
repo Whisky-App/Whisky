@@ -39,7 +39,6 @@ public class Bottle: Hashable {
 }
 
 public enum WinVersion: String, CaseIterable {
-    case win98 = "win98"
     case winXP = "winxp64"
     case win7 = "win7"
     case win8 = "win8"
@@ -48,8 +47,6 @@ public enum WinVersion: String, CaseIterable {
 
     func pretty() -> String {
         switch self {
-        case .win98:
-            return "Windows 98"
         case .winXP:
             return "Windows XP"
         case .win7:
