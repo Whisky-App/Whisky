@@ -11,6 +11,6 @@ Uses:
 - [MoltenVK 1.2.3](https://github.com/KhronosGroup/MoltenVK/releases/tag/v1.2.3)
 
 TODO: 
-- [ ] Add bottle management and creation
+- [x] Add bottle management and creation
 - [ ] Add installation and program management
 - [ ] SwiftUI implementation of `winecfg` and `regedit` 
