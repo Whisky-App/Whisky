@@ -8,9 +8,9 @@
 import SwiftUI
 
 struct BottleCreationView: View {
-    @Binding var showBottleCreation: Bool
     @State var newBottleName: String = ""
     @State var newBottleVersion: WinVersion = .win7
+    @Environment(\.dismiss) var dismiss
 
     var body: some View {
         VStack {
@@ -40,11 +40,16 @@ struct BottleCreationView: View {
             Spacer()
             HStack {
                 Spacer()
+                Button("Cancel") {
+                    dismiss()
+                }
+                .keyboardShortcut(.cancelAction)
                 Button("Create") {
                     BottleVM.shared.createNewBottle(bottleName: newBottleName,
                     winVersion: newBottleVersion)
-                    showBottleCreation.toggle()
+                    dismiss()
                 }
+                .keyboardShortcut(.defaultAction)
             }
         }
         .padding()
@@ -54,6 +59,6 @@ struct BottleCreationView: View {
 
 struct BottleCreationView_Previews: PreviewProvider {
     static var previews: some View {
-        BottleCreationView(showBottleCreation: .constant(true))
+        BottleCreationView()
     }
 }

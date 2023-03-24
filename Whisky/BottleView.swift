@@ -91,7 +91,7 @@ struct BottleView: View {
             }
         }
         .sheet(isPresented: $showBottleCreation) {
-            BottleCreationView(showBottleCreation: $showBottleCreation)
+            BottleCreationView()
         }
     }
 }
