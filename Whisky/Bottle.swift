@@ -38,7 +38,7 @@ public class Bottle: Hashable {
     }
 }
 
-public enum WinVersion: String {
+public enum WinVersion: String, CaseIterable {
     case win98 = "win98"
     case winXP = "winxp"
     case win7 = "win7"

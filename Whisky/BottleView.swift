@@ -11,6 +11,9 @@ struct BottleView: View {
     @Binding var bottle: Bottle
     @State var wineVersion: String = ""
     @State var windowsVersion: WinVersion?
+    @State var showBottleCreation: Bool = false
+    @State var newBottleName: String = ""
+    @State var newBottleVersion: WinVersion = .win7
 
     var body: some View {
         VStack {
@@ -45,7 +48,7 @@ struct BottleView: View {
                 Spacer()
             }
             HStack {
-                Button("winecfg") {
+                Button("Open Wine Configuration") {
                     Task(priority: .userInitiated) {
                         do {
                             try await Wine.cfg(bottle: bottle)
@@ -64,7 +67,7 @@ struct BottleView: View {
         .toolbar {
             ToolbarItem(placement: .primaryAction) {
                 Button(action: {
-                    BottleVM.shared.createNewBottle(bottleName: "Test")
+                    showBottleCreation.toggle()
                 }, label: {
                     Image(systemName: "plus")
                 })
@@ -88,6 +91,40 @@ struct BottleView: View {
                     print("Failed")
                 }
             }
+        }
+        .sheet(isPresented: $showBottleCreation) {
+            VStack {
+                HStack {
+                    Text("Create a new bottle")
+                        .bold()
+                    Spacer()
+                }
+                Divider()
+                HStack {
+                    Text("Bottle Name:")
+                    TextField("", text: $newBottleName)
+                    Spacer()
+                }
+                HStack {
+                    Picker("Windows Version:", selection: $newBottleVersion) {
+                        ForEach(WinVersion.allCases, id: \.self) {
+                            Text($0.pretty())
+                        }
+                    }
+                    Spacer()
+                }
+                Spacer()
+                HStack {
+                    Spacer()
+                    Button("Create") {
+                        BottleVM.shared.createNewBottle(bottleName: newBottleName,
+                        winVersion: newBottleVersion)
+                        showBottleCreation.toggle()
+                    }
+                }
+            }
+            .padding()
+            .frame(width: 350, height: 200)
         }
     }
 }
