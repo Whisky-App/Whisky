@@ -46,14 +46,38 @@ class Wine {
         return ""
     }
 
-    static func version() async throws -> String {
+    static func wineVersion() async throws -> String {
         return try await run(["--version"])
+    }
+
+    static func winVersion() async throws -> WinVersion {
+        let output = try await run(["winecfg", "-v"])
+        let lines = output.split(whereSeparator: \.isNewline)
+
+        if let lastLine = lines.last {
+            let winString = String(lastLine)
+
+            if let version = WinVersion(rawValue: winString) {
+                return version
+            }
+        }
+
+        throw WineInterfaceError.invalidResponce
     }
 
     @discardableResult
     static func cfg(bottle: Bottle) async throws -> String {
         return try await run(["winecfg"], bottle: bottle)
     }
+
+    @discardableResult
+    static func changeWinVersion(bottle: Bottle, win: WinVersion) async throws -> String {
+        return try await run(["winecfg", "-v", win.rawValue], bottle: bottle)
+    }
 }
 
 extension String: Error {}
+
+enum WineInterfaceError: Error {
+    case invalidResponce
+}

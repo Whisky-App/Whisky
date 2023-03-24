@@ -22,6 +22,7 @@ public class Bottle: Hashable {
     }
 
     var path: URL = URL.homeDirectory.appending(component: ".wine")
+    var winVersion: WinVersion = .win7
     var dxvk: Bool = false
     var winetricks: Bool = false
 
@@ -34,5 +35,31 @@ public class Bottle: Hashable {
 
     init(path: URL) {
         self.path = path
+    }
+}
+
+public enum WinVersion: String {
+    case win98 = "win98"
+    case winXP = "winxp"
+    case win7 = "win7"
+    case win8 = "win8"
+    case win81 = "win81"
+    case win10 = "win10"
+
+    func pretty() -> String {
+        switch self {
+        case .win98:
+            return "Windows 98"
+        case .winXP:
+            return "Windows XP"
+        case .win7:
+            return "Windows 7"
+        case .win8:
+            return "Windows 8"
+        case .win81:
+            return "Windows 8.1"
+        case .win10:
+            return "Windows 10"
+        }
     }
 }
