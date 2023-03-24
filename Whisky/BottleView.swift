@@ -12,8 +12,6 @@ struct BottleView: View {
     @State var wineVersion: String = ""
     @State var windowsVersion: WinVersion?
     @State var showBottleCreation: Bool = false
-    @State var newBottleName: String = ""
-    @State var newBottleVersion: WinVersion = .win7
 
     var body: some View {
         VStack {
@@ -93,38 +91,7 @@ struct BottleView: View {
             }
         }
         .sheet(isPresented: $showBottleCreation) {
-            VStack {
-                HStack {
-                    Text("Create a new bottle")
-                        .bold()
-                    Spacer()
-                }
-                Divider()
-                HStack {
-                    Text("Bottle Name:")
-                    TextField("", text: $newBottleName)
-                    Spacer()
-                }
-                HStack {
-                    Picker("Windows Version:", selection: $newBottleVersion) {
-                        ForEach(WinVersion.allCases, id: \.self) {
-                            Text($0.pretty())
-                        }
-                    }
-                    Spacer()
-                }
-                Spacer()
-                HStack {
-                    Spacer()
-                    Button("Create") {
-                        BottleVM.shared.createNewBottle(bottleName: newBottleName,
-                        winVersion: newBottleVersion)
-                        showBottleCreation.toggle()
-                    }
-                }
-            }
-            .padding()
-            .frame(width: 350, height: 200)
+            BottleCreationView(showBottleCreation: $showBottleCreation)
         }
     }
 }
