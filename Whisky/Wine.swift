@@ -50,8 +50,8 @@ class Wine {
         return try await run(["--version"])
     }
 
-    static func winVersion() async throws -> WinVersion {
-        let output = try await run(["winecfg", "-v"])
+    static func winVersion(bottle: Bottle) async throws -> WinVersion {
+        let output = try await run(["winecfg", "-v"], bottle: bottle)
         let lines = output.split(whereSeparator: \.isNewline)
 
         if let lastLine = lines.last {

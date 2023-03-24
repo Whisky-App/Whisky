@@ -84,7 +84,7 @@ struct BottleView: View {
 
             Task(priority: .background) {
                 do {
-                    try await windowsVersion = Wine.winVersion()
+                    try await windowsVersion = Wine.winVersion(bottle: bottle)
                 } catch {
                     print("Failed")
                 }
