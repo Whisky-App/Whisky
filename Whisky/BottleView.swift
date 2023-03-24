@@ -23,14 +23,20 @@ struct BottleView: View {
             Divider()
             HStack {
                 Text(wineVersion)
+                Spacer()
+            }
+            HStack {
                 Button("winecfg") {
                     Task(priority: .userInitiated) {
                         do {
-                            try await print(Wine.cfg())
+                            try await print(Wine.cfg(bottle: bottle))
                         } catch {
                             print("Failed to launch winecfg")
                         }
                     }
+                }
+                Button("Open C Drive") {
+                    bottle.openCDrive()
                 }
                 Spacer()
             }
@@ -52,7 +58,7 @@ struct BottleView: View {
 
 struct BottleView_Previews: PreviewProvider {
     static var previews: some View {
-        let bottle = Bottle("Steam")
+        let bottle = Bottle()
 
         BottleView(bottle: .constant(bottle))
             .frame(width: 500, height: 300)
