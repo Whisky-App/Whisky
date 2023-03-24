@@ -16,7 +16,7 @@ class Wine {
     static let wineBinary: URL = binFolder
         .appendingPathComponent("wine64")
 
-    static func run(_ args: [String]) async throws -> String {
+    static func run(_ args: [String], bottle: Bottle? = nil) async throws -> String {
         let process = Process()
         let pipe = Pipe()
 
@@ -25,6 +25,9 @@ class Wine {
         process.standardOutput = pipe
         process.standardError = pipe
         process.currentDirectoryURL = binFolder
+        if let bottle = bottle {
+            process.environment = ["WINEPREFIX": bottle.path.path]
+        }
 
         try process.run()
 
@@ -47,8 +50,8 @@ class Wine {
         return try await run(["--version"])
     }
 
-    static func cfg() async throws -> String {
-        return try await run(["winecfg"])
+    static func cfg(bottle: Bottle) async throws -> String {
+        return try await run(["winecfg"], bottle: bottle)
     }
 }
 
