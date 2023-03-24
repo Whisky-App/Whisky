@@ -20,6 +20,9 @@ struct ContentView: View {
         } detail: {
             BottleView(bottle: $selected)
         }
+        .onAppear {
+            bottleVM.loadBottles()
+        }
     }
 }
 

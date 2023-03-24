@@ -45,7 +45,7 @@ struct BottleView: View {
         .toolbar {
             ToolbarItem(placement: .primaryAction) {
                 Button(action: {
-                    createNewBottle()
+                    BottleVM.shared.createNewBottle(bottleName: "Test")
                 }, label: {
                     Image(systemName: "plus")
                 })
@@ -60,32 +60,6 @@ struct BottleView: View {
                 } catch {
                     wineVersion += "Failed"
                 }
-            }
-        }
-    }
-
-    func createNewBottle() {
-        Task(priority: .userInitiated) {
-            do {
-                let containerDir = FileManager.default.homeDirectoryForCurrentUser
-                    .appendingPathComponent("Library")
-                    .appendingPathComponent("Containers")
-                    .appendingPathComponent("com.isaacmarovitz.Whisky")
-
-                let bottleDir = containerDir
-                    .appendingPathComponent("Bottles")
-
-                if !FileManager.default.fileExists(atPath: bottleDir.path) {
-                    try FileManager.default.createDirectory(atPath: bottleDir.path, withIntermediateDirectories: true)
-                }
-
-                let newBottleDir = bottleDir.appendingPathComponent("Test")
-                try FileManager.default.createDirectory(atPath: newBottleDir.path, withIntermediateDirectories: true)
-
-                let bottle = Bottle(path: newBottleDir)
-                try await Wine.cfg(bottle: bottle)
-            } catch {
-                print("Failed to create new bottle")
             }
         }
     }
