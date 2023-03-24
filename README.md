@@ -11,5 +11,4 @@ TODO:
 - [ ] Add bottle management and creation
 - [ ] Add installation and program management
 - [ ] SwiftUI implementation of `winecfg` and `regedit` 
-- [ ] Add MoltenVK
 - [ ] Add DXVK
