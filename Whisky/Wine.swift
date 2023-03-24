@@ -8,7 +8,7 @@
 import Foundation
 
 class Wine {
-    static let binFolder: URL = Bundle.main.resourceURL ?? URL(fileURLWithPath: "")
+    static let binFolder: URL = (Bundle.main.resourceURL ?? URL(fileURLWithPath: ""))
         .appendingPathComponent("Libraries")
         .appendingPathComponent("Wine")
         .appendingPathComponent("bin")
@@ -19,53 +19,38 @@ class Wine {
     static let winecfg: URL = binFolder
         .appendingPathComponent("winecfg")
 
-    static func version() throws -> String {
+    static func run(_ args: [String]) async throws -> String {
         let process = Process()
         let pipe = Pipe()
 
         process.executableURL = wineBinary
-        process.arguments = ["--version"]
+        process.arguments = args
         process.standardOutput = pipe
         process.standardError = pipe
 
         try process.run()
 
         if let output = try pipe.fileHandleForReading.readToEnd() {
+            let outputString = String(decoding: output, as: UTF8.self)
+            print(outputString)
             process.waitUntilExit()
             let status = process.terminationStatus
             if status != 0 {
-                throw String(decoding: output, as: UTF8.self)
+                throw outputString
             }
 
-            return String(decoding: output, as: UTF8.self)
+            return outputString
         }
 
         return ""
     }
 
-    static func cfg() throws -> String {
-        let process = Process()
-        let pipe = Pipe()
+    static func version() async throws -> String {
+        return try await run(["--version"])
+    }
 
-        process.executableURL = wineBinary
-        process.arguments = ["start", "/unix", "\"\(winecfg.path)\""]
-        process.standardOutput = pipe
-        process.standardError = pipe
-
-        try process.run()
-
-        if let output = try pipe.fileHandleForReading.readToEnd() {
-            print(String(decoding: output, as: UTF8.self))
-            process.waitUntilExit()
-            let status = process.terminationStatus
-            if status != 0 {
-                throw String(decoding: output, as: UTF8.self)
-            }
-
-            return String(decoding: output, as: UTF8.self)
-        }
-
-        return ""
+    static func cfg() async throws -> String {
+        return try await run(["start", "/unix", "\"\(winecfg.path)\""])
     }
 }
 
