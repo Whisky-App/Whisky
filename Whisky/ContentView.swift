@@ -15,6 +15,13 @@ struct ContentView: View {
         NavigationSplitView {
             List(bottleVM.bottles, id: \.self, selection: $selected) { bottle in
                 Text(bottle.name)
+                    .contextMenu {
+                        Button {
+                            bottle.delete()
+                        } label: {
+                            Text("Delete Bottle")
+                        }
+                    }
             }
         } detail: {
             if let bottle = selected {

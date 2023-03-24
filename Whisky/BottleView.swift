@@ -64,11 +64,11 @@ struct BottleView: View {
         }
         .toolbar {
             ToolbarItem(placement: .primaryAction) {
-                Button(action: {
+                Button {
                     showBottleCreation.toggle()
-                }, label: {
+                } label: {
                     Image(systemName: "plus")
-                })
+                }
             }
         }
         .padding()
