@@ -11,7 +11,7 @@ import SwiftUI
 struct WhiskyApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView(selected: BottleVM.shared.bottles[0])
+            ContentView()
                 .environmentObject(BottleVM.shared)
         }
     }
