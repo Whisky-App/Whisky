@@ -18,9 +18,7 @@ class BottleVM: ObservableObject {
     static let bottleDir = containerDir
         .appendingPathComponent("Bottles")
 
-    @Published var bottles: [Bottle] = [
-        Bottle()
-    ]
+    @Published var bottles: [Bottle] = []
 
     @MainActor
     func loadBottles() {
