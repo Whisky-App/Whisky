@@ -24,10 +24,12 @@ struct BottleView: View {
             HStack {
                 Text(wineVersion)
                 Button("winecfg") {
-                    do {
-                        try print(Wine.cfg())
-                    } catch {
-                        print("Failed to launch winecfg")
+                    Task(priority: .userInitiated) {
+                        do {
+                            try await print(Wine.cfg())
+                        } catch {
+                            print("Failed to launch winecfg")
+                        }
                     }
                 }
                 Spacer()
@@ -37,10 +39,12 @@ struct BottleView: View {
         .padding()
         .navigationTitle(bottle.name)
         .onAppear {
-            do {
-                try wineVersion += Wine.version()
-            } catch {
-                wineVersion += "Failed"
+            Task(priority: .background) {
+                do {
+                    try await wineVersion += Wine.version()
+                } catch {
+                    wineVersion += "Failed"
+                }
             }
         }
     }
