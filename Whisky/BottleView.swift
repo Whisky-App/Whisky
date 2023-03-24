@@ -9,7 +9,8 @@ import SwiftUI
 
 struct BottleView: View {
     @Binding var bottle: Bottle
-    @State var wineVersion: String = "Wine Version: "
+    @State var wineVersion: String = ""
+    @State var windowsVersion: WinVersion?
 
     var body: some View {
         VStack {
@@ -22,7 +23,25 @@ struct BottleView: View {
             }
             Divider()
             HStack {
-                Text(wineVersion)
+                Text("Path: \(bottle.path.path)")
+                Spacer()
+            }
+            HStack {
+                if wineVersion.isEmpty {
+                    Text("Wine Version: ")
+                    ProgressView()
+                } else {
+                    Text("Wine Version: ") + Text(wineVersion)
+                }
+                Spacer()
+            }
+            HStack {
+                if let windowsVersion = windowsVersion {
+                    Text("Windows Version: ") + Text(windowsVersion.pretty())
+                } else {
+                    Text("Windows Version: ")
+                    ProgressView()
+                }
                 Spacer()
             }
             HStack {
@@ -56,9 +75,17 @@ struct BottleView: View {
         .onAppear {
             Task(priority: .background) {
                 do {
-                    try await wineVersion += Wine.version()
+                    try await wineVersion = Wine.wineVersion()
                 } catch {
-                    wineVersion += "Failed"
+                    wineVersion = "Failed"
+                }
+            }
+
+            Task(priority: .background) {
+                do {
+                    try await windowsVersion = Wine.winVersion()
+                } catch {
+                    print("Failed")
                 }
             }
         }

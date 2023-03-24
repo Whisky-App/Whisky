@@ -25,6 +25,8 @@ class BottleVM: ObservableObject {
     @MainActor
     func loadBottles() {
         Task(priority: .background) {
+            bottles.removeAll()
+
             let enumerator = FileManager.default.enumerator(at: BottleVM.bottleDir,
                                                             includingPropertiesForKeys: [.isDirectoryKey],
                                                             options: [.skipsSubdirectoryDescendants, .skipsHiddenFiles])
