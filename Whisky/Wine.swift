@@ -50,6 +50,7 @@ class Wine {
         return try await run(["--version"])
     }
 
+    @discardableResult
     static func cfg(bottle: Bottle) async throws -> String {
         return try await run(["winecfg"], bottle: bottle)
     }

@@ -29,7 +29,7 @@ struct BottleView: View {
                 Button("winecfg") {
                     Task(priority: .userInitiated) {
                         do {
-                            try await print(Wine.cfg(bottle: bottle))
+                            try await Wine.cfg(bottle: bottle)
                         } catch {
                             print("Failed to launch winecfg")
                         }
@@ -42,6 +42,15 @@ struct BottleView: View {
             }
             Spacer()
         }
+        .toolbar {
+            ToolbarItem(placement: .primaryAction) {
+                Button(action: {
+                    createNewBottle()
+                }, label: {
+                    Image(systemName: "plus")
+                })
+            }
+        }
         .padding()
         .navigationTitle(bottle.name)
         .onAppear {
@@ -51,6 +60,32 @@ struct BottleView: View {
                 } catch {
                     wineVersion += "Failed"
                 }
+            }
+        }
+    }
+
+    func createNewBottle() {
+        Task(priority: .userInitiated) {
+            do {
+                let containerDir = FileManager.default.homeDirectoryForCurrentUser
+                    .appendingPathComponent("Library")
+                    .appendingPathComponent("Containers")
+                    .appendingPathComponent("com.isaacmarovitz.Whisky")
+
+                let bottleDir = containerDir
+                    .appendingPathComponent("Bottles")
+
+                if !FileManager.default.fileExists(atPath: bottleDir.path) {
+                    try FileManager.default.createDirectory(atPath: bottleDir.path, withIntermediateDirectories: true)
+                }
+
+                let newBottleDir = bottleDir.appendingPathComponent("Test")
+                try FileManager.default.createDirectory(atPath: newBottleDir.path, withIntermediateDirectories: true)
+
+                let bottle = Bottle(path: newBottleDir)
+                try await Wine.cfg(bottle: bottle)
+            } catch {
+                print("Failed to create new bottle")
             }
         }
     }
