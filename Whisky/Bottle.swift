@@ -25,10 +25,42 @@ public class Bottle: Hashable {
     var winVersion: WinVersion = .win7
     var dxvk: Bool = false
     var winetricks: Bool = false
+    var programs: [String] = []
 
     func openCDrive() {
         let cDrive = path.appendingPathComponent("drive_c")
         NSWorkspace.shared.activateFileViewerSelecting([cDrive])
+    }
+
+    @discardableResult
+    func updateInstalledPrograms() -> [String] {
+        let programFiles = path
+            .appendingPathComponent("drive_c")
+            .appendingPathComponent("Program Files")
+        let programFilesx86 = path
+            .appendingPathComponent("drive_c")
+            .appendingPathComponent("Program Files (x86)")
+        programs.removeAll()
+
+        let enumerator = FileManager.default.enumerator(at: programFiles,
+                                                        includingPropertiesForKeys: [.isExecutableKey],
+                                                        options: [.skipsHiddenFiles])
+        while let url = enumerator?.nextObject() as? URL {
+            if !url.hasDirectoryPath {
+                programs.append(url.lastPathComponent)
+            }
+        }
+
+        let enumerator2 = FileManager.default.enumerator(at: programFilesx86,
+                                                        includingPropertiesForKeys: [.isExecutableKey],
+                                                        options: [.skipsHiddenFiles])
+        while let url = enumerator2?.nextObject() as? URL {
+            if !url.hasDirectoryPath {
+                programs.append(url.lastPathComponent)
+            }
+        }
+
+        return programs
     }
 
     @MainActor

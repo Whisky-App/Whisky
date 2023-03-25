@@ -24,6 +24,12 @@ struct BottleView: View {
                 Spacer()
             }
             Divider()
+            List {
+                ForEach(bottle.programs, id: \.self) { program in
+                    Text(program)
+                }
+            }
+            .listStyle(.bordered(alternatesRowBackgrounds: true))
             HStack {
                 Text("Path: \(bottle.path.path)")
                 Spacer()
