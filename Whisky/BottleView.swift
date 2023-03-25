@@ -10,9 +10,58 @@ import UniformTypeIdentifiers
 
 struct BottleView: View {
     @State var bottle: Bottle
-    @State var wineVersion: String = ""
-    @State var windowsVersion: WinVersion?
-    @State var showBottleCreation: Bool = false
+
+    var body: some View {
+        VStack {
+            TabView {
+                ConfigView(bottle: bottle)
+                    .tabItem {
+                        Text("Config")
+                    }
+                ProgramListView(bottle: bottle)
+                    .tabItem {
+                        Text("Programs")
+                    }
+                InfoView(bottle: bottle)
+                    .tabItem {
+                        Text("Info")
+                    }
+            }
+            Spacer()
+            HStack {
+                Spacer()
+                Button("Open C Drive") {
+                    bottle.openCDrive()
+                }
+                Button("Run...") {
+                    let panel = NSOpenPanel()
+                    panel.allowsMultipleSelection = false
+                    panel.canChooseDirectories = false
+                    panel.canChooseFiles = true
+                    panel.allowedContentTypes = [UTType.exe]
+                    panel.begin { result in
+                        Task(priority: .userInitiated) {
+                            if result == .OK {
+                                if let url = panel.urls.first {
+                                    do {
+                                        try await Wine.runProgram(bottle: bottle, path: url.path)
+                                    } catch {
+                                        print("Failed to open program at \(url.path)")
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        .padding()
+        .navigationTitle(bottle.name)
+    }
+}
+
+struct ConfigView: View {
+    @State var bottle: Bottle
 
     var body: some View {
         VStack {
@@ -23,13 +72,56 @@ struct BottleView: View {
                     .toggleStyle(.switch)
                 Spacer()
             }
-            Divider()
+            Spacer()
+                .frame(height: 20)
+            HStack {
+                Button("Open Wine Configuration") {
+                    Task(priority: .userInitiated) {
+                        do {
+                            try await Wine.cfg(bottle: bottle)
+                        } catch {
+                            print("Failed to launch winecfg")
+                        }
+                    }
+                }
+                Spacer()
+            }
+            Spacer()
+        }
+        .padding()
+    }
+}
+
+struct ProgramListView: View {
+    @State var bottle: Bottle
+
+    var body: some View {
+        VStack {
+            HStack {
+                Text("Installed Programs:")
+                Spacer()
+            }
             List {
                 ForEach(bottle.programs, id: \.self) { program in
                     Text(program)
                 }
             }
-            .listStyle(.bordered(alternatesRowBackgrounds: true))
+        }
+        .padding()
+        .listStyle(.bordered(alternatesRowBackgrounds: true))
+        .onAppear {
+            bottle.updateInstalledPrograms()
+        }
+    }
+}
+
+struct InfoView: View {
+    @State var bottle: Bottle
+    @State var wineVersion: String = ""
+    @State var windowsVersion: WinVersion?
+
+    var body: some View {
+        VStack {
             HStack {
                 Text("Path: \(bottle.path.path)")
                 Spacer()
@@ -56,58 +148,10 @@ struct BottleView: View {
                 Spacer()
             }
             Spacer()
-            HStack {
-                Spacer()
-                Button("Open Wine Configuration") {
-                    Task(priority: .userInitiated) {
-                        do {
-                            try await Wine.cfg(bottle: bottle)
-                        } catch {
-                            print("Failed to launch winecfg")
-                        }
-                    }
-                }
-                Button("Open C Drive") {
-                    bottle.openCDrive()
-                }
-                Button("Run...") {
-                    let panel = NSOpenPanel()
-                    panel.allowsMultipleSelection = false
-                    panel.canChooseDirectories = false
-                    panel.canChooseFiles = true
-                    panel.allowedContentTypes = [UTType.exe]
-                    panel.begin { result in
-                        Task(priority: .userInitiated) {
-                            if result == .OK {
-                                if let url = panel.urls.first {
-                                    do {
-                                        try await Wine.runProgram(bottle: bottle, path: url.path)
-                                    } catch {
-                                        print("Failed to open program at \(url.path)")
-                                    }
-                                }
-                            }
-                        }
-                    }
-                }
-            }
-        }
-        .toolbar {
-            ToolbarItem(placement: .primaryAction) {
-                Button {
-                    showBottleCreation.toggle()
-                } label: {
-                    Image(systemName: "plus")
-                }
-            }
         }
         .padding()
-        .navigationTitle(bottle.name)
         .onAppear {
             resolveWineInfo()
-        }
-        .sheet(isPresented: $showBottleCreation) {
-            BottleCreationView()
         }
     }
 

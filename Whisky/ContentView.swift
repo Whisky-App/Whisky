@@ -10,6 +10,7 @@ import SwiftUI
 struct ContentView: View {
     @EnvironmentObject var bottleVM: BottleVM
     @State var selected: Bottle?
+    @State var showBottleCreation: Bool = false
 
     var body: some View {
         NavigationSplitView {
@@ -28,6 +29,19 @@ struct ContentView: View {
                 BottleView(bottle: bottle)
                     .id(bottle.path)
             }
+        }
+        .toolbar {
+            ToolbarItem(placement: .primaryAction) {
+                Button {
+                    showBottleCreation.toggle()
+                } label: {
+                    Image(systemName: "plus")
+                        .help("Create Bottle")
+                }
+            }
+        }
+        .sheet(isPresented: $showBottleCreation) {
+            BottleCreationView()
         }
         .onAppear {
             bottleVM.loadBottles()
