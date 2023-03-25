@@ -31,7 +31,9 @@ class BottleVM: ObservableObject {
 
             while let url = enumerator?.nextObject() as? URL {
                 print(url.path)
-                bottles.append(Bottle(path: url))
+                let bottle = Bottle(path: url)
+                bottle.updateInstalledPrograms()
+                bottles.append(bottle)
             }
         }
     }
