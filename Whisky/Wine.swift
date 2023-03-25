@@ -47,7 +47,9 @@ class Wine {
     }
 
     static func wineVersion() async throws -> String {
-        return try await run(["--version"])
+        var output = try await run(["--version"])
+        output.replace("wine-", with: "")
+        return output.trimmingCharacters(in: .whitespacesAndNewlines)
     }
 
     static func winVersion(bottle: Bottle) async throws -> WinVersion {

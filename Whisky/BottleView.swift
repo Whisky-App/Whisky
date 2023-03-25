@@ -38,22 +38,26 @@ struct BottleView: View {
                 if wineVersion.isEmpty {
                     Text("Wine Version: ")
                     ProgressView()
+                        .controlSize(.small)
                 } else {
                     Text("Wine Version: ") + Text(wineVersion)
                 }
                 Spacer()
             }
+            .padding(.vertical)
             HStack {
                 if let windowsVersion = windowsVersion {
                     Text("Windows Version: ") + Text(windowsVersion.pretty())
                 } else {
                     Text("Windows Version: ")
                     ProgressView()
+                        .controlSize(.small)
                 }
                 Spacer()
             }
             Spacer()
             HStack {
+                Spacer()
                 Button("Open Wine Configuration") {
                     Task(priority: .userInitiated) {
                         do {
@@ -86,7 +90,6 @@ struct BottleView: View {
                         }
                     }
                 }
-                Spacer()
             }
         }
         .toolbar {
