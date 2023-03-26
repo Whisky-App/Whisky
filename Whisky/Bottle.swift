@@ -25,7 +25,7 @@ public class Bottle: Hashable {
     var winVersion: WinVersion = .win7
     var dxvk: Bool = false
     var winetricks: Bool = false
-    var programs: [String] = []
+    var programs: [URL] = []
 
     func openCDrive() {
         let cDrive = path.appendingPathComponent("drive_c")
@@ -33,7 +33,7 @@ public class Bottle: Hashable {
     }
 
     @discardableResult
-    func updateInstalledPrograms() -> [String] {
+    func updateInstalledPrograms() -> [URL] {
         let programFiles = path
             .appendingPathComponent("drive_c")
             .appendingPathComponent("Program Files")
@@ -47,7 +47,7 @@ public class Bottle: Hashable {
                                                         options: [.skipsHiddenFiles])
         while let url = enumerator?.nextObject() as? URL {
             if !url.hasDirectoryPath {
-                programs.append(url.lastPathComponent)
+                programs.append(url)
             }
         }
 
@@ -56,7 +56,7 @@ public class Bottle: Hashable {
                                                         options: [.skipsHiddenFiles])
         while let url = enumerator2?.nextObject() as? URL {
             if !url.hasDirectoryPath {
-                programs.append(url.lastPathComponent)
+                programs.append(url)
             }
         }
 
