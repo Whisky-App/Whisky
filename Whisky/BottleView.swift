@@ -120,7 +120,7 @@ struct ProgramListView: View {
             }
             List {
                 ForEach(bottle.programs, id: \.self) { program in
-                    Text(program)
+                    Text(program.lastPathComponent)
                 }
             }
         }

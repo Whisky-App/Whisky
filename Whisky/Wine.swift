@@ -79,7 +79,7 @@ class Wine {
 
     @discardableResult
     static func runProgram(bottle: Bottle, path: String) async throws -> String {
-        return try await run(["start", "/unix", path])
+        return try await run(["start", "/unix", path], bottle: bottle)
     }
 }
 
