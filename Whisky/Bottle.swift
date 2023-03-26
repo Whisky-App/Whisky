@@ -46,7 +46,7 @@ public class Bottle: Hashable {
                                                         includingPropertiesForKeys: [.isExecutableKey],
                                                         options: [.skipsHiddenFiles])
         while let url = enumerator?.nextObject() as? URL {
-            if !url.hasDirectoryPath {
+            if !url.hasDirectoryPath && url.pathExtension == "exe" {
                 programs.append(url)
             }
         }
@@ -55,7 +55,7 @@ public class Bottle: Hashable {
                                                         includingPropertiesForKeys: [.isExecutableKey],
                                                         options: [.skipsHiddenFiles])
         while let url = enumerator2?.nextObject() as? URL {
-            if !url.hasDirectoryPath {
+            if !url.hasDirectoryPath && url.pathExtension == "exe" {
                 programs.append(url)
             }
         }
