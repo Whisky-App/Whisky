@@ -10,6 +10,7 @@ import UniformTypeIdentifiers
 
 struct BottleView: View {
     @State var bottle: Bottle
+    @State var programLoading: Bool = false
 
     var body: some View {
         VStack {
@@ -41,18 +42,33 @@ struct BottleView: View {
                     panel.allowedContentTypes = [UTType.exe,
                                                  UTType(importedAs: "com.microsoft.msi-installer")]
                     panel.begin { result in
+                        programLoading = true
                         Task(priority: .userInitiated) {
                             if result == .OK {
                                 if let url = panel.urls.first {
                                     do {
                                         try await Wine.runProgram(bottle: bottle, path: url.path)
+                                        programLoading = false
                                     } catch {
-                                        print("Failed to open program at \(url.path)")
+                                        programLoading = false
+                                        let alert = NSAlert()
+                                        alert.messageText = "Failed to open program!"
+                                        alert.informativeText = "Failed to open \(url.lastPathComponent)"
+                                        alert.alertStyle = .critical
+                                        alert.addButton(withTitle: "OK")
+                                        alert.runModal()
                                     }
                                 }
                             }
                         }
                     }
+                }
+                .disabled(programLoading)
+                if programLoading {
+                    Spacer()
+                        .frame(width: 10)
+                    ProgressView()
+                        .controlSize(.small)
                 }
             }
         }
