@@ -38,7 +38,8 @@ struct BottleView: View {
                     panel.allowsMultipleSelection = false
                     panel.canChooseDirectories = false
                     panel.canChooseFiles = true
-                    panel.allowedContentTypes = [UTType.exe, UTType(importedAs: "com.microsoft.msi-installer")]
+                    panel.allowedContentTypes = [UTType.exe,
+                                                 UTType(importedAs: "com.microsoft.msi-installer")]
                     panel.begin { result in
                         Task(priority: .userInitiated) {
                             if result == .OK {
