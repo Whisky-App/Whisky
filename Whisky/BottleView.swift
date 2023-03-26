@@ -120,7 +120,28 @@ struct ProgramListView: View {
             }
             List {
                 ForEach(bottle.programs, id: \.self) { program in
-                    Text(program.lastPathComponent)
+                    HStack {
+                        Text(program.lastPathComponent)
+                        Spacer()
+                        Button(action: {
+                            Task(priority: .userInitiated) {
+                                do {
+                                    try await Wine.runProgram(bottle: bottle,
+                                                              path: program.path)
+                                } catch {
+                                    let alert = NSAlert()
+                                    alert.messageText = "Failed to open program!"
+                                    alert.informativeText = "Failed to open \(program.lastPathComponent)"
+                                    alert.alertStyle = .critical
+                                    alert.addButton(withTitle: "OK")
+                                    alert.runModal()
+                                }
+                            }
+                        }, label: {
+                            Image(systemName: "play.circle.fill")
+                        })
+                        .buttonStyle(.plain)
+                    }
                 }
             }
         }
