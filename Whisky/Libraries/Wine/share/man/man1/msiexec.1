@@ -1,0 +1,128 @@
+.TH MSIEXEC 1 "November 2010" "Wine 8.4" "Wine Programs"
+.SH NAME
+msiexec \- Wine MSI Installer
+.SH SYNOPSIS
+.B msiexec
+.I command
+.RI { "required parameter" }
+.RI [ "optional parameter" ]...
+.SH DESCRIPTION
+.B msiexec
+is the Wine MSI installer, which is command line
+compatible with its Microsoft Windows counterpart.
+.SH INSTALL OPTIONS
+.IP \fB/i\ \fR{\fIpackage\fR|\fIproductcode\fR}\ \fR[\fIproperty\fR=\fIfoobar\fR]
+Install {package|productcode} with property=foobar.
+.IP \fB/a\ \fR{\fIpackage\fR|\fIproductcode\fR}\ \fR[\fIproperty\fR=\fIfoobar\fR]
+Install {package|productcode} in administrator (network) mode.
+.IP \fB/x\ \fR{\fIpackage\fR|\fIproductcode\fR}\ \fR[\fIproperty\fR=\fIfoobar\fR]
+Uninstall {package|productcode} with property=foobar.
+.IP \fB/uninstall\ \fR{\fIpackage\fR|\fIproductcode\fR}\ \fR[\fIproperty\fR=\fIfoobar\fR]
+Same as \fB/x\fR.
+.SH REPAIR OPTIONS
+.IP \fB/f\fR\ \
+\fR[\fBp\fR|\fBo\fR|\fBe\fR|\fBd\fR|\fBc\fR|\fBa\fR|\fBu\fR|\fBm\fR|\fBs\fR|\fBv\fR]\ \
+\fR{\fIpackage\fR|\fIproductcode\fR}
+Repair an installation. Default options are \'omus\'
+.IP "\fBp\fR"
+Reinstall the file if it is missing.
+.IP "\fBo\fR"
+Reinstall the file if it is missing or if any older version is installed.
+.IP "\fBe\fR"
+Reinstall the file if it is missing, or if the installed version is equal or older.
+.IP "\fBd\fR"
+Reinstall the file if it is missing or a different version is installed.
+.IP "\fBc\fR"
+Reinstall the file if it is missing or the checksum does not match.
+.IP "\fBa\fR"
+Reinstall all files.
+.IP "\fBu\fR"
+Rewrite all required user registry entries.
+.IP "\fBm\fR"
+Rewrite all required machine registry entries.
+.IP "\fBs\fR"
+Overwrite any conflicting shortcuts.
+.IP "\fBv\fR"
+Recache the local installation package from the source installation package.
+.SH PATCHING
+.IP \fB/p\ \fR{\fIpatch\fR}\ \fR[\fIproperty\fR=\fIfoobar\fR]
+Apply \fIpatch\fR. This should not be used with any of the above options.
+.SH UI CONTROL
+.IP \fB/q\fR[\fBn\fR|\fBb\fR|\fBr\fR|\fBf\fR]
+These options allow changing the behavior of the UI when installing MSI packages.
+.IP \fB/q\fR
+Show no UI.
+.IP \fB/qn
+Same as \fB/q\fR.
+.IP \fB/qb
+Show a basic UI.
+.IP \fB/qr
+Shows a reduced user UI.
+.IP \fB/qf
+Shows a full UI.
+.SH LOGGING
+.IP \fB/l\fR[\fB*\fR]\
+[\fBi\fR|\fBw\fR|\fBe\fR|\fBa\fR|\fBr\fR|\fBu\fR|\fBc\fR|\fBm\fR|\fBo\fR|\fBp\fR|\fBv\fR]\
+[\fB+\fR|\fB!\fR]\ {\fIlogfile\fR}
+Enable logging to \fIlogfile\fR. Defaults are \'iwearmo\'.
+.IP "\fB*\fR"
+Enable all logging options except \'v\' and \'x\'.
+.IP "\fBi\fR"
+Log status messages.
+.IP "\fBw\fR"
+Log nonfatal warnings.
+.IP "\fBe\fR"
+Log all error messages.
+.IP "\fBa\fR"
+Log start of actions.
+.IP "\fBr\fR"
+Log action specific records.
+.IP "\fBu\fR"
+Log user requests.
+.IP "\fBc\fR"
+Log initial UI parameters.
+.IP "\fBm\fR"
+Log out of memory errors.
+.IP "\fBo\fR"
+Log out of diskspace messages.
+.IP "\fBp \fR"
+Log terminal properties.
+.IP "\fBv \fR"
+Verbose logging.
+.IP "\fBx \fR"
+Log extra debugging messages.
+.IP "\fB+ \fR"
+Append logging to existing file.
+.IP "\fB! \fR"
+Flush each line to log.
+.SH OTHER OPTIONS
+.IP \fB/h
+Show help.
+.IP "\fB/j\fR[\fBu\fR|\fBm\fR] {\fIpackage\fR|\fIproductcode\fR} \
+[\fB/t \fItransform\fR] [\fB/g \fIlanguageid\fR]"
+Advertise \fIpackage\fR optionally with \fB/t \fItransform\fR and \fB/g \fIlanguageid\fR.
+.IP \fB/y
+Register MSI service.
+.IP \fB/z
+Unregister MSI service.
+.IP \fB/?
+Same as \fB/h\fR.
+
+.SH BUGS
+Bugs can be reported on the
+.UR https://bugs.winehq.org
+.B Wine bug tracker
+.UE .
+.SH AVAILABILITY
+.B msiexec
+is part of the Wine distribution, which is available through WineHQ,
+the
+.UR https://www.winehq.org/
+.B Wine development headquarters
+.UE .
+.SH "SEE ALSO"
+.BR wine (1),
+.br
+.UR https://www.winehq.org/help
+.B Wine documentation and support
+.UE .

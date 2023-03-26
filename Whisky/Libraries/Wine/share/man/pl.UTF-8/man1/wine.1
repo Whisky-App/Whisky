@@ -1,0 +1,326 @@
+.\" -*- nroff -*-
+.TH WINE 1 "October 2005" "Wine 8.4" "Windows On Unix"
+.SH NAZWA
+wine \- uruchamiaj programy Windowsowe na Uniksie
+.SH SKŁADNIA
+.BI "wine " program
+[opcje ... ]
+.br
+.B wine --help
+.br
+.B wine --version
+.PP
+Informacji na temat przekazywania opcji programom Windowsowym szukaj w rozdziale
+.B
+OPCJE
+tej instrukcji.
+.SH OPIS
+.B wine
+ładuje i wykonuje dany program, gdzie program to plik wykonywalny DOSa, Windowsa
+3.x lub Win32 (tylko binarne x86).
+.PP
+Do debugowania wine lepiej jednak użyć
+.B winedbg
+.PP
+Do uruchamiania plików wykonywalnych CUI (programy konsolowe Windowsa) używaj
+.B wineconsole
+zamiast
+.BR wine .
+Spowoduje to, że całe wyjście zostanie pokazane w osobnym oknie (wymaganiem jest uruchomiony X11).
+Przez nie użycie
+.B wineconsole
+do programów CUI otrzymasz ograniczone wsparcie dla konsoli
+,a twój program może nie zadziałać prawidłowo.
+.PP
+Gdy wywołasz wine z
+.B --help
+lub
+.B --version
+jako jedyną opcją,
+.B wine
+pokaże małą informację pomocy lub odpowiednio wyświetli swoją wersję i zakończy działanie.
+.SH OPCJE
+Nazwa programu może być określona w formacie DOS
+.RI ( C:\(rs\(rsWINDOWS\(rs\(rsSOL.EXE )
+lub w formacie Unix
+.RI ( /msdos/windows/sol.exe ).
+Możesz dodać opcje do wykonywanego programu przez dodanie ich do
+końca wywołania linii wiersza poleceń
+.B wine
+(tak jak np.: wine notepad C:\(rs\(rsTEMP\(rs\(rsREADME.TXT).
+Zauważ, że musisz '\(rs' poradzić sobie ze znakami specjalnymi (i spacjami) podczas wywoływania Wine przez
+powłokę, np.
+.PP
+wine C:\(rs\(rsProgram\(rs Files\(rs\(rsMyPrg\(rs\(rstest.exe
+.PP
+.SH ZMIENNE ŚRODOWISKOWE
+.B wine
+udostępnia zmienne środowiskowe z powłoki, z której wystartował
+.B wine
+programom windowsowym/dosowym, więc używaj odpowiedniej składni
+twojej powłoki, aby wpisać zmienne środowiskowe, których potrzebujesz.
+.TP
+.I WINEPREFIX
+Jeżeli ta zmienna jest ustawiona, to jej zawartość jest brana jako nazwa katalogu gdzie
+.B wine
+przechowuje swoje dane (domyślny katalog to
+.IR $HOME/.wine ).
+Katalog ten jest także wykorzystywany do identyfikacji gniazda używanego do
+porozumiewania się z
+.IR wineserver .
+Wszystkie procesy
+.B wine
+używające tego samego
+.B wineserver
+(np.: ten sam użytkownik) dzielą pewne elementy takie jak rejrestr, współdzielona pamięć,
+i plik konfiguracyjny.
+Poprzez ustawianie
+.I WINEPREFIX
+na inne wartości dla różnych procesów
+.B wine
+jest możliwe uruchamianie kilka prawdziwie niezależnych procesów
+.BR wine .
+.TP
+.I WINESERVER
+Określa ścieżkę i nazwę programu binarnego
+.B wineserver
+Jeżeli nie ustawione, Wine będzie próbował załadować
+.BR /bin/wineserver
+i jeśli zakończy się to niepowodzeniem to będzie szukał pliku o nazwie
+"wineserver" w podanej ścieżce i kilku innych miejscach prawdopodobnego występowania.
+.TP
+.I WINELOADER
+Określa ścieżkę i nazwę programu binarnego
+.B wine
+używanej do uruchamiania nowych procesów Windowsowych. Jeżeli nieustawione, Wine będzie
+próbowało załadować
+.BR /bin/wine
+i jeśli zakończy się to niepowodzeniem to będzie szukał pliku o nazwie "wine" w
+podanej ścieżce i kilku innych miejscach prawdopodobnego występowania.
+.TP
+.I WINEDEBUG
+Włącza lub wyłącza wiadomości debuggera. Składnia zmiennej
+wygląda następująco
+.RI [ klasa ][+/-] kanał [,[ klasa2 ][+/-] kanał2 ].
+.RS +7
+.PP
+.I klasa
+jest opcjonalna i może być jedną z następujących:
+.BR err ,
+.BR warn ,
+.BR fixme ,
+lub
+.BR trace .
+Jeżeli
+.I klasa
+nie jest określona, to wszystkie wiadomości debuggera dla określonego
+kanału są wyłączone.  Każdy kanał będzie wyświetlał wiadomości o poszczególnym
+komponencie
+.BR wine .
+Następny znak może być albo + albo - i służy odpowiednio do włączenia albo wyłączenia
+określonego kanału.  Jeżeli nie ma części
+.I klasa
+przed nim, to znak znaczący + może być pominięty. Zauważ, że spacje są niedozwolone
+w żadnym miejscu łańcucha znaków.
+.PP
+Przykłady:
+.TP
+WINEDEBUG=warn+all
+włączy wszystkie ostrzeżenia (zalecane przy debugowaniu).
+.br
+.TP
+WINEDEBUG=warn+dll,+heap
+włączy wszystkie ostrzeżenia bibliotek DLL i wszystkie wiadomości stosu.
+.br
+.TP
+WINEDEBUG=fixme-all,warn+cursor,+relay
+wyłączy wszystkie wiadomości FIXME, włączy ostrzeżenia kursora i
+wszystkie wiadomości relay (wywołania API).
+.br
+.TP
+WINEDEBUG=relay
+włączy wszystkie wiadomości relay. Aby mieć większą kontrolę przy uwzględnianiu i wykluczaniu
+funkcji i bibliotek dll ze śladu relay, zapoznaj się z kluczem rejestru
+.B HKEY_CURRENT_USER\\\\Software\\\\Wine\\\\Debug
+.PP
+Informacji na temat wiadomości debugera szukaj w rozdziale
+.I Running Wine
+z Przewodnika użytkownika Wine.
+.RE
+.TP
+.I WINEDLLPATH
+Określa ścieżkę/ki, w których należy szukać wbudowanych bibliotek dll i programów
+Winelib. To lista katalogów oddzielonych znakiem ":". W dodatku do
+każdego katalogu określonego w
+.IR WINEDLLPATH ,
+Wine będzie także szukał w katalogu
+.BR /lib/wine .
+.TP
+.I WINEDLLOVERRIDES
+Definiuje typ nadpisania i kolejność ładowania bibliotek dll użytych do ładowania
+procesu dla jakiejkolwiek biblioteki dll. Obecnie istnieją dwa typy bibliotek, które można załadować
+do przestrzeni adresowej procesu: natywne biblioteki Windowsa
+.RI ( native ),
+.B wine
+wewnętrzne biblioteki dll
+.RI ( builtin ).
+Typ może być skrócony przez pierwszą literkę typu
+.RI ( n ", " b ).
+Biblioteka może być także całkowicie wyłączona (''). Każda sekwencja rozkazów musi być oddzielona przecinkami.
+.RS
+.PP
+Każda biblioteka dll może mieć swoją własną kolejność ładowania. Kolejność ładowania
+określa, którą wersję biblioteki dll będzie się próbowało załadować do
+przestrzeni adresowej. Jeżeli pierwsza zawiedzie, to próbowana jest następna i tak dalej.
+Wiele bibliotek z tą samą kolejnością ładowania może być oddzielona przecinkami.
+Istnieje także możliwość określenia różnych kolejności ładowania dla różnych bibliotek
+przez oddzielanie wpisów znakiem ";".
+.PP
+Kolejność ładowania dla 16-bitowej biblioteki dll jest zawsze określona przez kolejność ładowania
+32-bitowej biblioteki dll, która ją zawiera (co może być rozpoznane przez podgląd
+symbolicznych dowiązań 16-bitowego pliku .dll.so). Dla przykładu jeżeli biblioteka
+ole32.dll jest skonfigurowana jako wbudowana, to biblioteka storage.dll będzie również zładowana jako
+wbudowana, ponieważ 32-bitowa biblioteka ole32.dll zawiera 16-bitową bibliotekę
+storage.dll.
+.PP
+Przykłady:
+.TP
+WINEDLLOVERRIDES="comdlg32,shell32=n,b"
+.br
+Spróbuj załadować comdlg32 i shell32 jako natywne biblioteki windowsowe i powróć
+do wersji wbudowanych jeżeli natywne zawiodą.
+.TP
+WINEDLLOVERRIDES="comdlg32,shell32=n;c:\(rs\(rsfoo\(rs\(rsbar\(rs\(rsbaz=b"
+.br
+Spróbuj załadować comdlg32 i shell32 jako natywne biblioteki windowsowe. Dodatkowo, jeżeli
+program zażąda załadowania c:\(rsfoo\(rsbar\(rsbaz.dll to załaduj wbudowaną bibliotekę rsbaz.
+.TP
+WINEDLLOVERRIDES="comdlg32=b,n;shell32=b;comctl32=n;oleaut32="
+.br
+Najpierw spróbuj załadować comdlg32 jako wbudowaną i skorzystaj z wersji natywnej jeżeli
+wbudowane zawiodą; zawsze ładuj shell32 jako wbudowaną i comctl32
+jako natywną. Oleaut32 pozostaw wyłączone.
+.RE
+.TP
+.I WINEARCH
+Określa jaką architekturę Windowsa wspierać. Może to być zarówno
+.B win32
+(wsparcie tylko 32-bitowych programów), lub
+.B win64
+(wsparcie dla programów 64-bitowych jak i 32-bitowych w trybie WoW64).
+.br
+Architektura wspierana przez dany prefiks Wine jest ustawiana już w momencie tworzenia prefiksa
+i nie może być później zmieniona. Gdy opcja zostanie uruchomiona z istniejącym
+prefiksem, Wine odmówi uruchomienie jeżeli
+.I WINEARCH
+nie zgadza się z architekturą prefiksu.
+.TP
+.I DISPLAY
+Określa, którego wyświetlacza X11 użyć.
+.TP
+Zmienne konfiguracyjne sterownika dźwięku OSS
+.TP
+.I AUDIODEV
+Ustaw urządzenie dla wejścia / wyjścia dźwięku. Domyślnie
+.BR /dev/dsp .
+.TP
+.I MIXERDEV
+Ustaw urządzenie dla suwaków miksera. Domyślnie
+.BR /dev/mixer .
+.TP
+.I MIDIDEV
+Ustaw urządzanie MIDI (sekwencer). Domyślnie
+.BR /dev/sequencer .
+.SH FILES
+.TP
+.I /bin/wine
+Ładowarka programów
+.B wine
+.TP
+.I /bin/wineconsole
+Ładowarka programów
+.B wine
+dla aplikacji CUI (konsolowych).
+.TP
+.I /bin/wineserver
+Serwer
+.B wine
+.TP
+.I /bin/winedbg
+Debugger
+.B wine
+.TP
+.I /lib/wine
+Katalog zawierający współdzielone biblioteki
+.BR wine
+.TP
+.I $WINEPREFIX/dosdevices
+Katalog zawierający mapowania urządzeń DOS. Każdy plik w tym
+katalogu jest dowiązaniem symbolicznym do pliku urządzenia Uniksowego implementującego
+dane urządzenie. Dla przykładu, jeżeli COM1 byłoby zmapowane do /dev/ttyS0 to miałbyś
+symboliczene dowiązanie w formie $WINEPREFIX/dosdevices/com1 -> /dev/ttyS0.
+.br
+Napędy DOS również są określone przez dowiązania symboliczne; Dla przykładu jeżeli napęd D:
+odpowiadałby napędowi CDROM zamontowanemu w /mnt/cdrom, miałbyś dowiązanie symboliczne
+$WINEPREFIX/dosdevices/d: -> /mnt/cdrom. Urządzenia Uniksowe odpowiadające
+napędom DOS mogą być określone w ten sam sposób, z użyciem '::' zamiast ':'.
+Tak więc dla poprzedniego przykładu, jeżeli urządzenie CDROM byłoby zamontowane
+z /dev/hdc, to odpowiadające dowiązanie symboliczne wyglądałoby następująco
+$WINEPREFIX/dosdevices/d:: -> /dev/hdc.
+.SH AUTORZY
+.B wine
+jest dostępne dzięki pracy wielu programistów. Lista autorów
+jest dostępna w pliku
+.B AUTOHORS
+w głównym katalogu dystrybucyjnym źródła.
+.SH PRAWA AUTORSKIE
+.B wine
+może być rozpowszechniane pod warunkami licencji LGPL. Kopia
+licencji jest dostępna w pliku
+.B COPYING.LIB
+w głównym katalogu dystrybucyjnym źródła.
+.SH BŁĘDY
+.PP
+Raporty stanu działania programów są dostępne na stronie
+.IR https://appdb.winehq.org .
+Jeżeli brakuje na liście aplikacji, której używasz, to nie wahaj się
+dodać jej samodzielnie.
+.PP
+Raporty błędów mogą być wysyłane do Wine Bugzilla
+.I https://bugs.winehq.org
+Jeżeli chcesz zgłosić błąd zapoznaj się z
+.I https://wiki.winehq.org/Bugs
+w źródle
+.B wine
+, aby dowiedzieć się jakie informacje są niezbędne
+.PP
+Sugestie i problemy dotyczące tej instrukcji również przesyłaj do
+.I https://bugs.winehq.org
+.SH DOSTĘPNOŚĆ
+Najaktualniejszą publiczną wersję
+.B wine
+można pobrać ze strony
+.I https://www.winehq.org/download
+.PP
+Najaktualnieszy zrzut kodu można pobrać przez GIT.  Aby dowiedzieć się
+jak to zrobić, odwiedź stronę
+.I
+https://www.winehq.org/git
+.PP
+WineHQ, siedziba rozwoju
+.B wine
+, mieści się na stronie
+.IR https://www.winehq.org .
+Strona ta zawiera wiele informacji o
+.BR wine .
+.PP
+Po dalsze informacje na temat rozwoju
+.B wine
+zapisz się na listę mailingową
+.B wine
+na stronie
+.I https://www.winehq.org/forums
+
+.SH "ZOBACZ TAKŻE"
+.BR wineserver (1),
+.BR winedbg (1)

@@ -1,0 +1,115 @@
+.TH WINESERVER 1 "octobre 2005" "Wine 8.4" "Windows sur Unix"
+.SH NOM
+wineserver \- le serveur Wine
+.SH SYNOPSIS
+.B wineserver
+.RI [ options ]
+.SH DESCRIPTION
+.B wineserver
+est un démon qui fournit à Wine à peu près les mêmes services
+que le noyau de Windows fournit sous Windows.
+.PP
+.B wineserver
+est normalement lancé automatiquement lorsque \fBwine\fR(1) démarre, mais
+il peut être utile de le démarrer explicitement avec certaines options,
+détaillées ci-après.
+.SH OPTIONS
+.TP
+\fB\-d\fR[\fIn\fR], \fB--debug\fR[\fB=\fIn\fR]
+Définit le niveau de débogage à
+.IR n .
+0 signifie aucune information de débogage, 1 est le niveau normal et 2 indique
+un débogage plus important. Si
+.I n
+n'est pas spécifié, la valeur par défaut est 1. La sortie de débogage sera
+stderr. \fBwine\fR(1) active automatiquement le débogage au niveau normal lorsqu'il
+démarre \fBwineserver\fR si l'option +server est indiquée dans la variable
+\fBWINEDEBUG\fR.
+.TP
+.BR \-f ", " --foreground
+Laisse le serveur au premier plan pour un débogage plus aisé, par
+exemple lorsqu'il est exécuté dans un débogueur.
+.TP
+.BR \-h ", " --help
+Affiche un message d'aide.
+.TP
+\fB\-k\fR[\fIn\fR], \fB--kill\fR[\fB=\fIn\fR]
+Termine le
+.B wineserver
+actuellement exécuté en lui envoyant facultativement le signal \fIn\fR. Si
+aucun signal n'est spécifié, un signal \fBSIGINT\fR est envoyé en premier,
+puis un signal \fBSIGKILL\fR. L'instance de \fBwineserver\fR à arrêter
+est déterminée par la variable d'environnement \fBWINEPREFIX\fR.
+.TP
+\fB\-p\fR[\fIn\fR], \fB--persistent\fR[\fB=\fIn\fR]
+Spécifie le délai de persistance de \fBwineserver\fR, c'est-à-dire le
+temps pendant lequel le serveur continuera à tourner après que tous les
+processus clients se sont terminés. Ceci évite le coût inhérent à l'arrêt
+puis au redémarrage du serveur lorsque des programmes sont lancés successivement
+à intervalle rapproché.
+Le délai d'attente \fIn\fR est exprimé en secondes (3 secondes par défaut).
+Si \fIn\fR n'est pas spécifié, le serveur s'exécute indéfiniment.
+.TP
+.BR \-v ", " --version
+Affiche les informations sur la version et se termine.
+.TP
+.BR \-w ", " --wait
+Attend que le
+.B wineserver
+actuellement exécuté se termine.
+.SH ENVIRONNEMENT
+.TP
+.B WINEPREFIX
+Si définie, cette variable indique le nom du répertoire où
+.B wineserver
+stocke ses données (\fI$HOME/.wine\fR par défaut). Tous les processus
+.B wine
+utilisant le même
+.B wineserver
+(c'est-à-dire pour un même utilisateur) partagent certains éléments comme la base de registre,
+la mémoire partagée et les objets du noyau.
+En donnant à
+.B WINEPREFIX
+une valeur spécifique pour différents processus Wine, il est possible d'exécuter plusieurs
+sessions de Wine totalement indépendantes.
+.TP
+.B WINESERVER
+Spécifie le chemin et le nom de l'exécutable
+.B wineserver
+qui sera lancé automatiquement par \fBwine\fR.
+Si cette variable n'est pas définie, Wine essaiera de charger
+.I /bin/wineserver
+ou, à défaut, un fichier nommé
+\fIwineserver\fR dans le chemin système ou quelques autres emplacements potentiels.
+.SH FICHIERS
+.TP
+.B ~/.wine
+Répertoire contenant les données utilisateur gérées par
+.BR wine .
+.TP
+.BI /tmp/.wine- uid
+Répertoire contenant le socket de serveur Unix et le fichier de verrouillage.
+Ces fichiers sont créés dans un sous-répertoire dont le nom est dérivé
+des périphérique et numéros d'inodes du répertoire \fBWINEPREFIX\fR.
+.SH AUTEURS
+L'auteur originel de
+.B wineserver
+est Alexandre Julliard. Beaucoup d'autres personnes ont contribué des nouvelles fonctionnalités
+et des corrections de bugs. Pour une liste complète, consultez l'historique git.
+.SH BUGS
+Les bugs peuvent être signalés (en anglais) sur le
+.UR https://bugs.winehq.org
+.B système de suivi des problèmes de Wine
+.UE .
+.SH DISPONIBILITÉ
+.B wineserver
+fait partie de la distribution de Wine, disponible depuis WineHQ, le
+.UR https://www.winehq.org/
+.B quartier général des développeurs de Wine
+.UE .
+.SH "VOIR AUSSI"
+.BR wine (1),
+.br
+.UR https://www.winehq.org/help
+.B Documentation et support de Wine
+.UE .

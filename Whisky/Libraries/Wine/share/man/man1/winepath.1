@@ -1,0 +1,47 @@
+.TH WINEPATH 1 "November 2010" "Wine 8.4" "Wine Programs"
+.SH NAME
+winepath \- Tool to convert Unix paths to/from Win32 paths
+.SH SYNOPSIS
+.B winepath
+.IR "option " { path }
+.SH DESCRIPTION
+.B winepath
+is a tool to convert a Unix path to/from a Win32 (short/long) path
+compatible with its Microsoft Windows counterpart.
+
+If more than one option is given then the input paths are output in
+all formats specified, in the order long, short, Unix, Windows.
+If no option is given the default output is Unix format.
+.SH OPTIONS
+.IP \fB\-u\fR,\fB\ \-\-unix
+converts a Windows path to a Unix path.
+.IP \fB\-w\fR,\fB\ \-\-windows
+converts a Unix path to a long Windows path.
+.IP \fB\-l\fR,\fB\ \-\-long
+converts the short Windows path of an existing file or directory to the long
+format.
+.IP \fB\-s\fR,\fB\ \-\-short
+converts the long Windows path of an existing file or directory to the short
+format.
+.IP \fB\-0
+separate output with \\0 character, instead of a newline.
+.IP \fB\-h\fR,\fB\ \-\-help
+shows winepath help message and exit.
+.SH BUGS
+Bugs can be reported on the
+.UR https://bugs.winehq.org
+.B Wine bug tracker
+.UE .
+.SH AVAILABILITY
+.B winepath
+is part of the Wine distribution, which is available through WineHQ,
+the
+.UR https://www.winehq.org/
+.B Wine development headquarters
+.UE .
+.SH "SEE ALSO"
+.BR wine (1),
+.br
+.UR https://www.winehq.org/help
+.B Wine documentation and support
+.UE .
