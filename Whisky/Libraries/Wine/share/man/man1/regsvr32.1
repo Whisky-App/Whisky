@@ -1,0 +1,37 @@
+.TH REGSVR32 1 "November 2010" "Wine 8.4" "Wine Programs"
+.SH NAME
+regsvr32 \- Wine DLL Registration Server
+.SH SYNOPSIS
+.B regsvr32
+.RB [ /u "] [" /s "] [" /n "] [" /i "[\fB:\fIcmdline\fR]] " \fIdllname
+.SH DESCRIPTION
+.B regsvr32
+is the Wine dll registration server, designed to be compatible with its Microsoft Windows counterpart.
+By default, it will register the given dll.
+.SH COMMANDS
+.IP \fB/u
+Unregister the specified dll.
+.IP \fB/s
+Run regsvr32 silently (will not show any GUI dialogs).
+.IP \fB/i
+Call DllInstall passing it an optional \fIcmdline\fR. When used with \fB/u\fR calls DllUninstall.
+.IP \fB/n
+Do not call DllRegisterServer; this option must be used with \fB/i\fR.
+.SH BUGS
+Bugs can be reported on the
+.UR https://bugs.winehq.org
+.B Wine bug tracker
+.UE .
+.SH AVAILABILITY
+.B regsvr32
+is part of the Wine distribution, which is available through WineHQ,
+the
+.UR https://www.winehq.org/
+.B Wine development headquarters
+.UE .
+.SH "SEE ALSO"
+.BR wine (1),
+.br
+.UR https://www.winehq.org/help
+.B Wine documentation and support
+.UE .

@@ -1,0 +1,325 @@
+.TH WINE 1 "July 2013" "Wine 8.4" "Windows On Unix"
+.SH NAME
+wine \- run Windows programs on Unix
+.SH SYNOPSIS
+.B wine
+.IR "program " [ arguments ]
+.br
+.B wine --help
+.br
+.B wine --version
+.PP
+For instructions on passing arguments to Windows programs, please see the
+.B
+PROGRAM/ARGUMENTS
+section of the man page.
+.SH DESCRIPTION
+.B wine
+loads and runs the given program, which can be a DOS, Windows
+3.x, Win32 or Win64 executable (on 64-bit systems).
+.PP
+For debugging wine, use
+.B winedbg
+instead.
+.PP
+For running CUI executables (Windows console programs), use
+.B wineconsole
+instead of
+.BR wine .
+This will display the output in a separate window. Not using
+.B wineconsole
+for CUI programs will only provide very limited console support, and your
+program might not function properly.
+.PP
+When invoked with
+.B --help
+or
+.B --version
+as the only argument,
+.B wine
+will simply print a small help message or its version respectively and exit.
+.SH PROGRAM/ARGUMENTS
+The program name may be specified in DOS format
+.RI ( C:\(rs\(rsWINDOWS\(rs\(rsSOL.EXE )
+or in Unix format
+.RI ( /msdos/windows/sol.exe ).
+You may pass arguments to the program being executed by adding them to the
+end of the command line invoking
+.B wine
+(such as: \fIwine notepad C:\(rs\(rsTEMP\(rs\(rsREADME.TXT\fR).
+Note that you need to '\(rs' escape special characters (and spaces) when invoking Wine via
+a shell, e.g.
+.PP
+wine C:\(rs\(rsProgram\(rs Files\(rs\(rsMyPrg\(rs\(rstest.exe
+.PP
+It can also be one of the Windows executables shipped with Wine, in
+which case specifying the full path is not mandatory, e.g. \fIwine
+explorer\fR or \fIwine notepad\fR.
+.PP
+.SH ENVIRONMENT
+.B wine
+makes the environment variables of the shell from which it
+is started accessible to the Windows/DOS processes started. So use the
+appropriate syntax for your shell to enter environment variables you need.
+.TP 
+.B WINEPREFIX
+If set, the contents of this variable is taken as the name of the directory where
+Wine stores its data (the default is
+.IR $HOME/.wine ).
+This directory is also used to identify the socket which is used to
+communicate with the
+.BR wineserver .
+All 
+.B wine
+processes using the same 
+.B wineserver
+(i.e.: same user) share certain things like registry, shared memory,
+and config file.
+By setting 
+.B WINEPREFIX
+to different values for different 
+.B wine
+processes, it is possible to run a number of truly independent 
+.B wine
+processes. 
+.TP
+.B WINESERVER
+Specifies the path and name of the
+.B wineserver
+binary. If not set, Wine will try to load
+.IR /bin/wineserver ,
+and if this doesn't exist it will then look for a file named
+"wineserver" in the path and in a few other likely locations.
+.TP
+.B WINELOADER
+Specifies the path and name of the
+.B wine
+binary to use to launch new Windows processes. If not set, Wine will
+try to load
+.IR /bin/wine ,
+and if this doesn't exist it will then look for a file named "wine" in
+the path and in a few other likely locations.
+.TP
+.B WINEDEBUG
+Turns debugging messages on or off. The syntax of the variable is
+of the form
+.RI [ class ][\fB+\fR|\fB-\fR] channel [,[ class2 ][\fB+\fR|\fB-\fR] channel2 ]
+.RS +7
+.PP
+.I class
+is optional and can be one of the following: 
+.BR err ,
+.BR warn ,
+.BR fixme ,
+or 
+.BR trace .
+If
+.I class
+is not specified, all debugging messages for the specified
+channel are turned on.  Each channel will print messages about a particular
+component of Wine.
+The following character can be either \fB+\fR or \fB-\fR to switch the specified
+channel on or off respectively.  If there is no
+.I class
+part before it, a leading \fB+\fR\fR can be omitted. Note that spaces are not
+allowed anywhere in the string.
+.PP
+Examples:
+.TP
+WINEDEBUG=warn+all
+will turn on all warning messages (recommended for debugging).
+.br
+.TP
+WINEDEBUG=warn+dll,+heap
+will turn on DLL warning messages and all heap messages.  
+.br
+.TP
+WINEDEBUG=fixme-all,warn+cursor,+relay
+will turn off all FIXME messages, turn on cursor warning messages, and turn
+on all relay messages (API calls).
+.br 
+.TP
+WINEDEBUG=relay
+will turn on all relay messages. For more control on including or excluding
+functions and dlls from the relay trace, look into the
+.B HKEY_CURRENT_USER\\\\Software\\\\Wine\\\\Debug
+registry key.
+.PP
+For more information on debugging messages, see the
+.I Running Wine
+chapter of the Wine User Guide.
+.RE
+.TP
+.B WINEDLLPATH
+Specifies the path(s) in which to search for builtin dlls and Winelib
+applications. This is a list of directories separated by ":". In
+addition to any directory specified in
+.BR WINEDLLPATH ,
+Wine will also look in
+.IR /lib/wine .
+.TP
+.B WINEDLLOVERRIDES
+Defines the override type and load order of dlls used in the loading
+process for any dll. There are currently two types of libraries that can be loaded
+into a process address space: native windows dlls
+.RI ( native ") and Wine internal dlls (" builtin ).
+The type may be abbreviated with the first letter of the type
+.RI ( n " or " b ).
+The library may also be disabled (''). Each sequence of orders must be separated by commas.
+.RS
+.PP
+Each dll may have its own specific load order. The load order
+determines which version of the dll is attempted to be loaded into the
+address space. If the first fails, then the next is tried and so
+on. Multiple libraries with the same load order can be separated with
+commas. It is also possible to use specify different loadorders for
+different libraries by separating the entries by ";".
+.PP
+The load order for a 16-bit dll is always defined by the load order of
+the 32-bit dll that contains it (which can be identified by looking at
+the symbolic link of the 16-bit .dll.so file). For instance if
+\fIole32.dll\fR is configured as builtin, \fIstorage.dll\fR will be loaded as
+builtin too, since the 32-bit \fIole32.dll\fR contains the 16-bit
+\fIstorage.dll\fR.
+.PP
+Examples:
+.TP
+WINEDLLOVERRIDES="comdlg32,shell32=n,b"
+.br
+Try to load comdlg32 and shell32 as native windows dll first and try
+the builtin version if the native load fails.
+.TP
+WINEDLLOVERRIDES="comdlg32,shell32=n;c:\(rs\(rsfoo\(rs\(rsbar\(rs\(rsbaz=b"
+.br
+Try to load the libraries comdlg32 and shell32 as native windows dlls. Furthermore, if 
+an application request to load \fIc:\(rsfoo\(rsbar\(rsbaz.dll\fR load the builtin library \fIbaz\fR.
+.TP
+WINEDLLOVERRIDES="comdlg32=b,n;shell32=b;comctl32=n;oleaut32="
+.br
+Try to load comdlg32 as builtin first and try the native version if
+the builtin load fails; load shell32 always as builtin and comctl32
+always as native; oleaut32 will be disabled.
+.RE
+.TP
+.B WINEPATH
+Specifies additional path(s) to be prepended to the default Windows
+.B PATH
+environment variable. This is a list of Windows-style directories
+separated by ";".
+.RS
+.PP
+For a permanent alternative, edit (create if needed) the
+.B PATH
+value under the
+.B HKEY_CURRENT_USER\\\\Environment
+registry key.
+.RE
+.TP
+.B WINEARCH
+Specifies the Windows architecture to support. It can be set either to
+.B win32
+(support only 32-bit applications), or to
+.B win64
+(support both 64-bit applications and 32-bit ones in WoW64 mode).
+.br
+The architecture supported by a given Wine prefix is set at prefix
+creation time and cannot be changed afterwards. When running with an
+existing prefix, Wine will refuse to start if
+.B WINEARCH
+doesn't match the prefix architecture.
+.TP
+.B WINE_D3D_CONFIG
+Specifies Direct3D configuration options. It can be used instead of
+modifying the
+.B HKEY_CURRENT_USER\\\\Software\\\\Wine\\\\Direct3D
+registry key. The value is a comma- or semicolon-separated list
+of key-value pairs. For example:
+.IP
+WINE_D3D_CONFIG="renderer=vulkan;VideoPciVendorID=0xc0de"
+.IP
+If an individual setting is specified in both
+the environment variable and the registry, the former takes precedence.
+.TP
+.B DISPLAY
+Specifies the X11 display to use.
+.TP
+OSS sound driver configuration variables:
+.TP
+.B AUDIODEV
+Set the device for audio input / output. Default
+.IR /dev/dsp .
+.TP
+.B MIXERDEV
+Set the device for mixer controls. Default
+.IR /dev/mixer .
+.TP
+.B MIDIDEV
+Set the MIDI (sequencer) device. Default
+.IR /dev/sequencer .
+.SH FILES
+.TP
+.I /bin/wine
+The Wine program loader.
+.TP
+.I /bin/wineconsole
+The Wine program loader for CUI (console) applications.
+.TP
+.I /bin/wineserver
+The Wine server
+.TP
+.I /bin/winedbg
+The Wine debugger
+.TP
+.I /lib/wine
+Directory containing Wine shared libraries
+.TP
+.I $WINEPREFIX/dosdevices
+Directory containing the DOS device mappings. Each file in that
+directory is a symlink to the Unix device file implementing a given
+device. For instance, if COM1 is mapped to \fI/dev/ttyS0\fR you'd have a
+symlink of the form \fI$WINEPREFIX/dosdevices/com1\fR -> \fI/dev/ttyS0\fR.
+.br
+DOS drives are also specified with symlinks; for instance if drive D:
+corresponds to the CDROM mounted at \fI/mnt/cdrom\fR, you'd have a symlink
+\fI$WINEPREFIX/dosdevices/d:\fR -> \fI/mnt/cdrom\fR. The Unix device corresponding
+to a DOS drive can be specified the same way, except with '::' instead
+of ':'. So for the previous example, if the CDROM device is mounted
+from \fI/dev/hdc\fR, the corresponding symlink would be
+\fI$WINEPREFIX/dosdevices/d::\fR -> \fI/dev/hdc\fR.
+.SH AUTHORS
+Wine is available thanks to the work of many developers. For a listing
+of the authors, please see the file
+.I AUTHORS
+in the top-level directory of the source distribution.
+.SH COPYRIGHT
+Wine can be distributed under the terms of the LGPL license. A copy of the
+license is in the file
+.I COPYING.LIB
+in the top-level directory of the source distribution.
+.SH BUGS
+.PP
+A status report on many applications is available from the
+.UR https://appdb.winehq.org
+.B Wine Application Database
+.UE .
+Please add entries to this list for applications you currently run, if
+necessary.
+.PP
+Bugs can be reported on the
+.UR https://bugs.winehq.org
+.B Wine bug tracker
+.UE .
+.SH AVAILABILITY
+The most recent public version of 
+.B wine
+is available through WineHQ, the
+.UR https://www.winehq.org/
+.B Wine development headquarters
+.UE .
+.SH "SEE ALSO"
+.BR wineserver (1),
+.BR winedbg (1),
+.br
+.UR https://www.winehq.org/help
+.B Wine documentation and support
+.UE .
