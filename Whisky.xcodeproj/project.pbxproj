@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		6E355E4F29D74DE0002D83BE /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 6E355E5129D74DE0002D83BE /* Localizable.strings */; };
+		6E355E5829D78249002D83BE /* ConfigView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E355E5729D78249002D83BE /* ConfigView.swift */; };
+		6E355E5A29D782B2002D83BE /* ProgramsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E355E5929D782B2002D83BE /* ProgramsView.swift */; };
+		6E355E5C29D7830C002D83BE /* InfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E355E5B29D7830C002D83BE /* InfoView.swift */; };
 		6E40495629CCA19C006E3F1B /* WhiskyApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E40495529CCA19C006E3F1B /* WhiskyApp.swift */; };
 		6E40495829CCA19C006E3F1B /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E40495729CCA19C006E3F1B /* ContentView.swift */; };
 		6E40495A29CCA19C006E3F1B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6E40495929CCA19C006E3F1B /* Assets.xcassets */; };
@@ -24,6 +27,9 @@
 /* Begin PBXFileReference section */
 		6E355E5029D74DE0002D83BE /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		6E355E5529D7642B002D83BE /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/Localizable.strings; sourceTree = "<group>"; };
+		6E355E5729D78249002D83BE /* ConfigView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfigView.swift; sourceTree = "<group>"; };
+		6E355E5929D782B2002D83BE /* ProgramsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgramsView.swift; sourceTree = "<group>"; };
+		6E355E5B29D7830C002D83BE /* InfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoView.swift; sourceTree = "<group>"; };
 		6E40495229CCA19C006E3F1B /* Whisky.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Whisky.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6E40495529CCA19C006E3F1B /* WhiskyApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WhiskyApp.swift; sourceTree = "<group>"; };
 		6E40495729CCA19C006E3F1B /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -51,6 +57,17 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		6E355E5629D78202002D83BE /* Bottle Views */ = {
+			isa = PBXGroup;
+			children = (
+				6E40498029CCA8B0006E3F1B /* BottleView.swift */,
+				6E355E5729D78249002D83BE /* ConfigView.swift */,
+				6E355E5929D782B2002D83BE /* ProgramsView.swift */,
+				6E355E5B29D7830C002D83BE /* InfoView.swift */,
+			);
+			path = "Bottle Views";
+			sourceTree = "<group>";
+		};
 		6E40494929CCA19C006E3F1B = {
 			isa = PBXGroup;
 			children = (
@@ -97,8 +114,8 @@
 			children = (
 				6E40495529CCA19C006E3F1B /* WhiskyApp.swift */,
 				6E40495729CCA19C006E3F1B /* ContentView.swift */,
-				6E40498029CCA8B0006E3F1B /* BottleView.swift */,
 				6E50D98429CDF25B008C39F6 /* BottleCreationView.swift */,
+				6E355E5629D78202002D83BE /* Bottle Views */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -225,8 +242,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				6E40495829CCA19C006E3F1B /* ContentView.swift in Sources */,
+				6E355E5C29D7830C002D83BE /* InfoView.swift in Sources */,
 				6E50D98029CD0850008C39F6 /* Wine.swift in Sources */,
 				6E5197D229D7202100CF655E /* BottleSettings.swift in Sources */,
+				6E355E5A29D782B2002D83BE /* ProgramsView.swift in Sources */,
+				6E355E5829D78249002D83BE /* ConfigView.swift in Sources */,
 				6E50D98529CDF25B008C39F6 /* BottleCreationView.swift in Sources */,
 				6E40498329CCA91B006E3F1B /* Bottle.swift in Sources */,
 				6E40495629CCA19C006E3F1B /* WhiskyApp.swift in Sources */,
