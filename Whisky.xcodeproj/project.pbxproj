@@ -23,6 +23,7 @@
 
 /* Begin PBXFileReference section */
 		6E355E5029D74DE0002D83BE /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		6E355E5529D7642B002D83BE /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/Localizable.strings; sourceTree = "<group>"; };
 		6E40495229CCA19C006E3F1B /* Whisky.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Whisky.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6E40495529CCA19C006E3F1B /* WhiskyApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WhiskyApp.swift; sourceTree = "<group>"; };
 		6E40495729CCA19C006E3F1B /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -170,6 +171,7 @@
 			knownRegions = (
 				en,
 				Base,
+				fr,
 			);
 			mainGroup = 6E40494929CCA19C006E3F1B;
 			productRefGroup = 6E40495329CCA19C006E3F1B /* Products */;
@@ -240,6 +242,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				6E355E5029D74DE0002D83BE /* en */,
+				6E355E5529D7642B002D83BE /* fr */,
 			);
 			name = Localizable.strings;
 			sourceTree = "<group>";
