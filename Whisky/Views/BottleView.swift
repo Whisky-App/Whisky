@@ -128,14 +128,25 @@ struct ProgramListView: View {
     var body: some View {
         VStack {
             HStack {
-                Text("Installed Programs:")
+                Text("Installed Programs")
                 Spacer()
+                Button(action: {
+                    bottle.updateInstalledPrograms()
+                }, label: {
+                    Image(systemName: "arrow.triangle.2.circlepath")
+                })
+                .buttonStyle(.bordered)
             }
             List {
                 ForEach(bottle.programs, id: \.self) { program in
                     HStack {
                         Text(program.lastPathComponent)
                         Spacer()
+                        Button(action: {
+                        }, label: {
+                            Image(systemName: "ellipsis.circle.fill")
+                        })
+                        .buttonStyle(.plain)
                         Button(action: {
                             Task(priority: .userInitiated) {
                                 do {
@@ -157,12 +168,13 @@ struct ProgramListView: View {
                     }
                 }
             }
+            .cornerRadius(5)
+            .listStyle(.inset(alternatesRowBackgrounds: true))
+            .onAppear {
+                bottle.updateInstalledPrograms()
+            }
         }
         .padding()
-        .listStyle(.bordered(alternatesRowBackgrounds: true))
-        .onAppear {
-            bottle.updateInstalledPrograms()
-        }
     }
 }
 
