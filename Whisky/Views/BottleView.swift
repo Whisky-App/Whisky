@@ -109,6 +109,13 @@ struct ConfigView: View {
             Spacer()
                 .frame(height: 20)
             HStack {
+                Toggle("Metal HUD", isOn: $bottle.settings.settings.metalHud)
+                    .toggleStyle(.switch)
+                Spacer()
+            }
+            Spacer()
+                .frame(height: 20)
+            HStack {
                 Button("Open Wine Configuration") {
                     Task(priority: .userInitiated) {
                         do {

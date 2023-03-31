@@ -12,6 +12,7 @@ struct BottleSettingsData: Codable {
     var windowsVersion: WinVersion = .win7
     var dxvk: Bool = false
     var dxvkHud: Bool = false
+    var metalHud: Bool = false
     var esync: Bool = false
 }
 
