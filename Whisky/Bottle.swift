@@ -83,7 +83,7 @@ public class Bottle: Hashable {
                                                               backupItemName: "\(url.lastPathComponent).bak",
                                                               options: [.withoutDeletingBackupItem])
                 } catch {
-                    print("Failed to replace \(url.lastPathComponent) at \(original.path)")
+                    print("Failed to replace \(url.lastPathComponent): \(error.localizedDescription)")
                 }
             }
         }
@@ -108,7 +108,49 @@ public class Bottle: Hashable {
                                                               backupItemName: "\(url.lastPathComponent).bak",
                                                               options: [.withoutDeletingBackupItem])
                 } catch {
-                    print("Failed to replace \(url.lastPathComponent) at \(original.path)")
+                    print("Failed to replace \(url.lastPathComponent): \(error.localizedDescription)")
+                }
+            }
+        }
+    }
+
+    func disableDXVK() {
+        let system32 = self.url
+            .appendingPathComponent("drive_c")
+            .appendingPathComponent("windows")
+            .appendingPathComponent("system32")
+
+        let enumerator64 = FileManager.default.enumerator(at: system32,
+                                                          includingPropertiesForKeys: [.isRegularFileKey])
+
+        while let url = enumerator64?.nextObject() as? URL {
+            if url.pathExtension == "bak" {
+                let dxvk = url.deletingPathExtension()
+                do {
+                    _ = try FileManager.default.replaceItemAt(dxvk, withItemAt: url)
+
+                } catch {
+                    print("Failed to replace \(url.lastPathComponent): \(error.localizedDescription)")
+                }
+            }
+        }
+
+        let syswow64 = self.url
+            .appendingPathComponent("drive_c")
+            .appendingPathComponent("windows")
+            .appendingPathComponent("syswow64")
+
+        let enumerator32 = FileManager.default.enumerator(at: syswow64,
+                                                          includingPropertiesForKeys: [.isRegularFileKey])
+
+        while let url = enumerator32?.nextObject() as? URL {
+            if url.pathExtension == "bak" {
+                let dxvk = url.deletingPathExtension()
+                do {
+                    _ = try FileManager.default.replaceItemAt(dxvk, withItemAt: url)
+
+                } catch {
+                    print("Failed to replace \(url.lastPathComponent): \(error.localizedDescription)")
                 }
             }
         }
