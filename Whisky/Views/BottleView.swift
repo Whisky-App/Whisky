@@ -102,6 +102,13 @@ struct ConfigView: View {
             Spacer()
                 .frame(height: 20)
             HStack {
+                Toggle("ESync", isOn: $bottle.settings.settings.esync)
+                    .toggleStyle(.switch)
+                Spacer()
+            }
+            Spacer()
+                .frame(height: 20)
+            HStack {
                 Button("Open Wine Configuration") {
                     Task(priority: .userInitiated) {
                         do {

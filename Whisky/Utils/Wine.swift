@@ -33,11 +33,17 @@ class Wine {
         if let bottle = bottle {
             var env: [String: String]
             env = ["WINEPREFIX": bottle.url.path, "WINEDEBUG": "fixme-all"]
-            if bottle.settings.settings.dxvk {
+            
+            let settings = bottle.settings.settings
+            if settings.dxvk {
                 env.updateValue("d3d11,dxgi,d3d10core=n,b", forKey: "WINEDLLOVERRIDES")
-                if bottle.settings.settings.dxvkHud {
+                if settings.dxvkHud {
                     env.updateValue("devinfo,fps,frametimes", forKey: "DXVK_HUD")
                 }
+            }
+            
+            if settings.esync {
+                env.updateValue("1", forKey: "WINEESYNC")
             }
 
             process.environment = env
