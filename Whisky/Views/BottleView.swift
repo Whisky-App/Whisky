@@ -116,9 +116,6 @@ struct ConfigView: View {
             Spacer()
         }
         .padding()
-        .onAppear {
-            bottle.enableDXVK()
-        }
     }
 }
 
