@@ -8,11 +8,14 @@
 "button.deleteBottle" = "Delete Bottle";
 "button.createBottle" = "Create Bottle";
 
+"config.title.dxvk" = "DXVK";
 "config.dxvk" = "DXVK";
 "config.dxvkHud" = "DXVK HUD";
-"config.esync" = "ESync";
+"config.title.metal" = "Metal";
 "config.metalHud" = "Metal HUD";
 "config.metalTrace" = "Metal Trace";
+"config.metalTrace.info" = "Allows you to capture GPU workload in Xcode";
+"config.esync" = "ESync";
 "config.winecfg" = "Open Wine Configuration";
 
 "program.title" = "Installed Programs";
