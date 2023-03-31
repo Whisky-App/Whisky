@@ -17,24 +17,24 @@ struct BottleView: View {
             TabView {
                 ConfigView(bottle: $bottle)
                     .tabItem {
-                        Text("Config")
+                        Text("tab.config")
                     }
                 ProgramListView(bottle: bottle)
                     .tabItem {
-                        Text("Programs")
+                        Text("tab.programs")
                     }
                 InfoView(bottle: bottle)
                     .tabItem {
-                        Text("Info")
+                        Text("tab.info")
                     }
             }
             Spacer()
             HStack {
                 Spacer()
-                Button("Open C Drive") {
+                Button("button.cDrive") {
                     bottle.openCDrive()
                 }
-                Button("Run...") {
+                Button("button.run") {
                     let panel = NSOpenPanel()
                     panel.allowsMultipleSelection = false
                     panel.canChooseDirectories = false
@@ -52,10 +52,10 @@ struct BottleView: View {
                                     } catch {
                                         programLoading = false
                                         let alert = NSAlert()
-                                        alert.messageText = "Failed to open program!"
-                                        alert.informativeText = "Failed to open \(url.lastPathComponent)"
+                                        alert.messageText = "alert.message"
+                                        alert.informativeText = "alert.info" + " \(url.lastPathComponent)"
                                         alert.alertStyle = .critical
-                                        alert.addButton(withTitle: "OK")
+                                        alert.addButton(withTitle: "button.ok")
                                         alert.runModal()
                                     }
                                 }
@@ -83,7 +83,7 @@ struct ConfigView: View {
     var body: some View {
         VStack {
             HStack {
-                Toggle("DXVK", isOn: $bottle.settings.settings.dxvk)
+                Toggle("config.dxvk", isOn: $bottle.settings.settings.dxvk)
                     .toggleStyle(.switch)
                     .onChange(of: bottle.settings.settings.dxvk) { enabled in
                         if enabled {
@@ -94,7 +94,7 @@ struct ConfigView: View {
                             bottle.disableDXVK()
                         }
                     }
-                Toggle("DXVK HUD", isOn: $bottle.settings.settings.dxvkHud)
+                Toggle("config.dxvkHud", isOn: $bottle.settings.settings.dxvkHud)
                     .toggleStyle(.switch)
                     .disabled(!bottle.settings.settings.dxvk)
                 Spacer()
@@ -102,23 +102,23 @@ struct ConfigView: View {
             Spacer()
                 .frame(height: 20)
             HStack {
-                Toggle("ESync", isOn: $bottle.settings.settings.esync)
+                Toggle("config.esync", isOn: $bottle.settings.settings.esync)
                     .toggleStyle(.switch)
                 Spacer()
             }
             Spacer()
                 .frame(height: 20)
             HStack {
-                Toggle("Metal HUD", isOn: $bottle.settings.settings.metalHud)
+                Toggle("config.metalHud", isOn: $bottle.settings.settings.metalHud)
                     .toggleStyle(.switch)
-                Toggle("Metal Trace", isOn: $bottle.settings.settings.metalTrace)
+                Toggle("config.metalTrace", isOn: $bottle.settings.settings.metalTrace)
                     .toggleStyle(.switch)
                 Spacer()
             }
             Spacer()
                 .frame(height: 20)
             HStack {
-                Button("Open Wine Configuration") {
+                Button("config.winecfg") {
                     Task(priority: .userInitiated) {
                         do {
                             try await Wine.cfg(bottle: bottle)
@@ -141,7 +141,7 @@ struct ProgramListView: View {
     var body: some View {
         VStack {
             HStack {
-                Text("Installed Programs")
+                Text("program.title")
                 Spacer()
                 Button(action: {
                     bottle.updateInstalledPrograms()
@@ -167,10 +167,10 @@ struct ProgramListView: View {
                                                               path: program.path)
                                 } catch {
                                     let alert = NSAlert()
-                                    alert.messageText = "Failed to open program!"
-                                    alert.informativeText = "Failed to open \(program.lastPathComponent)"
+                                    alert.messageText = "alert.message"
+                                    alert.informativeText = "alert.info" + " \(program.lastPathComponent)"
                                     alert.alertStyle = .critical
-                                    alert.addButton(withTitle: "OK")
+                                    alert.addButton(withTitle: "button.ok")
                                     alert.runModal()
                                 }
                             }
@@ -197,16 +197,16 @@ struct InfoView: View {
     var body: some View {
         VStack {
             HStack {
-                Text("Path: \(bottle.url.path)")
+                Text("info.path") + Text(" \(bottle.url.path)")
                 Spacer()
             }
             HStack {
-                Text("Wine Version: \(bottle.settings.settings.wineVersion)")
+                Text("info.wine") + Text(" \(bottle.settings.settings.wineVersion)")
                 Spacer()
             }
             .padding(.vertical)
             HStack {
-                Text("Windows Version: \(bottle.settings.settings.windowsVersion.pretty())")
+                Text("info.win") + Text(" \(bottle.settings.settings.windowsVersion.pretty())")
                 Spacer()
             }
             Spacer()

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6E355E4F29D74DE0002D83BE /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 6E355E5129D74DE0002D83BE /* Localizable.strings */; };
 		6E40495629CCA19C006E3F1B /* WhiskyApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E40495529CCA19C006E3F1B /* WhiskyApp.swift */; };
 		6E40495829CCA19C006E3F1B /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E40495729CCA19C006E3F1B /* ContentView.swift */; };
 		6E40495A29CCA19C006E3F1B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6E40495929CCA19C006E3F1B /* Assets.xcassets */; };
@@ -21,6 +22,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		6E355E5029D74DE0002D83BE /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		6E40495229CCA19C006E3F1B /* Whisky.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Whisky.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6E40495529CCA19C006E3F1B /* WhiskyApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WhiskyApp.swift; sourceTree = "<group>"; };
 		6E40495729CCA19C006E3F1B /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -76,6 +78,7 @@
 				6E899D1129CFC41D00A4A083 /* Info.plist */,
 				6E40495E29CCA19C006E3F1B /* Whisky.entitlements */,
 				6E40495B29CCA19C006E3F1B /* Preview Content */,
+				6E355E5129D74DE0002D83BE /* Localizable.strings */,
 			);
 			path = Whisky;
 			sourceTree = "<group>";
@@ -184,6 +187,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				6E50D97E29CD0755008C39F6 /* Libraries in Resources */,
+				6E355E4F29D74DE0002D83BE /* Localizable.strings in Resources */,
 				6E40495D29CCA19C006E3F1B /* Preview Assets.xcassets in Resources */,
 				6E40495A29CCA19C006E3F1B /* Assets.xcassets in Resources */,
 			);
@@ -231,12 +235,24 @@
 		};
 /* End PBXSourcesBuildPhase section */
 
+/* Begin PBXVariantGroup section */
+		6E355E5129D74DE0002D83BE /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				6E355E5029D74DE0002D83BE /* en */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
 /* Begin XCBuildConfiguration section */
 		6E40497529CCA19D006E3F1B /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ARCHS = "$(ARCHS_STANDARD)";
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
@@ -298,6 +314,7 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ARCHS = "$(ARCHS_STANDARD)";
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";

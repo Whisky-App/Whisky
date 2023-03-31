@@ -15,19 +15,19 @@ struct BottleCreationView: View {
     var body: some View {
         VStack {
             HStack {
-                Text("Create a new bottle")
+                Text("create.title")
                     .bold()
                 Spacer()
             }
             Divider()
             HStack {
-                Text("Bottle name:")
+                Text("create.name")
                 Spacer()
                 TextField("", text: $newBottleName)
                     .frame(width: 180)
             }
             HStack {
-                Text("Windows version:")
+                Text("create.win")
                 Spacer()
                 Picker("", selection: $newBottleVersion) {
                     ForEach(WinVersion.allCases, id: \.self) {
@@ -40,11 +40,11 @@ struct BottleCreationView: View {
             Spacer()
             HStack {
                 Spacer()
-                Button("Cancel") {
+                Button("create.cancel") {
                     dismiss()
                 }
                 .keyboardShortcut(.cancelAction)
-                Button("Create") {
+                Button("create.create") {
                     BottleVM.shared.createNewBottle(bottleName: newBottleName,
                                                     winVersion: newBottleVersion)
                     dismiss()
