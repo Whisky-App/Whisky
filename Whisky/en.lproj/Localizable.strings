@@ -1,0 +1,31 @@
+"tab.config" = "Config";
+"tab.programs" = "Programs";
+"tab.info" = "Info";
+
+"button.cDrive" = "Open C Drive";
+"button.run" = "Run...";
+"button.ok" = "OK";
+"button.deleteBottle" = "Delete Bottle";
+"button.createBottle" = "Create Bottle";
+
+"config.dxvk" = "DXVK";
+"config.dxvkHud" = "DXVK HUD";
+"config.esync" = "ESync";
+"config.metalHud" = "Metal HUD";
+"config.metalTrace" = "Metal Trace";
+"config.winecfg" = "Open Wine Configuration";
+
+"program.title" = "Installed Programs";
+
+"info.path" = "Path:";
+"info.wine" = "Wine Version:";
+"info.win" = "Windows Version:";
+
+"alert.message" = "Failed to open program!";
+"alert.info"  = "Failed to open ";
+
+"create.title" = "Create a new bottle";
+"create.name" = "Bottle name:";
+"create.win" = "Windows version:";
+"create.cancel" = "Cancel";
+"create.create" = "Create";

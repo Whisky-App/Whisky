@@ -20,7 +20,7 @@ struct ContentView: View {
                         Button {
                             bottle.delete()
                         } label: {
-                            Text("Delete Bottle")
+                            Text("button.deleteBottle")
                         }
                     }
             }
@@ -45,7 +45,7 @@ struct ContentView: View {
                     showBottleCreation.toggle()
                 } label: {
                     Image(systemName: "plus")
-                        .help("Create Bottle")
+                        .help("button.createBottle")
                 }
             }
         }
