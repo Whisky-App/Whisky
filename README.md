@@ -6,12 +6,12 @@
   ![](https://img.shields.io/github/actions/workflow/status/IsaacMarovitz/Whisky/SwiftLint.yml?style=for-the-badge)
 </div>
 
-<img width="650" alt="Screenshot 2023-03-31 at 12 17 23" src="https://user-images.githubusercontent.com/42140194/229175006-f7e9c1d6-7bc3-44c0-9780-acf201cd27b4.png">
+<img width="650" alt="Screenshot 2023-03-31 at 17 14 00" src="https://user-images.githubusercontent.com/42140194/229232488-dbad85f4-cecb-45e1-a182-f737fe9d2b1f.png">
 
 Familiar UI that integrates seamlessly with macOS
 
 <div align="right">
-  <img width="650" alt="Screenshot 2023-03-31 at 12 20 34" src="https://user-images.githubusercontent.com/42140194/229175707-8cca2073-a2bf-44ac-b3d4-9df5b18e8ccd.png">
+  <img width="650" alt="Screenshot 2023-03-31 at 17 14 22" src="https://user-images.githubusercontent.com/42140194/229232557-07f78a79-f695-45f6-be45-15a5b2f3c053.png">
 
   One-click bottle creation and management
 </div>
