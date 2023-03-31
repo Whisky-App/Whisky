@@ -85,8 +85,6 @@ struct ConfigView: View {
             HStack {
                 Toggle("DXVK", isOn: $bottle.dxvk)
                     .toggleStyle(.switch)
-                Toggle("Winetricks", isOn: $bottle.winetricks)
-                    .toggleStyle(.switch)
                 Spacer()
             }
             Spacer()
