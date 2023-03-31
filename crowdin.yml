@@ -1,0 +1,17 @@
+#
+# Your Crowdin credentials
+#
+"project_id" : "578223"
+"api_token" : "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiJ3UUVxdmhVM3ZMT2EyWGljbVV5VCIsImp0aSI6IjFlZWNmMmQzM2I5ZDEzMTQxMzVlOTM2NmRiZWRkNDlhZDBiYmYzNmVhNTFhY2NkNDUyMzA0MGYyMGNiMzhhMzZhYWRmN2NlODkwNWU1ZDdmIiwiaWF0IjoxNjgwMjg3MjQ0Ljg0ODk1NCwibmJmIjoxNjgwMjg3MjQ0Ljg0ODk2MSwiZXhwIjoxNjgyODc5MjQ0LjczOTE3OCwic3ViIjoiMTU1NjA4OTEiLCJzY29wZXMiOlsicHJvamVjdCJdLCJkb21haW4iOm51bGwsImFzc29jaWF0aW9ucyI6WyIqIl0sInNlc3Npb24iOjB9.G1TNprK-FObh6F_Bdioio1PgG5ywYFyRIntn0sJTEEn6jGwq0VtUl9HKp2X9gmjLfixqj_Tdsq2TwAqU5Zgye22KsCdjWH2XJXuqVvAq6sGbV5L5u7RY14dxFTiQJjbO87JceZvMqL6RAOwPKHyZbSAnXMGHenIb-PH0a8SnGZw_3h-gbf6gQA1iDa14rIBmYawwBVJMHd1_hemEoUtcNDifyscxVIjlDT4VJxI6BkJtPyoX1sAeXUot3ZU-AAP5kayt0rzM2F7-GlRzskSpNasXe7tA2NhVLtQc57RjsmNfKUhpbJccrXFXfISaFAccffAABxTV9f84BxnqbnupYt9G6OUSAJguAyQBsYy4HsHhqEryuC1QfRHOgpcAdsll8N27NM8IloHyBYiYxqhbFSOk9lnRmc2f7C6JgdaOiyy9omAVq9kPCcszlEtYgssLYVnXVepnc4EwBulBSkCKVtS5bANESQl6HvX7XLqSgNGjUvk5Djdq11dFPnuYDnIDTeSLw3Vo5wiuMyO49NwxOAw6Q-KZdWZ3aw3FkyuHZ1lCqzitFSbqYlttMkPxHgwE4FwSVyUE9loNGdD07ypD-OrE9DbMxsyfcs6w8vBCzzd-zwxMKA6dneq_r9YYQGIu3cb0qnybO0syvW-h4OutoIdEXjgwfbD86sL9Avlt8fg"
+"base_path" : "."
+"base_url" : "https://api.crowdin.com"
+
+"preserve_hierarchy": true
+
+files: [
+ {
+  "source" : "/Whisky/en.lproj/Localizable.strings",
+  "translation" : "/Whisky/%osx_locale%.lproj/%original_file_name%",
+  "dest" : "Localizable.strings",
+ }
+]
