@@ -24,7 +24,6 @@ public class Bottle: Hashable {
     var url: URL = URL.homeDirectory.appending(component: ".wine")
     var winVersion: WinVersion = .win7
     var dxvk: Bool = false
-    var winetricks: Bool = false
     var programs: [URL] = []
 
     func openCDrive() {
