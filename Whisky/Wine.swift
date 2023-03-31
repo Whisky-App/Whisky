@@ -34,7 +34,7 @@ class Wine {
             var env: [String: String]
             env = ["WINEPREFIX": bottle.url.path, "WINEDEBUG": "fixme-all"]
             if bottle.dxvk {
-                env.updateValue("d3d11,dxgi,d3d10core=b", forKey: "WINEDLLOVERRIDES")
+                env.updateValue("d3d11,dxgi,d3d10core=n,b", forKey: "WINEDLLOVERRIDES")
                 env.updateValue("devinfo,fps,frametimes", forKey: "DXVK_HUD")
             }
 
