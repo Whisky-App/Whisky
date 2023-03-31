@@ -14,7 +14,7 @@ struct ContentView: View {
 
     var body: some View {
         NavigationSplitView {
-            List(bottleVM.bottles, id: \.self, selection: $selected) { bottle in
+            List(bottleVM.bottles, id: \.url, selection: $selected) { bottle in
                 Text(bottle.name)
                     .contextMenu {
                         Button {
@@ -27,7 +27,7 @@ struct ContentView: View {
         } detail: {
             if let bottle = selected {
                 BottleView(bottle: bottle)
-                    .id(bottle.path)
+                    .id(bottle.url)
             }
         }
         .toolbar {

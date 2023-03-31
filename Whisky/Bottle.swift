@@ -10,34 +10,34 @@ import AppKit
 
 public class Bottle: Hashable {
     public static func == (lhs: Bottle, rhs: Bottle) -> Bool {
-        return lhs.path == rhs.path
+        return lhs.url == rhs.url
     }
 
     public func hash(into hasher: inout Hasher) {
-        return hasher.combine(path)
+        return hasher.combine(url)
     }
 
     var name: String {
-        path.lastPathComponent
+        url.lastPathComponent
     }
 
-    var path: URL = URL.homeDirectory.appending(component: ".wine")
+    var url: URL = URL.homeDirectory.appending(component: ".wine")
     var winVersion: WinVersion = .win7
     var dxvk: Bool = false
     var winetricks: Bool = false
     var programs: [URL] = []
 
     func openCDrive() {
-        let cDrive = path.appendingPathComponent("drive_c")
+        let cDrive = url.appendingPathComponent("drive_c")
         NSWorkspace.shared.activateFileViewerSelecting([cDrive])
     }
 
     @discardableResult
     func updateInstalledPrograms() -> [URL] {
-        let programFiles = path
+        let programFiles = url
             .appendingPathComponent("drive_c")
             .appendingPathComponent("Program Files")
-        let programFilesx86 = path
+        let programFilesx86 = url
             .appendingPathComponent("drive_c")
             .appendingPathComponent("Program Files (x86)")
         programs.removeAll()
@@ -66,7 +66,7 @@ public class Bottle: Hashable {
     @MainActor
     func delete() {
         do {
-            try FileManager.default.removeItem(at: path)
+            try FileManager.default.removeItem(at: url)
             BottleVM.shared.loadBottles()
         } catch {
             print("Failed to delete bottle")
@@ -76,7 +76,7 @@ public class Bottle: Hashable {
     init() {}
 
     init(path: URL) {
-        self.path = path
+        self.url = path
     }
 }
 

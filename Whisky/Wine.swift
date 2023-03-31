@@ -26,7 +26,7 @@ class Wine {
         process.standardError = pipe
         process.currentDirectoryURL = binFolder
         if let bottle = bottle {
-            process.environment = ["WINEPREFIX": bottle.path.path]
+            process.environment = ["WINEPREFIX": bottle.url.path]
         }
 
         try process.run()
