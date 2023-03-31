@@ -106,6 +106,15 @@ struct ConfigView: View {
             Spacer()
         }
         .padding()
+        .onChange(of: bottle.dxvk) { enabled in
+            print("whoop diddy scoop")
+            if enabled {
+                bottle.enableDXVK()
+            }
+        }
+        .onAppear {
+            bottle.enableDXVK()
+        }
     }
 }
 

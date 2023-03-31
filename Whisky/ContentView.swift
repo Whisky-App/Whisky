@@ -9,7 +9,7 @@ import SwiftUI
 
 struct ContentView: View {
     @EnvironmentObject var bottleVM: BottleVM
-    @State var selected: Bottle?
+    @State var selected: URL?
     @State var showBottleCreation: Bool = false
 
     var body: some View {
@@ -25,9 +25,11 @@ struct ContentView: View {
                     }
             }
         } detail: {
-            if let bottle = selected {
-                BottleView(bottle: bottle)
-                    .id(bottle.url)
+            if let url = selected {
+                if let bottle = bottleVM.bottles.first(where: { $0.url == url }) {
+                    BottleView(bottle: bottle)
+                        .id(bottle.url)
+                }
             }
         }
         .toolbar {
