@@ -50,6 +50,12 @@ class Wine {
                 env.updateValue("1", forKey: "MTL_HUD_ENABLED")
             }
 
+            if settings.metalTrace {
+                env.updateValue("1", forKey: "METAL_CAPTURE_ENABLED")
+                // Might not be needed
+                env.updateValue("2", forKey: "MVK_CONFIG_AUTO_GPU_CAPTURE_SCOPE")
+            }
+
             process.environment = env
         }
 

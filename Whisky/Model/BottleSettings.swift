@@ -13,6 +13,7 @@ struct BottleSettingsData: Codable {
     var dxvk: Bool = false
     var dxvkHud: Bool = false
     var metalHud: Bool = false
+    var metalTrace: Bool = false
     var esync: Bool = false
 }
 

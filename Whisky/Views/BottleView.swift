@@ -111,6 +111,8 @@ struct ConfigView: View {
             HStack {
                 Toggle("Metal HUD", isOn: $bottle.settings.settings.metalHud)
                     .toggleStyle(.switch)
+                Toggle("Metal Trace", isOn: $bottle.settings.settings.metalTrace)
+                    .toggleStyle(.switch)
                 Spacer()
             }
             Spacer()
