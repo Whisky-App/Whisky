@@ -17,6 +17,7 @@
 		6E50D98029CD0850008C39F6 /* Wine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E50D97F29CD0850008C39F6 /* Wine.swift */; };
 		6E50D98329CD6066008C39F6 /* BottleVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E50D98229CD6066008C39F6 /* BottleVM.swift */; };
 		6E50D98529CDF25B008C39F6 /* BottleCreationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E50D98429CDF25B008C39F6 /* BottleCreationView.swift */; };
+		6E5197D229D7202100CF655E /* BottleSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E5197D129D7202100CF655E /* BottleSettings.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +33,7 @@
 		6E50D97F29CD0850008C39F6 /* Wine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Wine.swift; sourceTree = "<group>"; };
 		6E50D98229CD6066008C39F6 /* BottleVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottleVM.swift; sourceTree = "<group>"; };
 		6E50D98429CDF25B008C39F6 /* BottleCreationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottleCreationView.swift; sourceTree = "<group>"; };
+		6E5197D129D7202100CF655E /* BottleSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottleSettings.swift; sourceTree = "<group>"; };
 		6E899D1129CFC41D00A4A083 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -66,15 +68,12 @@
 		6E40495429CCA19C006E3F1B /* Whisky */ = {
 			isa = PBXGroup;
 			children = (
-				6E899D1129CFC41D00A4A083 /* Info.plist */,
-				6E40495529CCA19C006E3F1B /* WhiskyApp.swift */,
-				6E40495729CCA19C006E3F1B /* ContentView.swift */,
-				6E40498029CCA8B0006E3F1B /* BottleView.swift */,
-				6E50D98429CDF25B008C39F6 /* BottleCreationView.swift */,
-				6E50D98229CD6066008C39F6 /* BottleVM.swift */,
-				6E40498229CCA91B006E3F1B /* Bottle.swift */,
-				6E50D97F29CD0850008C39F6 /* Wine.swift */,
+				6E5197CF29D71FF900CF655E /* Model */,
+				6E5197D029D7200700CF655E /* Utils */,
+				6E5197CE29D71FE800CF655E /* View Models */,
+				6E5197CD29D71FCD00CF655E /* Views */,
 				6E40495929CCA19C006E3F1B /* Assets.xcassets */,
+				6E899D1129CFC41D00A4A083 /* Info.plist */,
 				6E40495E29CCA19C006E3F1B /* Whisky.entitlements */,
 				6E40495B29CCA19C006E3F1B /* Preview Content */,
 			);
@@ -87,6 +86,42 @@
 				6E40495C29CCA19C006E3F1B /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		6E5197CD29D71FCD00CF655E /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				6E40495529CCA19C006E3F1B /* WhiskyApp.swift */,
+				6E40495729CCA19C006E3F1B /* ContentView.swift */,
+				6E40498029CCA8B0006E3F1B /* BottleView.swift */,
+				6E50D98429CDF25B008C39F6 /* BottleCreationView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		6E5197CE29D71FE800CF655E /* View Models */ = {
+			isa = PBXGroup;
+			children = (
+				6E50D98229CD6066008C39F6 /* BottleVM.swift */,
+			);
+			path = "View Models";
+			sourceTree = "<group>";
+		};
+		6E5197CF29D71FF900CF655E /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				6E40498229CCA91B006E3F1B /* Bottle.swift */,
+				6E5197D129D7202100CF655E /* BottleSettings.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		6E5197D029D7200700CF655E /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				6E50D97F29CD0850008C39F6 /* Wine.swift */,
+			);
+			path = Utils;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -185,6 +220,7 @@
 			files = (
 				6E40495829CCA19C006E3F1B /* ContentView.swift in Sources */,
 				6E50D98029CD0850008C39F6 /* Wine.swift in Sources */,
+				6E5197D229D7202100CF655E /* BottleSettings.swift in Sources */,
 				6E50D98529CDF25B008C39F6 /* BottleCreationView.swift in Sources */,
 				6E40498329CCA91B006E3F1B /* Bottle.swift in Sources */,
 				6E40495629CCA19C006E3F1B /* WhiskyApp.swift in Sources */,
