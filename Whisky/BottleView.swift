@@ -161,7 +161,7 @@ struct InfoView: View {
     var body: some View {
         VStack {
             HStack {
-                Text("Path: \(bottle.path.path)")
+                Text("Path: \(bottle.url.path)")
                 Spacer()
             }
             HStack {
