@@ -77,10 +77,10 @@ public class Bottle: Hashable {
                     .appendingPathComponent(url.lastPathComponent)
 
                 do {
-                    _ = try FileManager.default.replaceItemAt(original,
-                                                              withItemAt: url,
-                                                              backupItemName: "\(url.lastPathComponent).bak",
-                                                              options: [.withoutDeletingBackupItem])
+                    try FileManager.default.moveItem(at: original,
+                                                     to: original.appendingPathExtension("bak"))
+                    try FileManager.default.copyItem(at: url,
+                                                     to: original)
                 } catch {
                     print("Failed to replace \(url.lastPathComponent): \(error.localizedDescription)")
                 }
@@ -102,10 +102,10 @@ public class Bottle: Hashable {
                     .appendingPathComponent(url.lastPathComponent)
 
                 do {
-                    _ = try FileManager.default.replaceItemAt(original,
-                                                              withItemAt: url,
-                                                              backupItemName: "\(url.lastPathComponent).bak",
-                                                              options: [.withoutDeletingBackupItem])
+                    try FileManager.default.moveItem(at: original,
+                                                     to: original.appendingPathExtension("bak"))
+                    try FileManager.default.copyItem(at: url,
+                                                     to: original)
                 } catch {
                     print("Failed to replace \(url.lastPathComponent): \(error.localizedDescription)")
                 }
@@ -126,7 +126,8 @@ public class Bottle: Hashable {
             if url.pathExtension == "bak" {
                 let dxvk = url.deletingPathExtension()
                 do {
-                    _ = try FileManager.default.replaceItemAt(dxvk, withItemAt: url)
+                    try FileManager.default.removeItem(at: dxvk)
+                    try FileManager.default.moveItem(at: url, to: dxvk)
 
                 } catch {
                     print("Failed to replace \(url.lastPathComponent): \(error.localizedDescription)")
@@ -146,8 +147,8 @@ public class Bottle: Hashable {
             if url.pathExtension == "bak" {
                 let dxvk = url.deletingPathExtension()
                 do {
-                    _ = try FileManager.default.replaceItemAt(dxvk, withItemAt: url)
-
+                    try FileManager.default.removeItem(at: dxvk)
+                    try FileManager.default.moveItem(at: url, to: dxvk)
                 } catch {
                     print("Failed to replace \(url.lastPathComponent): \(error.localizedDescription)")
                 }
