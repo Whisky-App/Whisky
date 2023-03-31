@@ -9,13 +9,13 @@ import SwiftUI
 import UniformTypeIdentifiers
 
 struct BottleView: View {
-    @State var bottle: Bottle
+    @Binding var bottle: Bottle
     @State var programLoading: Bool = false
 
     var body: some View {
         VStack {
             TabView {
-                ConfigView(bottle: bottle)
+                ConfigView(bottle: $bottle)
                     .tabItem {
                         Text("Config")
                     }
@@ -78,13 +78,20 @@ struct BottleView: View {
 }
 
 struct ConfigView: View {
-    @State var bottle: Bottle
+    @Binding var bottle: Bottle
 
     var body: some View {
         VStack {
             HStack {
                 Toggle("DXVK", isOn: $bottle.dxvk)
                     .toggleStyle(.switch)
+                    .onChange(of: bottle.dxvk) { enabled in
+                        if enabled {
+                            bottle.enableDXVK()
+                        } else {
+                            bottle.disableDXVK()
+                        }
+                    }
                 Spacer()
             }
             Spacer()
@@ -104,12 +111,6 @@ struct ConfigView: View {
             Spacer()
         }
         .padding()
-        .onChange(of: bottle.dxvk) { enabled in
-            print("whoop diddy scoop")
-            if enabled {
-                bottle.enableDXVK()
-            }
-        }
         .onAppear {
             bottle.enableDXVK()
         }
@@ -214,7 +215,7 @@ struct InfoView: View {
 
 struct BottleView_Previews: PreviewProvider {
     static var previews: some View {
-        BottleView(bottle: Bottle())
+        BottleView(bottle: .constant(Bottle()))
             .frame(width: 500, height: 300)
     }
 }
