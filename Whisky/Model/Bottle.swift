@@ -22,8 +22,7 @@ public class Bottle: Hashable {
     }
 
     var url: URL = URL.homeDirectory.appending(component: ".wine")
-    var winVersion: WinVersion = .win7
-    var dxvk: Bool = true
+    var settings: BottleSettings
     var programs: [URL] = []
 
     func openCDrive() {
@@ -166,14 +165,19 @@ public class Bottle: Hashable {
         }
     }
 
-    init() {}
+    init() {
+        self.settings = BottleSettings(bottleUrl: url,
+                                             name: url.lastPathComponent)
+    }
 
     init(path: URL) {
         self.url = path
+        self.settings = BottleSettings(bottleUrl: url,
+                                             name: url.lastPathComponent)
     }
 }
 
-public enum WinVersion: String, CaseIterable {
+public enum WinVersion: String, CaseIterable, Codable {
     case winXP = "winxp64"
     case win7 = "win7"
     case win8 = "win8"

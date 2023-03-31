@@ -46,7 +46,7 @@ struct BottleCreationView: View {
                 .keyboardShortcut(.cancelAction)
                 Button("Create") {
                     BottleVM.shared.createNewBottle(bottleName: newBottleName,
-                    winVersion: newBottleVersion)
+                                                    winVersion: newBottleVersion)
                     dismiss()
                 }
                 .keyboardShortcut(.defaultAction)

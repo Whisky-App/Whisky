@@ -83,15 +83,20 @@ struct ConfigView: View {
     var body: some View {
         VStack {
             HStack {
-                Toggle("DXVK", isOn: $bottle.dxvk)
+                Toggle("DXVK", isOn: $bottle.settings.settings.dxvk)
                     .toggleStyle(.switch)
-                    .onChange(of: bottle.dxvk) { enabled in
+                    .onChange(of: bottle.settings.settings.dxvk) { enabled in
                         if enabled {
+                            print("Enabling DXVK")
                             bottle.enableDXVK()
                         } else {
+                            print("Disabling DXVK")
                             bottle.disableDXVK()
                         }
                     }
+                Toggle("DXVK HUD", isOn: $bottle.settings.settings.dxvkHud)
+                    .toggleStyle(.switch)
+                    .disabled(!bottle.settings.settings.dxvk)
                 Spacer()
             }
             Spacer()
@@ -163,8 +168,6 @@ struct ProgramListView: View {
 
 struct InfoView: View {
     @State var bottle: Bottle
-    @State var wineVersion: String = ""
-    @State var windowsVersion: WinVersion?
 
     var body: some View {
         VStack {
@@ -173,43 +176,17 @@ struct InfoView: View {
                 Spacer()
             }
             HStack {
-                if wineVersion.isEmpty {
-                    Text("Wine Version: ")
-                    ProgressView()
-                        .controlSize(.small)
-                } else {
-                    Text("Wine Version: ") + Text(wineVersion)
-                }
+                Text("Wine Version: \(bottle.settings.settings.wineVersion)")
                 Spacer()
             }
             .padding(.vertical)
             HStack {
-                if let windowsVersion = windowsVersion {
-                    Text("Windows Version: ") + Text(windowsVersion.pretty())
-                } else {
-                    Text("Windows Version: ")
-                    ProgressView()
-                        .controlSize(.small)
-                }
+                Text("Windows Version: \(bottle.settings.settings.windowsVersion.pretty())")
                 Spacer()
             }
             Spacer()
         }
         .padding()
-        .onAppear {
-            resolveWineInfo()
-        }
-    }
-
-    func resolveWineInfo() {
-        Task(priority: .background) {
-            do {
-                try await wineVersion = Wine.wineVersion()
-                try await windowsVersion = Wine.winVersion(bottle: bottle)
-            } catch {
-                print("Failed")
-            }
-        }
     }
 }
 
