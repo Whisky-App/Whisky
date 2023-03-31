@@ -42,25 +42,77 @@ public class Bottle: Hashable {
             .appendingPathComponent("Program Files (x86)")
         programs.removeAll()
 
-        let enumerator = FileManager.default.enumerator(at: programFiles,
-                                                        includingPropertiesForKeys: [.isExecutableKey],
-                                                        options: [.skipsHiddenFiles])
-        while let url = enumerator?.nextObject() as? URL {
+        let enumerator64 = FileManager.default.enumerator(at: programFiles,
+                                                          includingPropertiesForKeys: [.isExecutableKey],
+                                                          options: [.skipsHiddenFiles])
+        while let url = enumerator64?.nextObject() as? URL {
             if !url.hasDirectoryPath && url.pathExtension == "exe" {
                 programs.append(url)
             }
         }
 
-        let enumerator2 = FileManager.default.enumerator(at: programFilesx86,
-                                                        includingPropertiesForKeys: [.isExecutableKey],
-                                                        options: [.skipsHiddenFiles])
-        while let url = enumerator2?.nextObject() as? URL {
+        let enumerator32 = FileManager.default.enumerator(at: programFilesx86,
+                                                          includingPropertiesForKeys: [.isExecutableKey],
+                                                          options: [.skipsHiddenFiles])
+        while let url = enumerator32?.nextObject() as? URL {
             if !url.hasDirectoryPath && url.pathExtension == "exe" {
                 programs.append(url)
             }
         }
 
         return programs
+    }
+
+    func enableDXVK() {
+        let enumerator64 = FileManager.default.enumerator(at: Wine.dxvkFolder
+                                                                .appendingPathComponent("x64"),
+                                                          includingPropertiesForKeys: [.isRegularFileKey])
+
+        while let url = enumerator64?.nextObject() as? URL {
+            if url.pathExtension == "dll" {
+                let system32 = self.url
+                    .appendingPathComponent("drive_c")
+                    .appendingPathComponent("windows")
+                    .appendingPathComponent("system32")
+
+                let original = system32
+                    .appendingPathComponent(url.lastPathComponent)
+
+                do {
+                    _ = try FileManager.default.replaceItemAt(original,
+                                                              withItemAt: url,
+                                                              backupItemName: "\(url.lastPathComponent).bak",
+                                                              options: [.withoutDeletingBackupItem])
+                } catch {
+                    print("Failed to replace \(url.lastPathComponent) at \(original.path)")
+                }
+            }
+        }
+
+        let enumerator32 = FileManager.default.enumerator(at: Wine.dxvkFolder
+                                                                .appendingPathComponent("x32"),
+                                                          includingPropertiesForKeys: [.isRegularFileKey])
+
+        while let url = enumerator32?.nextObject() as? URL {
+            if url.pathExtension == "dll" {
+                let syswow64 = self.url
+                    .appendingPathComponent("drive_c")
+                    .appendingPathComponent("windows")
+                    .appendingPathComponent("syswow64")
+
+                let original = syswow64
+                    .appendingPathComponent(url.lastPathComponent)
+
+                do {
+                    _ = try FileManager.default.replaceItemAt(original,
+                                                              withItemAt: url,
+                                                              backupItemName: "\(url.lastPathComponent).bak",
+                                                              options: [.withoutDeletingBackupItem])
+                } catch {
+                    print("Failed to replace \(url.lastPathComponent) at \(original.path)")
+                }
+            }
+        }
     }
 
     @MainActor

@@ -13,6 +13,10 @@ class Wine {
         .appendingPathComponent("Wine")
         .appendingPathComponent("bin")
 
+    static let dxvkFolder: URL = (Bundle.main.resourceURL ?? URL(fileURLWithPath: ""))
+        .appendingPathComponent("Libraries")
+        .appendingPathComponent("DXVK")
+
     static let wineBinary: URL = binFolder
         .appendingPathComponent("wine64")
 
@@ -25,8 +29,15 @@ class Wine {
         process.standardOutput = pipe
         process.standardError = pipe
         process.currentDirectoryURL = binFolder
+
         if let bottle = bottle {
-            process.environment = ["WINEPREFIX": bottle.url.path]
+            var env: [String: String]
+            env = ["WINEPREFIX": bottle.url.path]
+            if bottle.dxvk {
+                env.updateValue("d3d11,dxgi=n,b", forKey: "WINEDLLOVERRIDES")
+            }
+
+            process.environment = env
         }
 
         try process.run()
