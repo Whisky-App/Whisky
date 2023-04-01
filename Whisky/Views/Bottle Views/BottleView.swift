@@ -11,6 +11,7 @@ import UniformTypeIdentifiers
 struct BottleView: View {
     @Binding var bottle: Bottle
     @State var programLoading: Bool = false
+    @State var startMenuPrograms: [URL] = []
 
     @State private var gridLayout = [GridItem(.adaptive(minimum: 100, maximum: .infinity))]
 
@@ -18,7 +19,7 @@ struct BottleView: View {
         VStack {
             ScrollView {
                 LazyVGrid(columns: gridLayout, alignment: .center) {
-                    ForEach((1...10), id: \.self) { _ in
+                    ForEach(startMenuPrograms, id: \.self) { program in
                         NavigationLink {
                             EmptyView()
                         } label: {
@@ -26,7 +27,8 @@ struct BottleView: View {
                                 Image(systemName: "app.dashed")
                                     .resizable()
                                     .frame(width: 45, height: 45)
-                                Text("Program Name")
+                                Spacer()
+                                Text(program.lastPathComponent)
                                     .multilineTextAlignment(.center)
                                     .lineLimit(2)
                             }
@@ -37,6 +39,9 @@ struct BottleView: View {
                     }
                 }
                 .padding()
+                .onAppear {
+                    startMenuPrograms = bottle.updateStartMenuPrograms()
+                }
                 NavigationStack {
                     Form {
                         NavigationLink {

@@ -24,10 +24,53 @@ public class Bottle: Hashable {
     var url: URL = URL.homeDirectory.appending(component: ".wine")
     var settings: BottleSettings
     var programs: [URL] = []
+    var startMenuPrograms: [URL] = []
 
     func openCDrive() {
         let cDrive = url.appendingPathComponent("drive_c")
         NSWorkspace.shared.activateFileViewerSelecting([cDrive])
+    }
+
+    @discardableResult
+    func updateStartMenuPrograms() -> [URL] {
+        let globalStartMenu = url
+            .appendingPathComponent("drive_c")
+            .appendingPathComponent("ProgramData")
+            .appendingPathComponent("Microsoft")
+            .appendingPathComponent("Windows")
+            .appendingPathComponent("Start Menu")
+
+        let userStartMenu = url
+            .appendingPathComponent("drive_c")
+            .appendingPathComponent("users")
+            .appendingPathComponent(NSUserName())
+            .appendingPathComponent("AppData")
+            .appendingPathComponent("Roaming")
+            .appendingPathComponent("Microsoft")
+            .appendingPathComponent("Windows")
+            .appendingPathComponent("Start Menu")
+        startMenuPrograms.removeAll()
+
+        let globalEnumerator = FileManager.default.enumerator(at: globalStartMenu,
+                                                              includingPropertiesForKeys: [.isRegularFileKey],
+                                                              options: [.skipsHiddenFiles])
+        while let url = globalEnumerator?.nextObject() as? URL {
+            if url.pathExtension == "lnk" {
+                startMenuPrograms.append(url)
+            }
+        }
+
+        let userEnumerator = FileManager.default.enumerator(at: userStartMenu,
+                                                              includingPropertiesForKeys: [.isRegularFileKey],
+                                                              options: [.skipsHiddenFiles])
+        while let url = userEnumerator?.nextObject() as? URL {
+            if url.pathExtension == "lnk" {
+                startMenuPrograms.append(url)
+            }
+        }
+
+        startMenuPrograms.sort(by: { $0.lastPathComponent.lowercased() < $1.lastPathComponent.lowercased() })
+        return startMenuPrograms
     }
 
     @discardableResult
@@ -58,6 +101,7 @@ public class Bottle: Hashable {
             }
         }
 
+        programs.sort(by: { $0.lastPathComponent.lowercased() < $1.lastPathComponent.lowercased() })
         return programs
     }
 
