@@ -11,24 +11,35 @@ struct InfoView: View {
     @State var bottle: Bottle
 
     var body: some View {
-        VStack {
-            HStack {
-                Text("info.path") + Text(" \(bottle.url.path)")
-                Spacer()
+        Form {
+            Section("Info") {
+                InfoItem(label: NSLocalizedString("info.path", comment: ""),
+                         value: bottle.url.path)
+                InfoItem(label: NSLocalizedString("info.wine", comment: ""),
+                         value: bottle.settings.settings.wineVersion)
+                InfoItem(label: NSLocalizedString("info.win", comment: ""),
+                         value: bottle.settings.settings.windowsVersion.pretty())
             }
-            HStack {
-                Text("info.wine") + Text(" \(bottle.settings.settings.wineVersion)")
-                Spacer()
-            }
-            .padding(.vertical)
-            HStack {
-                Text("info.win") + Text(" \(bottle.settings.settings.windowsVersion.pretty())")
-                Spacer()
-            }
-            Spacer()
         }
-        .padding()
+        .formStyle(.grouped)
         .navigationTitle("\(bottle.name) \(NSLocalizedString("tab.info", comment: ""))")
+    }
+}
+
+struct InfoItem: View {
+    @State var label: String
+    @State var value: String
+
+    var body: some View {
+        HStack {
+            Text(label)
+            Spacer()
+            Text(value)
+                .padding(5)
+                .background(.background)
+                .cornerRadius(5)
+                .font(.system(.body, design: .monospaced))
+        }
     }
 }
 
