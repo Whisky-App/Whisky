@@ -9,58 +9,67 @@ import SwiftUI
 
 struct ProgramsView: View {
     @State var bottle: Bottle
+    @State var programs: [URL] = []
 
     var body: some View {
-        VStack {
-            HStack {
-                Text("program.title")
-                Spacer()
-                Button(action: {
-                    bottle.updateInstalledPrograms()
-                }, label: {
-                    Image(systemName: "arrow.triangle.2.circlepath")
-                })
-                .buttonStyle(.bordered)
-            }
-            List {
-                ForEach(bottle.programs, id: \.self) { program in
-                    HStack {
-                        Text(program.lastPathComponent)
-                        Spacer()
-                        Button(action: {
-                        }, label: {
-                            Image(systemName: "ellipsis.circle.fill")
-                        })
-                        .buttonStyle(.plain)
-                        Button(action: {
-                            Task(priority: .userInitiated) {
-                                do {
-                                    try await Wine.runProgram(bottle: bottle,
-                                                              path: program.path)
-                                } catch {
-                                    let alert = NSAlert()
-                                    alert.messageText = "alert.message"
-                                    alert.informativeText = "alert.info" + " \(program.lastPathComponent)"
-                                    alert.alertStyle = .critical
-                                    alert.addButton(withTitle: "button.ok")
-                                    alert.runModal()
-                                }
-                            }
-                        }, label: {
-                            Image(systemName: "play.circle.fill")
-                        })
-                        .buttonStyle(.plain)
+        Form {
+            Section("program.title") {
+                List {
+                    ForEach(programs, id: \.self) { program in
+                        ProgramView(bottle: bottle, program: program)
                     }
                 }
             }
-            .cornerRadius(5)
-            .listStyle(.inset(alternatesRowBackgrounds: true))
-            .onAppear {
-                bottle.updateInstalledPrograms()
+        }
+        .formStyle(.grouped)
+        .navigationTitle("\(bottle.name) \(NSLocalizedString("tab.programs", comment: ""))")
+        .onAppear {
+            programs = bottle.updateInstalledPrograms()
+        }
+    }
+}
+
+struct ProgramView: View {
+    @State var bottle: Bottle
+    @State var program: URL
+    @State var showButtons: Bool = false
+
+    var body: some View {
+        HStack {
+            Text(program.lastPathComponent)
+            Spacer()
+            if showButtons {
+                Group {
+                    Button(action: {
+                    }, label: {
+                        Image(systemName: "ellipsis.circle.fill")
+                    })
+                    .buttonStyle(.plain)
+                    Button(action: {
+                        Task(priority: .userInitiated) {
+                            do {
+                                try await Wine.runProgram(bottle: bottle,
+                                                          path: program.path)
+                            } catch {
+                                let alert = NSAlert()
+                                alert.messageText = "alert.message"
+                                alert.informativeText = "alert.info" + " \(program.lastPathComponent)"
+                                alert.alertStyle = .critical
+                                alert.addButton(withTitle: "button.ok")
+                                alert.runModal()
+                            }
+                        }
+                    }, label: {
+                        Image(systemName: "play.circle.fill")
+                    })
+                    .buttonStyle(.plain)
+                }
             }
         }
-        .padding()
-        .navigationTitle("\(bottle.name) \(NSLocalizedString("tab.programs", comment: ""))")
+        .padding(4)
+        .onHover { hover in
+            showButtons = hover
+        }
     }
 }
 

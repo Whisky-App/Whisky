@@ -30,11 +30,11 @@ class BottleVM: ObservableObject {
                                                             options: [.skipsSubdirectoryDescendants, .skipsHiddenFiles])
 
             while let url = enumerator?.nextObject() as? URL {
-                print(url.path)
                 let bottle = Bottle(path: url)
-                bottle.updateInstalledPrograms()
                 bottles.append(bottle)
             }
+
+            bottles.sort(by: { $0.name.lowercased() < $1.name.lowercased() })
         }
     }
 
