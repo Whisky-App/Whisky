@@ -63,6 +63,8 @@ struct BottleView: View {
                                         alert.runModal()
                                     }
                                 }
+                            } else {
+                                programLoading = false
                             }
                         }
                     }
