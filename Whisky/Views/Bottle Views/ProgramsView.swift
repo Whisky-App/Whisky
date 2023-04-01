@@ -16,7 +16,7 @@ struct ProgramsView: View {
             Section("program.title") {
                 List {
                     ForEach(programs, id: \.self) { program in
-                        ProgramView(bottle: bottle, program: program)
+                        ProgramItemView(bottle: bottle, program: program)
                     }
                 }
             }
@@ -29,7 +29,7 @@ struct ProgramsView: View {
     }
 }
 
-struct ProgramView: View {
+struct ProgramItemView: View {
     @State var bottle: Bottle
     @State var program: URL
     @State var showButtons: Bool = false
