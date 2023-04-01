@@ -18,7 +18,7 @@ class Wine {
         .appendingPathComponent("DXVK")
 
     static let wineBinary: URL = binFolder
-        .appendingPathComponent("wine64")
+        .appendingPathComponent("wine")
 
     static func run(_ args: [String], bottle: Bottle? = nil) async throws -> String {
         let process = Process()
