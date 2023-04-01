@@ -12,26 +12,52 @@ struct BottleView: View {
     @Binding var bottle: Bottle
     @State var programLoading: Bool = false
 
+    @State private var gridLayout = [GridItem(.adaptive(minimum: 100, maximum: .infinity))]
+
     var body: some View {
-        NavigationStack {
-            Form {
-                NavigationLink {
-                    ConfigView(bottle: $bottle)
-                } label: {
-                    Label("tab.config", systemImage: "gearshape.fill")
+        VStack {
+            ScrollView {
+                LazyVGrid(columns: gridLayout, alignment: .center) {
+                    ForEach((1...10), id: \.self) { _ in
+                        NavigationLink {
+                            EmptyView()
+                        } label: {
+                            VStack {
+                                Image(systemName: "app.dashed")
+                                    .resizable()
+                                    .frame(width: 45, height: 45)
+                                Text("Program Name")
+                                    .multilineTextAlignment(.center)
+                                    .lineLimit(2)
+                            }
+                            .frame(width: 90, height: 90)
+                            .padding(10)
+                        }
+                        .buttonStyle(.plain)
+                    }
                 }
-                NavigationLink {
-                    ProgramsView(bottle: bottle)
-                } label: {
-                    Label("tab.programs", systemImage: "macwindow")
-                }
-                NavigationLink {
-                    InfoView(bottle: bottle)
-                } label: {
-                    Label("tab.info", systemImage: "info.circle.fill")
+                .padding()
+                NavigationStack {
+                    Form {
+                        NavigationLink {
+                            ConfigView(bottle: $bottle)
+                        } label: {
+                            Label("tab.config", systemImage: "gearshape.fill")
+                        }
+                        NavigationLink {
+                            ProgramsView(bottle: bottle)
+                        } label: {
+                            Label("tab.programs", systemImage: "macwindow")
+                        }
+                        NavigationLink {
+                            InfoView(bottle: bottle)
+                        } label: {
+                            Label("tab.info", systemImage: "info.circle.fill")
+                        }
+                    }
+                    .formStyle(.grouped)
                 }
             }
-            .formStyle(.grouped)
             Spacer()
             HStack {
                 Spacer()
