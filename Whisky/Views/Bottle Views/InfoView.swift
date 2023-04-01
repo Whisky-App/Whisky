@@ -35,6 +35,7 @@ struct InfoItem: View {
             Text(label)
             Spacer()
             Text(value)
+                .multilineTextAlignment(.trailing)
                 .padding(5)
                 .background(.background)
                 .cornerRadius(5)
