@@ -1,5 +1,5 @@
 ;; .INF script for the basic Wine configuration
-;; Version: Wine 8.4
+;; Version: Wine 8.5
 ;;
 ;; This should be run through setupapi:
 ;;   rundll32 setupapi.dll,InstallHinfSection DefaultInstall 128 wine.inf
@@ -554,11 +554,11 @@ HKLM,%MciExtStr%,"wvx",,"MPEGVideo"
 
 [Misc]
 HKLM,Software\Borland\Database Engine\Settings\SYSTEM\INIT,SHAREDMEMLOCATION,,9000
+HKLM,Software\Clients,,16
 HKLM,Software\Clients\Mail,,2,"Native Mail Client"
 HKLM,Software\Clients\Mail\Native Mail Client,,2,"Native Mail Client"
 HKLM,Software\Clients\Mail\Native Mail Client,"DLLPath",2,"%11%\winemapi.dll"
 HKLM,Software\Microsoft\Advanced INF Setup,,16
-HKLM,Software\Microsoft\Clients,,16
 HKLM,Software\Microsoft\Cryptography\Calais\Current,,16
 HKLM,Software\Microsoft\Cryptography\Calais\Readers,,16
 HKLM,Software\Microsoft\Cryptography\Services,,16
@@ -2512,6 +2512,7 @@ HKLM,%CurrentVersionNT%,"DigitalProductId",1,00,00,00,00,00,00,00,00,00,00,00,\
 00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,\
 00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,\
 00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00
+HKLM,%CurrentVersionNT%,"EditionId",2,"Professional"
 HKLM,%CurrentVersionNT%,"ProductName",2,"Windows 10 Pro"
 HKLM,%Control%\ProductOptions,"ProductType",2,"WinNT"
 HKLM,%Control%\Windows,"CSDVersion",0x10003,0
@@ -2530,7 +2531,7 @@ HKLM,Software\Classes\Wow6432Node\Interface,,16
 HKLM,Software\Classes\Wow6432Node\Media Type,,16
 HKLM,Software\Classes\Wow6432Node\MediaFoundation,,16
 ; symlinks for shared keys under HKLM\Software
-HKLM,Software\Wow6432Node\Microsoft\Clients,"SymbolicLinkValue",0x60000,"\Registry\Machine\Software\Microsoft\Clients"
+HKLM,Software\Wow6432Node\Clients,"SymbolicLinkValue",0x60000,"\Registry\Machine\Software\Clients"
 HKLM,Software\Wow6432Node\Microsoft\Cryptography\Calais\Current,"SymbolicLinkValue",0x60000,"\Registry\Machine\Software\Microsoft\Cryptography\Calais\Current"
 HKLM,Software\Wow6432Node\Microsoft\Cryptography\Calais\Readers,"SymbolicLinkValue",0x60000,"\Registry\Machine\Software\Microsoft\Cryptography\Calais\Readers"
 HKLM,Software\Wow6432Node\Microsoft\Cryptography\Services,"SymbolicLinkValue",0x60000,"\Registry\Machine\Software\Microsoft\Cryptography\Services"
