@@ -18,7 +18,7 @@ class Wine {
         .appendingPathComponent("DXVK")
 
     static let wineBinary: URL = binFolder
-        .appendingPathComponent("wine")
+        .appendingPathComponent("wine64")
 
     static func run(_ args: [String], bottle: Bottle? = nil) async throws -> String {
         let process = Process()
@@ -32,7 +32,9 @@ class Wine {
 
         if let bottle = bottle {
             var env: [String: String]
-            env = ["WINEPREFIX": bottle.url.path, "WINEDEBUG": "fixme-all"]
+            env = ["WINEPREFIX": bottle.url.path,
+                   "WINEDEBUG": "fixme-all",
+                   "WINEBOOT_HIDE_DIALOG": "1"]
 
             let settings = bottle.settings.settings
             if settings.dxvk {
