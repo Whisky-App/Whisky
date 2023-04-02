@@ -8,99 +8,82 @@
 import Foundation
 
 struct ShellLinkHeader {
-    var linkFlags: [LinkFlags] = []
+    var linkFlags: LinkFlags
     var linkInfo: LinkInfo?
 
     init(data: Data) {
-        let rawLinkFlags = data.extract(UInt32.self, offset: 0x0014)
+        var offset: Int = 0
+        let headerSize = data.extract(UInt32.self)
+        // Move past headerSize, and linkCLSID
+        offset += 4 + 16
+        let rawLinkFlags = data.extract(UInt32.self, offset: offset)
+        linkFlags = LinkFlags(rawValue: rawLinkFlags.byteSwapped)
 
-        for flag in LinkFlags.allCases {
-            if let index = flag.index {
-                let unusedBits = 32 - 1 - LinkFlags.allCases.count
-                let shift = LinkFlags.allCases.count + unusedBits - index
-
-                if ((rawLinkFlags.byteSwapped & flag.rawValue) >> shift) == 1 {
-                    linkFlags.append(flag)
-                }
-            }
-        }
-
-        var offset: Int = 0x004C
-
+        offset = Int(headerSize)
         if linkFlags.contains(.hasLinkTargetIDList) {
-            print("Has Link Targed ID List")
             offset += Int(data.extract(UInt16.self, offset: offset)) + 2
         }
 
         if linkFlags.contains(.hasLinkInfo) {
-            print("Has Link Info")
             linkInfo = LinkInfo(data: data, offset: &offset)
         }
     }
 }
 
-enum LinkFlags: UInt32, CaseIterable {
-    case hasLinkTargetIDList = 0x80000000
-    case hasLinkInfo = 0x40000000
-    case hasName = 0x20000000
-    case hasRelativePath = 0x10000000
+struct LinkFlags: OptionSet {
+    let rawValue: UInt32
 
-    case hasWorkingDir = 0x8000000
-    case hasArguments = 0x4000000
-    case hasIconLocation = 0x2000000
-    case isUnicode = 0x1000000
+    static let hasLinkTargetIDList = LinkFlags(rawValue: 1 << 31)
+    static let hasLinkInfo = LinkFlags(rawValue: 1 << 30)
+    static let hasName = LinkFlags(rawValue: 1 << 29)
+    static let hasRelativePath = LinkFlags(rawValue: 1 << 28)
 
-    case forceNoLinkInfo = 0x800000
-    case hasExpString = 0x400000
-    case runInSeperateProcess = 0x200000
-    case unused1 = 0x100000
+    static let hasWorkingDir = LinkFlags(rawValue: 1 << 27)
+    static let hasArguments = LinkFlags(rawValue: 1 << 26)
+    static let hasIconLocation = LinkFlags(rawValue: 1 << 25)
+    static let isUnicode = LinkFlags(rawValue: 1 << 24)
 
-    case hasDarwinID = 0x80000
-    case runAsUser = 0x40000
-    case hasExpIcon  = 0x20000
-    case noPidlAlias = 0x10000
+    static let forceNoLinkInfo = LinkFlags(rawValue: 1 << 23)
+    static let hasExpString = LinkFlags(rawValue: 1 << 22)
+    static let runInSeperateProcess = LinkFlags(rawValue: 1 << 21)
+    static let unused1 = LinkFlags(rawValue: 1 << 20)
 
-    case unused2 = 0x8000
-    case runWithShimLayer = 0x4000
-    case forceNoLinkTrack = 0x2000
-    case enableTargetMetadata = 0x1000
+    static let hasDarwinID = LinkFlags(rawValue: 1 << 19)
+    static let runAsUser = LinkFlags(rawValue: 1 << 18)
+    static let hasExpIcon  = LinkFlags(rawValue: 1 << 17)
+    static let noPidlAlias = LinkFlags(rawValue: 1 << 16)
 
-    case disableLinkPathTracking = 0x800
-    case disableKnownFolderTracking = 0x400
-    case disableKnownFolderAlias = 0x200
-    case allowLinkToLink = 0x100
+    static let unused2 = LinkFlags(rawValue: 1 << 15)
+    static let runWithShimLayer = LinkFlags(rawValue: 1 << 14)
+    static let forceNoLinkTrack = LinkFlags(rawValue: 1 << 13)
+    static let enableTargetMetadata = LinkFlags(rawValue: 1 << 12)
 
-    case unaliasOnSave = 0x80
-    case preferEnvironmentPath = 0x40
-    case keepLocalIDListForUNCTarget = 0x20
+    static let disableLinkPathTracking = LinkFlags(rawValue: 1 << 11)
+    static let disableKnownFolderTracking = LinkFlags(rawValue: 1 << 10)
+    static let disableKnownFolderAlias = LinkFlags(rawValue: 1 << 9)
+    static let allowLinkToLink = LinkFlags(rawValue: 1 << 8)
+
+    static let unaliasOnSave = LinkFlags(rawValue: 1 << 7)
+    static let preferEnvironmentPath = LinkFlags(rawValue: 1 << 6)
+    static let keepLocalIDListForUNCTarget = LinkFlags(rawValue: 1 << 5)
 }
 
 struct LinkInfo {
-    var linkInfoFlags: [LinkInfoFlags] = []
+    var linkInfoFlags: LinkInfoFlags
 
     init(data: Data, offset: inout Int) {
         offset += 8
-        print(offset)
+
         let rawLinkInfoFlags = data.extract(UInt32.self, offset: offset)
-        print(rawLinkInfoFlags)
-
-        for flag in linkInfoFlags {
-            if let index = flag.index {
-                let unusedBits = 32 - 1 - LinkInfoFlags.allCases.count
-                let shift = LinkFlags.allCases.count + unusedBits - index
-
-                if ((rawLinkInfoFlags.byteSwapped & flag.rawValue) >> shift) == 1 {
-                    linkInfoFlags.append(flag)
-                    print(flag)
-                }
-            }
-        }
+        linkInfoFlags = LinkInfoFlags(rawValue: rawLinkInfoFlags.byteSwapped)
     }
 }
 
-enum LinkInfoFlags: UInt32, CaseIterable {
-    case volumeIDAndLocalBasePath = 0x80000000
-    case commonNetworkRelativeLinkAndPathSuffix = 0x40000000
+struct LinkInfoFlags: OptionSet {
+    let rawValue: UInt32
+
+    static let volumeIDAndLocalBasePath = LinkInfoFlags(rawValue: 1 << 31)
+    static let commonNetworkRelativeLinkAndPathSuffix = LinkInfoFlags(rawValue: 1 << 30)
 }
 
 extension CaseIterable where Self: Equatable {
