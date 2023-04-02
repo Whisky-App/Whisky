@@ -11,7 +11,7 @@ import UniformTypeIdentifiers
 struct BottleView: View {
     @Binding var bottle: Bottle
     @State var programLoading: Bool = false
-    @State var startMenuPrograms: [URL] = []
+    @State var startMenuPrograms: [ShellLinkHeader] = []
 
     @State private var gridLayout = [GridItem(.adaptive(minimum: 100, maximum: .infinity))]
 
@@ -23,17 +23,7 @@ struct BottleView: View {
                         NavigationLink {
                             EmptyView()
                         } label: {
-                            VStack {
-                                Image(systemName: "app.dashed")
-                                    .resizable()
-                                    .frame(width: 45, height: 45)
-                                Spacer()
-                                Text(program.lastPathComponent)
-                                    .multilineTextAlignment(.center)
-                                    .lineLimit(2)
-                            }
-                            .frame(width: 90, height: 90)
-                            .padding(10)
+                            ShellLinkView(program: program)
                         }
                         .buttonStyle(.plain)
                     }
@@ -118,5 +108,39 @@ struct BottleView_Previews: PreviewProvider {
     static var previews: some View {
         BottleView(bottle: .constant(Bottle()))
             .frame(width: 500, height: 300)
+    }
+}
+
+struct ShellLinkView: View {
+    @State var program: ShellLinkHeader
+    @State var image: NSImage?
+
+    var body: some View {
+        VStack {
+            if let image = image {
+                Image(nsImage: image)
+                    .resizable()
+                    .frame(width: 45, height: 45)
+            } else {
+                Image(systemName: "app.dashed")
+                    .resizable()
+                    .frame(width: 45, height: 45)
+            }
+            Spacer()
+            Text(program.url
+                .deletingPathExtension()
+                .lastPathComponent)
+                .multilineTextAlignment(.center)
+                .lineLimit(2)
+        }
+        .frame(width: 90, height: 90)
+        .padding(10)
+        .onAppear {
+            if let linkInfo = program.linkInfo {
+                if let url = linkInfo.linkDestination {
+                    image = NSWorkspace.shared.icon(forFile: url.path)
+                }
+            }
+        }
     }
 }
