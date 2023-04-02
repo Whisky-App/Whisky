@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6E26058629D9267B00DDD788 /* ShellLink.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E26058529D9267B00DDD788 /* ShellLink.swift */; };
+		6E26058A29D9282000DDD788 /* DataExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E26058929D9282000DDD788 /* DataExtensions.swift */; };
 		6E355E4F29D74DE0002D83BE /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 6E355E5129D74DE0002D83BE /* Localizable.strings */; };
 		6E355E5829D78249002D83BE /* ConfigView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E355E5729D78249002D83BE /* ConfigView.swift */; };
 		6E355E5A29D782B2002D83BE /* ProgramsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E355E5929D782B2002D83BE /* ProgramsView.swift */; };
@@ -27,6 +29,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		6E26058529D9267B00DDD788 /* ShellLink.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShellLink.swift; sourceTree = "<group>"; };
+		6E26058929D9282000DDD788 /* DataExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataExtensions.swift; sourceTree = "<group>"; };
 		6E355E5029D74DE0002D83BE /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		6E355E5529D7642B002D83BE /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/Localizable.strings; sourceTree = "<group>"; };
 		6E355E5729D78249002D83BE /* ConfigView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfigView.swift; sourceTree = "<group>"; };
@@ -61,6 +65,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		6E26058729D927F900DDD788 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				6E26058929D9282000DDD788 /* DataExtensions.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
 		6E355E5629D78202002D83BE /* Bottle Views */ = {
 			isa = PBXGroup;
 			children = (
@@ -92,7 +104,8 @@
 		6E40495429CCA19C006E3F1B /* Whisky */ = {
 			isa = PBXGroup;
 			children = (
-				6E5197CF29D71FF900CF655E /* Model */,
+				6E26058729D927F900DDD788 /* Extensions */,
+				6E5197CF29D71FF900CF655E /* Models */,
 				6E5197D029D7200700CF655E /* Utils */,
 				6E5197CE29D71FE800CF655E /* View Models */,
 				6E5197CD29D71FCD00CF655E /* Views */,
@@ -133,14 +146,15 @@
 			path = "View Models";
 			sourceTree = "<group>";
 		};
-		6E5197CF29D71FF900CF655E /* Model */ = {
+		6E5197CF29D71FF900CF655E /* Models */ = {
 			isa = PBXGroup;
 			children = (
 				6E40498229CCA91B006E3F1B /* Bottle.swift */,
 				6E355E5F29D7D8BD002D83BE /* Program.swift */,
 				6E5197D129D7202100CF655E /* BottleSettings.swift */,
+				6E26058529D9267B00DDD788 /* ShellLink.swift */,
 			);
-			path = Model;
+			path = Models;
 			sourceTree = "<group>";
 		};
 		6E5197D029D7200700CF655E /* Utils */ = {
@@ -255,10 +269,12 @@
 				6E355E5829D78249002D83BE /* ConfigView.swift in Sources */,
 				6E50D98529CDF25B008C39F6 /* BottleCreationView.swift in Sources */,
 				6E40498329CCA91B006E3F1B /* Bottle.swift in Sources */,
+				6E26058A29D9282000DDD788 /* DataExtensions.swift in Sources */,
 				6E40495629CCA19C006E3F1B /* WhiskyApp.swift in Sources */,
 				6E50D98329CD6066008C39F6 /* BottleVM.swift in Sources */,
 				6E355E6029D7D8BD002D83BE /* Program.swift in Sources */,
 				6E40498129CCA8B0006E3F1B /* BottleView.swift in Sources */,
+				6E26058629D9267B00DDD788 /* ShellLink.swift in Sources */,
 				6E355E5E29D7D85D002D83BE /* ProgramView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

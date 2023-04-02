@@ -70,6 +70,15 @@ public class Bottle: Hashable {
         }
 
         startMenuPrograms.sort(by: { $0.lastPathComponent.lowercased() < $1.lastPathComponent.lowercased() })
+
+        for program in startMenuPrograms {
+            do {
+                try _ = ShellLinkHeader(data: Data(contentsOf: program))
+            } catch {
+                print(error)
+            }
+        }
+
         return startMenuPrograms
     }
 
