@@ -21,13 +21,20 @@ struct ShellLinkHeader {
 
                 if ((rawLinkFlags.byteSwapped & flag.rawValue) >> shift) == 1 {
                     linkFlags.append(flag)
-                    print(flag)
                 }
             }
         }
 
+        var offset: Int = 0x004C
+
+        if linkFlags.contains(.hasLinkTargetIDList) {
+            print("Has Link Targed ID List")
+            offset += Int(data.extract(UInt16.self, offset: offset)) + 2
+        }
+
         if linkFlags.contains(.hasLinkInfo) {
-            // linkInfo = LinkInfo(data: data)
+            print("Has Link Info")
+            linkInfo = LinkInfo(data: data, offset: &offset)
         }
     }
 }
@@ -71,8 +78,10 @@ enum LinkFlags: UInt32, CaseIterable {
 struct LinkInfo {
     var linkInfoFlags: [LinkInfoFlags] = []
 
-    init(data: Data) {
-        let rawLinkInfoFlags = data.extract(UInt32.self, offset: 0x0113)
+    init(data: Data, offset: inout Int) {
+        offset += 8
+        print(offset)
+        let rawLinkInfoFlags = data.extract(UInt32.self, offset: offset)
         print(rawLinkInfoFlags)
 
         for flag in linkInfoFlags {
