@@ -27,6 +27,7 @@ struct ShellLinkHeader: Hashable {
 
         offset = Int(headerSize)
         if linkFlags.contains(.hasLinkTargetIDList) {
+            // We don't need this section so just get the size, and skip ahead
             offset += Int(data.extract(UInt16.self, offset: offset)) + 2
         }
 
@@ -62,6 +63,7 @@ struct LinkInfo: Hashable {
             let pathData = data[localPathOffset...]
             if let nullRange = pathData.firstIndex(of: 0) {
                 if var string = String(data: pathData[..<nullRange], encoding: .utf8) {
+                    // UNIX-ify the path
                     string.replace("\\", with: "/")
                     string.replace("C:", with: "\(bottle.url.path)/drive_c")
                     linkDestination = URL(filePath: string)
