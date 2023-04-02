@@ -73,6 +73,8 @@ public class Bottle: Hashable {
 
         for program in startMenuPrograms {
             do {
+                print("\n")
+                print(program.lastPathComponent)
                 try _ = ShellLinkHeader(data: Data(contentsOf: program))
             } catch {
                 print(error)
