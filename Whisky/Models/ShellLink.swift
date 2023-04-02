@@ -7,11 +7,17 @@
 
 import Foundation
 
-struct ShellLinkHeader {
+struct ShellLinkHeader: Hashable {
+    static func == (lhs: ShellLinkHeader, rhs: ShellLinkHeader) -> Bool {
+        lhs.url == rhs.url
+    }
+
+    var url: URL
     var linkFlags: LinkFlags
     var linkInfo: LinkInfo?
 
-    init(data: Data) {
+    init(url: URL, data: Data, bottle: Bottle) {
+        self.url = url
         var offset: Int = 0
         let headerSize = data.extract(UInt32.self)
         // Move past headerSize, and linkCLSID
@@ -25,22 +31,23 @@ struct ShellLinkHeader {
         }
 
         if linkFlags.contains(.hasLinkInfo) {
-            linkInfo = LinkInfo(data: data, offset: &offset)
+            linkInfo = LinkInfo(data: data, bottle: bottle, offset: &offset)
         }
     }
 }
 
-struct LinkFlags: OptionSet {
+struct LinkFlags: OptionSet, Hashable {
     let rawValue: UInt32
 
     static let hasLinkTargetIDList = LinkFlags(rawValue: 1 << 0)
     static let hasLinkInfo = LinkFlags(rawValue: 1 << 1)
 }
 
-struct LinkInfo {
+struct LinkInfo: Hashable {
     var linkInfoFlags: LinkInfoFlags
+    var linkDestination: URL?
 
-    init(data: Data, offset: inout Int) {
+    init(data: Data, bottle: Bottle, offset: inout Int) {
         let startOfSection = offset
         offset += 8
 
@@ -54,14 +61,17 @@ struct LinkInfo {
 
             let pathData = data[localPathOffset...]
             if let nullRange = pathData.firstIndex(of: 0) {
-                let string = String(data: pathData[..<nullRange], encoding: .utf8)
-                print(string ?? "Invalid string")
+                if var string = String(data: pathData[..<nullRange], encoding: .utf8) {
+                    string.replace("\\", with: "/")
+                    string.replace("C:", with: "\(bottle.url.path)/drive_c")
+                    linkDestination = URL(filePath: string)
+                }
             }
         }
     }
 }
 
-struct LinkInfoFlags: OptionSet {
+struct LinkInfoFlags: OptionSet, Hashable {
     let rawValue: UInt32
 
     static let volumeIDAndLocalBasePath = LinkInfoFlags(rawValue: 1 << 0)

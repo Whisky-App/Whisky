@@ -24,7 +24,7 @@ public class Bottle: Hashable {
     var url: URL = URL.homeDirectory.appending(component: ".wine")
     var settings: BottleSettings
     var programs: [URL] = []
-    var startMenuPrograms: [URL] = []
+    var startMenuPrograms: [ShellLinkHeader] = []
 
     func openCDrive() {
         let cDrive = url.appendingPathComponent("drive_c")
@@ -32,7 +32,7 @@ public class Bottle: Hashable {
     }
 
     @discardableResult
-    func updateStartMenuPrograms() -> [URL] {
+    func updateStartMenuPrograms() -> [ShellLinkHeader] {
         let globalStartMenu = url
             .appendingPathComponent("drive_c")
             .appendingPathComponent("ProgramData")
@@ -51,12 +51,13 @@ public class Bottle: Hashable {
             .appendingPathComponent("Start Menu")
         startMenuPrograms.removeAll()
 
+        var startMenuProgramsURLs: [URL] = []
         let globalEnumerator = FileManager.default.enumerator(at: globalStartMenu,
                                                               includingPropertiesForKeys: [.isRegularFileKey],
                                                               options: [.skipsHiddenFiles])
         while let url = globalEnumerator?.nextObject() as? URL {
             if url.pathExtension == "lnk" {
-                startMenuPrograms.append(url)
+                startMenuProgramsURLs.append(url)
             }
         }
 
@@ -65,17 +66,17 @@ public class Bottle: Hashable {
                                                               options: [.skipsHiddenFiles])
         while let url = userEnumerator?.nextObject() as? URL {
             if url.pathExtension == "lnk" {
-                startMenuPrograms.append(url)
+                startMenuProgramsURLs.append(url)
             }
         }
 
-        startMenuPrograms.sort(by: { $0.lastPathComponent.lowercased() < $1.lastPathComponent.lowercased() })
+        startMenuProgramsURLs.sort(by: { $0.lastPathComponent.lowercased() < $1.lastPathComponent.lowercased() })
 
-        for program in startMenuPrograms {
+        for program in startMenuProgramsURLs {
             do {
-                print("\n")
-                print(program.lastPathComponent)
-                try _ = ShellLinkHeader(data: Data(contentsOf: program))
+                try startMenuPrograms.append(ShellLinkHeader(url: program,
+                                                             data: Data(contentsOf: program),
+                                                             bottle: self))
             } catch {
                 print(error)
             }
