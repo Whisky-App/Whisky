@@ -9,22 +9,25 @@ import Foundation
 
 struct ShellLinkHeader {
     var linkFlags: [LinkFlags] = []
+    var linkInfo: LinkInfo?
 
     init(data: Data) {
         let rawLinkFlags = data.extract(UInt32.self, offset: 0x0014)
 
         for flag in LinkFlags.allCases {
             if let index = flag.index {
-                let shift = LinkFlags.allCases.count + 4 - index
+                let unusedBits = 32 - 1 - LinkFlags.allCases.count
+                let shift = LinkFlags.allCases.count + unusedBits - index
 
                 if ((rawLinkFlags.byteSwapped & flag.rawValue) >> shift) == 1 {
                     linkFlags.append(flag)
+                    print(flag)
                 }
             }
         }
 
         if linkFlags.contains(.hasLinkInfo) {
-            
+            // linkInfo = LinkInfo(data: data)
         }
     }
 }
@@ -63,6 +66,32 @@ enum LinkFlags: UInt32, CaseIterable {
     case unaliasOnSave = 0x80
     case preferEnvironmentPath = 0x40
     case keepLocalIDListForUNCTarget = 0x20
+}
+
+struct LinkInfo {
+    var linkInfoFlags: [LinkInfoFlags] = []
+
+    init(data: Data) {
+        let rawLinkInfoFlags = data.extract(UInt32.self, offset: 0x0113)
+        print(rawLinkInfoFlags)
+
+        for flag in linkInfoFlags {
+            if let index = flag.index {
+                let unusedBits = 32 - 1 - LinkInfoFlags.allCases.count
+                let shift = LinkFlags.allCases.count + unusedBits - index
+
+                if ((rawLinkInfoFlags.byteSwapped & flag.rawValue) >> shift) == 1 {
+                    linkInfoFlags.append(flag)
+                    print(flag)
+                }
+            }
+        }
+    }
+}
+
+enum LinkInfoFlags: UInt32, CaseIterable {
+    case volumeIDAndLocalBasePath = 0x80000000
+    case commonNetworkRelativeLinkAndPathSuffix = 0x40000000
 }
 
 extension CaseIterable where Self: Equatable {
