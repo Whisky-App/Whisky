@@ -117,14 +117,30 @@ struct ShellLinkView: View {
 
     var body: some View {
         VStack {
-            if let image = image {
-                Image(nsImage: image)
+            if let stringData = program.stringData, let icon = stringData.iconLocation {
+                Image(nsImage: image ?? NSImage())
                     .resizable()
                     .frame(width: 45, height: 45)
+                    .onAppear {
+                        do {
+                            let data = try Data(contentsOf: icon)
+                            let rep = NSBitmapImageRep(data: data)!
+                            image = NSImage(size: rep.size)
+                            image!.addRepresentation(rep)
+                        } catch {
+                            print("Fuck")
+                        }
+                    }
             } else {
-                Image(systemName: "app.dashed")
-                    .resizable()
-                    .frame(width: 45, height: 45)
+                if let image = image {
+                    Image(nsImage: image)
+                        .resizable()
+                        .frame(width: 45, height: 45)
+                } else {
+                    Image(systemName: "app.dashed")
+                        .resizable()
+                        .frame(width: 45, height: 45)
+                }
             }
             Spacer()
             Text(program.url

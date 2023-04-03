@@ -15,6 +15,7 @@ struct ShellLinkHeader: Hashable {
     var url: URL
     var linkFlags: LinkFlags
     var linkInfo: LinkInfo?
+    var stringData: StringData?
 
     init(url: URL, data: Data, bottle: Bottle) {
         self.url = url
@@ -32,7 +33,15 @@ struct ShellLinkHeader: Hashable {
         }
 
         if linkFlags.contains(.hasLinkInfo) {
-            linkInfo = LinkInfo(data: data, bottle: bottle, offset: &offset)
+            linkInfo = LinkInfo(data: data,
+                                bottle: bottle,
+                                offset: &offset)
+        }
+
+        if linkFlags.contains(.hasIconLocation) {
+            stringData = StringData(data: data,
+                                    bottle: bottle,
+                                    offset: &offset)
         }
     }
 }
@@ -42,6 +51,7 @@ struct LinkFlags: OptionSet, Hashable {
 
     static let hasLinkTargetIDList = LinkFlags(rawValue: 1 << 0)
     static let hasLinkInfo = LinkFlags(rawValue: 1 << 1)
+    static let hasIconLocation = LinkFlags(rawValue: 1 << 6)
 }
 
 struct LinkInfo: Hashable {
@@ -50,6 +60,8 @@ struct LinkInfo: Hashable {
 
     init(data: Data, bottle: Bottle, offset: inout Int) {
         let startOfSection = offset
+
+        let linkInfoSize = data.extract(UInt32.self, offset: offset)
 
         offset += 4
         let linkInfoHeaderSize = data.extract(UInt32.self, offset: offset)
@@ -79,6 +91,8 @@ struct LinkInfo: Hashable {
                                          unicode: false)
             }
         }
+
+        offset = startOfSection + Int(linkInfoSize)
     }
 
     func getURL(data: Data, offset: Int, bottle: Bottle, unicode: Bool) -> URL? {
@@ -89,7 +103,6 @@ struct LinkInfo: Hashable {
                 // UNIX-ify the path
                 string.replace("\\", with: "/")
                 string.replace("C:", with: "\(bottle.url.path)/drive_c")
-                print(string)
                 return URL(filePath: string)
             }
         }
@@ -103,6 +116,32 @@ struct LinkInfoFlags: OptionSet, Hashable {
 
     static let volumeIDAndLocalBasePath = LinkInfoFlags(rawValue: 1 << 0)
     static let commonNetworkRelativeLinkAndPathSuffix = LinkInfoFlags(rawValue: 1 << 1)
+}
+
+struct StringData: Hashable {
+    var iconLocation: URL?
+
+    // This is a naïve implementation to save my sanity.
+    // A real version of this would have to check the LinkFlags to determine
+    // which strings exist in this section, and then properly iterate
+    // and fine the icon location string. Luckily for us, icon location
+    // is the last string that can be in this section so we can be lazy
+    init(data: Data, bottle: Bottle, offset: inout Int) {
+        let stringData = data[offset...]
+        var strings = stringData.nullTerminatedStrings(using: .windowsCP1254)
+        strings = strings.joined().components(separatedBy: "\u{01}")
+
+        if let last = strings.last {
+            if last.hasSuffix(".ico") {
+                if let range = last.range(of: "C:") {
+                    var result = String(last[range.lowerBound...])
+                    result.replace("\\", with: "/")
+                    result.replace("C:", with: "\(bottle.url.path)/drive_c")
+                    iconLocation = URL(filePath: result)
+                }
+            }
+        }
+    }
 }
 
 extension CaseIterable where Self: Equatable {

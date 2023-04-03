@@ -12,4 +12,23 @@ extension Data {
         let data = self[offset..<offset + MemoryLayout<T>.size]
         return data.withUnsafeBytes { $0.loadUnaligned(as: T.self) }
     }
+
+    // Thanks ChatGPT
+    func nullTerminatedStrings(using encoding: String.Encoding = .utf8) -> [String] {
+        var strings = [String]()
+        self.withUnsafeBytes { (ptr: UnsafeRawBufferPointer) in
+            var strStart = ptr.baseAddress!
+            let strEnd = ptr.baseAddress! + self.count
+            while strStart < strEnd {
+                let strPtr = strStart.assumingMemoryBound(to: CChar.self)
+                let strLen = strnlen(strPtr, self.count)
+                let strData = Data(bytes: strPtr, count: strLen)
+                if let str = String(data: strData, encoding: encoding) {
+                    strings.append(str)
+                }
+                strStart = strStart.advanced(by: strLen + 1)
+            }
+        }
+        return strings
+    }
 }
