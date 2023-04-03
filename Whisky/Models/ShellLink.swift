@@ -50,26 +50,51 @@ struct LinkInfo: Hashable {
 
     init(data: Data, bottle: Bottle, offset: inout Int) {
         let startOfSection = offset
-        offset += 8
 
+        offset += 4
+        let linkInfoHeaderSize = data.extract(UInt32.self, offset: offset)
+
+        offset += 4
         let rawLinkInfoFlags = data.extract(UInt32.self, offset: offset)
         linkInfoFlags = LinkInfoFlags(rawValue: rawLinkInfoFlags)
 
         if linkInfoFlags.contains(.volumeIDAndLocalBasePath) {
-            offset += 8
-            let localBasePathOffset = data.extract(UInt32.self, offset: offset)
-            let localPathOffset = startOfSection + Int(localBasePathOffset)
+            if linkInfoHeaderSize >= 0x00000024 {
+                offset += 20
+                let localBasePathOffsetUnicode = data.extract(UInt32.self, offset: offset)
+                let localPathOffset = startOfSection + Int(localBasePathOffsetUnicode)
 
-            let pathData = data[localPathOffset...]
-            if let nullRange = pathData.firstIndex(of: 0) {
-                if var string = String(data: pathData[..<nullRange], encoding: .utf8) {
-                    // UNIX-ify the path
-                    string.replace("\\", with: "/")
-                    string.replace("C:", with: "\(bottle.url.path)/drive_c")
-                    linkDestination = URL(filePath: string)
-                }
+                linkDestination = getURL(data: data,
+                                         offset: localPathOffset,
+                                         bottle: bottle,
+                                         unicode: true)
+            } else {
+                offset += 8
+                let localBasePathOffset = data.extract(UInt32.self, offset: offset)
+                let localPathOffset = startOfSection + Int(localBasePathOffset)
+
+                linkDestination = getURL(data: data,
+                                         offset: localPathOffset,
+                                         bottle: bottle,
+                                         unicode: false)
             }
         }
+    }
+
+    func getURL(data: Data, offset: Int, bottle: Bottle, unicode: Bool) -> URL? {
+        let pathData = data[offset...]
+        if let nullRange = pathData.firstIndex(of: 0) {
+            let encoding: String.Encoding = unicode ? .utf16 : .windowsCP1254
+            if var string = String(data: pathData[..<nullRange], encoding: encoding) {
+                // UNIX-ify the path
+                string.replace("\\", with: "/")
+                string.replace("C:", with: "\(bottle.url.path)/drive_c")
+                print(string)
+                return URL(filePath: string)
+            }
+        }
+
+        return nil
     }
 }
 
