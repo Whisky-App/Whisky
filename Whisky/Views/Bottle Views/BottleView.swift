@@ -121,6 +121,7 @@ struct ShellLinkView: View {
                 Image(nsImage: image)
                     .resizable()
                     .frame(width: 45, height: 45)
+                    .border(.red)
             } else {
                 Image(systemName: "app.dashed")
                     .resizable()
