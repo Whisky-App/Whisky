@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import AppKit
 
 struct ShellLinkHeader: Hashable {
     static func == (lhs: ShellLinkHeader, rhs: ShellLinkHeader) -> Bool {
@@ -119,7 +120,7 @@ struct LinkInfoFlags: OptionSet, Hashable {
 }
 
 struct StringData: Hashable {
-    var iconLocation: URL?
+    var icon: NSImage?
 
     // This is a naïve implementation to save my sanity.
     // A real version of this would have to check the LinkFlags to determine
@@ -137,7 +138,17 @@ struct StringData: Hashable {
                     var result = String(last[range.lowerBound...])
                     result.replace("\\", with: "/")
                     result.replace("C:", with: "\(bottle.url.path)/drive_c")
-                    iconLocation = URL(filePath: result)
+                    let iconLocation = URL(filePath: result)
+
+                    do {
+                        let data = try Data(contentsOf: iconLocation)
+                        if let rep = NSBitmapImageRep(data: data) {
+                            icon = NSImage(size: rep.size)
+                            icon?.addRepresentation(rep)
+                        }
+                    } catch {
+                        print(error)
+                    }
                 }
             }
         }
