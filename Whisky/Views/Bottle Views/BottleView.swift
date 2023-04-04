@@ -142,9 +142,13 @@ struct ShellLinkView: View {
         .frame(width: 90, height: 90)
         .padding(10)
         .onAppear {
-            if let linkInfo = program.linkInfo {
-                if let url = linkInfo.linkDestination {
-                    image = NSWorkspace.shared.icon(forFile: url.path)
+            if let linkInfo = program.linkInfo, let url = linkInfo.linkDestination {
+                image = NSWorkspace.shared.icon(forFile: url.path)
+                do {
+                    print(url.lastPathComponent)
+                    try COFFFileHeader(data: Data(contentsOf: url))
+                } catch {
+                    print(error)
                 }
             }
         }
