@@ -8,6 +8,8 @@
 import Foundation
 
 struct COFFFileHeader: Hashable {
+    var resourceSection: ResourceSection?
+
     init(data: Data) throws {
         var offset: Int = 0x3c
         let signatureOffset = data.extract(UInt16.self, offset: offset)
@@ -30,26 +32,26 @@ struct COFFFileHeader: Hashable {
                 let magic = data.extract(UInt16.self, offset: offset)
                 if magic == 0x10b {
                     // PE32
-                    offset += 112
+                    offset = coffOffset + 112
                     let resourceTableAddress = data.extract(UInt32.self, offset: offset)
 
                     offset += 4
                     let resourceTableSize = data.extract(UInt32.self, offset: offset)
 
-                    try ResourceSection(data: data,
-                                        address: resourceTableAddress,
-                                        size: resourceTableSize)
+                    resourceSection = try ResourceSection(data: data,
+                                                          address: resourceTableAddress,
+                                                          size: resourceTableSize)
                 } else if magic == 0x20b {
                     // PE32+
-                    offset += 128
+                    offset = coffOffset + 128
                     let resourceTableAddress = data.extract(UInt32.self, offset: offset)
 
                     offset += 4
                     let resourceTableSize = data.extract(UInt32.self, offset: offset)
 
-                    try ResourceSection(data: data,
-                                        address: resourceTableAddress,
-                                        size: resourceTableSize)
+                    resourceSection = try ResourceSection(data: data,
+                                                          address: resourceTableAddress,
+                                                          size: resourceTableSize)
                 } else {
                     throw("Could not find magic number in Optional Header")
                 }
@@ -60,6 +62,13 @@ struct COFFFileHeader: Hashable {
 
 struct ResourceSection: Hashable {
     init(data: Data, address: UInt32, size: UInt32) throws {
-        // TODO
+        var offset: Int = Int(address)
+        let numberOfNameEntries = data.extract(UInt16.self, offset: offset)
+
+        offset += 2
+        let numberOfIDEntires = data.extract(UInt16.self, offset: offset)
+        print(numberOfNameEntries)
+        print(numberOfIDEntires)
+        print("\n")
     }
 }
