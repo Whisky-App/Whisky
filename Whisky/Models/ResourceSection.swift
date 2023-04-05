@@ -40,7 +40,7 @@ struct ResourceDataEntry: Hashable, Identifiable {
     var size: UInt32
     var codePage: UInt32
     var reserved: UInt32
-    var icons: [NSImage] = []
+    var icon: NSImage = NSImage()
 
     init(data: Data, rawData: Data, offset: Int, name: String, sectionTable: SectionTable) {
         self.name = name
@@ -57,9 +57,8 @@ struct ResourceDataEntry: Hashable, Identifiable {
         if let offsetToData = resolveRVA(data: data, rva: dataRVA, sectionTable: sectionTable) {
             let iconData = rawData.subdata(in: Int(offsetToData)..<Int(offsetToData + size))
             if let rep = NSBitmapImageRep(data: iconData) {
-                let icon = NSImage(size: rep.size)
+                icon = NSImage(size: rep.size)
                 icon.addRepresentation(rep)
-                icons.append(icon)
             }
         } else {
             print("Failed to resolve RVA")
@@ -90,7 +89,7 @@ struct ResourceDirectoryTable: Hashable, Identifiable {
     var subtables: [ResourceDirectoryTable]
     var entries: [ResourceDataEntry]
 
-    init(data: Data, rawData: Data, offset: Int, name: String, sectionTable: SectionTable) {
+    init(data: Data, rawData: Data, offset: Int, name: String, sectionTable: SectionTable, entries: inout [ResourceDataEntry]) {
         self.name = name
         var offset = offset
         self.characteristics = data.extract(UInt32.self, offset: offset)
@@ -128,21 +127,25 @@ struct ResourceDirectoryTable: Hashable, Identifiable {
                                                                      rawData: rawData,
                                                                      offset: Int(entry.offsetToSubdirectory),
                                                                      name: entry.name,
-                                                                     sectionTable: sectionTable))
+                                                                     sectionTable: sectionTable,
+                                                                     entries: &entries))
                     }
                 } else {
                     self.subtables.append(ResourceDirectoryTable(data: data,
                                                                  rawData: rawData,
                                                                  offset: Int(entry.offsetToSubdirectory),
                                                                  name: entry.name,
-                                                                 sectionTable: sectionTable))
+                                                                 sectionTable: sectionTable,
+                                                                 entries: &entries))
                 }
             } else {
-                self.entries.append(ResourceDataEntry(data: data,
-                                                      rawData: rawData,
-                                                      offset: Int(entry.offsetToData),
-                                                      name: entry.name,
-                                                      sectionTable: sectionTable))
+                let entry = ResourceDataEntry(data: data,
+                                              rawData: rawData,
+                                              offset: Int(entry.offsetToData),
+                                              name: entry.name,
+                                              sectionTable: sectionTable)
+                self.entries.append(entry)
+                entries.append(entry)
             }
         }
     }
@@ -160,6 +163,7 @@ struct ResourceSection: Hashable {
     */
     var data: Data
     var rootDirectoryTable: ResourceDirectoryTable
+    var allEntries: [ResourceDataEntry] = []
 
     init(data: Data, sectionTable: SectionTable, imageBase: UInt32) throws {
         guard let resourceSection = sectionTable.sections.first(where: { $0.name.starts(with: ".rsrc") }) else {
@@ -172,7 +176,8 @@ struct ResourceSection: Hashable {
                                                          rawData: data,
                                                          offset: 0,
                                                          name: "root",
-                                                         sectionTable: sectionTable)
+                                                         sectionTable: sectionTable,
+                                                         entries: &allEntries)
     }
 }
 // swiftlint:enable line_length
