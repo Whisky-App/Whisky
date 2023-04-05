@@ -42,7 +42,7 @@ struct ResourceDataEntry: Hashable, Identifiable {
     var reserved: UInt32
     var icons: [NSImage] = []
 
-    init(data: Data, offset: Int, name: String, sectionTable: SectionTable) {
+    init(data: Data, rawData: Data, offset: Int, name: String, sectionTable: SectionTable) {
         self.name = name
         var offset = offset
         self.dataRVA = data.extract(UInt32.self, offset: offset)
@@ -55,26 +55,22 @@ struct ResourceDataEntry: Hashable, Identifiable {
         offset += 4
 
         if let offsetToData = resolveRVA(data: data, rva: dataRVA, sectionTable: sectionTable) {
-            if offsetToData > data.count || offsetToData + size > data.count {
-                print("Failed to resolve RVA correctly")
-                print("0x\(String(format: "%08X", offsetToData)), RVA: 0x\(String(format: "%08X", dataRVA))")
-            } else {
-                let data = data.subdata(in: Int(offsetToData)..<Int(offsetToData + size))
-                if let rep = NSBitmapImageRep(data: data) {
-                    let icon = NSImage(size: rep.size)
-                    icon.addRepresentation(rep)
-                    icons.append(icon)
-                }
+            let iconData = rawData.subdata(in: Int(offsetToData)..<Int(offsetToData + size))
+            if let rep = NSBitmapImageRep(data: iconData) {
+                let icon = NSImage(size: rep.size)
+                icon.addRepresentation(rep)
+                icons.append(icon)
             }
         } else {
             print("Failed to resolve RVA")
         }
     }
 
-    func resolveRVA(data: Data, rva: UInt32, sectionTable: SectionTable) -> UInt32? {
+    func resolveRVA (data: Data, rva: UInt32, sectionTable: SectionTable) -> UInt32? {
         for section in sectionTable.sections {
             if section.virtualAddress <= rva && rva < (section.virtualAddress + section.virtualSize) {
-                return section.pointerToRawData + (rva - section.virtualAddress)
+                let virtualAddress = section.pointerToRawData + (rva - section.virtualAddress)
+                return virtualAddress
             }
         }
 
@@ -94,7 +90,7 @@ struct ResourceDirectoryTable: Hashable, Identifiable {
     var subtables: [ResourceDirectoryTable]
     var entries: [ResourceDataEntry]
 
-    init(data: Data, offset: Int, name: String, sectionTable: SectionTable) {
+    init(data: Data, rawData: Data, offset: Int, name: String, sectionTable: SectionTable) {
         self.name = name
         var offset = offset
         self.characteristics = data.extract(UInt32.self, offset: offset)
@@ -129,18 +125,21 @@ struct ResourceDirectoryTable: Hashable, Identifiable {
                 if name == "root" {
                     if ResourceTypes(rawValue: entry.id) == .icon {
                         self.subtables.append(ResourceDirectoryTable(data: data,
+                                                                     rawData: rawData,
                                                                      offset: Int(entry.offsetToSubdirectory),
                                                                      name: entry.name,
                                                                      sectionTable: sectionTable))
                     }
                 } else {
                     self.subtables.append(ResourceDirectoryTable(data: data,
+                                                                 rawData: rawData,
                                                                  offset: Int(entry.offsetToSubdirectory),
                                                                  name: entry.name,
                                                                  sectionTable: sectionTable))
                 }
             } else {
                 self.entries.append(ResourceDataEntry(data: data,
+                                                      rawData: rawData,
                                                       offset: Int(entry.offsetToData),
                                                       name: entry.name,
                                                       sectionTable: sectionTable))
@@ -162,12 +161,15 @@ struct ResourceSection: Hashable {
     var data: Data
     var rootDirectoryTable: ResourceDirectoryTable
 
-    init(data: Data, sectionTable: SectionTable) throws {
+    init(data: Data, sectionTable: SectionTable, imageBase: UInt32) throws {
         guard let resourceSection = sectionTable.sections.first(where: { $0.name.starts(with: ".rsrc") }) else {
             throw ResourceError.noResourceSection
         }
         self.data = data.subdata(in: Data.Index(resourceSection.pointerToRawData)..<Data.Index(resourceSection.pointerToRawData + resourceSection.sizeOfRawData))
         self.rootDirectoryTable = ResourceDirectoryTable(data: self.data,
+                                                         // Eventually we should just pass the data once but
+                                                         // my brain hurts and I want to be done with this
+                                                         rawData: data,
                                                          offset: 0,
                                                          name: "root",
                                                          sectionTable: sectionTable)
