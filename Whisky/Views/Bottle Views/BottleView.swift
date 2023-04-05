@@ -18,19 +18,18 @@ struct BottleView: View {
     var body: some View {
         VStack {
             ScrollView {
-                LazyVGrid(columns: gridLayout, alignment: .center) {
-                    ForEach(startMenuPrograms, id: \.self) { program in
-                        NavigationLink {
-                            EmptyView()
-                        } label: {
-                            ShellLinkView(program: program)
+                if startMenuPrograms.count > 0 {
+                    LazyVGrid(columns: gridLayout, alignment: .center) {
+                        ForEach(startMenuPrograms, id: \.self) { program in
+                            NavigationLink {
+                                EmptyView()
+                            } label: {
+                                ShellLinkView(program: program)
+                            }
+                            .buttonStyle(.plain)
                         }
-                        .buttonStyle(.plain)
                     }
-                }
-                .padding()
-                .onAppear {
-                    startMenuPrograms = bottle.updateStartMenuPrograms()
+                    .padding()
                 }
                 NavigationStack {
                     Form {
@@ -51,6 +50,9 @@ struct BottleView: View {
                         }
                     }
                     .formStyle(.grouped)
+                    .onAppear {
+                        startMenuPrograms = bottle.updateStartMenuPrograms()
+                    }
                 }
             }
             Spacer()
