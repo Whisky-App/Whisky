@@ -5,6 +5,7 @@
 "button.cDrive" = "Ouvrir C Drive";
 "button.run" = "Exécuter...";
 "button.ok" = "OK";
+"button.renameBottle" = "Rename Bottle";
 "button.deleteBottle" = "Supprimer la bouteille";
 "button.createBottle" = "Créer une bouteille";
 
