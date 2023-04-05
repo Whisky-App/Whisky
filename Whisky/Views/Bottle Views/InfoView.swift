@@ -12,9 +12,18 @@ struct InfoView: View {
 
     var body: some View {
         Form {
-            Section("Info") {
+            Section("info.title") {
                 InfoItem(label: NSLocalizedString("info.path", comment: ""),
                          value: bottle.url.path)
+                .contextMenu {
+                    Button(action: {
+                        let pasteboard = NSPasteboard.general
+                        pasteboard.clearContents()
+                        pasteboard.setString(bottle.url.path, forType: .string)
+                    }, label: {
+                        Text("info.path.copy")
+                    })
+                }
                 InfoItem(label: NSLocalizedString("info.wine", comment: ""),
                          value: bottle.settings.settings.wineVersion)
                 InfoItem(label: NSLocalizedString("info.win", comment: ""),
