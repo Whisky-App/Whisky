@@ -30,7 +30,7 @@ struct BottleCreationView: View {
                 Text("create.win")
                 Spacer()
                 Picker("", selection: $newBottleVersion) {
-                    ForEach(WinVersion.allCases, id: \.self) {
+                    ForEach(WinVersion.allCases.reversed(), id: \.self) {
                         Text($0.pretty())
                     }
                 }
