@@ -42,7 +42,7 @@ struct ResourceDataEntry: Hashable, Identifiable {
     var reserved: UInt32
     var icon: NSImage = NSImage()
 
-    init(data: Data, rawData: Data, offset: Int, name: String, sectionTable: SectionTable) {
+    init(data: Data, offset: Int, name: String, sectionTable: SectionTable) {
         self.name = name
         var offset = offset
         self.dataRVA = data.extract(UInt32.self, offset: offset)
@@ -55,7 +55,7 @@ struct ResourceDataEntry: Hashable, Identifiable {
         offset += 4
 
         if let offsetToData = resolveRVA(data: data, rva: dataRVA, sectionTable: sectionTable) {
-            let iconData = rawData.subdata(in: Int(offsetToData)..<Int(offsetToData + size))
+            let iconData = data.subdata(in: Int(offsetToData)..<Int(offsetToData + size))
             if let rep = NSBitmapImageRep(data: iconData) {
                 icon = NSImage(size: rep.size)
                 icon.addRepresentation(rep)
@@ -89,7 +89,7 @@ struct ResourceDirectoryTable: Hashable, Identifiable {
     var subtables: [ResourceDirectoryTable]
     var entries: [ResourceDataEntry]
 
-    init(data: Data, rawData: Data, offset: Int, name: String, sectionTable: SectionTable, entries: inout [ResourceDataEntry]) {
+    init(data: Data, address: Int, offset: Int, name: String, sectionTable: SectionTable, entries: inout [ResourceDataEntry]) {
         self.name = name
         var offset = offset
         self.characteristics = data.extract(UInt32.self, offset: offset)
@@ -124,24 +124,23 @@ struct ResourceDirectoryTable: Hashable, Identifiable {
                 if name == "root" {
                     if ResourceTypes(rawValue: entry.id) == .icon {
                         self.subtables.append(ResourceDirectoryTable(data: data,
-                                                                     rawData: rawData,
-                                                                     offset: Int(entry.offsetToSubdirectory),
+                                                                     address: address,
+                                                                     offset: Int(entry.offsetToSubdirectory) + address,
                                                                      name: entry.name,
                                                                      sectionTable: sectionTable,
                                                                      entries: &entries))
                     }
                 } else {
                     self.subtables.append(ResourceDirectoryTable(data: data,
-                                                                 rawData: rawData,
-                                                                 offset: Int(entry.offsetToSubdirectory),
+                                                                 address: address,
+                                                                 offset: Int(entry.offsetToSubdirectory) + address,
                                                                  name: entry.name,
                                                                  sectionTable: sectionTable,
                                                                  entries: &entries))
                 }
             } else {
                 let entry = ResourceDataEntry(data: data,
-                                              rawData: rawData,
-                                              offset: Int(entry.offsetToData),
+                                              offset: Int(entry.offsetToData) + address,
                                               name: entry.name,
                                               sectionTable: sectionTable)
                 self.entries.append(entry)
@@ -161,7 +160,6 @@ struct ResourceSection: Hashable {
 
     A leaf's Type, Name, and Language IDs are determined by the path that is taken through directory tables to reach the leaf. The first table determines Type ID, the second table (pointed to by the directory entry in the first table) determines Name ID, and the third table determines Language ID.
     */
-    var data: Data
     var rootDirectoryTable: ResourceDirectoryTable
     var allEntries: [ResourceDataEntry] = []
 
@@ -169,12 +167,9 @@ struct ResourceSection: Hashable {
         guard let resourceSection = sectionTable.sections.first(where: { $0.name.starts(with: ".rsrc") }) else {
             throw ResourceError.noResourceSection
         }
-        self.data = data.subdata(in: Data.Index(resourceSection.pointerToRawData)..<Data.Index(resourceSection.pointerToRawData + resourceSection.sizeOfRawData))
-        self.rootDirectoryTable = ResourceDirectoryTable(data: self.data,
-                                                         // Eventually we should just pass the data once but
-                                                         // my brain hurts and I want to be done with this
-                                                         rawData: data,
-                                                         offset: 0,
+        self.rootDirectoryTable = ResourceDirectoryTable(data: data,
+                                                         address: Int(resourceSection.pointerToRawData),
+                                                         offset: Int(resourceSection.pointerToRawData),
                                                          name: "root",
                                                          sectionTable: sectionTable,
                                                          entries: &allEntries)
