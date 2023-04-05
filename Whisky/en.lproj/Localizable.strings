@@ -20,7 +20,9 @@
 
 "program.title" = "Installed Programs";
 
+"info.title" = "Info";
 "info.path" = "Path:";
+"info.path.copy" = "Copy Path";
 "info.wine" = "Wine Version:";
 "info.win" = "Windows Version:";
 
@@ -32,3 +34,5 @@
 "create.win" = "Windows version:";
 "create.cancel" = "Cancel";
 "create.create" = "Create";
+
+"check.updates" = "Check for Updates...";
