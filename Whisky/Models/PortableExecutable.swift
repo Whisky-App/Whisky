@@ -32,13 +32,10 @@ struct COFFFileHeader: Hashable {
             for _ in 0..<numberOfSections - 1 {
                 if let name = String(data: data[offset..<offset + 8], encoding: .utf8) {
                     if name.replacingOccurrences(of: "\0", with: "") == ".rsrc" {
-                        offset += 16
-                        let sizeOfRawData = data.extract(UInt32.self, offset: offset)
-
-                        offset += 4
+                        offset += 20
                         let pointerToRawData = data.extract(UInt32.self, offset: offset)
 
-                        try _ = ResourceSection(data: data, address: pointerToRawData)
+                        try resourceSection = ResourceSection(data: data, address: pointerToRawData)
                         break
                     }
                 }
@@ -50,14 +47,21 @@ struct COFFFileHeader: Hashable {
 }
 
 struct ResourceSection: Hashable {
+    var rootDirectory: ImageResourceDirectory
+
     init(data: Data, address: UInt32) throws {
         let offset = Int(address) + 12
-        ImageResourceDirectory(data: data, address: offset, startOfResources: offset)
+        rootDirectory = ImageResourceDirectory(data: data, address: offset, startOfResources: offset)
     }
 }
 
 struct ImageResourceDirectory: Hashable {
-    init(data: Data, address: Int, startOfResources: Int) {
+    var subdirectories: [ImageResourceDirectory] = []
+    var rawData: ImageResourceDataEntry?
+    let depth: Int
+
+    init(data: Data, address: Int, startOfResources: Int, depth: Int = 0) {
+        self.depth = depth
         var offset = address
         let numberOfNameEntries = data.extract(UInt16.self, offset: offset)
 
@@ -67,27 +71,68 @@ struct ImageResourceDirectory: Hashable {
         offset += 2
 
         let totalEntries = numberOfNameEntries + numberOfIDEntires
+        var numberOfNameEntriesIterated = 0
         for _ in 0..<totalEntries {
-            let name = data.extract(UInt32.self, offset: offset)
-            let offsetToData = data.extract(UInt32.self, offset: offset + 4)
+            if depth == 0 {
+                if numberOfNameEntriesIterated < numberOfNameEntries {
+                    numberOfNameEntriesIterated += 1
 
-            let highBit = offsetToData >> 31
-            if highBit != 0 {
-                let offsetToSubdir = (offsetToData << 1) >> 1
-                ImageResourceDirectory(data: data,
-                                       address: Int(offsetToSubdir) + startOfResources,
-                                       startOfResources: startOfResources)
+                    offset += 8
+                } else {
+                    let name = data.extract(UInt32.self, offset: offset)
+                    if ResourceTypes(rawValue: name) == .icon {
+                        appendResource(data: data, offset: &offset, startOfResources: startOfResources)
+                    } else {
+                        offset += 8
+                    }
+                }
             } else {
-                print("Points to raw data")
+                appendResource(data: data, offset: &offset, startOfResources: startOfResources)
             }
-            offset += 8
         }
+    }
+
+    mutating func appendResource(data: Data, offset: inout Int, startOfResources: Int) {
+        let offsetToData = data.extract(UInt32.self, offset: offset + 4)
+        let offsetToSubdir = (offsetToData << 1) >> 1
+
+        let highBit = offsetToData >> 31
+        if highBit != 0 {
+            subdirectories.append(ImageResourceDirectory(data: data,
+                                                         address: Int(offsetToSubdir) + startOfResources,
+                                                         startOfResources: startOfResources,
+                                                         depth: depth + 1))
+        } else {
+            rawData = ImageResourceDataEntry(data: data,
+                                             address: Int(offsetToData) + startOfResources)
+        }
+        offset += 8
     }
 }
 
-extension Int {
-    func printHex() {
-        var hex = String(format: "%02X", self)
-        print("0x\(hex)")
+struct ImageResourceDataEntry: Hashable {
+    init(data: Data, address: Int) {
+        var offset = address
+
+        let offsetToData = data.extract(UInt32.self, offset: offset)
+        offset += 4
+
+        let size = data.extract(UInt32.self, offset: offset)
+        // print(offsetToData)
+        // print(size)
     }
+}
+
+enum ResourceTypes: UInt32 {
+    case cursor = 1
+    case bitmap = 2
+    case icon = 3
+    case menu = 4
+    case dialog = 5
+    case string = 6
+    case fontDir = 7
+    case font = 8
+    case accelerator = 9
+    case rcData = 10
+    case messageTable = 11
 }
