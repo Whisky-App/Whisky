@@ -223,7 +223,7 @@ public class Bottle: Hashable {
     }
 
     @MainActor
-    func rename() {
+    func rename(newName: String) {
 
     }
 

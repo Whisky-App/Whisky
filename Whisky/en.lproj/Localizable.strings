@@ -36,4 +36,8 @@
 "create.cancel" = "Cancel";
 "create.create" = "Create";
 
+"rename.title" = "Rename bottle";
+"rename.name" = "New name:";
+"rename.rename" = "Rename";
+
 "check.updates" = "Check for Updates...";

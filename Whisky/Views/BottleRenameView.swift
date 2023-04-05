@@ -8,34 +8,23 @@
 import SwiftUI
 
 struct BottleRenameView: View {
+    @Binding var bottle: Bottle
     @State var newBottleName: String = ""
-    @State var newBottleVersion: WinVersion = .win7
     @Environment(\.dismiss) var dismiss
 
     var body: some View {
         VStack {
             HStack {
-                Text("create.title")
+                Text("rename.title")
                     .bold()
                 Spacer()
             }
             Divider()
             HStack {
-                Text("create.name")
+                Text("rename.name")
                 Spacer()
                 TextField("", text: $newBottleName)
                     .frame(width: 180)
-            }
-            HStack {
-                Text("create.win")
-                Spacer()
-                Picker("", selection: $newBottleVersion) {
-                    ForEach(WinVersion.allCases, id: \.self) {
-                        Text($0.pretty())
-                    }
-                }
-                .labelsHidden()
-                .frame(width: 180)
             }
             Spacer()
             HStack {
@@ -44,9 +33,8 @@ struct BottleRenameView: View {
                     dismiss()
                 }
                 .keyboardShortcut(.cancelAction)
-                Button("create.create") {
-                    BottleVM.shared.createNewBottle(bottleName: newBottleName,
-                                                    winVersion: newBottleVersion)
+                Button("rename.rename") {
+                    bottle.rename(newName: newBottleName)
                     dismiss()
                 }
                 .keyboardShortcut(.defaultAction)
@@ -54,11 +42,14 @@ struct BottleRenameView: View {
         }
         .padding()
         .frame(width: 350, height: 150)
+        .onAppear {
+            newBottleName = bottle.name
+        }
     }
 }
 
 struct BottleRenameView_Previews: PreviewProvider {
     static var previews: some View {
-        BottleRenameView()
+        BottleRenameView(bottle: .constant(Bottle()))
     }
 }
