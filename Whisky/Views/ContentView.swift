@@ -11,6 +11,7 @@ struct ContentView: View {
     @EnvironmentObject var bottleVM: BottleVM
     @State var selected: URL?
     @State var showBottleCreation: Bool = false
+    @State var showBottleRename: Bool = false
 
     var body: some View {
         NavigationSplitView {
@@ -21,6 +22,11 @@ struct ContentView: View {
                             bottle.delete()
                         } label: {
                             Text("button.deleteBottle")
+                        }
+                        Button {
+                            bottle.rename()
+                        } label: {
+                            Text("button.renameBottle")
                         }
                     }
             }
@@ -51,6 +57,9 @@ struct ContentView: View {
         }
         .sheet(isPresented: $showBottleCreation) {
             BottleCreationView()
+        }
+        .sheet(isPresented: $showBottleRename) {
+
         }
         .onAppear {
             bottleVM.loadBottles()

@@ -148,7 +148,7 @@ struct ShellLinkView: View {
                 image = NSWorkspace.shared.icon(forFile: url.path)
                 do {
                     print(url.lastPathComponent)
-                    _ = try COFFFileHeader(data: Data(contentsOf: url))
+                    _ = try PEFile(data: Data(contentsOf: url))
                 } catch {
                     print(error)
                 }
