@@ -29,6 +29,8 @@
 		6E50D98329CD6066008C39F6 /* BottleVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E50D98229CD6066008C39F6 /* BottleVM.swift */; };
 		6E50D98529CDF25B008C39F6 /* BottleCreationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E50D98429CDF25B008C39F6 /* BottleCreationView.swift */; };
 		6E5197D229D7202100CF655E /* BottleSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E5197D129D7202100CF655E /* BottleSettings.swift */; };
+		6EA2D47E29DDAE5E00C84668 /* BottleRenameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EA2D47D29DDAE5E00C84668 /* BottleRenameView.swift */; };
+		6EA2D48029DDC2BA00C84668 /* ResourceSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EA2D47F29DDC2BA00C84668 /* ResourceSection.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -57,6 +59,8 @@
 		6E50D98429CDF25B008C39F6 /* BottleCreationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottleCreationView.swift; sourceTree = "<group>"; };
 		6E5197D129D7202100CF655E /* BottleSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottleSettings.swift; sourceTree = "<group>"; };
 		6E899D1129CFC41D00A4A083 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		6EA2D47D29DDAE5E00C84668 /* BottleRenameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottleRenameView.swift; sourceTree = "<group>"; };
+		6EA2D47F29DDC2BA00C84668 /* ResourceSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResourceSection.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -139,6 +143,7 @@
 				6E40495729CCA19C006E3F1B /* ContentView.swift */,
 				6E064B1329DD331F00D9A2D2 /* SparkleView.swift */,
 				6E50D98429CDF25B008C39F6 /* BottleCreationView.swift */,
+				6EA2D47D29DDAE5E00C84668 /* BottleRenameView.swift */,
 				6E355E5D29D7D85D002D83BE /* ProgramView.swift */,
 				6E355E5629D78202002D83BE /* Bottle Views */,
 			);
@@ -161,6 +166,7 @@
 				6E5197D129D7202100CF655E /* BottleSettings.swift */,
 				6E26058529D9267B00DDD788 /* ShellLink.swift */,
 				6E26058B29DB14A500DDD788 /* PortableExecutable.swift */,
+				6EA2D47F29DDC2BA00C84668 /* ResourceSection.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -275,12 +281,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6EA2D48029DDC2BA00C84668 /* ResourceSection.swift in Sources */,
 				6E40495829CCA19C006E3F1B /* ContentView.swift in Sources */,
 				6E355E5C29D7830C002D83BE /* InfoView.swift in Sources */,
 				6E50D98029CD0850008C39F6 /* Wine.swift in Sources */,
 				6E5197D229D7202100CF655E /* BottleSettings.swift in Sources */,
 				6E355E5A29D782B2002D83BE /* ProgramsView.swift in Sources */,
 				6E355E5829D78249002D83BE /* ConfigView.swift in Sources */,
+				6EA2D47E29DDAE5E00C84668 /* BottleRenameView.swift in Sources */,
 				6E50D98529CDF25B008C39F6 /* BottleCreationView.swift in Sources */,
 				6E40498329CCA91B006E3F1B /* Bottle.swift in Sources */,
 				6E26058A29D9282000DDD788 /* DataExtensions.swift in Sources */,

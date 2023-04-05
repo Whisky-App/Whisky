@@ -222,6 +222,11 @@ public class Bottle: Hashable {
         }
     }
 
+    @MainActor
+    func rename() {
+
+    }
+
     init() {
         self.settings = BottleSettings(bottleUrl: url,
                                              name: url.lastPathComponent)

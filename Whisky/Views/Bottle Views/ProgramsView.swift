@@ -40,12 +40,12 @@ struct ProgramItemView: View {
             Spacer()
             if showButtons {
                 Group {
-                    Button(action: {
-                    }, label: {
+                    Button {
+                    } label: {
                         Image(systemName: "ellipsis.circle.fill")
-                    })
+                    }
                     .buttonStyle(.plain)
-                    Button(action: {
+                    Button {
                         Task(priority: .userInitiated) {
                             do {
                                 try await Wine.runProgram(bottle: bottle,
@@ -59,9 +59,9 @@ struct ProgramItemView: View {
                                 alert.runModal()
                             }
                         }
-                    }, label: {
+                    } label: {
                         Image(systemName: "play.circle.fill")
-                    })
+                    }
                     .buttonStyle(.plain)
                 }
             }

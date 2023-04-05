@@ -16,13 +16,13 @@ struct InfoView: View {
                 InfoItem(label: NSLocalizedString("info.path", comment: ""),
                          value: bottle.url.path)
                 .contextMenu {
-                    Button(action: {
+                    Button {
                         let pasteboard = NSPasteboard.general
                         pasteboard.clearContents()
                         pasteboard.setString(bottle.url.path, forType: .string)
-                    }, label: {
+                    } label: {
                         Text("info.path.copy")
-                    })
+                    }
                 }
                 InfoItem(label: NSLocalizedString("info.wine", comment: ""),
                          value: bottle.settings.settings.wineVersion)
