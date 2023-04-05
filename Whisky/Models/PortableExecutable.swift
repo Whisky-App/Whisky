@@ -115,7 +115,7 @@ struct ImageResourceDataEntry: Hashable {
         var offset = address
 
         // Shit's fucked cap'ain
-        // Idk why these values are wong, they shouldn't be but idk anymore
+        // Idk why these values are wrong, they shouldn't be but idk anymore
         if let offsetToData = resolveRVA(data: data,
                                          rva: data.extract(UInt32.self, offset: offset)) {
             offset += 4
