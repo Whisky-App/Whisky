@@ -29,10 +29,17 @@ struct COFFFileHeader: Hashable {
 
             offset += Int(sizeOfOptionalHeader) + 4
 
-            for index in 0..<numberOfSections - 1 {
+            for _ in 0..<numberOfSections - 1 {
                 if let name = String(data: data[offset..<offset + 8], encoding: .utf8) {
                     if name.replacingOccurrences(of: "\0", with: "") == ".rsrc" {
-                        print("Hallelujah")
+                        offset += 16
+                        let sizeOfRawData = data.extract(UInt32.self, offset: offset)
+
+                        offset += 4
+                        let pointerToRawData = data.extract(UInt32.self, offset: offset)
+
+                        try _ = ResourceSection(data: data, address: pointerToRawData)
+                        break
                     }
                 }
 
@@ -43,19 +50,38 @@ struct COFFFileHeader: Hashable {
 }
 
 struct ResourceSection: Hashable {
-    init(data: Data, address: UInt32, size: UInt32) throws {
-        var offset: Int = Int(address)
-        print(address)
-        // let numberOfNameEntries = data.extract(UInt16.self, offset: offset)
+    init(data: Data, address: UInt32) throws {
+        let offset = Int(address) + 12
+        ImageResourceDirectory(data: data, address: offset, startOfResources: offset)
+    }
+}
+
+struct ImageResourceDirectory: Hashable {
+    init(data: Data, address: Int, startOfResources: Int) {
+        var offset = address
+        let numberOfNameEntries = data.extract(UInt16.self, offset: offset)
 
         offset += 2
-        // let numberOfIDEntires = data.extract(UInt16.self, offset: offset)
+        let numberOfIDEntires = data.extract(UInt16.self, offset: offset)
 
         offset += 2
-        // let nameOffset = data.extract(UInt32.self, offset: offset)
-        // print(offset)
 
-        print("\n")
+        let totalEntries = numberOfNameEntries + numberOfIDEntires
+        for _ in 0..<totalEntries {
+            let name = data.extract(UInt32.self, offset: offset)
+            let offsetToData = data.extract(UInt32.self, offset: offset + 4)
+
+            let highBit = offsetToData >> 31
+            if highBit != 0 {
+                let offsetToSubdir = (offsetToData << 1) >> 1
+                ImageResourceDirectory(data: data,
+                                       address: Int(offsetToSubdir) + startOfResources,
+                                       startOfResources: startOfResources)
+            } else {
+                print("Points to raw data")
+            }
+            offset += 8
+        }
     }
 }
 
