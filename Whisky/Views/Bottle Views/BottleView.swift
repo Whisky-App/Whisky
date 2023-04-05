@@ -146,7 +146,7 @@ struct ShellLinkView: View {
                 image = NSWorkspace.shared.icon(forFile: url.path)
                 do {
                     print(url.lastPathComponent)
-                    let header = try COFFFileHeader(data: Data(contentsOf: url))
+                    let _ = try COFFFileHeader(data: Data(contentsOf: url))
                 } catch {
                     print(error)
                 }
