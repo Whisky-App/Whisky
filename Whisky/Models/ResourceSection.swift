@@ -89,7 +89,13 @@ struct ResourceDirectoryTable: Hashable, Identifiable {
     var subtables: [ResourceDirectoryTable]
     var entries: [ResourceDataEntry]
 
-    init(data: Data, address: Int, offset: Int, name: String, sectionTable: SectionTable, entries: inout [ResourceDataEntry]) {
+    // swiftlint:disable:next function_body_length
+    init(data: Data,
+         address: Int,
+         offset: Int,
+         name: String,
+         sectionTable: SectionTable,
+         entries: inout [ResourceDataEntry]) {
         self.name = name
         var offset = offset
         self.characteristics = data.extract(UInt32.self, offset: offset)
@@ -185,15 +191,6 @@ struct ResourceError: Error {
 }
 
 enum ResourceTypes: UInt32 {
-    case cursor = 1
-    case bitmap = 2
     case icon = 3
-    case menu = 4
-    case dialog = 5
-    case string = 6
-    case fontDir = 7
-    case font = 8
-    case accelerator = 9
-    case rcData = 10
-    case messageTable = 11
+    case groupIcon = 14
 }
