@@ -24,7 +24,7 @@ struct ContentView: View {
                             Text("button.deleteBottle")
                         }
                         Button {
-                            bottle.rename()
+                            // bottle.rename()
                         } label: {
                             Text("button.renameBottle")
                         }
