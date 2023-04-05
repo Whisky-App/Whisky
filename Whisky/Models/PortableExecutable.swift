@@ -235,6 +235,8 @@ struct PEFile: Hashable {
             throw PEError.invalidPEFile
         }
         coffFileHeader = try COFFFileHeader(data: data)
-        resourceSection = try ResourceSection(data: data, sectionTable: coffFileHeader.sectionTable)
+        resourceSection = try ResourceSection(data: data,
+                                              sectionTable: coffFileHeader.sectionTable,
+                                              imageBase: coffFileHeader.optionalHeader.imageBase)
     }
 }
