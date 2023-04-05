@@ -29,7 +29,7 @@ struct COFFFileHeader: Hashable {
 
             offset += Int(sizeOfOptionalHeader) + 4
 
-            for _ in 0..<numberOfSections - 1 {
+            for _ in 0..<numberOfSections {
                 if let name = String(data: data[offset..<offset + 8], encoding: .utf8) {
                     if name.replacingOccurrences(of: "\0", with: "") == ".rsrc" {
                         offset += 20
@@ -114,12 +114,37 @@ struct ImageResourceDataEntry: Hashable {
     init(data: Data, address: Int) {
         var offset = address
 
-        let offsetToData = data.extract(UInt32.self, offset: offset)
-        offset += 4
+        // Shit's fucked cap'ain
+        // Idk why these values are wong, they shouldn't be but idk anymore
+        if let offsetToData = resolveRVA(data: data,
+                                         rva: data.extract(UInt32.self, offset: offset)) {
+            offset += 4
 
-        let size = data.extract(UInt32.self, offset: offset)
-        // print(offsetToData)
-        // print(size)
+            let size = data.extract(UInt32.self, offset: offset)
+            print(offsetToData)
+            print(size)
+
+            // let data = data.subdata(in: Int(offsetToData)..<Int(offsetToData + size))
+        }
+    }
+
+    func resolveRVA(data: Data, rva: UInt32) -> UInt32? {
+        var offset: Int = 0x3c + 6
+        let numberOfSections = data.extract(UInt16.self, offset: offset)
+
+        for _ in 0..<numberOfSections {
+            let virtualSize = data.extract(UInt32.self, offset: offset + 8)
+            let virtualAddress = data.extract(UInt32.self, offset: offset + 12)
+            let pointerToRawData = data.extract(UInt32.self, offset: offset + 20)
+
+            if virtualAddress <= rva && rva < (virtualAddress + virtualSize) {
+                return pointerToRawData + (rva - virtualAddress)
+            }
+
+            offset += 0x28
+        }
+
+        return nil
     }
 }
 
