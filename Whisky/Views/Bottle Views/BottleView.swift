@@ -147,6 +147,7 @@ struct ShellLinkView: View {
             if let linkInfo = program.linkInfo, let url = linkInfo.linkDestination {
                 image = NSWorkspace.shared.icon(forFile: url.path)
                 do {
+                    print(url.lastPathComponent)
                     let peFile = try PEFile(data: Data(contentsOf: url))
                     var icons: [NSImage] = []
                     if let resourceSection = peFile.resourceSection {
