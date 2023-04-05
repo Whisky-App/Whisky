@@ -41,6 +41,10 @@ class BottleSettings {
         do {
             let data = try Data(contentsOf: settingsUrl)
             settings = try PropertyListDecoder().decode(BottleSettingsData.self, from: data)
+            if settings.wineVersion != BottleSettingsData().wineVersion {
+                print("Bottle has a different wine version!")
+                settings.wineVersion = BottleSettingsData().wineVersion
+            }
             return true
         } catch {
             print(error)
