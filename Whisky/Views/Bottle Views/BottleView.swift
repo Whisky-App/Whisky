@@ -7,6 +7,7 @@
 
 import SwiftUI
 import UniformTypeIdentifiers
+import QuickLookThumbnailing
 
 struct BottleView: View {
     @Binding var bottle: Bottle
@@ -145,25 +146,14 @@ struct ShellLinkView: View {
         .padding(10)
         .onAppear {
             if let linkInfo = program.linkInfo, let url = linkInfo.linkDestination {
-                image = NSWorkspace.shared.icon(forFile: url.path)
-                do {
-                    print(url.lastPathComponent)
-                    let peFile = try PEFile(data: Data(contentsOf: url))
-                    var icons: [NSImage] = []
-                    if let resourceSection = peFile.resourceSection {
-                        for entries in resourceSection.allEntries where entries.icon.isValid {
-                            icons.append(entries.icon)
-                        }
-                    } else {
-                        print("No resource section")
-                        return
+                let thumbnail = QLThumbnailGenerator.Request(fileAt: url,
+                                                             size: CGSize(width: 512, height: 512),
+                                                             scale: 1,
+                                                             representationTypes: .thumbnail)
+                QLThumbnailGenerator.shared.generateBestRepresentation(for: thumbnail) { rep, _ in
+                    if let rep = rep {
+                        image = rep.nsImage
                     }
-
-                    if icons.count > 0 {
-                        image = icons[0]
-                    }
-                } catch {
-                    print(error)
                 }
             }
         }
