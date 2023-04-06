@@ -12,19 +12,25 @@ struct ProgramsView: View {
     @State var programs: [URL] = []
 
     var body: some View {
-        Form {
-            Section("program.title") {
-                List {
-                    ForEach(programs, id: \.self) { program in
-                        ProgramItemView(bottle: bottle, program: program)
+        NavigationStack {
+            Form {
+                Section("program.title") {
+                    List {
+                        ForEach(programs, id: \.self) { program in
+                            NavigationLink {
+                                ProgramView(program: .constant(Program(name: program.lastPathComponent, url: program)))
+                            } label: {
+                                ProgramItemView(bottle: bottle, program: program)
+                            }
+                        }
                     }
                 }
             }
-        }
-        .formStyle(.grouped)
-        .navigationTitle("\(bottle.name) \(NSLocalizedString("tab.programs", comment: ""))")
-        .onAppear {
-            programs = bottle.updateInstalledPrograms()
+            .formStyle(.grouped)
+            .navigationTitle("\(bottle.name) \(NSLocalizedString("tab.programs", comment: ""))")
+            .onAppear {
+                programs = bottle.updateInstalledPrograms()
+            }
         }
     }
 }
@@ -39,31 +45,24 @@ struct ProgramItemView: View {
             Text(program.lastPathComponent)
             Spacer()
             if showButtons {
-                Group {
-                    Button {
-                    } label: {
-                        Image(systemName: "ellipsis.circle.fill")
-                    }
-                    .buttonStyle(.plain)
-                    Button {
-                        Task(priority: .userInitiated) {
-                            do {
-                                try await Wine.runProgram(bottle: bottle,
-                                                          path: program.path)
-                            } catch {
-                                let alert = NSAlert()
-                                alert.messageText = "alert.message"
-                                alert.informativeText = "alert.info" + " \(program.lastPathComponent)"
-                                alert.alertStyle = .critical
-                                alert.addButton(withTitle: "button.ok")
-                                alert.runModal()
-                            }
+                Button {
+                    Task(priority: .userInitiated) {
+                        do {
+                            try await Wine.runProgram(bottle: bottle,
+                                                      path: program.path)
+                        } catch {
+                            let alert = NSAlert()
+                            alert.messageText = "alert.message"
+                            alert.informativeText = "alert.info" + " \(program.lastPathComponent)"
+                            alert.alertStyle = .critical
+                            alert.addButton(withTitle: "button.ok")
+                            alert.runModal()
                         }
-                    } label: {
-                        Image(systemName: "play.circle.fill")
                     }
-                    .buttonStyle(.plain)
+                } label: {
+                    Image(systemName: "play.circle.fill")
                 }
+                .buttonStyle(.plain)
             }
         }
         .padding(4)
