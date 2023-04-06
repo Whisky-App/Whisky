@@ -11,24 +11,11 @@ struct ContentView: View {
     @EnvironmentObject var bottleVM: BottleVM
     @State var selected: URL?
     @State var showBottleCreation: Bool = false
-    @State var showBottleRename: Bool = false
 
     var body: some View {
         NavigationSplitView {
             List(bottleVM.bottles, id: \.url, selection: $selected) { bottle in
-                Text(bottle.name)
-                    .contextMenu {
-                        Button {
-                            bottle.delete()
-                        } label: {
-                            Text("button.deleteBottle")
-                        }
-                        Button {
-                            // bottle.rename()
-                        } label: {
-                            Text("button.renameBottle")
-                        }
-                    }
+                BottleListEntry(bottle: .constant(bottle))
             }
         } detail: {
             if let url = selected {
@@ -58,12 +45,33 @@ struct ContentView: View {
         .sheet(isPresented: $showBottleCreation) {
             BottleCreationView()
         }
-        .sheet(isPresented: $showBottleRename) {
-
-        }
         .onAppear {
             bottleVM.loadBottles()
         }
+    }
+}
+
+struct BottleListEntry: View {
+    @Binding var bottle: Bottle
+    @State var showBottleRename: Bool = false
+
+    var body: some View {
+        Text(bottle.name)
+            .sheet(isPresented: $showBottleRename) {
+                BottleRenameView(bottle: .constant(bottle))
+            }
+            .contextMenu {
+                Button {
+                    showBottleRename.toggle()
+                } label: {
+                    Text("button.renameBottle")
+                }
+                Button {
+                    bottle.delete()
+                } label: {
+                    Text("button.deleteBottle")
+                }
+            }
     }
 }
 

@@ -5,8 +5,8 @@
 "button.cDrive" = "Open C Drive";
 "button.run" = "Run...";
 "button.ok" = "OK";
-"button.renameBottle" = "Rename Bottle";
-"button.deleteBottle" = "Delete Bottle";
+"button.renameBottle" = "Rename";
+"button.deleteBottle" = "Delete...";
 "button.createBottle" = "Create Bottle";
 
 "config.title.dxvk" = "DXVK";

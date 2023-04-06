@@ -224,7 +224,22 @@ public class Bottle: Hashable {
 
     @MainActor
     func rename(newName: String) {
+        let oldPlist = url.appendingPathComponent(name)
+                          .appendingPathExtension("plist")
+        let newPlist = url.appendingPathComponent(newName)
+                          .appendingPathExtension("plist")
 
+        let oldFolder = url
+        let newFolder = url.deletingLastPathComponent()
+                           .appendingPathComponent(newName)
+
+        do {
+            try FileManager.default.moveItem(at: oldPlist, to: newPlist)
+            try FileManager.default.moveItem(at: oldFolder, to: newFolder)
+            BottleVM.shared.loadBottles()
+        } catch {
+            print(error)
+        }
     }
 
     init() {
