@@ -144,7 +144,7 @@ struct ShellLinkView: View {
             Spacer()
             Text(program.url
                 .deletingPathExtension()
-                .lastPathComponent)
+                .lastPathComponent + "\n")
                 .multilineTextAlignment(.center)
                 .lineLimit(2)
         }
