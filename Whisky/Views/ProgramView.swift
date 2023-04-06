@@ -141,7 +141,10 @@ struct ArgumentEditorButton: ButtonStyle {
         configuration.label
             .frame(width: 15, height: 15)
             .padding(4)
-            .background(.regularMaterial)
+            // Without this the selectable area is reduced to just
+            // the icons which isn't great
+            .background(Color(nsColor: NSColor.windowBackgroundColor)
+                .opacity(0.001))
             .clipShape(RoundedRectangle(cornerRadius: 5))
     }
 }
