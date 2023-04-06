@@ -49,6 +49,7 @@ struct InfoItem: View {
                 .background(.background)
                 .cornerRadius(5)
                 .font(.system(.body, design: .monospaced))
+                .lineLimit(2)
         }
     }
 }
