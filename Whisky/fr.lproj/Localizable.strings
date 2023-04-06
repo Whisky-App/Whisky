@@ -21,6 +21,7 @@
 "config.winecfg" = "Ouvrir la Configuration Wine";
 
 "program.title" = "Programmes Installés";
+"program.env" = "Environment Variables";
 
 "info.title" = "Info";
 "info.path" = "Chemin :";
@@ -29,7 +30,7 @@
 "info.win" = "Version de Windows :";
 
 "alert.message" = "Impossible d'ouvrir le programme !";
-"alert.info" = "Échec de l'ouverture ";
+"alert.info" = "Failed to open";
 
 "create.title" = "Créer une nouvelle bouteille";
 "create.name" = "Nom de la bouteille :";
