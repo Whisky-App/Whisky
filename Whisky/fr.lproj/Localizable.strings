@@ -5,27 +5,39 @@
 "button.cDrive" = "Ouvrir C Drive";
 "button.run" = "Exécuter...";
 "button.ok" = "OK";
-"button.deleteBottle" = "Supprimer la bouteille";
+"button.renameBottle" = "Rename";
+"button.deleteBottle" = "Delete...";
 "button.createBottle" = "Créer une bouteille";
 
+"config.title.dxvk" = "DXVK";
 "config.dxvk" = "DXVK";
 "config.dxvkHud" = "HUD DXVK";
-"config.esync" = "ESync";
+"config.title.metal" = "Metal";
 "config.metalHud" = "HUD Metal";
 "config.metalTrace" = "Trace de Metal";
+"config.metalTrace.info" = "Allows you to capture GPU workload in Xcode";
+"config.esync" = "ESync";
 "config.winecfg" = "Ouvrir la Configuration Wine";
 
 "program.title" = "Programmes Installés";
 
+"info.title" = "Info";
 "info.path" = "Chemin :";
+"info.path.copy" = "Copy Path";
 "info.wine" = "Version de Wine :";
 "info.win" = "Version de Windows :";
 
-"alert.message" = "Failed to open program!";
-"alert.info" = "Failed to open ";
+"alert.message" = "Impossible d'ouvrir le programme !";
+"alert.info" = "Échec de l'ouverture ";
 
-"create.title" = "Create a new bottle";
-"create.name" = "Bottle name:";
-"create.win" = "Windows version:";
-"create.cancel" = "Cancel";
-"create.create" = "Create";
+"create.title" = "Créer une nouvelle bouteille";
+"create.name" = "Nom de la bouteille :";
+"create.win" = "Version de Windows :";
+"create.cancel" = "Annuler";
+"create.create" = "Créer";
+
+"rename.title" = "Rename bottle";
+"rename.name" = "New name:";
+"rename.rename" = "Rename";
+
+"check.updates" = "Check for Updates...";
