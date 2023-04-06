@@ -20,22 +20,21 @@ struct BottleView: View {
         VStack {
             ScrollView {
                 if startMenuPrograms.count > 0 {
-                    LazyVGrid(columns: gridLayout, alignment: .center) {
-                        ForEach(startMenuPrograms, id: \.self) { link in
-                            Button {
-                                Task(priority: .userInitiated) {
-                                    let program = Program(name: link.url.lastPathComponent,
-                                                          url: link.url,
-                                                          bottle: bottle)
-                                    await program.run()
+                    NavigationStack {
+                        LazyVGrid(columns: gridLayout, alignment: .center) {
+                            ForEach(startMenuPrograms, id: \.self) { link in
+                                NavigationLink {
+                                    if let link = link.linkInfo, let program = link.program {
+                                        ProgramView(program: .constant(program))
+                                    }
+                                } label: {
+                                    ShellLinkView(link: link)
                                 }
-                            } label: {
-                                ShellLinkView(link: link)
+                                .buttonStyle(.plain)
                             }
-                            .buttonStyle(.plain)
                         }
+                        .padding()
                     }
-                    .padding()
                 }
                 NavigationStack {
                     Form {
@@ -143,8 +142,8 @@ struct ShellLinkView: View {
         .frame(width: 90, height: 90)
         .padding(10)
         .onAppear {
-            if let linkInfo = link.linkInfo, let url = linkInfo.linkDestination {
-                let thumbnail = QLThumbnailGenerator.Request(fileAt: url,
+            if let linkInfo = link.linkInfo, let program = linkInfo.program {
+                let thumbnail = QLThumbnailGenerator.Request(fileAt: program.url,
                                                              size: CGSize(width: 512, height: 512),
                                                              scale: 1,
                                                              representationTypes: .thumbnail)
