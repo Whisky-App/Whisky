@@ -22,6 +22,9 @@ struct WhiskyApp: App {
         WindowGroup {
             ContentView()
                 .environmentObject(BottleVM.shared)
+                .onAppear {
+                    NSWindow.allowsAutomaticWindowTabbing = false
+                }
         }
         .commands {
             CommandGroup(after: .appInfo) {
