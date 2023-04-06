@@ -13,10 +13,8 @@ struct PEError: Error {
     static let invalidPEFile = PEError(message: "Invalid PE file")
 }
 
-struct PESection: Hashable, Identifiable {
-    var id: String { name }
+struct PESection: Hashable {
     var name: String
-    var nameAsUInt64: UInt64
     var virtualSize: UInt32
     var virtualAddress: UInt32
     var sizeOfRawData: UInt32
@@ -30,8 +28,7 @@ struct PESection: Hashable, Identifiable {
 
     init(data: Data, offset: Int) {
         var offset = offset
-        nameAsUInt64 = data.extract(UInt64.self, offset: offset)
-        self.name = String(data: Data(bytes: &nameAsUInt64, count: 8), encoding: .utf8) ?? ""
+        self.name = String(data: data[offset..<offset + 8], encoding: .utf8) ?? ""
         offset += 8
         self.virtualSize = data.extract(UInt32.self, offset: offset)
         offset += 4
