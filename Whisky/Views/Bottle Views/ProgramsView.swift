@@ -19,7 +19,7 @@ struct ProgramsView: View {
                         NavigationLink {
                             ProgramView(program: program)
                         } label: {
-                            ProgramItemView(bottle: bottle, program: program.url)
+                            ProgramItemView(bottle: bottle, program: program)
                         }
                     }
                 }
@@ -35,23 +35,22 @@ struct ProgramsView: View {
 
 struct ProgramItemView: View {
     @State var bottle: Bottle
-    @Binding var program: URL
+    @Binding var program: Program
     @State var showButtons: Bool = false
 
     var body: some View {
         HStack {
-            Text(program.lastPathComponent)
+            Text(program.name)
             Spacer()
             if showButtons {
                 Button {
                     Task(priority: .userInitiated) {
                         do {
-                            try await Wine.runProgram(bottle: bottle,
-                                                      path: program.path)
+                            try await Wine.runProgram(program: program)
                         } catch {
                             let alert = NSAlert()
                             alert.messageText = "alert.message"
-                            alert.informativeText = "alert.info" + " \(program.lastPathComponent)"
+                            alert.informativeText = "alert.info" + " \(program.name)"
                             alert.alertStyle = .critical
                             alert.addButton(withTitle: "button.ok")
                             alert.runModal()

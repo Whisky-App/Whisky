@@ -11,7 +11,8 @@ import QuickLookThumbnailing
 struct ProgramView: View {
     @Binding var program: Program
     @State var image: NSImage?
-    @State var arguments: [String: String] = [:]
+    @State var environment: [String: String] = [:]
+    @State var programLoading: Bool = false
 
     var body: some View {
         VStack {
@@ -30,8 +31,8 @@ struct ProgramView: View {
                         }
                     }
                 }
-                Section("Environment Variables") {
-                    ArgumentEditor(arguments: $arguments)
+                Section("program.env") {
+                    ArgumentEditor(environment: $environment)
                 }
             }
             .formStyle(.grouped)
@@ -40,6 +41,20 @@ struct ProgramView: View {
                 Spacer()
                 Button("button.showInFinder") {
                     NSWorkspace.shared.activateFileViewerSelecting([program.url])
+                }
+                Button("button.run") {
+                    programLoading = true
+                    Task(priority: .userInitiated) {
+                        await program.run()
+                        programLoading = false
+                    }
+                }
+                .disabled(programLoading)
+                if programLoading {
+                    Spacer()
+                        .frame(width: 10)
+                    ProgressView()
+                        .controlSize(.small)
                 }
             }
             .padding()
@@ -73,25 +88,25 @@ struct ProgramView: View {
                 }
             }
 
-            arguments = program.settings.settings.arguments
+            environment = program.settings.settings.environment
         }
-        .onChange(of: arguments) { newValue in
-            program.settings.settings.arguments = newValue
+        .onChange(of: environment) { newValue in
+            program.settings.settings.environment = newValue
         }
     }
 }
 
 struct ArgumentEditor: View {
-    @Binding var arguments: [String: String]
+    @Binding var environment: [String: String]
     @State var selection = Set<String>()
 
     var body: some View {
         VStack {
-            List(arguments.keys.sorted(by: <), id: \.self, selection: $selection) { key in
-                if let value = arguments[key] {
+            List(environment.keys.sorted(by: <), id: \.self, selection: $selection) { key in
+                if let value = environment[key] {
                     KeyItem(key: key,
                             value: value,
-                            arguments: $arguments)
+                            environment: $environment)
                 }
             }
             .listStyle(.inset(alternatesRowBackgrounds: true))
@@ -100,7 +115,7 @@ struct ArgumentEditor: View {
                 Spacer()
                 Button {
                     // Need to set this in a better way cause this can break
-                    arguments["VAR_\(arguments.count + 1)"] = ""
+                    environment["VAR_\(environment.count + 1)"] = ""
                 } label: {
                     Image(systemName: "plus")
                 }
@@ -109,7 +124,7 @@ struct ArgumentEditor: View {
                     .frame(height: 20)
                 Button {
                     for key in selection {
-                        arguments.removeValue(forKey: key)
+                        environment.removeValue(forKey: key)
                     }
                     selection.removeAll()
                 } label: {
@@ -132,15 +147,15 @@ struct ArgumentEditorButton: ButtonStyle {
 }
 
 struct KeyItem: View {
-    @Binding var arguments: [String: String]
+    @Binding var environment: [String: String]
     @State var key: String
     @State var newKey: String
     @State var value: String
     @FocusState private var isKeyFieldFocused: Bool
     @FocusState private var isValueFieldFocused: Bool
 
-    init(key: String, value: String, arguments: Binding<[String: String]>) {
-        self._arguments = arguments
+    init(key: String, value: String, environment: Binding<[String: String]>) {
+        self._environment = environment
         self.key = key
         self.newKey = key
         self.value = value
@@ -156,8 +171,8 @@ struct KeyItem: View {
             .focused($isKeyFieldFocused)
             .onChange(of: isKeyFieldFocused) { focus in
                 if !focus {
-                    if let entry = arguments.removeValue(forKey: key) {
-                        arguments[newKey] = entry
+                    if let entry = environment.removeValue(forKey: key) {
+                        environment[newKey] = entry
                     }
                 }
             }
@@ -167,7 +182,7 @@ struct KeyItem: View {
             .focused($isValueFieldFocused)
             .onChange(of: isValueFieldFocused) { focus in
                 if !focus {
-                    arguments[newKey] = value
+                    environment[newKey] = value
                 }
             }
         }
@@ -176,6 +191,6 @@ struct KeyItem: View {
 
 struct ArgumentEditor_Previews: PreviewProvider {
     static var previews: some View {
-        ArgumentEditor(arguments: .constant(["Test1": "Bing", "Test2": "Bong"]))
+        ArgumentEditor(environment: .constant(["Test1": "Bing", "Test2": "Bong"]))
     }
 }

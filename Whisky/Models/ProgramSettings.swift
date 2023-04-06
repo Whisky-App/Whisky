@@ -8,7 +8,7 @@
 import Foundation
 
 struct ProgramSettingsData: Codable {
-    var arguments: [String: String] = [:]
+    var environment: [String: String] = [:]
     /*var useCustomSettings: Bool = false
     var windowsVersion: WinVersion = .win7
     var dxvk: Bool = false
