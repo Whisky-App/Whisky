@@ -32,6 +32,13 @@ struct ProgramView: View {
             }
             .formStyle(.grouped)
             Spacer()
+            HStack {
+                Spacer()
+                Button("button.showInFinder") {
+                    NSWorkspace.shared.activateFileViewerSelecting([program.url])
+                }
+            }
+            .padding()
         }
         .navigationTitle(program.name)
         .toolbar {
