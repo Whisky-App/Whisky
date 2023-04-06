@@ -20,11 +20,11 @@ public class Program: Hashable {
 
     var name: String
     var url: URL
+    var settings: ProgramSettings
 
-    var arguments: [String: String] = [:]
-
-    init(name: String, url: URL) {
+    init(name: String, url: URL, bottle: Bottle) {
         self.name = name
         self.url = url
+        self.settings = ProgramSettings(bottleUrl: bottle.url, name: name)
     }
 }

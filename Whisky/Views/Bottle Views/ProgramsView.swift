@@ -9,19 +9,17 @@ import SwiftUI
 
 struct ProgramsView: View {
     @State var bottle: Bottle
-    @State var programs: [URL] = []
+    @State var programs: [Program] = []
 
     var body: some View {
         NavigationStack {
             Form {
                 Section("program.title") {
-                    List {
-                        ForEach(programs, id: \.self) { program in
-                            NavigationLink {
-                                ProgramView(program: .constant(Program(name: program.lastPathComponent, url: program)))
-                            } label: {
-                                ProgramItemView(bottle: bottle, program: program)
-                            }
+                    List($programs, id: \.self) { program in
+                        NavigationLink {
+                            ProgramView(program: program)
+                        } label: {
+                            ProgramItemView(bottle: bottle, program: program.url)
                         }
                     }
                 }
@@ -37,7 +35,7 @@ struct ProgramsView: View {
 
 struct ProgramItemView: View {
     @State var bottle: Bottle
-    @State var program: URL
+    @Binding var program: URL
     @State var showButtons: Bool = false
 
     var body: some View {
