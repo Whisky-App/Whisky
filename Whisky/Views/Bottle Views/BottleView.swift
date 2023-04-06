@@ -151,7 +151,7 @@ struct ShellLinkView: View {
                     let peFile = try PEFile(data: Data(contentsOf: url))
                     var icons: [NSImage] = []
                     if let resourceSection = peFile.resourceSection {
-                        for entries in resourceSection.allEntries {
+                        for entries in resourceSection.allEntries where entries.icon.isValid {
                             icons.append(entries.icon)
                         }
                     } else {
@@ -159,16 +159,8 @@ struct ShellLinkView: View {
                         return
                     }
 
-                    image = NSImage()
-
-                    for icon in icons where icon.isValid {
-                        if let image = image {
-                            if icon.size.width > image.size.width {
-                                self.image = icon
-                            }
-                        } else {
-                            image = icon
-                        }
+                    if icons.count > 0 {
+                        image = icons[0]
                     }
                 } catch {
                     print(error)

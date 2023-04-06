@@ -25,65 +25,6 @@ struct ResourceDirectoryEntry: Hashable {
     }
 }
 
-struct GroupIconDirectoryEntry: Hashable {
-    // 14 bytes in total
-    var width: UInt8
-    var height: UInt8
-    var colorCount: UInt8
-    var reserved: UInt8
-    var planes: UInt16
-    var bitCount: UInt16
-    var bytesInResouce: UInt32
-    var id: UInt16
-
-    init(data: Data, offset: inout Int) {
-        var offset = offset
-        self.width = data.extract(UInt8.self, offset: offset)
-        offset += 1
-        self.height = data.extract(UInt8.self, offset: offset)
-        offset += 1
-        self.colorCount = data.extract(UInt8.self, offset: offset)
-        offset += 1
-        self.reserved = data.extract(UInt8.self, offset: offset)
-        offset += 1
-        self.planes = data.extract(UInt16.self, offset: offset)
-        offset += 2
-        self.bitCount = data.extract(UInt16.self, offset: offset)
-        offset += 2
-        self.bytesInResouce = data.extract(UInt32.self, offset: offset)
-        offset += 4
-        self.id = data.extract(UInt16.self, offset: offset)
-        offset += 2
-    }
-}
-
-struct GroupIcon: Hashable {
-    var reserved: UInt16
-    var type: UInt16
-    var count: UInt16
-    var entries: [GroupIconDirectoryEntry]
-
-    init(data: Data, offset: Int) {
-        var offset = offset
-        self.reserved = data.extract(UInt16.self, offset: offset)
-        offset += 2
-        self.type = data.extract(UInt16.self, offset: offset)
-        offset += 2
-        self.count = data.extract(UInt16.self, offset: offset)
-        self.entries = []
-
-        print("0x\(String(format: "%08X", offset))")
-        print(reserved)
-        print(type)
-        print(count)
-        print("\n")
-
-        for _ in 0..<count {
-            entries.append(GroupIconDirectoryEntry(data: data, offset: &offset))
-        }
-    }
-}
-
 struct ResourceDataEntry: Hashable {
     var dataRVA: UInt32
     var size: UInt32
@@ -133,11 +74,9 @@ struct ResourceDirectoryTable: Hashable {
     var numberOfNamedEntries: UInt16
     var numberOfIdEntries: UInt16
 
-    var groupIcon: GroupIcon?
     var subtables: [ResourceDirectoryTable]
     var entries: [ResourceDataEntry]
 
-    // swiftlint:disable:next function_body_length
     init(data: Data,
          address: Int,
          offset: Int,
@@ -182,8 +121,6 @@ struct ResourceDirectoryTable: Hashable {
                                                                      sectionTable: sectionTable,
                                                                      entries: &entries,
                                                                      depth: depth + 1))
-                    } else if ResourceTypes(rawValue: entry.id) == .groupIcon {
-                        self.groupIcon = GroupIcon(data: data, offset: Int(entry.offsetToSubdirectory) + address)
                     }
                 } else {
                     self.subtables.append(ResourceDirectoryTable(data: data,
@@ -239,5 +176,4 @@ struct ResourceError: Error {
 
 enum ResourceTypes: UInt32 {
     case icon = 3
-    case groupIcon = 14
 }
