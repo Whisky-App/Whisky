@@ -22,8 +22,14 @@ struct BottleView: View {
                 if startMenuPrograms.count > 0 {
                     LazyVGrid(columns: gridLayout, alignment: .center) {
                         ForEach(startMenuPrograms, id: \.self) { program in
-                            NavigationLink {
-                                EmptyView()
+                            Button {
+                                Task(priority: .userInitiated) {
+                                    do {
+                                        try await Wine.runProgram(bottle: bottle, path: program.url.path)
+                                    } catch {
+                                        print(error)
+                                    }
+                                }
                             } label: {
                                 ShellLinkView(program: program)
                             }
