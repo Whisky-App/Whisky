@@ -21,17 +21,16 @@ struct BottleView: View {
             ScrollView {
                 if startMenuPrograms.count > 0 {
                     LazyVGrid(columns: gridLayout, alignment: .center) {
-                        ForEach(startMenuPrograms, id: \.self) { program in
+                        ForEach(startMenuPrograms, id: \.self) { link in
                             Button {
                                 Task(priority: .userInitiated) {
-                                    do {
-                                        try await Wine.runProgram(bottle: bottle, path: program.url.path)
-                                    } catch {
-                                        print(error)
-                                    }
+                                    let program = Program(name: link.url.lastPathComponent,
+                                                          url: link.url,
+                                                          bottle: bottle)
+                                    await program.run()
                                 }
                             } label: {
-                                ShellLinkView(program: program)
+                                ShellLinkView(link: link)
                             }
                             .buttonStyle(.plain)
                         }
@@ -80,18 +79,11 @@ struct BottleView: View {
                         Task(priority: .userInitiated) {
                             if result == .OK {
                                 if let url = panel.urls.first {
-                                    do {
-                                        try await Wine.runProgram(bottle: bottle, path: url.path)
-                                        programLoading = false
-                                    } catch {
-                                        programLoading = false
-                                        let alert = NSAlert()
-                                        alert.messageText = "alert.message"
-                                        alert.informativeText = "alert.info" + " \(url.lastPathComponent)"
-                                        alert.alertStyle = .critical
-                                        alert.addButton(withTitle: "button.ok")
-                                        alert.runModal()
-                                    }
+                                    let program = Program(name: url.lastPathComponent,
+                                                          url: url,
+                                                          bottle: bottle)
+                                    await program.run()
+                                    programLoading = false
                                 }
                             } else {
                                 programLoading = false
@@ -121,12 +113,12 @@ struct BottleView_Previews: PreviewProvider {
 }
 
 struct ShellLinkView: View {
-    @State var program: ShellLinkHeader
+    @State var link: ShellLinkHeader
     @State var image: NSImage?
 
     var body: some View {
         VStack {
-            if let stringData = program.stringData, let icon = stringData.icon {
+            if let stringData = link.stringData, let icon = stringData.icon {
                 Image(nsImage: icon)
                     .resizable()
                     .frame(width: 45, height: 45)
@@ -142,7 +134,7 @@ struct ShellLinkView: View {
                 }
             }
             Spacer()
-            Text(program.url
+            Text(link.url
                 .deletingPathExtension()
                 .lastPathComponent + "\n")
                 .multilineTextAlignment(.center)
@@ -151,7 +143,7 @@ struct ShellLinkView: View {
         .frame(width: 90, height: 90)
         .padding(10)
         .onAppear {
-            if let linkInfo = program.linkInfo, let url = linkInfo.linkDestination {
+            if let linkInfo = link.linkInfo, let url = linkInfo.linkDestination {
                 let thumbnail = QLThumbnailGenerator.Request(fileAt: url,
                                                              size: CGSize(width: 512, height: 512),
                                                              scale: 1,

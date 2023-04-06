@@ -20,7 +20,9 @@ class Wine {
     static let wineBinary: URL = binFolder
         .appendingPathComponent("wine64")
 
-    static func run(_ args: [String], bottle: Bottle? = nil) async throws -> String {
+    static func run(_ args: [String],
+                    bottle: Bottle? = nil,
+                    environment: [String: String]? = nil) async throws -> String {
         let process = Process()
         let pipe = Pipe()
 
@@ -35,6 +37,12 @@ class Wine {
             env = ["WINEPREFIX": bottle.url.path,
                    "WINEDEBUG": "fixme-all",
                    "WINEBOOT_HIDE_DIALOG": "1"]
+
+            if let environment = environment {
+                for variable in environment.keys {
+                    env[variable] = environment[variable]
+                }
+            }
 
             let settings = bottle.settings.settings
             if settings.dxvk {
@@ -110,8 +118,10 @@ class Wine {
     }
 
     @discardableResult
-    static func runProgram(bottle: Bottle, path: String) async throws -> String {
-        return try await run(["start", "/unix", path], bottle: bottle)
+    static func runProgram(program: Program) async throws -> String {
+        return try await run(["start", "/unix", program.url.path],
+                             bottle: program.bottle,
+                             environment: program.settings.settings.environment)
     }
 }
 
