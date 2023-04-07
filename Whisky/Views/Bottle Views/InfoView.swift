@@ -25,9 +25,9 @@ struct InfoView: View {
                     }
                 }
                 InfoItem(label: NSLocalizedString("info.wine", comment: ""),
-                         value: bottle.settings.settings.wineVersion)
+                         value: bottle.settings.wineVersion)
                 InfoItem(label: NSLocalizedString("info.win", comment: ""),
-                         value: bottle.settings.settings.windowsVersion.pretty())
+                         value: bottle.settings.windowsVersion.pretty())
             }
         }
         .formStyle(.grouped)
