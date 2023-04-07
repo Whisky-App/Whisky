@@ -57,7 +57,7 @@ struct LinkFlags: OptionSet, Hashable {
 
 struct LinkInfo: Hashable {
     var linkInfoFlags: LinkInfoFlags
-    var linkDestination: URL?
+    var program: Program?
 
     init(data: Data, bottle: Bottle, offset: inout Int) {
         let startOfSection = offset
@@ -77,26 +77,26 @@ struct LinkInfo: Hashable {
                 let localBasePathOffsetUnicode = data.extract(UInt32.self, offset: offset)
                 let localPathOffset = startOfSection + Int(localBasePathOffsetUnicode)
 
-                linkDestination = getURL(data: data,
-                                         offset: localPathOffset,
-                                         bottle: bottle,
-                                         unicode: true)
+                program = getProgram(data: data,
+                                     offset: localPathOffset,
+                                     bottle: bottle,
+                                     unicode: true)
             } else {
                 offset += 8
                 let localBasePathOffset = data.extract(UInt32.self, offset: offset)
                 let localPathOffset = startOfSection + Int(localBasePathOffset)
 
-                linkDestination = getURL(data: data,
-                                         offset: localPathOffset,
-                                         bottle: bottle,
-                                         unicode: false)
+                program = getProgram(data: data,
+                                     offset: localPathOffset,
+                                     bottle: bottle,
+                                     unicode: false)
             }
         }
 
         offset = startOfSection + Int(linkInfoSize)
     }
 
-    func getURL(data: Data, offset: Int, bottle: Bottle, unicode: Bool) -> URL? {
+    func getProgram(data: Data, offset: Int, bottle: Bottle, unicode: Bool) -> Program? {
         let pathData = data[offset...]
         if let nullRange = pathData.firstIndex(of: 0) {
             let encoding: String.Encoding = unicode ? .utf16 : .windowsCP1254
@@ -104,7 +104,8 @@ struct LinkInfo: Hashable {
                 // UNIX-ify the path
                 string.replace("\\", with: "/")
                 string.replace("C:", with: "\(bottle.url.path)/drive_c")
-                return URL(filePath: string)
+                let url = URL(filePath: string)
+                return Program(name: url.lastPathComponent, url: url, bottle: bottle)
             }
         }
 

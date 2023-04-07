@@ -11,6 +11,8 @@ import QuickLookThumbnailing
 struct ProgramView: View {
     @Binding var program: Program
     @State var image: NSImage?
+    @State var environment: [String: String] = [:]
+    @State var programLoading: Bool = false
 
     var body: some View {
         VStack {
@@ -29,6 +31,9 @@ struct ProgramView: View {
                         }
                     }
                 }
+                Section("program.env") {
+                    ArgumentEditor(environment: $environment)
+                }
             }
             .formStyle(.grouped)
             Spacer()
@@ -36,6 +41,20 @@ struct ProgramView: View {
                 Spacer()
                 Button("button.showInFinder") {
                     NSWorkspace.shared.activateFileViewerSelecting([program.url])
+                }
+                Button("button.run") {
+                    programLoading = true
+                    Task(priority: .userInitiated) {
+                        await program.run()
+                        programLoading = false
+                    }
+                }
+                .disabled(programLoading)
+                if programLoading {
+                    Spacer()
+                        .frame(width: 10)
+                    ProgressView()
+                        .controlSize(.small)
                 }
             }
             .padding()
@@ -68,6 +87,113 @@ struct ProgramView: View {
                     image = rep.nsImage
                 }
             }
+
+            environment = program.settings.settings.environment
         }
+        .onChange(of: environment) { newValue in
+            program.settings.settings.environment = newValue
+        }
+    }
+}
+
+struct ArgumentEditor: View {
+    @Binding var environment: [String: String]
+    @State var selection = Set<String>()
+
+    var body: some View {
+        VStack {
+            List(environment.keys.sorted(by: <), id: \.self, selection: $selection) { key in
+                if let value = environment[key] {
+                    KeyItem(key: key,
+                            value: value,
+                            environment: $environment)
+                }
+            }
+            .listStyle(.inset(alternatesRowBackgrounds: true))
+            .cornerRadius(5)
+            HStack {
+                Spacer()
+                Button {
+                    // Need to set this in a better way cause this can break
+                    environment["VAR_\(environment.count + 1)"] = ""
+                } label: {
+                    Image(systemName: "plus")
+                }
+                .buttonStyle(ArgumentEditorButton())
+                Divider()
+                    .frame(height: 20)
+                Button {
+                    for key in selection {
+                        environment.removeValue(forKey: key)
+                    }
+                    selection.removeAll()
+                } label: {
+                    Image(systemName: "minus")
+                }
+                .buttonStyle(ArgumentEditorButton())
+            }
+        }
+    }
+}
+
+struct ArgumentEditorButton: ButtonStyle {
+    func makeBody(configuration: Configuration) -> some View {
+        configuration.label
+            .frame(width: 15, height: 15)
+            .padding(4)
+            // Without this the selectable area is reduced to just
+            // the icons which isn't great
+            .background(Color(nsColor: NSColor.windowBackgroundColor)
+                .opacity(0.001))
+            .clipShape(RoundedRectangle(cornerRadius: 5))
+    }
+}
+
+struct KeyItem: View {
+    @Binding var environment: [String: String]
+    @State var key: String
+    @State var newKey: String
+    @State var value: String
+    @FocusState private var isKeyFieldFocused: Bool
+    @FocusState private var isValueFieldFocused: Bool
+
+    init(key: String, value: String, environment: Binding<[String: String]>) {
+        self._environment = environment
+        self.key = key
+        self.newKey = key
+        self.value = value
+    }
+
+    var body: some View {
+        HStack {
+            TextField("", text: $newKey)
+            .textFieldStyle(.roundedBorder)
+            .onChange(of: newKey) { _ in
+                newKey = String(newKey.filter { !$0.isWhitespace })
+            }
+            .focused($isKeyFieldFocused)
+            .onChange(of: isKeyFieldFocused) { focus in
+                if !focus {
+                    if let entry = environment.removeValue(forKey: key) {
+                        environment[newKey] = entry
+                    }
+                }
+            }
+            Spacer()
+            TextField("", text: $value)
+            .textFieldStyle(.roundedBorder)
+            .focused($isValueFieldFocused)
+            .onChange(of: isValueFieldFocused) { focus in
+                if !focus {
+                    environment[newKey] = value
+                }
+            }
+        }
+    }
+}
+
+struct ArgumentEditor_Previews: PreviewProvider {
+    static var previews: some View {
+        ArgumentEditor(environment: .constant(["Test1": "Bing", "Test2": "Bong"]))
     }
 }

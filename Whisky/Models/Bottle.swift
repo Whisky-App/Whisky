@@ -23,7 +23,7 @@ public class Bottle: Hashable {
 
     var url: URL = URL.homeDirectory.appending(component: ".wine")
     var settings: BottleSettings
-    var programs: [URL] = []
+    var programs: [Program] = []
     var startMenuPrograms: [ShellLinkHeader] = []
 
     func openCDrive() {
@@ -86,7 +86,7 @@ public class Bottle: Hashable {
     }
 
     @discardableResult
-    func updateInstalledPrograms() -> [URL] {
+    func updateInstalledPrograms() -> [Program] {
         let programFiles = url
             .appendingPathComponent("drive_c")
             .appendingPathComponent("Program Files")
@@ -100,7 +100,7 @@ public class Bottle: Hashable {
                                                           options: [.skipsHiddenFiles])
         while let url = enumerator64?.nextObject() as? URL {
             if !url.hasDirectoryPath && url.pathExtension == "exe" {
-                programs.append(url)
+                programs.append(Program(name: url.lastPathComponent, url: url, bottle: self))
             }
         }
 
@@ -109,11 +109,11 @@ public class Bottle: Hashable {
                                                           options: [.skipsHiddenFiles])
         while let url = enumerator32?.nextObject() as? URL {
             if !url.hasDirectoryPath && url.pathExtension == "exe" {
-                programs.append(url)
+                programs.append(Program(name: url.lastPathComponent, url: url, bottle: self))
             }
         }
 
-        programs.sort(by: { $0.lastPathComponent.lowercased() < $1.lastPathComponent.lowercased() })
+        programs.sort(by: { $0.name.lowercased() < $1.name.lowercased() })
         return programs
     }
 
