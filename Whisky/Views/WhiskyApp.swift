@@ -8,8 +8,23 @@
 import SwiftUI
 import Sparkle
 
+class AppDelegate: NSObject, NSApplicationDelegate {
+    func applicationWillTerminate(_ notification: Notification) {
+        Task(priority: .userInitiated) {
+            for bottle in BottleVM.shared.bottles {
+                do {
+                    try await Wine.killBottle(bottle: bottle)
+                } catch {
+                    print("Failed to kill bottle: \(error)")
+                }
+            }
+        }
+    }
+}
+
 @main
 struct WhiskyApp: App {
+    @NSApplicationDelegateAdaptor(AppDelegate.self) var appDelegate
     private let updaterController: SPUStandardUpdaterController
 
     init() {
