@@ -20,6 +20,9 @@ class Wine {
     static let wineBinary: URL = binFolder
         .appendingPathComponent("wine64")
 
+    static let wineserverBinary: URL = binFolder
+        .appendingPathComponent("wineserver")
+
     static func run(_ args: [String],
                     bottle: Bottle? = nil,
                     environment: [String: String]? = nil) async throws -> String {
@@ -86,6 +89,34 @@ class Wine {
         return ""
     }
 
+    static func runWineserver(_ args: [String], bottle: Bottle) async throws -> String {
+        let process = Process()
+        let pipe = Pipe()
+
+        process.executableURL = wineserverBinary
+        process.arguments = args
+        process.standardOutput = pipe
+        process.standardError = pipe
+        process.currentDirectoryURL = binFolder
+        process.environment = ["WINEPREFIX": bottle.url.path]
+
+        try process.run()
+
+        if let output = try pipe.fileHandleForReading.readToEnd() {
+            let outputString = String(decoding: output, as: UTF8.self)
+            print(outputString)
+            process.waitUntilExit()
+            let status = process.terminationStatus
+            if status != 0 {
+                throw outputString
+            }
+
+            return outputString
+        }
+
+        return ""
+    }
+
     static func wineVersion() async throws -> String {
         var output = try await run(["--version"])
         output.replace("wine-", with: "")
@@ -122,6 +153,11 @@ class Wine {
         return try await run(["start", "/unix", program.url.path],
                              bottle: program.bottle,
                              environment: program.settings.settings.environment)
+    }
+
+    @discardableResult
+    static func killBottle(bottle: Bottle) async throws -> String {
+        return try await runWineserver(["-k"], bottle: bottle)
     }
 }
 
