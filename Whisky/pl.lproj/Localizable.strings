@@ -1,4 +1,4 @@
-"tab.config" = "Config";
+"tab.config" = "Konfiguracja";
 "tab.programs" = "Programy";
 "tab.info" = "Informacje";
 
@@ -15,7 +15,7 @@
 "config.dxvkHud" = "DXVK HUD";
 "config.title.metal" = "Metal";
 "config.metalHud" = "Metal HUD";
-"config.metalTrace" = "Metal Trace";
+"config.metalTrace" = "Śledź Metal";
 "config.metalTrace.info" = "Umożliwia przechwytywanie obciążenia GPU w Xcode";
 "config.esync" = "ESync";
 "config.winecfg" = "Otwórz konfigurację Wine";
@@ -27,19 +27,19 @@
 "info.path" = "Ścieżka:";
 "info.path.copy" = "Skopiuj ścieżkę";
 "info.wine" = "Wersja Wine:";
-"info.win" = "Windows Version:";
+"info.win" = "Wersja systemu Windows:";
 
-"alert.message" = "Failed to open program!";
-"alert.info" = "Failed to open";
+"alert.message" = "Nie udało się otworzyć programu!";
+"alert.info" = "Nie można otworzyć";
 
-"create.title" = "Create a new bottle";
-"create.name" = "Bottle name:";
-"create.win" = "Windows version:";
-"create.cancel" = "Cancel";
-"create.create" = "Create";
+"create.title" = "Utwórz nową butelkę";
+"create.name" = "Nazwa butelki:";
+"create.win" = "Wersja systemu Windows:";
+"create.cancel" = "Anuluj";
+"create.create" = "Utwórz";
 
-"rename.title" = "Rename bottle";
-"rename.name" = "New name:";
-"rename.rename" = "Rename";
+"rename.title" = "Zmień nazwę butelki";
+"rename.name" = "Nowa nazwa:";
+"rename.rename" = "Zmień nazwę";
 
-"check.updates" = "Check for Updates...";
+"check.updates" = "Sprawdź dostępność aktualizacji...";
