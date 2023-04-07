@@ -1,3 +1,0 @@
-# xbuild command line options specified here will be used
-# by xbuild on every build, unless /noautoresponse is passed
-# on the command line.

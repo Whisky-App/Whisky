@@ -20,7 +20,12 @@ class Wine {
     static let wineBinary: URL = binFolder
         .appendingPathComponent("wine64")
 
-    static func run(_ args: [String], bottle: Bottle? = nil) async throws -> String {
+    static let wineserverBinary: URL = binFolder
+        .appendingPathComponent("wineserver")
+
+    static func run(_ args: [String],
+                    bottle: Bottle? = nil,
+                    environment: [String: String]? = nil) async throws -> String {
         let process = Process()
         let pipe = Pipe()
 
@@ -35,6 +40,12 @@ class Wine {
             env = ["WINEPREFIX": bottle.url.path,
                    "WINEDEBUG": "fixme-all",
                    "WINEBOOT_HIDE_DIALOG": "1"]
+
+            if let environment = environment {
+                for variable in environment.keys {
+                    env[variable] = environment[variable]
+                }
+            }
 
             let settings = bottle.settings.settings
             if settings.dxvk {
@@ -60,6 +71,34 @@ class Wine {
 
             process.environment = env
         }
+
+        try process.run()
+
+        if let output = try pipe.fileHandleForReading.readToEnd() {
+            let outputString = String(decoding: output, as: UTF8.self)
+            print(outputString)
+            process.waitUntilExit()
+            let status = process.terminationStatus
+            if status != 0 {
+                throw outputString
+            }
+
+            return outputString
+        }
+
+        return ""
+    }
+
+    static func runWineserver(_ args: [String], bottle: Bottle) async throws -> String {
+        let process = Process()
+        let pipe = Pipe()
+
+        process.executableURL = wineserverBinary
+        process.arguments = args
+        process.standardOutput = pipe
+        process.standardError = pipe
+        process.currentDirectoryURL = binFolder
+        process.environment = ["WINEPREFIX": bottle.url.path]
 
         try process.run()
 
@@ -110,8 +149,15 @@ class Wine {
     }
 
     @discardableResult
-    static func runProgram(bottle: Bottle, path: String) async throws -> String {
-        return try await run(["start", "/unix", path], bottle: bottle)
+    static func runProgram(program: Program) async throws -> String {
+        return try await run(["start", "/unix", program.url.path],
+                             bottle: program.bottle,
+                             environment: program.settings.settings.environment)
+    }
+
+    @discardableResult
+    static func killBottle(bottle: Bottle) async throws -> String {
+        return try await runWineserver(["-k"], bottle: bottle)
     }
 }
 
