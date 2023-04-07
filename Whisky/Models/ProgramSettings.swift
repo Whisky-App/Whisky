@@ -9,19 +9,86 @@ import Foundation
 
 struct ProgramSettingsData: Codable {
     var environment: [String: String] = [:]
-    /*var useCustomSettings: Bool = false
-    var windowsVersion: WinVersion = .win7
-    var dxvk: Bool = false
-    var dxvkHud: Bool = false
-    var metalHud: Bool = false
-    var metalTrace: Bool = false
-    var esync: Bool = false*/
+    var arguments: [String] = []
+    var baseSettings: BaseSettingsData = BaseSettingsData()
 }
 
 class ProgramSettings {
     var settings: ProgramSettingsData {
         didSet {
             encode()
+        }
+    }
+
+    var environment: [String: String] {
+        get {
+            return settings.environment
+        }
+        set {
+            settings.environment = newValue
+        }
+    }
+
+    var arguments: [String] {
+        get {
+            return settings.arguments
+        }
+        set {
+            settings.arguments = newValue
+        }
+    }
+
+    var windowsVersion: WinVersion {
+        get {
+            return settings.baseSettings.windowsVersion
+        }
+        set {
+            settings.baseSettings.windowsVersion = newValue
+        }
+    }
+
+    var dxvk: Bool {
+        get {
+            return settings.baseSettings.dxvk
+        }
+        set {
+            settings.baseSettings.dxvk = newValue
+        }
+    }
+
+    var dxvkHud: Bool {
+        get {
+            return settings.baseSettings.dxvkHud
+        }
+        set {
+            settings.baseSettings.dxvkHud = newValue
+        }
+    }
+
+    var metalHud: Bool {
+        get {
+            return settings.baseSettings.metalHud
+        }
+        set {
+            settings.baseSettings.metalHud = newValue
+        }
+    }
+
+    var metalTrace: Bool {
+        get {
+            return settings.baseSettings.metalTrace
+        }
+        set {
+            settings.baseSettings.metalTrace = newValue
+        }
+    }
+
+    var esync: Bool {
+        get {
+            return settings.baseSettings.esync
+        }
+        set {
+            settings.baseSettings.esync = newValue
         }
     }
 
