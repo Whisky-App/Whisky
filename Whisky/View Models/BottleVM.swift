@@ -50,7 +50,7 @@ class BottleVM: ObservableObject {
                 try FileManager.default.createDirectory(atPath: newBottleDir.path, withIntermediateDirectories: true)
 
                 let bottle = Bottle(path: newBottleDir)
-                bottle.settings.settings.windowsVersion = winVersion
+                bottle.settings.windowsVersion = winVersion
                 try await Wine.changeWinVersion(bottle: bottle, win: winVersion)
                 bottle.settings.settings.wineVersion = try await Wine.wineVersion()
                 await loadBottles()

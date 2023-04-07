@@ -47,27 +47,11 @@ class Wine {
                 }
             }
 
-            let settings = bottle.settings.settings
-            if settings.dxvk {
-                env.updateValue("d3d11,dxgi,d3d10core=n,b", forKey: "WINEDLLOVERRIDES")
-                if settings.dxvkHud {
-                    env.updateValue("devinfo,fps,frametimes", forKey: "DXVK_HUD")
-                }
-            }
-
-            if settings.esync {
-                env.updateValue("1", forKey: "WINEESYNC")
-            }
-
-            if settings.metalHud {
-                env.updateValue("1", forKey: "MTL_HUD_ENABLED")
-            }
-
-            if settings.metalTrace {
-                env.updateValue("1", forKey: "METAL_CAPTURE_ENABLED")
-                // Might not be needed
-                env.updateValue("2", forKey: "MVK_CONFIG_AUTO_GPU_CAPTURE_SCOPE")
-            }
+            bottle
+                .settings
+                .settings
+                .baseSettings
+                .environmentVariables(environment: &env)
 
             process.environment = env
         }

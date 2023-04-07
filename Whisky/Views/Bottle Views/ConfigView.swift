@@ -14,10 +14,10 @@ struct ConfigView: View {
         VStack {
             Form {
                 Section("config.title.dxvk") {
-                    Toggle(isOn: $bottle.settings.settings.dxvk) {
+                    Toggle(isOn: $bottle.settings.dxvk) {
                         Text("config.dxvk")
                     }
-                    .onChange(of: bottle.settings.settings.dxvk) { enabled in
+                    .onChange(of: bottle.settings.dxvk) { enabled in
                         if enabled {
                             print("Enabling DXVK")
                             bottle.enableDXVK()
@@ -27,22 +27,22 @@ struct ConfigView: View {
                         }
                     }
 
-                    Toggle(isOn: $bottle.settings.settings.dxvkHud) {
+                    Toggle(isOn: $bottle.settings.dxvkHud) {
                         Text("config.dxvkHud")
                     }
-                    .disabled(!bottle.settings.settings.dxvk)
+                    .disabled(!bottle.settings.dxvk)
                 }
                 Section("config.title.metal") {
-                    Toggle(isOn: $bottle.settings.settings.metalHud) {
+                    Toggle(isOn: $bottle.settings.metalHud) {
                         Text("config.metalHud")
                     }
-                    Toggle(isOn: $bottle.settings.settings.metalTrace) {
+                    Toggle(isOn: $bottle.settings.metalTrace) {
                         Text("config.metalTrace")
                         Text("config.metalTrace.info")
                     }
                 }
                 Section {
-                    Toggle(isOn: $bottle.settings.settings.esync) {
+                    Toggle(isOn: $bottle.settings.esync) {
                         Text("config.esync")
                     }
                 }
