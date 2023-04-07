@@ -1,0 +1,45 @@
+"tab.config" = "Config";
+"tab.programs" = "Programs";
+"tab.info" = "Info";
+
+"button.cDrive" = "Open C Drive";
+"button.showInFinder" = "Show in Finder";
+"button.run" = "Run...";
+"button.ok" = "OK";
+"button.renameBottle" = "Rename";
+"button.deleteBottle" = "Delete...";
+"button.createBottle" = "Create Bottle";
+
+"config.title.dxvk" = "DXVK";
+"config.dxvk" = "DXVK";
+"config.dxvkHud" = "DXVK HUD";
+"config.title.metal" = "Metal";
+"config.metalHud" = "Metal HUD";
+"config.metalTrace" = "Metal Trace";
+"config.metalTrace.info" = "Allows you to capture GPU workload in Xcode";
+"config.esync" = "ESync";
+"config.winecfg" = "Open Wine Configuration";
+
+"program.title" = "Installed Programs";
+"program.env" = "Environment Variables";
+
+"info.title" = "Info";
+"info.path" = "Path:";
+"info.path.copy" = "Copy Path";
+"info.wine" = "Wine Version:";
+"info.win" = "Windows Version:";
+
+"alert.message" = "Failed to open program!";
+"alert.info"  = "Failed to open";
+
+"create.title" = "Create a new bottle";
+"create.name" = "Bottle name:";
+"create.win" = "Windows version:";
+"create.cancel" = "Cancel";
+"create.create" = "Create";
+
+"rename.title" = "Rename bottle";
+"rename.name" = "New name:";
+"rename.rename" = "Rename";
+
+"check.updates" = "Check for Updates...";
