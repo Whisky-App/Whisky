@@ -3,10 +3,11 @@
 "tab.info" = "Info";
 
 "button.cDrive" = "Ouvrir C Drive";
+"button.showInFinder" = "Show in Finder";
 "button.run" = "Exécuter...";
 "button.ok" = "OK";
-"button.renameBottle" = "Rename";
-"button.deleteBottle" = "Delete...";
+"button.renameBottle" = "Rename Bottle";
+"button.deleteBottle" = "Supprimer la bouteille";
 "button.createBottle" = "Créer une bouteille";
 
 "config.title.dxvk" = "DXVK";
@@ -20,6 +21,7 @@
 "config.winecfg" = "Ouvrir la Configuration Wine";
 
 "program.title" = "Programmes Installés";
+"program.env" = "Environment Variables";
 
 "info.title" = "Info";
 "info.path" = "Chemin :";
@@ -28,7 +30,7 @@
 "info.win" = "Version de Windows :";
 
 "alert.message" = "Impossible d'ouvrir le programme !";
-"alert.info" = "Échec de l'ouverture ";
+"alert.info" = "Failed to open";
 
 "create.title" = "Créer une nouvelle bouteille";
 "create.name" = "Nom de la bouteille :";

@@ -30,7 +30,7 @@
 "info.win" = "Windows Version:";
 
 "alert.message" = "Failed to open program!";
-"alert.info"  = "Failed to open";
+"alert.info" = "Failed to open";
 
 "create.title" = "Create a new bottle";
 "create.name" = "Bottle name:";

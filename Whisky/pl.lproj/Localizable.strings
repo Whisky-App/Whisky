@@ -1,45 +1,45 @@
-"tab.config" = "Config";
-"tab.programs" = "Programs";
-"tab.info" = "Info";
+"tab.config" = "Konfiguracja";
+"tab.programs" = "Programy";
+"tab.info" = "Informacje";
 
-"button.cDrive" = "Open C Drive";
-"button.showInFinder" = "Show in Finder";
-"button.run" = "Run...";
+"button.cDrive" = "Otwórz dysk C";
+"button.showInFinder" = "Pokaż w Finderze";
+"button.run" = "Uruchom...";
 "button.ok" = "OK";
-"button.renameBottle" = "Rename";
-"button.deleteBottle" = "Delete...";
-"button.createBottle" = "Create Bottle";
+"button.renameBottle" = "Zmień nazwę";
+"button.deleteBottle" = "Usuń...";
+"button.createBottle" = "Utwórz butelkę";
 
 "config.title.dxvk" = "DXVK";
 "config.dxvk" = "DXVK";
 "config.dxvkHud" = "DXVK HUD";
 "config.title.metal" = "Metal";
 "config.metalHud" = "Metal HUD";
-"config.metalTrace" = "Metal Trace";
-"config.metalTrace.info" = "Allows you to capture GPU workload in Xcode";
+"config.metalTrace" = "Śledź Metal";
+"config.metalTrace.info" = "Umożliwia przechwytywanie obciążenia GPU w Xcode";
 "config.esync" = "ESync";
-"config.winecfg" = "Open Wine Configuration";
+"config.winecfg" = "Otwórz konfigurację Wine";
 
-"program.title" = "Installed Programs";
-"program.env" = "Environment Variables";
+"program.title" = "Zainstalowane programy";
+"program.env" = "Zmienne środowiskowe";
 
-"info.title" = "Info";
-"info.path" = "Path:";
-"info.path.copy" = "Copy Path";
-"info.wine" = "Wine Version:";
-"info.win" = "Windows Version:";
+"info.title" = "Informacje";
+"info.path" = "Ścieżka:";
+"info.path.copy" = "Skopiuj ścieżkę";
+"info.wine" = "Wersja Wine:";
+"info.win" = "Wersja systemu Windows:";
 
-"alert.message" = "Failed to open program!";
-"alert.info"  = "Failed to open";
+"alert.message" = "Nie udało się otworzyć programu!";
+"alert.info" = "Nie można otworzyć";
 
-"create.title" = "Create a new bottle";
-"create.name" = "Bottle name:";
-"create.win" = "Windows version:";
-"create.cancel" = "Cancel";
-"create.create" = "Create";
+"create.title" = "Utwórz nową butelkę";
+"create.name" = "Nazwa butelki:";
+"create.win" = "Wersja systemu Windows:";
+"create.cancel" = "Anuluj";
+"create.create" = "Utwórz";
 
-"rename.title" = "Rename bottle";
-"rename.name" = "New name:";
-"rename.rename" = "Rename";
+"rename.title" = "Zmień nazwę butelki";
+"rename.name" = "Nowa nazwa:";
+"rename.rename" = "Zmień nazwę";
 
-"check.updates" = "Check for Updates...";
+"check.updates" = "Sprawdź dostępność aktualizacji...";
