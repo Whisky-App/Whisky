@@ -30,7 +30,7 @@
 "info.win" = "Version de Windows :";
 
 "alert.message" = "Impossible d'ouvrir le programme !";
-"alert.info" = "Failed to open";
+"alert.info" = "Échec de l'ouverture ";
 
 "create.title" = "Créer une nouvelle bouteille";
 "create.name" = "Nom de la bouteille :";
