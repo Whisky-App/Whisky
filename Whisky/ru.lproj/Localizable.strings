@@ -1,45 +1,45 @@
-"tab.config" = "Config";
-"tab.programs" = "Programs";
-"tab.info" = "Info";
+"tab.config" = "Конфигурация";
+"tab.programs" = "Программы";
+"tab.info" = "Сведения";
 
-"button.cDrive" = "Open C Drive";
-"button.showInFinder" = "Show in Finder";
-"button.run" = "Run...";
-"button.ok" = "OK";
-"button.renameBottle" = "Rename";
-"button.deleteBottle" = "Delete...";
-"button.createBottle" = "Create Bottle";
+"button.cDrive" = "Открыть диск C";
+"button.showInFinder" = "Показать в Finder";
+"button.run" = "Выполнить...";
+"button.ok" = "ОК";
+"button.renameBottle" = "Переименовать";
+"button.deleteBottle" = "Удалить...";
+"button.createBottle" = "Создать Бутылку";
 
 "config.title.dxvk" = "DXVK";
 "config.dxvk" = "DXVK";
 "config.dxvkHud" = "DXVK HUD";
 "config.title.metal" = "Metal";
 "config.metalHud" = "Metal HUD";
-"config.metalTrace" = "Metal Trace";
-"config.metalTrace.info" = "Allows you to capture GPU workload in Xcode";
+"config.metalTrace" = "Трассировка Metal";
+"config.metalTrace.info" = "Позволяет отслеживать рабочую нагрузку видеокарты через Xcode";
 "config.esync" = "ESync";
-"config.winecfg" = "Open Wine Configuration";
+"config.winecfg" = "Открыть конфигурацию Wine";
 
-"program.title" = "Installed Programs";
-"program.env" = "Environment Variables";
+"program.title" = "Установленные программы";
+"program.env" = "Переменные окружения";
 
-"info.title" = "Info";
-"info.path" = "Path:";
-"info.path.copy" = "Copy Path";
-"info.wine" = "Wine Version:";
-"info.win" = "Windows Version:";
+"info.title" = "Сведения";
+"info.path" = "Путь:";
+"info.path.copy" = "Скопировать путь";
+"info.wine" = "Версия Wine:";
+"info.win" = "Версия Windows:";
 
-"alert.message" = "Failed to open program!";
-"alert.info" = "Failed to open";
+"alert.message" = "Не удалось запустить программу!";
+"alert.info" = "Не удалось открыть";
 
-"create.title" = "Create a new bottle";
-"create.name" = "Bottle name:";
-"create.win" = "Windows version:";
-"create.cancel" = "Cancel";
-"create.create" = "Create";
+"create.title" = "Создать новую бутылку";
+"create.name" = "Название бутылки:";
+"create.win" = "Версия Windows:";
+"create.cancel" = "Отмена";
+"create.create" = "Создать";
 
-"rename.title" = "Rename bottle";
-"rename.name" = "New name:";
-"rename.rename" = "Rename";
+"rename.title" = "Переименовать бутылку";
+"rename.name" = "Новое имя:";
+"rename.rename" = "Переименовать";
 
-"check.updates" = "Check for Updates...";
+"check.updates" = "Проверить наличие обновлений...";
