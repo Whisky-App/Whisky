@@ -88,10 +88,10 @@ struct ProgramView: View {
                 }
             }
 
-            environment = program.settings.settings.environment
+            environment = program.settings.environment
         }
         .onChange(of: environment) { newValue in
-            program.settings.settings.environment = newValue
+            program.settings.environment = newValue
         }
     }
 }

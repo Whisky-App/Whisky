@@ -52,7 +52,7 @@ class BottleVM: ObservableObject {
                 let bottle = Bottle(path: newBottleDir)
                 bottle.settings.windowsVersion = winVersion
                 try await Wine.changeWinVersion(bottle: bottle, win: winVersion)
-                bottle.settings.settings.wineVersion = try await Wine.wineVersion()
+                bottle.settings.wineVersion = try await Wine.wineVersion()
                 await loadBottles()
             } catch {
                 print("Failed to create new bottle")

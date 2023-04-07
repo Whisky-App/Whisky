@@ -136,7 +136,7 @@ class Wine {
     static func runProgram(program: Program) async throws -> String {
         return try await run(["start", "/unix", program.url.path],
                              bottle: program.bottle,
-                             environment: program.settings.settings.environment)
+                             environment: program.settings.environment)
     }
 
     @discardableResult
