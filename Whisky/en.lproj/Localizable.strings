@@ -10,6 +10,7 @@
 "button.deleteBottle" = "Delete...";
 "button.createBottle" = "Create Bottle";
 
+"config.winVersion" = "Windows Version";
 "config.title.dxvk" = "DXVK";
 "config.dxvk" = "DXVK";
 "config.dxvkHud" = "DXVK HUD";
@@ -30,7 +31,7 @@
 "info.win" = "Windows Version:";
 
 "alert.message" = "Failed to open program!";
-"alert.info"  = "Failed to open";
+"alert.info" = "Failed to open";
 
 "create.title" = "Create a new bottle";
 "create.name" = "Bottle name:";
