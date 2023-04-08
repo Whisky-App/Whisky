@@ -10,6 +10,7 @@
 "button.deleteBottle" = "Supprimer la bouteille";
 "button.createBottle" = "Créer une bouteille";
 
+"config.winVersion" = "Windows Version";
 "config.title.dxvk" = "DXVK";
 "config.dxvk" = "DXVK";
 "config.dxvkHud" = "HUD DXVK";
