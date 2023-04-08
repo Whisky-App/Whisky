@@ -2,11 +2,11 @@
 "tab.programs" = "Programs";
 "tab.info" = "Info";
 
-"button.cDrive" = "Open C Drive";
-"button.showInFinder" = "Show in Finder";
-"button.run" = "Run...";
+"button.cDrive" = "Abrir unidad C";
+"button.showInFinder" = "Mostrar en Finder";
+"button.run" = "Ejecutar...";
 "button.ok" = "OK";
-"button.renameBottle" = "Rename";
+"button.renameBottle" = "Renombrar";
 "button.deleteBottle" = "Delete...";
 "button.createBottle" = "Create Bottle";
 
@@ -30,7 +30,7 @@
 "info.win" = "Windows Version:";
 
 "alert.message" = "Failed to open program!";
-"alert.info" = "Failed to open";
+"alert.info" = "No se pudo abrir";
 
 "create.title" = "Create a new bottle";
 "create.name" = "Bottle name:";
