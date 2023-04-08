@@ -9,10 +9,27 @@ import SwiftUI
 
 struct ConfigView: View {
     @Binding var bottle: Bottle
+    @State var windowsVersion: WinVersion
+    @State var canChangeWinVersion: Bool = true
+
+    init(bottle: Binding<Bottle>) {
+        self._bottle = bottle
+        self.windowsVersion = bottle.settings.windowsVersion.wrappedValue
+        self.canChangeWinVersion = true
+    }
 
     var body: some View {
         VStack {
             Form {
+                Section {
+                    Picker("Windows Version",
+                           selection: $windowsVersion) {
+                        ForEach(WinVersion.allCases.reversed(), id: \.self) {
+                            Text($0.pretty())
+                        }
+                    }
+                    .disabled(!canChangeWinVersion)
+                }
                 Section("config.title.dxvk") {
                     Toggle(isOn: $bottle.settings.dxvk) {
                         Text("config.dxvk")
@@ -61,6 +78,23 @@ struct ConfigView: View {
                 }
             }
             .padding()
+            .onChange(of: windowsVersion) { newValue in
+                canChangeWinVersion = false
+                Task(priority: .userInitiated) {
+                    do {
+                        try await Wine.changeWinVersion(bottle: bottle, win: newValue)
+                        canChangeWinVersion = true
+                        bottle.settings.windowsVersion = newValue
+                    } catch {
+                        print(error)
+                        canChangeWinVersion = true
+                        windowsVersion = bottle.settings.windowsVersion
+                    }
+                }
+            }
+            .onAppear {
+                windowsVersion = bottle.settings.windowsVersion
+            }
         }
         .navigationTitle("\(bottle.name) \(NSLocalizedString("tab.config", comment: ""))")
     }
