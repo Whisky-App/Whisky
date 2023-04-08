@@ -22,7 +22,7 @@ struct ConfigView: View {
         VStack {
             Form {
                 Section {
-                    Picker("Windows Version",
+                    Picker("config.winVersion",
                            selection: $windowsVersion) {
                         ForEach(WinVersion.allCases.reversed(), id: \.self) {
                             Text($0.pretty())
