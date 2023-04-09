@@ -2,7 +2,7 @@
 "tab.programs" = "Programy";
 "tab.info" = "Informacje";
 
-"tab.navTitle.config" = "%@ Config";
+"tab.navTitle.config" = "Konfiguracja %@";
 "tab.navTitle.programs" = "%@ Programs";
 "tab.navTitle.info" = "%@ Info";
 
