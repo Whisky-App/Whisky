@@ -6,8 +6,8 @@
 "button.showInFinder" = "Show in Finder";
 "button.run" = "Exécuter...";
 "button.ok" = "OK";
-"button.renameBottle" = "Rename Bottle";
-"button.deleteBottle" = "Supprimer la bouteille";
+"button.renameBottle" = "Renommer";
+"button.deleteBottle" = "Supprimer...";
 "button.createBottle" = "Créer une bouteille";
 
 "config.winVersion" = "Windows Version";
@@ -31,7 +31,7 @@
 "info.win" = "Version de Windows :";
 
 "alert.message" = "Impossible d'ouvrir le programme !";
-"alert.info" = "Échec de l'ouverture ";
+"alert.info" = "Échec de l'ouverture";
 
 "create.title" = "Créer une nouvelle bouteille";
 "create.name" = "Nom de la bouteille :";
