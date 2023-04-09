@@ -2,6 +2,10 @@
 "tab.programs" = "Programas";
 "tab.info" = "Información";
 
+"tab.navTitle.config" = "%@ Config";
+"tab.navTitle.programs" = "%@ Programs";
+"tab.navTitle.info" = "%@ Info";
+
 "button.cDrive" = "Abrir unidad C";
 "button.showInFinder" = "Mostrar en Finder";
 "button.run" = "Ejecutar...";
@@ -9,6 +13,10 @@
 "button.renameBottle" = "Renombrar";
 "button.deleteBottle" = "Eliminar...";
 "button.createBottle" = "Crear Botella";
+"button.deleteAlert.msg" = "Delete %@?";
+"button.deleteAlert.info" = "Are you sure you want to delete this bottle? This action is permanent.";
+"button.deleteAlert.delete" = "Delete";
+"button.deleteAlert.cancel" = "Cancel";
 
 "config.winVersion" = "Windows Version";
 "config.title.dxvk" = "DXVK";
