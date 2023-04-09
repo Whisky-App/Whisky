@@ -8,7 +8,7 @@
 import Foundation
 
 struct BottleSettingsData: Codable {
-    var wineVersion: String = "8.5"
+    var wineVersion: String = "7.7"
     var baseSettings: BaseSettingsData = BaseSettingsData()
 }
 

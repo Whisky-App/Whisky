@@ -96,7 +96,9 @@ struct ConfigView: View {
                 windowsVersion = bottle.settings.windowsVersion
             }
         }
-        .navigationTitle("\(bottle.name) \(NSLocalizedString("tab.config", comment: ""))")
+        .navigationTitle(String(format: NSLocalizedString("tab.navTitle.config",
+                                                          comment: ""),
+                                bottle.name))
     }
 }
 

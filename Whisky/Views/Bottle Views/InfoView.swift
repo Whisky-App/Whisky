@@ -31,7 +31,9 @@ struct InfoView: View {
             }
         }
         .formStyle(.grouped)
-        .navigationTitle("\(bottle.name) \(NSLocalizedString("tab.info", comment: ""))")
+        .navigationTitle(String(format: NSLocalizedString("tab.navTitle.info",
+                                                          comment: ""),
+                                bottle.name))
     }
 }
 

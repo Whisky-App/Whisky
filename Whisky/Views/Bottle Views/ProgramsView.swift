@@ -25,7 +25,9 @@ struct ProgramsView: View {
                 }
             }
             .formStyle(.grouped)
-            .navigationTitle("\(bottle.name) \(NSLocalizedString("tab.programs", comment: ""))")
+            .navigationTitle(String(format: NSLocalizedString("tab.navTitle.programs",
+                                                              comment: ""),
+                                    bottle.name))
             .onAppear {
                 programs = bottle.updateInstalledPrograms()
             }

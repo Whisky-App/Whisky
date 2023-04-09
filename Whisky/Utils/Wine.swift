@@ -104,6 +104,11 @@ class Wine {
     static func wineVersion() async throws -> String {
         var output = try await run(["--version"])
         output.replace("wine-", with: "")
+
+        // Deal with WineCX version names
+        if let index = output.firstIndex(where: { $0.isWhitespace }) {
+            return String(output.prefix(upTo: index))
+        }
         return output.trimmingCharacters(in: .whitespacesAndNewlines)
     }
 
