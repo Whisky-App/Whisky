@@ -2,6 +2,10 @@
 "tab.programs" = "Программы";
 "tab.info" = "Сведения";
 
+"tab.navTitle.config" = "%@ Config";
+"tab.navTitle.programs" = "%@ Programs";
+"tab.navTitle.info" = "%@ Info";
+
 "button.cDrive" = "Открыть диск C";
 "button.showInFinder" = "Показать в Finder";
 "button.run" = "Выполнить...";
@@ -9,6 +13,10 @@
 "button.renameBottle" = "Переименовать";
 "button.deleteBottle" = "Удалить...";
 "button.createBottle" = "Создать Бутылку";
+"button.deleteAlert.msg" = "Delete %@?";
+"button.deleteAlert.info" = "Are you sure you want to delete this bottle? This action is permanent.";
+"button.deleteAlert.delete" = "Delete";
+"button.deleteAlert.cancel" = "Cancel";
 
 "config.winVersion" = "Windows Version";
 "config.title.dxvk" = "DXVK";
