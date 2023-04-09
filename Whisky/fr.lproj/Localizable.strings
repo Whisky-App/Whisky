@@ -1,40 +1,40 @@
-"tab.config" = "Config";
+"tab.config" = "Configuration";
 "tab.programs" = "Programmes";
 "tab.info" = "Info";
 
-"tab.navTitle.config" = "%@ Config";
-"tab.navTitle.programs" = "%@ Programs";
-"tab.navTitle.info" = "%@ Info";
+"tab.navTitle.config" = "Configuration de %@";
+"tab.navTitle.programs" = "Programmes de %@";
+"tab.navTitle.info" = "Info sur %@";
 
 "button.cDrive" = "Ouvrir C Drive";
-"button.showInFinder" = "Show in Finder";
+"button.showInFinder" = "Afficher dans Finder";
 "button.run" = "Exécuter...";
 "button.ok" = "OK";
 "button.renameBottle" = "Renommer";
 "button.deleteBottle" = "Supprimer...";
 "button.createBottle" = "Créer une bouteille";
-"button.deleteAlert.msg" = "Delete %@?";
-"button.deleteAlert.info" = "Are you sure you want to delete this bottle? This action is permanent.";
-"button.deleteAlert.delete" = "Delete";
-"button.deleteAlert.cancel" = "Cancel";
+"button.deleteAlert.msg" = "Supprimer %@ ?";
+"button.deleteAlert.info" = "Êtes-vous sûr de vouloir supprimer cette bouteille ? Cette action est permanente.";
+"button.deleteAlert.delete" = "Supprimer";
+"button.deleteAlert.cancel" = "Annuler";
 
-"config.winVersion" = "Windows Version";
+"config.winVersion" = "Version de Windows";
 "config.title.dxvk" = "DXVK";
 "config.dxvk" = "DXVK";
 "config.dxvkHud" = "HUD DXVK";
 "config.title.metal" = "Metal";
 "config.metalHud" = "HUD Metal";
 "config.metalTrace" = "Trace de Metal";
-"config.metalTrace.info" = "Allows you to capture GPU workload in Xcode";
+"config.metalTrace.info" = "Permet de capturer la charge de travail GPU en Xcode";
 "config.esync" = "ESync";
 "config.winecfg" = "Ouvrir la Configuration Wine";
 
 "program.title" = "Programmes Installés";
-"program.env" = "Environment Variables";
+"program.env" = "Variables d'Environnement";
 
 "info.title" = "Info";
 "info.path" = "Chemin :";
-"info.path.copy" = "Copy Path";
+"info.path.copy" = "Copier Chemin";
 "info.wine" = "Version de Wine :";
 "info.win" = "Version de Windows :";
 
@@ -47,8 +47,8 @@
 "create.cancel" = "Annuler";
 "create.create" = "Créer";
 
-"rename.title" = "Rename bottle";
-"rename.name" = "New name:";
-"rename.rename" = "Rename";
+"rename.title" = "Renommer la bouteille";
+"rename.name" = "Nouveau nom :";
+"rename.rename" = "Renommer";
 
-"check.updates" = "Check for Updates...";
+"check.updates" = "Recherche des Mises à Jour...";
