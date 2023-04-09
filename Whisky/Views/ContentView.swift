@@ -67,11 +67,31 @@ struct BottleListEntry: View {
                     Text("button.renameBottle")
                 }
                 Button {
-                    bottle.delete()
+                    showDeleteAlert(bottle: bottle)
                 } label: {
                     Text("button.deleteBottle")
                 }
             }
+    }
+
+    func showDeleteAlert(bottle: Bottle) {
+        let alert = NSAlert()
+        alert.messageText = String(format: NSLocalizedString("button.deleteAlert.msg",
+                                                             comment: ""),
+                                   bottle.name)
+        alert.informativeText = NSLocalizedString("button.deleteAlert.info", comment: "")
+        alert.alertStyle = .warning
+        let delete = alert.addButton(withTitle: NSLocalizedString("button.deleteAlert.delete", comment: ""))
+        delete.hasDestructiveAction = true
+        alert.addButton(withTitle: NSLocalizedString("button.deleteAlert.delete", comment: ""))
+
+        let response = alert.runModal()
+
+        if response == .alertFirstButtonReturn {
+            Task(priority: .userInitiated) {
+                await bottle.delete()
+            }
+        }
     }
 }
 

@@ -192,8 +192,12 @@ struct KeyItem: View {
     }
 }
 
-struct ArgumentEditor_Previews: PreviewProvider {
+// swiftlint:disable line_length
+struct ProgramView_Previews: PreviewProvider {
     static var previews: some View {
-        ArgumentEditor(environment: .constant(["Test1": "Bing", "Test2": "Bong"]))
+        ProgramView(program: .constant(Program(name: "MinecraftLauncher.exe",
+                                               url: URL(filePath: "/Users/isaacmarovitz/Library/Containers/com.isaacmarovitz.Whisky/Bottles/Windows 10/drive_c/Program Files (x86)/Minecraft Launcher/MinecraftLauncher.exe"),
+                                               bottle: Bottle())))
     }
 }
+// swiftlint:enable line_length
