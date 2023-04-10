@@ -34,16 +34,6 @@ struct ConfigView: View {
                     Toggle(isOn: $bottle.settings.dxvk) {
                         Text("config.dxvk")
                     }
-                    .onChange(of: bottle.settings.dxvk) { enabled in
-                        if enabled {
-                            print("Enabling DXVK")
-                            bottle.enableDXVK()
-                        } else {
-                            print("Disabling DXVK")
-                            bottle.disableDXVK()
-                        }
-                    }
-
                     Toggle(isOn: $bottle.settings.dxvkHud) {
                         Text("config.dxvkHud")
                     }
