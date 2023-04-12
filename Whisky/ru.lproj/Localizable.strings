@@ -1,6 +1,10 @@
-"tab.config" = "Конфигурация";
+"tab.config" = "Настройки";
 "tab.programs" = "Программы";
 "tab.info" = "Сведения";
+
+"tab.navTitle.config" = "%@ – настройки";
+"tab.navTitle.programs" = "%@ – программы";
+"tab.navTitle.info" = "%@ – информация";
 
 "button.cDrive" = "Открыть диск C";
 "button.showInFinder" = "Показать в Finder";
@@ -9,8 +13,12 @@
 "button.renameBottle" = "Переименовать";
 "button.deleteBottle" = "Удалить...";
 "button.createBottle" = "Создать Бутылку";
+"button.deleteAlert.msg" = "Удалить %@?";
+"button.deleteAlert.info" = "Вы уверены, что хотите удалить эту бутылку? Это действие необратимо.";
+"button.deleteAlert.delete" = "Удалить";
+"button.deleteAlert.cancel" = "Отмена";
 
-"config.winVersion" = "Windows Version";
+"config.winVersion" = "Версия Windows";
 "config.title.dxvk" = "DXVK";
 "config.dxvk" = "DXVK";
 "config.dxvkHud" = "DXVK HUD";
@@ -19,7 +27,7 @@
 "config.metalTrace" = "Трассировка Metal";
 "config.metalTrace.info" = "Позволяет отслеживать рабочую нагрузку видеокарты через Xcode";
 "config.esync" = "ESync";
-"config.winecfg" = "Открыть конфигурацию Wine";
+"config.winecfg" = "Открыть настройки Wine";
 
 "program.title" = "Установленные программы";
 "program.env" = "Переменные окружения";
