@@ -2,6 +2,10 @@
 "tab.programs" = "Programy";
 "tab.info" = "Informacje";
 
+"tab.navTitle.config" = "Konfiguracja %@";
+"tab.navTitle.programs" = "%@ Programy";
+"tab.navTitle.info" = "%@ Informacje";
+
 "button.cDrive" = "Otwórz dysk C";
 "button.showInFinder" = "Pokaż w Finderze";
 "button.run" = "Uruchom...";
@@ -9,8 +13,12 @@
 "button.renameBottle" = "Zmień nazwę";
 "button.deleteBottle" = "Usuń...";
 "button.createBottle" = "Utwórz butelkę";
+"button.deleteAlert.msg" = "Usunąć %@?";
+"button.deleteAlert.info" = "Czy na pewno chcesz usunąć tę butelkę? Ta operacja jest trwała.";
+"button.deleteAlert.delete" = "Usuń";
+"button.deleteAlert.cancel" = "Anuluj";
 
-"config.winVersion" = "Windows Version";
+"config.winVersion" = "Wersja Windows";
 "config.title.dxvk" = "DXVK";
 "config.dxvk" = "DXVK";
 "config.dxvkHud" = "DXVK HUD";
@@ -35,7 +43,7 @@
 
 "create.title" = "Utwórz nową butelkę";
 "create.name" = "Nazwa butelki:";
-"create.win" = "Wersja systemu Windows:";
+"create.win" = "Wersja Windows:";
 "create.cancel" = "Anuluj";
 "create.create" = "Utwórz";
 
