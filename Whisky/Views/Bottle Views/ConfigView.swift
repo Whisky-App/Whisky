@@ -34,8 +34,11 @@ struct ConfigView: View {
                     Toggle(isOn: $bottle.settings.dxvk) {
                         Text("config.dxvk")
                     }
-                    Toggle(isOn: $bottle.settings.dxvkHud) {
-                        Text("config.dxvkHud")
+                    Picker("config.dxvkHud", selection: $bottle.settings.dxvkHud) {
+                        Text("Full").tag(DXVKHUD.full)
+                        Text("Partial").tag(DXVKHUD.partial)
+                        Text("FPS").tag(DXVKHUD.fps)
+                        Text("Off").tag(DXVKHUD.off)
                     }
                     .disabled(!bottle.settings.dxvk)
                 }

@@ -10,7 +10,6 @@ import Foundation
 struct ProgramSettingsData: Codable {
     var environment: [String: String] = [:]
     var arguments: String = ""
-    var baseSettings: BaseSettingsData = BaseSettingsData()
 }
 
 class ProgramSettings {
@@ -35,60 +34,6 @@ class ProgramSettings {
         }
         set {
             settings.arguments = newValue
-        }
-    }
-
-    var windowsVersion: WinVersion {
-        get {
-            return settings.baseSettings.windowsVersion
-        }
-        set {
-            settings.baseSettings.windowsVersion = newValue
-        }
-    }
-
-    var dxvk: Bool {
-        get {
-            return settings.baseSettings.dxvk
-        }
-        set {
-            settings.baseSettings.dxvk = newValue
-        }
-    }
-
-    var dxvkHud: Bool {
-        get {
-            return settings.baseSettings.dxvkHud
-        }
-        set {
-            settings.baseSettings.dxvkHud = newValue
-        }
-    }
-
-    var metalHud: Bool {
-        get {
-            return settings.baseSettings.metalHud
-        }
-        set {
-            settings.baseSettings.metalHud = newValue
-        }
-    }
-
-    var metalTrace: Bool {
-        get {
-            return settings.baseSettings.metalTrace
-        }
-        set {
-            settings.baseSettings.metalTrace = newValue
-        }
-    }
-
-    var esync: Bool {
-        get {
-            return settings.baseSettings.esync
-        }
-        set {
-            settings.baseSettings.esync = newValue
         }
     }
 
