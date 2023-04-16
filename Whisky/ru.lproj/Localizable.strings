@@ -31,12 +31,14 @@
 
 "program.title" = "Установленные программы";
 "program.env" = "Переменные окружения";
+"program.args" = "Arguments";
+"program.config" = "Config";
 
 "info.title" = "Сведения";
-"info.path" = "Путь:";
+"info.path" = "Path";
 "info.path.copy" = "Скопировать путь";
-"info.wine" = "Версия Wine:";
-"info.win" = "Версия Windows:";
+"info.wine" = "Wine Version";
+"info.win" = "Windows Version";
 
 "alert.message" = "Не удалось запустить программу!";
 "alert.info" = "Не удалось открыть";
