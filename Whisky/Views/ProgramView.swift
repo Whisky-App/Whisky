@@ -32,9 +32,16 @@ struct ProgramView: View {
                     }
                 }
                 Section("program.config") {
-                    TextField("program.args", text: $program.settings.arguments)
-                        .textFieldStyle(.roundedBorder)
-                        .font(.system(.body, design: .monospaced))
+                    VStack {
+                        HStack {
+                            Text("program.args")
+                            Spacer()
+                        }
+                        TextField("", text: $program.settings.arguments)
+                            .textFieldStyle(.roundedBorder)
+                            .font(.system(.body, design: .monospaced))
+                            .labelsHidden()
+                    }
                     EnvironmentVarEditor(environment: $environment)
                 }
             }

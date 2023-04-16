@@ -12,10 +12,14 @@ struct BottleSettingsData: Codable {
     var baseSettings: BaseSettingsData = BaseSettingsData()
 }
 
+enum DXVKHUD: Codable {
+    case full, partial, fps, off
+}
+
 struct BaseSettingsData: Codable {
     var windowsVersion: WinVersion = .win7
     var dxvk: Bool = false
-    var dxvkHud: Bool = false
+    var dxvkHud: DXVKHUD = .off
     var metalHud: Bool = false
     var metalTrace: Bool = false
     var esync: Bool = false
@@ -23,8 +27,15 @@ struct BaseSettingsData: Codable {
     func environmentVariables(environment: inout [String: String]) {
         if dxvk {
             environment.updateValue("d3d11,dxgi,d3d10core=n,b", forKey: "WINEDLLOVERRIDES")
-            if dxvkHud {
+            switch dxvkHud {
+            case .full:
+                environment.updateValue("full", forKey: "DXVK_HUD")
+            case .partial:
                 environment.updateValue("devinfo,fps,frametimes", forKey: "DXVK_HUD")
+            case .fps:
+                environment.updateValue("fps", forKey: "DXVK_HUD")
+            case .off:
+                break
             }
         }
 
@@ -78,7 +89,7 @@ class BottleSettings {
         }
     }
 
-    var dxvkHud: Bool {
+    var dxvkHud: DXVKHUD {
         get {
             return settings.baseSettings.dxvkHud
         }
