@@ -31,12 +31,14 @@
 
 "program.title" = "Programmes Installés";
 "program.env" = "Variables d'Environnement";
+"program.args" = "Arguments";
+"program.config" = "Config";
 
 "info.title" = "Info";
-"info.path" = "Chemin :";
+"info.path" = "Path";
 "info.path.copy" = "Copier Chemin";
-"info.wine" = "Version de Wine :";
-"info.win" = "Version de Windows :";
+"info.wine" = "Wine Version";
+"info.win" = "Windows Version";
 
 "alert.message" = "Impossible d'ouvrir le programme !";
 "alert.info" = "Échec de l'ouverture";
