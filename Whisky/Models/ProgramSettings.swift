@@ -9,7 +9,7 @@ import Foundation
 
 struct ProgramSettingsData: Codable {
     var environment: [String: String] = [:]
-    var arguments: [String] = []
+    var arguments: String = ""
     var baseSettings: BaseSettingsData = BaseSettingsData()
 }
 
@@ -29,7 +29,7 @@ class ProgramSettings {
         }
     }
 
-    var arguments: [String] {
+    var arguments: String {
         get {
             return settings.arguments
         }

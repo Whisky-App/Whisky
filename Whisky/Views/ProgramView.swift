@@ -31,8 +31,11 @@ struct ProgramView: View {
                         }
                     }
                 }
-                Section("program.env") {
-                    ArgumentEditor(environment: $environment)
+                Section("program.config") {
+                    TextField("program.args", text: $program.settings.arguments)
+                        .textFieldStyle(.roundedBorder)
+                        .font(.system(.body, design: .monospaced))
+                    EnvironmentVarEditor(environment: $environment)
                 }
             }
             .formStyle(.grouped)
@@ -96,12 +99,16 @@ struct ProgramView: View {
     }
 }
 
-struct ArgumentEditor: View {
+struct EnvironmentVarEditor: View {
     @Binding var environment: [String: String]
     @State var selection = Set<String>()
 
     var body: some View {
         VStack {
+            HStack {
+                Text("program.env")
+                Spacer()
+            }
             List(environment.keys.sorted(by: <), id: \.self, selection: $selection) { key in
                 if let value = environment[key] {
                     KeyItem(key: key,
