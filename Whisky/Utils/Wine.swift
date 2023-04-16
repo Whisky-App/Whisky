@@ -47,11 +47,8 @@ class Wine {
                 }
             }
 
-            bottle
-                .settings
-                .settings
-                .baseSettings
-                .environmentVariables(environment: &env)
+            bottle.settings
+                  .environmentVariables(environment: &env)
 
             if bottle.settings.dxvk {
                 enableDXVK(bottle: bottle)

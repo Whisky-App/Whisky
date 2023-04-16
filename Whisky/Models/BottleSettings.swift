@@ -9,50 +9,16 @@ import Foundation
 
 struct BottleSettingsData: Codable {
     var wineVersion: String = "7.7"
-    var baseSettings: BaseSettingsData = BaseSettingsData()
-}
-
-enum DXVKHUD: Codable {
-    case full, partial, fps, off
-}
-
-struct BaseSettingsData: Codable {
     var windowsVersion: WinVersion = .win7
     var dxvk: Bool = false
     var dxvkHud: DXVKHUD = .off
     var metalHud: Bool = false
     var metalTrace: Bool = false
     var esync: Bool = false
+}
 
-    func environmentVariables(environment: inout [String: String]) {
-        if dxvk {
-            environment.updateValue("d3d11,dxgi,d3d10core=n,b", forKey: "WINEDLLOVERRIDES")
-            switch dxvkHud {
-            case .full:
-                environment.updateValue("full", forKey: "DXVK_HUD")
-            case .partial:
-                environment.updateValue("devinfo,fps,frametimes", forKey: "DXVK_HUD")
-            case .fps:
-                environment.updateValue("fps", forKey: "DXVK_HUD")
-            case .off:
-                break
-            }
-        }
-
-        if esync {
-            environment.updateValue("1", forKey: "WINEESYNC")
-        }
-
-        if metalHud {
-            environment.updateValue("1", forKey: "MTL_HUD_ENABLED")
-        }
-
-        if metalTrace {
-            environment.updateValue("1", forKey: "METAL_CAPTURE_ENABLED")
-            // Might not be needed
-            environment.updateValue("2", forKey: "MVK_CONFIG_AUTO_GPU_CAPTURE_SCOPE")
-        }
-    }
+enum DXVKHUD: Codable {
+    case full, partial, fps, off
 }
 
 class BottleSettings {
@@ -73,55 +39,55 @@ class BottleSettings {
 
     var windowsVersion: WinVersion {
         get {
-            return settings.baseSettings.windowsVersion
+            return settings.windowsVersion
         }
         set {
-            settings.baseSettings.windowsVersion = newValue
+            settings.windowsVersion = newValue
         }
     }
 
     var dxvk: Bool {
         get {
-            return settings.baseSettings.dxvk
+            return settings.dxvk
         }
         set {
-            settings.baseSettings.dxvk = newValue
+            settings.dxvk = newValue
         }
     }
 
     var dxvkHud: DXVKHUD {
         get {
-            return settings.baseSettings.dxvkHud
+            return settings.dxvkHud
         }
         set {
-            settings.baseSettings.dxvkHud = newValue
+            settings.dxvkHud = newValue
         }
     }
 
     var metalHud: Bool {
         get {
-            return settings.baseSettings.metalHud
+            return settings.metalHud
         }
         set {
-            settings.baseSettings.metalHud = newValue
+            settings.metalHud = newValue
         }
     }
 
     var metalTrace: Bool {
         get {
-            return settings.baseSettings.metalTrace
+            return settings.metalTrace
         }
         set {
-            settings.baseSettings.metalTrace = newValue
+            settings.metalTrace = newValue
         }
     }
 
     var esync: Bool {
         get {
-            return settings.baseSettings.esync
+            return settings.esync
         }
         set {
-            settings.baseSettings.esync = newValue
+            settings.esync = newValue
         }
     }
 
@@ -165,6 +131,36 @@ class BottleSettings {
         } catch {
             print(error)
             return false
+        }
+    }
+
+    func environmentVariables(environment: inout [String: String]) {
+        if dxvk {
+            environment.updateValue("d3d11,dxgi,d3d10core=n,b", forKey: "WINEDLLOVERRIDES")
+            switch dxvkHud {
+            case .full:
+                environment.updateValue("full", forKey: "DXVK_HUD")
+            case .partial:
+                environment.updateValue("devinfo,fps,frametimes", forKey: "DXVK_HUD")
+            case .fps:
+                environment.updateValue("fps", forKey: "DXVK_HUD")
+            case .off:
+                break
+            }
+        }
+
+        if esync {
+            environment.updateValue("1", forKey: "WINEESYNC")
+        }
+
+        if metalHud {
+            environment.updateValue("1", forKey: "MTL_HUD_ENABLED")
+        }
+
+        if metalTrace {
+            environment.updateValue("1", forKey: "METAL_CAPTURE_ENABLED")
+            // Might not be needed
+            environment.updateValue("2", forKey: "MVK_CONFIG_AUTO_GPU_CAPTURE_SCOPE")
         }
     }
 }
