@@ -10,8 +10,10 @@ import Alamofire
 
 class AppDB {
     static func makeRequest() {
-        let appDBForm = AppDBForm(sappFamilyAppNameData: "Steam")
-        let encoder = URLEncodedFormEncoder(alphabetizeKeyValuePairs: false, boolEncoding: .literal)
+        let appDBForm = AppDBForm(sappFamily_appNameData: "Steam")
+        let encoder = URLEncodedFormEncoder(alphabetizeKeyValuePairs: false,
+                                            boolEncoding: .literal,
+                                            keyEncoding: .custom({ $0.replacingOccurrences(of: "_", with: "-") }))
 
         // swiftlint:disable:next line_length
         AF.request("https://appdb.winehq.org/objectManager.php?bIsQueue=false&bIsRejected=false&sClass=application&sTitle=Browse+Applications&iItemsPerPage=200&iPage=1&sOrderBy=appName&bAscending=true",
@@ -23,25 +25,27 @@ class AppDB {
     }
 }
 
+// swiftlint:disable identifier_name
 struct AppDBForm: Encodable {
-    let iappVersionRatingOp: Int = 5
+    let iappVersion_ratingOp: Int = 5
     let iappCategoryOp: Int = 11
-    let iappVersionLicenseOp: Int = 5
-    var sappVersionRatingData: AppVersionRatingData = .empty
-    var iversionsIdOp: NumOp = .equalTo
-    var sversionsIdData: VersionsIdData = .empty
+    let iappVersion_licenseOp: Int = 5
+    var sappVersion_ratingData: AppVersionRatingData = .empty
+    var iversions_idOp: NumOp = .equalTo
+    var sversions_idData: VersionsIdData = .empty
     var sappCategoryData: AppCategoryData = .empty
-    var sappVersionLicenseData: AppVersionLicenseData = .empty
-    var iappFamilyKeywordsOp: StringOp = .contains
-    var sappFamilyKeywordsData: String = ""
-    var iappFamilyAppNameOp: StringOp = .contains
-    var sappFamilyAppNameData: String = ""
+    var sappVersion_licenseData: AppVersionLicenseData = .empty
+    var iappFamily_keywordsOp: StringOp = .contains
+    var sappFamily_keywordsData: String = ""
+    var iappFamily_appNameOp: StringOp = .contains
+    var sappFamily_appNameData: String = ""
     let ionlyDownloadableOp: Int = 10
     var sonlyDownloadableData: Bool = false
-    let iappFamilyAppNameOp0: StringOp = .contains
-    let sappFamilyAppNameData0: String = ""
+    let iappFamily_appNameOp0: StringOp = .contains
+    let sappFamily_appNameData0: String = ""
     var sFilterSubmit: String = ""
 }
+// swiftlint:enable identifier_name
 
 enum AppVersionRatingData: String, Encodable {
     case empty = ""
