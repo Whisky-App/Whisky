@@ -17,6 +17,8 @@
 		6E355E5C29D7830C002D83BE /* InfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E355E5B29D7830C002D83BE /* InfoView.swift */; };
 		6E355E5E29D7D85D002D83BE /* ProgramView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E355E5D29D7D85D002D83BE /* ProgramView.swift */; };
 		6E355E6029D7D8BD002D83BE /* Program.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E355E5F29D7D8BD002D83BE /* Program.swift */; };
+		6E3F750129ED85E20066D318 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 6E3F750029ED85E20066D318 /* Alamofire */; };
+		6E3F750329ED85F20066D318 /* AppDB.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E3F750229ED85F20066D318 /* AppDB.swift */; };
 		6E40495629CCA19C006E3F1B /* WhiskyApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E40495529CCA19C006E3F1B /* WhiskyApp.swift */; };
 		6E40495829CCA19C006E3F1B /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E40495729CCA19C006E3F1B /* ContentView.swift */; };
 		6E40495A29CCA19C006E3F1B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6E40495929CCA19C006E3F1B /* Assets.xcassets */; };
@@ -43,6 +45,7 @@
 		6E355E5B29D7830C002D83BE /* InfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoView.swift; sourceTree = "<group>"; };
 		6E355E5D29D7D85D002D83BE /* ProgramView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgramView.swift; sourceTree = "<group>"; };
 		6E355E5F29D7D8BD002D83BE /* Program.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Program.swift; sourceTree = "<group>"; };
+		6E3F750229ED85F20066D318 /* AppDB.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDB.swift; sourceTree = "<group>"; };
 		6E40495229CCA19C006E3F1B /* Whisky.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Whisky.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6E40495529CCA19C006E3F1B /* WhiskyApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WhiskyApp.swift; sourceTree = "<group>"; };
 		6E40495729CCA19C006E3F1B /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -70,6 +73,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				6E064B1229DD32A200D9A2D2 /* Sparkle in Frameworks */,
+				6E3F750129ED85E20066D318 /* Alamofire in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -175,6 +179,7 @@
 			isa = PBXGroup;
 			children = (
 				6E50D97F29CD0850008C39F6 /* Wine.swift */,
+				6E3F750229ED85F20066D318 /* AppDB.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -198,6 +203,7 @@
 			name = Whisky;
 			packageProductDependencies = (
 				6E064B1129DD32A200D9A2D2 /* Sparkle */,
+				6E3F750029ED85E20066D318 /* Alamofire */,
 			);
 			productName = Whisky;
 			productReference = 6E40495229CCA19C006E3F1B /* Whisky.app */;
@@ -233,6 +239,7 @@
 			mainGroup = 6E40494929CCA19C006E3F1B;
 			packageReferences = (
 				6E064B1029DD32A200D9A2D2 /* XCRemoteSwiftPackageReference "Sparkle" */,
+				6E3F74FF29ED85E20066D318 /* XCRemoteSwiftPackageReference "Alamofire" */,
 			);
 			productRefGroup = 6E40495329CCA19C006E3F1B /* Products */;
 			projectDirPath = "";
@@ -298,6 +305,7 @@
 				6E064B1429DD331F00D9A2D2 /* SparkleView.swift in Sources */,
 				6E40495629CCA19C006E3F1B /* WhiskyApp.swift in Sources */,
 				6E50D98329CD6066008C39F6 /* BottleVM.swift in Sources */,
+				6E3F750329ED85F20066D318 /* AppDB.swift in Sources */,
 				6E355E6029D7D8BD002D83BE /* Program.swift in Sources */,
 				6E40498129CCA8B0006E3F1B /* BottleView.swift in Sources */,
 				6E26058629D9267B00DDD788 /* ShellLink.swift in Sources */,
@@ -534,6 +542,14 @@
 				kind = branch;
 			};
 		};
+		6E3F74FF29ED85E20066D318 /* XCRemoteSwiftPackageReference "Alamofire" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Alamofire/Alamofire";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.0.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -541,6 +557,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 6E064B1029DD32A200D9A2D2 /* XCRemoteSwiftPackageReference "Sparkle" */;
 			productName = Sparkle;
+		};
+		6E3F750029ED85E20066D318 /* Alamofire */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 6E3F74FF29ED85E20066D318 /* XCRemoteSwiftPackageReference "Alamofire" */;
+			productName = Alamofire;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
