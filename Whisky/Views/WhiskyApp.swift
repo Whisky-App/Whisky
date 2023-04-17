@@ -39,7 +39,9 @@ struct WhiskyApp: App {
                 .environmentObject(BottleVM.shared)
                 .onAppear {
                     NSWindow.allowsAutomaticWindowTabbing = false
-                    AppDB.makeRequest()
+                    Task(priority: .userInitiated) {
+                        await AppDB.makeRequest()
+                    }
                 }
         }
         .commands {
