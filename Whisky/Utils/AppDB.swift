@@ -11,7 +11,7 @@ import Alamofire
 class AppDB {
     static func makeRequest() {
         let appDBForm = AppDBForm(sappFamilyAppNameData: "Steam")
-        let encoder = URLEncodedFormEncoder(alphabetizeKeyValuePairs: false)
+        let encoder = URLEncodedFormEncoder(alphabetizeKeyValuePairs: false, boolEncoding: .literal)
 
         // swiftlint:disable:next line_length
         AF.request("https://appdb.winehq.org/objectManager.php?bIsQueue=false&bIsRejected=false&sClass=application&sTitle=Browse+Applications&iItemsPerPage=200&iPage=1&sOrderBy=appName&bAscending=true",
