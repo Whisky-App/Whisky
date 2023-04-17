@@ -19,6 +19,7 @@
 		6E355E6029D7D8BD002D83BE /* Program.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E355E5F29D7D8BD002D83BE /* Program.swift */; };
 		6E3F750129ED85E20066D318 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 6E3F750029ED85E20066D318 /* Alamofire */; };
 		6E3F750329ED85F20066D318 /* AppDB.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E3F750229ED85F20066D318 /* AppDB.swift */; };
+		6E3F750629ED9D650066D318 /* SwiftSoup in Frameworks */ = {isa = PBXBuildFile; productRef = 6E3F750529ED9D650066D318 /* SwiftSoup */; };
 		6E40495629CCA19C006E3F1B /* WhiskyApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E40495529CCA19C006E3F1B /* WhiskyApp.swift */; };
 		6E40495829CCA19C006E3F1B /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E40495729CCA19C006E3F1B /* ContentView.swift */; };
 		6E40495A29CCA19C006E3F1B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6E40495929CCA19C006E3F1B /* Assets.xcassets */; };
@@ -74,6 +75,7 @@
 			files = (
 				6E064B1229DD32A200D9A2D2 /* Sparkle in Frameworks */,
 				6E3F750129ED85E20066D318 /* Alamofire in Frameworks */,
+				6E3F750629ED9D650066D318 /* SwiftSoup in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -204,6 +206,7 @@
 			packageProductDependencies = (
 				6E064B1129DD32A200D9A2D2 /* Sparkle */,
 				6E3F750029ED85E20066D318 /* Alamofire */,
+				6E3F750529ED9D650066D318 /* SwiftSoup */,
 			);
 			productName = Whisky;
 			productReference = 6E40495229CCA19C006E3F1B /* Whisky.app */;
@@ -240,6 +243,7 @@
 			packageReferences = (
 				6E064B1029DD32A200D9A2D2 /* XCRemoteSwiftPackageReference "Sparkle" */,
 				6E3F74FF29ED85E20066D318 /* XCRemoteSwiftPackageReference "Alamofire" */,
+				6E3F750429ED9D650066D318 /* XCRemoteSwiftPackageReference "SwiftSoup" */,
 			);
 			productRefGroup = 6E40495329CCA19C006E3F1B /* Products */;
 			projectDirPath = "";
@@ -550,6 +554,14 @@
 				minimumVersion = 5.0.0;
 			};
 		};
+		6E3F750429ED9D650066D318 /* XCRemoteSwiftPackageReference "SwiftSoup" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/scinfu/SwiftSoup";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.0.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -562,6 +574,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 6E3F74FF29ED85E20066D318 /* XCRemoteSwiftPackageReference "Alamofire" */;
 			productName = Alamofire;
+		};
+		6E3F750529ED9D650066D318 /* SwiftSoup */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 6E3F750429ED9D650066D318 /* XCRemoteSwiftPackageReference "SwiftSoup" */;
+			productName = SwiftSoup;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

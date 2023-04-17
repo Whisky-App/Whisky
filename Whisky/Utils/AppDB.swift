@@ -7,22 +7,50 @@
 
 import Foundation
 import Alamofire
+import SwiftSoup
 
 class AppDB {
-    static func makeRequest() {
+    static func makeRequest() async {
         let appDBForm = AppDBForm(sappFamily_appNameData: "Steam")
         let encoder = URLEncodedFormEncoder(alphabetizeKeyValuePairs: false,
                                             boolEncoding: .literal,
                                             keyEncoding: .custom({ $0.replacingOccurrences(of: "_", with: "-") }))
+        var entries: [Entry] = []
 
-        // swiftlint:disable:next line_length
-        AF.request("https://appdb.winehq.org/objectManager.php?bIsQueue=false&bIsRejected=false&sClass=application&sTitle=Browse+Applications&iItemsPerPage=200&iPage=1&sOrderBy=appName&bAscending=true",
-                   method: .post,
-                   parameters: appDBForm,
-                   encoder: URLEncodedFormParameterEncoder(encoder: encoder)).response { response in
-            print(String(data: response.request!.httpBody!, encoding: .utf8)!)
+        do {
+            // Should adjust URL params later
+            // swiftlint:disable:next line_length
+            let url = "https://appdb.winehq.org/objectManager.php?bIsQueue=false&bIsRejected=false&sClass=application&sTitle=Browse+Applications&iItemsPerPage=200&iPage=1&sOrderBy=appName&bAscending=true"
+            let html = try await AF.request(url,
+                                             method: .post,
+                                             parameters: appDBForm,
+                                             encoder: URLEncodedFormParameterEncoder(encoder: encoder))
+                .serializingString().value
+
+            let document = try SwiftSoup.parse(html)
+            if let table = try document.select("tbody").first() {
+                for row in try table.select("tr") {
+                    let data = try row.select("td")
+                    let entry = Entry(name: try data[0].text(),
+                                      entry: try data[1].text(),
+                                      description: try data[2].text())
+                    entries.append(entry)
+                }
+            }
+        } catch {
+            print(error)
+        }
+
+        for entry in entries {
+            print(entry)
         }
     }
+}
+
+struct Entry {
+    let name: String
+    let entry: String
+    let description: String
 }
 
 // swiftlint:disable identifier_name
