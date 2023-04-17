@@ -10,8 +10,8 @@ import Alamofire
 import SwiftSoup
 
 class AppDB {
-    static func makeRequest() async {
-        let appDBForm = AppDBForm(sappFamily_appNameData: "Steam")
+    static func makeRequest(appName: String) async -> [Entry] {
+        let appDBForm = AppDBForm(sappFamily_appNameData: appName)
         let encoder = URLEncodedFormEncoder(alphabetizeKeyValuePairs: false,
                                             boolEncoding: .literal,
                                             keyEncoding: .custom({ $0.replacingOccurrences(of: "_", with: "-") }))
@@ -25,14 +25,14 @@ class AppDB {
                                              method: .post,
                                              parameters: appDBForm,
                                              encoder: URLEncodedFormParameterEncoder(encoder: encoder))
-                .serializingString().value
+                                   .serializingString().value
 
             let document = try SwiftSoup.parse(html)
             if let table = try document.select("tbody").first() {
                 for row in try table.select("tr") {
                     let data = try row.select("td")
                     let entry = Entry(name: try data[0].text(),
-                                      entry: try data[1].text(),
+                                      entry: Int(try data[1].text()) ?? 0,
                                       description: try data[2].text())
                     entries.append(entry)
                 }
@@ -41,15 +41,13 @@ class AppDB {
             print(error)
         }
 
-        for entry in entries {
-            print(entry)
-        }
+        return entries.sorted { $0.entry < $1.entry }
     }
 }
 
 struct Entry {
     let name: String
-    let entry: String
+    let entry: Int
     let description: String
 }
 
