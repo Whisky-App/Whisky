@@ -31,14 +31,14 @@
 
 "program.title" = "Zainstalowane programy";
 "program.env" = "Zmienne środowiskowe";
-"program.args" = "Arguments";
-"program.config" = "Config";
+"program.args" = "Parametry";
+"program.config" = "Konfiguracja";
 
 "info.title" = "Informacje";
-"info.path" = "Path";
+"info.path" = "Ścieżka";
 "info.path.copy" = "Skopiuj ścieżkę";
-"info.wine" = "Wine Version";
-"info.win" = "Windows Version";
+"info.wine" = "Wersja Wine";
+"info.win" = "Wersja Windows";
 
 "alert.message" = "Nie udało się otworzyć programu!";
 "alert.info" = "Nie można otworzyć";
