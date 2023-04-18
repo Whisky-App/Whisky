@@ -8,18 +8,40 @@
 import SwiftUI
 
 struct AppDBView: View {
-    @State var entries: [Entry]
+    @State var entries: [Entry] = []
+    @State var search: String = ""
+    @State var searchTask: Task<(), Never>?
 
     var body: some View {
         List($entries, id: \.entry) { entry in
             EntryView(entry: entry)
         }
         .listStyle(.inset(alternatesRowBackgrounds: true))
-        .onAppear {
-            Task(priority: .userInitiated) {
-                entries = await AppDB.makeRequest(appName: "Steam")
+        .onChange(of: search) { value in
+            if value.isEmpty {
+                entries.removeAll()
+                return
+            }
+
+            if let task = searchTask {
+                task.cancel()
+            }
+
+            entries.removeAll()
+            entries.append(Entry(name: value, entry: 0, description: ""))
+
+            searchTask = Task(priority: .userInitiated) {
+                do {
+                    try await Task.sleep(nanoseconds: UInt64(0.5 * Double(NSEC_PER_SEC)))
+                    
+                    try Task.checkCancellation()
+                    entries = await AppDB.makeRequest(appName: value)
+                } catch {
+                    return
+                }
             }
         }
+        .searchable(text: $search)
     }
 }
 
@@ -52,9 +74,7 @@ struct EntryView: View {
 }
 
 struct AppDBView_Previews: PreviewProvider {
-    @State static var entries: [Entry] = []
-
     static var previews: some View {
-        AppDBView(entries: entries)
+        AppDBView()
     }
 }
