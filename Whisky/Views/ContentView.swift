@@ -15,11 +15,8 @@ struct ContentView: View {
     var body: some View {
         NavigationSplitView {
             List(bottleVM.bottles, id: \.url, selection: $selected) { bottle in
-                BottleListEntry(bottle: bottle)
+                BottleListEntry(bottle: .constant(bottle))
             }
-            NavigationLink(destination: AppDBView(), label: {
-                Text("AppDB")
-            })
         } detail: {
             if let url = selected {
                 if let bottle = bottleVM.bottles.first(where: { $0.url == url }) {
@@ -55,13 +52,13 @@ struct ContentView: View {
 }
 
 struct BottleListEntry: View {
-    @State var bottle: Bottle
+    @Binding var bottle: Bottle
     @State var showBottleRename: Bool = false
 
     var body: some View {
         Text(bottle.name)
             .sheet(isPresented: $showBottleRename) {
-                BottleRenameView(bottle: bottle)
+                BottleRenameView(bottle: .constant(bottle))
             }
             .contextMenu {
                 Button {

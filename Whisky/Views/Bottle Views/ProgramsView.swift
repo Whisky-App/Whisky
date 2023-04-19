@@ -17,7 +17,7 @@ struct ProgramsView: View {
                 Section("program.title") {
                     List($programs, id: \.self) { program in
                         NavigationLink {
-                            ProgramView(program: program.wrappedValue)
+                            ProgramView(program: program)
                         } label: {
                             ProgramItemView(bottle: bottle, program: program)
                         }
