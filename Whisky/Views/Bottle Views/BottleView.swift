@@ -25,7 +25,7 @@ struct BottleView: View {
                             ForEach(startMenuPrograms, id: \.self) { link in
                                 NavigationLink {
                                     if let link = link.linkInfo, let program = link.program {
-                                        ProgramView(program: program)
+                                        ProgramView(program: .constant(program))
                                     }
                                 } label: {
                                     ShellLinkView(link: link)
