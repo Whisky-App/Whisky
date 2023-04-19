@@ -83,7 +83,7 @@ struct BottleListEntry: View {
         alert.alertStyle = .warning
         let delete = alert.addButton(withTitle: NSLocalizedString("button.deleteAlert.delete", comment: ""))
         delete.hasDestructiveAction = true
-        alert.addButton(withTitle: NSLocalizedString("button.deleteAlert.delete", comment: ""))
+        alert.addButton(withTitle: NSLocalizedString("button.deleteAlert.cancel", comment: ""))
 
         let response = alert.runModal()
 
