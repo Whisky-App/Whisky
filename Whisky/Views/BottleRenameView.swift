@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct BottleRenameView: View {
-    @Binding var bottle: Bottle
+    @State var bottle: Bottle
     @State var newBottleName: String = ""
     @Environment(\.dismiss) var dismiss
 
@@ -50,6 +50,6 @@ struct BottleRenameView: View {
 
 struct BottleRenameView_Previews: PreviewProvider {
     static var previews: some View {
-        BottleRenameView(bottle: .constant(Bottle()))
+        BottleRenameView(bottle: Bottle())
     }
 }
