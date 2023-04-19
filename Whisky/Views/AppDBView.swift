@@ -33,7 +33,7 @@ struct AppDBView: View {
             searchTask = Task(priority: .userInitiated) {
                 do {
                     try await Task.sleep(nanoseconds: UInt64(0.5 * Double(NSEC_PER_SEC)))
-                    
+
                     try Task.checkCancellation()
                     entries = await AppDB.makeRequest(appName: value)
                 } catch {
