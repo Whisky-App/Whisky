@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct AppDBView: View {
-    @State var entries: [Entry] = []
+    @State var entries: [SearchEntry] = []
     @State var search: String = ""
     @State var searchTask: Task<(), Never>?
 
@@ -28,14 +28,14 @@ struct AppDBView: View {
             }
 
             entries.removeAll()
-            entries.append(Entry(name: value, entry: 0, description: ""))
+            entries.append(SearchEntry(name: value, entry: 0, description: ""))
 
             searchTask = Task(priority: .userInitiated) {
                 do {
                     try await Task.sleep(nanoseconds: UInt64(0.5 * Double(NSEC_PER_SEC)))
 
                     try Task.checkCancellation()
-                    entries = await AppDB.makeRequest(appName: value)
+                    entries = await AppDB.makeSearchRequest(appName: value)
                 } catch {
                     return
                 }
@@ -46,7 +46,7 @@ struct AppDBView: View {
 }
 
 struct EntryView: View {
-    @Binding var entry: Entry
+    @Binding var entry: SearchEntry
 
     var body: some View {
         HStack {

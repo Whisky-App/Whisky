@@ -10,12 +10,12 @@ import Alamofire
 import SwiftSoup
 
 class AppDB {
-    static func makeRequest(appName: String) async -> [Entry] {
+    static func makeSearchRequest(appName: String) async -> [SearchEntry] {
         let appDBForm = AppDBForm(sappFamily_appNameData: appName)
         let encoder = URLEncodedFormEncoder(alphabetizeKeyValuePairs: false,
                                             boolEncoding: .literal,
                                             keyEncoding: .custom({ $0.replacingOccurrences(of: "_", with: "-") }))
-        var entries: [Entry] = []
+        var entries: [SearchEntry] = []
 
         do {
             // Should adjust URL params later
@@ -31,7 +31,7 @@ class AppDB {
             if let table = try document.select("tbody").first() {
                 for row in try table.select("tr") {
                     let data = try row.select("td")
-                    let entry = Entry(name: try data[0].text(),
+                    let entry = SearchEntry(name: try data[0].text(),
                                       entry: Int(try data[1].text()) ?? 0,
                                       description: try data[2].text())
                     entries.append(entry)
@@ -43,12 +43,48 @@ class AppDB {
 
         return entries.sorted { $0.entry < $1.entry }
     }
+
+    static func makeAppRequest(id: String) async -> [AppEntry] {
+        var entries: [AppEntry] = []
+
+        do {
+            let url = "https://appdb.winehq.org/objectManager.php?sClass=application&iId=\(id)"
+            let html = try await AF.request(url).serializingString().value
+
+            let document = try SwiftSoup.parse(html)
+            if let table = try document.select("tbody").first() {
+                for row in try table.select("tr") {
+                    let data = try row.select("td")
+                    let entry = AppEntry(version: try data[0].text(),
+                                         description: try data[1].text(),
+                                         rating: AppVersionRatingData(rawValue: try data[2].text()) ?? .empty,
+                                         latestWine: try data[3].text(),
+                                         testResults: Int(try data[4].text()) ?? 0,
+                                         comments: Int(try data[5].text()) ?? 0)
+                    entries.append(entry)
+                }
+            }
+        } catch {
+            print(error)
+        }
+        
+        return entries
+    }
 }
 
-struct Entry {
+struct SearchEntry {
     let name: String
     let entry: Int
     let description: String
+}
+
+struct AppEntry {
+    let version: String
+    let description: String
+    let rating: AppVersionRatingData
+    let latestWine: String
+    let testResults: Int
+    let comments: Int
 }
 
 // swiftlint:disable identifier_name
