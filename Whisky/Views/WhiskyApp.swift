@@ -10,15 +10,7 @@ import Sparkle
 
 class AppDelegate: NSObject, NSApplicationDelegate {
     func applicationWillTerminate(_ notification: Notification) {
-        Task(priority: .userInitiated) {
-            for bottle in BottleVM.shared.bottles {
-                do {
-                    try await Wine.killBottle(bottle: bottle)
-                } catch {
-                    print("Failed to kill bottle: \(error)")
-                }
-            }
-        }
+        WhiskyApp.killBottles()
     }
 }
 
@@ -47,18 +39,20 @@ struct WhiskyApp: App {
             }
             CommandGroup(after: .importExport) {
                 Button {
-                    Task(priority: .userInitiated) {
-                        for bottle in BottleVM.shared.bottles {
-                            do {
-                                try await Wine.killBottle(bottle: bottle)
-                            } catch {
-                                print("Failed to kill bottle: \(error)")
-                            }
-                        }
-                    }
+                    WhiskyApp.killBottles()
                 } label: {
                     Text("kill.bottles")
                 }
+            }
+        }
+    }
+
+    static func killBottles() {
+        for bottle in BottleVM.shared.bottles {
+            do {
+                try Wine.killBottle(bottle: bottle)
+            } catch {
+                print("Failed to kill bottle: \(error)")
             }
         }
     }
