@@ -45,6 +45,21 @@ struct WhiskyApp: App {
             CommandGroup(after: .appInfo) {
                 SparkleView(updater: updaterController.updater)
             }
+            CommandGroup(after: .importExport) {
+                Button {
+                    Task(priority: .userInitiated) {
+                        for bottle in BottleVM.shared.bottles {
+                            do {
+                                try await Wine.killBottle(bottle: bottle)
+                            } catch {
+                                print("Failed to kill bottle: \(error)")
+                            }
+                        }
+                    }
+                } label: {
+                    Text("kill.bottles")
+                }
+            }
         }
     }
 }
