@@ -13,10 +13,6 @@ class Wine {
         .appendingPathComponent("Wine")
         .appendingPathComponent("bin")
 
-    static let dxvkFolder: URL = (Bundle.main.resourceURL ?? URL(fileURLWithPath: ""))
-        .appendingPathComponent("Libraries")
-        .appendingPathComponent("DXVK")
-
     static let wineBinary: URL = binFolder
         .appendingPathComponent("wine64")
 
@@ -49,10 +45,6 @@ class Wine {
 
             bottle.settings
                   .environmentVariables(environment: &env)
-
-            if bottle.settings.dxvk {
-                enableDXVK(bottle: bottle)
-            }
 
             process.environment = env
         }
@@ -134,56 +126,6 @@ class Wine {
 
     static func killBottle(bottle: Bottle) throws {
         return try runWineserver(["-k"], bottle: bottle)
-    }
-
-    static func enableDXVK(bottle: Bottle) {
-        let enumerator64 = FileManager.default.enumerator(at: Wine.dxvkFolder
-                                                                .appendingPathComponent("x64"),
-                                                          includingPropertiesForKeys: [.isRegularFileKey])
-
-        while let url = enumerator64?.nextObject() as? URL {
-            if url.pathExtension == "dll" {
-                let system32 = bottle.url
-                    .appendingPathComponent("drive_c")
-                    .appendingPathComponent("windows")
-                    .appendingPathComponent("system32")
-
-                let original = system32
-                    .appendingPathComponent(url.lastPathComponent)
-
-                do {
-                    try FileManager.default.removeItem(at: original)
-                    try FileManager.default.copyItem(at: url,
-                                                     to: original)
-                } catch {
-                    print("Failed to replace \(url.lastPathComponent): \(error.localizedDescription)")
-                }
-            }
-        }
-
-        let enumerator32 = FileManager.default.enumerator(at: Wine.dxvkFolder
-                                                                .appendingPathComponent("x32"),
-                                                          includingPropertiesForKeys: [.isRegularFileKey])
-
-        while let url = enumerator32?.nextObject() as? URL {
-            if url.pathExtension == "dll" {
-                let syswow64 = bottle.url
-                    .appendingPathComponent("drive_c")
-                    .appendingPathComponent("windows")
-                    .appendingPathComponent("syswow64")
-
-                let original = syswow64
-                    .appendingPathComponent(url.lastPathComponent)
-
-                do {
-                    try FileManager.default.removeItem(at: original)
-                    try FileManager.default.copyItem(at: url,
-                                                     to: original)
-                } catch {
-                    print("Failed to replace \(url.lastPathComponent): \(error.localizedDescription)")
-                }
-            }
-        }
     }
 }
 
