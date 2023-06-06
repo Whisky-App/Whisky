@@ -17,8 +17,8 @@ struct AppDBView: View {
             EntryView(entry: entry)
         }
         .listStyle(.inset(alternatesRowBackgrounds: true))
-        .onChange(of: search) { value in
-            if value.isEmpty {
+        .onChange(of: search) { _, newValue  in
+            if newValue.isEmpty {
                 entries.removeAll()
                 return
             }
@@ -28,14 +28,14 @@ struct AppDBView: View {
             }
 
             entries.removeAll()
-            entries.append(SearchEntry(name: value, entry: 0, description: ""))
+            entries.append(SearchEntry(name: newValue, entry: 0, description: ""))
 
             searchTask = Task(priority: .userInitiated) {
                 do {
                     try await Task.sleep(nanoseconds: UInt64(0.5 * Double(NSEC_PER_SEC)))
 
                     try Task.checkCancellation()
-                    entries = await AppDB.makeSearchRequest(appName: value)
+                    entries = await AppDB.makeSearchRequest(appName: newValue)
                 } catch {
                     return
                 }

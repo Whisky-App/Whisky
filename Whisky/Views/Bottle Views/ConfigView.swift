@@ -59,7 +59,7 @@ struct ConfigView: View {
                 }
             }
             .padding()
-            .onChange(of: windowsVersion) { newValue in
+            .onChange(of: windowsVersion) { _, newValue in
                 canChangeWinVersion = false
                 Task(priority: .userInitiated) {
                     do {
