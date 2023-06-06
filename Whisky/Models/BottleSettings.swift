@@ -114,8 +114,7 @@ class BottleSettings {
             }
             return true
         } catch {
-            // This is overly verbose sometimes
-            // print(error)
+            print(error)
             return false
         }
     }
