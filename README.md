@@ -22,6 +22,6 @@ Debug and profile with ease
 
 ---
 
-Whisky provides a clean and easy to use graphical wrapper for Wine built in native SwiftUI. You can make and manage bottles, install and run Windows apps and games, and unlock the full potential of your Mac with no technical knowledge required. Whisky is built on top of several powerful OSS libraries, [WineCX 22.1.0](https://github.com/Gcenx/winecx/releases/tag/crossover-wine-22.1.0), [DXVK 1.10.3](https://github.com/Gcenx/DXVK-macOS/releases/tag/v1.10.3), and [MoltenVK 1.2.3](https://github.com/KhronosGroup/MoltenVK/releases/tag/v1.2.3).
+Whisky provides a clean and easy to use graphical wrapper for Wine built in native SwiftUI. You can make and manage bottles, install and run Windows apps and games, and unlock the full potential of your Mac with no technical knowledge required. Whisky is built on top of CrossOver 22.1.1, and Apple's own `Game Porting Toolkit`.
 
 Special thanks to [Gcenx](https://github.com/Gcenx), without your amazing work Whisky wouldn't be possible.
