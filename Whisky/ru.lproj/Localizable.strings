@@ -19,9 +19,6 @@
 "button.deleteAlert.cancel" = "Отмена";
 
 "config.winVersion" = "Версия Windows";
-"config.title.dxvk" = "DXVK";
-"config.dxvk" = "DXVK";
-"config.dxvkHud" = "DXVK HUD";
 "config.title.metal" = "Metal";
 "config.metalHud" = "Metal HUD";
 "config.metalTrace" = "Трассировка Metal";
@@ -35,10 +32,10 @@
 "program.config" = "Config";
 
 "info.title" = "Сведения";
-"info.path" = "Path";
+"info.path" = "Путь:";
 "info.path.copy" = "Скопировать путь";
-"info.wine" = "Wine Version";
-"info.win" = "Windows Version";
+"info.wine" = "Версия Wine:";
+"info.win" = "Версия Windows:";
 
 "alert.message" = "Не удалось запустить программу!";
 "alert.info" = "Не удалось открыть";
