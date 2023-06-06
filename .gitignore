@@ -88,3 +88,16 @@ fastlane/test_output
 # https://github.com/johnno1962/injectionforxcode
 
 iOSInjectionProject/
+/Whisky/Libraries/Wine/lib/external
+/Whisky/Libraries/Wine/lib/wine/x86_64-unix/atidxx64.so
+/Whisky/Libraries/Wine/lib/wine/x86_64-unix/d3d10.so
+/Whisky/Libraries/Wine/lib/wine/x86_64-unix/d3d11.so
+/Whisky/Libraries/Wine/lib/wine/x86_64-unix/d3d12.so
+/Whisky/Libraries/Wine/lib/wine/x86_64-unix/d3d9.so
+/Whisky/Libraries/Wine/lib/wine/x86_64-unix/dxgi.so
+/Whisky/Libraries/Wine/lib/wine/x86_64-windows/atidxx64.dll
+/Whisky/Libraries/Wine/lib/wine/x86_64-windows/d3d10.dll
+/Whisky/Libraries/Wine/lib/wine/x86_64-windows/d3d11.dll
+/Whisky/Libraries/Wine/lib/wine/x86_64-windows/d3d12.dll
+/Whisky/Libraries/Wine/lib/wine/x86_64-windows/d3d9.dll
+/Whisky/Libraries/Wine/lib/wine/x86_64-windows/dxgi.dll

@@ -19,9 +19,6 @@
 "button.deleteAlert.cancel" = "Anuluj";
 
 "config.winVersion" = "Wersja Windows";
-"config.title.dxvk" = "DXVK";
-"config.dxvk" = "DXVK";
-"config.dxvkHud" = "DXVK HUD";
 "config.title.metal" = "Metal";
 "config.metalHud" = "Metal HUD";
 "config.metalTrace" = "Śledź Metal";

@@ -30,18 +30,6 @@ struct ConfigView: View {
                     }
                     .disabled(!canChangeWinVersion)
                 }
-                Section("config.title.dxvk") {
-                    Toggle(isOn: $bottle.settings.dxvk) {
-                        Text("config.dxvk")
-                    }
-                    Picker("config.dxvkHud", selection: $bottle.settings.dxvkHud) {
-                        Text("Full").tag(DXVKHUD.full)
-                        Text("Partial").tag(DXVKHUD.partial)
-                        Text("FPS").tag(DXVKHUD.fps)
-                        Text("Off").tag(DXVKHUD.off)
-                    }
-                    .disabled(!bottle.settings.dxvk)
-                }
                 Section("config.title.metal") {
                     Toggle(isOn: $bottle.settings.metalHud) {
                         Text("config.metalHud")
