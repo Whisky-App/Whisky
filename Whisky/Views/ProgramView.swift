@@ -100,7 +100,7 @@ struct ProgramView: View {
 
             environment = program.settings.environment
         }
-        .onChange(of: environment) { oldValue, newValue in
+        .onChange(of: environment) { _, newValue in
             program.settings.environment = newValue
         }
     }
