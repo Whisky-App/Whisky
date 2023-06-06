@@ -74,7 +74,7 @@ class Wine {
         return ""
     }
 
-    static func runWineserver(_ args: [String], bottle: Bottle) async throws -> String {
+    static func runWineserver(_ args: [String], bottle: Bottle) throws {
         let process = Process()
         let pipe = Pipe()
 
@@ -86,20 +86,6 @@ class Wine {
         process.environment = ["WINEPREFIX": bottle.url.path]
 
         try process.run()
-
-        if let output = try pipe.fileHandleForReading.readToEnd() {
-            let outputString = String(decoding: output, as: UTF8.self)
-            print(outputString)
-            process.waitUntilExit()
-            let status = process.terminationStatus
-            if status != 0 {
-                throw outputString
-            }
-
-            return outputString
-        }
-
-        return ""
     }
 
     static func wineVersion() async throws -> String {
@@ -146,9 +132,8 @@ class Wine {
                              environment: program.settings.environment)
     }
 
-    @discardableResult
-    static func killBottle(bottle: Bottle) async throws -> String {
-        return try await runWineserver(["-k"], bottle: bottle)
+    static func killBottle(bottle: Bottle) throws {
+        return try runWineserver(["-k"], bottle: bottle)
     }
 
     static func enableDXVK(bottle: Bottle) {

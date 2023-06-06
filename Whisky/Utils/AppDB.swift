@@ -67,7 +67,7 @@ class AppDB {
         } catch {
             print(error)
         }
-        
+
         return entries
     }
 }

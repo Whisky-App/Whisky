@@ -1,5 +1,0 @@
-Name: clearkey
-Description: ClearKey Gecko Media Plugin
-Version: 1
-APIs: eme-decrypt-v8[org.w3.clearkey], decode-audio[aac:org.w3.clearkey], decode-video[h264:org.w3.clearkey]
-Libraries: dxva2.dll, d3d9.dll, msmpeg2vdec.dll, msmpeg2adec.dll, MSAudDecMFT.dll, evr.dll, mfheaacdec.dll, mfh264dec.dll, mfplat.dll
