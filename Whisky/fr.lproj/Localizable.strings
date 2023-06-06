@@ -19,9 +19,6 @@
 "button.deleteAlert.cancel" = "Annuler";
 
 "config.winVersion" = "Version de Windows";
-"config.title.dxvk" = "DXVK";
-"config.dxvk" = "DXVK";
-"config.dxvkHud" = "HUD DXVK";
 "config.title.metal" = "Metal";
 "config.metalHud" = "HUD Metal";
 "config.metalTrace" = "Trace de Metal";
@@ -35,10 +32,10 @@
 "program.config" = "Config";
 
 "info.title" = "Info";
-"info.path" = "Path";
+"info.path" = "Chemin :";
 "info.path.copy" = "Copier Chemin";
-"info.wine" = "Wine Version";
-"info.win" = "Windows Version";
+"info.wine" = "Version de Wine :";
+"info.win" = "Version de Windows :";
 
 "alert.message" = "Impossible d'ouvrir le programme !";
 "alert.info" = "Échec de l'ouverture";
