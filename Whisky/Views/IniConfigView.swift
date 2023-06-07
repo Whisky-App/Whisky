@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct IniConfigView: View {
-    @Binding var iniConfig: IniConfig
+    @Binding var iniConfig: INIConfig
 
     var body: some View {
         List {

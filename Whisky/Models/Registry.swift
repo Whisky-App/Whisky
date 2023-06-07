@@ -9,9 +9,9 @@ import Foundation
 
 public class Registry: Hashable {
     public struct Entries: Hashable {
-        public var system: IniConfig
-        public var user: IniConfig
-        public var userDefines: IniConfig
+        public var system: INIConfig
+        public var user: INIConfig
+        public var userDefines: INIConfig
 
         public static func == (lhs: Entries, rhs: Entries) -> Bool {
             return lhs.system == rhs.system && lhs.user == rhs.user && lhs.userDefines == rhs.userDefines
@@ -29,7 +29,7 @@ public class Registry: Hashable {
             userDefines = parseIniConfig(userDefReg)
         }
         
-        init(system: IniConfig, user: IniConfig, userDefines: IniConfig) {
+        init(system: INIConfig, user: INIConfig, userDefines: INIConfig) {
             self.system = system
             self.user = user
             self.userDefines = userDefines
