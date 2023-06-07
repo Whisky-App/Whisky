@@ -4,7 +4,7 @@
   *Wine but a bit stronger*
   
   ![](https://img.shields.io/github/actions/workflow/status/IsaacMarovitz/Whisky/SwiftLint.yml?style=for-the-badge)
-  ![](https://img.shields.io/discord/1115955071549702235?style=for-the-badge)
+  [![](https://img.shields.io/discord/1115955071549702235?style=for-the-badge)](https://discord.gg/WAgj8arM)
 </div>
 
 <img width="650" alt="Screenshot 2023-03-31 at 17 14 00" src="https://user-images.githubusercontent.com/42140194/229232488-dbad85f4-cecb-45e1-a182-f737fe9d2b1f.png">
