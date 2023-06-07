@@ -11,6 +11,7 @@ struct ContentView: View {
     @EnvironmentObject var bottleVM: BottleVM
     @State var selected: URL?
     @State var showBottleCreation: Bool = false
+    @State var showGPTInstallSheet: Bool = false
 
     var body: some View {
         NavigationSplitView {
@@ -45,8 +46,12 @@ struct ContentView: View {
         .sheet(isPresented: $showBottleCreation) {
             BottleCreationView()
         }
+        .sheet(isPresented: $showGPTInstallSheet) {
+            GPTInstallView()
+        }
         .onAppear {
             bottleVM.loadBottles()
+            showGPTInstallSheet = !GPT.isGPTInstalled()
         }
     }
 }
