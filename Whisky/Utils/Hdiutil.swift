@@ -10,7 +10,7 @@ import Foundation
 class Hdiutil {
     static let hdiutilBinary: URL = URL(filePath: "/usr/bin/hdiutil")
 
-    static func mount(url: URL) throws -> URL {
+    static func mount(url: URL) throws -> String {
         let process = Process()
         let pipe = Pipe()
 
@@ -31,19 +31,19 @@ class Hdiutil {
 
             if let range = outputString.range(of: "/Volumes") {
                 let volumePath = outputString[range.lowerBound...]
-                return URL(filePath: String(volumePath))
+                return String(volumePath).trimmingCharacters(in: .whitespacesAndNewlines)
             }
         }
 
         throw "Failed to get URL"
     }
 
-    static func unmount(url: URL) throws {
+    static func unmount(path: String) throws {
         let process = Process()
         let pipe = Pipe()
 
         process.executableURL = hdiutilBinary
-        process.arguments = ["unmount", url.path.trimmingCharacters(in: .whitespacesAndNewlines)]
+        process.arguments = ["unmount", path]
         process.standardOutput = pipe
         process.standardError = pipe
 
