@@ -100,7 +100,7 @@ struct ProgramView: View {
 
             environment = program.settings.environment
         }
-        .onChange(of: environment) { _, newValue in
+        .onChange(of: environment) { newValue in
             program.settings.environment = newValue
         }
     }
@@ -182,11 +182,11 @@ struct KeyItem: View {
         HStack {
             TextField("", text: $newKey)
             .textFieldStyle(.roundedBorder)
-            .onChange(of: newKey) { _, _ in
+            .onChange(of: newKey) { _ in
                 newKey = String(newKey.filter { !$0.isWhitespace })
             }
             .focused($isKeyFieldFocused)
-            .onChange(of: isKeyFieldFocused) { _, focus in
+            .onChange(of: isKeyFieldFocused) { focus in
                 if !focus {
                     if let entry = environment.removeValue(forKey: key) {
                         environment[newKey] = entry
@@ -197,7 +197,7 @@ struct KeyItem: View {
             TextField("", text: $value)
             .textFieldStyle(.roundedBorder)
             .focused($isValueFieldFocused)
-            .onChange(of: isValueFieldFocused) { _, focus in
+            .onChange(of: isValueFieldFocused) { focus in
                 if !focus {
                     environment[newKey] = value
                 }
