@@ -54,6 +54,16 @@
 
 import Foundation
 
+public enum INIValue {
+    case string(String)
+    case dword(UInt32)
+    case qword(UInt64)
+    case hex([[UInt8]])
+}
+
+public typealias INIConfig = [String: [String: INIValue]]
+
+
 extension String {
     func slice(from: String, to: String) -> String? {
         return (range(of: from)?.upperBound).flatMap { substringFrom in
@@ -64,13 +74,52 @@ extension String {
     }
 }
 
-public typealias INIConfig = [String: [String: String]]
 
-private func parseKVP(content: String) -> (key: String, value: String) {
-    if content.first! == "@" { return (key: "@", value: "") }
+private func parseKVP(content: String) -> (key: String, value: INIValue) {
+    if content.first! == "@" {
+        return (key: "@", value: INIValue.string(content.slice(from: "\"", to: "\"") ?? ""))
+    }
     
-    var kvp = (key: content.slice(from: "\"", to: "\"")!, value: "")
-    kvp.value = String(content.dropFirst(kvp.key.count + 3))
+    var kvp = (key: content.slice(from: "\"", to: "\"")!, value: INIValue.string(""))
+    let rawValue = String(content.dropFirst(kvp.key.count + 3))
+    switch (rawValue.first) {
+        
+
+    //dword:
+    case "d":
+        if !rawValue.hasPrefix("dword:") { break }
+        kvp.value = INIValue.dword(UInt32(rawValue.dropFirst("dword:".count), radix: 16)!)
+        break
+        
+    //qword:
+    case "q":
+        if !rawValue.hasPrefix("qword:") { break }
+        kvp.value = INIValue.qword(UInt64(rawValue.dropFirst("qword:".count), radix: 16)!)
+        break
+        
+    //hex:
+    case "h":
+        if !rawValue.hasPrefix("hex:") { break }
+        let csv = rawValue.dropFirst("hex:".count)
+        
+        var val: [[UInt8]] = []
+        for section in csv.components(separatedBy: " ") {
+            var arr: [UInt8] = []
+            for val in section.components(separatedBy: ",") {
+                if val == "" { continue }
+                arr.append(UInt8(val, radix: 16)!)
+            }
+            val.append(arr)
+        }
+        
+        kvp.value = INIValue.hex(val)
+        break
+        
+    case "\"": fallthrough
+    default:
+        kvp.value = INIValue.string(rawValue.slice(from: "\"", to: "\"") ?? "")
+        
+    }
     
     return kvp
 }
@@ -79,8 +128,11 @@ private func parseSectionHeader(content: String) -> String {
     return content.slice(from: "[", to: "]")!
 }
 
-public func parseINI(iniContent: String) -> INIConfig {
+public func parseINI(_ iniContent: String) -> INIConfig {
     var cfg = INIConfig()
+    
+    //Change all \<NEWLINE> into one line, so the parser works
+    let iniContent = iniContent.replacingOccurrences(of: "\\\n", with: "")
     
     var latestSection = ""
     for line in iniContent.components(separatedBy: "\n") {
@@ -103,13 +155,16 @@ public func parseINI(iniContent: String) -> INIConfig {
     return cfg
 }
 
-public func parseINIFile(_ file: URL) throws -> INIConfig {
-    return parseINI(iniContent: try String(contentsOf: file))
-}
+let iniSrc = """
+[Software\\Classes\\.xsl] 1686110673
+#time=1d998f52ac16888
+@="xslfile"
+"Content Type"="text/xml"
+"""
 
-print("Parsing \(CommandLine.arguments[1])")
-let ini = try parseINIFile(URL(fileURLWithPath: CommandLine.arguments[1]))
+let iniFile = parseINI(try String(contentsOf: URL(fileURLWithPath: CommandLine.arguments[1])))
+let ini = parseINI(iniSrc)
 
-for (key, val) in ini {
-    print("\(key)\t=\t\(val)")
+for (key, val) in iniFile {
+    print("\(key) = \(val)")
 }
