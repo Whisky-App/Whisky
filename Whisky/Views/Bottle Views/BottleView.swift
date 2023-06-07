@@ -64,35 +64,6 @@ struct BottleView: View {
                         startMenuPrograms = bottle.updateStartMenuPrograms()
                     }
                 }
-                
-                RegistryView(registry: .constant(Registry(mockData: Registry.Entries(
-                    system: [
-                        "Section": [
-                            "Key": "Value",
-                        ],
-                        "Section 2": [
-                            "Key": "Value",
-                            "Key 2": "Value 2",
-                        ]
-                    ], user: [
-                        "Section": [
-                            "Key": "Value",
-                        ],
-
-                        "Section 2": [
-                            "Key": "Value",
-                            "Key 2": "Value 2",
-                        ]
-                    ], userDefines: [
-                        "Section": [
-                            "Key": "Value"
-                        ],
-                        "Section 2": [
-                            "Key": "Value",
-                            "Key 2": "Value 2",
-                        ]
-                    ]
-                ))))
             }
             Spacer()
             HStack {

@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import AppKit
 
 public class Registry: Hashable {
     public struct Entries: Hashable {
@@ -24,9 +25,23 @@ public class Registry: Hashable {
         }
 
         init(systemRegistryPath sysReg: URL, userRegistryPath userReg: URL, userDefinesRegistryPath userDefReg: URL) {
-            system = parseIniConfig(sysReg)
-            user = parseIniConfig(userReg)
-            userDefines = parseIniConfig(userDefReg)
+            do {
+                system = try parseINIFile(sysReg)
+                user = try parseINIFile(userReg)
+                userDefines = try parseINIFile(userDefReg)
+            } catch {
+                let alert = NSAlert()
+                alert.messageText = NSLocalizedString("registry.loadfailed", comment: "")
+                alert.informativeText = NSLocalizedString("button.loadfailed.info", comment: "")
+                alert.alertStyle = .critical
+                
+                alert.addButton(withTitle: "Ok")
+                let response = alert.runModal()
+                
+                system = [:]
+                user = [:]
+                userDefines = [:]
+            }
         }
         
         init(system: INIConfig, user: INIConfig, userDefines: INIConfig) {

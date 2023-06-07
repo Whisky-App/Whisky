@@ -54,7 +54,7 @@
 
 import Foundation
 
-public enum INIValue {
+public enum INIValue: Hashable {
     case string(String)
     case dword(UInt32)
     case qword(UInt64)
@@ -155,16 +155,6 @@ public func parseINI(_ iniContent: String) -> INIConfig {
     return cfg
 }
 
-let iniSrc = """
-[Software\\Classes\\.xsl] 1686110673
-#time=1d998f52ac16888
-@="xslfile"
-"Content Type"="text/xml"
-"""
-
-let iniFile = parseINI(try String(contentsOf: URL(fileURLWithPath: CommandLine.arguments[1])))
-let ini = parseINI(iniSrc)
-
-for (key, val) in iniFile {
-    print("\(key) = \(val)")
+public func parseINIFile(_ file: URL) throws -> INIConfig {
+    return parseINI(try String(contentsOf: file))
 }
