@@ -9,10 +9,12 @@ import Foundation
 
 // GPT = Game Porting Toolkit
 class GPT {
-    static let externalFolder: URL =  (Bundle.main.resourceURL ?? URL(fileURLWithPath: ""))
+    static let libFolder: URL = (Bundle.main.resourceURL ?? URL(fileURLWithPath: ""))
         .appendingPathComponent("Libraries")
         .appendingPathComponent("Wine")
         .appendingPathComponent("lib")
+
+    static let externalFolder: URL = libFolder
         .appendingPathComponent("external")
 
     static func isGPTInstalled() -> Bool {
@@ -21,29 +23,32 @@ class GPT {
 
     static func install(url: URL) {
         do {
-            let url = try Hdiutil.mount(url: url)
-            let pathEnumerator = FileManager.default.enumerator(atPath: url.path)
+            let path = try Hdiutil.mount(url: url) + "/lib"
 
-            while let relativePath = pathEnumerator?.nextObject() as? String {
-                let subItemAtPath = url.appendingPathComponent(relativePath).path
-                let subItemToPath = externalFolder.appendingPathComponent(relativePath).path
+            if let pathEnumerator = FileManager.default.enumerator(atPath: path) {
+                while let relativePath = pathEnumerator.nextObject() as? String {
+                    let subItemAt = URL(fileURLWithPath: path).appendingPathComponent(relativePath).path
+                    let subItemTo = libFolder.appendingPathComponent(relativePath).path
 
-                if isDir(atPath: subItemAtPath) {
-                    if !isDir(atPath: subItemToPath) {
-                        try FileManager.default.createDirectory(atPath: subItemToPath,
-                                                                withIntermediateDirectories: true)
+                    if isDir(atPath: subItemAt) {
+                        if !isDir(atPath: subItemTo) {
+                            try FileManager.default.createDirectory(atPath: subItemTo,
+                                                                    withIntermediateDirectories: true)
+                        }
+                    } else {
+                        if isFile(atPath: subItemTo) {
+                            try FileManager.default.removeItem(atPath: subItemTo)
+                        }
+
+                        try FileManager.default.copyItem(atPath: subItemAt, toPath: subItemTo)
                     }
-                } else {
-                    if isFile(atPath: subItemToPath) {
-                        try FileManager.default.removeItem(atPath: subItemToPath)
-                    }
-
-                    try FileManager.default.copyItem(atPath: subItemAtPath, toPath: subItemToPath)
                 }
+                print("GPT Installed")
+            } else {
+                print("Failed to create enumerator")
             }
 
-            print("GPT Installed")
-            try Hdiutil.unmount(url: url)
+            try Hdiutil.unmount(path: path)
         } catch {
             print(error)
         }
