@@ -15,8 +15,18 @@ struct ContentView: View {
 
     var body: some View {
         NavigationSplitView {
-            List(bottleVM.bottles, id: \.url, selection: $selected) { bottle in
-                BottleListEntry(bottle: .constant(bottle))
+            VStack {
+                if bottleVM.isLoadingBottles {
+                    ProgressView {
+                        Text("create.creating")
+                    }
+                    .progressViewStyle(.circular)
+                    .controlSize(.small)
+                }
+
+                List(bottleVM.bottles, id: \.url, selection: $selected) { bottle in
+                    BottleListEntry(bottle: .constant(bottle))
+                }
             }
         } detail: {
             if let url = selected {

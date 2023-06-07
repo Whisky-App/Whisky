@@ -18,6 +18,7 @@ class BottleVM: ObservableObject {
     static let bottleDir = containerDir
         .appendingPathComponent("Bottles")
 
+    @Published private(set) var isLoadingBottles = false
     @Published var bottles: [Bottle] = []
 
     @MainActor
@@ -35,12 +36,16 @@ class BottleVM: ObservableObject {
             }
 
             bottles.sort(by: { $0.name.lowercased() < $1.name.lowercased() })
+
+            setIsLoadingBottles(false)
         }
     }
 
     func createNewBottle(bottleName: String, winVersion: WinVersion) {
         Task(priority: .userInitiated) {
             do {
+                await setIsLoadingBottles(true)
+
                 if !FileManager.default.fileExists(atPath: BottleVM.bottleDir.path) {
                     try FileManager.default.createDirectory(atPath: BottleVM.bottleDir.path,
                                                             withIntermediateDirectories: true)
@@ -56,7 +61,13 @@ class BottleVM: ObservableObject {
                 await loadBottles()
             } catch {
                 print("Failed to create new bottle")
+                await setIsLoadingBottles(false)
             }
         }
+    }
+
+    @MainActor
+    private func setIsLoadingBottles(_ isLoadingBottles: Bool) {
+        self.isLoadingBottles = isLoadingBottles
     }
 }

@@ -45,6 +45,7 @@
 "create.win" = "Windows version:";
 "create.cancel" = "Cancel";
 "create.create" = "Create";
+"create.creating" = "Creating bottle";
 
 "rename.title" = "Rename bottle";
 "rename.name" = "New name:";
