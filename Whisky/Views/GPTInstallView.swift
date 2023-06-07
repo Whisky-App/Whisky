@@ -26,8 +26,10 @@ struct GPTInstallView: View {
                         if let data = data,
                            let path = NSString(data: data, encoding: 4),
                            let url = URL(string: path as String) {
-                            GPT.install(url: url)
-                            dismiss()
+                            if (path.contains(".dmg")) {
+                                GPT.install(url: url)
+                                dismiss()
+                            }
                         }
                     })
                     return true
