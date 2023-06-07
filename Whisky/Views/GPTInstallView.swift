@@ -9,6 +9,7 @@ import SwiftUI
 
 struct GPTInstallView: View {
     @State private var dragOver = false
+    @Environment(\.dismiss) var dismiss
 
     var body: some View {
         VStack(spacing: 20) {
@@ -26,6 +27,7 @@ struct GPTInstallView: View {
                            let path = NSString(data: data, encoding: 4),
                            let url = URL(string: path as String) {
                             GPT.install(url: url)
+                            dismiss()
                         }
                     })
                     return true
