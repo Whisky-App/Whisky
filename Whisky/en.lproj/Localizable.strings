@@ -1,3 +1,4 @@
+"tab.registry" = "Registry";
 "tab.config" = "Config";
 "tab.programs" = "Programs";
 "tab.info" = "Info";
@@ -31,6 +32,7 @@
 "program.args" = "Arguments";
 "program.config" = "Config";
 
+"info.registry" = "Registry";
 "info.title" = "Info";
 "info.path" = "Path";
 "info.path.copy" = "Copy Path";

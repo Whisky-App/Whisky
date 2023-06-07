@@ -9,8 +9,8 @@
 
 import Foundation
 
-public typealias IniSectionConfig = [String : String]
-public typealias IniConfig = [String : IniSectionConfig]
+public typealias IniSectionConfig = [String: String]
+public typealias IniConfig = [String: IniSectionConfig]
 
 
 func trim(_ str: String) -> String {

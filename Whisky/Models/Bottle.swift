@@ -25,6 +25,7 @@ public class Bottle: Hashable {
     var settings: BottleSettings
     var programs: [Program] = []
     var startMenuPrograms: [ShellLinkHeader] = []
+    var registry: Registry
 
     func openCDrive() {
         let cDrive = url.appendingPathComponent("drive_c")
@@ -150,12 +151,14 @@ public class Bottle: Hashable {
     init() {
         self.settings = BottleSettings(bottleUrl: url,
                                              name: url.lastPathComponent)
+        self.registry = Registry(bottleUrl: url)
     }
 
     init(path: URL) {
         self.url = path
         self.settings = BottleSettings(bottleUrl: url,
                                              name: url.lastPathComponent)
+        self.registry = Registry(bottleUrl: url)
     }
 }
 

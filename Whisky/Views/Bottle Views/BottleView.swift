@@ -53,6 +53,11 @@ struct BottleView: View {
                         } label: {
                             Label("tab.info", systemImage: "info.circle.fill")
                         }
+                        NavigationLink {
+                            RegistryView(registry: $bottle.registry)
+                        } label: {
+                            Label("tab.registry", systemImage: "list.bullet.rectangle")
+                        }
                     }
                     .formStyle(.grouped)
                     .onAppear {
