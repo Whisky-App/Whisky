@@ -8,29 +8,54 @@
 import SwiftUI
 
 struct IniConfigView: View {
-    var iniConfig: IniConfig
+    @Binding var iniConfig: IniConfig
 
     var body: some View {
         List {
-            ForEach(iniConfig.sorted(by: { $0.key < $1.key }), id: \.key) { section, sectionConfig in
-                Section(header: Text(section)) {
-                    ForEach(sectionConfig.sorted(by: { $0.key < $1.key }), id: \.key) { key, value in
-                        HStack {
-                            Text(key)
-                            Spacer()
-                            Text(value).foregroundColor(.secondary)
-                        }
-                    }
+            ForEach(iniConfig.keys.sorted(), id: \.self) { section in
+                iniConfigSectionView(section: section)
+            }
+        }
+    }
+    
+    @ViewBuilder
+    private func iniConfigSectionView(section: String) -> some View {
+        if let sectionConfig = iniConfig[section] {
+            Section(header: Text(section)) {
+                ForEach(sectionConfig.keys.sorted(), id: \.self) { key in
+                    iniConfigItemView(section: section, key: key)
                 }
             }
         }
     }
+    
+    @ViewBuilder
+    private func iniConfigItemView(section: String, key: String) -> some View {
+        if let value = iniConfig[section]?[key] {
+            HStack {
+                Text(key)
+                Spacer()
+                TextField("Value", text: Binding(
+                    get: { value },
+                    set: { newValue in
+                        iniConfig[section]?[key] = newValue
+                    }
+                )).foregroundColor(.secondary)
+            }
+        }
+    }
 }
+
 struct IniConfigView_Previews: PreviewProvider {
     static var previews: some View {
-        IniConfigView(iniConfig: [
-            "Test group": [
-                "key": "value"
-            ]])
+        IniConfigView(iniConfig: .constant([
+            "Section": [
+                "Key": "Value"
+            ],
+            "Section 2": [
+                "Key": "Value",
+                "Key 2": "Value 2",
+            ]
+        ]))
     }
 }

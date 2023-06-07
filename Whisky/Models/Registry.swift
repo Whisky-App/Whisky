@@ -9,9 +9,9 @@ import Foundation
 
 public class Registry: Hashable {
     public struct Entries: Hashable {
-        public let system: IniConfig
-        public let user: IniConfig
-        public let userDefines: IniConfig
+        public var system: IniConfig
+        public var user: IniConfig
+        public var userDefines: IniConfig
 
         public static func == (lhs: Entries, rhs: Entries) -> Bool {
             return lhs.system == rhs.system && lhs.user == rhs.user && lhs.userDefines == rhs.userDefines
@@ -42,7 +42,7 @@ public class Registry: Hashable {
         }
     }
 
-    public let entries: Entries
+    public var entries: Entries
 
     public static func == (lhs: Registry, rhs: Registry) -> Bool {
         return lhs.entries == rhs.entries

@@ -151,14 +151,70 @@ public class Bottle: Hashable {
     init() {
         self.settings = BottleSettings(bottleUrl: url,
                                              name: url.lastPathComponent)
-        self.registry = Registry(bottleUrl: url)
+//        self.registry = Registry(bottleUrl: url)
+        self.registry = Registry(mockData: Registry.Entries(
+            system: [
+                "Section": [
+                    "Key": "Value",
+                ],
+                "Section 2": [
+                    "Key": "Value",
+                    "Key 2": "Value 2",
+                ]
+            ], user: [
+                "Section": [
+                    "Key": "Value",
+                ],
+                
+                "Section 2": [
+                    "Key": "Value",
+                    "Key 2": "Value 2",
+                ]
+            ], userDefines: [
+                "Section": [
+                    "Key": "Value"
+                ],
+                "Section 2": [
+                    "Key": "Value",
+                    "Key 2": "Value 2",
+                ]
+            ]
+        ))
     }
 
     init(path: URL) {
         self.url = path
         self.settings = BottleSettings(bottleUrl: url,
                                              name: url.lastPathComponent)
-        self.registry = Registry(bottleUrl: url)
+//        self.registry = Registry(bottleUrl: url)
+        self.registry = Registry(mockData: Registry.Entries(
+            system: [
+                "Section": [
+                    "Key": "Value",
+                ],
+                "Section 2": [
+                    "Key": "Value",
+                    "Key 2": "Value 2",
+                ]
+            ], user: [
+                "Section": [
+                    "Key": "Value",
+                ],
+                
+                "Section 2": [
+                    "Key": "Value",
+                    "Key 2": "Value 2",
+                ]
+            ], userDefines: [
+                "Section": [
+                    "Key": "Value"
+                ],
+                "Section 2": [
+                    "Key": "Value",
+                    "Key 2": "Value 2",
+                ]
+            ]
+        ))
     }
 }
 

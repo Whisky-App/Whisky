@@ -1,6 +1,7 @@
 "tab.config" = "Configuration";
 "tab.programs" = "Programmes";
 "tab.info" = "Info";
+"tab.registry" = "Registre";
 
 "tab.navTitle.config" = "Configuration de %@";
 "tab.navTitle.programs" = "Programmes de %@";

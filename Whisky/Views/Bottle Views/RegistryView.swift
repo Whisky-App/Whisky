@@ -12,17 +12,17 @@ struct RegistryView: View {
 
     var body: some View {
         TabView {
-            IniConfigView(iniConfig: registry.entries.system)
+            IniConfigView(iniConfig: $registry.entries.system)
                 .tabItem {
                     Label("System", systemImage: "gearshape")
                 }
 
-            IniConfigView(iniConfig: registry.entries.user)
+            IniConfigView(iniConfig: $registry.entries.user)
                 .tabItem {
                     Label("User", systemImage: "person")
                 }
 
-            IniConfigView(iniConfig: registry.entries.userDefines)
+            IniConfigView(iniConfig: $registry.entries.userDefines)
                 .tabItem {
                     Label("User Defines", systemImage: "pencil")
                 }
