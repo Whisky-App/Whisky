@@ -10,12 +10,12 @@ import SwiftUI
 struct RegistrySectionEditorView: View {
     @ObservedObject var viewModel: RegistrySectionVM
     var key: String
-    
+
     @State private var stringValue: String = ""
     @State private var dwordValue: String = ""
     @State private var qwordValue: String = ""
     @State private var hexValue: String = ""
-    
+
     var body: some View {
         VStack {
             if var vals = viewModel.values {
@@ -29,7 +29,7 @@ struct RegistrySectionEditorView: View {
                     }
                     .textFieldStyle(RoundedBorderTextFieldStyle())
                     .padding()
-                    
+
                 case .dword(let value):
                     TextField("DWord Value", text: $dwordValue, onCommit: {
                         if let uintValue = UInt32(dwordValue) {
@@ -41,7 +41,7 @@ struct RegistrySectionEditorView: View {
                     }
                     .textFieldStyle(RoundedBorderTextFieldStyle())
                     .padding()
-                    
+
                 case .qword(let value):
                     TextField("QWord Value", text: $qwordValue, onCommit: {
                         if let uintValue = UInt64(qwordValue) {
@@ -53,7 +53,7 @@ struct RegistrySectionEditorView: View {
                     }
                     .textFieldStyle(RoundedBorderTextFieldStyle())
                     .padding()
-                    
+
                 case .hex(let array):
                     TextField("Hex Value", text: $hexValue, onCommit: {
                         // Parse hex string and convert to array of UInt8
@@ -67,16 +67,16 @@ struct RegistrySectionEditorView: View {
                     }
                     .textFieldStyle(RoundedBorderTextFieldStyle())
                     .padding()
-                    
+
                 default:
                     Text("Unsupported type")
                 }
             } else {
                 Text("No values")
             }
-            
+
             Spacer()
-            
+
             RegistryValueView(value: viewModel.values![key] ?? .string("")).padding()
             
         }
@@ -99,10 +99,10 @@ struct RegistrySectionEditorView_Previews: PreviewProvider {
                 "hexKey": .hex([[10, 9, 8, 7, 6, 5, 4, 3, 2, 1]])
             ]
         ]
-        
+
         let rootViewModel = RegistrySectionVM(name: "Root",
                                               children: RegistrySectionVM.fromRegistryConfig(sampleConfig))
-        
+
         return RegistrySectionEditorView(viewModel: rootViewModel, key: "Root")
     }
 }
