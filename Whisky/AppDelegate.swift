@@ -35,17 +35,15 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         let response = alert.runModal()
 
         if response == .alertFirstButtonReturn {
-            let fileManager = FileManager.default
             let appURL = Bundle.main.bundleURL
 
-            guard let applicationsURL = fileManager.urls(for: .applicationDirectory, in: .localDomainMask).first else {
+            guard let applicationsURL = FileManager.default.urls(for: .applicationDirectory, in: .localDomainMask).first else {
                 return
             }
 
             let destinationURL = applicationsURL.appendingPathComponent(appURL.lastPathComponent)
             do {
-                _ = try fileManager.replaceItemAt(destinationURL, withItemAt: appURL)
-
+                _ = try FileManager.default.replaceItemAt(destinationURL, withItemAt: appURL)
                 NSWorkspace.shared.open(destinationURL)
             } catch {
                 print("Failed to move the app: \(error)")
