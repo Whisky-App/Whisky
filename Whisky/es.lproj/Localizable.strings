@@ -28,12 +28,16 @@
 
 "program.title" = "Programas instalados";
 "program.env" = "Variables de Entorno";
+"program.args" = "Arguments";
+"program.config" = "Config";
 
 "info.title" = "Información";
 "info.path" = "Ruta:";
 "info.path.copy" = "Copiar Ruta";
 "info.wine" = "Versión de Wine:";
 "info.win" = "Versión de Windows:";
+
+"gptalert.message" = "GPT encountered an error!";
 
 "alert.message" = "¡Error al abrir el programa!";
 "alert.info" = "No se pudo abrir";
@@ -49,3 +53,10 @@
 "rename.rename" = "Renombrar";
 
 "check.updates" = "Buscar actualizaciones...";
+"kill.bottles" = "Kill All Bottles...";
+"open.logs" = "Open Logs Folder";
+
+"showAlertOnFirstLaunch.messageText" = "Would you like to move Whisky to your Applications folder?";
+"showAlertOnFirstLaunch.informativeText" = "In some cases, Whisky wont't be able to function properly from a different folder";
+"showAlertOnFirstLaunch.button.moveToApplications" = "Move to Applications";
+"showAlertOnFirstLaunch.button.dontMove" = "Don't Move";
