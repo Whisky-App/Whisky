@@ -8,12 +8,6 @@
 import SwiftUI
 import Sparkle
 
-class AppDelegate: NSObject, NSApplicationDelegate {
-    func applicationWillTerminate(_ notification: Notification) {
-        WhiskyApp.killBottles()
-    }
-}
-
 @main
 struct WhiskyApp: App {
     @NSApplicationDelegateAdaptor(AppDelegate.self) var appDelegate
