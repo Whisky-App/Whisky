@@ -25,25 +25,48 @@ public class Registry: Hashable {
         }
 
         init(systemRegistryPath sysReg: URL, userRegistryPath userReg: URL, userDefinesRegistryPath userDefReg: URL) {
+//            let parse = { (_ url: URL) in
+//                do {
+//                    return try parseINIFile(url)
+//                } catch Error(let err) {
+//                    DispatchQueue.main.async {
+//                        let alert = NSAlert()
+//                        alert.messageText = NSLocalizedString("registry.loadfailed", comment: "")
+//                        alert.informativeText = NSLocalizedString(err, comment: "")
+//                        alert.alertStyle = .critical
+//
+//                        alert.addButton(withTitle: "Aw, damn")
+//                        alert.runModal()
+//                    }
+//
+//                    return [:]
+//                }
+//            }
+            
+            
+            // swiftlint:disable force_try
+            print("Loading inis: \(sysReg), \(userReg), \(userDefReg)")
             do {
                 system = try parseINIFile(sysReg)
                 user = try parseINIFile(userReg)
                 userDefines = try parseINIFile(userDefReg)
             } catch {
-                let alert = NSAlert()
-                alert.messageText = NSLocalizedString("registry.loadfailed", comment: "")
-                alert.informativeText = NSLocalizedString("button.loadfailed.info", comment: "")
-                alert.alertStyle = .critical
-                
-                alert.addButton(withTitle: "Ok")
-                let response = alert.runModal()
-                
+                DispatchQueue.main.async {
+                    let alert = NSAlert()
+                    alert.messageText = NSLocalizedString("registry.loadfailed", comment: "")
+                    alert.informativeText = NSLocalizedString("button.loadfailed.info", comment: "")
+                    alert.alertStyle = .critical
+
+                    alert.addButton(withTitle: "Ok")
+                    alert.runModal()
+                }
+
                 system = [:]
                 user = [:]
                 userDefines = [:]
             }
         }
-        
+
         init(system: INIConfig, user: INIConfig, userDefines: INIConfig) {
             self.system = system
             self.user = user

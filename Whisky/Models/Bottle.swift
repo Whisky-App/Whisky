@@ -151,6 +151,8 @@ public class Bottle: Hashable {
     init() {
         self.settings = BottleSettings(bottleUrl: url,
                                              name: url.lastPathComponent)
+        
+        //FIXME: This needs to be initted after the wine is done (or I defer the loading)
         self.registry = Registry(bottleUrl: url)
 //        self.registry = Registry(mockData: Registry.Entries(
 //            system: [
