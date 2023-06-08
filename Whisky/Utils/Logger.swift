@@ -23,10 +23,7 @@ class Log {
                 try FileManager.default.createDirectory(at: Log.logsFolder, withIntermediateDirectories: true)
             }
 
-            let formatter = DateFormatter()
-            formatter.dateFormat = "d MMM y HH-mm"
-
-            let dateString = formatter.string(from: Date.now)
+            let dateString = Date.now.ISO8601Format()
             let fileURL = Log.logsFolder
                 .appendingPathComponent(dateString)
                 .appendingPathExtension("log")
