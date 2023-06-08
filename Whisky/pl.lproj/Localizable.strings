@@ -37,6 +37,8 @@
 "info.wine" = "Wersja Wine:";
 "info.win" = "Wersja systemu Windows:";
 
+"gptalert.message" = "GPT encountered an error!";
+
 "alert.message" = "Nie udało się otworzyć programu!";
 "alert.info" = "Nie można otworzyć";
 
@@ -52,3 +54,8 @@
 
 "check.updates" = "Sprawdź dostępność aktualizacji...";
 "kill.bottles" = "Zakończ wszystkie butelki...";
+
+"showAlertOnFirstLaunch.messageText" = "Would you like to move Whisky to your Applications folder?";
+"showAlertOnFirstLaunch.informativeText" = "In some cases, Whisky wont't be able to function properly from a different folder";
+"showAlertOnFirstLaunch.button.moveToApplications" = "Move to Applications";
+"showAlertOnFirstLaunch.button.dontMove" = "Don't Move";
