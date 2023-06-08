@@ -7,25 +7,38 @@
 
 import SwiftUI
 
+import SwiftUI
+
 struct RegistryBrowserView: View {
     @ObservedObject var viewModel: RegistrySectionVM
     
     var body: some View {
-        List {
-            ForEach(viewModel.children, id: \.name) { child in
-                NavigationLink(destination: RegistryBrowserView(viewModel: child)) {
-                    Text(child.name)
+        NavigationView {
+            // Sidebar
+            List {
+                OutlineGroup(viewModel.children!, id: \.name, children: \.children) { childViewModel in
+                    Text(childViewModel.name)
+                        .contentShape(Rectangle())
+                        .onTapGesture {
+                            viewModel.selectedChild = childViewModel
+                        }
                 }
             }
-            ForEach(Array(viewModel.values.keys), id: \.self) { key in
-                NavigationLink(destination: RegistrySectionEditorView(viewModel: viewModel, key: key)) {
-                    Text(key)
-                }
-            }
+            .listStyle(SidebarListStyle())
+            .frame(minWidth: 200)
         }
-        .navigationTitle(viewModel.name)
+        
+        // Content View
+        if let selectedSection = viewModel.selectedChild {
+            RegistrySectionContentView(viewModel: selectedSection)
+                .frame(maxWidth: .infinity, maxHeight: .infinity)
+        } else {
+            Text("Select a Registry Section")
+                .frame(maxWidth: .infinity, maxHeight: .infinity)
+        }
     }
 }
+
 
 struct RegistryBrowserView_Previews: PreviewProvider {
     static var previews: some View {

@@ -9,36 +9,45 @@ import SwiftUI
 import Combine
 
 class RegistrySectionVM: ObservableObject {
-    @Published var name: String
-    @Published var children: [RegistrySectionVM]
-    @Published var values: [String: RegistryValue]
+    let name: String
+    weak var parent: RegistrySectionVM?
+    var values: [String: RegistryValue]?
+    var children: [RegistrySectionVM]?
     
-    init(name: String, children: [RegistrySectionVM] = [], values: [String: RegistryValue] = [:]) {
+    @Published var selectedChild: RegistrySectionVM?
+    
+    init(name: String, parent: RegistrySectionVM? = nil, values: [String: RegistryValue]? = nil, children: [RegistrySectionVM]? = nil) {
         self.name = name
-        self.children = children
+        self.parent = parent
         self.values = values
+        self.children = children ?? []
     }
     
     static func fromRegistryConfig(_ config: RegistryConfig) -> [RegistrySectionVM] {
-        var sectionTree: [String: RegistrySectionVM] = [:]
+        var sectionMap: [String: RegistrySectionVM] = [:]
         
-        for (key, values) in config {
-            let sections = key.split(separator: "\\")
-            var parent: RegistrySectionVM? = nil
+        for (keyPath, values) in config {
+            var parent: RegistrySectionVM?
+            let sections = keyPath.components(separatedBy: "\\\\")
+            var path = ""
             
             for section in sections {
-                let sectionName = String(section)
-                if sectionTree[sectionName] == nil {
-                    let newSection = RegistrySectionVM(name: sectionName)
-                    sectionTree[sectionName] = newSection
-                    
-                    parent?.children.append(newSection)
+                path = path.isEmpty ? section : "\(path)\\\(section)"
+                if let existingSection = sectionMap[path] {
+                    parent = existingSection
+                } else {
+                    let newSection = RegistrySectionVM(name: section, parent: parent)
+                    parent?.children!.append(newSection)
+                    parent = newSection
+                    sectionMap[path] = newSection
                 }
-                parent = sectionTree[sectionName]
             }
+            
             parent?.values = values
         }
-        return Array(sectionTree.values)
+        
+        // Return top-level sections
+        return sectionMap.values.filter { $0.parent == nil }
     }
 }
 

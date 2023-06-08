@@ -18,63 +18,66 @@ struct RegistrySectionEditorView: View {
     
     var body: some View {
         VStack {
-            switch viewModel.values[key] {
-            case .string(let value):
-                TextField("String Value", text: $stringValue, onCommit: {
-                    viewModel.values[key] = .string(stringValue)
-                })
-                .onAppear {
-                    stringValue = value
-                }
-                .textFieldStyle(RoundedBorderTextFieldStyle())
-                .padding()
-                
-            case .dword(let value):
-                TextField("DWord Value", text: $dwordValue, onCommit: {
-                    if let uintValue = UInt32(dwordValue) {
-                        viewModel.values[key] = .dword(uintValue)
+            if var vals = viewModel.values {
+                switch vals[key] {
+                case .string(let value):
+                    TextField("String Value", text: $stringValue, onCommit: {
+                        vals[key] = .string(stringValue)
+                    })
+                    .onAppear {
+                        stringValue = value
                     }
-                })
-                .onAppear {
-                    dwordValue = String(value)
-                }
-                .textFieldStyle(RoundedBorderTextFieldStyle())
-                .padding()
-                
-            case .qword(let value):
-                TextField("QWord Value", text: $qwordValue, onCommit: {
-                    if let uintValue = UInt64(qwordValue) {
-                        viewModel.values[key] = .qword(uintValue)
+                    .textFieldStyle(RoundedBorderTextFieldStyle())
+                    .padding()
+                    
+                case .dword(let value):
+                    TextField("DWord Value", text: $dwordValue, onCommit: {
+                        if let uintValue = UInt32(dwordValue) {
+                            vals[key] = .dword(uintValue)
+                        }
+                    })
+                    .onAppear {
+                        dwordValue = String(value)
                     }
-                })
-                .onAppear {
-                    qwordValue = String(value)
+                    .textFieldStyle(RoundedBorderTextFieldStyle())
+                    .padding()
+                    
+                case .qword(let value):
+                    TextField("QWord Value", text: $qwordValue, onCommit: {
+                        if let uintValue = UInt64(qwordValue) {
+                            vals[key] = .qword(uintValue)
+                        }
+                    })
+                    .onAppear {
+                        qwordValue = String(value)
+                    }
+                    .textFieldStyle(RoundedBorderTextFieldStyle())
+                    .padding()
+                    
+                case .hex(let array):
+                    TextField("Hex Value", text: $hexValue, onCommit: {
+                        // Parse hex string and convert to array of UInt8
+                        let bytes = hexValue.split(separator: " ").compactMap { UInt8($0, radix: 16) }
+                        vals[key] = .hex([bytes])
+                    })
+                    .onAppear {
+                        hexValue = array.map { row in
+                            row.map { String(format: "%02X", $0) }.joined(separator: " ")
+                        }.joined(separator: "\n")
+                    }
+                    .textFieldStyle(RoundedBorderTextFieldStyle())
+                    .padding()
+                    
+                default:
+                    Text("Unsupported type")
                 }
-                .textFieldStyle(RoundedBorderTextFieldStyle())
-                .padding()
-                
-            case .hex(let array):
-                TextField("Hex Value", text: $hexValue, onCommit: {
-                    // Parse hex string and convert to array of UInt8
-                    let bytes = hexValue.split(separator: " ").compactMap { UInt8($0, radix: 16) }
-                    viewModel.values[key] = .hex([bytes])
-                })
-                .onAppear {
-                    hexValue = array.map { row in
-                        row.map { String(format: "%02X", $0) }.joined(separator: " ")
-                    }.joined(separator: "\n")
-                }
-                .textFieldStyle(RoundedBorderTextFieldStyle())
-                .padding()
-                
-            default:
-                Text("Unsupported type")
+            } else {
+                Text("No values")
             }
             
             Spacer()
             
-            // Show the current value below
-            RegistryValueView(value: viewModel.values[key] ?? .string("")).padding()
+            RegistryValueView(value: viewModel.values![key] ?? .string("")).padding()
             
         }
         .navigationTitle(key)

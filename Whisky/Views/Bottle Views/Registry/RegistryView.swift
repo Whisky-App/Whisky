@@ -44,9 +44,10 @@ struct RegistryView: View {
             .tabItem {
                 Label("User Defines", systemImage: "pencil")
             }
-        }
+        }.padding()
     }
 }
+
 
 struct RegistryView_Previews: PreviewProvider {
     static var previews: some View {

@@ -44,6 +44,7 @@
 		C3AE69372A327A6E00C0A70E /* RegistryBrowserView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3AE69362A327A6E00C0A70E /* RegistryBrowserView.swift */; };
 		C3AE69392A327C4D00C0A70E /* RegistrySectionEditorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3AE69382A327C4D00C0A70E /* RegistrySectionEditorView.swift */; };
 		C3AE693B2A327E8D00C0A70E /* RegistryValueView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3AE693A2A327E8D00C0A70E /* RegistryValueView.swift */; };
+		C3AE693D2A32832600C0A70E /* RegistrySectionContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3AE693C2A32832600C0A70E /* RegistrySectionContentView.swift */; };
 		EEA5A2462A31DD65008274AE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEA5A2452A31DD65008274AE /* AppDelegate.swift */; };
 /* End PBXBuildFile section */
 
@@ -89,6 +90,7 @@
 		C3AE69362A327A6E00C0A70E /* RegistryBrowserView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistryBrowserView.swift; sourceTree = "<group>"; };
 		C3AE69382A327C4D00C0A70E /* RegistrySectionEditorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrySectionEditorView.swift; sourceTree = "<group>"; };
 		C3AE693A2A327E8D00C0A70E /* RegistryValueView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistryValueView.swift; sourceTree = "<group>"; };
+		C3AE693C2A32832600C0A70E /* RegistrySectionContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrySectionContentView.swift; sourceTree = "<group>"; };
 		EEA5A2452A31DD65008274AE /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -226,6 +228,7 @@
 				C3AE69362A327A6E00C0A70E /* RegistryBrowserView.swift */,
 				C3AE69382A327C4D00C0A70E /* RegistrySectionEditorView.swift */,
 				C3AE693A2A327E8D00C0A70E /* RegistryValueView.swift */,
+				C3AE693C2A32832600C0A70E /* RegistrySectionContentView.swift */,
 			);
 			path = Registry;
 			sourceTree = "<group>";
@@ -369,6 +372,7 @@
 				C31948FD2A324A57009CB090 /* RegistryView.swift in Sources */,
 				C3AE69302A32793D00C0A70E /* RegistryParser.swift in Sources */,
 				6E26058629D9267B00DDD788 /* ShellLink.swift in Sources */,
+				C3AE693D2A32832600C0A70E /* RegistrySectionContentView.swift in Sources */,
 				6E355E5E29D7D85D002D83BE /* ProgramView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
