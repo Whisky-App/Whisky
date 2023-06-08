@@ -30,6 +30,11 @@ class Wine {
         process.standardOutput = pipe
         process.standardError = pipe
         process.currentDirectoryURL = binFolder
+        pipe.fileHandleForReading.readabilityHandler = { pipe in
+            if let line = String(data: pipe.availableData, encoding: .utf8) {
+                print(line, terminator: "")
+            }
+        }
 
         if let bottle = bottle {
             var env: [String: String]
@@ -50,17 +55,13 @@ class Wine {
         }
 
         try process.run()
+        print("\nLaunched Wine (\(process.processIdentifier))")
 
-        if let output = try pipe.fileHandleForReading.readToEnd() {
-            let outputString = String(decoding: output, as: UTF8.self)
-            print(outputString)
-            process.waitUntilExit()
-            let status = process.terminationStatus
-            if status != 0 {
-                throw outputString
-            }
+        process.waitUntilExit()
+        print("Process exited with code \(process.terminationStatus)")
 
-            return outputString
+        if process.terminationStatus != 0 {
+            throw "Wine Crashed! (\(process.terminationStatus))"
         }
 
         return ""
