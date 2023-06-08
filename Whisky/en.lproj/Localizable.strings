@@ -54,6 +54,6 @@
 "kill.bottles" = "Kill All Bottles...";
 
 "showAlertOnFirstLaunch.messageText" = "Would you like to move Whisky to your Applications folder?";
-"showAlertOnFirstLaunch.informativeText" = "In some cases app couldn't function properly from Downloads folder";
+"showAlertOnFirstLaunch.informativeText" = "In some cases, Whisky wont't be able to function properly from a different folder";
 "showAlertOnFirstLaunch.button.moveToApplications" = "Move to Applications";
 "showAlertOnFirstLaunch.button.dontMove" = "Don't Move";
