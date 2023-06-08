@@ -28,14 +28,14 @@
 
 "program.title" = "Programmes Installés";
 "program.env" = "Variables d'Environnement";
-"program.args" = "Arguments";
+"program.args" = "Paramètres";
 "program.config" = "Config";
 
 "info.title" = "Info";
-"info.path" = "Chemin :";
+"info.path" = "Chemin";
 "info.path.copy" = "Copier Chemin";
-"info.wine" = "Version de Wine :";
-"info.win" = "Version de Windows :";
+"info.wine" = "Version de Wine";
+"info.win" = "Version de Windows";
 
 "alert.message" = "Impossible d'ouvrir le programme !";
 "alert.info" = "Échec de l'ouverture";
@@ -51,4 +51,4 @@
 "rename.rename" = "Renommer";
 
 "check.updates" = "Recherche des Mises à Jour...";
-"kill.bottles" = "Kill All Bottles...";
+"kill.bottles" = "Fermer Touts les Bouteilles...";
