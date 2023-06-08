@@ -25,6 +25,7 @@
 "config.metalTrace.info" = "Umożliwia przechwytywanie obciążenia GPU w Xcode";
 "config.esync" = "ESync";
 "config.winecfg" = "Otwórz konfigurację Wine";
+"config.wineuninstaller" = "Otwórz deinstalator Wine";
 
 "program.title" = "Zainstalowane programy";
 "program.env" = "Zmienne środowiskowe";

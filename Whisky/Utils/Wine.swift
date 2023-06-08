@@ -112,6 +112,11 @@ class Wine {
     }
 
     @discardableResult
+    static func uninstaller(bottle: Bottle) async throws -> String {
+        return try await run(["wine64", "uninstaller"], bottle: bottle)
+    }
+
+    @discardableResult
     static func changeWinVersion(bottle: Bottle, win: WinVersion) async throws -> String {
         return try await run(["winecfg", "-v", win.rawValue], bottle: bottle)
     }

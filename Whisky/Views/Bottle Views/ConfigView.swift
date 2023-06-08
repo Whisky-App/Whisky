@@ -57,6 +57,15 @@ struct ConfigView: View {
                         }
                     }
                 }
+                Button("config.wineuninstaller") {
+                    Task(priority: .userInitiated) {
+                        do {
+                            try await Wine.uninstaller(bottle: bottle)
+                        } catch {
+                            print("Failed to launch wineuninstaller")
+                        }
+                    }
+                }
             }
             .padding()
             .onChange(of: windowsVersion) { _, newValue in

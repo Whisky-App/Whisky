@@ -25,6 +25,7 @@
 "config.metalTrace.info" = "Allows you to capture GPU workload in Xcode";
 "config.esync" = "ESync";
 "config.winecfg" = "Open Wine Configuration";
+"config.wineuninstaller" = "Open Wine Uninstaller";
 
 "program.title" = "Installed Programs";
 "program.env" = "Environment Variables";

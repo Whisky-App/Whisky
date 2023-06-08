@@ -25,6 +25,7 @@
 "config.metalTrace.info" = "Позволяет отслеживать рабочую нагрузку видеокарты через Xcode";
 "config.esync" = "ESync";
 "config.winecfg" = "Открыть настройки Wine";
+"config.wineuninstaller" = "Удалить Wine";
 
 "program.title" = "Установленные программы";
 "program.env" = "Переменные окружения";
