@@ -10,9 +10,9 @@ import AppKit
 
 public class Registry: Hashable {
     public struct Entries: Hashable {
-        public var system: INIConfig
-        public var user: INIConfig
-        public var userDefines: INIConfig
+        public var system: RegistryConfig
+        public var user: RegistryConfig
+        public var userDefines: RegistryConfig
 
         public static func == (lhs: Entries, rhs: Entries) -> Bool {
             return lhs.system == rhs.system && lhs.user == rhs.user && lhs.userDefines == rhs.userDefines
@@ -42,14 +42,14 @@ public class Registry: Hashable {
 //                    return [:]
 //                }
 //            }
-            
-            
+
+
             // swiftlint:disable force_try
             print("Loading inis: \(sysReg), \(userReg), \(userDefReg)")
             do {
-                system = try parseINIFile(sysReg)
-                user = try parseINIFile(userReg)
-                userDefines = try parseINIFile(userDefReg)
+                system = try parseRegistryFile(sysReg)
+                user = try parseRegistryFile(userReg)
+                userDefines = try parseRegistryFile(userDefReg)
             } catch {
                 DispatchQueue.main.async {
                     let alert = NSAlert()
@@ -67,7 +67,7 @@ public class Registry: Hashable {
             }
         }
 
-        init(system: INIConfig, user: INIConfig, userDefines: INIConfig) {
+        init(system: RegistryConfig, user: RegistryConfig, userDefines: RegistryConfig) {
             self.system = system
             self.user = user
             self.userDefines = userDefines

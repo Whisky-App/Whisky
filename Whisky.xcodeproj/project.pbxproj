@@ -38,9 +38,12 @@
 		6EA2D47E29DDAE5E00C84668 /* BottleRenameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EA2D47D29DDAE5E00C84668 /* BottleRenameView.swift */; };
 		6EA2D48529DF130F00C84668 /* ProgramSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EA2D48429DF130F00C84668 /* ProgramSettings.swift */; };
 		C31948F72A324A26009CB090 /* Registry.swift in Sources */ = {isa = PBXBuildFile; fileRef = C31948F62A324A26009CB090 /* Registry.swift */; };
-		C31948F92A324A31009CB090 /* INIParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = C31948F82A324A31009CB090 /* INIParser.swift */; };
-		C31948FB2A324A49009CB090 /* INIConfigView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C31948FA2A324A49009CB090 /* INIConfigView.swift */; };
 		C31948FD2A324A57009CB090 /* RegistryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C31948FC2A324A57009CB090 /* RegistryView.swift */; };
+		C3AE69302A32793D00C0A70E /* RegistryParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3AE692F2A32793D00C0A70E /* RegistryParser.swift */; };
+		C3AE69342A3279CE00C0A70E /* RegistrySectionVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3AE69332A3279CE00C0A70E /* RegistrySectionVM.swift */; };
+		C3AE69372A327A6E00C0A70E /* RegistryBrowserView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3AE69362A327A6E00C0A70E /* RegistryBrowserView.swift */; };
+		C3AE69392A327C4D00C0A70E /* RegistrySectionEditorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3AE69382A327C4D00C0A70E /* RegistrySectionEditorView.swift */; };
+		C3AE693B2A327E8D00C0A70E /* RegistryValueView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3AE693A2A327E8D00C0A70E /* RegistryValueView.swift */; };
 		EEA5A2462A31DD65008274AE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEA5A2452A31DD65008274AE /* AppDelegate.swift */; };
 /* End PBXBuildFile section */
 
@@ -80,9 +83,12 @@
 		6EA2D47D29DDAE5E00C84668 /* BottleRenameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottleRenameView.swift; sourceTree = "<group>"; };
 		6EA2D48429DF130F00C84668 /* ProgramSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgramSettings.swift; sourceTree = "<group>"; };
 		C31948F62A324A26009CB090 /* Registry.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Registry.swift; sourceTree = "<group>"; };
-		C31948F82A324A31009CB090 /* INIParser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = INIParser.swift; sourceTree = "<group>"; };
-		C31948FA2A324A49009CB090 /* INIConfigView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = INIConfigView.swift; sourceTree = "<group>"; };
 		C31948FC2A324A57009CB090 /* RegistryView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegistryView.swift; sourceTree = "<group>"; };
+		C3AE692F2A32793D00C0A70E /* RegistryParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistryParser.swift; sourceTree = "<group>"; };
+		C3AE69332A3279CE00C0A70E /* RegistrySectionVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrySectionVM.swift; sourceTree = "<group>"; };
+		C3AE69362A327A6E00C0A70E /* RegistryBrowserView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistryBrowserView.swift; sourceTree = "<group>"; };
+		C3AE69382A327C4D00C0A70E /* RegistrySectionEditorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrySectionEditorView.swift; sourceTree = "<group>"; };
+		C3AE693A2A327E8D00C0A70E /* RegistryValueView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistryValueView.swift; sourceTree = "<group>"; };
 		EEA5A2452A31DD65008274AE /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -111,7 +117,7 @@
 		6E355E5629D78202002D83BE /* Bottle Views */ = {
 			isa = PBXGroup;
 			children = (
-				C31948FC2A324A57009CB090 /* RegistryView.swift */,
+				C3AE69352A327A5400C0A70E /* Registry */,
 				6E40498029CCA8B0006E3F1B /* BottleView.swift */,
 				6E355E5729D78249002D83BE /* ConfigView.swift */,
 				6E355E5929D782B2002D83BE /* ProgramsView.swift */,
@@ -166,7 +172,6 @@
 		6E5197CD29D71FCD00CF655E /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				C31948FA2A324A49009CB090 /* INIConfigView.swift */,
 				6E40495529CCA19C006E3F1B /* WhiskyApp.swift */,
 				6E40495729CCA19C006E3F1B /* ContentView.swift */,
 				6E064B1329DD331F00D9A2D2 /* SparkleView.swift */,
@@ -184,6 +189,7 @@
 			isa = PBXGroup;
 			children = (
 				6E50D98229CD6066008C39F6 /* BottleVM.swift */,
+				C3AE69332A3279CE00C0A70E /* RegistrySectionVM.swift */,
 			);
 			path = "View Models";
 			sourceTree = "<group>";
@@ -204,13 +210,24 @@
 		6E5197D029D7200700CF655E /* Utils */ = {
 			isa = PBXGroup;
 			children = (
-				C31948F82A324A31009CB090 /* INIParser.swift */,
 				6E50D97F29CD0850008C39F6 /* Wine.swift */,
 				6E3F750229ED85F20066D318 /* AppDB.swift */,
 				6E5E23E72A30D59600ABC192 /* GPT.swift */,
 				6E5E23EB2A30DBCA00ABC192 /* Hdiutil.swift */,
+				C3AE692F2A32793D00C0A70E /* RegistryParser.swift */,
 			);
 			path = Utils;
+			sourceTree = "<group>";
+		};
+		C3AE69352A327A5400C0A70E /* Registry */ = {
+			isa = PBXGroup;
+			children = (
+				C31948FC2A324A57009CB090 /* RegistryView.swift */,
+				C3AE69362A327A6E00C0A70E /* RegistryBrowserView.swift */,
+				C3AE69382A327C4D00C0A70E /* RegistrySectionEditorView.swift */,
+				C3AE693A2A327E8D00C0A70E /* RegistryValueView.swift */,
+			);
+			path = Registry;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -323,16 +340,18 @@
 			buildActionMask = 2147483647;
 			files = (
 				EEA5A2462A31DD65008274AE /* AppDelegate.swift in Sources */,
+				C3AE69392A327C4D00C0A70E /* RegistrySectionEditorView.swift in Sources */,
 				6E40495829CCA19C006E3F1B /* ContentView.swift in Sources */,
 				6E355E5C29D7830C002D83BE /* InfoView.swift in Sources */,
 				6E5E23EA2A30D6C400ABC192 /* GPTInstallView.swift in Sources */,
 				6E5E23EC2A30DBCA00ABC192 /* Hdiutil.swift in Sources */,
+				C3AE693B2A327E8D00C0A70E /* RegistryValueView.swift in Sources */,
 				6E50D98029CD0850008C39F6 /* Wine.swift in Sources */,
 				6E5197D229D7202100CF655E /* BottleSettings.swift in Sources */,
 				6E355E5A29D782B2002D83BE /* ProgramsView.swift in Sources */,
+				C3AE69372A327A6E00C0A70E /* RegistryBrowserView.swift in Sources */,
 				6E355E5829D78249002D83BE /* ConfigView.swift in Sources */,
 				6EA2D47E29DDAE5E00C84668 /* BottleRenameView.swift in Sources */,
-				C31948FB2A324A49009CB090 /* INIConfigView.swift in Sources */,
 				6EA2D48529DF130F00C84668 /* ProgramSettings.swift in Sources */,
 				6E50D98529CDF25B008C39F6 /* BottleCreationView.swift in Sources */,
 				6E40498329CCA91B006E3F1B /* Bottle.swift in Sources */,
@@ -340,14 +359,15 @@
 				6E5E23E82A30D59600ABC192 /* GPT.swift in Sources */,
 				6E064B1429DD331F00D9A2D2 /* SparkleView.swift in Sources */,
 				6E3F750829EDBF7F0066D318 /* AppDBView.swift in Sources */,
-				C31948F92A324A31009CB090 /* INIParser.swift in Sources */,
 				6E40495629CCA19C006E3F1B /* WhiskyApp.swift in Sources */,
 				6E50D98329CD6066008C39F6 /* BottleVM.swift in Sources */,
 				6E3F750329ED85F20066D318 /* AppDB.swift in Sources */,
 				6E355E6029D7D8BD002D83BE /* Program.swift in Sources */,
+				C3AE69342A3279CE00C0A70E /* RegistrySectionVM.swift in Sources */,
 				C31948F72A324A26009CB090 /* Registry.swift in Sources */,
 				6E40498129CCA8B0006E3F1B /* BottleView.swift in Sources */,
 				C31948FD2A324A57009CB090 /* RegistryView.swift in Sources */,
+				C3AE69302A32793D00C0A70E /* RegistryParser.swift in Sources */,
 				6E26058629D9267B00DDD788 /* ShellLink.swift in Sources */,
 				6E355E5E29D7D85D002D83BE /* ProgramView.swift in Sources */,
 			);
