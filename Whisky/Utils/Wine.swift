@@ -24,6 +24,9 @@ class Wine {
                     environment: [String: String]? = nil) async throws -> String {
         let process = Process()
         let pipe = Pipe()
+        guard let log = Log() else {
+            return ""
+        }
 
         process.executableURL = wineBinary
         process.arguments = args
@@ -32,7 +35,7 @@ class Wine {
         process.currentDirectoryURL = binFolder
         pipe.fileHandleForReading.readabilityHandler = { pipe in
             if let line = String(data: pipe.availableData, encoding: .utf8) {
-                print(line, terminator: "")
+                log.write(line: "\(line)")
             }
         }
 
