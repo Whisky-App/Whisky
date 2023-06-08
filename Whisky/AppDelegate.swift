@@ -37,7 +37,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         if response == .alertFirstButtonReturn {
             let appURL = Bundle.main.bundleURL
 
-            guard let applicationsURL = FileManager.default.urls(for: .applicationDirectory, 
+            guard let applicationsURL = FileManager.default.urls(for: .applicationDirectory,
                                                                  in: .localDomainMask).first else {
                 return
             }
