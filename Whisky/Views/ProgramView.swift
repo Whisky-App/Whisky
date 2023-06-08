@@ -165,7 +165,7 @@ struct ArgumentEditorButton: ButtonStyle {
 
 struct KeyItem: View {
     @Binding var environment: [String: String]
-    @State var key: String
+    let key: String
     @State var newKey: String
     @State var value: String
     @FocusState private var isKeyFieldFocused: Bool
