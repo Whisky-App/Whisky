@@ -33,6 +33,11 @@ struct WhiskyApp: App {
             }
             CommandGroup(after: .importExport) {
                 Button {
+                    WhiskyApp.openLogsFolder()
+                } label: {
+                    Text("open.logs")
+                }
+                Button {
                     WhiskyApp.killBottles()
                 } label: {
                     Text("kill.bottles")
@@ -49,5 +54,9 @@ struct WhiskyApp: App {
                 print("Failed to kill bottle: \(error)")
             }
         }
+    }
+
+    static func openLogsFolder() {
+        NSWorkspace.shared.selectFile(nil, inFileViewerRootedAtPath: Log.logsFolder.path)
     }
 }
