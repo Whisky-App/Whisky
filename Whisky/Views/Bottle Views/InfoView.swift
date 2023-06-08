@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct InfoView: View {
-    @State var bottle: Bottle
+    let bottle: Bottle
 
     var body: some View {
         Form {
@@ -38,8 +38,8 @@ struct InfoView: View {
 }
 
 struct InfoItem: View {
-    @State var label: String
-    @State var value: String
+    var label: String
+    var value: String
 
     var body: some View {
         HStack {

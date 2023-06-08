@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct ProgramsView: View {
-    @State var bottle: Bottle
+    let bottle: Bottle
     @State var programs: [Program] = []
 
     var body: some View {
