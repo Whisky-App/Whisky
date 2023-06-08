@@ -16,7 +16,7 @@ struct ContentView: View {
     var body: some View {
         NavigationSplitView {
             List(bottleVM.bottles, id: \.url, selection: $selected) { bottle in
-                BottleListEntry(bottle: .constant(bottle))
+                BottleListEntry(bottle: bottle)
             }
         } detail: {
             if let url = selected {
@@ -57,7 +57,7 @@ struct ContentView: View {
 }
 
 struct BottleListEntry: View {
-    @Binding var bottle: Bottle
+    let bottle: Bottle
     @State var showBottleRename: Bool = false
 
     var body: some View {
