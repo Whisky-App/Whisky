@@ -40,7 +40,7 @@
 "gptalert.message" = "GPT encountered an error!";
 
 "alert.message" = "Failed to open program!";
-"alert.info" = "Failed to open";
+"alert.info %@" = "Failed to open %@";
 
 "create.title" = "Create a new bottle";
 "create.name" = "Bottle name:";

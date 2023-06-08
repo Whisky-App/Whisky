@@ -36,7 +36,7 @@
 "info.win" = "Wersja systemu Windows:";
 
 "alert.message" = "Nie udało się otworzyć programu!";
-"alert.info" = "Nie można otworzyć";
+"alert.info %@" = "Nie można otworzyć %@";
 
 "create.title" = "Utwórz nową butelkę";
 "create.name" = "Nazwa butelki:";

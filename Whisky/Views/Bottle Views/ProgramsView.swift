@@ -40,6 +40,8 @@ struct ProgramItemView: View {
     @Binding var program: Program
     @State var showButtons: Bool = false
 
+    @State private var showAlert = false
+
     var body: some View {
         HStack {
             Text(program.name)
@@ -50,12 +52,7 @@ struct ProgramItemView: View {
                         do {
                             try await Wine.runProgram(program: program)
                         } catch {
-                            let alert = NSAlert()
-                            alert.messageText = "alert.message"
-                            alert.informativeText = "alert.info" + " \(program.name)"
-                            alert.alertStyle = .critical
-                            alert.addButton(withTitle: "button.ok")
-                            alert.runModal()
+                            showAlert = true
                         }
                     }
                 } label: {
@@ -68,6 +65,12 @@ struct ProgramItemView: View {
         .onHover { hover in
             showButtons = hover
         }
+        .alert(
+            "alert.message",
+            isPresented: $showAlert,
+            actions: { /* Blank, as we get an OK button for free */ },
+            message: { Text("alert.info \(program.name)") }
+        )
     }
 }
 
