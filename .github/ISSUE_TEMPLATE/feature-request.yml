@@ -1,0 +1,33 @@
+name: Feature Request
+description: Request a new feature.
+title: "[Feature]: "
+labels: ["enhancement"]
+body:
+  - type: textarea
+    id: related-to-problem
+    attributes:
+      label: Is your feature request related to a problem?
+      description: A clear and concise description of what the problem is.
+    validations:
+      required: true
+  - type: textarea
+    id: solution
+    attributes:
+      label: Describe the solution you'd like
+      description: A clear and concise description of what you're suggesting.
+    validations:
+      required: true
+  - type: textarea
+    id: extra-info
+    attributes:
+      label: Anything else?
+      description: Upload any relevant images, links, screenshots that might help realise your suggestion.
+    validations:
+      required: true
+  - type: checkboxes
+    attributes:
+      label: Issue Language
+      description: All issues must be written in clear plain English so that all devs are able to read them.
+      options:
+        - label: Yes my issue is written in English
+          required: true

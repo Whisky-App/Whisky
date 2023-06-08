@@ -14,7 +14,7 @@ struct BottleView: View {
     @State var programLoading: Bool = false
     @State var startMenuPrograms: [ShellLinkHeader] = []
 
-    @State private var gridLayout = [GridItem(.adaptive(minimum: 100, maximum: .infinity))]
+    private let gridLayout = [GridItem(.adaptive(minimum: 100, maximum: .infinity))]
 
     var body: some View {
         VStack {

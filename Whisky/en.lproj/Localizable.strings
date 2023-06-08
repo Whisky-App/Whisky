@@ -56,6 +56,7 @@
 
 "check.updates" = "Check for Updates...";
 "kill.bottles" = "Kill All Bottles...";
+"open.logs" = "Open Logs Folder";
 
 "showAlertOnFirstLaunch.messageText" = "Would you like to move Whisky to your Applications folder?";
 "showAlertOnFirstLaunch.informativeText" = "In some cases, Whisky wont't be able to function properly from a different folder";

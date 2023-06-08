@@ -9,7 +9,7 @@ import SwiftUI
 
 struct BottleCreationView: View {
     @State var newBottleName: String = ""
-    @State var newBottleVersion: WinVersion = .win7
+    @State var newBottleVersion: WinVersion = .win10
     @Environment(\.dismiss) var dismiss
 
     var body: some View {
