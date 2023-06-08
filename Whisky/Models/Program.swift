@@ -7,7 +7,6 @@
 
 import Foundation
 import AppKit
-import QuickLookThumbnailing
 
 public class Program: Hashable {
     public static func == (lhs: Program, rhs: Program) -> Bool {
