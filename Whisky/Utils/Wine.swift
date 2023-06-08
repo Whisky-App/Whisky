@@ -57,7 +57,7 @@ class Wine {
         }
 
         try process.run()
-        print("\nLaunched Wine (\(process.processIdentifier))")
+        print("Launched Wine (\(process.processIdentifier))")
 
         process.waitUntilExit()
         print("Process exited with code \(process.terminationStatus)")
