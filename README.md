@@ -33,7 +33,7 @@ Special thanks to [Gcenx](https://github.com/Gcenx), without your amazing work W
 
 ### Do I need macOS Sonoma?
 
-Yes, you do.
+Yes, you do for now till 13.3 support is done.
 
 ### Do I need to pay for the macOS beta?
 
@@ -55,7 +55,30 @@ Run `xattr -d com.apple.quarantine path-to-whisky`
 
 There is an issue where the libraries for font rendering are not properly bundled yet. You will need to install freetype.
 
-- Open an x86 terminal session with `arch -x86_64 zsh`
-- Install brew `/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"` (If you run into issues, let me know)
+
+## Setup your development and Homebrew environment
+- Ensure the Command Line Tools for Xcode 15 beta are installed. Visit https://developer.apple.com/downloads to download these tools.
+- Enter an x86_64 shell to continue the following steps in a Rosetta environment. All subsequent commands should be run within this shell.
+arch -x86_64 zsh
+- Install the x86_64 version of Homebrew if you don't already have it.
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 - Install freetype `/usr/local/bin/brew install freetype`
-- Restart Whisky and remake the bottle
+- The Game Porting Toolkit runs under Rosetta 2. Ensure that Rosetta 2 is installed.
+softwareupdate --install-rosetta
+- Install the x86_64 version of Homebrew if you don't already have it.
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+- Make sure the brew command is on your path:
+which brew
+If this command does not print /usr/local/bin/brew, you must either modify your PATH to put /usr/local/bin first, or fully specify the path to brew in the subsequent commands.
+- Tap the Apple Homebrew tap, which can be found at https://github.com/apple:
+brew tap apple/apple http://github.com/apple/homebrew-apple
+- Install the game-porting-toolkit formula. This formula downloads and compiles several large software projects. How long this takes will depend on the speed of your computer.
+brew -v install apple/apple/game-porting-toolkit
+- If during installation you see an error such as “Error: game-porting-toolkit: unknown or unsupported macOS version: :dunno”, your version of Homebrew doesn’t have macOS Sonoma support. Update to the latest version of Homebrew and try again.
+brew update brew -v install apple/apple/game-porting-toolkit
+
+## run this when done
+ - `ditto /Volumes/Game\ Porting\ Toolkit-1.0/lib/ brew --prefix game-porting-toolkit /lib/`
+
+## Running steam 
+ - If you are trying to run steam add this to arguments `-noreactlogin` 
