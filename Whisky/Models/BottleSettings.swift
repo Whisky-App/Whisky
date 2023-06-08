@@ -9,7 +9,7 @@ import Foundation
 
 struct BottleSettingsData: Codable {
     var wineVersion: String = "7.7"
-    var windowsVersion: WinVersion = .win7
+    var windowsVersion: WinVersion = .win10
     var metalHud: Bool = false
     var metalTrace: Bool = false
     var esync: Bool = false
