@@ -9,7 +9,11 @@ import Foundation
 
 // GPT = Game Porting Toolkit
 class GPT {
-    static let libFolder: URL = (Bundle.main.resourceURL ?? URL(fileURLWithPath: ""))
+    static let applicationFolder: URL = FileManager.default.urls(for: .applicationDirectory, in: .localDomainMask)[0]
+    static let libFolder: URL = applicationFolder
+        .appendingPathComponent("Whisky.app")
+        .appendingPathComponent("Contents")
+        .appendingPathComponent("Resources")
         .appendingPathComponent("Libraries")
         .appendingPathComponent("Wine")
         .appendingPathComponent("lib")
