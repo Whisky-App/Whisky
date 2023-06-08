@@ -29,7 +29,9 @@ struct GPTInstallView: View {
                     .animation(.easeInOut(duration: 0.2), value: dragOver)
             }
         }
+        .fixedSize()
         .padding()
+        .interactiveDismissDisabled()
         .onDrop(of: ["public.file-url"], isTargeted: $dragOver) { providers -> Bool in
             providers.first?.loadDataRepresentation(forTypeIdentifier: "public.file-url",
                                                     completionHandler: { (data, _) in

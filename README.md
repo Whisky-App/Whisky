@@ -4,7 +4,7 @@
   *Wine but a bit stronger*
   
   ![](https://img.shields.io/github/actions/workflow/status/IsaacMarovitz/Whisky/SwiftLint.yml?style=for-the-badge)
-  [![](https://img.shields.io/discord/1115955071549702235?style=for-the-badge)](https://discord.gg/WAgj8arM)
+  [![](https://img.shields.io/discord/1115955071549702235?style=for-the-badge)](https://discord.gg/CsqAfs9CnM)
 </div>
 
 <img width="650" alt="Screenshot 2023-03-31 at 17 14 00" src="https://user-images.githubusercontent.com/42140194/229232488-dbad85f4-cecb-45e1-a182-f737fe9d2b1f.png">
@@ -51,11 +51,11 @@ No, you don't, in fact you shouldn't follow them.
 
 Run `xattr -d com.apple.quarantine path-to-whisky`
 
-### Steam isn't displaying anything
+### Whisky isn't displaying anything
 
 There is an issue where the libraries for font rendering are not properly bundled yet. You will need to install freetype.
 
 - Open an x86 terminal session with `arch -x86_64 zsh`
 - Install brew `/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"` (If you run into issues, let me know)
-- Install freetype`/usr/local/bin/brew install freetype`
+- Install freetype `/usr/local/bin/brew install freetype`
 - Restart Whisky and remake the bottle

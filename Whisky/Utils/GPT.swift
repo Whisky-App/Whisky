@@ -6,22 +6,38 @@
 //
 
 import Foundation
+import AppKit
 
 // GPT = Game Porting Toolkit
 class GPT {
-    static let libFolder: URL = (Bundle.main.resourceURL ?? URL(fileURLWithPath: ""))
-        .appendingPathComponent("Libraries")
-        .appendingPathComponent("Wine")
-        .appendingPathComponent("lib")
-
-    static let externalFolder: URL = libFolder
-        .appendingPathComponent("external")
-
     static func isGPTInstalled() -> Bool {
+        guard let resourcesURL = Bundle.main.resourceURL else {
+            gptError(error: "Failed to get resource URL!")
+            return false
+        }
+
+        let libFolder: URL = resourcesURL
+            .appendingPathComponent("Libraries")
+            .appendingPathComponent("Wine")
+            .appendingPathComponent("lib")
+
+        let externalFolder: URL = libFolder
+            .appendingPathComponent("external")
+
         return FileManager.default.fileExists(atPath: externalFolder.path)
     }
 
     static func install(url: URL) {
+        guard let resourcesURL = Bundle.main.resourceURL else {
+            gptError(error: "Failed to get resource URL!")
+            return
+        }
+
+        let libFolder: URL = resourcesURL
+            .appendingPathComponent("Libraries")
+            .appendingPathComponent("Wine")
+            .appendingPathComponent("lib")
+
         do {
             let path = try Hdiutil.mount(url: url) + "/lib"
 
@@ -45,13 +61,22 @@ class GPT {
                 }
                 print("GPT Installed")
             } else {
-                print("Failed to create enumerator")
+                gptError(error: "Failed to create enumerator!")
             }
 
             try Hdiutil.unmount(path: path)
         } catch {
             print(error)
         }
+    }
+
+    static func gptError(error: String) {
+        let alert = NSAlert()
+        alert.messageText = NSLocalizedString("gptalert.message", comment: "")
+        alert.informativeText = error
+        alert.alertStyle = .critical
+        alert.addButton(withTitle: NSLocalizedString("button.ok", comment: ""))
+        alert.runModal()
     }
 
     private static func isDir(atPath: String) -> Bool {
