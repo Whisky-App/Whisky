@@ -27,10 +27,10 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 
     private func showAlertOnFirstLaunch() {
         let alert = NSAlert()
-        alert.messageText = "Would you like to move Whisky to your Applications folder?"
-        alert.informativeText = "In some cases app couldn't function properly from Downloads folder"
-        alert.addButton(withTitle: "Move to Applications")
-        alert.addButton(withTitle: "Don't Move")
+        alert.messageText = NSLocalizedString("showAlertOnFirstLaunch.messageText", comment: "")
+        alert.informativeText = NSLocalizedString("showAlertOnFirstLaunch.informativeText", comment: "")
+        alert.addButton(withTitle: NSLocalizedString("showAlertOnFirstLaunch.button.moveToApplications", comment: ""))
+        alert.addButton(withTitle: NSLocalizedString("showAlertOnFirstLaunch.button.dontMove", comment: ""))
 
         let response = alert.runModal()
 
