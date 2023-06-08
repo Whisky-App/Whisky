@@ -72,7 +72,7 @@ arch -x86_64 zsh
 - Make sure the brew command is on your path:
  `which brew`
 If this command does not print `/usr/local/bin/brew`, you must either modify your PATH to put `/usr/local/bin` first, or fully specify the path to brew in the subsequent commands.
-- Tap the Apple Homebrew tap, which can be found at https://github.com/apple:
+`export PATH=/usr/local/bin:${PATH}`
 
 brew tap apple/apple http://github.com/apple/homebrew-apple
 - Install the game-porting-toolkit formula. This formula downloads and compiles several large software projects. How long this takes will depend on the speed of your computer.
