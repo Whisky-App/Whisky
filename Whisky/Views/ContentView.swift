@@ -55,7 +55,7 @@ struct ContentView: View {
         }
     }
 }
- 
+
 struct BottleListEntry: View {
     @Binding var bottle: Bottle
     @State var showBottleRename: Bool = false

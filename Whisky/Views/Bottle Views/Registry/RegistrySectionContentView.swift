@@ -15,10 +15,9 @@ struct RegistrySectionContentView: View {
             Text(viewModel.name)
                 .font(.title)
                 .padding(.bottom, 20)
-            
+
             ScrollView {
                 LazyVStack(alignment: .leading, spacing: 10) {
-                    
                     if let values = viewModel.values {
                         ForEach(values.keys.sorted(), id: \.self) { key in
                             HStack {

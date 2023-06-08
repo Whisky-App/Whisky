@@ -7,11 +7,9 @@
 
 import SwiftUI
 
-import SwiftUI
-
 struct RegistryBrowserView: View {
     @ObservedObject var viewModel: RegistrySectionVM
-    
+
     var body: some View {
         NavigationView {
             // Sidebar
@@ -27,7 +25,7 @@ struct RegistryBrowserView: View {
             .listStyle(SidebarListStyle())
             .frame(minWidth: 200)
         }
-        
+
         // Content View
         if let selectedSection = viewModel.selectedChild {
             RegistrySectionContentView(viewModel: selectedSection)
@@ -38,7 +36,6 @@ struct RegistryBrowserView: View {
         }
     }
 }
-
 
 struct RegistryBrowserView_Previews: PreviewProvider {
     static var previews: some View {
@@ -56,10 +53,10 @@ struct RegistryBrowserView_Previews: PreviewProvider {
                 "hexKey": .hex([[10, 9, 8, 7, 6, 5, 4, 3, 2, 1]])
             ]
         ]
-        
+
         let rootViewModel = RegistrySectionVM(name: "Root",
                                               children: RegistrySectionVM.fromRegistryConfig(sampleConfig))
-        
+
         return RegistryBrowserView(viewModel: rootViewModel)
     }
 }

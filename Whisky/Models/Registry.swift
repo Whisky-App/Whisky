@@ -25,7 +25,6 @@ public class Registry: Hashable {
         }
 
         init(systemRegistryPath sysReg: URL, userRegistryPath userReg: URL, userDefinesRegistryPath userDefReg: URL) {
-            // swiftlint:disable force_try
             print("Loading inis: \(sysReg), \(userReg), \(userDefReg)")
             do {
                 system = try parseRegistryFile(sysReg)
