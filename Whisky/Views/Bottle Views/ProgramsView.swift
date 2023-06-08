@@ -51,10 +51,10 @@ struct ProgramItemView: View {
                             try await Wine.runProgram(program: program)
                         } catch {
                             let alert = NSAlert()
-                            alert.messageText = "alert.message"
-                            alert.informativeText = "alert.info" + " \(program.name)"
+                            alert.messageText = NSLocalizedString("alert.message", comment: "")
+                            alert.informativeText = NSLocalizedString("alert.info", comment: "") + " \(program.name)"
                             alert.alertStyle = .critical
-                            alert.addButton(withTitle: "button.ok")
+                            alert.addButton(withTitle: NSLocalizedString("button.ok", comment: ""))
                             alert.runModal()
                         }
                     }
