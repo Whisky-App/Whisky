@@ -65,7 +65,7 @@ arch -x86_64 zsh
 `/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"`
 
 - Install freetype `/usr/local/bin/brew install freetype`
-- 
+
 - The Game Porting Toolkit runs under Rosetta 2. Ensure that Rosetta 2 is installed.
 `softwareupdate --install-rosetta`
 
