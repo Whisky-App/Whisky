@@ -9,7 +9,7 @@ import Foundation
 import SwiftUI
 
 class AppDelegate: NSObject, NSApplicationDelegate {
-    @AppStorage("hasShownMoveToApplicationsAlerqw") private var hasShownMoveToApplicationsAlert = false
+    @AppStorage("hasShownMoveToApplicationsAlert") private var hasShownMoveToApplicationsAlert = false
 
     func applicationDidFinishLaunching(_ notification: Notification) {
         if !hasShownMoveToApplicationsAlert {
@@ -25,7 +25,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         WhiskyApp.killBottles()
     }
 
-    func showAlertOnFirstLaunch() {
+    private func showAlertOnFirstLaunch() {
         let alert = NSAlert()
         alert.messageText = "Would you like to move Whisky to your Applications folder?"
         alert.informativeText = "In some cases app couldn't function properly from Downloads folder"
