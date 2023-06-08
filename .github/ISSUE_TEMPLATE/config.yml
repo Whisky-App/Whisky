@@ -1,0 +1,4 @@
+blank_issues_enabled: false
+- name: Discord Support
+    url: https://discord.gg/K4AQukwAke
+    about: Please ask for support first to confirm the issue before submitting a report.
