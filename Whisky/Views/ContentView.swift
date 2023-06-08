@@ -63,7 +63,7 @@ struct BottleListEntry: View {
     var body: some View {
         Text(bottle.name)
             .sheet(isPresented: $showBottleRename) {
-                BottleRenameView(bottle: .constant(bottle))
+                BottleRenameView(bottle: bottle)
             }
             .contextMenu {
                 Button {
