@@ -78,7 +78,6 @@ struct RegistrySectionEditorView: View {
             Spacer()
 
             RegistryValueView(value: viewModel.values![key] ?? .string("")).padding()
-            
         }
         .navigationTitle(key)
     }

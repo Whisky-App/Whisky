@@ -34,21 +34,21 @@ private func parseKVP(content: String) -> (key: String, value: RegistryValue) {
     var kvp = (key: content.slice(from: "\"", to: "\"")!, value: RegistryValue.string(""))
     let rawValue = String(content.dropFirst(kvp.key.count + 3))
     switch rawValue.first {
-    //dword:
+    // DWROD:
     case "d":
         guard rawValue.hasPrefix("dword:") else { break }
         if let val = UInt32(rawValue.dropFirst("dword:".count), radix: 16) {
             kvp.value = .dword(val)
         }
 
-    //qword:
+    // QWORD:
     case "q":
         guard rawValue.hasPrefix("qword:") else { break }
         if let val = UInt64(rawValue.dropFirst("qword:".count), radix: 16) {
             kvp.value = .qword(val)
         }
 
-    //hex:
+    // Hex:
     case "h":
         guard rawValue.hasPrefix("hex:") else { break }
         let csv = rawValue.dropFirst("hex:".count)
@@ -62,15 +62,15 @@ private func parseKVP(content: String) -> (key: String, value: RegistryValue) {
             }
             val.append(arr)
         }
-        
+
         kvp.value = .hex(val)
 
     case "\"": fallthrough
     default:
         kvp.value = .string(rawValue.slice(from: "\"", to: "\"") ?? "")
-        
+
     }
-    
+
     return kvp
 }
 
@@ -80,10 +80,10 @@ private func parseSectionHeader(content: String) -> String {
 
 public func parseRegistry(_ iniContent: String) -> RegistryConfig {
     var cfg = RegistryConfig()
-    
+
     //Change all \<NEWLINE> into one line, so the parser works
     let iniContent = iniContent.replacingOccurrences(of: "\\\n", with: "")
-    
+
     var latestSection = ""
     for line in iniContent.components(separatedBy: "\n") {
         switch line.first ?? ";" {
@@ -95,11 +95,11 @@ public func parseRegistry(_ iniContent: String) -> RegistryConfig {
         case "@":
             let kvp = parseKVP(content: line)
             cfg[latestSection]![kvp.key] = kvp.value
-            
+
         default: break
         }
     }
-    
+
     return cfg
 }
 

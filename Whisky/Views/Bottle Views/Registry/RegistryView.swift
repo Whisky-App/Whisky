@@ -9,19 +9,22 @@ import SwiftUI
 
 struct RegistryView: View {
     @Binding var registry: Registry
-    
+
     var systemViewModel: RegistrySectionVM {
-        RegistrySectionVM(name: "System", children: RegistrySectionVM.fromRegistryConfig(registry.entries.system))
+        RegistrySectionVM(name: "System",
+                          children: RegistrySectionVM.fromRegistryConfig(registry.entries.system))
     }
-    
+
     var userViewModel: RegistrySectionVM {
-        RegistrySectionVM(name: "User", children: RegistrySectionVM.fromRegistryConfig(registry.entries.user))
+        RegistrySectionVM(name: "User",
+                          children: RegistrySectionVM.fromRegistryConfig(registry.entries.user))
     }
-    
+
     var userDefinesViewModel: RegistrySectionVM {
-        RegistrySectionVM(name: "User Defines", children: RegistrySectionVM.fromRegistryConfig(registry.entries.userDefines))
+        RegistrySectionVM(name: "User Defines",
+                          children: RegistrySectionVM.fromRegistryConfig(registry.entries.userDefines))
     }
-    
+
     var body: some View {
         TabView {
             NavigationView {
@@ -47,7 +50,6 @@ struct RegistryView: View {
         }.padding()
     }
 }
-
 
 struct RegistryView_Previews: PreviewProvider {
     static var previews: some View {
@@ -78,4 +80,3 @@ struct RegistryView_Previews: PreviewProvider {
         return RegistryView(registry: .constant(Registry(mockData: mockData)))
     }
 }
-
