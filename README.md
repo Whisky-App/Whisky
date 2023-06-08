@@ -70,7 +70,7 @@ arch -x86_64 zsh
 `softwareupdate --install-rosetta`
 
 - Make sure the brew command is on your path:
-which brew
+ `which brew`
 If this command does not print `/usr/local/bin/brew`, you must either modify your PATH to put `/usr/local/bin` first, or fully specify the path to brew in the subsequent commands.
 - Tap the Apple Homebrew tap, which can be found at https://github.com/apple:
 
