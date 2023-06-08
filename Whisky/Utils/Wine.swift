@@ -34,9 +34,8 @@ class Wine {
         process.standardError = pipe
         process.currentDirectoryURL = binFolder
         pipe.fileHandleForReading.readabilityHandler = { pipe in
-            if let line = String(data: pipe.availableData, encoding: .utf8) {
-                log.write(line: "\(line)")
-            }
+            let line = String(decoding: pipe.availableData, as: UTF8.self)
+            log.write(line: "\(line)")
         }
 
         if let bottle = bottle {
