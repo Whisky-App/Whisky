@@ -51,11 +51,11 @@ No, you don't, in fact you shouldn't follow them.
 
 Run `xattr -d com.apple.quarantine path-to-whisky`
 
-### Steam isn't displaying anything
+### Whisky isn't displaying anything
 
 There is an issue where the libraries for font rendering are not properly bundled yet. You will need to install freetype.
 
 - Open an x86 terminal session with `arch -x86_64 zsh`
 - Install brew `/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"` (If you run into issues, let me know)
-- Install freetype`/usr/local/bin/brew install freetype`
+- Install freetype `/usr/local/bin/brew install freetype`
 - Restart Whisky and remake the bottle
