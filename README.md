@@ -39,10 +39,6 @@ Make sure you're logged in to the Apple Developer website. If it still won't wor
 
 No, you don't, in fact you shouldn't follow them.
 
-### macOS says Whisky is damaged and can't be opened
-
-Run `xattr -d com.apple.quarantine path-to-whisky`
-
 ### Whisky isn't displaying anything
 
 There is an issue where the libraries for font rendering are not properly bundled yet. You will need to install freetype.
