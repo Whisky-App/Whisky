@@ -1,62 +1,62 @@
-"tab.config" = "Config";
-"tab.programs" = "Programs";
-"tab.info" = "Info";
+"tab.config" = "設定";
+"tab.programs" = "程式";
+"tab.info" = "資訊";
 
-"tab.navTitle.config" = "%@ Config";
-"tab.navTitle.programs" = "%@ Programs";
-"tab.navTitle.info" = "%@ Info";
+"tab.navTitle.config" = "%@ 設定";
+"tab.navTitle.programs" = "%@ 程式";
+"tab.navTitle.info" = "%@ 資訊";
 
-"button.cDrive" = "Open C Drive";
-"button.showInFinder" = "Show in Finder";
-"button.run" = "Run...";
-"button.ok" = "OK";
-"button.renameBottle" = "Rename";
-"button.deleteBottle" = "Delete...";
-"button.createBottle" = "Create Bottle";
-"button.deleteAlert.msg" = "Delete %@?";
-"button.deleteAlert.info" = "Are you sure you want to delete this bottle? This action is permanent.";
-"button.deleteAlert.delete" = "Delete";
-"button.deleteAlert.cancel" = "Cancel";
+"button.cDrive" = "開啟C槽";
+"button.showInFinder" = "在Finder中顯示";
+"button.run" = "執行...";
+"button.ok" = "確定";
+"button.renameBottle" = "重新命名";
+"button.deleteBottle" = "刪除...";
+"button.createBottle" = "建立容器";
+"button.deleteAlert.msg" = "刪除 %@?";
+"button.deleteAlert.info" = "您確定要刪除此容器嗎？此動作是永久的。";
+"button.deleteAlert.delete" = "刪除";
+"button.deleteAlert.cancel" = "取消";
 
-"config.winVersion" = "Windows Version";
+"config.winVersion" = "Windows版本";
 "config.title.metal" = "Metal";
 "config.metalHud" = "Metal HUD";
 "config.metalTrace" = "Metal Trace";
-"config.metalTrace.info" = "Allows you to capture GPU workload in Xcode";
+"config.metalTrace.info" = "允許您在Xcode中捕獲GPU工作負載";
 "config.esync" = "ESync";
-"config.winecfg" = "Open Wine Configuration";
+"config.winecfg" = "開啟Wine設定";
 
-"program.title" = "Installed Programs";
-"program.env" = "Environment Variables";
-"program.args" = "Arguments";
-"program.config" = "Config";
+"program.title" = "已安裝的程式";
+"program.env" = "環境變數";
+"program.args" = "命令列引數";
+"program.config" = "設定";
 
-"info.title" = "Info";
-"info.path" = "Path";
-"info.path.copy" = "Copy Path";
-"info.wine" = "Wine Version";
-"info.win" = "Windows Version";
+"info.title" = "資訊";
+"info.path" = "路徑";
+"info.path.copy" = "複製路徑";
+"info.wine" = "Wine版本";
+"info.win" = "Windows版本";
 
-"gptalert.message" = "GPT encountered an error!";
+"gptalert.message" = "GPT遇到了一個錯誤！";
 
-"alert.message" = "Failed to open program!";
-"alert.info" = "Failed to open";
+"alert.message" = "無法開啟程式！";
+"alert.info" = "開啟失敗";
 
-"create.title" = "Create a new bottle";
-"create.name" = "Bottle name:";
-"create.win" = "Windows version:";
-"create.cancel" = "Cancel";
-"create.create" = "Create";
+"create.title" = "建立一個新的容器";
+"create.name" = "容器名稱：";
+"create.win" = "Windows版本：";
+"create.cancel" = "取消";
+"create.create" = "建立";
 
-"rename.title" = "Rename bottle";
-"rename.name" = "New name:";
-"rename.rename" = "Rename";
+"rename.title" = "重新命名容器";
+"rename.name" = "新名稱：";
+"rename.rename" = "重新命名";
 
-"check.updates" = "Check for Updates...";
-"kill.bottles" = "Kill All Bottles...";
-"open.logs" = "Open Logs Folder";
+"check.updates" = "檢查更新...";
+"kill.bottles" = "終止所有容器...";
+"open.logs" = "開啟日誌資料夾";
 
-"showAlertOnFirstLaunch.messageText" = "Would you like to move Whisky to your Applications folder?";
-"showAlertOnFirstLaunch.informativeText" = "In some cases, Whisky wont't be able to function properly from a different folder";
-"showAlertOnFirstLaunch.button.moveToApplications" = "Move to Applications";
-"showAlertOnFirstLaunch.button.dontMove" = "Don't Move";
+"showAlertOnFirstLaunch.messageText" = "您想要將Whisky移動到您的應用程式資料夾嗎？";
+"showAlertOnFirstLaunch.informativeText" = "在某些情況下，Whisky可能無法在不同的資料夾中正常運作";
+"showAlertOnFirstLaunch.button.moveToApplications" = "移動到應用程式";
+"showAlertOnFirstLaunch.button.dontMove" = "不移動";
