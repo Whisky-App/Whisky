@@ -37,6 +37,7 @@
 "info.wine" = "Версия Wine:";
 "info.win" = "Версия Windows:";
 
+"gptalert.init" = "Drag and drop the Game Porting Toolkit DMG";
 "gptalert.message" = "GPT encountered an error!";
 
 "alert.message" = "Не удалось запустить программу!";
