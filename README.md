@@ -81,7 +81,7 @@ If this command does not print `/usr/local/bin/brew`, you must either modify you
 `brew update && brew -v install apple/apple/game-porting-toolkit`
 
 ## run this when done
- - `ditto /Volumes/Game\ Porting\ Toolkit-1.0/lib/ brew --prefix game-porting-toolkit /lib/`
+- ``ditto /Volumes/Game\ Porting\ Toolkit-1.0/lib/ `brew --prefix game-porting-toolkit`/lib/``
 
 ## Running steam 
  - If you are trying to run steam add this to arguments `-noreactlogin` 
