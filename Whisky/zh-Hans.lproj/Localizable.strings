@@ -48,7 +48,7 @@
 "create.cancel" = "取消";
 "create.create" = "创建";
 
-"rename.title" = "重命名bottle";
+"rename.title" = "重命名容器";
 "rename.name" = "新名称：";
 "rename.rename" = "重命名";
 
