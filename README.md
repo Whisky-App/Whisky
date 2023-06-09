@@ -31,14 +31,6 @@ Special thanks to [Gcenx](https://github.com/Gcenx), without your amazing work W
 
 # FAQ
 
-### Do I need macOS Sonoma?
-
-Yes, you do.
-
-### Do I need to pay for the macOS beta?
-
-No, you do not, just log into the Apple developer website, and the download should appear in settings.
-
 ### The direct download link for the toolkit doesn't work
 
 Make sure you're logged in to the Apple Developer website. If it still won't work use an [indirect link](https://developer.apple.com/download/all/?q=porting).
