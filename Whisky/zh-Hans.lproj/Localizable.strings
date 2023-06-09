@@ -1,0 +1,63 @@
+"tab.config" = "Config";
+"tab.programs" = "Programs";
+"tab.info" = "Info";
+
+"tab.navTitle.config" = "%@ Config";
+"tab.navTitle.programs" = "%@ Programs";
+"tab.navTitle.info" = "%@ Info";
+
+"button.cDrive" = "Open C Drive";
+"button.showInFinder" = "Show in Finder";
+"button.run" = "Run...";
+"button.ok" = "OK";
+"button.renameBottle" = "Rename";
+"button.deleteBottle" = "Delete...";
+"button.createBottle" = "Create Bottle";
+"button.deleteAlert.msg" = "Delete %@?";
+"button.deleteAlert.info" = "Are you sure you want to delete this bottle? This action is permanent.";
+"button.deleteAlert.delete" = "Delete";
+"button.deleteAlert.cancel" = "Cancel";
+
+"config.winVersion" = "Windows Version";
+"config.title.metal" = "Metal";
+"config.metalHud" = "Metal HUD";
+"config.metalTrace" = "Metal Trace";
+"config.metalTrace.info" = "Allows you to capture GPU workload in Xcode";
+"config.esync" = "ESync";
+"config.winecfg" = "Open Wine Configuration";
+
+"program.title" = "Installed Programs";
+"program.env" = "Environment Variables";
+"program.args" = "Arguments";
+"program.config" = "Config";
+
+"info.title" = "Info";
+"info.path" = "Path";
+"info.path.copy" = "Copy Path";
+"info.wine" = "Wine Version";
+"info.win" = "Windows Version";
+
+"gptalert.init" = "Drag and drop the Game Porting Toolkit DMG";
+"gptalert.message" = "GPT encountered an error!";
+
+"alert.message" = "Failed to open program!";
+"alert.info" = "Failed to open";
+
+"create.title" = "Create a new bottle";
+"create.name" = "Bottle name:";
+"create.win" = "Windows version:";
+"create.cancel" = "Cancel";
+"create.create" = "Create";
+
+"rename.title" = "Rename bottle";
+"rename.name" = "New name:";
+"rename.rename" = "Rename";
+
+"check.updates" = "Check for Updates...";
+"kill.bottles" = "Kill All Bottles...";
+"open.logs" = "Open Logs Folder";
+
+"showAlertOnFirstLaunch.messageText" = "Would you like to move Whisky to your Applications folder?";
+"showAlertOnFirstLaunch.informativeText" = "In some cases, Whisky wont't be able to function properly from a different folder";
+"showAlertOnFirstLaunch.button.moveToApplications" = "Move to Applications";
+"showAlertOnFirstLaunch.button.dontMove" = "Don't Move";
