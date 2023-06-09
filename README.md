@@ -31,14 +31,6 @@ Special thanks to [Gcenx](https://github.com/Gcenx), without your amazing work W
 
 # FAQ
 
-### Do I need macOS Sonoma?
-
-Yes, you do.
-
-### Do I need to pay for the macOS beta?
-
-No, you do not, just log into the Apple developer website, and the download should appear in settings.
-
 ### The direct download link for the toolkit doesn't work
 
 Make sure you're logged in to the Apple Developer website. If it still won't work use an [indirect link](https://developer.apple.com/download/all/?q=porting).
@@ -47,15 +39,5 @@ Make sure you're logged in to the Apple Developer website. If it still won't wor
 
 No, you don't, in fact you shouldn't follow them.
 
-### macOS says Whisky is damaged and can't be opened
-
-Run `xattr -d com.apple.quarantine path-to-whisky`
-
-### Whisky isn't displaying anything
-
-There is an issue where the libraries for font rendering are not properly bundled yet. You will need to install freetype.
-
-- Open an x86 terminal session with `arch -x86_64 zsh`
-- Install brew `/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"` (If you run into issues, let me know)
-- Install freetype `/usr/local/bin/brew install freetype`
-- Restart Whisky and remake the bottle
+### Steam isn't displaying anything
+Known issue, please see this [issue](https://github.com/IsaacMarovitz/Whisky/issues/41).
