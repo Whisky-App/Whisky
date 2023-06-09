@@ -1,0 +1,62 @@
+"tab.config" = "Конфігурація";
+"tab.programs" = "Програми";
+"tab.info" = "Інформація";
+
+"tab.navTitle.config" = "%@ - конфігурація";
+"tab.navTitle.programs" = "%@ - програми";
+"tab.navTitle.info" = "%@ - інформація";
+
+"button.cDrive" = "Відкрити диск C";
+"button.showInFinder" = "Показати у Finder";
+"button.run" = "Запустити...";
+"button.ok" = "OK";
+"button.renameBottle" = "Перейменувати";
+"button.deleteBottle" = "Видалити...";
+"button.createBottle" = "Створити пляшку";
+"button.deleteAlert.msg" = "Видалити %@?";
+"button.deleteAlert.info" = "Ви впевнені, що хочете видалити цю пляшку? Ця дія є безповоротною.";
+"button.deleteAlert.delete" = "Видалити";
+"button.deleteAlert.cancel" = "Скасувати";
+
+"config.winVersion" = "Версія Windows";
+"config.title.metal" = "Метал";
+"config.metalHud" = "Метал HUD";
+"config.metalTrace" = "Метал Trace";
+"config.metalTrace.info" = "Дозволяє вам відстежувати робоче навантаження GPU в Xcode";
+"config.esync" = "ESync";
+"config.winecfg" = "Відкрити конфігурацію Wine";
+
+"program.title" = "Встановлені програми";
+"program.env" = "Змінні середовища";
+"program.args" = "Аргументи";
+"program.config" = "Конфігурація";
+
+"info.title" = "Інформація";
+"info.path" = "Шлях";
+"info.path.copy" = "Скопіювати шлях";
+"info.wine" = "Версія Wine";
+"info.win" = "Версія Windows";
+
+"gptalert.message" = "GPT зіткнувся з помилкою!";
+
+"alert.message" = "Не вдалося відкрити програму!";
+"alert.info" = "Не вдалося відкрити";
+
+"create.title" = "Створити нову пляшку";
+"create.name" = "Назва пляшки:";
+"create.win" = "Версія Windows:";
+"create.cancel" = "Скасувати";
+"create.create" = "Створити";
+
+"rename.title" = "Перейменувати пляшку";
+"rename.name" = "Нова назва:";
+"rename.rename" = "Перейменувати";
+
+"check.updates" = "Перевірити наявність оновлень...";
+"kill.bottles" = "Закрити всі пляшки...";
+"open.logs" = "Відкрити папку журналів";
+
+"showAlertOnFirstLaunch.messageText" = "Хотіли б ви перемістити Whisky у вашу папку Застосунки?";
+"showAlertOnFirstLaunch.informativeText" = "У деяких випадках, Whisky може не працювати належним чином з іншої папки";
+"showAlertOnFirstLaunch.button.moveToApplications" = "Перемістити до Застосунків";
+"showAlertOnFirstLaunch.button.dontMove" = "Не переміщати";
