@@ -1,0 +1,63 @@
+"tab.config" = "Konfiguration";
+"tab.programs" = "Programme";
+"tab.info" = "Info";
+
+"tab.navTitle.config" = "%@ Konfiguration";
+"tab.navTitle.programs" = "%@ Programme";
+"tab.navTitle.info" = "%@ Info";
+
+"button.cDrive" = "Open C Drive";
+"button.showInFinder" = "Im Finder anzeigen";
+"button.run" = "Starten...";
+"button.ok" = "OK";
+"button.renameBottle" = "Umbenennen";
+"button.deleteBottle" = "Löschen...";
+"button.createBottle" = "Bottle erstellen";
+"button.deleteAlert.msg" = "Lösche %@?";
+"button.deleteAlert.info" = "Bist du sicher, dass du diese Bottle löschen möchtest? Die Aktion ist unwiederruflich.";
+"button.deleteAlert.delete" = "Löschen";
+"button.deleteAlert.cancel" = "Abbrechen";
+
+"config.winVersion" = "Windows Version";
+"config.title.metal" = "Metal";
+"config.metalHud" = "Metal HUD";
+"config.metalTrace" = "Metal Trace";
+"config.metalTrace.info" = "Erlaub es dir, den GPU-Workload in Xcode aufzunehmen.";
+"config.esync" = "ESync";
+"config.winecfg" = "Öffne die Wine-Konfiguration";
+
+"program.title" = "Intallierte Programme";
+"program.env" = "Umgebungs-Variables";
+"program.args" = "Argumente";
+"program.config" = "Konfiguration";
+
+"info.title" = "Info";
+"info.path" = "Pfad";
+"info.path.copy" = "Kopiere den Pfad";
+"info.wine" = "Wine Version";
+"info.win" = "Windows Version";
+
+"gptalert.init" = "Ziehe das Game-Porting-Toolkit-DMG-Laufwerk hier hinein";
+"gptalert.message" = "Bei GPT ist ein Fehler aufgetreten.";
+
+"alert.message" = "Das öffnen des Programms ist fehlgeschlagen.";
+"alert.info" = "Öffen fehlgeschlagen";
+
+"create.title" = "Erstelle eine neue Bottle";
+"create.name" = "Bottle-Name:";
+"create.win" = "Windows version:";
+"create.cancel" = "Abbrechen";
+"create.create" = "Erstellen";
+
+"rename.title" = "Bottle umbenennen";
+"rename.name" = "Neuer Name:";
+"rename.rename" = "Umbenennen";
+
+"check.updates" = "Nach Updates suchen...";
+"kill.bottles" = "Beende sofort alle Bottles...";
+"open.logs" = "Log-Folder öffnen";
+
+"showAlertOnFirstLaunch.messageText" = "Möchtest du Whisky in deinen Programm-Ordner legen?";
+"showAlertOnFirstLaunch.informativeText" = "In manchen Fällen wird Whisky nicht richtig funktionieren, wenn es in einem anderen Ordner gespeichert ist.";
+"showAlertOnFirstLaunch.button.moveToApplications" = "In den Programm-Ordner legen";
+"showAlertOnFirstLaunch.button.dontMove" = "Nicht Bewegen";

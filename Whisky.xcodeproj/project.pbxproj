@@ -80,6 +80,7 @@
 		B584FD842A3376E0009B00F4 /* zh-Hant */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hant"; path = "zh-Hant.lproj/Localizable.strings"; sourceTree = "<group>"; };
 		B584FD842A6676E0009B00F4 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Localizable.strings"; sourceTree = "<group>"; };
 		EEA5A2452A31DD65008274AE /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		F4575E7B2A33DC3D0022043E /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/Localizable.strings; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -260,6 +261,7 @@
 				ru,
 				"zh-Hans",
 				"zh-Hant",
+				de,
 			);
 			mainGroup = 6E40494929CCA19C006E3F1B;
 			packageReferences = (
@@ -358,6 +360,7 @@
 				6E62F24F29E0A6B10098FEFD /* ru */,
 				B584FD842A6676E0009B00F4 /* zh-Hans */,
 				B584FD842A3376E0009B00F4 /* zh-Hant */,
+				F4575E7B2A33DC3D0022043E /* de */,
 			);
 			name = Localizable.strings;
 			sourceTree = "<group>";
