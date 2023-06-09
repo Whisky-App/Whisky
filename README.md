@@ -40,10 +40,4 @@ Make sure you're logged in to the Apple Developer website. If it still won't wor
 No, you don't, in fact you shouldn't follow them.
 
 ### Whisky isn't displaying anything
-
-There is an issue where the libraries for font rendering are not properly bundled yet. You will need to install freetype.
-
-- Open an x86 terminal session with `arch -x86_64 zsh`
-- Install brew `/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"` (If you run into issues, let me know)
-- Install freetype `/usr/local/bin/brew install freetype`
-- Restart Whisky and remake the bottle
+Known issue, please see this [issue](https://github.com/IsaacMarovitz/Whisky/issues/41).
