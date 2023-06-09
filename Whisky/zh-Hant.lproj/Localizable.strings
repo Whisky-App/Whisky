@@ -1,0 +1,63 @@
+"tab.config" = "設定";
+"tab.programs" = "程式";
+"tab.info" = "資訊";
+
+"tab.navTitle.config" = "%@ 設定";
+"tab.navTitle.programs" = "%@ 程式";
+"tab.navTitle.info" = "%@ 資訊";
+
+"button.cDrive" = "開啟C槽";
+"button.showInFinder" = "在Finder中顯示";
+"button.run" = "執行...";
+"button.ok" = "確定";
+"button.renameBottle" = "重新命名";
+"button.deleteBottle" = "刪除...";
+"button.createBottle" = "建立容器";
+"button.deleteAlert.msg" = "刪除 %@?";
+"button.deleteAlert.info" = "您確定要刪除此容器嗎？此動作是永久的。";
+"button.deleteAlert.delete" = "刪除";
+"button.deleteAlert.cancel" = "取消";
+
+"config.winVersion" = "Windows版本";
+"config.title.metal" = "Metal";
+"config.metalHud" = "Metal HUD";
+"config.metalTrace" = "Metal Trace";
+"config.metalTrace.info" = "允許您在Xcode中捕獲GPU工作負載";
+"config.esync" = "ESync";
+"config.winecfg" = "開啟Wine設定";
+
+"program.title" = "已安裝的程式";
+"program.env" = "環境變數";
+"program.args" = "命令列引數";
+"program.config" = "設定";
+
+"info.title" = "資訊";
+"info.path" = "路徑";
+"info.path.copy" = "複製路徑";
+"info.wine" = "Wine版本";
+"info.win" = "Windows版本";
+
+"gptalert.init" = "将 Game Porting Toolkit dmg文件拖到這裡";
+"gptalert.message" = "GPT遇到了一個錯誤！";
+
+"alert.message" = "無法開啟程式！";
+"alert.info" = "開啟失敗";
+
+"create.title" = "建立一個新的容器";
+"create.name" = "容器名稱：";
+"create.win" = "Windows版本：";
+"create.cancel" = "取消";
+"create.create" = "建立";
+
+"rename.title" = "重新命名容器";
+"rename.name" = "新名稱：";
+"rename.rename" = "重新命名";
+
+"check.updates" = "檢查更新...";
+"kill.bottles" = "終止所有容器...";
+"open.logs" = "開啟日誌資料夾";
+
+"showAlertOnFirstLaunch.messageText" = "您想要將Whisky移動到您的應用程式資料夾嗎？";
+"showAlertOnFirstLaunch.informativeText" = "在某些情況下，Whisky可能無法在不同的資料夾中正常運作";
+"showAlertOnFirstLaunch.button.moveToApplications" = "移動到應用程式";
+"showAlertOnFirstLaunch.button.dontMove" = "不移動";

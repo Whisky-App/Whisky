@@ -14,7 +14,7 @@ struct GPTInstallView: View {
 
     var body: some View {
         VStack(spacing: 20) {
-            Text("Drag and drop the Game Porting Toolkit DMG")
+            Text("gptalert.init")
                 .foregroundStyle(.secondary)
             if installing {
                 ProgressView()
