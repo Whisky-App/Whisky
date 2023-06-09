@@ -39,5 +39,5 @@ Make sure you're logged in to the Apple Developer website. If it still won't wor
 
 No, you don't, in fact you shouldn't follow them.
 
-### Whisky isn't displaying anything
+### Steam isn't displaying anything
 Known issue, please see this [issue](https://github.com/IsaacMarovitz/Whisky/issues/41).
