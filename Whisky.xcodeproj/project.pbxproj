@@ -85,6 +85,7 @@
 		B584FD842A6676E0009B00F4 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Localizable.strings"; sourceTree = "<group>"; };
 		EEA5A2452A31DD65008274AE /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F4575E7B2A33DC3D0022043E /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/Localizable.strings; sourceTree = "<group>"; };
+		F4575E7C2A33DC3D0022043D /* nl */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = nl; path = nl.lproj/Localizable.strings; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -270,6 +271,7 @@
 				ko,
 				fi,
 				it,
+				nl,
 			);
 			mainGroup = 6E40494929CCA19C006E3F1B;
 			packageReferences = (
@@ -373,6 +375,7 @@
 				624D7CCB2A335A9A00995C9A /* ko */,
 				515D3F8E2A3446EF00F29E92 /* fi */,
 				0A8B597E2A34CFBA007B37A0 /* it */,
+				F4575E7C2A33DC3D0022043D /* nl */,
 			);
 			name = Localizable.strings;
 			sourceTree = "<group>";
