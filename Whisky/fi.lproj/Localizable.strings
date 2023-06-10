@@ -1,10 +1,10 @@
 "tab.config" = "Konfiguraatio";
 "tab.programs" = "Ohjelmat";
-"tab.info" = "Info";
+"tab.info" = "Tiedot";
 
 "tab.navTitle.config" = "%@ Konfiguraatio";
 "tab.navTitle.programs" = "%@ Ohjelmat";
-"tab.navTitle.info" = "%@ Info";
+"tab.navTitle.info" = "%@ Tiedot";
 
 "button.cDrive" = "Avaa C levy";
 "button.showInFinder" = "Näytä Finderissa";
@@ -31,7 +31,7 @@
 "program.args" = "Argumentit";
 "program.config" = "Konfiguraatio";
 
-"info.title" = "Info";
+"info.title" = "Tiedot";
 "info.path" = "Polku";
 "info.path.copy" = "Kopio polku";
 "info.wine" = "Wine versio";
