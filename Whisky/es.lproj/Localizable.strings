@@ -2,9 +2,9 @@
 "tab.programs" = "Programas";
 "tab.info" = "Información";
 
-"tab.navTitle.config" = "%@ Config";
-"tab.navTitle.programs" = "%@ Programs";
-"tab.navTitle.info" = "%@ Info";
+"tab.navTitle.config" = "Configuración de %@";
+"tab.navTitle.programs" = "Programas de %@";
+"tab.navTitle.info" = "Información de %@";
 
 "button.cDrive" = "Abrir \"Unidad C\"";
 "button.showInFinder" = "Mostrar en Finder";
