@@ -23,7 +23,9 @@ struct RegistrySectionContentView: View {
                             HStack {
                                 Text(key).bold()
                                 Spacer()
-                                RegistryValueView(value: values[key]!)
+                                if let value = values[key] {
+                                    RegistryValueView(value: value)
+                                }
                             }
                             .padding(.vertical, 5)
                         }

@@ -14,12 +14,14 @@ struct RegistryBrowserView: View {
         NavigationView {
             // Sidebar
             List {
-                OutlineGroup(viewModel.children!, id: \.name, children: \.children) { childViewModel in
-                    Text(childViewModel.name)
-                        .contentShape(Rectangle())
-                        .onTapGesture {
-                            viewModel.selectedChild = childViewModel
-                        }
+                if let children = viewModel.children {
+                    OutlineGroup(children, id: \.name, children: \.children) { childViewModel in
+                        Text(childViewModel.name)
+                            .contentShape(Rectangle())
+                            .onTapGesture {
+                                viewModel.selectedChild = childViewModel
+                            }
+                    }
                 }
             }
             .listStyle(SidebarListStyle())
