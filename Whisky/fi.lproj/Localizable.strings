@@ -1,0 +1,63 @@
+"tab.config" = "Konfiguraatio";
+"tab.programs" = "Ohjelmat";
+"tab.info" = "Info";
+
+"tab.navTitle.config" = "%@ Konfiguraatio";
+"tab.navTitle.programs" = "%@ Ohjelmat";
+"tab.navTitle.info" = "%@ Info";
+
+"button.cDrive" = "Avaa C levy";
+"button.showInFinder" = "Näytä Finderissa";
+"button.run" = "Käynnistä...";
+"button.ok" = "OK";
+"button.renameBottle" = "Nimeä uudelleen";
+"button.deleteBottle" = "Poista...";
+"button.createBottle" = "Luo pullo";
+"button.deleteAlert.msg" = "Poista %@?";
+"button.deleteAlert.info" = "Oletko varma, että haluat poistaa tämän pullon? Tämä on pysyvä muutos.";
+"button.deleteAlert.delete" = "Poista";
+"button.deleteAlert.cancel" = "Peru";
+
+"config.winVersion" = "Windows versio";
+"config.title.metal" = "Metal";
+"config.metalHud" = "Metal HUD";
+"config.metalTrace" = "Metal Jäljitin";
+"config.metalTrace.info" = "Mahdollistaa GPU työn nappaamisen Xcodessa";
+"config.esync" = "ESync";
+"config.winecfg" = "Avaa Wine konfiguraatio";
+
+"program.title" = "Asennetut ohjelmat";
+"program.env" = "Ympäristön muuttujat";
+"program.args" = "Argumentit";
+"program.config" = "Konfiguraatio";
+
+"info.title" = "Info";
+"info.path" = "Polku";
+"info.path.copy" = "Kopio polku";
+"info.wine" = "Wine versio";
+"info.win" = "Windows versio";
+
+"gptalert.init" = "Vedä ja pudota Game Porting Toolkit DMG";
+"gptalert.message" = "GPT ajautui virheeseen!";
+
+"alert.message" = "Ohjelman käynnistäminen epäonnistui!";
+"alert.info" = "Avaaminen epäonnistui";
+
+"create.title" = "Luo uusi pullo";
+"create.name" = "Pullon nimi:";
+"create.win" = "Windows versio:";
+"create.cancel" = "Peru";
+"create.create" = "Luo";
+
+"rename.title" = "Uudelleen nimeä pullo";
+"rename.name" = "Uusi nimi:";
+"rename.rename" = "Uudelleen nimeä";
+
+"check.updates" = "Tarkista päivitykset...";
+"kill.bottles" = "Tapa kaikki pullot...";
+"open.logs" = "Avaa log kansio";
+
+"showAlertOnFirstLaunch.messageText" = "Haluatko siirtää Whiskyn Applikaatio-kansioon?";
+"showAlertOnFirstLaunch.informativeText" = "Joissakin tapauksissa, Whiskyn ei ole mahdollista toimia kunnolla muista kansioista";
+"showAlertOnFirstLaunch.button.moveToApplications" = "Siirrä Applikaatioihin";
+"showAlertOnFirstLaunch.button.dontMove" = "Älä siirrä";
