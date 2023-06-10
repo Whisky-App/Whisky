@@ -9,7 +9,7 @@
 "button.cDrive" = "Відкрити диск C";
 "button.showInFinder" = "Показати у Finder";
 "button.run" = "Запустити...";
-"button.ok" = "OK";
+"button.ok" = "Гаразд";
 "button.renameBottle" = "Перейменувати";
 "button.deleteBottle" = "Видалити...";
 "button.createBottle" = "Створити пляшку";
@@ -37,7 +37,7 @@
 "info.wine" = "Версія Wine";
 "info.win" = "Версія Windows";
 
-"gptalert.init" = "Drag and drop the Game Porting Toolkit DMG";
+"gptalert.init" = "Перетягніть DMG образ Game Porting Toolkit";
 "gptalert.message" = "GPT зіткнувся з помилкою!";
 
 "alert.message" = "Не вдалося відкрити програму!";
