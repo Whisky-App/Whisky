@@ -6,39 +6,39 @@
 "tab.navTitle.programs" = "%@ Programs";
 "tab.navTitle.info" = "%@ Info";
 
-"button.cDrive" = "Abrir unidad C";
+"button.cDrive" = "Abrir \"Unidad C\"";
 "button.showInFinder" = "Mostrar en Finder";
 "button.run" = "Ejecutar...";
 "button.ok" = "OK";
 "button.renameBottle" = "Renombrar";
 "button.deleteBottle" = "Eliminar...";
 "button.createBottle" = "Crear Botella";
-"button.deleteAlert.msg" = "Delete %@?";
-"button.deleteAlert.info" = "Are you sure you want to delete this bottle? This action is permanent.";
-"button.deleteAlert.delete" = "Delete";
-"button.deleteAlert.cancel" = "Cancel";
+"button.deleteAlert.msg" = "Eliminar %@?";
+"button.deleteAlert.info" = "¿Estás seguro de que quieres eliminar esta botella? Esta acción es permanente.";
+"button.deleteAlert.delete" = "Eliminar";
+"button.deleteAlert.cancel" = "Cancelar";
 
-"config.winVersion" = "Windows Version";
+"config.winVersion" = "Versión de Windows";
 "config.title.metal" = "Metal";
 "config.metalHud" = "Metal HUD";
 "config.metalTrace" = "Metal Trace";
-"config.metalTrace.info" = "Le permite capturar carga de trabajo de la GPU en Xcode";
+"config.metalTrace.info" = "Permite capturar la carga de trabajo de la GPU en Xcode";
 "config.esync" = "ESync";
 "config.winecfg" = "Abrir configuración de Wine";
 
-"program.title" = "Programas instalados";
+"program.title" = "Programas Instalados";
 "program.env" = "Variables de Entorno";
-"program.args" = "Arguments";
-"program.config" = "Config";
+"program.args" = "Argumentos";
+"program.config" = "Configuración";
 
 "info.title" = "Información";
-"info.path" = "Ruta:";
+"info.path" = "Ruta";
 "info.path.copy" = "Copiar Ruta";
 "info.wine" = "Versión de Wine:";
 "info.win" = "Versión de Windows:";
 
-"gptalert.init" = "Drag and drop the Game Porting Toolkit DMG";
-"gptalert.message" = "GPT encountered an error!";
+"gptalert.init" = "Arrastra y suelta el archivo DMG de Gaming Porting Toolkit";
+"gptalert.message" = "Gaming Porting Toolkit encontró un error!";
 
 "alert.message" = "¡Error al abrir el programa!";
 "alert.info" = "No se pudo abrir";
@@ -54,10 +54,10 @@
 "rename.rename" = "Renombrar";
 
 "check.updates" = "Buscar actualizaciones...";
-"kill.bottles" = "Kill All Bottles...";
-"open.logs" = "Open Logs Folder";
+"kill.bottles" = "Detener todas las Botellas...";
+"open.logs" = "Abrir carpeta de registros";
 
-"showAlertOnFirstLaunch.messageText" = "Would you like to move Whisky to your Applications folder?";
-"showAlertOnFirstLaunch.informativeText" = "In some cases, Whisky wont't be able to function properly from a different folder";
-"showAlertOnFirstLaunch.button.moveToApplications" = "Move to Applications";
-"showAlertOnFirstLaunch.button.dontMove" = "Don't Move";
+"showAlertOnFirstLaunch.messageText" = "¿Te gustaría mover Whisky a la carpeta de Aplicaciones?";
+"showAlertOnFirstLaunch.informativeText" = "En algunos casos, Whisky podría no funcionar correctamente desde una carpeta diferente";
+"showAlertOnFirstLaunch.button.moveToApplications" = "Mover a Aplicaciones";
+"showAlertOnFirstLaunch.button.dontMove" = "No Mover";
