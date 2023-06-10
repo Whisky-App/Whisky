@@ -22,7 +22,7 @@
 "config.title.metal" = "Metal";
 "config.metalHud" = "Metal HUD";
 "config.metalTrace" = "Metal Trace";
-"config.metalTrace.info" = "Hiermee kunt u GPU-workload vastleggen in Xcode;
+"config.metalTrace.info" = "Hiermee kunt u GPU-workload vastleggen in Xcode";
 "config.esync" = "ESync";
 "config.winecfg" = "Open Wine Configuratie";
 
