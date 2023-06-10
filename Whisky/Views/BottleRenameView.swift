@@ -61,7 +61,7 @@ struct BottleRenameView: View {
             }
         }
         .padding()
-        .frame(width: 370, height: 150)
+        .frame(width: 350, height: 150)
         .onAppear {
             newBottleName = bottle.name
         }

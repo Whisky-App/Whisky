@@ -72,7 +72,7 @@ struct BottleCreationView: View {
             }
         }
         .padding()
-        .frame(width: 370, height: 180)
+        .frame(width: 350, height: 180)
     }
 }
 
