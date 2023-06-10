@@ -28,8 +28,8 @@
 
 "program.title" = "Установленные программы";
 "program.env" = "Переменные окружения";
-"program.args" = "Arguments";
-"program.config" = "Config";
+"program.args" = "Аргументы";
+"program.config" = "Настройки";
 
 "info.title" = "Сведения";
 "info.path" = "Путь:";
@@ -55,7 +55,7 @@
 
 "check.updates" = "Проверить наличие обновлений...";
 "kill.bottles" = "Kill All Bottles...";
-"open.logs" = "Open Logs Folder";
+"open.logs" = "Открыть папку логов";
 
 "showAlertOnFirstLaunch.messageText" = "Would you like to move Whisky to your Applications folder?";
 "showAlertOnFirstLaunch.informativeText" = "In some cases, Whisky wont't be able to function properly from a different folder";
