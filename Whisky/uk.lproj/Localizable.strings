@@ -1,15 +1,15 @@
-"tab.config" = "Конфігурація";
+"tab.config" = "Параметри";
 "tab.programs" = "Програми";
 "tab.info" = "Інформація";
 
-"tab.navTitle.config" = "%@ - конфігурація";
+"tab.navTitle.config" = "%@ Параметри";
 "tab.navTitle.programs" = "%@ - програми";
 "tab.navTitle.info" = "%@ - інформація";
 
 "button.cDrive" = "Відкрити диск C";
 "button.showInFinder" = "Показати у Finder";
 "button.run" = "Запустити...";
-"button.ok" = "Гаразд";
+"button.ok" = "ОК";
 "button.renameBottle" = "Перейменувати";
 "button.deleteBottle" = "Видалити...";
 "button.createBottle" = "Створити пляшку";
@@ -19,17 +19,17 @@
 "button.deleteAlert.cancel" = "Скасувати";
 
 "config.winVersion" = "Версія Windows";
-"config.title.metal" = "Метал";
-"config.metalHud" = "Метал HUD";
-"config.metalTrace" = "Метал Trace";
+"config.title.metal" = "Metal";
+"config.metalHud" = "Metal HUD";
+"config.metalTrace" = "Metal Trace";
 "config.metalTrace.info" = "Дозволяє вам відстежувати робоче навантаження GPU в Xcode";
 "config.esync" = "ESync";
-"config.winecfg" = "Відкрити конфігурацію Wine";
+"config.winecfg" = "Відкрити налаштування Wine";
 
 "program.title" = "Встановлені програми";
 "program.env" = "Змінні середовища";
 "program.args" = "Аргументи";
-"program.config" = "Конфігурація";
+"program.config" = "Налаштування";
 
 "info.title" = "Інформація";
 "info.path" = "Шлях";
