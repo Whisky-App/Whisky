@@ -1,0 +1,63 @@
+"tab.config" = "配置";
+"tab.programs" = "程序";
+"tab.info" = "信息";
+
+"tab.navTitle.config" = "%@ 配置";
+"tab.navTitle.programs" = "%@ 程序";
+"tab.navTitle.info" = "%@ 信息";
+
+"button.cDrive" = "打开C盘";
+"button.showInFinder" = "在访达中显示";
+"button.run" = "运行...";
+"button.ok" = "确定";
+"button.renameBottle" = "重命名";
+"button.deleteBottle" = "删除...";
+"button.createBottle" = "创建容器";
+"button.deleteAlert.msg" = "删除 %@?";
+"button.deleteAlert.info" = "你确定要删除这个容器吗？这个操作是永久的。";
+"button.deleteAlert.delete" = "删除";
+"button.deleteAlert.cancel" = "取消";
+
+"config.winVersion" = "Windows版本";
+"config.title.metal" = "Metal";
+"config.metalHud" = "Metal HUD";
+"config.metalTrace" = "Metal Trace";
+"config.metalTrace.info" = "允许你在Xcode中捕获GPU工作负载";
+"config.esync" = "ESync";
+"config.winecfg" = "打开Wine配置";
+
+"program.title" = "已安装的程序";
+"program.env" = "环境变量";
+"program.args" = "参数";
+"program.config" = "配置";
+
+"info.title" = "信息";
+"info.path" = "路径";
+"info.path.copy" = "复制路径";
+"info.wine" = "Wine版本";
+"info.win" = "Windows版本";
+
+"gptalert.init" = "将 Game Porting Toolkit dmg文件拖到这里";
+"gptalert.message" = "Game Porting Toolkit 遇到了一个错误！";
+
+"alert.message" = "无法打开程序！";
+"alert.info" = "打开失败";
+
+"create.title" = "创建一个新的容器";
+"create.name" = "容器名称：";
+"create.win" = "Windows版本：";
+"create.cancel" = "取消";
+"create.create" = "创建";
+
+"rename.title" = "重命名容器";
+"rename.name" = "新名称：";
+"rename.rename" = "重命名";
+
+"check.updates" = "检查更新...";
+"kill.bottles" = "结束所有容器...";
+"open.logs" = "打开日志文件夹";
+
+"showAlertOnFirstLaunch.messageText" = "你想要将Whisky移动到你的应用程序文件夹吗？";
+"showAlertOnFirstLaunch.informativeText" = "在某些情况下，Whisky可能无法在不同的文件夹中正常工作";
+"showAlertOnFirstLaunch.button.moveToApplications" = "移动到应用程序";
+"showAlertOnFirstLaunch.button.dontMove" = "不移动";

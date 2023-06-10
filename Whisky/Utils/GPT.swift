@@ -21,10 +21,11 @@ class GPT {
             .appendingPathComponent("Wine")
             .appendingPathComponent("lib")
 
-        let externalFolder: URL = libFolder
+        let d3dmFolder: URL = libFolder
             .appendingPathComponent("external")
+            .appendingPathComponent("D3DMetal.framework")
 
-        return FileManager.default.fileExists(atPath: externalFolder.path)
+        return FileManager.default.fileExists(atPath: d3dmFolder.path)
     }
 
     static func install(url: URL) {

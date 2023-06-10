@@ -38,6 +38,7 @@
 "info.wine" = "Version de Wine";
 "info.win" = "Version de Windows";
 
+"gptalert.init" = "Glissez et déposez le fichier DMG Game Porting Toolkit";
 "gptalert.message" = "GPT a rencontré une erreur !";
 
 "alert.message" = "Impossible d'ouvrir le programme !";
@@ -55,7 +56,7 @@
 
 "check.updates" = "Recherche des Mises à Jour...";
 "kill.bottles" = "Fermer Touts les Bouteilles...";
-"open.logs" = "Open Logs Folder";
+"open.logs" = "Ouvrir le dossier des logs";
 
 "showAlertOnFirstLaunch.messageText" = "Souhaitez-vous déplacer Whisky dans votre dossier Applications ?";
 "showAlertOnFirstLaunch.informativeText" = "Dans certains cas, Whisky ne pourra pas fonctionner correctement depuis un dossier différent";
