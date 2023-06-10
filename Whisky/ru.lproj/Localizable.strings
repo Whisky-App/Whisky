@@ -37,8 +37,8 @@
 "info.wine" = "Версия Wine:";
 "info.win" = "Версия Windows:";
 
-"gptalert.init" = "Drag and drop the Game Porting Toolkit DMG";
-"gptalert.message" = "GPT encountered an error!";
+"gptalert.init" = "Перетащите DMG образ Game Porting Toolkit";
+"gptalert.message" = "Случилась ошибка в GPT!";
 
 "alert.message" = "Не удалось запустить программу!";
 "alert.info" = "Не удалось открыть";
@@ -54,10 +54,10 @@
 "rename.rename" = "Переименовать";
 
 "check.updates" = "Проверить наличие обновлений...";
-"kill.bottles" = "Kill All Bottles...";
+"kill.bottles" = "Закрыть все бутылки...";
 "open.logs" = "Открыть папку логов";
 
-"showAlertOnFirstLaunch.messageText" = "Would you like to move Whisky to your Applications folder?";
-"showAlertOnFirstLaunch.informativeText" = "In some cases, Whisky wont't be able to function properly from a different folder";
-"showAlertOnFirstLaunch.button.moveToApplications" = "Move to Applications";
-"showAlertOnFirstLaunch.button.dontMove" = "Don't Move";
+"showAlertOnFirstLaunch.messageText" = "Вы хотите переместить Whisky в папку «Приложения»?";
+"showAlertOnFirstLaunch.informativeText" = "В некоторых случаях Whisky не сможет правильно функционировать из другой папки";
+"showAlertOnFirstLaunch.button.moveToApplications" = "Перенести в «Приложения»";
+"showAlertOnFirstLaunch.button.dontMove" = "Не двигать";
