@@ -1,0 +1,63 @@
+"tab.config" = "Configurazione";
+"tab.programs" = "Programmi";
+"tab.info" = "Informazioni";
+
+"tab.navTitle.config" = "%@ Configurazione";
+"tab.navTitle.programs" = "%@ Programmi";
+"tab.navTitle.info" = "%@ Informazioni";
+
+"button.cDrive" = "Apri Drive C";
+"button.showInFinder" = "Mostra in Finder";
+"button.run" = "Avvia...";
+"button.ok" = "OK";
+"button.renameBottle" = "Rinomina";
+"button.deleteBottle" = "Elimina...";
+"button.createBottle" = "Crea Bottiglia";
+"button.deleteAlert.msg" = "Elimina %@?";
+"button.deleteAlert.info" = "Sei sicuro di voler eliminare questa bottiglia? Questa azione è permanente.";
+"button.deleteAlert.delete" = "Elimina";
+"button.deleteAlert.cancel" = "Annulla";
+
+"config.winVersion" = "Versione di Windows";
+"config.title.metal" = "Metal";
+"config.metalHud" = "Display Primo Piano Metal";
+"config.metalTrace" = "Traccia Metal";
+"config.metalTrace.info" = "Consenti di acquisire lo sforzo della GPU in Xcode";
+"config.esync" = "ESync";
+"config.winecfg" = "Apri Configurazione Wine";
+
+"program.title" = "Programmi Installati";
+"program.env" = "Variabili d'Ambiente";
+"program.args" = "Parametri";
+"program.config" = "Configurazione";
+
+"info.title" = "Informazioni";
+"info.path" = "Percorso";
+"info.path.copy" = "Copia Percorso";
+"info.wine" = "Versione di Wine";
+"info.win" = "Versione di Windows";
+
+"gptalert.init" = "Trasciana e Rilascia il file DMG di Game Porting Toolkit";
+"gptalert.message" = "GPT ha riscontrato un errore!";
+
+"alert.message" = "Impossibile aprire il programma!";
+"alert.info" = "Impossibile aprire";
+
+"create.title" = "Crea una nuova bottiglia";
+"create.name" = "Nome bottiglia:";
+"create.win" = "Versione di Windows:";
+"create.cancel" = "Annulla";
+"create.create" = "Crea";
+
+"rename.title" = "Rinomina bottiglia";
+"rename.name" = "Nuovo nome:";
+"rename.rename" = "Rinomina";
+
+"check.updates" = "Controlla aggiornamenti...";
+"kill.bottles" = "Termina tutte le Bottiglie...";
+"open.logs" = "Apri Cartella dei Log";
+
+"showAlertOnFirstLaunch.messageText" = "Vuoi spostare Whisky nella tua cartella Applicazioni?";
+"showAlertOnFirstLaunch.informativeText" = "In alcuni casi, Whisky non potrà funzionare correttamente da un persorso diverso";
+"showAlertOnFirstLaunch.button.moveToApplications" = "Sposta in Applicazioni";
+"showAlertOnFirstLaunch.button.dontMove" = "Non Spostare";
