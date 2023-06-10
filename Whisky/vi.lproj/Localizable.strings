@@ -1,0 +1,63 @@
+"tab.config" = "Cấu hình";
+"tab.programs" = "Chương trình";
+"tab.info" = "Thông thin";
+
+"tab.navTitle.config" = "Cấu hình %@";
+"tab.navTitle.programs" = "Chương trình trong %@";
+"tab.navTitle.info" = "Thông tin về %@";
+
+"button.cDrive" = "Mở ổ C:";
+"button.showInFinder" = "Mở trong Finder";
+"button.run" = "Chạy...";
+"button.ok" = "OK";
+"button.renameBottle" = "Đổi tên";
+"button.deleteBottle" = "Xoá...";
+"button.createBottle" = "Tạo Bottle";
+"button.deleteAlert.msg" = "Xoá %@?";
+"button.deleteAlert.info" = "Bạn có muốn xoá bottle này không? Hành động này không thể bị huỷ.";
+"button.deleteAlert.delete" = "Xoá";
+"button.deleteAlert.cancel" = "Huỷ";
+
+"config.winVersion" = "Phiên bản Windows";
+"config.title.metal" = "Metal";
+"config.metalHud" = "Metal HUD";
+"config.metalTrace" = "Metal Trace";
+"config.metalTrace.info" = "Cho phép lấy thông tin GPU trong Xcode";
+"config.esync" = "ESync";
+"config.winecfg" = "Mở cấu hình Wine";
+
+"program.title" = "Chương trình đã cài";
+"program.env" = "Biến môi trường";
+"program.args" = "Thông số";
+"program.config" = "Cấu hình";
+
+"info.title" = "Thông tin";
+"info.path" = "Đường dẫn";
+"info.path.copy" = "Chép đường dẫn";
+"info.wine" = "Phiên bản Wine";
+"info.win" = "Phiên bản Windows";
+
+"gptalert.init" = "Kéo thả file DMG của Game Porting Toolkit";
+"gptalert.message" = "Lỗi file GPT!";
+
+"alert.message" = "Không thể mở chương trình này!";
+"alert.info" = "Không thể mỏ";
+
+"create.title" = "Tạo bottle mới";
+"create.name" = "Tên Bottle:";
+"create.win" = "Phiển bản Windows:";
+"create.cancel" = "Huỷ";
+"create.create" = "Tạo";
+
+"rename.title" = "Đổi tên bottle";
+"rename.name" = "Tên mới:";
+"rename.rename" = "Đổi tên";
+
+"check.updates" = "Kiểm tra Cập nhật...";
+"kill.bottles" = "Dừng tất cả Bottle...";
+"open.logs" = "Mở Folder Log";
+
+"showAlertOnFirstLaunch.messageText" = "Bạn có muốn chuyển Whisky tới folder Applications?";
+"showAlertOnFirstLaunch.informativeText" = "Trong một số trường hợp, Whisky sẽ không hoạt động đúng nếu không nằm trong Applications";
+"showAlertOnFirstLaunch.button.moveToApplications" = "Chuyển tới Applications";
+"showAlertOnFirstLaunch.button.dontMove" = "Không Chuyển";
