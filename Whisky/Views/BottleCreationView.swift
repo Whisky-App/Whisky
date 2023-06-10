@@ -10,6 +10,8 @@ import SwiftUI
 struct BottleCreationView: View {
     @State var newBottleName: String = ""
     @State var newBottleVersion: WinVersion = .win10
+    @State var invalidBottleNameDescription: String = ""
+    @State var invalidBottleName: Bool = false
     @Environment(\.dismiss) var dismiss
 
     var body: some View {
@@ -20,11 +22,24 @@ struct BottleCreationView: View {
                 Spacer()
             }
             Divider()
-            HStack {
+            HStack(alignment: .top) {
                 Text("create.name")
                 Spacer()
-                TextField("", text: $newBottleName)
-                    .frame(width: 180)
+                VStack(alignment: .leading) {
+                    TextField("", text: $newBottleName)
+                        .onChange(of: newBottleName) { _ in
+                            invalidBottleName = false
+                        }
+                    if invalidBottleName {
+                        Text(invalidBottleNameDescription)
+                            .foregroundColor(.red)
+                            .font(.system(.footnote))
+                            .multilineTextAlignment(.leading)
+                            .fixedSize(horizontal: false, vertical: true)
+                            .lineLimit(2)
+                    }
+                }
+                .frame(width: 180)
             }
             HStack {
                 Text("create.win")
@@ -45,6 +60,10 @@ struct BottleCreationView: View {
                 }
                 .keyboardShortcut(.cancelAction)
                 Button("create.create") {
+                    (invalidBottleName, invalidBottleNameDescription) = BottleVM.shared.validateBottleName(bottleName: newBottleName)
+                    if invalidBottleName {
+                        return
+                    }
                     BottleVM.shared.createNewBottle(bottleName: newBottleName,
                                                     winVersion: newBottleVersion)
                     dismiss()
@@ -53,7 +72,7 @@ struct BottleCreationView: View {
             }
         }
         .padding()
-        .frame(width: 350, height: 150)
+        .frame(width: 370, height: 180)
     }
 }
 

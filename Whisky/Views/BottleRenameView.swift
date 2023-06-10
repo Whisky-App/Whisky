@@ -10,6 +10,8 @@ import SwiftUI
 struct BottleRenameView: View {
     let bottle: Bottle
     @State var newBottleName: String = ""
+    @State var invalidBottleNameDescription: String = ""
+    @State var invalidBottleName: Bool = false
     @Environment(\.dismiss) var dismiss
 
     var body: some View {
@@ -20,11 +22,25 @@ struct BottleRenameView: View {
                 Spacer()
             }
             Divider()
-            HStack {
+            HStack(alignment: .top) {
                 Text("rename.name")
                 Spacer()
-                TextField("", text: $newBottleName)
-                    .frame(width: 180)
+                VStack(alignment: .leading) {
+                    TextField("", text: $newBottleName)
+                        .onChange(of: newBottleName) { _ in
+                            invalidBottleName = false
+                        }
+                    if invalidBottleName {
+                        Text(invalidBottleNameDescription)
+                            .foregroundColor(.red)
+                            .font(.system(.footnote))
+                            .multilineTextAlignment(.leading)
+                            .fixedSize(horizontal: false, vertical: true)
+                            .lineLimit(2)
+
+                    }
+                }
+                .frame(width: 180)
             }
             Spacer()
             HStack {
@@ -34,6 +50,10 @@ struct BottleRenameView: View {
                 }
                 .keyboardShortcut(.cancelAction)
                 Button("rename.rename") {
+                    (invalidBottleName, invalidBottleNameDescription) = BottleVM.shared.validateBottleName(bottleName: newBottleName)
+                    if invalidBottleName {
+                        return
+                    }
                     bottle.rename(newName: newBottleName)
                     dismiss()
                 }
@@ -41,7 +61,7 @@ struct BottleRenameView: View {
             }
         }
         .padding()
-        .frame(width: 350, height: 150)
+        .frame(width: 370, height: 150)
         .onAppear {
             newBottleName = bottle.name
         }

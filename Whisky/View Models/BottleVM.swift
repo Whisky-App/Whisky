@@ -59,4 +59,15 @@ class BottleVM: ObservableObject {
             }
         }
     }
+
+    func validateBottleName(bottleName: String) -> (isInvalidName: Bool, description: String) {
+        if bottleName.isEmpty {
+            return (true, NSLocalizedString("create.warning.emptyName", comment: ""))
+        }
+
+        if bottles.contains(where: {$0.name == bottleName}) {
+            return (true, NSLocalizedString("create.warning.alreadyExistsName", comment: ""))
+        }
+        return (false, "")
+    }
 }
