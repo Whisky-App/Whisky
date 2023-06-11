@@ -25,19 +25,9 @@ struct BottleCreationView: View {
             HStack(alignment: .top) {
                 Text("create.name")
                 Spacer()
-                VStack(alignment: .leading) {
-                    TextField("", text: $newBottleName)
-                        .onChange(of: newBottleName) { _ in
-                            invalidBottleName = false
-                        }
-                    if invalidBottleName {
-                        Text(invalidBottleNameDescription)
-                            .foregroundColor(.red)
-                            .font(.system(.footnote))
-                            .multilineTextAlignment(.leading)
-                            .fixedSize(horizontal: false, vertical: true)
-                            .lineLimit(2)
-                    }
+                TextField("", text: $newBottleName)
+                .onChange(of: newBottleName) { _ in
+                    invalidBottleName = false
                 }
                 .frame(width: 180)
             }
@@ -54,6 +44,13 @@ struct BottleCreationView: View {
             }
             Spacer()
             HStack {
+                Text(invalidBottleNameDescription)
+                    .foregroundColor(.red)
+                    .font(.system(.footnote))
+                    .fixedSize(horizontal: false, vertical: true)
+                    .lineLimit(2)
+                    .frame(height: 30, alignment: .center)
+                    .opacity(invalidBottleName ? 1 : 0)
                 Spacer()
                 Button("create.cancel") {
                     dismiss()
@@ -74,7 +71,7 @@ struct BottleCreationView: View {
             }
         }
         .padding()
-        .frame(width: 350, height: 180)
+        .frame(width: 350, height: 150)
     }
 }
 
