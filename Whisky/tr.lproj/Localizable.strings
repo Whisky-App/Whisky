@@ -1,0 +1,63 @@
+"tab.config" = "Ayarlar";
+"tab.programs" = "Programlar";
+"tab.info" = "Bilgi";
+
+"tab.navTitle.config" = "%@ Ayarlar";
+"tab.navTitle.programs" = "%@ Programlar";
+"tab.navTitle.info" = "%@ Bilgi";
+
+"button.cDrive" = "C Sürücüsünü Aç";
+"button.showInFinder" = "Finder'da Göster";
+"button.run" = "Çalıştır...";
+"button.ok" = "Tamam";
+"button.renameBottle" = "Bottle'ı Yeniden Adlandır";
+"button.deleteBottle" = "Sil...";
+"button.createBottle" = "Bottle Oluştur";
+"button.deleteAlert.msg" = "%@ silinsin mi?";
+"button.deleteAlert.info" = "Bu Bottle'ı silmek istediğinize emin misiniz? Bu işlem geri alınamaz.";
+"button.deleteAlert.delete" = "Sil";
+"button.deleteAlert.cancel" = "İptal";
+
+"config.winVersion" = "Windows Sürümü";
+"config.title.metal" = "Metal";
+"config.metalHud" = "Metal HUD";
+"config.metalTrace" = "Metal İzleme";
+"config.metalTrace.info" = "Xcode'da GPU iş yükünü yakalamak için kullanılır";
+"config.esync" = "ESync";
+"config.winecfg" = "Wine Yapılandırmasını Aç";
+
+"program.title" = "Yüklenmiş Programlar";
+"program.env" = "Ortam Değişkenleri";
+"program.args" = "Argümanlar";
+"program.config" = "Ayarlar";
+
+"info.title" = "Bilgi";
+"info.path" = "Yol";
+"info.path.copy" = "Yolu Kopyala";
+"info.wine" = "Wine Sürümü";
+"info.win" = "Windows Sürümü";
+
+"gptalert.init" = "Game Porting Toolkit DMG dosyasını sürükleyip bırakın";
+"gptalert.message" = "GPT bir hatayla karşılaştı!";
+
+"alert.message" = "Program açılamadı!";
+"alert.info" = "Açma başarısız";
+
+"create.title" = "Yeni bir Bottle Oluştur";
+"create.name" = "Bottle Adı:";
+"create.win" = "Windows sürümü:";
+"create.cancel" = "İptal";
+"create.create" = "Oluştur";
+
+"rename.title" = "Bottle'ı Yeniden Adlandır";
+"rename.name" = "Yeni ad:";
+"rename.rename" = "Yeniden Adlandır";
+
+"check.updates" = "Güncellemeleri Kontrol Et...";
+"kill.bottles" = "Tüm Bottle'ları Sonlandır...";
+"open.logs" = "Log Klasörünü Aç";
+
+"showAlertOnFirstLaunch.messageText" = "Whisky'yi Applications klasörüne taşımak ister misiniz?";
+"showAlertOnFirstLaunch.informativeText" = "Bazı durumlarda, Whisky farklı bir klasörden düzgün çalışmayabilir.";
+"showAlertOnFirstLaunch.button.moveToApplications" = "Applications'a Taşı";
+"showAlertOnFirstLaunch.button.dontMove" = "Taşıma";
