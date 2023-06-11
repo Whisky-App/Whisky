@@ -9,7 +9,7 @@
 "button.cDrive" = "C Laufwerk öffnen";
 "button.showInFinder" = "Im Finder anzeigen";
 "button.run" = "Starten...";
-"button.ok" = "Wine Version";
+"button.ok" = "OK";
 "button.renameBottle" = "Umbenennen";
 "button.deleteBottle" = "Löschen...";
 "button.createBottle" = "Bottle erstellen";
