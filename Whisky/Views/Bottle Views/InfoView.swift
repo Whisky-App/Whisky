@@ -13,7 +13,7 @@ struct InfoView: View {
     var body: some View {
         Form {
             Section("info.title") {
-                InfoItem(label: NSLocalizedString("info.path", comment: ""),
+                InfoItem(label: String(localized: "info.path"),
                          value: bottle.url.path)
                 .contextMenu {
                     Button {
@@ -24,15 +24,14 @@ struct InfoView: View {
                         Text("info.path.copy")
                     }
                 }
-                InfoItem(label: NSLocalizedString("info.wine", comment: ""),
+                InfoItem(label: String(localized: "info.wine"),
                          value: bottle.settings.wineVersion)
-                InfoItem(label: NSLocalizedString("info.win", comment: ""),
+                InfoItem(label: String(localized: "info.win"),
                          value: bottle.settings.windowsVersion.pretty())
             }
         }
         .formStyle(.grouped)
-        .navigationTitle(String(format: NSLocalizedString("tab.navTitle.info",
-                                                          comment: ""),
+        .navigationTitle(String(format: String(localized: "tab.navTitle.info"),
                                 bottle.name))
     }
 }

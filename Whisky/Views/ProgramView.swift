@@ -19,7 +19,7 @@ struct ProgramView: View {
             Form {
                 Section("info.title") {
                     HStack {
-                        InfoItem(label: NSLocalizedString("info.path", comment: ""), value: program.url.path)
+                        InfoItem(label: String(localized: "info.path"), value: program.url.path)
                         .contextMenu {
                             Button {
                                 let pasteboard = NSPasteboard.general
