@@ -1,0 +1,63 @@
+"tab.config" = "設定";
+"tab.programs" = "プログラム";
+"tab.info" = "情報";
+
+"tab.navTitle.config" = "%@ 設定";
+"tab.navTitle.programs" = "%@ プログラム";
+"tab.navTitle.info" = "%@ 情報";
+
+"button.cDrive" = "C ドライブを開く";
+"button.showInFinder" = "Finder で表示";
+"button.run" = "実行...";
+"button.ok" = "OK";
+"button.renameBottle" = "名前の変更";
+"button.deleteBottle" = "削除...";
+"button.createBottle" = "Bottle を作成";
+"button.deleteAlert.msg" = "%@ を削除しますか？";
+"button.deleteAlert.info" = "この Bottle を削除してもよろしいですか？この操作は取り消せません。";
+"button.deleteAlert.delete" = "削除";
+"button.deleteAlert.cancel" = "キャンセル";
+
+"config.winVersion" = "Windows バージョン";
+"config.title.metal" = "Metal";
+"config.metalHud" = "Metal HUD";
+"config.metalTrace" = "Metal トレース";
+"config.metalTrace.info" = "Xcode で GPU ワークロードをキャプチャできるようにします";
+"config.esync" = "ESync";
+"config.winecfg" = "Wine 設定を開く";
+
+"program.title" = "インストール済みプログラム";
+"program.env" = "環境変数";
+"program.args" = "引数";
+"program.config" = "設定";
+
+"info.title" = "情報";
+"info.path" = "パス";
+"info.path.copy" = "パスのコピー";
+"info.wine" = "Wine バージョン";
+"info.win" = "Windows バージョン";
+
+"gptalert.init" = "Game Porting Toolkit DMG ファイルをドラッグアンドドロップしてください";
+"gptalert.message" = "GPT でエラーが発生しました！";
+
+"alert.message" = "プログラムのオープンに失敗しました！";
+"alert.info" = "オープンに失敗しました";
+
+"create.title" = "新しい Bottle の作成";
+"create.name" = "Bottle 名:";
+"create.win" = "Windows バージョン:";
+"create.cancel" = "キャンセル";
+"create.create" = "作成";
+
+"rename.title" = "Bottle の名前変更";
+"rename.name" = "新しい名前:";
+"rename.rename" = "変更";
+
+"check.updates" = "更新を確認...";
+"kill.bottles" = "すべての Bottle を終了...";
+"open.logs" = "ログフォルダを開く";
+
+"showAlertOnFirstLaunch.messageText" = "Whisky を「アプリケーション」フォルダに移動しますか？";
+"showAlertOnFirstLaunch.informativeText" = "場合によっては、異なるフォルダから Whisky を適切に使用できない場合があります";
+"showAlertOnFirstLaunch.button.moveToApplications" = "「アプリケーション」に移動";
+"showAlertOnFirstLaunch.button.dontMove" = "移動しない";
