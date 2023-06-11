@@ -23,7 +23,7 @@
 "config.metalHud" = "Metal HUD";
 "config.metalTrace" = "Metal Trace";
 "config.metalTrace.info" = "允许你在Xcode中捕获GPU工作负载";
-"config.esync" = "Enhanced Sync（增强同步）技术";
+"config.esync" = "ESync（增强同步）技术";
 "config.winecfg" = "打开Wine配置";
 
 "program.title" = "已安装的程序";
