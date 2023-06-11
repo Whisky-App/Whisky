@@ -6,7 +6,6 @@
 //
 
 import SwiftUI
-import QuickLookThumbnailing
 
 struct ProgramView: View {
     @Binding var program: Program
@@ -19,7 +18,7 @@ struct ProgramView: View {
             Form {
                 Section("info.title") {
                     HStack {
-                        InfoItem(label: NSLocalizedString("info.path", comment: ""), value: program.url.path)
+                        InfoItem(label: String(localized: "info.path"), value: program.url.path)
                         .contextMenu {
                             Button {
                                 let pasteboard = NSPasteboard.general
@@ -87,15 +86,23 @@ struct ProgramView: View {
             }
         }
         .onAppear {
-            let thumbnail = QLThumbnailGenerator.Request(fileAt: program.url,
-                                                         size: CGSize(width: 512, height: 512),
-                                                         scale: 1,
-                                                         representationTypes: .thumbnail)
-
-            QLThumbnailGenerator.shared.generateBestRepresentation(for: thumbnail) { rep, _ in
-                if let rep = rep {
-                    image = rep.nsImage
+            do {
+                let peFile = try PEFile(data: Data(contentsOf: program.url))
+                var icons: [NSImage] = []
+                if let resourceSection = peFile.resourceSection {
+                    for entries in resourceSection.allEntries where entries.icon.isValid {
+                        icons.append(entries.icon)
+                    }
+                } else {
+                    print("No resource section")
+                    return
                 }
+
+                if icons.count > 0 {
+                    image = icons[0]
+                }
+            } catch {
+                print(error)
             }
 
             environment = program.settings.environment

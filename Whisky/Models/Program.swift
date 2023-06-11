@@ -35,12 +35,12 @@ public class Program: Hashable {
         } catch {
             await MainActor.run {
                 let alert = NSAlert()
-                alert.messageText = NSLocalizedString("alert.message", comment: "")
-                alert.informativeText = NSLocalizedString("alert.info", comment: "")
+                alert.messageText = String(localized: "alert.message")
+                alert.informativeText = String(localized: "alert.info")
                     + " \(url.lastPathComponent): "
                     + error.localizedDescription
                 alert.alertStyle = .critical
-                alert.addButton(withTitle: NSLocalizedString("button.ok", comment: ""))
+                alert.addButton(withTitle: String(localized: "button.ok"))
                 alert.runModal()
             }
         }
