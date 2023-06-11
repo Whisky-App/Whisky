@@ -6,7 +6,6 @@
 //
 
 import SwiftUI
-import QuickLookThumbnailing
 
 struct ProgramView: View {
     @Binding var program: Program
@@ -87,15 +86,23 @@ struct ProgramView: View {
             }
         }
         .onAppear {
-            let thumbnail = QLThumbnailGenerator.Request(fileAt: program.url,
-                                                         size: CGSize(width: 512, height: 512),
-                                                         scale: 1,
-                                                         representationTypes: .thumbnail)
-
-            QLThumbnailGenerator.shared.generateBestRepresentation(for: thumbnail) { rep, _ in
-                if let rep = rep {
-                    image = rep.nsImage
+            do {
+                let peFile = try PEFile(data: Data(contentsOf: program.url))
+                var icons: [NSImage] = []
+                if let resourceSection = peFile.resourceSection {
+                    for entries in resourceSection.allEntries where entries.icon.isValid {
+                        icons.append(entries.icon)
+                    }
+                } else {
+                    print("No resource section")
+                    return
                 }
+
+                if icons.count > 0 {
+                    image = icons[0]
+                }
+            } catch {
+                print(error)
             }
 
             environment = program.settings.environment
