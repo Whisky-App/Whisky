@@ -57,10 +57,9 @@ struct BottleCreationView: View {
                 }
                 .keyboardShortcut(.cancelAction)
                 Button("create.create") {
-                    (isValidBottleName, invalidBottleNameDescription) = BottleVM
-                        .shared
-                        .isValidBottleName(bottleName: newBottleName)
-                    if !isValidBottleName {
+                    if case .failure(let failureReason) = BottleVM.shared.isValidBottleName(bottleName: newBottleName) {
+                        isValidBottleName = false
+                        invalidBottleNameDescription = failureReason.description
                         return
                     }
                     BottleVM.shared.createNewBottle(bottleName: newBottleName,

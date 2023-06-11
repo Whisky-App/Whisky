@@ -46,10 +46,9 @@ struct BottleRenameView: View {
                 }
                 .keyboardShortcut(.cancelAction)
                 Button("rename.rename") {
-                    (isValidBottleName, invalidBottleNameDescription) = BottleVM
-                        .shared
-                        .isValidBottleName(bottleName: newBottleName)
-                    if !isValidBottleName {
+                    if case .failure(let failureReason) = BottleVM.shared.isValidBottleName(bottleName: newBottleName) {
+                        isValidBottleName = false
+                        invalidBottleNameDescription = failureReason.description
                         return
                     }
                     bottle.rename(newName: newBottleName)
