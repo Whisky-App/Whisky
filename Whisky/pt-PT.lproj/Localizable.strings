@@ -1,63 +1,63 @@
-"tab.config" = "Config";
-"tab.programs" = "Programs";
-"tab.info" = "Info";
+"tab.config" = "Configuração";
+"tab.programs" = "Programas";
+"tab.info" = "Informações";
 
-"tab.navTitle.config" = "%@ Config";
-"tab.navTitle.programs" = "%@ Programs";
-"tab.navTitle.info" = "%@ Info";
+"tab.navTitle.config" = "%@ Configuração";
+"tab.navTitle.programs" = "%@ Programas";
+"tab.navTitle.info" = "%@ Informações";
 
-"button.cDrive" = "Open C Drive";
-"button.showInFinder" = "Show in Finder";
-"button.run" = "Run...";
+"button.cDrive" = "Abrir unidade C";
+"button.showInFinder" = "Mostrar no Finder";
+"button.run" = "Executar...";
 "button.ok" = "OK";
-"button.renameBottle" = "Rename";
-"button.deleteBottle" = "Delete...";
-"button.createBottle" = "Create Bottle";
-"button.deleteAlert.msg" = "Delete %@?";
-"button.deleteAlert.info" = "Are you sure you want to delete this bottle? This action is permanent.";
-"button.deleteAlert.delete" = "Delete";
-"button.deleteAlert.cancel" = "Cancel";
+"button.renameBottle" = "Renomear";
+"button.deleteBottle" = "Excluir...";
+"button.createBottle" = "Criar Bottle";
+"button.deleteAlert.msg" = "Excluir %@?";
+"button.deleteAlert.info" = "Tem certeza de que deseja excluir este Bottle? Essa ação é permanente.";
+"button.deleteAlert.delete" = "Excluir";
+"button.deleteAlert.cancel" = "Cancelar";
 
-"config.winVersion" = "Windows Version";
+"config.winVersion" = "Versão do Windows";
 "config.title.metal" = "Metal";
-"config.metalHud" = "Metal HUD";
-"config.metalTrace" = "Metal Trace";
-"config.metalTrace.info" = "Allows you to capture GPU workload in Xcode";
+"config.metalHud" = "Hud Metal";
+"config.metalTrace" = "Rastreio Metal";
+"config.metalTrace.info" = "Permite capturar a carga de trabalho da GPU no Xcode";
 "config.esync" = "ESync";
-"config.winecfg" = "Open Wine Configuration";
+"config.winecfg" = "Abrir Configuração do Wine";
 
-"program.title" = "Installed Programs";
-"program.env" = "Environment Variables";
-"program.args" = "Arguments";
-"program.config" = "Config";
+"program.title" = "Programas Instalados";
+"program.env" = "Variáveis de Ambiente";
+"program.args" = "Argumentos";
+"program.config" = "Configuração";
 
-"info.title" = "Info";
-"info.path" = "Path";
-"info.path.copy" = "Copy Path";
-"info.wine" = "Wine Version";
-"info.win" = "Windows Version";
+"info.title" = "Informações";
+"info.path" = "Caminho";
+"info.path.copy" = "Copiar Caminho";
+"info.wine" = "Versão do Wine";
+"info.win" = "Versão do Windows";
 
-"gptalert.init" = "Drag and drop the Game Porting Toolkit DMG";
-"gptalert.message" = "GPT encountered an error!";
+"gptalert.init" = "Arraste e solte o arquivo DMG do Game Porting Toolkit";
+"gptalert.message" = "O GPT encontrou um erro!";
 
-"alert.message" = "Failed to open program!";
-"alert.info" = "Failed to open";
+"alert.message" = "Falha ao abrir o programa!";
+"alert.info" = "Falha ao abrir";
 
-"create.title" = "Create a new bottle";
-"create.name" = "Bottle name:";
-"create.win" = "Windows version:";
-"create.cancel" = "Cancel";
-"create.create" = "Create";
+"create.title" = "Criar um novo Bottle";
+"create.name" = "Nome do Bottle:";
+"create.win" = "Versão do Windows:";
+"create.cancel" = "Cancelar";
+"create.create" = "Criar";
 
-"rename.title" = "Rename bottle";
-"rename.name" = "New name:";
-"rename.rename" = "Rename";
+"rename.title" = "Renomear o Bottle";
+"rename.name" = "Novo nome:";
+"rename.rename" = "Renomear";
 
-"check.updates" = "Check for Updates...";
-"kill.bottles" = "Kill All Bottles...";
-"open.logs" = "Open Logs Folder";
+"check.updates" = "Verificar Atualizações...";
+"kill.bottles" = "Encerrar Todos os Bottles...";
+"open.logs" = "Abrir Pasta de Logs";
 
-"showAlertOnFirstLaunch.messageText" = "Would you like to move Whisky to your Applications folder?";
-"showAlertOnFirstLaunch.informativeText" = "In some cases, Whisky wont't be able to function properly from a different folder";
-"showAlertOnFirstLaunch.button.moveToApplications" = "Move to Applications";
-"showAlertOnFirstLaunch.button.dontMove" = "Don't Move";
+"showAlertOnFirstLaunch.messageText" = "Você gostaria de mover o Whisky para a pasta de Aplicativos?";
+"showAlertOnFirstLaunch.informativeText" = "Em alguns casos, o Whisky pode não funcionar corretamente em uma pasta diferente";
+"showAlertOnFirstLaunch.button.moveToApplications" = "Mover para Aplicativos";
+"showAlertOnFirstLaunch.button.dontMove" = "Não Mover";
