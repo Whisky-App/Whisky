@@ -27,6 +27,8 @@ Whisky provides a clean and easy to use graphical wrapper for Wine built in nati
 
 Special thanks to [Gcenx](https://github.com/Gcenx), without your amazing work Whisky wouldn't be possible.
 
+Translated on [Crowdin](https://crowdin.com/project/whisky).
+
 ---
 
 # FAQ

@@ -1,0 +1,63 @@
+"tab.config" = "Configuratie";
+"tab.programs" = "Programma";
+"tab.info" = "Informatie";
+
+"tab.navTitle.config" = "%@ Configuratie";
+"tab.navTitle.programs" = "%@ Programma";
+"tab.navTitle.info" = "%@ Informatie";
+
+"button.cDrive" = "C-schijf openen";
+"button.showInFinder" = "Toon in Finder";
+"button.run" = "Starten...";
+"button.ok" = "OK";
+"button.renameBottle" = "Hernoemen";
+"button.deleteBottle" = "Verwijderen...";
+"button.createBottle" = "Fles maken";
+"button.deleteAlert.msg" = "Verwijder %@?";
+"button.deleteAlert.info" = "Weet u zeker dat u deze fles wilt verwijderen? Deze actie is permanent.";
+"button.deleteAlert.delete" = "Verwijder";
+"button.deleteAlert.cancel" = "Annuleren";
+
+"config.winVersion" = "Windows Version";
+"config.title.metal" = "Metal";
+"config.metalHud" = "Metal HUD";
+"config.metalTrace" = "Metal Trace";
+"config.metalTrace.info" = "Hiermee kunt u GPU-workload vastleggen in Xcode";
+"config.esync" = "ESync";
+"config.winecfg" = "Open Wine Configuratie";
+
+"program.title" = "Geïnstalleerde programma's";
+"program.env" = "Omgevingsvariabelen";
+"program.args" = "Argumenten";
+"program.config" = "Configuratie";
+
+"info.title" = "Informatie";
+"info.path" = "Pad";
+"info.path.copy" = "Pad kopiëren";
+"info.wine" = "Wine Versie";
+"info.win" = "Windows Versie";
+
+"gptalert.init" = "Sleep en laat los de Game Porting Toolkit DMG";
+"gptalert.message" = "GPT heeft een fout aangetroffen!";
+
+"alert.message" = "Kan het programma niet openen!";
+"alert.info" = "Niet geslaagd te openen";
+
+"create.title" = "Maak een nieuwe fles";
+"create.name" = "Fles naam:";
+"create.win" = "Windows versie:";
+"create.cancel" = "Annuleren";
+"create.create" = "Aanmaken";
+
+"rename.title" = "Hernoem fles";
+"rename.name" = "Nieuwe naam:";
+"rename.rename" = "Hernoem";
+
+"check.updates" = "Controleer op updates...";
+"kill.bottles" = "Stop alle flessen onmiddellijk...";
+"open.logs" = "Open Logs map";
+
+"showAlertOnFirstLaunch.messageText" = "Wilt u Whiskey verplaatsen naar uw map Toepassingen?";
+"showAlertOnFirstLaunch.informativeText" = "In sommige gevallen zal Whiskey niet goed kunnen functioneren vanuit een andere map";
+"showAlertOnFirstLaunch.button.moveToApplications" = "Ga naar Toepassingen";
+"showAlertOnFirstLaunch.button.dontMove" = "Niet verplaatsen";
