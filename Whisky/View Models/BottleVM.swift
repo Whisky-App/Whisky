@@ -60,14 +60,14 @@ class BottleVM: ObservableObject {
         }
     }
 
-    func validateBottleName(bottleName: String) -> (isInvalidName: Bool, description: String) {
+    func isValidBottleName(bottleName: String) -> (isValidName: Bool, description: String) {
         if bottleName.isEmpty {
-            return (true, String(localized: "create.warning.emptyName"))
+            return (false, String(localized: "create.warning.emptyName"))
         }
 
         if bottles.contains(where: {$0.name == bottleName}) {
-                return (true, String(localized: "create.warning.alreadyExistsName"))
+                return (false, String(localized: "create.warning.alreadyExistsName"))
         }
-        return (false, "")
+        return (true, "")
     }
 }

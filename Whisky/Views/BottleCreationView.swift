@@ -11,7 +11,7 @@ struct BottleCreationView: View {
     @State var newBottleName: String = ""
     @State var newBottleVersion: WinVersion = .win10
     @State var invalidBottleNameDescription: String = ""
-    @State var invalidBottleName: Bool = false
+    @State var isValidBottleName: Bool = true
     @Environment(\.dismiss) var dismiss
 
     var body: some View {
@@ -27,7 +27,7 @@ struct BottleCreationView: View {
                 Spacer()
                 TextField("", text: $newBottleName)
                 .onChange(of: newBottleName) { _ in
-                    invalidBottleName = false
+                    isValidBottleName = true
                 }
                 .frame(width: 180)
             }
@@ -50,17 +50,17 @@ struct BottleCreationView: View {
                     .fixedSize(horizontal: false, vertical: true)
                     .lineLimit(2)
                     .frame(height: 30, alignment: .center)
-                    .opacity(invalidBottleName ? 1 : 0)
+                    .opacity(isValidBottleName ? 0 : 1)
                 Spacer()
                 Button("create.cancel") {
                     dismiss()
                 }
                 .keyboardShortcut(.cancelAction)
                 Button("create.create") {
-                    (invalidBottleName, invalidBottleNameDescription) = BottleVM
+                    (isValidBottleName, invalidBottleNameDescription) = BottleVM
                         .shared
-                        .validateBottleName(bottleName: newBottleName)
-                    if invalidBottleName {
+                        .isValidBottleName(bottleName: newBottleName)
+                    if !isValidBottleName {
                         return
                     }
                     BottleVM.shared.createNewBottle(bottleName: newBottleName,
