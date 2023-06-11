@@ -35,7 +35,7 @@ class Log {
             if let bundleID = Bundle.main.bundleIdentifier {
                 logger = Logger(subsystem: bundleID, category: "wine")
             } else {
-                throw "Could not get Bundle ID!"
+                throw Failure.couldntGetBundleID
             }
         } catch {
             print("Failed to create logger: \(error.localizedDescription)")
@@ -60,6 +60,19 @@ class Log {
             try fileHandle.close()
         } catch {
             print("Failed to close log file handle!")
+        }
+    }
+
+    enum Failure: Error {
+        case couldntGetBundleID
+    }
+}
+
+extension Log.Failure: CustomStringConvertible {
+    var description: String {
+        switch self {
+        case .couldntGetBundleID:
+            "Could not get Bundle ID!"
         }
     }
 }

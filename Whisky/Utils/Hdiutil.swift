@@ -26,7 +26,7 @@ class Hdiutil {
             process.waitUntilExit()
             let status = process.terminationStatus
             if status != 0 {
-                throw outputString
+                throw Failure.unknownError(outputString)
             }
 
             if let range = outputString.range(of: "/Volumes") {
@@ -35,7 +35,7 @@ class Hdiutil {
             }
         }
 
-        throw "Failed to get URL"
+        throw Failure.failedToGetURL
     }
 
     static func unmount(path: String) throws {
@@ -54,8 +54,24 @@ class Hdiutil {
             process.waitUntilExit()
             let status = process.terminationStatus
             if status != 0 {
-                throw outputString
+                throw Failure.unknownError(outputString)
             }
+        }
+    }
+
+    enum Failure: Error {
+        case failedToGetURL
+        case unknownError(String)
+    }
+}
+
+extension Hdiutil.Failure: CustomStringConvertible {
+    var description: String {
+        switch self {
+        case .failedToGetURL:
+            "Failed to get URL"
+        case .unknownError(let string):
+            "Unknown Error: \(string)"
         }
     }
 }

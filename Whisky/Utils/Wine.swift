@@ -63,7 +63,7 @@ class Wine {
         print("Process exited with code \(process.terminationStatus)")
 
         if process.terminationStatus != 0 {
-            throw "Wine Crashed! (\(process.terminationStatus))"
+            throw Failure.wineCrashed(terminationStatus: Int(process.terminationStatus))
         }
 
         return ""
@@ -106,7 +106,7 @@ class Wine {
             }
         }
 
-        throw WineInterfaceError.invalidResponce
+        throw Wine.Failure.invalidResponse
     }
 
     @discardableResult
@@ -130,10 +130,20 @@ class Wine {
     static func killBottle(bottle: Bottle) throws {
         return try runWineserver(["-k"], bottle: bottle)
     }
+
+    enum Failure: Error {
+        case invalidResponse
+        case wineCrashed(terminationStatus: Int)
+    }
 }
 
-extension String: Error {}
-
-enum WineInterfaceError: Error {
-    case invalidResponce
+extension Wine.Failure: CustomStringConvertible {
+    var description: String {
+        switch self {
+        case .invalidResponse:
+            "Invalid Response"
+        case .wineCrashed(let terminationStatus):
+            "Wine Crashed! (\(terminationStatus))"
+        }
+    }
 }
