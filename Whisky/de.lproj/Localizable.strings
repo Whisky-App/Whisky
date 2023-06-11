@@ -6,10 +6,10 @@
 "tab.navTitle.programs" = "%@ Programme";
 "tab.navTitle.info" = "%@ Info";
 
-"button.cDrive" = "Open C Drive";
+"button.cDrive" = "C Laufwerk öffnen";
 "button.showInFinder" = "Im Finder anzeigen";
 "button.run" = "Starten...";
-"button.ok" = "OK";
+"button.ok" = "Wine Version";
 "button.renameBottle" = "Umbenennen";
 "button.deleteBottle" = "Löschen...";
 "button.createBottle" = "Bottle erstellen";
