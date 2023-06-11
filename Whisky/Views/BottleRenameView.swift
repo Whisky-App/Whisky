@@ -50,7 +50,9 @@ struct BottleRenameView: View {
                 }
                 .keyboardShortcut(.cancelAction)
                 Button("rename.rename") {
-                    (invalidBottleName, invalidBottleNameDescription) = BottleVM.shared.validateBottleName(bottleName: newBottleName)
+                    (invalidBottleName, invalidBottleNameDescription) = BottleVM
+                        .shared
+                        .validateBottleName(bottleName: newBottleName)
                     if invalidBottleName {
                         return
                     }
