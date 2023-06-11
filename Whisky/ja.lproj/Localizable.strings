@@ -41,7 +41,7 @@
 "gptalert.message" = "GPT でエラーが発生しました！";
 
 "alert.message" = "プログラムの起動に失敗しました！";
-"alert.info" = "オープンに失敗しました";
+"alert.info" = "起動に失敗しました";
 
 "create.title" = "新しい Bottle を作成";
 "create.name" = "Bottle 名:";
