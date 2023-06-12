@@ -40,10 +40,10 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 
     private func showAlertOnFirstLaunch() {
         let alert = NSAlert()
-        alert.messageText = NSLocalizedString("showAlertOnFirstLaunch.messageText", comment: "")
-        alert.informativeText = NSLocalizedString("showAlertOnFirstLaunch.informativeText", comment: "")
-        alert.addButton(withTitle: NSLocalizedString("showAlertOnFirstLaunch.button.moveToApplications", comment: ""))
-        alert.addButton(withTitle: NSLocalizedString("showAlertOnFirstLaunch.button.dontMove", comment: ""))
+        alert.messageText = String(localized: "showAlertOnFirstLaunch.messageText")
+        alert.informativeText = String(localized: "showAlertOnFirstLaunch.informativeText")
+        alert.addButton(withTitle: String(localized: "showAlertOnFirstLaunch.button.moveToApplications"))
+        alert.addButton(withTitle: String(localized: "showAlertOnFirstLaunch.button.dontMove"))
 
         let response = alert.runModal()
 

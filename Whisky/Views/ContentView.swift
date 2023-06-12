@@ -81,14 +81,13 @@ struct BottleListEntry: View {
 
     func showDeleteAlert(bottle: Bottle) {
         let alert = NSAlert()
-        alert.messageText = String(format: NSLocalizedString("button.deleteAlert.msg",
-                                                             comment: ""),
+        alert.messageText = String(format: String(localized: "button.deleteAlert.msg"),
                                    bottle.name)
-        alert.informativeText = NSLocalizedString("button.deleteAlert.info", comment: "")
+        alert.informativeText = String(localized: "button.deleteAlert.info")
         alert.alertStyle = .warning
-        let delete = alert.addButton(withTitle: NSLocalizedString("button.deleteAlert.delete", comment: ""))
+        let delete = alert.addButton(withTitle: String(localized: "button.deleteAlert.delete"))
         delete.hasDestructiveAction = true
-        alert.addButton(withTitle: NSLocalizedString("button.deleteAlert.cancel", comment: ""))
+        alert.addButton(withTitle: String(localized: "button.deleteAlert.cancel"))
 
         let response = alert.runModal()
 

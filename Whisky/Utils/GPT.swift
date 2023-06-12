@@ -73,10 +73,10 @@ class GPT {
 
     static func gptError(error: String) {
         let alert = NSAlert()
-        alert.messageText = NSLocalizedString("gptalert.message", comment: "")
+        alert.messageText = String(localized: "gptalert.message")
         alert.informativeText = error
         alert.alertStyle = .critical
-        alert.addButton(withTitle: NSLocalizedString("button.ok", comment: ""))
+        alert.addButton(withTitle: String(localized: "button.ok"))
         alert.runModal()
     }
 

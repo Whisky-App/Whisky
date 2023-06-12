@@ -25,8 +25,7 @@ struct ProgramsView: View {
                 }
             }
             .formStyle(.grouped)
-            .navigationTitle(String(format: NSLocalizedString("tab.navTitle.programs",
-                                                              comment: ""),
+            .navigationTitle(String(format: String(localized: "tab.navTitle.programs"),
                                     bottle.name))
             .onAppear {
                 programs = bottle.updateInstalledPrograms()
@@ -50,10 +49,10 @@ struct ProgramItemView: View {
                             try await Wine.runProgram(program: program)
                         } catch {
                             let alert = NSAlert()
-                            alert.messageText = NSLocalizedString("alert.message", comment: "")
-                            alert.informativeText = NSLocalizedString("alert.info", comment: "") + " \(program.name)"
+                            alert.messageText = String(localized: "alert.message")
+                            alert.informativeText = String(localized: "alert.info") + " \(program.name)"
                             alert.alertStyle = .critical
-                            alert.addButton(withTitle: NSLocalizedString("button.ok", comment: ""))
+                            alert.addButton(withTitle: String(localized: "button.ok"))
                             alert.runModal()
                         }
                     }

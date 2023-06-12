@@ -44,7 +44,7 @@ public class Bottle: Hashable {
         let userStartMenu = url
             .appendingPathComponent("drive_c")
             .appendingPathComponent("users")
-            .appendingPathComponent(NSUserName())
+            .appendingPathComponent("crossover")
             .appendingPathComponent("AppData")
             .appendingPathComponent("Roaming")
             .appendingPathComponent("Microsoft")

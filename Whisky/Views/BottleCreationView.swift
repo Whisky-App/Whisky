@@ -10,6 +10,8 @@ import SwiftUI
 struct BottleCreationView: View {
     @State var newBottleName: String = ""
     @State var newBottleVersion: WinVersion = .win10
+    @State var invalidBottleNameDescription: String = ""
+    @State var isValidBottleName: Bool = true
     @Environment(\.dismiss) var dismiss
 
     var body: some View {
@@ -20,11 +22,14 @@ struct BottleCreationView: View {
                 Spacer()
             }
             Divider()
-            HStack {
+            HStack(alignment: .top) {
                 Text("create.name")
                 Spacer()
                 TextField("", text: $newBottleName)
-                    .frame(width: 180)
+                .onChange(of: newBottleName) { _ in
+                    isValidBottleName = true
+                }
+                .frame(width: 180)
             }
             HStack {
                 Text("create.win")
@@ -39,12 +44,24 @@ struct BottleCreationView: View {
             }
             Spacer()
             HStack {
+                Text(invalidBottleNameDescription)
+                    .foregroundColor(.red)
+                    .font(.system(.footnote))
+                    .fixedSize(horizontal: false, vertical: true)
+                    .lineLimit(2)
+                    .frame(height: 30, alignment: .center)
+                    .opacity(isValidBottleName ? 0 : 1)
                 Spacer()
                 Button("create.cancel") {
                     dismiss()
                 }
                 .keyboardShortcut(.cancelAction)
                 Button("create.create") {
+                    if case .failure(let failureReason) = BottleVM.shared.isValidBottleName(bottleName: newBottleName) {
+                        isValidBottleName = false
+                        invalidBottleNameDescription = failureReason.description
+                        return
+                    }
                     BottleVM.shared.createNewBottle(bottleName: newBottleName,
                                                     winVersion: newBottleVersion)
                     dismiss()

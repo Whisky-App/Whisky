@@ -20,6 +20,24 @@ class BottleVM: ObservableObject {
 
     @Published var bottles: [Bottle] = []
 
+    enum NameFailureReason {
+        case emptyName
+        case alreadyExists
+
+        var description: String {
+            switch self {
+            case .emptyName:
+                return String(localized: "create.warning.emptyName")
+            case .alreadyExists:
+                return String(localized: "create.warning.alreadyExistsName")
+            }
+        }
+    }
+    enum BottleValidationResult {
+        case success
+        case failure(reason: NameFailureReason)
+    }
+
     @MainActor
     func loadBottles() {
         Task(priority: .background) {
@@ -59,5 +77,16 @@ class BottleVM: ObservableObject {
                 print("Failed to create new bottle")
             }
         }
+    }
+
+    func isValidBottleName(bottleName: String) -> BottleValidationResult {
+        if bottleName.isEmpty {
+            return BottleValidationResult.failure(reason: NameFailureReason.emptyName)
+        }
+
+        if bottles.contains(where: {$0.name == bottleName}) {
+            return BottleValidationResult.failure(reason: NameFailureReason.alreadyExists)
+        }
+        return BottleValidationResult.success
     }
 }

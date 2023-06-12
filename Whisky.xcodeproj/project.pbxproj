@@ -36,6 +36,8 @@
 		6E5E23EA2A30D6C400ABC192 /* GPTInstallView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E5E23E92A30D6C400ABC192 /* GPTInstallView.swift */; };
 		6E5E23EC2A30DBCA00ABC192 /* Hdiutil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E5E23EB2A30DBCA00ABC192 /* Hdiutil.swift */; };
 		6E6915452A3265BB0085BBB7 /* Logger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E6915442A3265BB0085BBB7 /* Logger.swift */; };
+		6E8A3B3E2A3613F400D19632 /* PortableExecutable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E8A3B3D2A3613F400D19632 /* PortableExecutable.swift */; };
+		6E8A3B402A36140300D19632 /* ResourceSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E8A3B3F2A36140300D19632 /* ResourceSection.swift */; };
 		6EA2D47E29DDAE5E00C84668 /* BottleRenameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EA2D47D29DDAE5E00C84668 /* BottleRenameView.swift */; };
 		6EA2D48529DF130F00C84668 /* ProgramSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EA2D48429DF130F00C84668 /* ProgramSettings.swift */; };
 		C31948F72A324A26009CB090 /* Registry.swift in Sources */ = {isa = PBXBuildFile; fileRef = C31948F62A324A26009CB090 /* Registry.swift */; };
@@ -87,6 +89,11 @@
 		6E62F24F29E0A6B10098FEFD /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Localizable.strings; sourceTree = "<group>"; };
 		6E6915442A3265BB0085BBB7 /* Logger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Logger.swift; sourceTree = "<group>"; };
 		6E899D1129CFC41D00A4A083 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		6E8A3B362A35FCC500D19632 /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/Localizable.strings; sourceTree = "<group>"; };
+		6E8A3B372A35FCD500D19632 /* pt-PT */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "pt-PT"; path = "pt-PT.lproj/Localizable.strings"; sourceTree = "<group>"; };
+		6E8A3B3A2A35FCEA00D19632 /* tr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = tr; path = tr.lproj/Localizable.strings; sourceTree = "<group>"; };
+		6E8A3B3D2A3613F400D19632 /* PortableExecutable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PortableExecutable.swift; sourceTree = "<group>"; };
+		6E8A3B3F2A36140300D19632 /* ResourceSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResourceSection.swift; sourceTree = "<group>"; };
 		6EA2D47D29DDAE5E00C84668 /* BottleRenameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottleRenameView.swift; sourceTree = "<group>"; };
 		6EA2D48429DF130F00C84668 /* ProgramSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgramSettings.swift; sourceTree = "<group>"; };
 		C31948F62A324A26009CB090 /* Registry.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Registry.swift; sourceTree = "<group>"; };
@@ -97,6 +104,7 @@
 		C3AE69382A327C4D00C0A70E /* RegistrySectionEditorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrySectionEditorView.swift; sourceTree = "<group>"; };
 		C3AE693A2A327E8D00C0A70E /* RegistryValueView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistryValueView.swift; sourceTree = "<group>"; };
 		C3AE693C2A32832600C0A70E /* RegistrySectionContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrySectionContentView.swift; sourceTree = "<group>"; };
+		AB8570C22A34FA4000BFBBE0 /* vi */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = vi; path = vi.lproj/Localizable.strings; sourceTree = "<group>"; };
 		B584FD842A3376E0009B00F4 /* zh-Hant */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hant"; path = "zh-Hant.lproj/Localizable.strings"; sourceTree = "<group>"; };
 		B584FD842A6676E0009B00F4 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Localizable.strings"; sourceTree = "<group>"; };
 		EEA5A2452A31DD65008274AE /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -215,6 +223,8 @@
 				6E5197D129D7202100CF655E /* BottleSettings.swift */,
 				6EA2D48429DF130F00C84668 /* ProgramSettings.swift */,
 				6E26058529D9267B00DDD788 /* ShellLink.swift */,
+				6E8A3B3D2A3613F400D19632 /* PortableExecutable.swift */,
+				6E8A3B3F2A36140300D19632 /* ResourceSection.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -302,8 +312,12 @@
 				de,
 				ko,
 				fi,
+				ja,
+				"pt-PT",
+				tr,
 				it,
 				nl,
+				vi,
 			);
 			mainGroup = 6E40494929CCA19C006E3F1B;
 			packageReferences = (
@@ -374,9 +388,11 @@
 				C3AE69372A327A6E00C0A70E /* RegistryBrowserView.swift in Sources */,
 				6E355E5829D78249002D83BE /* ConfigView.swift in Sources */,
 				6EA2D47E29DDAE5E00C84668 /* BottleRenameView.swift in Sources */,
+				6E8A3B3E2A3613F400D19632 /* PortableExecutable.swift in Sources */,
 				6EA2D48529DF130F00C84668 /* ProgramSettings.swift in Sources */,
 				6E50D98529CDF25B008C39F6 /* BottleCreationView.swift in Sources */,
 				6E40498329CCA91B006E3F1B /* Bottle.swift in Sources */,
+				6E8A3B402A36140300D19632 /* ResourceSection.swift in Sources */,
 				6E26058A29D9282000DDD788 /* DataExtensions.swift in Sources */,
 				6E5E23E82A30D59600ABC192 /* GPT.swift in Sources */,
 				6E064B1429DD331F00D9A2D2 /* SparkleView.swift in Sources */,
@@ -414,8 +430,12 @@
 				F4575E7B2A33DC3D0022043E /* de */,
 				624D7CCB2A335A9A00995C9A /* ko */,
 				515D3F8E2A3446EF00F29E92 /* fi */,
+				6E8A3B362A35FCC500D19632 /* ja */,
+				6E8A3B372A35FCD500D19632 /* pt-PT */,
+				6E8A3B3A2A35FCEA00D19632 /* tr */,
 				0A8B597E2A34CFBA007B37A0 /* it */,
 				F4575E7C2A33DC3D0022043D /* nl */,
+				AB8570C22A34FA4000BFBBE0 /* vi */,
 			);
 			name = Localizable.strings;
 			sourceTree = "<group>";
