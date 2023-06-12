@@ -24,6 +24,7 @@
 "config.metalTrace" = "Śledź Metal";
 "config.metalTrace.info" = "Umożliwia przechwytywanie obciążenia GPU w Xcode";
 "config.esync" = "ESync";
+"config.regedit" = "Open Registry Editor";
 "config.winecfg" = "Otwórz konfigurację Wine";
 
 "program.title" = "Zainstalowane programy";
