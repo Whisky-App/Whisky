@@ -48,6 +48,15 @@ struct ConfigView: View {
             .formStyle(.grouped)
             HStack {
                 Spacer()
+                Button("config.regedit") {
+                    Task(priority: .userInitiated) {
+                        do {
+                            try await Wine.regedit(bottle: bottle)
+                        } catch {
+                            print("Failed to launch regedit")
+                        }
+                    }
+                }
                 Button("config.winecfg") {
                     Task(priority: .userInitiated) {
                         do {

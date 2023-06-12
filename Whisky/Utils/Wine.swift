@@ -110,6 +110,11 @@ class Wine {
     }
 
     @discardableResult
+    static func regedit(bottle: Bottle) async throws -> String {
+        return try await run(["regedit"], bottle: bottle)
+    }
+
+    @discardableResult
     static func cfg(bottle: Bottle) async throws -> String {
         return try await run(["winecfg"], bottle: bottle)
     }
