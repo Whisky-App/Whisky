@@ -48,6 +48,8 @@
 "create.win" = "Windows sürümü:";
 "create.cancel" = "İptal";
 "create.create" = "Oluştur";
+"create.warning.emptyName" = "Name can't be empty";
+"create.warning.alreadyExistsName" = "A bottle with this name already exists";
 
 "rename.title" = "Bottle'ı Yeniden Adlandır";
 "rename.name" = "Yeni ad:";
