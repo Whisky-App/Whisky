@@ -50,7 +50,7 @@
 "create.cancel" = "İptal";
 "create.create" = "Oluştur";
 "create.warning.emptyName" = "İsim Boş Olamaz";
-"create.warning.alreadyExistsName" = "A bottle with this name already exists";
+"create.warning.alreadyExistsName" = "Bu İsmi Kullanan Bir Bottle Zaten Var";
 
 "rename.title" = "Bottle'ı Yeniden Adlandır";
 "rename.name" = "Yeni ad:";
