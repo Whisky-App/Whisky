@@ -24,6 +24,7 @@
 "config.metalTrace" = "Трассировка Metal";
 "config.metalTrace.info" = "Позволяет отслеживать рабочую нагрузку видеокарты через Xcode";
 "config.esync" = "ESync";
+"config.regedit" = "Open Registry Editor";
 "config.winecfg" = "Открыть настройки Wine";
 
 "program.title" = "Установленные программы";
