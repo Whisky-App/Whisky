@@ -24,7 +24,7 @@
 "config.metalTrace" = "Metal İzleme";
 "config.metalTrace.info" = "Xcode'da GPU iş yükünü yakalamak için kullanılır";
 "config.esync" = "ESync";
-"config.regedit" = "Open Registry Editor";
+"config.regedit" = "Kayıt Düzenleyicisi'ni Aç";
 "config.winecfg" = "Wine Yapılandırmasını Aç";
 
 "program.title" = "Yüklenmiş Programlar";
@@ -49,7 +49,7 @@
 "create.win" = "Windows sürümü:";
 "create.cancel" = "İptal";
 "create.create" = "Oluştur";
-"create.warning.emptyName" = "Name can't be empty";
+"create.warning.emptyName" = "İsim Boş Olamaz";
 "create.warning.alreadyExistsName" = "A bottle with this name already exists";
 
 "rename.title" = "Bottle'ı Yeniden Adlandır";
