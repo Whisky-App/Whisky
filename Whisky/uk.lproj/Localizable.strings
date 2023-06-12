@@ -24,6 +24,7 @@
 "config.metalTrace" = "Metal Trace";
 "config.metalTrace.info" = "Дозволяє вам відстежувати робоче навантаження GPU в Xcode";
 "config.esync" = "ESync";
+"config.regedit" = "Open Registry Editor";
 "config.winecfg" = "Відкрити налаштування Wine";
 
 "program.title" = "Встановлені програми";
