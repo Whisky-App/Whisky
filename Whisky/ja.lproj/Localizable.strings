@@ -24,6 +24,7 @@
 "config.metalTrace" = "Metal トレース";
 "config.metalTrace.info" = "Xcode で GPU ワークロードをキャプチャできるようにします";
 "config.esync" = "ESync";
+"config.regedit" = "Open Registry Editor";
 "config.winecfg" = "Wine 設定を開く";
 
 "program.title" = "インストール済みプログラム";
