@@ -48,6 +48,8 @@
 "create.win" = "Windows バージョン:";
 "create.cancel" = "キャンセル";
 "create.create" = "作成";
+"create.warning.emptyName" = "Name can't be empty";
+"create.warning.alreadyExistsName" = "A bottle with this name already exists";
 
 "rename.title" = "Bottle の名前変更";
 "rename.name" = "新しい名前:";
