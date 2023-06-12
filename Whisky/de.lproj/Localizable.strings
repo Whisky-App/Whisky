@@ -24,6 +24,7 @@
 "config.metalTrace" = "Metal Trace";
 "config.metalTrace.info" = "Erlaub es dir, den GPU-Workload in Xcode aufzunehmen.";
 "config.esync" = "ESync";
+"config.regedit" = "Open Registry Editor";
 "config.winecfg" = "Öffne die Wine-Konfiguration";
 
 "program.title" = "Intallierte Programme";
