@@ -48,6 +48,8 @@
 "create.win" = "Wersja Windows:";
 "create.cancel" = "Anuluj";
 "create.create" = "Utwórz";
+"create.warning.emptyName" = "Name can't be empty";
+"create.warning.alreadyExistsName" = "A bottle with this name already exists";
 
 "rename.title" = "Zmień nazwę butelki";
 "rename.name" = "Nowa nazwa:";
