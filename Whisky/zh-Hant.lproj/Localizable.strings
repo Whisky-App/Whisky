@@ -20,11 +20,11 @@
 
 "config.winVersion" = "Windows版本";
 "config.title.metal" = "Metal";
-"config.metalHud" = "Metal HUD";
-"config.metalTrace" = "Metal Trace";
+"config.metalHud" = "Metal 抬頭顯示";
+"config.metalTrace" = "Metal 追蹤";
 "config.metalTrace.info" = "允許您在Xcode中捕獲GPU工作負載";
 "config.esync" = "ESync";
-"config.regedit" = "Open Registry Editor";
+"config.regedit" = "開啟註冊表編輯器";
 "config.winecfg" = "開啟Wine設定";
 
 "program.title" = "已安裝的程式";
@@ -38,7 +38,7 @@
 "info.wine" = "Wine版本";
 "info.win" = "Windows版本";
 
-"gptalert.init" = "将 Game Porting Toolkit dmg文件拖到這裡";
+"gptalert.init" = "將 Game Porting Toolkit 的 DMG 文件拖到這裡";
 "gptalert.message" = "GPT遇到了一個錯誤！";
 
 "alert.message" = "無法開啟程式！";
@@ -49,8 +49,8 @@
 "create.win" = "Windows版本：";
 "create.cancel" = "取消";
 "create.create" = "建立";
-"create.warning.emptyName" = "Name can't be empty";
-"create.warning.alreadyExistsName" = "A bottle with this name already exists";
+"create.warning.emptyName" = "名稱不能為空";
+"create.warning.alreadyExistsName" = "已存在同樣名稱的容器";
 
 "rename.title" = "重新命名容器";
 "rename.name" = "新名稱：";
