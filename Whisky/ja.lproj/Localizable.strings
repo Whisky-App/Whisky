@@ -19,11 +19,14 @@
 "button.deleteAlert.cancel" = "キャンセル";
 
 "config.winVersion" = "Windows バージョン";
+"config.buildVersion" = "Build Version";
 "config.title.metal" = "Metal";
 "config.metalHud" = "Metal HUD";
 "config.metalTrace" = "Metal トレース";
 "config.metalTrace.info" = "Xcode で GPU ワークロードをキャプチャできるようにします";
 "config.esync" = "ESync";
+"config.title.controlPanel" = "Control Panel";
+"config.controlPanel" = "Open Control Panel";
 "config.regedit" = "レジストリ エディターを開く";
 "config.winecfg" = "Wine 設定を開く";
 
