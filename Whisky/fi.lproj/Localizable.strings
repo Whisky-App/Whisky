@@ -25,7 +25,6 @@
 "config.metalTrace" = "Metal Jäljitin";
 "config.metalTrace.info" = "Mahdollistaa GPU työn nappaamisen Xcodessa";
 "config.esync" = "ESync";
-"config.title.controlPanel" = "Control Panel";
 "config.controlPanel" = "Open Control Panel";
 "config.regedit" = "Open Registry Editor";
 "config.winecfg" = "Avaa Wine konfiguraatio";
