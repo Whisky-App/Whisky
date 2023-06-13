@@ -12,6 +12,7 @@ struct ProgramView: View {
     @State var image: NSImage?
     @State var environment: [String: String] = [:]
     @State var programLoading: Bool = false
+    @State var workDir: String = ""
 
     var body: some View {
         VStack {
@@ -32,14 +33,47 @@ struct ProgramView: View {
                 }
                 Section("program.config") {
                     VStack {
-                        HStack {
-                            Text("program.args")
-                            Spacer()
+                        VStack {
+                            HStack {
+                                Text("program.args")
+                                Spacer()
+                            }
+                            TextField("", text: $program.settings.arguments)
+                                .textFieldStyle(.roundedBorder)
+                                .font(.system(.body, design: .monospaced))
+                                .labelsHidden()
                         }
-                        TextField("", text: $program.settings.arguments)
-                            .textFieldStyle(.roundedBorder)
-                            .font(.system(.body, design: .monospaced))
-                            .labelsHidden()
+                        Divider()
+                        VStack {
+                            HStack {
+                                Text("program.workDir")
+                                Spacer()
+                            }
+                            HStack {
+                                TextField("", text: $workDir)
+                                    .textFieldStyle(.roundedBorder)
+                                    .font(.system(.body, design: .monospaced))
+                                    .labelsHidden()
+                                    .onChange(of: workDir) { _ in
+                                        program.settings.workDir = workDir
+                                    }
+                                    .onAppear {
+                                        workDir = program.settings.workDir
+                                    }
+                                Button("button.auto") {
+                                    var path = program.url.path
+                                    // Trim everything up to drive_c
+                                    if let driveC = path.range(of: "drive_c") {
+                                        path = String(path[driveC.lowerBound...])
+                                        // Remove the last component
+                                        path = path.components(separatedBy: "/").dropLast().joined(separator: "\\")
+                                        // replace drive_c with C:
+                                        path = path.replacingOccurrences(of: "drive_c", with: "C:")
+                                        workDir = path
+                                    }
+                                }
+                            }
+                        }
                     }
                     EnvironmentVarEditor(environment: $environment)
                 }

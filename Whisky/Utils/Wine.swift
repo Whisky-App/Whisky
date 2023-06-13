@@ -127,7 +127,14 @@ class Wine {
     @discardableResult
     static func runProgram(program: Program) async throws -> String {
         let arguments = program.settings.arguments.split { $0.isWhitespace }.map(String.init)
-        return try await run(["start", "/unix", program.url.path] + arguments,
+
+        var runArguments = ["start"]
+        if !program.settings.workDir.isEmpty {
+            runArguments += ["/d", program.settings.workDir]
+        }
+        runArguments += ["/unix", program.url.path] + arguments
+
+        return try await run(runArguments,
                              bottle: program.bottle,
                              environment: program.settings.environment)
     }

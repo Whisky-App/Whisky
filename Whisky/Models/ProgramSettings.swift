@@ -10,6 +10,7 @@ import Foundation
 struct ProgramSettingsData: Codable {
     var environment: [String: String] = [:]
     var arguments: String = ""
+    var workDir: String = ""
 }
 
 class ProgramSettings {
@@ -34,6 +35,15 @@ class ProgramSettings {
         }
         set {
             settings.arguments = newValue
+        }
+    }
+
+    var workDir: String {
+        get {
+            return settings.workDir
+        }
+        set {
+            settings.workDir = newValue
         }
     }
 

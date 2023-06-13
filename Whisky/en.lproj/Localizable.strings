@@ -10,6 +10,7 @@
 "button.showInFinder" = "Show in Finder";
 "button.run" = "Run...";
 "button.ok" = "OK";
+"button.auto" = "Auto";
 "button.renameBottle" = "Rename";
 "button.deleteBottle" = "Delete...";
 "button.createBottle" = "Create Bottle";
@@ -31,6 +32,7 @@
 "program.env" = "Environment Variables";
 "program.args" = "Arguments";
 "program.config" = "Config";
+"program.workDir" = "Working Directory";
 
 "info.title" = "Info";
 "info.path" = "Path";
