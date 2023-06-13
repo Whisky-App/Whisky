@@ -25,7 +25,6 @@
 "config.metalTrace" = "Metal İzleme";
 "config.metalTrace.info" = "Xcode'da GPU iş yükünü yakalamak için kullanılır";
 "config.esync" = "ESync";
-"config.title.controlPanel" = "Control Panel";
 "config.controlPanel" = "Open Control Panel";
 "config.regedit" = "Kayıt Düzenleyicisi'ni Aç";
 "config.winecfg" = "Wine Yapılandırmasını Aç";
