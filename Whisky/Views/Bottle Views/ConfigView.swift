@@ -10,12 +10,14 @@ import SwiftUI
 struct ConfigView: View {
     @Binding var bottle: Bottle
     @State var windowsVersion: WinVersion
+    @State var buildVersion: String = ""
     @State var canChangeWinVersion: Bool = true
+    @State var canChangeBuildVersion: Bool = false
+    @State var winVersionLoaded: Bool = false
 
     init(bottle: Binding<Bottle>) {
         self._bottle = bottle
         self.windowsVersion = bottle.settings.windowsVersion.wrappedValue
-        self.canChangeWinVersion = true
     }
 
     var body: some View {
@@ -29,6 +31,21 @@ struct ConfigView: View {
                         }
                     }
                     .disabled(!canChangeWinVersion)
+                    TextField("config.buildVersion", text: $buildVersion)
+                        .disabled(!canChangeBuildVersion)
+                        .onSubmit {
+                            canChangeBuildVersion = false
+                            Task(priority: .userInitiated) {
+                                if let version = Int(buildVersion) {
+                                    do {
+                                        try await Wine.changeBuildVersion(bottle: bottle, version: version)
+                                    } catch {
+                                        print("Failed to change build version")
+                                    }
+                                }
+                                canChangeBuildVersion = true
+                            }
+                        }
                 }
                 Section("config.title.metal") {
                     Toggle(isOn: $bottle.settings.metalHud) {
@@ -44,46 +61,69 @@ struct ConfigView: View {
                         Text("config.esync")
                     }
                 }
+                Section("config.title.controlPanel") {
+                    Button("config.controlPanel") {
+                        Task(priority: .userInitiated) {
+                            do {
+                                try await Wine.control(bottle: bottle)
+                            } catch {
+                                print("Failed to launch control")
+                            }
+                        }
+                    }
+                    Button("config.regedit") {
+                        Task(priority: .userInitiated) {
+                            do {
+                                try await Wine.regedit(bottle: bottle)
+                            } catch {
+                                print("Failed to launch regedit")
+                            }
+                        }
+                    }
+                    Button("config.winecfg") {
+                        Task(priority: .userInitiated) {
+                            do {
+                                try await Wine.cfg(bottle: bottle)
+                            } catch {
+                                print("Failed to launch winecfg")
+                            }
+                        }
+                    }
+                }
             }
             .formStyle(.grouped)
-            HStack {
-                Spacer()
-                Button("config.regedit") {
-                    Task(priority: .userInitiated) {
-                        do {
-                            try await Wine.regedit(bottle: bottle)
-                        } catch {
-                            print("Failed to launch regedit")
-                        }
-                    }
-                }
-                Button("config.winecfg") {
-                    Task(priority: .userInitiated) {
-                        do {
-                            try await Wine.cfg(bottle: bottle)
-                        } catch {
-                            print("Failed to launch winecfg")
-                        }
-                    }
-                }
-            }
-            .padding()
-            .onChange(of: windowsVersion) { newValue in
-                canChangeWinVersion = false
-                Task(priority: .userInitiated) {
-                    do {
-                        try await Wine.changeWinVersion(bottle: bottle, win: newValue)
-                        canChangeWinVersion = true
-                        bottle.settings.windowsVersion = newValue
-                    } catch {
-                        print(error)
-                        canChangeWinVersion = true
-                        windowsVersion = bottle.settings.windowsVersion
-                    }
-                }
-            }
             .onAppear {
                 windowsVersion = bottle.settings.windowsVersion
+                winVersionLoaded = true
+
+                Task(priority: .background) {
+                    do {
+                        buildVersion = try await Wine.buildVersion(bottle: bottle)
+                        canChangeBuildVersion = true
+                    } catch {
+                        print(error)
+                    }
+                }
+            }
+            .onChange(of: windowsVersion) { newValue in
+                if winVersionLoaded {
+                    canChangeWinVersion = false
+                    Task(priority: .userInitiated) {
+                        do {
+                            try await Wine.changeWinVersion(bottle: bottle, win: newValue)
+                            canChangeWinVersion = true
+                            bottle.settings.windowsVersion = newValue
+                        } catch {
+                            print(error)
+                            canChangeWinVersion = true
+                            windowsVersion = bottle.settings.windowsVersion
+                        }
+                    }
+                }
+            }
+            .onChange(of: buildVersion) { _ in
+                // Remove anything that isn't a number
+                buildVersion = buildVersion.filter("0123456789".contains)
             }
         }
         .navigationTitle(String(format: String(localized: "tab.navTitle.config"),
