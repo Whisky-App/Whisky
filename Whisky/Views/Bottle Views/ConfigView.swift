@@ -31,21 +31,30 @@ struct ConfigView: View {
                         }
                     }
                     .disabled(!canChangeWinVersion)
-                    TextField("config.buildVersion", text: $buildVersion)
-                        .disabled(!canChangeBuildVersion)
-                        .onSubmit {
-                            canChangeBuildVersion = false
-                            Task(priority: .userInitiated) {
-                                if let version = Int(buildVersion) {
-                                    do {
-                                        try await Wine.changeBuildVersion(bottle: bottle, version: version)
-                                    } catch {
-                                        print("Failed to change build version")
-                                    }
-                                }
-                                canChangeBuildVersion = true
-                            }
+                    if !canChangeBuildVersion {
+                        HStack {
+                            Text("config.buildVersion")
+                            Spacer()
+                            ProgressView()
+                                .progressViewStyle(.circular)
+                                .controlSize(.small)
                         }
+                    } else {
+                        TextField("config.buildVersion", text: $buildVersion)
+                            .onSubmit {
+                                canChangeBuildVersion = false
+                                Task(priority: .userInitiated) {
+                                    if let version = Int(buildVersion) {
+                                        do {
+                                            try await Wine.changeBuildVersion(bottle: bottle, version: version)
+                                        } catch {
+                                            print("Failed to change build version")
+                                        }
+                                    }
+                                    canChangeBuildVersion = true
+                                }
+                            }
+                    }
                 }
                 Section("config.title.metal") {
                     Toggle(isOn: $bottle.settings.metalHud) {
