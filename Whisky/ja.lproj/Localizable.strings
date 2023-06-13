@@ -50,7 +50,7 @@
 "create.cancel" = "キャンセル";
 "create.create" = "作成";
 "create.warning.emptyName" = "名前を空にすることはできません";
-"create.warning.alreadyExistsName" = "A bottle with this name already exists";
+"create.warning.alreadyExistsName" = "同名の Bottle が存在します";
 
 "rename.title" = "Bottle の名前変更";
 "rename.name" = "新しい名前:";
