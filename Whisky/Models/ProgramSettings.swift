@@ -66,7 +66,6 @@ class ProgramSettings {
             settings = try PropertyListDecoder().decode(ProgramSettingsData.self, from: data)
             return true
         } catch {
-            print(error)
             return false
         }
     }
@@ -81,7 +80,6 @@ class ProgramSettings {
             try data.write(to: settingsUrl)
             return true
         } catch {
-            print(error)
             return false
         }
     }

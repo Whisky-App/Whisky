@@ -90,7 +90,6 @@ class BottleSettings {
             }
             return true
         } catch {
-            print(error)
             return false
         }
     }
@@ -105,7 +104,6 @@ class BottleSettings {
             try data.write(to: settingsUrl)
             return true
         } catch {
-            print(error)
             return false
         }
     }
@@ -121,8 +119,6 @@ class BottleSettings {
 
         if metalTrace {
             environment.updateValue("1", forKey: "METAL_CAPTURE_ENABLED")
-            // Might not be needed
-            environment.updateValue("2", forKey: "MVK_CONFIG_AUTO_GPU_CAPTURE_SCOPE")
         }
     }
 }
