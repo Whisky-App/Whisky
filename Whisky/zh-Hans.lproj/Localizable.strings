@@ -25,7 +25,6 @@
 "config.metalTrace" = "Metal Trace";
 "config.metalTrace.info" = "允许你在Xcode中捕获GPU工作负载";
 "config.esync" = "ESync（增强同步）技术";
-"config.title.controlPanel" = "Control Panel";
 "config.controlPanel" = "Open Control Panel";
 "config.regedit" = "Open Registry Editor";
 "config.winecfg" = "打开Wine配置";
