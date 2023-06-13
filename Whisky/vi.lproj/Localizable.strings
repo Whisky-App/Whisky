@@ -19,11 +19,14 @@
 "button.deleteAlert.cancel" = "Huỷ";
 
 "config.winVersion" = "Phiên bản Windows";
+"config.buildVersion" = "Build Version";
 "config.title.metal" = "Metal";
 "config.metalHud" = "Metal HUD";
 "config.metalTrace" = "Metal Trace";
 "config.metalTrace.info" = "Cho phép lấy thông tin GPU trong Xcode";
 "config.esync" = "ESync";
+"config.controlPanel" = "Open Control Panel";
+"config.regedit" = "Open Registry Editor";
 "config.winecfg" = "Mở cấu hình Wine";
 
 "program.title" = "Chương trình đã cài";
@@ -48,6 +51,8 @@
 "create.win" = "Phiển bản Windows:";
 "create.cancel" = "Huỷ";
 "create.create" = "Tạo";
+"create.warning.emptyName" = "Name can't be empty";
+"create.warning.alreadyExistsName" = "A bottle with this name already exists";
 
 "rename.title" = "Đổi tên bottle";
 "rename.name" = "Tên mới:";

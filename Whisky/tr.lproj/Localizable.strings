@@ -19,11 +19,14 @@
 "button.deleteAlert.cancel" = "İptal";
 
 "config.winVersion" = "Windows Sürümü";
+"config.buildVersion" = "Build Version";
 "config.title.metal" = "Metal";
 "config.metalHud" = "Metal HUD";
 "config.metalTrace" = "Metal İzleme";
 "config.metalTrace.info" = "Xcode'da GPU iş yükünü yakalamak için kullanılır";
 "config.esync" = "ESync";
+"config.controlPanel" = "Open Control Panel";
+"config.regedit" = "Kayıt Düzenleyicisi'ni Aç";
 "config.winecfg" = "Wine Yapılandırmasını Aç";
 
 "program.title" = "Yüklenmiş Programlar";
@@ -48,6 +51,8 @@
 "create.win" = "Windows sürümü:";
 "create.cancel" = "İptal";
 "create.create" = "Oluştur";
+"create.warning.emptyName" = "İsim Boş Olamaz";
+"create.warning.alreadyExistsName" = "Bu İsmi Kullanan Bir Bottle Zaten Var";
 
 "rename.title" = "Bottle'ı Yeniden Adlandır";
 "rename.name" = "Yeni ad:";

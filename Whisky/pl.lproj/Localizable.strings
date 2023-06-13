@@ -14,16 +14,19 @@
 "button.deleteBottle" = "Usuń...";
 "button.createBottle" = "Utwórz butelkę";
 "button.deleteAlert.msg" = "Usunąć %@?";
-"button.deleteAlert.info" = "Czy na pewno chcesz usunąć tę butelkę? Ta operacja jest trwała.";
+"button.deleteAlert.info" = "Czy na pewno chcesz usunąć tę butelkę? Ta operacja jest nieodwracalna.";
 "button.deleteAlert.delete" = "Usuń";
 "button.deleteAlert.cancel" = "Anuluj";
 
 "config.winVersion" = "Wersja Windows";
+"config.buildVersion" = "Build Version";
 "config.title.metal" = "Metal";
 "config.metalHud" = "Metal HUD";
 "config.metalTrace" = "Śledź Metal";
 "config.metalTrace.info" = "Umożliwia przechwytywanie obciążenia GPU w Xcode";
 "config.esync" = "ESync";
+"config.controlPanel" = "Open Control Panel";
+"config.regedit" = "Otwórz edytor rejestru";
 "config.winecfg" = "Otwórz konfigurację Wine";
 
 "program.title" = "Zainstalowane programy";
@@ -37,7 +40,7 @@
 "info.wine" = "Wersja Wine:";
 "info.win" = "Wersja systemu Windows:";
 
-"gptalert.init" = "Drag and drop the Game Porting Toolkit DMG";
+"gptalert.init" = "Przeciągnij i upuść plik Game Porting Toolkit.dmg";
 "gptalert.message" = "GPT napotkał błąd!";
 
 "alert.message" = "Nie udało się otworzyć programu!";
@@ -48,6 +51,8 @@
 "create.win" = "Wersja Windows:";
 "create.cancel" = "Anuluj";
 "create.create" = "Utwórz";
+"create.warning.emptyName" = "Nazwa nie może być pusta";
+"create.warning.alreadyExistsName" = "Butelka o tej nazwie już istnieje";
 
 "rename.title" = "Zmień nazwę butelki";
 "rename.name" = "Nowa nazwa:";
@@ -55,7 +60,7 @@
 
 "check.updates" = "Sprawdź dostępność aktualizacji...";
 "kill.bottles" = "Zakończ wszystkie butelki...";
-"open.logs" = "Open Logs Folder";
+"open.logs" = "Otwórz folder z logami";
 
 "showAlertOnFirstLaunch.messageText" = "Czy chcesz przenieść Whisky do folderu Aplikacje?";
 "showAlertOnFirstLaunch.informativeText" = "W niektórych przypadkach Whisky nie będzie w stanie działać poprawnie w innym folderze";

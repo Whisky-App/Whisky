@@ -6,7 +6,7 @@
 "tab.navTitle.programs" = "%@ Programmi";
 "tab.navTitle.info" = "%@ Informazioni";
 
-"button.cDrive" = "Apri Drive C";
+"button.cDrive" = "Apri Disco C";
 "button.showInFinder" = "Mostra in Finder";
 "button.run" = "Avvia...";
 "button.ok" = "OK";
@@ -20,9 +20,9 @@
 
 "config.winVersion" = "Versione di Windows";
 "config.title.metal" = "Metal";
-"config.metalHud" = "Display Primo Piano Metal";
-"config.metalTrace" = "Traccia Metal";
-"config.metalTrace.info" = "Consenti di acquisire lo sforzo della GPU in Xcode";
+"config.metalHud" = "Metal HUD";
+"config.metalTrace" = "Metal Trace";
+"config.metalTrace.info" = "Permette di catturare il carico di lavoro della GPU in Xcode";
 "config.esync" = "ESync";
 "config.winecfg" = "Apri Configurazione Wine";
 
@@ -55,9 +55,9 @@
 
 "check.updates" = "Controlla aggiornamenti...";
 "kill.bottles" = "Termina tutte le Bottiglie...";
-"open.logs" = "Apri Cartella dei Log";
+"open.logs" = "Apri la cartella dei log";
 
 "showAlertOnFirstLaunch.messageText" = "Vuoi spostare Whisky nella tua cartella Applicazioni?";
-"showAlertOnFirstLaunch.informativeText" = "In alcuni casi, Whisky non potrà funzionare correttamente da un persorso diverso";
+"showAlertOnFirstLaunch.informativeText" = "In alcuni casi, Whisky non potrà funzionare correttamente da un cartella diversa";
 "showAlertOnFirstLaunch.button.moveToApplications" = "Sposta in Applicazioni";
 "showAlertOnFirstLaunch.button.dontMove" = "Non Spostare";

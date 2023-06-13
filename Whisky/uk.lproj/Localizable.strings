@@ -1,15 +1,15 @@
-"tab.config" = "Конфігурація";
+"tab.config" = "Параметри";
 "tab.programs" = "Програми";
 "tab.info" = "Інформація";
 
-"tab.navTitle.config" = "%@ - конфігурація";
+"tab.navTitle.config" = "%@ Параметри";
 "tab.navTitle.programs" = "%@ - програми";
 "tab.navTitle.info" = "%@ - інформація";
 
 "button.cDrive" = "Відкрити диск C";
 "button.showInFinder" = "Показати у Finder";
 "button.run" = "Запустити...";
-"button.ok" = "OK";
+"button.ok" = "ОК";
 "button.renameBottle" = "Перейменувати";
 "button.deleteBottle" = "Видалити...";
 "button.createBottle" = "Створити пляшку";
@@ -19,17 +19,20 @@
 "button.deleteAlert.cancel" = "Скасувати";
 
 "config.winVersion" = "Версія Windows";
-"config.title.metal" = "Метал";
-"config.metalHud" = "Метал HUD";
-"config.metalTrace" = "Метал Trace";
+"config.buildVersion" = "Build Version";
+"config.title.metal" = "Metal";
+"config.metalHud" = "Metal HUD";
+"config.metalTrace" = "Metal Trace";
 "config.metalTrace.info" = "Дозволяє вам відстежувати робоче навантаження GPU в Xcode";
 "config.esync" = "ESync";
-"config.winecfg" = "Відкрити конфігурацію Wine";
+"config.controlPanel" = "Open Control Panel";
+"config.regedit" = "Open Registry Editor";
+"config.winecfg" = "Відкрити налаштування Wine";
 
 "program.title" = "Встановлені програми";
 "program.env" = "Змінні середовища";
 "program.args" = "Аргументи";
-"program.config" = "Конфігурація";
+"program.config" = "Налаштування";
 
 "info.title" = "Інформація";
 "info.path" = "Шлях";
@@ -37,7 +40,7 @@
 "info.wine" = "Версія Wine";
 "info.win" = "Версія Windows";
 
-"gptalert.init" = "Drag and drop the Game Porting Toolkit DMG";
+"gptalert.init" = "Перетягніть DMG образ Game Porting Toolkit";
 "gptalert.message" = "GPT зіткнувся з помилкою!";
 
 "alert.message" = "Не вдалося відкрити програму!";
@@ -48,6 +51,8 @@
 "create.win" = "Версія Windows:";
 "create.cancel" = "Скасувати";
 "create.create" = "Створити";
+"create.warning.emptyName" = "Name can't be empty";
+"create.warning.alreadyExistsName" = "A bottle with this name already exists";
 
 "rename.title" = "Перейменувати пляшку";
 "rename.name" = "Нова назва:";
