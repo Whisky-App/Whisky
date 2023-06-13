@@ -13,18 +13,6 @@ actor RuntimeLogger {
     func append(_ message: String) {
         logContent.append(message)
     }
-
-    func save() {
-        let logFile = FileManager.default.urls(for: .libraryDirectory,
-                                               in: .userDomainMask)[0]
-            .appendingPathComponent("Logs")
-            .appendingPathComponent("Whisky")
-        do {
-            try logContent.joined(separator: "\n").write(to: logFile, atomically: true, encoding: .utf8)
-        } catch {
-            print("Failed to save log file")
-        }
-    }
 }
 
 class Wine {
