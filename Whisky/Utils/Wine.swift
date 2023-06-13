@@ -19,11 +19,13 @@ class Wine {
     static let wineserverBinary: URL = binFolder
         .appendingPathComponent("wineserver")
 
+    @discardableResult
     static func run(_ args: [String],
                     bottle: Bottle? = nil,
                     environment: [String: String]? = nil) async throws -> String {
         let process = Process()
         let pipe = Pipe()
+        var output = String()
         guard let log = Log() else {
             return ""
         }
@@ -35,6 +37,9 @@ class Wine {
         process.currentDirectoryURL = binFolder
         pipe.fileHandleForReading.readabilityHandler = { pipe in
             let line = String(decoding: pipe.availableData, as: UTF8.self)
+            DispatchQueue(label: "wine.output").sync {
+                output.append(line)
+            }
             log.write(line: "\(line)")
         }
 
@@ -66,7 +71,7 @@ class Wine {
             throw "Wine Crashed! (\(process.terminationStatus))"
         }
 
-        return ""
+        return output
     }
 
     static func runWineserver(_ args: [String], bottle: Bottle) throws {
@@ -109,6 +114,27 @@ class Wine {
         throw WineInterfaceError.invalidResponce
     }
 
+    static func buildVersion(bottle: Bottle) async throws -> String {
+        let output = try await run(["reg",
+                                    "query",
+                                    #"HKLM\Software\Microsoft\Windows NT\CurrentVersion"#,
+                                    "-v", "CurrentBuild"], bottle: bottle)
+        let lines = output.split(omittingEmptySubsequences: true, whereSeparator: \.isNewline)
+        if let line = lines.first(where: { $0.contains("REG_SZ") }) {
+            let array = line.split(omittingEmptySubsequences: true, whereSeparator: \.isWhitespace)
+            if let buildNumber = array.last {
+                return String(buildNumber)
+            }
+        }
+
+        throw WineInterfaceError.invalidResponce
+    }
+
+    @discardableResult
+    static func control(bottle: Bottle) async throws -> String {
+        return try await run(["control"], bottle: bottle)
+    }
+
     @discardableResult
     static func regedit(bottle: Bottle) async throws -> String {
         return try await run(["regedit"], bottle: bottle)
@@ -122,6 +148,17 @@ class Wine {
     @discardableResult
     static func changeWinVersion(bottle: Bottle, win: WinVersion) async throws -> String {
         return try await run(["winecfg", "-v", win.rawValue], bottle: bottle)
+    }
+
+    static func changeBuildVersion(bottle: Bottle, version: Int) async throws {
+        try await run(["reg", "add",
+                       #"HKLM\Software\Microsoft\Windows NT\CurrentVersion"#,
+                       "-v",
+                       "CurrentBuild", "-t", "REG_SZ", "-d", "\(version)", "-f"], bottle: bottle)
+        try await run(["reg", "add",
+                       #"HKLM\Software\Microsoft\Windows NT\CurrentVersion"#,
+                       "-v",
+                       "CurrentBuildNumber", "-t", "REG_SZ", "-d", "\(version)", "-f"], bottle: bottle)
     }
 
     @discardableResult
