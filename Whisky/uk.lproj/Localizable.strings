@@ -19,11 +19,14 @@
 "button.deleteAlert.cancel" = "Скасувати";
 
 "config.winVersion" = "Версія Windows";
+"config.buildVersion" = "Build Version";
 "config.title.metal" = "Metal";
 "config.metalHud" = "Metal HUD";
 "config.metalTrace" = "Metal Trace";
 "config.metalTrace.info" = "Дозволяє вам відстежувати робоче навантаження GPU в Xcode";
 "config.esync" = "ESync";
+"config.title.controlPanel" = "Control Panel";
+"config.controlPanel" = "Open Control Panel";
 "config.regedit" = "Open Registry Editor";
 "config.winecfg" = "Відкрити налаштування Wine";
 
