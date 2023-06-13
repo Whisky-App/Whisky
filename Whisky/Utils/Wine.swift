@@ -25,7 +25,7 @@ class Wine {
                     environment: [String: String]? = nil) async throws -> String {
         let process = Process()
         let pipe = Pipe()
-        var output = String()
+        let output = WineOutput()
         guard let log = Log() else {
             return ""
         }
@@ -37,8 +37,8 @@ class Wine {
         process.currentDirectoryURL = binFolder
         pipe.fileHandleForReading.readabilityHandler = { pipe in
             let line = String(decoding: pipe.availableData, as: UTF8.self)
-            DispatchQueue(label: "wine.output").sync {
-                output.append(line)
+            Task.detached {
+                await output.append(line)
             }
             log.write(line: "\(line)")
         }
@@ -71,7 +71,7 @@ class Wine {
             throw "Wine Crashed! (\(process.terminationStatus))"
         }
 
-        return output
+        return await output.output
     }
 
     static func runWineserver(_ args: [String], bottle: Bottle) throws {
@@ -178,4 +178,12 @@ extension String: Error {}
 
 enum WineInterfaceError: Error {
     case invalidResponce
+}
+
+actor WineOutput {
+    var output: String = ""
+
+    func append(_ line: String) {
+        output.append(line)
+    }
 }
