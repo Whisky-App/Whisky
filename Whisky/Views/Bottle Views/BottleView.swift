@@ -73,6 +73,7 @@ struct BottleView: View {
                     panel.canChooseFiles = true
                     panel.allowedContentTypes = [UTType.exe,
                                                  UTType(importedAs: "com.microsoft.msi-installer")]
+                    panel.directoryURL = bottle.url
                     panel.begin { result in
                         programLoading = true
                         Task(priority: .userInitiated) {
