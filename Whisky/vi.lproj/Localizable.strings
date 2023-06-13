@@ -19,11 +19,14 @@
 "button.deleteAlert.cancel" = "Huỷ";
 
 "config.winVersion" = "Phiên bản Windows";
+"config.buildVersion" = "Build Version";
 "config.title.metal" = "Metal";
 "config.metalHud" = "Metal HUD";
 "config.metalTrace" = "Metal Trace";
 "config.metalTrace.info" = "Cho phép lấy thông tin GPU trong Xcode";
 "config.esync" = "ESync";
+"config.title.controlPanel" = "Control Panel";
+"config.controlPanel" = "Open Control Panel";
 "config.regedit" = "Open Registry Editor";
 "config.winecfg" = "Mở cấu hình Wine";
 
