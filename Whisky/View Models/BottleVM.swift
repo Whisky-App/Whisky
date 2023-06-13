@@ -43,20 +43,27 @@ class BottleVM: ObservableObject {
         Task(priority: .background) {
             bottles.removeAll()
 
-            let enumerator = FileManager.default.enumerator(at: BottleVM.bottleDir,
-                                                            includingPropertiesForKeys: [.isDirectoryKey],
-                                                            options: [.skipsSubdirectoryDescendants, .skipsHiddenFiles])
-
-            while let url = enumerator?.nextObject() as? URL {
-                let bottle = Bottle(path: url)
-                bottles.append(bottle)
+            do {
+                let files = try FileManager.default.contentsOfDirectory(at: BottleVM.bottleDir,
+                                                                        includingPropertiesForKeys: nil,
+                                                                        options: .skipsHiddenFiles)
+                for file in files where file.pathExtension == "plist" {
+                    do {
+                        let bottle = try Bottle(settingsURL: file)
+                        bottles.append(bottle)
+                    } catch {
+                        print("Failed to load bottle at \(file.path)!")
+                    }
+                }
+            } catch {
+                print("Failed to load bottles: \(error.localizedDescription)")
             }
 
             bottles.sort(by: { $0.name.lowercased() < $1.name.lowercased() })
         }
     }
 
-    func createNewBottle(bottleName: String, winVersion: WinVersion) {
+    func createNewBottle(bottleName: String, winVersion: WinVersion, bottleURL: URL) {
         Task(priority: .userInitiated) {
             do {
                 if !FileManager.default.fileExists(atPath: BottleVM.bottleDir.path) {
@@ -64,10 +71,15 @@ class BottleVM: ObservableObject {
                                                             withIntermediateDirectories: true)
                 }
 
-                let newBottleDir = BottleVM.bottleDir.appendingPathComponent(bottleName)
+                let newBottleDir = bottleURL.appendingPathComponent(bottleName)
                 try FileManager.default.createDirectory(atPath: newBottleDir.path, withIntermediateDirectories: true)
 
-                let bottle = Bottle(path: newBottleDir)
+                let settingsURL = BottleVM.bottleDir
+                    .appendingPathComponent(bottleName)
+                    .appendingPathExtension("plist")
+
+                let bottle = Bottle(settingsURL: settingsURL,
+                                    bottleURL: newBottleDir)
                 bottle.settings.windowsVersion = winVersion
                 try await Wine.changeWinVersion(bottle: bottle, win: winVersion)
                 bottle.settings.wineVersion = try await Wine.wineVersion()

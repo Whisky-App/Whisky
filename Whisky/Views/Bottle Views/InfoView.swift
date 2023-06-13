@@ -9,12 +9,13 @@ import SwiftUI
 
 struct InfoView: View {
     let bottle: Bottle
+    @State var prettyPath: String = ""
 
     var body: some View {
         Form {
             Section("info.title") {
                 InfoItem(label: String(localized: "info.path"),
-                         value: bottle.url.path)
+                         value: prettyPath)
                 .contextMenu {
                     Button {
                         let pasteboard = NSPasteboard.general
@@ -33,6 +34,9 @@ struct InfoView: View {
         .formStyle(.grouped)
         .navigationTitle(String(format: String(localized: "tab.navTitle.info"),
                                 bottle.name))
+        .onAppear {
+            prettyPath = bottle.url.prettyPath()
+        }
     }
 }
 
