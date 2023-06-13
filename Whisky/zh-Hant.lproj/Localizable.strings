@@ -19,11 +19,14 @@
 "button.deleteAlert.cancel" = "取消";
 
 "config.winVersion" = "Windows版本";
+"config.buildVersion" = "Build Version";
 "config.title.metal" = "Metal";
 "config.metalHud" = "Metal 抬頭顯示";
 "config.metalTrace" = "Metal 追蹤";
 "config.metalTrace.info" = "允許您在Xcode中捕獲GPU工作負載";
 "config.esync" = "ESync";
+"config.title.controlPanel" = "Control Panel";
+"config.controlPanel" = "Open Control Panel";
 "config.regedit" = "開啟註冊表編輯器";
 "config.winecfg" = "開啟Wine設定";
 
