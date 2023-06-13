@@ -17,7 +17,7 @@ class Log {
     let fileHandle: FileHandle
     let logger: Logger
 
-    init?() {
+    init?(bottle: Bottle?, args: [String], environment: [String: String]?) {
         do {
             if !FileManager.default.fileExists(atPath: Log.logsFolder.path) {
                 try FileManager.default.createDirectory(at: Log.logsFolder, withIntermediateDirectories: true)
@@ -37,14 +37,44 @@ class Log {
             } else {
                 throw "Could not get Bundle ID!"
             }
+
+            write(line: Log.constructHeader(bottle, args, environment), printLine: false)
         } catch {
             print("Failed to create logger: \(error.localizedDescription)")
             return nil
         }
     }
 
-    func write(line: String) {
-        logger.log("\(line, privacy: .public)")
+    static func constructHeader(_ bottle: Bottle?, _ args: [String], _ environment: [String: String]?) -> String {
+        var header = String()
+
+        header += "Whisky Version: \(Bundle.main.infoDictionary?["CFBundleShortVersionString"] ?? "")\n"
+        header += "Date: \(Date.now.formatted(date: .complete, time: .standard))\n"
+        if let bottle = bottle {
+            header += "Bottle Name: \(bottle.name)\n"
+            header += "Wine Version: \(bottle.settings.wineVersion)\n"
+            header += "Windows Version: \(bottle.settings.windowsVersion)\n"
+            header += "Bottle URL: \(bottle.url.path)\n\n"
+        }
+
+        header += "Arguments: "
+        for arg in args {
+            header += "\(arg) "
+        }
+        header += "\n\n"
+
+        if let environment = environment {
+            header += "Environment:\n"
+            header += "\(environment as AnyObject)\n\n"
+        }
+
+        return header
+    }
+
+    func write(line: String, printLine: Bool = true) {
+        if printLine {
+            logger.log("\(line, privacy: .public)")
+        }
 
         if let data = line.data(using: .utf8) {
             do {
