@@ -19,13 +19,13 @@
 "button.deleteAlert.cancel" = "İptal";
 
 "config.winVersion" = "Windows Sürümü";
-"config.buildVersion" = "Build Version";
+"config.buildVersion" = "Yapı Sürümü";
 "config.title.metal" = "Metal";
 "config.metalHud" = "Metal HUD";
 "config.metalTrace" = "Metal İzleme";
 "config.metalTrace.info" = "Xcode'da GPU iş yükünü yakalamak için kullanılır";
 "config.esync" = "ESync";
-"config.controlPanel" = "Open Control Panel";
+"config.controlPanel" = "Kontrol Panelini Aç";
 "config.regedit" = "Kayıt Düzenleyicisi'ni Aç";
 "config.winecfg" = "Wine Yapılandırmasını Aç";
 
