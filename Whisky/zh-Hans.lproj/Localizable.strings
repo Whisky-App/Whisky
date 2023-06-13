@@ -24,6 +24,7 @@
 "config.metalTrace" = "Metal Trace";
 "config.metalTrace.info" = "允许你在Xcode中捕获GPU工作负载";
 "config.esync" = "ESync";
+"config.control" = "打开控制面板";
 "config.winecfg" = "打开Wine配置";
 
 "program.title" = "已安装的程序";
