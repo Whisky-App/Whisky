@@ -50,6 +50,7 @@ class Log {
 
         header += "Whisky Version: \(Bundle.main.infoDictionary?["CFBundleShortVersionString"] ?? "")\n"
         header += "Date: \(Date.now.formatted(date: .complete, time: .standard))\n"
+        header += "macOS Version: \(ProcessInfo.processInfo.operatingSystemVersionString)\n"
         if let bottle = bottle {
             header += "Bottle Name: \(bottle.name)\n"
             header += "Wine Version: \(bottle.settings.wineVersion)\n"
