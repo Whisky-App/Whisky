@@ -12,6 +12,8 @@ struct BottleCreationView: View {
     @State var newBottleVersion: WinVersion = .win10
     @State var invalidBottleNameDescription: String = ""
     @State var isValidBottleName: Bool = true
+    @State var newBottleURL: URL = BottleVM.bottleDir
+    @State var bottlePath: String = ""
     @Environment(\.dismiss) var dismiss
 
     var body: some View {
@@ -42,6 +44,27 @@ struct BottleCreationView: View {
                 .labelsHidden()
                 .frame(width: 180)
             }
+            HStack {
+                Text("create.path")
+                Spacer()
+                Text(bottlePath)
+                    .truncationMode(.middle)
+                Button("create.browse") {
+                    let panel = NSOpenPanel()
+                    panel.canChooseFiles = false
+                    panel.canChooseDirectories = true
+                    panel.allowsMultipleSelection = false
+                    panel.canCreateDirectories = true
+                    panel.directoryURL = BottleVM.containerDir
+                    panel.begin { result in
+                        if result == .OK {
+                            if let url = panel.urls.first {
+                                newBottleURL = url
+                            }
+                        }
+                    }
+                }
+            }
             Spacer()
             HStack {
                 Text(invalidBottleNameDescription)
@@ -63,14 +86,21 @@ struct BottleCreationView: View {
                         return
                     }
                     BottleVM.shared.createNewBottle(bottleName: newBottleName,
-                                                    winVersion: newBottleVersion)
+                                                    winVersion: newBottleVersion,
+                                                    bottleURL: newBottleURL)
                     dismiss()
                 }
                 .keyboardShortcut(.defaultAction)
             }
         }
         .padding()
-        .frame(width: 350, height: 150)
+        .onChange(of: newBottleURL) { _ in
+            bottlePath = newBottleURL.prettyPath()
+        }
+        .onAppear {
+            bottlePath = newBottleURL.prettyPath()
+        }
+        .frame(width: 400, height: 180)
     }
 }
 

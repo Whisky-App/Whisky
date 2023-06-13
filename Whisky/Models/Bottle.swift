@@ -148,14 +148,19 @@ public class Bottle: Hashable {
     }
 
     init() {
-        self.settings = BottleSettings(bottleUrl: url,
-                                             name: url.lastPathComponent)
+        self.settings = BottleSettings(settingsURL: url,
+                                       bottleURL: url)
     }
 
-    init(path: URL) {
-        self.url = path
-        self.settings = BottleSettings(bottleUrl: url,
-                                             name: url.lastPathComponent)
+    init(settingsURL: URL) throws {
+        self.settings = try BottleSettings(settingsURL: settingsURL)
+        self.url = settings.url
+    }
+
+    init(settingsURL: URL, bottleURL: URL) {
+        self.settings = BottleSettings(settingsURL: settingsURL,
+                                       bottleURL: bottleURL)
+        self.url = settings.url
     }
 }
 
