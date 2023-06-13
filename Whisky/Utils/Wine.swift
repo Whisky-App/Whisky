@@ -26,7 +26,9 @@ class Wine {
         let process = Process()
         let pipe = Pipe()
         let output = WineOutput()
-        guard let log = Log() else {
+        guard let log = Log(bottle: bottle,
+                            args: args,
+                            environment: environment) else {
             return ""
         }
 
@@ -40,7 +42,7 @@ class Wine {
             Task.detached {
                 await output.append(line)
             }
-            log.write(line: "\(line)")
+            log.write(line: "\(line)", printLine: false)
         }
 
         if let bottle = bottle {
@@ -62,10 +64,10 @@ class Wine {
         }
 
         try process.run()
-        print("Launched Wine (\(process.processIdentifier))")
+        log.write(line: "Launched Wine (\(process.processIdentifier))\n")
 
         process.waitUntilExit()
-        print("Process exited with code \(process.terminationStatus)")
+        log.write(line: "Process exited with code \(process.terminationStatus)")
 
         if process.terminationStatus != 0 {
             throw "Wine Crashed! (\(process.terminationStatus))"
