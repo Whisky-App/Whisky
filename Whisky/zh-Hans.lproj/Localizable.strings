@@ -19,11 +19,14 @@
 "button.deleteAlert.cancel" = "取消";
 
 "config.winVersion" = "Windows版本";
+"config.buildVersion" = "Build Version";
 "config.title.metal" = "Metal";
 "config.metalHud" = "Metal HUD";
 "config.metalTrace" = "Metal Trace";
 "config.metalTrace.info" = "允许你在Xcode中捕获GPU工作负载";
-"config.esync" = "ESync";
+"config.esync" = "ESync（增强同步）技术";
+"config.controlPanel" = "打开控制面板";
+"config.regedit" = "打开注册表编辑器";
 "config.winecfg" = "打开Wine配置";
 
 "program.title" = "已安装的程序";
@@ -48,6 +51,8 @@
 "create.win" = "Windows版本：";
 "create.cancel" = "取消";
 "create.create" = "创建";
+"create.warning.emptyName" = "名称不能为空";
+"create.warning.alreadyExistsName" = "另一个容器已使用了该名称";
 
 "rename.title" = "重命名容器";
 "rename.name" = "新名称：";

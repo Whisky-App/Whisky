@@ -1,10 +1,10 @@
 "tab.config" = "Konfiguraatio";
 "tab.programs" = "Ohjelmat";
-"tab.info" = "Info";
+"tab.info" = "Tiedot";
 
 "tab.navTitle.config" = "%@ Konfiguraatio";
 "tab.navTitle.programs" = "%@ Ohjelmat";
-"tab.navTitle.info" = "%@ Info";
+"tab.navTitle.info" = "%@ Tiedot";
 
 "button.cDrive" = "Avaa C levy";
 "button.showInFinder" = "Näytä Finderissa";
@@ -19,11 +19,14 @@
 "button.deleteAlert.cancel" = "Peru";
 
 "config.winVersion" = "Windows versio";
+"config.buildVersion" = "Build Version";
 "config.title.metal" = "Metal";
 "config.metalHud" = "Metal HUD";
 "config.metalTrace" = "Metal Jäljitin";
 "config.metalTrace.info" = "Mahdollistaa GPU työn nappaamisen Xcodessa";
 "config.esync" = "ESync";
+"config.controlPanel" = "Open Control Panel";
+"config.regedit" = "Open Registry Editor";
 "config.winecfg" = "Avaa Wine konfiguraatio";
 
 "program.title" = "Asennetut ohjelmat";
@@ -31,7 +34,7 @@
 "program.args" = "Argumentit";
 "program.config" = "Konfiguraatio";
 
-"info.title" = "Info";
+"info.title" = "Tiedot";
 "info.path" = "Polku";
 "info.path.copy" = "Kopio polku";
 "info.wine" = "Wine versio";
@@ -48,6 +51,8 @@
 "create.win" = "Windows versio:";
 "create.cancel" = "Peru";
 "create.create" = "Luo";
+"create.warning.emptyName" = "Name can't be empty";
+"create.warning.alreadyExistsName" = "A bottle with this name already exists";
 
 "rename.title" = "Uudelleen nimeä pullo";
 "rename.name" = "Uusi nimi:";

@@ -2,9 +2,9 @@
 "tab.programs" = "プログラム";
 "tab.info" = "情報";
 
-"tab.navTitle.config" = "%@ 設定";
-"tab.navTitle.programs" = "%@ プログラム";
-"tab.navTitle.info" = "%@ 情報";
+"tab.navTitle.config" = "%@ の設定";
+"tab.navTitle.programs" = "%@ のプログラム";
+"tab.navTitle.info" = "%@ の情報";
 
 "button.cDrive" = "C ドライブを開く";
 "button.showInFinder" = "Finder で表示";
@@ -14,16 +14,19 @@
 "button.deleteBottle" = "削除...";
 "button.createBottle" = "Bottle を作成";
 "button.deleteAlert.msg" = "%@ を削除しますか？";
-"button.deleteAlert.info" = "この Bottle を削除してもよろしいですか？この操作は取り消せません。";
+"button.deleteAlert.info" = "この Bottle を削除してもよろしいですか？ この操作は取り消せません。";
 "button.deleteAlert.delete" = "削除";
 "button.deleteAlert.cancel" = "キャンセル";
 
 "config.winVersion" = "Windows バージョン";
+"config.buildVersion" = "ビルド番号";
 "config.title.metal" = "Metal";
 "config.metalHud" = "Metal HUD";
 "config.metalTrace" = "Metal トレース";
 "config.metalTrace.info" = "Xcode で GPU ワークロードをキャプチャできるようにします";
 "config.esync" = "ESync";
+"config.controlPanel" = "コントロール パネルを開く";
+"config.regedit" = "レジストリ エディターを開く";
 "config.winecfg" = "Wine 設定を開く";
 
 "program.title" = "インストール済みプログラム";
@@ -37,17 +40,19 @@
 "info.wine" = "Wine バージョン";
 "info.win" = "Windows バージョン";
 
-"gptalert.init" = "Game Porting Toolkit DMG ファイルをドラッグアンドドロップしてください";
+"gptalert.init" = "Game Porting Toolkit の DMG ファイルをドラッグ & ドロップしてください";
 "gptalert.message" = "GPT でエラーが発生しました！";
 
-"alert.message" = "プログラムのオープンに失敗しました！";
-"alert.info" = "オープンに失敗しました";
+"alert.message" = "プログラムの起動に失敗しました！";
+"alert.info" = "起動に失敗しました";
 
-"create.title" = "新しい Bottle の作成";
+"create.title" = "新しい Bottle を作成";
 "create.name" = "Bottle 名:";
 "create.win" = "Windows バージョン:";
 "create.cancel" = "キャンセル";
 "create.create" = "作成";
+"create.warning.emptyName" = "名前を空にすることはできません";
+"create.warning.alreadyExistsName" = "同名の Bottle が存在します";
 
 "rename.title" = "Bottle の名前変更";
 "rename.name" = "新しい名前:";
