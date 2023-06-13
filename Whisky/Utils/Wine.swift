@@ -7,6 +7,26 @@
 
 import Foundation
 
+actor RuntimeLogger {
+    var logContent: [String] = []
+
+    func append(_ message: String) {
+        logContent.append(message)
+    }
+
+    func save() {
+        let logFile = FileManager.default.urls(for: .libraryDirectory,
+                                               in: .userDomainMask)[0]
+            .appendingPathComponent("Logs")
+            .appendingPathComponent("Whisky")
+        do {
+            try logContent.joined(separator: "\n").write(to: logFile, atomically: true, encoding: .utf8)
+        } catch {
+            print("Failed to save log file")
+        }
+    }
+}
+
 class Wine {
     static let binFolder: URL = (Bundle.main.resourceURL ?? URL(fileURLWithPath: ""))
         .appendingPathComponent("Libraries")
@@ -25,7 +45,7 @@ class Wine {
                     environment: [String: String]? = nil) async throws -> String {
         let process = Process()
         let pipe = Pipe()
-        var output = String()
+        let output = RuntimeLogger()
         guard let log = Log() else {
             return ""
         }
@@ -37,8 +57,8 @@ class Wine {
         process.currentDirectoryURL = binFolder
         pipe.fileHandleForReading.readabilityHandler = { pipe in
             let line = String(decoding: pipe.availableData, as: UTF8.self)
-            DispatchQueue(label: "wine.output").sync {
-                output.append(line)
+            Task.detached {
+                await output.append(line)
             }
             log.write(line: "\(line)")
         }
@@ -71,7 +91,7 @@ class Wine {
             throw "Wine Crashed! (\(process.terminationStatus))"
         }
 
-        return output
+        return await output.logContent.joined(separator: "\n")
     }
 
     static func runWineserver(_ args: [String], bottle: Bottle) throws {
