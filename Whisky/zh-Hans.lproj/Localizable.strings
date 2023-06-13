@@ -6,7 +6,7 @@
 "tab.navTitle.programs" = "%@ 程序";
 "tab.navTitle.info" = "%@ 信息";
 
-"button.cDrive" = "打开C盘";
+"button.cDrive" = "打开 C 盘";
 "button.showInFinder" = "在访达中显示";
 "button.run" = "运行...";
 "button.ok" = "确定";
@@ -14,20 +14,20 @@
 "button.deleteBottle" = "删除...";
 "button.createBottle" = "创建容器";
 "button.deleteAlert.msg" = "删除 %@?";
-"button.deleteAlert.info" = "你确定要删除这个容器吗？这个操作是永久的。";
+"button.deleteAlert.info" = "你确定要删除这个容器吗？这个操作是永久性的。";
 "button.deleteAlert.delete" = "删除";
 "button.deleteAlert.cancel" = "取消";
 
-"config.winVersion" = "Windows版本";
+"config.winVersion" = "Windows 版本";
 "config.buildVersion" = "构建版本";
 "config.title.metal" = "Metal";
-"config.metalHud" = "Metal HUD";
+"config.metalHud" = "Metal 监视器";
 "config.metalTrace" = "Metal 跟踪";
-"config.metalTrace.info" = "允许你在Xcode中捕获GPU工作负载";
+"config.metalTrace.info" = "允许你在 Xcode 中抓取 GPU 工作负载";
 "config.esync" = "ESync（增强同步）技术";
 "config.controlPanel" = "打开控制面板";
 "config.regedit" = "打开注册表编辑器";
-"config.winecfg" = "打开Wine配置";
+"config.winecfg" = "打开 Wine 配置";
 
 "program.title" = "已安装的程序";
 "program.env" = "环境变量";
@@ -37,10 +37,10 @@
 "info.title" = "信息";
 "info.path" = "路径";
 "info.path.copy" = "复制路径";
-"info.wine" = "Wine版本";
-"info.win" = "Windows版本";
+"info.wine" = "Wine 版本";
+"info.win" = "Windows 版本";
 
-"gptalert.init" = "将 Game Porting Toolkit dmg文件拖到这里";
+"gptalert.init" = "将 Game Porting Toolkit 的 DMG 文件拖到这里";
 "gptalert.message" = "Game Porting Toolkit 遇到了一个错误！";
 
 "alert.message" = "无法打开程序！";
@@ -48,21 +48,21 @@
 
 "create.title" = "创建一个新的容器";
 "create.name" = "容器名称：";
-"create.win" = "Windows版本：";
+"create.win" = "Windows 版本：";
 "create.cancel" = "取消";
 "create.create" = "创建";
 "create.warning.emptyName" = "名称不能为空";
-"create.warning.alreadyExistsName" = "另一个容器已使用了该名称";
+"create.warning.alreadyExistsName" = "同名容器已存在";
 
 "rename.title" = "重命名容器";
 "rename.name" = "新名称：";
 "rename.rename" = "重命名";
 
 "check.updates" = "检查更新...";
-"kill.bottles" = "结束所有容器...";
+"kill.bottles" = "停止所有容器...";
 "open.logs" = "打开日志文件夹";
 
-"showAlertOnFirstLaunch.messageText" = "你想要将Whisky移动到你的应用程序文件夹吗？";
-"showAlertOnFirstLaunch.informativeText" = "在某些情况下，Whisky可能无法在不同的文件夹中正常工作";
-"showAlertOnFirstLaunch.button.moveToApplications" = "移动到应用程序";
+"showAlertOnFirstLaunch.messageText" = "你想要将 Whisky 移动到你的应用程序文件夹吗？";
+"showAlertOnFirstLaunch.informativeText" = "在某些情况下，Whisky 可能无法在另外的文件夹中正常工作";
+"showAlertOnFirstLaunch.button.moveToApplications" = "移动到应用程序文件夹";
 "showAlertOnFirstLaunch.button.dontMove" = "不移动";
