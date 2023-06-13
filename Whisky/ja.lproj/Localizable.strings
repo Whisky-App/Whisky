@@ -24,7 +24,7 @@
 "config.metalTrace" = "Metal トレース";
 "config.metalTrace.info" = "Xcode で GPU ワークロードをキャプチャできるようにします";
 "config.esync" = "ESync";
-"config.regedit" = "Open Registry Editor";
+"config.regedit" = "レジストリ エディターを開く";
 "config.winecfg" = "Wine 設定を開く";
 
 "program.title" = "インストール済みプログラム";
@@ -49,7 +49,7 @@
 "create.win" = "Windows バージョン:";
 "create.cancel" = "キャンセル";
 "create.create" = "作成";
-"create.warning.emptyName" = "Name can't be empty";
+"create.warning.emptyName" = "名前を空にすることはできません";
 "create.warning.alreadyExistsName" = "A bottle with this name already exists";
 
 "rename.title" = "Bottle の名前変更";
