@@ -24,7 +24,7 @@
 "config.metalTrace" = "Metal Trace";
 "config.metalTrace.info" = "Xcode에서 GPU 워크로드를 확인할 수 있습니다.";
 "config.esync" = "ESync";
-"config.regedit" = "Open Registry Editor";
+"config.regedit" = "레지스트리 편집기 열기";
 "config.winecfg" = "Wine 설정 열기";
 
 "program.title" = "설치된 프로그램";
@@ -49,8 +49,8 @@
 "create.win" = "Windows 버전:";
 "create.cancel" = "취소";
 "create.create" = "생성";
-"create.warning.emptyName" = "Name can't be empty";
-"create.warning.alreadyExistsName" = "A bottle with this name already exists";
+"create.warning.emptyName" = "이름은 빈칸일 수 없습니다";
+"create.warning.alreadyExistsName" = "해당 이름을 가진 Bottle이 이미 존재합니다";
 
 "rename.title" = "Bottle 이름 변경";
 "rename.name" = "새 이름:";
