@@ -29,6 +29,7 @@ body:
     attributes:
       label: What version of Whisky are you using?
       options:
+        - "pre-0.2.4"
         - "pre-0.2.3"
         - "pre-0.2.2"
         - "pre-0.2.1"
