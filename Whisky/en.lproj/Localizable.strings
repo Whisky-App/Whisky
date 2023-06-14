@@ -49,6 +49,8 @@
 "create.title" = "Create a new bottle";
 "create.name" = "Bottle name:";
 "create.win" = "Windows version:";
+"create.path" = "Bottle path:";
+"create.browse" = "Browse";
 "create.cancel" = "Cancel";
 "create.create" = "Create";
 "create.warning.emptyName" = "Name can't be empty";
