@@ -24,6 +24,14 @@ body:
       description: Please provide a clear a detailed description of what you expected to happen.
     validations:
       required: true
+  - type: textarea
+    id: logs
+    attributes:
+      label: Logs
+      description: Please provide the logs from the launched Wine process.
+      render: bash
+    validations:
+      required: true
   - type: dropdown
     id: whisky-version
     attributes:
