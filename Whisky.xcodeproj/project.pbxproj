@@ -55,6 +55,7 @@
 		6E0822852A39D73800195094 /* Unzip.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Unzip.swift; sourceTree = "<group>"; };
 		6E0822862A39D73800195094 /* WineInstaller.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WineInstaller.swift; sourceTree = "<group>"; };
 		6E0822892A39D74900195094 /* Libraries.zip */ = {isa = PBXFileReference; lastKnownFileType = archive.zip; name = Libraries.zip; path = Whisky/Libraries.zip; sourceTree = "<group>"; };
+		6E08228B2A39F83900195094 /* da */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = da; path = da.lproj/Localizable.strings; sourceTree = "<group>"; };
 		6E26058529D9267B00DDD788 /* ShellLink.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShellLink.swift; sourceTree = "<group>"; };
 		6E26058929D9282000DDD788 /* DataExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataExtensions.swift; sourceTree = "<group>"; };
 		6E355E5029D74DE0002D83BE /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
@@ -295,6 +296,7 @@
 				it,
 				nl,
 				vi,
+				da,
 			);
 			mainGroup = 6E40494929CCA19C006E3F1B;
 			packageReferences = (
@@ -408,6 +410,7 @@
 				0A8B597E2A34CFBA007B37A0 /* it */,
 				F4575E7C2A33DC3D0022043D /* nl */,
 				AB8570C22A34FA4000BFBBE0 /* vi */,
+				6E08228B2A39F83900195094 /* da */,
 			);
 			name = Localizable.strings;
 			sourceTree = "<group>";
