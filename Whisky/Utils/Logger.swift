@@ -65,8 +65,10 @@ class Log {
         header += "\n\n"
 
         if let environment = environment {
-            header += "Environment:\n"
-            header += "\(environment as AnyObject)\n\n"
+            if environment.count > 0 {
+                header += "Environment:\n"
+                header += "\(environment as AnyObject)\n\n"
+            }
         }
 
         return header
