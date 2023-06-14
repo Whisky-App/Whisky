@@ -13,6 +13,7 @@ struct BottleSettingsData: Codable {
     var metalHud: Bool = false
     var metalTrace: Bool = false
     var esync: Bool = false
+    var url: URL = BottleVM.bottleDir
 }
 
 class BottleSettings {
@@ -67,15 +68,32 @@ class BottleSettings {
         }
     }
 
+    var url: URL {
+        get {
+            return settings.url
+        }
+        set {
+            settings.url = newValue
+        }
+    }
+
     let settingsUrl: URL
 
-    init(bottleUrl: URL, name: String) {
-        self.settingsUrl = bottleUrl.appendingPathComponent(name)
-                                    .appendingPathExtension("plist")
+    init(settingsURL: URL, bottleURL: URL) {
+        self.settingsUrl = settingsURL
+
+        settings = BottleSettingsData(url: bottleURL)
+        if !decode() {
+            encode()
+        }
+    }
+
+    init(settingsURL: URL) throws {
+        self.settingsUrl = settingsURL
 
         settings = BottleSettingsData()
         if !decode() {
-            encode()
+            throw "Failed to decode settings!"
         }
     }
 
