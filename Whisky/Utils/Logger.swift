@@ -49,7 +49,7 @@ class Log {
         var header = String()
 
         header += "Whisky Version: \(Bundle.main.infoDictionary?["CFBundleShortVersionString"] ?? "")\n"
-        header += "Date: \(Date.now.formatted(date: .complete, time: .standard))\n"
+        header += "Date: \(Date.now.formatted(date: .numeric, time: .standard))\n"
         header += "macOS Version: \(ProcessInfo.processInfo.operatingSystemVersionString)\n"
         if let bottle = bottle {
             header += "Bottle Name: \(bottle.name)\n"
