@@ -52,6 +52,10 @@ struct ContentView: View {
         .onAppear {
             bottleVM.loadBottles()
             showGPTInstallSheet = !GPT.isGPTInstalled()
+
+            if !WineInstaller.isWineInstalled() {
+                WineInstaller.installWine()
+            }
         }
     }
 }
