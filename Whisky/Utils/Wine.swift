@@ -116,19 +116,10 @@ class Wine {
     }
 
     static func buildVersion(bottle: Bottle) async throws -> String {
-        let output = try await run(["reg",
-                                    "query",
-                                    #"HKLM\Software\Microsoft\Windows NT\CurrentVersion"#,
-                                    "-v", "CurrentBuild"], bottle: bottle)
-        let lines = output.split(omittingEmptySubsequences: true, whereSeparator: \.isNewline)
-        if let line = lines.first(where: { $0.contains("REG_SZ") }) {
-            let array = line.split(omittingEmptySubsequences: true, whereSeparator: \.isWhitespace)
-            if let buildNumber = array.last {
-                return String(buildNumber)
-            }
-        }
-
-        throw WineInterfaceError.invalidResponce
+        return try await queryRegistyKey(bottle: bottle,
+                                  key: #"HKLM\Software\Microsoft\Windows NT\CurrentVersion"#,
+                                  name: "CurrentBuild",
+                                  type: .string)
     }
 
     @discardableResult
@@ -151,19 +142,39 @@ class Wine {
         return try await run(["winecfg", "-v", win.rawValue], bottle: bottle)
     }
 
+    static func addRegistyKey(bottle: Bottle, key: String, name: String,
+                              data: String, type: RegistryType) async throws {
+        try await run(["reg", "add", key, "-v", name,
+                       "-t", type.rawValue, "-d", data, "-f"], bottle: bottle)
+    }
+
+    static func queryRegistyKey(bottle: Bottle, key: String, name: String,
+                                type: RegistryType) async throws -> String {
+        let output = try await run(["reg", "query", key, "-v", name], bottle: bottle)
+        let lines = output.split(omittingEmptySubsequences: true, whereSeparator: \.isNewline)
+        if let line = lines.first(where: { $0.contains(type.rawValue) }) {
+            let array = line.split(omittingEmptySubsequences: true, whereSeparator: \.isWhitespace)
+            if let buildNumber = array.last {
+                return String(buildNumber)
+            }
+        }
+
+        throw WineInterfaceError.invalidResponce
+    }
+
     static func changeBuildVersion(bottle: Bottle, version: Int) async throws {
-        try await run(["reg", "add",
-                       #"HKLM\Software\Microsoft\Windows NT\CurrentVersion"#,
-                       "-v",
-                       "CurrentBuild", "-t", "REG_SZ", "-d", "\(version)", "-f"], bottle: bottle)
-        try await run(["reg", "add",
-                       #"HKLM\Software\Microsoft\Windows NT\CurrentVersion"#,
-                       "-v",
-                       "CurrentBuildNumber", "-t", "REG_SZ", "-d", "\(version)", "-f"], bottle: bottle)
+        try await addRegistyKey(bottle: bottle, key: #"HKLM\Software\Microsoft\Windows NT\CurrentVersion"#,
+                                name: "CurrentBuild", data: "\(version)", type: .string)
+        try await addRegistyKey(bottle: bottle, key: #"HKLM\Software\Microsoft\Windows NT\CurrentVersion"#,
+                                name: "CurrentBuildNumber", data: "\(version)", type: .string)
     }
 
     @discardableResult
     static func runProgram(program: Program) async throws -> String {
+        if program.name == "SteamSetup.exe" || program.name == "steam.exe" {
+            try await Steam.registryChanges(bottle: program.bottle)
+        }
+
         let arguments = program.settings.arguments.split { $0.isWhitespace }.map(String.init)
         return try await run(["start", "/unix", program.url.path] + arguments,
                              bottle: program.bottle,
@@ -179,6 +190,13 @@ extension String: Error {}
 
 enum WineInterfaceError: Error {
     case invalidResponce
+}
+
+enum RegistryType: String {
+    case binary = "REG_BINARY"
+    case dword = "REG_DWORD"
+    case qword = "REG_QWORD"
+    case string = "REG_SZ"
 }
 
 actor WineOutput {
