@@ -8,8 +8,7 @@
 import Foundation
 
 class Wine {
-    static let binFolder: URL = (Bundle.main.resourceURL ?? URL(fileURLWithPath: ""))
-        .appendingPathComponent("Libraries")
+    static let binFolder: URL = WineInstaller.libraryFolder
         .appendingPathComponent("Wine")
         .appendingPathComponent("bin")
 
