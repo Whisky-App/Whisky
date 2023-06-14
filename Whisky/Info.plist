@@ -2,6 +2,10 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
+	<key>SUFeedURL</key>
+	<string>https://raw.githubusercontent.com/IsaacMarovitz/Whisky/sparkle/appcast.xml</string>
+	<key>SUPublicEDKey</key>
+	<string>tnZFAvPUfCpM7Tr7Sx5gKRm6BUQQ6htJQeOMP44evms=</string>
 	<key>UTImportedTypeDeclarations</key>
 	<array>
 		<dict>
@@ -19,14 +23,10 @@
 			<dict>
 				<key>public.filename-extension</key>
 				<array>
-					<string>.msi</string>
+					<string>msi</string>
 				</array>
 			</dict>
 		</dict>
 	</array>
-	<key>SUPublicEDKey</key>
-    	<string>tnZFAvPUfCpM7Tr7Sx5gKRm6BUQQ6htJQeOMP44evms=</string>
-	<key>SUFeedURL</key>
-	<string>https://raw.githubusercontent.com/IsaacMarovitz/Whisky/sparkle/appcast.xml</string>
 </dict>
 </plist>
