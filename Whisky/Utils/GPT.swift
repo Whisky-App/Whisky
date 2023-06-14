@@ -11,13 +11,7 @@ import AppKit
 // GPT = Game Porting Toolkit
 class GPT {
     static func isGPTInstalled() -> Bool {
-        guard let resourcesURL = Bundle.main.resourceURL else {
-            gptError(error: "Failed to get resource URL!")
-            return false
-        }
-
-        let libFolder: URL = resourcesURL
-            .appendingPathComponent("Libraries")
+        let libFolder: URL = WineInstaller.libraryFolder
             .appendingPathComponent("Wine")
             .appendingPathComponent("lib")
 
@@ -29,13 +23,7 @@ class GPT {
     }
 
     static func install(url: URL) {
-        guard let resourcesURL = Bundle.main.resourceURL else {
-            gptError(error: "Failed to get resource URL!")
-            return
-        }
-
-        let libFolder: URL = resourcesURL
-            .appendingPathComponent("Libraries")
+        let libFolder: URL = WineInstaller.libraryFolder
             .appendingPathComponent("Wine")
             .appendingPathComponent("lib")
 
