@@ -97,6 +97,7 @@
 		6E90DA662A3A4EFF00C40F8B /* Steam.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Steam.swift; sourceTree = "<group>"; };
 		6EA2D47D29DDAE5E00C84668 /* BottleRenameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottleRenameView.swift; sourceTree = "<group>"; };
 		6EA2D48429DF130F00C84668 /* ProgramSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgramSettings.swift; sourceTree = "<group>"; };
+		91A3A2E32A3B98F500A6C3DB /* pt-BR */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "pt-BR"; path = "pt-BR.lproj/Localizable.strings"; sourceTree = "<group>"; };
 		AB8570C22A34FA4000BFBBE0 /* vi */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = vi; path = vi.lproj/Localizable.strings; sourceTree = "<group>"; };
 		B584FD842A3376E0009B00F4 /* zh-Hant */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hant"; path = "zh-Hant.lproj/Localizable.strings"; sourceTree = "<group>"; };
 		B584FD842A6676E0009B00F4 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Localizable.strings"; sourceTree = "<group>"; };
@@ -300,6 +301,7 @@
 				nl,
 				vi,
 				da,
+				"pt-BR",
 			);
 			mainGroup = 6E40494929CCA19C006E3F1B;
 			packageReferences = (
@@ -415,6 +417,7 @@
 				F4575E7C2A33DC3D0022043D /* nl */,
 				AB8570C22A34FA4000BFBBE0 /* vi */,
 				6E08228B2A39F83900195094 /* da */,
+				91A3A2E32A3B98F500A6C3DB /* pt-BR */,
 			);
 			name = Localizable.strings;
 			sourceTree = "<group>";
@@ -552,7 +555,7 @@
 				CURRENT_PROJECT_VERSION = 12;
 				DEVELOPMENT_ASSET_PATHS = "\"Whisky/Preview Content\"";
 				DEVELOPMENT_TEAM = "";
-				"DEVELOPMENT_TEAM[sdk=macosx*]" = 92S3SG4PTH;
+				"DEVELOPMENT_TEAM[sdk=macosx*]" = BNZ74W4Z78;
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -586,7 +589,7 @@
 				CURRENT_PROJECT_VERSION = 12;
 				DEVELOPMENT_ASSET_PATHS = "\"Whisky/Preview Content\"";
 				DEVELOPMENT_TEAM = "";
-				"DEVELOPMENT_TEAM[sdk=macosx*]" = 92S3SG4PTH;
+				"DEVELOPMENT_TEAM[sdk=macosx*]" = "";
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -602,7 +605,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.isaacmarovitz.Whisky;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
-				"PROVISIONING_PROFILE_SPECIFIER[sdk=macosx*]" = Whisky;
+				"PROVISIONING_PROFILE_SPECIFIER[sdk=macosx*]" = "";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 			};

@@ -6,23 +6,23 @@
 "tab.navTitle.programs" = "%@ Programas";
 "tab.navTitle.info" = "%@ Informações";
 
-"button.cDrive" = "Abrir disco C";
-"button.showInFinder" = "Abrir no Finder";
+"button.cDrive" = "Abrir unidade C";
+"button.showInFinder" = "Mostrar no Finder";
 "button.run" = "Executar...";
 "button.ok" = "OK";
-"button.renameBottle" = "Alterar nome";
-"button.deleteBottle" = "Apagar...";
-"button.createBottle" = "Criar uma Bottle";
-"button.deleteAlert.msg" = "Apagar %@?";
-"button.deleteAlert.info" = "Tem certeza de que deseja apagar esta Bottle? Esta acção é permanente.";
-"button.deleteAlert.delete" = "Apagar";
+"button.renameBottle" = "Renomear";
+"button.deleteBottle" = "Excluir...";
+"button.createBottle" = "Criar Bottle";
+"button.deleteAlert.msg" = "Excluir %@?";
+"button.deleteAlert.info" = "Tem certeza de que deseja excluir este Bottle? Essa ação é permanente.";
+"button.deleteAlert.delete" = "Excluir";
 "button.deleteAlert.cancel" = "Cancelar";
 
 "config.winVersion" = "Versão do Windows";
 "config.buildVersion" = "Build Version";
 "config.title.metal" = "Metal";
 "config.metalHud" = "Hud Metal";
-"config.metalTrace" = "Diagnóstico Metal";
+"config.metalTrace" = "Rastreio Metal";
 "config.metalTrace.info" = "Permite capturar a carga de trabalho da GPU no Xcode";
 "config.esync" = "ESync";
 "config.controlPanel" = "Open Control Panel";
@@ -40,29 +40,29 @@
 "info.wine" = "Versão do Wine";
 "info.win" = "Versão do Windows";
 
-"gptalert.init" = "Arraste e solte o ficheiro DMG do Game Porting Toolkit";
+"gptalert.init" = "Arraste e solte o arquivo DMG do Game Porting Toolkit";
 "gptalert.message" = "O GPT encontrou um erro!";
 
 "alert.message" = "Falha ao abrir o programa!";
 "alert.info" = "Falha ao abrir";
 
-"create.title" = "Criar uma nova Bottle";
-"create.name" = "Nome da Bottle:";
+"create.title" = "Criar um novo Bottle";
+"create.name" = "Nome do Bottle:";
 "create.win" = "Versão do Windows:";
 "create.cancel" = "Cancelar";
 "create.create" = "Criar";
-"create.warning.emptyName" = "O nome não pode ser vazio";
-"create.warning.alreadyExistsName" = "Uma Bottle com este nome já existe";
+"create.warning.emptyName" = "Name can't be empty";
+"create.warning.alreadyExistsName" = "A bottle with this name already exists";
 
-"rename.title" = "Alterar nome da Bottle";
+"rename.title" = "Renomear o Bottle";
 "rename.name" = "Novo nome:";
-"rename.rename" = "Alterar nome";
+"rename.rename" = "Renomear";
 
-"check.updates" = "Verificar Actualizações...";
-"kill.bottles" = "Encerrar todas as Bottles...";
-"open.logs" = "Abrir Pasta dos Logs";
+"check.updates" = "Verificar Atualizações...";
+"kill.bottles" = "Encerrar Todos os Bottles...";
+"open.logs" = "Abrir Pasta de Logs";
 
-"showAlertOnFirstLaunch.messageText" = "Gostaria de mover o Whisky para a pasta das Aplicações ?";
-"showAlertOnFirstLaunch.informativeText" = "Em alguns casos, o Whisky pode não funcionar correctamente numa pasta diferente";
-"showAlertOnFirstLaunch.button.moveToApplications" = "Mover para Aplicações";
+"showAlertOnFirstLaunch.messageText" = "Você gostaria de mover o Whisky para a pasta de Aplicativos?";
+"showAlertOnFirstLaunch.informativeText" = "Em alguns casos, o Whisky pode não funcionar corretamente em uma pasta diferente";
+"showAlertOnFirstLaunch.button.moveToApplications" = "Mover para Aplicativos";
 "showAlertOnFirstLaunch.button.dontMove" = "Não Mover";
