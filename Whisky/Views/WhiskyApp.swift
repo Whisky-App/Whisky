@@ -12,6 +12,7 @@ import Sparkle
 struct WhiskyApp: App {
     @NSApplicationDelegateAdaptor(AppDelegate.self) var appDelegate
     private let updaterController: SPUStandardUpdaterController
+    @State var wineReinstallerViewShown = false
 
     init() {
         updaterController = SPUStandardUpdaterController(startingUpdater: true,
@@ -25,6 +26,9 @@ struct WhiskyApp: App {
                 .environmentObject(BottleVM.shared)
                 .onAppear {
                     NSWindow.allowsAutomaticWindowTabbing = false
+                }
+                .sheet(isPresented: $wineReinstallerViewShown) {
+                    WineReinstallerView(isPresented: $wineReinstallerViewShown)
                 }
         }
         .commands {
@@ -41,6 +45,11 @@ struct WhiskyApp: App {
                     WhiskyApp.killBottles()
                 } label: {
                     Text("kill.bottles")
+                }
+                Button {
+                    wineReinstallerViewShown.toggle()
+                } label: {
+                    Text("wine.reinstall")
                 }
             }
         }

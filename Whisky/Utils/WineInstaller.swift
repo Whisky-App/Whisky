@@ -20,7 +20,7 @@ class WineInstaller {
         return FileManager.default.fileExists(atPath: libraryFolder.path)
     }
 
-    static func installWine() {
+    static func installWine(archivePath: URL = libraryArchive) {
         do {
             let whiskySupportFolder = FileManager.default.urls(for: .applicationSupportDirectory,
                                                                in: .userDomainMask)[0]
@@ -28,9 +28,13 @@ class WineInstaller {
 
             if !FileManager.default.fileExists(atPath: whiskySupportFolder.path) {
                 try FileManager.default.createDirectory(at: whiskySupportFolder, withIntermediateDirectories: true)
+            } else {
+                // Clean up the folder if it already exists
+                try FileManager.default.removeItem(at: whiskySupportFolder)
+                try FileManager.default.createDirectory(at: whiskySupportFolder, withIntermediateDirectories: true)
             }
 
-            try Unzip.unzip(zipFile: libraryArchive, toURL: whiskySupportFolder)
+            try Unzip.unzip(zipFile: archivePath, toURL: whiskySupportFolder)
         } catch {
             print("Failed to install Wine: \(error)")
         }

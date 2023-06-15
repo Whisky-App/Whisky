@@ -10,6 +10,8 @@
 "button.showInFinder" = "Show in Finder";
 "button.run" = "Run...";
 "button.ok" = "OK";
+"button.cancel" = "Cancel";
+"button.browse" = "Browse";
 "button.renameBottle" = "Rename";
 "button.deleteBottle" = "Delete...";
 "button.createBottle" = "Create Bottle";
@@ -68,3 +70,8 @@
 "showAlertOnFirstLaunch.informativeText" = "In some cases, Whisky wont't be able to function properly from a different folder";
 "showAlertOnFirstLaunch.button.moveToApplications" = "Move to Applications";
 "showAlertOnFirstLaunch.button.dontMove" = "Don't Move";
+
+"wine.reinstall" = "Reinstall Wine";
+"wine.reinstall.useBuiltIn" = "Use Whisky's built-in Wine";
+"alert.reinstall" = "Wine Installation Complete";
+"alert.reinstall.message" = "Whisky will now quit to complete installation";
