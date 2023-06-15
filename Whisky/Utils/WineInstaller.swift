@@ -32,7 +32,7 @@ class WineInstaller {
 
             try Unzip.unzip(zipFile: libraryArchive, toURL: whiskySupportFolder)
         } catch {
-            print("Failed to install Wine: \(error.localizedDescription)")
+            print("Failed to install Wine: \(error)")
         }
     }
 }

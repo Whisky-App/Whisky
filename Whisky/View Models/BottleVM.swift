@@ -56,7 +56,7 @@ class BottleVM: ObservableObject {
                     }
                 }
             } catch {
-                print("Failed to load bottles: \(error.localizedDescription)")
+                print("Failed to load bottles: \(error)")
             }
 
             bottles.sort(by: { $0.name.lowercased() < $1.name.lowercased() })
