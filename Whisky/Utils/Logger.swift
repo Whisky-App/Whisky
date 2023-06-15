@@ -40,7 +40,7 @@ class Log {
 
             write(line: Log.constructHeader(bottle, args, environment), printLine: false)
         } catch {
-            print("Failed to create logger: \(error.localizedDescription)")
+            print("Failed to create logger: \(error)")
             return nil
         }
     }
