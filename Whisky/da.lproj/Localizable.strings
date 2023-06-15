@@ -12,57 +12,57 @@
 "button.ok" = "OK";
 "button.renameBottle" = "Omdøb";
 "button.deleteBottle" = "Slet...";
-"button.createBottle" = "Create Bottle";
-"button.deleteAlert.msg" = "Delete %@?";
-"button.deleteAlert.info" = "Are you sure you want to delete this bottle? This action is permanent.";
-"button.deleteAlert.delete" = "Delete";
-"button.deleteAlert.cancel" = "Cancel";
+"button.createBottle" = "Opret Bottle";
+"button.deleteAlert.msg" = "Slet %@?";
+"button.deleteAlert.info" = "Er du sikker på, at du vil slette denne Bottle? Denne handling er permanent.";
+"button.deleteAlert.delete" = "Slet";
+"button.deleteAlert.cancel" = "Annuller";
 
 "config.winVersion" = "Windows Version";
 "config.buildVersion" = "Build Version";
 "config.title.metal" = "Metal";
 "config.metalHud" = "Metal HUD";
 "config.metalTrace" = "Metal Trace";
-"config.metalTrace.info" = "Allows you to capture GPU workload in Xcode";
+"config.metalTrace.info" = "Giver dig mulighed for at fange GPU-workload i Xcode";
 "config.esync" = "ESync";
-"config.controlPanel" = "Open Control Panel";
-"config.regedit" = "Open Registry Editor";
-"config.winecfg" = "Open Wine Configuration";
+"config.controlPanel" = "Åbn Kontrolpanel";
+"config.regedit" = "Åbn Registry Editor";
+"config.winecfg" = "Åben Wine konfiguration";
 
-"program.title" = "Installed Programs";
-"program.env" = "Environment Variables";
-"program.args" = "Arguments";
-"program.config" = "Config";
+"program.title" = "Installerede programmer";
+"program.env" = "Miljøvariabler";
+"program.args" = "Start Argumenter";
+"program.config" = "Konfiguration";
 
 "info.title" = "Info";
-"info.path" = "Path";
-"info.path.copy" = "Copy Path";
+"info.path" = "Sti";
+"info.path.copy" = "Kopier sti";
 "info.wine" = "Wine Version";
 "info.win" = "Windows Version";
 
-"gptalert.init" = "Drag and drop the Game Porting Toolkit DMG";
-"gptalert.message" = "GPT encountered an error!";
+"gptalert.init" = "Træk og slip Game Porting Toolkit DMG";
+"gptalert.message" = "GPT stødte på en fejl!";
 
-"alert.message" = "Failed to open program!";
-"alert.info" = "Failed to open";
+"alert.message" = "Programmet kunne ikke åbnes!";
+"alert.info" = "Kunne ikke åbne";
 
-"create.title" = "Create a new bottle";
-"create.name" = "Bottle name:";
+"create.title" = "Opret en ny bottle";
+"create.name" = "Bottle navn:";
 "create.win" = "Windows version:";
-"create.cancel" = "Cancel";
-"create.create" = "Create";
-"create.warning.emptyName" = "Name can't be empty";
-"create.warning.alreadyExistsName" = "A bottle with this name already exists";
+"create.cancel" = "Annuller";
+"create.create" = "Opret";
+"create.warning.emptyName" = "Navn må ikke være tomt";
+"create.warning.alreadyExistsName" = "Der findes allerede en Bottle med dette navn";
 
-"rename.title" = "Rename bottle";
-"rename.name" = "New name:";
-"rename.rename" = "Rename";
+"rename.title" = "Omdøb bottle";
+"rename.name" = "Nyt navn:";
+"rename.rename" = "Omdøb";
 
-"check.updates" = "Check for Updates...";
-"kill.bottles" = "Kill All Bottles...";
-"open.logs" = "Open Logs Folder";
+"check.updates" = "Tjek for Opdateringer...";
+"kill.bottles" = "Dræb Alle Bottles...";
+"open.logs" = "Åbn Logmappe";
 
-"showAlertOnFirstLaunch.messageText" = "Would you like to move Whisky to your Applications folder?";
-"showAlertOnFirstLaunch.informativeText" = "In some cases, Whisky wont't be able to function properly from a different folder";
-"showAlertOnFirstLaunch.button.moveToApplications" = "Move to Applications";
-"showAlertOnFirstLaunch.button.dontMove" = "Don't Move";
+"showAlertOnFirstLaunch.messageText" = "Vil du flytte Whisky til Applications mappen?";
+"showAlertOnFirstLaunch.informativeText" = "I nogle tilfælde vil Whisky ikke være i stand til at fungere korrekt fra en anden mappe";
+"showAlertOnFirstLaunch.button.moveToApplications" = "Flyt til mappen Applications";
+"showAlertOnFirstLaunch.button.dontMove" = "Flyt Ikke";
