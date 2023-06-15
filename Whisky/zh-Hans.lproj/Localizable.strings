@@ -1,14 +1,14 @@
 "tab.config" = "配置";
-"tab.programs" = "程序";
-"tab.info" = "信息";
+"tab.programs" = "软件";
+"tab.info" = "关于";
 
 "tab.navTitle.config" = "%@ 配置";
-"tab.navTitle.programs" = "%@ 程序";
+"tab.navTitle.programs" = "%@的软件";
 "tab.navTitle.info" = "%@ 信息";
 
 "button.cDrive" = "打开 C 盘";
 "button.showInFinder" = "在访达中显示";
-"button.run" = "运行...";
+"button.run" = "打开软件";
 "button.ok" = "确定";
 "button.renameBottle" = "重命名";
 "button.deleteBottle" = "删除...";
@@ -29,24 +29,24 @@
 "config.regedit" = "打开注册表编辑器";
 "config.winecfg" = "打开 Wine 配置";
 
-"program.title" = "已安装的程序";
+"program.title" = "安装的软件";
 "program.env" = "环境变量";
 "program.args" = "参数";
 "program.config" = "配置";
 
-"info.title" = "信息";
+"info.title" = "关于";
 "info.path" = "路径";
 "info.path.copy" = "复制路径";
 "info.wine" = "Wine 版本";
 "info.win" = "Windows 版本";
 
 "gptalert.init" = "将 Game Porting Toolkit 的 DMG 文件拖到这里";
-"gptalert.message" = "Game Porting Toolkit 遇到了一个错误！";
+"gptalert.message" = "Game Porting Toolkit 遇到了一个问题！";
 
-"alert.message" = "无法打开程序！";
+"alert.message" = "打开软件失败！";
 "alert.info" = "打开失败";
 
-"create.title" = "创建一个新的容器";
+"create.title" = "创建新的容器";
 "create.name" = "容器名称：";
 "create.win" = "Windows 版本：";
 "create.cancel" = "取消";
