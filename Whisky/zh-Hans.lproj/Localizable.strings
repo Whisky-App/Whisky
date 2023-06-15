@@ -13,7 +13,7 @@
 "button.renameBottle" = "重命名";
 "button.deleteBottle" = "删除...";
 "button.createBottle" = "创建容器";
-"button.deleteAlert.msg" = "删除 %@?";
+"button.deleteAlert.msg" = "你真的想删除 %@吗?";
 "button.deleteAlert.info" = "你确定要删除这个容器吗？这个操作是永久性的。";
 "button.deleteAlert.delete" = "删除";
 "button.deleteAlert.cancel" = "取消";
