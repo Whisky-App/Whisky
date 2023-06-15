@@ -13,26 +13,27 @@ class WineInstaller {
         .appendingPathExtension("zip")
 
     static let libraryFolder = FileManager.default.urls(for: .applicationSupportDirectory, in: .userDomainMask)[0]
-        .appendingPathComponent("Whisky")
+        .appendingPathComponent(Bundle.main.bundleIdentifier ?? "com.isaacmarovitz.Whisky")
         .appendingPathComponent("Libraries")
 
     static func isWineInstalled() -> Bool {
-        return FileManager.default.fileExists(atPath: libraryFolder.path)
+        return FileManager.default.fileExists(atPath: libraryFolder.path())
     }
 
     static func installWine() {
         do {
             let whiskySupportFolder = FileManager.default.urls(for: .applicationSupportDirectory,
                                                                in: .userDomainMask)[0]
-                .appendingPathComponent("Whisky")
+                .appendingPathComponent(Bundle.main.bundleIdentifier ?? "com.isaacmarovitz.Whisky")
 
-            if !FileManager.default.fileExists(atPath: whiskySupportFolder.path) {
+            if !FileManager.default.fileExists(atPath: whiskySupportFolder.path()) {
                 try FileManager.default.createDirectory(at: whiskySupportFolder, withIntermediateDirectories: true)
             }
 
             try Unzip.unzip(zipFile: libraryArchive, toURL: whiskySupportFolder)
         } catch {
-            print("Failed to install Wine: \(error.localizedDescription)")
+            // Do not use localized strings here: it makes debugging harder
+            print("Failed to install Wine: \(error)")
         }
     }
 }

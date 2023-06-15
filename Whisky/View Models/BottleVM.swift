@@ -13,7 +13,7 @@ class BottleVM: ObservableObject {
     static let containerDir = FileManager.default.homeDirectoryForCurrentUser
         .appendingPathComponent("Library")
         .appendingPathComponent("Containers")
-        .appendingPathComponent("com.isaacmarovitz.Whisky")
+        .appendingPathComponent(Bundle.main.bundleIdentifier ?? "com.isaacmarovitz.Whisky")
 
     static let bottleDir = containerDir
         .appendingPathComponent("Bottles")
