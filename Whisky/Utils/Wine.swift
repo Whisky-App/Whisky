@@ -172,12 +172,6 @@ class Wine {
 
     @discardableResult
     static func runProgram(program: Program) async throws -> String {
-        // We should have a better way to identify programs via their metadata
-        // in the future. Also this only rly needs to be run once
-        if program.name == "SteamSetup.exe" {
-            try await Steam.registryChanges(bottle: program.bottle)
-        }
-
         let arguments = program.settings.arguments.split { $0.isWhitespace }.map(String.init)
         return try await run(["start", "/unix", program.url.path] + arguments,
                              bottle: program.bottle,
