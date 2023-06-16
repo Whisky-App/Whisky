@@ -8,7 +8,7 @@
 
 "button.cDrive" = "打开 C 盘";
 "button.showInFinder" = "在访达中显示";
-"button.run" = "打开软件";
+"button.run" = "运行...";
 "button.ok" = "确定";
 "button.renameBottle" = "重命名";
 "button.deleteBottle" = "删除...";
@@ -22,14 +22,14 @@
 "config.buildVersion" = "构建版本";
 "config.title.metal" = "Metal";
 "config.metalHud" = "Metal 监视器";
-"config.metalTrace" = "Metal 跟踪";
+"config.metalTrace" = "Metal 性能分析";
 "config.metalTrace.info" = "允许你在 Xcode 中抓取 GPU 工作负载";
 "config.esync" = "ESync（增强同步）技术";
 "config.controlPanel" = "打开控制面板";
 "config.regedit" = "打开注册表编辑器";
 "config.winecfg" = "打开 Wine 配置";
 
-"program.title" = "安装的软件";
+"program.title" = "已安装的程序";
 "program.env" = "环境变量";
 "program.args" = "参数";
 "program.config" = "配置";
@@ -41,7 +41,7 @@
 "info.win" = "Windows 版本";
 
 "gptalert.init" = "将 Game Porting Toolkit 的 DMG 文件拖到这里";
-"gptalert.message" = "Game Porting Toolkit 遇到了一个问题！";
+"gptalert.message" = "Game Porting Toolkit 遇到了一个错误！";
 
 "alert.message" = "打开软件失败！";
 "alert.info" = "打开失败";
