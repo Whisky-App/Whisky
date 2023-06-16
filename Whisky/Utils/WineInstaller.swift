@@ -10,7 +10,8 @@ import Foundation
 class WineInstaller {
     static let libraryArchive: URL = (Bundle.main.resourceURL ?? URL(fileURLWithPath: ""))
         .appendingPathComponent("Libraries")
-        .appendingPathExtension("zip")
+        .appendingPathExtension("tar")
+        .appendingPathExtension("gz")
 
     static let libraryFolder = FileManager.default.urls(for: .applicationSupportDirectory, in: .userDomainMask)[0]
         .appendingPathComponent("Whisky")
@@ -30,7 +31,7 @@ class WineInstaller {
                 try FileManager.default.createDirectory(at: whiskySupportFolder, withIntermediateDirectories: true)
             }
 
-            try Unzip.unzip(zipFile: libraryArchive, toURL: whiskySupportFolder)
+            try Tar.untar(tarBall: libraryArchive, toURL: whiskySupportFolder)
         } catch {
             print("Failed to install Wine: \(error)")
         }

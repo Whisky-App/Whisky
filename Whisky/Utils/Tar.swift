@@ -7,15 +7,15 @@
 
 import Foundation
 
-class Unzip {
-    static let unzipBinary: URL = URL(fileURLWithPath: "/usr/bin/unzip")
+class Tar {
+    static let tarBinary: URL = URL(fileURLWithPath: "/usr/bin/tar")
 
-    static func unzip(zipFile: URL, toURL: URL) throws {
+    static func untar(tarBall: URL, toURL: URL) throws {
         let process = Process()
         let pipe = Pipe()
 
-        process.executableURL = unzipBinary
-        process.arguments = ["-q", "\(zipFile.path)", "-d", "\(toURL.path)"]
+        process.executableURL = tarBinary
+        process.arguments = ["-xzf", "\(tarBall.path)", "-C", "\(toURL.path)"]
         process.standardOutput = pipe
         process.standardError = pipe
 
