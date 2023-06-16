@@ -121,6 +121,7 @@ public class Bottle: Hashable {
     func delete() {
         do {
             try FileManager.default.removeItem(at: url)
+            try FileManager.default.removeItem(at: settings.settingsUrl)
             BottleVM.shared.loadBottles()
         } catch {
             print("Failed to delete bottle")
