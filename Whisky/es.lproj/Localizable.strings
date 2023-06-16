@@ -12,21 +12,21 @@
 "button.ok" = "OK";
 "button.renameBottle" = "Renombrar";
 "button.deleteBottle" = "Eliminar...";
-"button.createBottle" = "Crear Botella";
+"button.createBottle" = "Crear un Contenedor";
 "button.deleteAlert.msg" = "Eliminar %@?";
-"button.deleteAlert.info" = "¿Estás seguro de que quieres eliminar esta botella? Esta acción es permanente.";
+"button.deleteAlert.info" = "¿Estás seguro de que quieres eliminar este Contenedor? Esta acción es permanente.";
 "button.deleteAlert.delete" = "Eliminar";
 "button.deleteAlert.cancel" = "Cancelar";
 
 "config.winVersion" = "Versión de Windows";
-"config.buildVersion" = "Build Version";
+"config.buildVersion" = "Versión de Compilación";
 "config.title.metal" = "Metal";
 "config.metalHud" = "Metal HUD";
 "config.metalTrace" = "Metal Trace";
 "config.metalTrace.info" = "Permite capturar la carga de trabajo de la GPU en Xcode";
 "config.esync" = "ESync";
-"config.controlPanel" = "Open Control Panel";
-"config.regedit" = "Open Registry Editor";
+"config.controlPanel" = "Abrir Panel de Control";
+"config.regedit" = "Abrir Editor de Registro";
 "config.winecfg" = "Abrir configuración de Wine";
 
 "program.title" = "Programas Instalados";
@@ -46,20 +46,20 @@
 "alert.message" = "¡Error al abrir el programa!";
 "alert.info" = "No se pudo abrir";
 
-"create.title" = "Crear una botella nueva";
-"create.name" = "Nombre de la botella:";
+"create.title" = "Crear un nuevo Contenedor";
+"create.name" = "Nombre del Contenedor:";
 "create.win" = "Versión de Windows:";
 "create.cancel" = "Cancelar";
 "create.create" = "Crear";
-"create.warning.emptyName" = "Name can't be empty";
-"create.warning.alreadyExistsName" = "A bottle with this name already exists";
+"create.warning.emptyName" = "El nombre no puede quedar vacío";
+"create.warning.alreadyExistsName" = "Ya existe un contenedor con este nombre";
 
-"rename.title" = "Renombrar botella";
+"rename.title" = "Renombrar contenedor";
 "rename.name" = "Nuevo nombre:";
 "rename.rename" = "Renombrar";
 
 "check.updates" = "Buscar actualizaciones...";
-"kill.bottles" = "Detener todas las Botellas...";
+"kill.bottles" = "Detener todos los Contenedores...";
 "open.logs" = "Abrir carpeta de registros";
 
 "showAlertOnFirstLaunch.messageText" = "¿Te gustaría mover Whisky a la carpeta de Aplicaciones?";
