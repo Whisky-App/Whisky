@@ -172,7 +172,9 @@ class Wine {
 
     @discardableResult
     static func runProgram(program: Program) async throws -> String {
-        if program.name == "SteamSetup.exe" || program.name == "steam.exe" {
+        // We should have a better way to identify programs via their metadata
+        // in the future. Also this only rly needs to be run once
+        if program.name == "SteamSetup.exe" {
             try await Steam.registryChanges(bottle: program.bottle)
         }
 
