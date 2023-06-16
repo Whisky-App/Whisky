@@ -65,6 +65,7 @@ class Wine {
         try process.run()
         log.write(line: "Launched Wine (\(process.processIdentifier))\n")
 
+        try pipe.fileHandleForReading.readToEnd()
         process.waitUntilExit()
         log.write(line: "Process exited with code \(process.terminationStatus)")
 
