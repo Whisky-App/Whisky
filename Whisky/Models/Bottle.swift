@@ -130,14 +130,18 @@ public class Bottle: Hashable {
 
     @MainActor
     func rename(newName: String) {
-        let oldPlist = url.appendingPathComponent(name)
-                          .appendingPathExtension("plist")
-        let newPlist = url.appendingPathComponent(newName)
-                          .appendingPathExtension("plist")
+        let oldPlist = settings.settingsUrl
+        let newPlist = settings.settingsUrl
+            .deletingPathExtension()
+            .deletingLastPathComponent()
+            .appendingPathComponent(newName)
+            .appendingPathExtension("plist")
 
         let oldFolder = url
         let newFolder = url.deletingLastPathComponent()
                            .appendingPathComponent(newName)
+
+        settings.url = newFolder
 
         do {
             try FileManager.default.moveItem(at: oldPlist, to: newPlist)
