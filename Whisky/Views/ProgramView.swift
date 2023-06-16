@@ -20,12 +20,10 @@ struct ProgramView: View {
                     HStack {
                         InfoItem(label: String(localized: "info.path"), value: program.url.prettyPath())
                         .contextMenu {
-                            Button {
+                            Button("info.path.copy") {
                                 let pasteboard = NSPasteboard.general
                                 pasteboard.clearContents()
                                 pasteboard.setString(program.url.path, forType: .string)
-                            } label: {
-                                Text("info.path.copy")
                             }
                         }
                     }

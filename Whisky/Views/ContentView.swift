@@ -70,15 +70,11 @@ struct BottleListEntry: View {
                 BottleRenameView(bottle: bottle)
             }
             .contextMenu {
-                Button {
+                Button("button.renameBottle") {
                     showBottleRename.toggle()
-                } label: {
-                    Text("button.renameBottle")
                 }
-                Button {
+                Button("button.deleteBottle") {
                     showDeleteAlert(bottle: bottle)
-                } label: {
-                    Text("button.deleteBottle")
                 }
             }
     }

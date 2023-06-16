@@ -17,12 +17,10 @@ struct InfoView: View {
                 InfoItem(label: String(localized: "info.path"),
                          value: prettyPath)
                 .contextMenu {
-                    Button {
+                    Button("info.path.copy") {
                         let pasteboard = NSPasteboard.general
                         pasteboard.clearContents()
                         pasteboard.setString(bottle.url.path, forType: .string)
-                    } label: {
-                        Text("info.path.copy")
                     }
                 }
                 InfoItem(label: String(localized: "info.wine"),
