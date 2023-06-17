@@ -6,7 +6,7 @@
 "tab.navTitle.programs" = "Programmes de %@";
 "tab.navTitle.info" = "Info sur %@";
 
-"button.cDrive" = "Ouvrir C Drive";
+"button.cDrive" = "Ouvrir le disque C";
 "button.showInFinder" = "Afficher dans Finder";
 "button.run" = "Exécuter...";
 "button.ok" = "OK";
@@ -14,20 +14,20 @@
 "button.deleteBottle" = "Supprimer...";
 "button.createBottle" = "Créer une bouteille";
 "button.deleteAlert.msg" = "Supprimer %@ ?";
-"button.deleteAlert.info" = "Êtes-vous sûr de vouloir supprimer cette bouteille ? Cette action est permanente.";
+"button.deleteAlert.info" = "Êtes-vous sûr de vouloir supprimer cette bouteille ? Cette action est irreversible.";
 "button.deleteAlert.delete" = "Supprimer";
 "button.deleteAlert.cancel" = "Annuler";
 
 "config.winVersion" = "Version de Windows";
-"config.buildVersion" = "Build Version";
+"config.buildVersion" = "Version Build";
 "config.title.metal" = "Metal";
 "config.metalHud" = "HUD Metal";
-"config.metalTrace" = "Trace de Metal";
-"config.metalTrace.info" = "Permet de capturer la charge de travail GPU en Xcode";
+"config.metalTrace" = "Traces de Metal";
+"config.metalTrace.info" = "Permet de capturer la charge de travail GPU dans Xcode";
 "config.esync" = "ESync";
-"config.controlPanel" = "Open Control Panel";
-"config.regedit" = "Open Registry Editor";
-"config.winecfg" = "Ouvrir la Configuration Wine";
+"config.controlPanel" = "Ouvrir le panneau de configuration";
+"config.regedit" = "Ouvrir l'éditeur du registre";
+"config.winecfg" = "Ouvrir la configuration de Wine";
 
 "program.title" = "Programmes Installés";
 "program.env" = "Variables d'Environnement";
@@ -40,7 +40,7 @@
 "info.wine" = "Version de Wine";
 "info.win" = "Version de Windows";
 
-"gptalert.init" = "Glissez et déposez le fichier DMG Game Porting Toolkit";
+"gptalert.init" = "Glissez et déposez le fichier .DMG Game Porting Toolkit";
 "gptalert.message" = "GPT a rencontré une erreur !";
 
 "alert.message" = "Impossible d'ouvrir le programme !";
@@ -51,18 +51,18 @@
 "create.win" = "Version de Windows :";
 "create.cancel" = "Annuler";
 "create.create" = "Créer";
-"create.warning.emptyName" = "Name can't be empty";
-"create.warning.alreadyExistsName" = "A bottle with this name already exists";
+"create.warning.emptyName" = "Le nom ne peut être vide";
+"create.warning.alreadyExistsName" = "Une bouteille portant ce nom existe déjà";
 
 "rename.title" = "Renommer la bouteille";
 "rename.name" = "Nouveau nom :";
 "rename.rename" = "Renommer";
 
-"check.updates" = "Recherche des Mises à Jour...";
-"kill.bottles" = "Fermer Touts les Bouteilles...";
-"open.logs" = "Ouvrir le dossier des logs";
+"check.updates" = "Recherche de Mises à Jour...";
+"kill.bottles" = "Fermer toutes les bouteilles...";
+"open.logs" = "Ouvrir le dossier des journaux";
 
-"showAlertOnFirstLaunch.messageText" = "Souhaitez-vous déplacer Whisky dans votre dossier Applications ?";
+"showAlertOnFirstLaunch.messageText" = "Souhaitez-vous déplacer Whisky dans le dossier Applications ?";
 "showAlertOnFirstLaunch.informativeText" = "Dans certains cas, Whisky ne pourra pas fonctionner correctement depuis un dossier différent";
 "showAlertOnFirstLaunch.button.moveToApplications" = "Déplacer vers Applications";
 "showAlertOnFirstLaunch.button.dontMove" = "Ne pas déplacer";
