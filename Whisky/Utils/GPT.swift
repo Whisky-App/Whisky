@@ -30,7 +30,25 @@ class GPT {
         do {
             let path = try Hdiutil.mount(url: url) + "/lib"
 
-            try Ditto.ditto(fromPath: path, toPath: libFolder.path)
+            Ditto.ditto(fromPath: path, toPath: libFolder.path)
+
+            let d3dmSym = libFolder
+                .appendingPathComponent("D3DMetal")
+                .appendingPathExtension("framework")
+            let libSym = libFolder
+                .appendingPathComponent("libd3dshared")
+                .appendingPathExtension("dylib")
+            let d3dmOg = libFolder
+                .appendingPathComponent("external")
+                .appendingPathComponent("D3DMetal")
+                .appendingPathExtension("framework")
+            let libOg = libFolder
+                .appendingPathComponent("external")
+                .appendingPathComponent("libd3dshared")
+                .appendingPathExtension("dylib")
+
+            try FileManager.default.createSymbolicLink(at: d3dmSym, withDestinationURL: d3dmOg)
+            try FileManager.default.createSymbolicLink(at: libSym, withDestinationURL: libOg)
 
             try Hdiutil.unmount(path: path)
         } catch {

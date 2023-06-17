@@ -10,7 +10,7 @@ import Foundation
 class Ditto {
     static let dittoBinary: URL = URL(fileURLWithPath: "/usr/bin/ditto")
 
-    static func ditto(fromPath: String, toPath: String) throws {
+    static func ditto(fromPath: String, toPath: String) {
         let process = Process()
         let pipe = Pipe()
 
@@ -19,15 +19,10 @@ class Ditto {
         process.standardOutput = pipe
         process.standardInput = pipe
 
-        try process.run()
-
-        if let output = try pipe.fileHandleForReading.readToEnd() {
-            let outputString = String(decoding: output, as: UTF8.self)
+        do {
+            try process.run()
+            _ = try pipe.fileHandleForReading.readToEnd()
             process.waitUntilExit()
-            let status = process.terminationStatus
-            if status != 0 {
-                throw outputString
-            }
-        }
+        } catch {}
     }
 }
