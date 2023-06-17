@@ -19,14 +19,14 @@
 "button.deleteAlert.cancel" = "Annuler";
 
 "config.winVersion" = "Version de Windows";
-"config.buildVersion" = "Build Version";
+"config.buildVersion" = "Version de build";
 "config.title.metal" = "Metal";
 "config.metalHud" = "HUD Metal";
 "config.metalTrace" = "Trace de Metal";
 "config.metalTrace.info" = "Permet de capturer la charge de travail GPU en Xcode";
 "config.esync" = "ESync";
-"config.controlPanel" = "Open Control Panel";
-"config.regedit" = "Open Registry Editor";
+"config.controlPanel" = "Ouvrir le panneau de configuration";
+"config.regedit" = "Éditeur de registre";
 "config.winecfg" = "Ouvrir la Configuration Wine";
 
 "program.title" = "Programmes Installés";
@@ -51,8 +51,8 @@
 "create.win" = "Version de Windows :";
 "create.cancel" = "Annuler";
 "create.create" = "Créer";
-"create.warning.emptyName" = "Name can't be empty";
-"create.warning.alreadyExistsName" = "A bottle with this name already exists";
+"create.warning.emptyName" = "Le nom ne peut pas être vide";
+"create.warning.alreadyExistsName" = "Une bouteille existe déjà avec ce nom";
 
 "rename.title" = "Renommer la bouteille";
 "rename.name" = "Nouveau nom :";
