@@ -40,6 +40,3 @@ Make sure you're logged in to the Apple Developer website. If it still won't wor
 ### Do I need to follow the steps in the toolkit's README?
 
 No, you don't, in fact you shouldn't follow them.
-
-### Steam isn't displaying anything
-Known issue, please see this [issue](https://github.com/IsaacMarovitz/Whisky/issues/41).
