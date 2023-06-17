@@ -122,14 +122,18 @@ struct ConfigView: View {
         .onChange(of: windowsVersion) { newValue in
             if winVersionLoaded {
                 canChangeWinVersion = false
+                canChangeBuildVersion = false
                 Task(priority: .userInitiated) {
                     do {
                         try await Wine.changeWinVersion(bottle: bottle, win: newValue)
                         canChangeWinVersion = true
                         bottle.settings.windowsVersion = newValue
+                        buildVersion = try await Wine.buildVersion(bottle: bottle)
+                        canChangeBuildVersion = true
                     } catch {
                         print(error)
                         canChangeWinVersion = true
+                        canChangeBuildVersion = true
                         windowsVersion = bottle.settings.windowsVersion
                     }
                 }
