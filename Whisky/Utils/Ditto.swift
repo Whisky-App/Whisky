@@ -22,7 +22,8 @@ class Ditto {
         do {
             try process.run()
             _ = try pipe.fileHandleForReading.readToEnd()
-            process.waitUntilExit()
         } catch {}
+        
+        process.waitUntilExit()
     }
 }
