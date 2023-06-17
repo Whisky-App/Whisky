@@ -30,28 +30,7 @@ class GPT {
         do {
             let path = try Hdiutil.mount(url: url) + "/lib"
 
-            if let pathEnumerator = FileManager.default.enumerator(atPath: path) {
-                while let relativePath = pathEnumerator.nextObject() as? String {
-                    let subItemAt = URL(fileURLWithPath: path).appendingPathComponent(relativePath).path
-                    let subItemTo = libFolder.appendingPathComponent(relativePath).path
-
-                    if isDir(atPath: subItemAt) {
-                        if !isDir(atPath: subItemTo) {
-                            try FileManager.default.createDirectory(atPath: subItemTo,
-                                                                    withIntermediateDirectories: true)
-                        }
-                    } else {
-                        if isFile(atPath: subItemTo) {
-                            try FileManager.default.removeItem(atPath: subItemTo)
-                        }
-
-                        try FileManager.default.copyItem(atPath: subItemAt, toPath: subItemTo)
-                    }
-                }
-                print("GPT Installed")
-            } else {
-                gptError(error: "Failed to create enumerator!")
-            }
+            try Ditto.ditto(fromPath: path, toPath: libFolder.path)
 
             try Hdiutil.unmount(path: path)
         } catch {
