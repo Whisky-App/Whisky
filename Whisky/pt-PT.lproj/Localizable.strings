@@ -23,6 +23,7 @@
 "config.title.metal" = "Metal";
 "config.metalHud" = "Hud Metal";
 "config.metalTrace" = "Rastreio Metal";
+"config.retinaMode" = "Retina Mode";
 "config.metalTrace.info" = "Permite capturar a carga de trabalho da GPU no Xcode";
 "config.esync" = "ESync";
 "config.controlPanel" = "Open Control Panel";
@@ -49,6 +50,8 @@
 "create.title" = "Criar um novo Bottle";
 "create.name" = "Nome do Bottle:";
 "create.win" = "Versão do Windows:";
+"create.path" = "Bottle path:";
+"create.browse" = "Browse";
 "create.cancel" = "Cancelar";
 "create.create" = "Criar";
 "create.warning.emptyName" = "Name can't be empty";
