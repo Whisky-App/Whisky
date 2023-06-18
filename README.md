@@ -35,7 +35,7 @@ Translated on [Crowdin](https://crowdin.com/project/whisky).
 
 ### The direct download link for the toolkit doesn't work
 
-Make sure you're logged in to the Apple Developer website. If it still won't work use an [indirect link](https://developer.apple.com/download/all/?q=porting).
+Make sure you're logged in to the Apple Developer website. If it still won't work use an [indirect link](https://developer.apple.com/download/all/?q=game%20porting%20toolkit).
 
 ### Do I need to follow the steps in the toolkit's README?
 
