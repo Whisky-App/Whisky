@@ -62,7 +62,7 @@
 "rename.rename" = "Переименовать";
 
 "check.updates" = "Проверить наличие обновлений...";
-"kill.bottles" = "Kill All Bottles";
+"kill.bottles" = "Закрыть все бутылки";
 "open.logs" = "Открыть папку логов";
 
 "showAlertOnFirstLaunch.messageText" = "Вы хотите переместить Whisky в папку «Приложения»?";
