@@ -62,7 +62,7 @@
 "rename.rename" = "Yeniden Adlandır";
 
 "check.updates" = "Güncellemeleri Kontrol Et...";
-"kill.bottles" = "Kill All Bottles";
+"kill.bottles" = "Tüm Bottle'ları Sonlandır";
 "open.logs" = "Log Klasörünü Aç";
 
 "showAlertOnFirstLaunch.messageText" = "Whisky'yi Applications klasörüne taşımak ister misiniz?";
