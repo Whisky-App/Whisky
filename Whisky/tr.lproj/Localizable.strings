@@ -23,6 +23,7 @@
 "config.title.metal" = "Metal";
 "config.metalHud" = "Metal HUD";
 "config.metalTrace" = "Metal İzleme";
+"config.retinaMode" = "Retina Mode";
 "config.metalTrace.info" = "Xcode'da GPU iş yükünü yakalamak için kullanılır";
 "config.esync" = "ESync";
 "config.controlPanel" = "Kontrol Panelini Aç";
@@ -49,6 +50,8 @@
 "create.title" = "Yeni bir Bottle Oluştur";
 "create.name" = "Bottle Adı:";
 "create.win" = "Windows sürümü:";
+"create.path" = "Bottle path:";
+"create.browse" = "Browse";
 "create.cancel" = "İptal";
 "create.create" = "Oluştur";
 "create.warning.emptyName" = "İsim Boş Olamaz";
