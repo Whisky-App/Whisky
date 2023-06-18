@@ -23,6 +23,7 @@
 "config.title.metal" = "Metal";
 "config.metalHud" = "Metal 监视器";
 "config.metalTrace" = "Metal 性能分析";
+"config.retinaMode" = "Retina Mode";
 "config.metalTrace.info" = "允许你在 Xcode 中抓取 GPU 工作负载";
 "config.esync" = "ESync（增强同步）技术";
 "config.controlPanel" = "打开控制面板";
@@ -49,6 +50,8 @@
 "create.title" = "创建新的容器";
 "create.name" = "容器名称：";
 "create.win" = "Windows 版本：";
+"create.path" = "Bottle path:";
+"create.browse" = "Browse";
 "create.cancel" = "取消";
 "create.create" = "创建";
 "create.warning.emptyName" = "名称不能为空";
