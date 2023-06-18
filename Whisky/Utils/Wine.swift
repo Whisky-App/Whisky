@@ -122,12 +122,12 @@ class Wine {
                                   name: "CurrentBuild",
                                   type: .string)
     }
-    
+
     static func retinaMode(bottle: Bottle) async -> Bool {
         do {
             let output = try await queryRegistyKey(bottle: bottle,
                                                 key: #"HKCU\Software\Wine\Mac Driver"#,
-                                                    name: "RetinaMode",   
+                                                    name: "RetinaMode",
                                                         type: .string)
             return output == "y"
         } catch {
