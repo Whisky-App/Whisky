@@ -23,6 +23,7 @@
 "config.title.metal" = "Metal";
 "config.metalHud" = "Metal HUD";
 "config.metalTrace" = "Metal Trace";
+"config.retinaMode" = "Retina Mode";
 "config.metalTrace.info" = "Дозволяє вам відстежувати робоче навантаження GPU в Xcode";
 "config.esync" = "ESync";
 "config.controlPanel" = "Відкрити Панель управління";
@@ -49,6 +50,8 @@
 "create.title" = "Створити нову пляшку";
 "create.name" = "Назва пляшки:";
 "create.win" = "Версія Windows:";
+"create.path" = "Bottle path:";
+"create.browse" = "Browse";
 "create.cancel" = "Скасувати";
 "create.create" = "Створити";
 "create.warning.emptyName" = "Назва не може бути пустою";
