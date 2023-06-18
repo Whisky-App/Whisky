@@ -62,7 +62,7 @@
 "rename.rename" = "Omdøb";
 
 "check.updates" = "Tjek for Opdateringer...";
-"kill.bottles" = "Dræb Alle Bottles...";
+"kill.bottles" = "Kill All Bottles";
 "open.logs" = "Åbn Logmappe";
 
 "showAlertOnFirstLaunch.messageText" = "Vil du flytte Whisky til Applications mappen?";
