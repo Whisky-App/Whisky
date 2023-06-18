@@ -23,6 +23,7 @@
 "config.title.metal" = "Metal";
 "config.metalHud" = "Metal 抬頭顯示";
 "config.metalTrace" = "Metal 追蹤";
+"config.retinaMode" = "Retina Mode";
 "config.metalTrace.info" = "允許您在Xcode中捕獲GPU工作負載";
 "config.esync" = "ESync";
 "config.controlPanel" = "Open Control Panel";
@@ -49,6 +50,8 @@
 "create.title" = "建立一個新的容器";
 "create.name" = "容器名稱：";
 "create.win" = "Windows版本：";
+"create.path" = "Bottle path:";
+"create.browse" = "Browse";
 "create.cancel" = "取消";
 "create.create" = "建立";
 "create.warning.emptyName" = "名稱不能為空";
@@ -59,7 +62,7 @@
 "rename.rename" = "重新命名";
 
 "check.updates" = "檢查更新...";
-"kill.bottles" = "終止所有容器...";
+"kill.bottles" = "終止所有容器";
 "open.logs" = "開啟日誌資料夾";
 
 "showAlertOnFirstLaunch.messageText" = "您想要將Whisky移動到您的應用程式資料夾嗎？";

@@ -23,6 +23,7 @@
 "config.title.metal" = "Metal";
 "config.metalHud" = "Metal HUD";
 "config.metalTrace" = "Metal Jäljitin";
+"config.retinaMode" = "Retina Mode";
 "config.metalTrace.info" = "Mahdollistaa GPU työn nappaamisen Xcodessa";
 "config.esync" = "ESync";
 "config.controlPanel" = "Open Control Panel";
@@ -49,6 +50,8 @@
 "create.title" = "Luo uusi pullo";
 "create.name" = "Pullon nimi:";
 "create.win" = "Windows versio:";
+"create.path" = "Bottle path:";
+"create.browse" = "Browse";
 "create.cancel" = "Peru";
 "create.create" = "Luo";
 "create.warning.emptyName" = "Name can't be empty";
@@ -59,7 +62,7 @@
 "rename.rename" = "Uudelleen nimeä";
 
 "check.updates" = "Tarkista päivitykset...";
-"kill.bottles" = "Tapa kaikki pullot...";
+"kill.bottles" = "Tapa kaikki pullot";
 "open.logs" = "Avaa log kansio";
 
 "showAlertOnFirstLaunch.messageText" = "Haluatko siirtää Whiskyn Applikaatio-kansioon?";

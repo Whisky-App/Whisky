@@ -23,6 +23,7 @@
 "config.title.metal" = "Metal";
 "config.metalHud" = "Metal HUD";
 "config.metalTrace" = "Трассировка Metal";
+"config.retinaMode" = "Retina Mode";
 "config.metalTrace.info" = "Позволяет отслеживать рабочую нагрузку видеокарты через Xcode";
 "config.esync" = "ESync";
 "config.controlPanel" = "Open Control Panel";
@@ -49,6 +50,8 @@
 "create.title" = "Создать новую бутылку";
 "create.name" = "Название бутылки:";
 "create.win" = "Версия Windows:";
+"create.path" = "Bottle path:";
+"create.browse" = "Browse";
 "create.cancel" = "Отмена";
 "create.create" = "Создать";
 "create.warning.emptyName" = "Name can't be empty";
@@ -59,7 +62,7 @@
 "rename.rename" = "Переименовать";
 
 "check.updates" = "Проверить наличие обновлений...";
-"kill.bottles" = "Закрыть все бутылки...";
+"kill.bottles" = "Закрыть все бутылки";
 "open.logs" = "Открыть папку логов";
 
 "showAlertOnFirstLaunch.messageText" = "Вы хотите переместить Whisky в папку «Приложения»?";

@@ -19,13 +19,14 @@
 "button.deleteAlert.cancel" = "Anuluj";
 
 "config.winVersion" = "Wersja Windows";
-"config.buildVersion" = "Build Version";
+"config.buildVersion" = "Obecna wersja: ";
 "config.title.metal" = "Metal";
 "config.metalHud" = "Metal HUD";
 "config.metalTrace" = "Śledź Metal";
+"config.retinaMode" = "Retina Mode";
 "config.metalTrace.info" = "Umożliwia przechwytywanie obciążenia GPU w Xcode";
 "config.esync" = "ESync";
-"config.controlPanel" = "Open Control Panel";
+"config.controlPanel" = "Otwórz Panel Sterowania";
 "config.regedit" = "Otwórz edytor rejestru";
 "config.winecfg" = "Otwórz konfigurację Wine";
 
@@ -49,6 +50,8 @@
 "create.title" = "Utwórz nową butelkę";
 "create.name" = "Nazwa butelki:";
 "create.win" = "Wersja Windows:";
+"create.path" = "Bottle path:";
+"create.browse" = "Browse";
 "create.cancel" = "Anuluj";
 "create.create" = "Utwórz";
 "create.warning.emptyName" = "Nazwa nie może być pusta";
@@ -59,7 +62,7 @@
 "rename.rename" = "Zmień nazwę";
 
 "check.updates" = "Sprawdź dostępność aktualizacji...";
-"kill.bottles" = "Zakończ wszystkie butelki...";
+"kill.bottles" = "Zakończ wszystkie butelki";
 "open.logs" = "Otwórz folder z logami";
 
 "showAlertOnFirstLaunch.messageText" = "Czy chcesz przenieść Whisky do folderu Aplikacje?";
