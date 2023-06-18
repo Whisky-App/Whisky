@@ -23,6 +23,7 @@
 "config.title.metal" = "Metal";
 "config.metalHud" = "Metal HUD";
 "config.metalTrace" = "Metal Trace";
+"config.retinaMode" = "Retina Mode";
 "config.metalTrace.info" = "Allows you to capture GPU workload in Xcode";
 "config.esync" = "ESync";
 "config.controlPanel" = "Open Control Panel";

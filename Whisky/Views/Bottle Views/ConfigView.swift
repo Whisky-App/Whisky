@@ -14,6 +14,8 @@ struct ConfigView: View {
     @State var canChangeWinVersion: Bool = true
     @State var canChangeBuildVersion: Bool = false
     @State var winVersionLoaded: Bool = false
+    @State var retinaMode: Bool = false
+    @State var canChangeRetinaMode: Bool = false
 
     init(bottle: Binding<Bottle>) {
         self._bottle = bottle
@@ -63,6 +65,24 @@ struct ConfigView: View {
                     Toggle(isOn: $bottle.settings.metalTrace) {
                         Text("config.metalTrace")
                         Text("config.metalTrace.info")
+                    }
+                    if canChangeRetinaMode {
+                        Toggle(isOn: $retinaMode) {
+                            Text("config.retinaMode")
+                        }
+                        .onChange(of: retinaMode) { _ in
+                            Task(priority: .userInitiated) {
+                                await Wine.changeRetinaMode(bottle: bottle, retinaMode: retinaMode)
+                            }
+                        }
+                    } else {
+                        HStack {
+                            Text("config.retinaMode")
+                            Spacer()
+                            ProgressView()
+                                .progressViewStyle(.circular)
+                                .controlSize(.small)
+                        }
                     }
                 }
                 Section {
@@ -117,6 +137,10 @@ struct ConfigView: View {
                 } catch {
                     print(error)
                 }
+            }
+            Task(priority: .background) { @MainActor in
+                retinaMode = await Wine.retinaMode(bottle: bottle)
+                canChangeRetinaMode = true
             }
         }
         .onChange(of: windowsVersion) { newValue in
