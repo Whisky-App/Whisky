@@ -123,6 +123,30 @@ class Wine {
                                   type: .string)
     }
 
+    static func retinaMode(bottle: Bottle) async -> Bool {
+        do {
+            let output = try await queryRegistyKey(bottle: bottle,
+                                                key: #"HKCU\Software\Wine\Mac Driver"#,
+                                                    name: "RetinaMode",
+                                                        type: .string)
+            return output == "y"
+        } catch {
+            return false
+        }
+    }
+
+    static func changeRetinaMode(bottle: Bottle, retinaMode: Bool) async {
+        do {
+            try await addRegistyKey(bottle: bottle,
+                                    key: #"HKCU\Software\Wine\Mac Driver"#,
+                                    name: "RetinaMode",
+                                    data: retinaMode ? "y" : "n",
+                                    type: .string)
+        } catch {
+            print("Failed to change RetinaMode")
+        }
+    }
+
     @discardableResult
     static func control(bottle: Bottle) async throws -> String {
         return try await run(["control"], bottle: bottle)
