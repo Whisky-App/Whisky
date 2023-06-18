@@ -62,7 +62,7 @@
 "rename.rename" = "Uudelleen nimeä";
 
 "check.updates" = "Tarkista päivitykset...";
-"kill.bottles" = "Kill All Bottles";
+"kill.bottles" = "Tapa kaikki pullot";
 "open.logs" = "Avaa log kansio";
 
 "showAlertOnFirstLaunch.messageText" = "Haluatko siirtää Whiskyn Applikaatio-kansioon?";
