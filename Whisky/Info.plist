@@ -28,5 +28,7 @@
 			</dict>
 		</dict>
 	</array>
+	<key>WineBinaryVersion</key>
+	<integer>1</integer>
 </dict>
 </plist>
