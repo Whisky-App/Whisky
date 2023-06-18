@@ -62,7 +62,7 @@
 "rename.rename" = "重命名";
 
 "check.updates" = "检查更新...";
-"kill.bottles" = "停止所有容器...";
+"kill.bottles" = "Kill All Bottles";
 "open.logs" = "打开日志文件夹";
 
 "showAlertOnFirstLaunch.messageText" = "你想要将 Whisky 移动到你的应用程序文件夹吗？";
