@@ -40,3 +40,9 @@ Make sure you're logged in to the Apple Developer website. If it still won't wor
 ### Do I need to follow the steps in the toolkit's README?
 
 No, you don't, in fact you shouldn't follow them.
+
+### Should I use CrossOver or Whisky?
+
+If you want to play DirectX 11 & 12 titles, right now, Whisky has mostly better compatibility. If you want to play anything based on Vulkan, DirectX 10, 9... use CrossOver. 
+
+*Whisky doesn't exist without CrossOver. This project is not meant to outcompete it or surpass it in any way. Please continue to support the fantastic work of CodeWeavers.*
