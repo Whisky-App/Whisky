@@ -62,7 +62,7 @@
 "rename.rename" = "이름 변경";
 
 "check.updates" = "업데이트 확인...";
-"kill.bottles" = "Kill All Bottles";
+"kill.bottles" = "모든 Bottle 종료하기";
 "open.logs" = "Log 폴더 열기";
 
 "showAlertOnFirstLaunch.messageText" = "Whisky를 애플리케이션 폴더로 옮기시겠습니까?";
