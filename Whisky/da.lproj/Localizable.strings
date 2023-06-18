@@ -23,6 +23,7 @@
 "config.title.metal" = "Metal";
 "config.metalHud" = "Metal HUD";
 "config.metalTrace" = "Metal Trace";
+"config.retinaMode" = "Retina Mode";
 "config.metalTrace.info" = "Giver dig mulighed for at fange GPU-workload i Xcode";
 "config.esync" = "ESync";
 "config.controlPanel" = "Åbn Kontrolpanel";
@@ -49,6 +50,8 @@
 "create.title" = "Opret en ny bottle";
 "create.name" = "Bottle navn:";
 "create.win" = "Windows version:";
+"create.path" = "Bottle path:";
+"create.browse" = "Browse";
 "create.cancel" = "Annuller";
 "create.create" = "Opret";
 "create.warning.emptyName" = "Navn må ikke være tomt";
