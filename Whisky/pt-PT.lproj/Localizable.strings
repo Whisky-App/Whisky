@@ -62,7 +62,7 @@
 "rename.rename" = "Renomear";
 
 "check.updates" = "Verificar Atualizações...";
-"kill.bottles" = "Encerrar Todos os Bottles...";
+"kill.bottles" = "Kill All Bottles";
 "open.logs" = "Abrir Pasta de Logs";
 
 "showAlertOnFirstLaunch.messageText" = "Você gostaria de mover o Whisky para a pasta de Aplicativos?";
