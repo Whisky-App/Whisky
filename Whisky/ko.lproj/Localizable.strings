@@ -23,6 +23,7 @@
 "config.title.metal" = "Metal";
 "config.metalHud" = "Metal HUD";
 "config.metalTrace" = "Metal Trace";
+"config.retinaMode" = "Retina Mode";
 "config.metalTrace.info" = "Xcode에서 GPU 워크로드를 확인할 수 있습니다.";
 "config.esync" = "ESync";
 "config.controlPanel" = "제어판 열기";
@@ -49,6 +50,8 @@
 "create.title" = "새로운 Bottle 생성";
 "create.name" = "Bottle 이름:";
 "create.win" = "Windows 버전:";
+"create.path" = "Bottle path:";
+"create.browse" = "Browse";
 "create.cancel" = "취소";
 "create.create" = "생성";
 "create.warning.emptyName" = "이름은 빈칸일 수 없습니다";
