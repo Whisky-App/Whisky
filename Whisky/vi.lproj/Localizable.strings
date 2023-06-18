@@ -62,7 +62,7 @@
 "rename.rename" = "Đổi tên";
 
 "check.updates" = "Kiểm tra Cập nhật...";
-"kill.bottles" = "Dừng tất cả Bottle...";
+"kill.bottles" = "Kill All Bottles";
 "open.logs" = "Mở Folder Log";
 
 "showAlertOnFirstLaunch.messageText" = "Bạn có muốn chuyển Whisky tới folder Applications?";
