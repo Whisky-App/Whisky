@@ -23,6 +23,7 @@
 "config.title.metal" = "Metal";
 "config.metalHud" = "Metal HUD";
 "config.metalTrace" = "Metal Trace";
+"config.retinaMode" = "Retina Mode";
 "config.metalTrace.info" = "Cho phép lấy thông tin GPU trong Xcode";
 "config.esync" = "ESync";
 "config.controlPanel" = "Open Control Panel";
@@ -49,6 +50,8 @@
 "create.title" = "Tạo bottle mới";
 "create.name" = "Tên Bottle:";
 "create.win" = "Phiển bản Windows:";
+"create.path" = "Bottle path:";
+"create.browse" = "Browse";
 "create.cancel" = "Huỷ";
 "create.create" = "Tạo";
 "create.warning.emptyName" = "Name can't be empty";
@@ -59,7 +62,7 @@
 "rename.rename" = "Đổi tên";
 
 "check.updates" = "Kiểm tra Cập nhật...";
-"kill.bottles" = "Dừng tất cả Bottle...";
+"kill.bottles" = "Dừng tất cả Bottle";
 "open.logs" = "Mở Folder Log";
 
 "showAlertOnFirstLaunch.messageText" = "Bạn có muốn chuyển Whisky tới folder Applications?";

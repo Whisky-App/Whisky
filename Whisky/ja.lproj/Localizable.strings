@@ -23,6 +23,7 @@
 "config.title.metal" = "Metal";
 "config.metalHud" = "Metal HUD";
 "config.metalTrace" = "Metal トレース";
+"config.retinaMode" = "Retina Mode";
 "config.metalTrace.info" = "Xcode で GPU ワークロードをキャプチャできるようにします";
 "config.esync" = "ESync";
 "config.controlPanel" = "コントロール パネルを開く";
@@ -49,6 +50,8 @@
 "create.title" = "新しい Bottle を作成";
 "create.name" = "Bottle 名:";
 "create.win" = "Windows バージョン:";
+"create.path" = "Bottle path:";
+"create.browse" = "Browse";
 "create.cancel" = "キャンセル";
 "create.create" = "作成";
 "create.warning.emptyName" = "名前を空にすることはできません";
@@ -59,7 +62,7 @@
 "rename.rename" = "変更";
 
 "check.updates" = "更新を確認...";
-"kill.bottles" = "すべての Bottle を終了...";
+"kill.bottles" = "すべての Bottle を終了";
 "open.logs" = "ログフォルダを開く";
 
 "showAlertOnFirstLaunch.messageText" = "Whisky を「アプリケーション」フォルダに移動しますか？";

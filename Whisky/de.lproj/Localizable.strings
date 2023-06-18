@@ -23,6 +23,7 @@
 "config.title.metal" = "Metal";
 "config.metalHud" = "Metal HUD";
 "config.metalTrace" = "Metal Trace";
+"config.retinaMode" = "Retina Mode";
 "config.metalTrace.info" = "Erlaub es dir, den GPU-Workload in Xcode aufzunehmen.";
 "config.esync" = "ESync";
 "config.controlPanel" = "Open Control Panel";
@@ -49,6 +50,8 @@
 "create.title" = "Erstelle eine neue Bottle";
 "create.name" = "Bottle-Name:";
 "create.win" = "Windows version:";
+"create.path" = "Bottle path:";
+"create.browse" = "Browse";
 "create.cancel" = "Abbrechen";
 "create.create" = "Erstellen";
 "create.warning.emptyName" = "Der Name darf nicht leer sein";
@@ -59,7 +62,7 @@
 "rename.rename" = "Umbenennen";
 
 "check.updates" = "Nach Updates suchen...";
-"kill.bottles" = "Beende sofort alle Bottles...";
+"kill.bottles" = "Beende sofort alle Bottles";
 "open.logs" = "Log-Folder öffnen";
 
 "showAlertOnFirstLaunch.messageText" = "Möchtest du Whisky in deinen Programm-Ordner legen?";

@@ -19,13 +19,14 @@
 "button.deleteAlert.cancel" = "İptal";
 
 "config.winVersion" = "Windows Sürümü";
-"config.buildVersion" = "Build Version";
+"config.buildVersion" = "Yapı Sürümü";
 "config.title.metal" = "Metal";
 "config.metalHud" = "Metal HUD";
 "config.metalTrace" = "Metal İzleme";
+"config.retinaMode" = "Retina Mode";
 "config.metalTrace.info" = "Xcode'da GPU iş yükünü yakalamak için kullanılır";
 "config.esync" = "ESync";
-"config.controlPanel" = "Open Control Panel";
+"config.controlPanel" = "Kontrol Panelini Aç";
 "config.regedit" = "Kayıt Düzenleyicisi'ni Aç";
 "config.winecfg" = "Wine Yapılandırmasını Aç";
 
@@ -49,6 +50,8 @@
 "create.title" = "Yeni bir Bottle Oluştur";
 "create.name" = "Bottle Adı:";
 "create.win" = "Windows sürümü:";
+"create.path" = "Bottle path:";
+"create.browse" = "Browse";
 "create.cancel" = "İptal";
 "create.create" = "Oluştur";
 "create.warning.emptyName" = "İsim Boş Olamaz";
@@ -59,7 +62,7 @@
 "rename.rename" = "Yeniden Adlandır";
 
 "check.updates" = "Güncellemeleri Kontrol Et...";
-"kill.bottles" = "Tüm Bottle'ları Sonlandır...";
+"kill.bottles" = "Tüm Bottle'ları Sonlandır";
 "open.logs" = "Log Klasörünü Aç";
 
 "showAlertOnFirstLaunch.messageText" = "Whisky'yi Applications klasörüne taşımak ister misiniz?";

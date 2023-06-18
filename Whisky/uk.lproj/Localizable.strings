@@ -19,14 +19,15 @@
 "button.deleteAlert.cancel" = "Скасувати";
 
 "config.winVersion" = "Версія Windows";
-"config.buildVersion" = "Build Version";
+"config.buildVersion" = "Версія програми";
 "config.title.metal" = "Metal";
 "config.metalHud" = "Metal HUD";
 "config.metalTrace" = "Metal Trace";
+"config.retinaMode" = "Retina Mode";
 "config.metalTrace.info" = "Дозволяє вам відстежувати робоче навантаження GPU в Xcode";
 "config.esync" = "ESync";
-"config.controlPanel" = "Open Control Panel";
-"config.regedit" = "Open Registry Editor";
+"config.controlPanel" = "Відкрити Панель управління";
+"config.regedit" = "Відкрити редактор реєстру";
 "config.winecfg" = "Відкрити налаштування Wine";
 
 "program.title" = "Встановлені програми";
@@ -49,17 +50,19 @@
 "create.title" = "Створити нову пляшку";
 "create.name" = "Назва пляшки:";
 "create.win" = "Версія Windows:";
+"create.path" = "Bottle path:";
+"create.browse" = "Browse";
 "create.cancel" = "Скасувати";
 "create.create" = "Створити";
-"create.warning.emptyName" = "Name can't be empty";
-"create.warning.alreadyExistsName" = "A bottle with this name already exists";
+"create.warning.emptyName" = "Назва не може бути пустою";
+"create.warning.alreadyExistsName" = "Пляшка з таким ім'ям вже існує";
 
 "rename.title" = "Перейменувати пляшку";
 "rename.name" = "Нова назва:";
 "rename.rename" = "Перейменувати";
 
 "check.updates" = "Перевірити наявність оновлень...";
-"kill.bottles" = "Закрити всі пляшки...";
+"kill.bottles" = "Закрити всі пляшки";
 "open.logs" = "Відкрити папку журналів";
 
 "showAlertOnFirstLaunch.messageText" = "Хотіли б ви перемістити Whisky у вашу папку Застосунки?";
