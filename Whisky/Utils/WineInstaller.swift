@@ -29,6 +29,10 @@ class WineInstaller {
 
             if !FileManager.default.fileExists(atPath: whiskySupportFolder.path) {
                 try FileManager.default.createDirectory(at: whiskySupportFolder, withIntermediateDirectories: true)
+            } else {
+                // Recreate it
+                try FileManager.default.removeItem(at: whiskySupportFolder)
+                try FileManager.default.createDirectory(at: whiskySupportFolder, withIntermediateDirectories: true)
             }
 
             try Tar.untar(tarBall: libraryArchive, toURL: whiskySupportFolder)
