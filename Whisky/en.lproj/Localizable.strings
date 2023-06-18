@@ -62,7 +62,7 @@
 "rename.rename" = "Rename";
 
 "check.updates" = "Check for Updates...";
-"kill.bottles" = "Kill All Bottles...";
+"kill.bottles" = "Kill All Bottles";
 "open.logs" = "Open Logs Folder";
 
 "showAlertOnFirstLaunch.messageText" = "Would you like to move Whisky to your Applications folder?";
