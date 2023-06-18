@@ -17,6 +17,11 @@
 "button.deleteAlert.info" = "Are you sure you want to delete this bottle? This action is permanent.";
 "button.deleteAlert.delete" = "Delete";
 "button.deleteAlert.cancel" = "Cancel";
+"button.deleteBottleOnlyFromList" = "Remove from list";
+"button.deleteAlertFromList.msg" = "Remove %@ from list?";
+"button.deleteBottleOnlyFromList.info" = "Are you sure you want to remove this bottle from the list?";
+"button.deleteBottleOnlyFromList.delete" = "Remove";
+"button.deleteBottleOnlyFromList.cancel" = "Cancel";
 
 "config.winVersion" = "Windows Version";
 "config.buildVersion" = "Build Version";

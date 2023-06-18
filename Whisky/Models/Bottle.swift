@@ -129,6 +129,16 @@ public class Bottle: Hashable {
     }
 
     @MainActor
+    func deleteOnlyFromList() {
+        do {
+            try FileManager.default.removeItem(at: settings.settingsUrl)
+            BottleVM.shared.loadBottles()
+        } catch {
+            print("Failed to delete bottle")
+        }
+    }
+    
+    @MainActor
     func rename(newName: String) {
         let oldPlist = settings.settingsUrl
         let newPlist = settings.settingsUrl

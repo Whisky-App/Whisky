@@ -73,6 +73,9 @@ struct BottleListEntry: View {
                 Button("button.deleteBottle") {
                     showDeleteAlert(bottle: bottle)
                 }
+                Button("button.deleteBottleOnlyFromList") {
+                    showDeleteAlert(bottle: bottle)
+                }
             }
     }
 
@@ -91,6 +94,25 @@ struct BottleListEntry: View {
         if response == .alertFirstButtonReturn {
             Task(priority: .userInitiated) {
                 await bottle.delete()
+            }
+        }
+    }
+    
+    func showDeleteAlertOnlyFromList(bottle: Bottle) {
+        let alert = NSAlert()
+        alert.messageText = String(format: String(localized: "button.deleteAlertFromList.msg"),
+                                   bottle.name)
+        alert.informativeText = String(localized: "button.deleteBottleOnlyFromList.info")
+        alert.alertStyle = .warning
+        let delete = alert.addButton(withTitle: String(localized: "button.deleteBottleOnlyFromList.delete"))
+        delete.hasDestructiveAction = false
+        alert.addButton(withTitle: String(localized: "button.deleteBottleOnlyFromList.cancel"))
+
+        let response = alert.runModal()
+
+        if response == .alertFirstButtonReturn {
+            Task(priority: .userInitiated) {
+                await bottle.deleteOnlyFromList()
             }
         }
     }
