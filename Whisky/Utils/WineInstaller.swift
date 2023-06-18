@@ -32,8 +32,24 @@ class WineInstaller {
             }
 
             try Tar.untar(tarBall: libraryArchive, toURL: whiskySupportFolder)
+
+            // Write the build version into the Wine directory
+            let buildVersion = Bundle.main.infoDictionary?["CFBundleVersion"] as? String ?? "0"
+            let buildVersionFile = whiskySupportFolder.appendingPathComponent("Libraries")
+                .appendingPathComponent("build_version")
+            try buildVersion.write(to: buildVersionFile, atomically: true, encoding: .utf8)
         } catch {
             print("Failed to install Wine: \(error)")
+        }
+    }
+
+    static func updateWine() {
+        // Read the build version from the Wine directory
+        let buildVersionFile = WineInstaller.libraryFolder.appendingPathComponent("build_version")
+        let buildVersion = try? String(contentsOf: buildVersionFile, encoding: .utf8)
+
+        if buildVersion != Bundle.main.infoDictionary?["CFBundleVersion"] as? String {
+            WineInstaller.installWine()
         }
     }
 }
