@@ -35,7 +35,6 @@
 		6E5197D229D7202100CF655E /* BottleSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E5197D129D7202100CF655E /* BottleSettings.swift */; };
 		6E5D417A2A39021B0038ABEA /* URLExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E5D41792A39021B0038ABEA /* URLExtensions.swift */; };
 		6E5E23E82A30D59600ABC192 /* GPTK.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E5E23E72A30D59600ABC192 /* GPTK.swift */; };
-		6E5E23EA2A30D6C400ABC192 /* GPTKInstallView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E5E23E92A30D6C400ABC192 /* GPTKInstallView.swift */; };
 		6E5E23EC2A30DBCA00ABC192 /* Hdiutil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E5E23EB2A30DBCA00ABC192 /* Hdiutil.swift */; };
 		6E6915452A3265BB0085BBB7 /* Logger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E6915442A3265BB0085BBB7 /* Logger.swift */; };
 		6E8A3B3E2A3613F400D19632 /* PortableExecutable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E8A3B3D2A3613F400D19632 /* PortableExecutable.swift */; };
@@ -43,6 +42,7 @@
 		6EA2D47E29DDAE5E00C84668 /* BottleRenameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EA2D47D29DDAE5E00C84668 /* BottleRenameView.swift */; };
 		6EA2D48529DF130F00C84668 /* ProgramSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EA2D48429DF130F00C84668 /* ProgramSettings.swift */; };
 		6EF557962A40B8D1001A4F09 /* WineDownload.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EF557952A40B8D1001A4F09 /* WineDownload.swift */; };
+		6EF557982A410599001A4F09 /* SetupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EF557972A410599001A4F09 /* SetupView.swift */; };
 		6EFE9ADF2A3DA5E1002232AB /* Ditto.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EFE9ADE2A3DA5E1002232AB /* Ditto.swift */; };
 		EEA5A2462A31DD65008274AE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEA5A2452A31DD65008274AE /* AppDelegate.swift */; };
 /* End PBXBuildFile section */
@@ -81,7 +81,6 @@
 		6E5197D129D7202100CF655E /* BottleSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottleSettings.swift; sourceTree = "<group>"; };
 		6E5D41792A39021B0038ABEA /* URLExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLExtensions.swift; sourceTree = "<group>"; };
 		6E5E23E72A30D59600ABC192 /* GPTK.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GPTK.swift; sourceTree = "<group>"; };
-		6E5E23E92A30D6C400ABC192 /* GPTKInstallView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GPTKInstallView.swift; sourceTree = "<group>"; };
 		6E5E23EB2A30DBCA00ABC192 /* Hdiutil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Hdiutil.swift; sourceTree = "<group>"; };
 		6E62F24D29E0A58A0098FEFD /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/Localizable.strings; sourceTree = "<group>"; };
 		6E62F24E29E0A58E0098FEFD /* pl */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = pl; path = pl.lproj/Localizable.strings; sourceTree = "<group>"; };
@@ -97,6 +96,7 @@
 		6EA2D47D29DDAE5E00C84668 /* BottleRenameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottleRenameView.swift; sourceTree = "<group>"; };
 		6EA2D48429DF130F00C84668 /* ProgramSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgramSettings.swift; sourceTree = "<group>"; };
 		6EF557952A40B8D1001A4F09 /* WineDownload.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WineDownload.swift; sourceTree = "<group>"; };
+		6EF557972A410599001A4F09 /* SetupView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetupView.swift; sourceTree = "<group>"; };
 		6EFE9ADE2A3DA5E1002232AB /* Ditto.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Ditto.swift; sourceTree = "<group>"; };
 		AB8570C22A34FA4000BFBBE0 /* vi */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = vi; path = vi.lproj/Localizable.strings; sourceTree = "<group>"; };
 		B584FD842A3376E0009B00F4 /* zh-Hant */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hant"; path = "zh-Hant.lproj/Localizable.strings"; sourceTree = "<group>"; };
@@ -188,7 +188,7 @@
 				6E40495529CCA19C006E3F1B /* WhiskyApp.swift */,
 				6E40495729CCA19C006E3F1B /* ContentView.swift */,
 				6E064B1329DD331F00D9A2D2 /* SparkleView.swift */,
-				6E5E23E92A30D6C400ABC192 /* GPTKInstallView.swift */,
+				6EF557972A410599001A4F09 /* SetupView.swift */,
 				6E50D98429CDF25B008C39F6 /* BottleCreationView.swift */,
 				6EA2D47D29DDAE5E00C84668 /* BottleRenameView.swift */,
 				6E355E5D29D7D85D002D83BE /* ProgramView.swift */,
@@ -361,7 +361,7 @@
 				EEA5A2462A31DD65008274AE /* AppDelegate.swift in Sources */,
 				6E40495829CCA19C006E3F1B /* ContentView.swift in Sources */,
 				6E355E5C29D7830C002D83BE /* InfoView.swift in Sources */,
-				6E5E23EA2A30D6C400ABC192 /* GPTKInstallView.swift in Sources */,
+				6EF557982A410599001A4F09 /* SetupView.swift in Sources */,
 				6E5E23EC2A30DBCA00ABC192 /* Hdiutil.swift in Sources */,
 				6E50D98029CD0850008C39F6 /* Wine.swift in Sources */,
 				6E5197D229D7202100CF655E /* BottleSettings.swift in Sources */,
