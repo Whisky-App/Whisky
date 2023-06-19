@@ -41,8 +41,8 @@
 "info.wine" = "Wine 버전";
 "info.win" = "Windows 버전";
 
-"gptalert.init" = "Game Porting Toolkit DMG를 끌어다 놓으세요";
-"gptalert.message" = "GPT에서 오류가 발생했습니다!";
+"gptkalert.init" = "Game Porting Toolkit DMG를 끌어다 놓으세요";
+"gptkalert.message" = "GPTK에서 오류가 발생했습니다!";
 
 "alert.message" = "프로그램을 여는데 실패했습니다!";
 "alert.info" = "열기 실패";

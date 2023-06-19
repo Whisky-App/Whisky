@@ -41,8 +41,8 @@
 "info.wine" = "Wine versio";
 "info.win" = "Windows versio";
 
-"gptalert.init" = "Vedä ja pudota Game Porting Toolkit DMG";
-"gptalert.message" = "GPT ajautui virheeseen!";
+"gptkalert.init" = "Vedä ja pudota Game Porting Toolkit DMG";
+"gptkalert.message" = "GPTK ajautui virheeseen!";
 
 "alert.message" = "Ohjelman käynnistäminen epäonnistui!";
 "alert.info" = "Avaaminen epäonnistui";

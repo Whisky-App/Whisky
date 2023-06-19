@@ -41,8 +41,8 @@
 "info.wine" = "Versión de Wine:";
 "info.win" = "Versión de Windows:";
 
-"gptalert.init" = "Arrastra y suelta el archivo DMG de Gaming Porting Toolkit";
-"gptalert.message" = "Gaming Porting Toolkit encontró un error!";
+"gptkalert.init" = "Arrastra y suelta el archivo DMG de Gaming Porting Toolkit";
+"gptkalert.message" = "GPTK encontró un error!";
 
 "alert.message" = "¡Error al abrir el programa!";
 "alert.info" = "No se pudo abrir";

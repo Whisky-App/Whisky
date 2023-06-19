@@ -41,8 +41,8 @@
 "info.wine" = "Phiên bản Wine";
 "info.win" = "Phiên bản Windows";
 
-"gptalert.init" = "Kéo thả file DMG của Game Porting Toolkit";
-"gptalert.message" = "Lỗi file GPT!";
+"gptkalert.init" = "Kéo thả file DMG của Game Porting Toolkit";
+"gptkalert.message" = "Lỗi file GPTK!";
 
 "alert.message" = "Không thể mở chương trình này!";
 "alert.info" = "Không thể mỏ";

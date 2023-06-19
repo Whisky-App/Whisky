@@ -41,8 +41,8 @@
 "info.wine" = "Versão do Wine";
 "info.win" = "Versão do Windows";
 
-"gptalert.init" = "Arraste e solte o arquivo DMG do Game Porting Toolkit";
-"gptalert.message" = "O GPT encontrou um erro!";
+"gptkalert.init" = "Arraste e solte o arquivo DMG do Game Porting Toolkit";
+"gptkalert.message" = "O GPTK encontrou um erro!";
 
 "alert.message" = "Falha ao abrir o programa!";
 "alert.info" = "Falha ao abrir";

@@ -41,8 +41,8 @@
 "info.wine" = "Wine バージョン";
 "info.win" = "Windows バージョン";
 
-"gptalert.init" = "Game Porting Toolkit の DMG ファイルをドラッグ & ドロップしてください";
-"gptalert.message" = "GPT でエラーが発生しました！";
+"gptkalert.init" = "Game Porting Toolkit の DMG ファイルをドラッグ & ドロップしてください";
+"gptkalert.message" = "GPTK でエラーが発生しました！";
 
 "alert.message" = "プログラムの起動に失敗しました！";
 "alert.info" = "起動に失敗しました";

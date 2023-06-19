@@ -41,8 +41,8 @@
 "info.wine" = "Wine版本";
 "info.win" = "Windows版本";
 
-"gptalert.init" = "將 Game Porting Toolkit 的 DMG 文件拖到這裡";
-"gptalert.message" = "GPT遇到了一個錯誤！";
+"gptkalert.init" = "將 Game Porting Toolkit 的 DMG 文件拖到這裡";
+"gptkalert.message" = "GPTK遇到了一個錯誤！";
 
 "alert.message" = "無法開啟程式！";
 "alert.info" = "開啟失敗";
