@@ -23,7 +23,7 @@
 "config.title.metal" = "Metal";
 "config.metalHud" = "Metal HUD";
 "config.metalTrace" = "Śledź Metal";
-"config.retinaMode" = "Retina Mode";
+"config.retinaMode" = "Tryb Retina";
 "config.metalTrace.info" = "Umożliwia przechwytywanie obciążenia GPU w Xcode";
 "config.esync" = "ESync";
 "config.controlPanel" = "Otwórz Panel Sterowania";
@@ -50,8 +50,8 @@
 "create.title" = "Utwórz nową butelkę";
 "create.name" = "Nazwa butelki:";
 "create.win" = "Wersja Windows:";
-"create.path" = "Bottle path:";
-"create.browse" = "Browse";
+"create.path" = "Ścieżka butelki:";
+"create.browse" = "Przeglądaj";
 "create.cancel" = "Anuluj";
 "create.create" = "Utwórz";
 "create.warning.emptyName" = "Nazwa nie może być pusta";
