@@ -42,7 +42,6 @@
 		6E8A3B402A36140300D19632 /* ResourceSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E8A3B3F2A36140300D19632 /* ResourceSection.swift */; };
 		6EA2D47E29DDAE5E00C84668 /* BottleRenameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EA2D47D29DDAE5E00C84668 /* BottleRenameView.swift */; };
 		6EA2D48529DF130F00C84668 /* ProgramSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EA2D48429DF130F00C84668 /* ProgramSettings.swift */; };
-		6ED5B6132A3CABDF00B750B2 /* Libraries.tar.gz in Resources */ = {isa = PBXBuildFile; fileRef = 6ED5B6122A3CABDF00B750B2 /* Libraries.tar.gz */; };
 		6EF557962A40B8D1001A4F09 /* WineDownload.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EF557952A40B8D1001A4F09 /* WineDownload.swift */; };
 		6EFE9ADF2A3DA5E1002232AB /* Ditto.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EFE9ADE2A3DA5E1002232AB /* Ditto.swift */; };
 		EEA5A2462A31DD65008274AE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEA5A2452A31DD65008274AE /* AppDelegate.swift */; };
@@ -96,7 +95,6 @@
 		6E8A3B3F2A36140300D19632 /* ResourceSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResourceSection.swift; sourceTree = "<group>"; };
 		6EA2D47D29DDAE5E00C84668 /* BottleRenameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottleRenameView.swift; sourceTree = "<group>"; };
 		6EA2D48429DF130F00C84668 /* ProgramSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgramSettings.swift; sourceTree = "<group>"; };
-		6ED5B6122A3CABDF00B750B2 /* Libraries.tar.gz */ = {isa = PBXFileReference; lastKnownFileType = archive.gzip; name = Libraries.tar.gz; path = Whisky/Libraries.tar.gz; sourceTree = "<group>"; };
 		6EF557952A40B8D1001A4F09 /* WineDownload.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WineDownload.swift; sourceTree = "<group>"; };
 		6EFE9ADE2A3DA5E1002232AB /* Ditto.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Ditto.swift; sourceTree = "<group>"; };
 		AB8570C22A34FA4000BFBBE0 /* vi */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = vi; path = vi.lproj/Localizable.strings; sourceTree = "<group>"; };
@@ -144,7 +142,6 @@
 		6E40494929CCA19C006E3F1B = {
 			isa = PBXGroup;
 			children = (
-				6ED5B6122A3CABDF00B750B2 /* Libraries.tar.gz */,
 				6E40495429CCA19C006E3F1B /* Whisky */,
 				6E40495329CCA19C006E3F1B /* Products */,
 			);
@@ -325,7 +322,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				6E355E4F29D74DE0002D83BE /* Localizable.strings in Resources */,
-				6ED5B6132A3CABDF00B750B2 /* Libraries.tar.gz in Resources */,
 				6E40495D29CCA19C006E3F1B /* Preview Assets.xcassets in Resources */,
 				6E40495A29CCA19C006E3F1B /* Assets.xcassets in Resources */,
 			);
