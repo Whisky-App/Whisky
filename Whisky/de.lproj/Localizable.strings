@@ -41,8 +41,8 @@
 "info.wine" = "Wine Version";
 "info.win" = "Windows Version";
 
-"gptalert.init" = "Ziehe das Game-Porting-Toolkit-DMG-Laufwerk hier hinein";
-"gptalert.message" = "Bei GPT ist ein Fehler aufgetreten.";
+"gptkalert.init" = "Ziehe das Game-Porting-Toolkit-DMG-Laufwerk hier hinein";
+"gptkalert.message" = "Bei GPTK ist ein Fehler aufgetreten.";
 
 "alert.message" = "Das öffnen des Programms ist fehlgeschlagen.";
 "alert.info" = "Öffen fehlgeschlagen";

@@ -37,8 +37,8 @@
 "info.wine" = "Wine Versie";
 "info.win" = "Windows Versie";
 
-"gptalert.init" = "Sleep en laat los de Game Porting Toolkit DMG";
-"gptalert.message" = "GPT heeft een fout aangetroffen!";
+"gptkalert.init" = "Sleep en laat los de Game Porting Toolkit DMG";
+"gptkalert.message" = "GPTK heeft een fout aangetroffen!";
 
 "alert.message" = "Kan het programma niet openen!";
 "alert.info" = "Niet geslaagd te openen";

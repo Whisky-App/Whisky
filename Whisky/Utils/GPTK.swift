@@ -1,5 +1,5 @@
 //
-//  GPT.swift
+//  GPTK.swift
 //  Whisky
 //
 //  Created by Isaac Marovitz on 07/06/2023.
@@ -8,9 +8,9 @@
 import Foundation
 import AppKit
 
-// GPT = Game Porting Toolkit
-class GPT {
-    static func isGPTInstalled() -> Bool {
+// GPTK = Game Porting Toolkit
+class GPTK {
+    static func isGPTKInstalled() -> Bool {
         let libFolder: URL = WineInstaller.libraryFolder
             .appendingPathComponent("Wine")
             .appendingPathComponent("lib")
@@ -56,9 +56,9 @@ class GPT {
         }
     }
 
-    static func gptError(error: String) {
+    static func gptkError(error: String) {
         let alert = NSAlert()
-        alert.messageText = String(localized: "gptalert.message")
+        alert.messageText = String(localized: "gptkalert.message")
         alert.informativeText = error
         alert.alertStyle = .critical
         alert.addButton(withTitle: String(localized: "button.ok"))

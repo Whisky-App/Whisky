@@ -41,8 +41,8 @@
 "info.wine" = "Wine Sürümü";
 "info.win" = "Windows Sürümü";
 
-"gptalert.init" = "Game Porting Toolkit DMG dosyasını sürükleyip bırakın";
-"gptalert.message" = "GPT bir hatayla karşılaştı!";
+"gptkalert.init" = "Game Porting Toolkit DMG dosyasını sürükleyip bırakın";
+"gptkalert.message" = "GPTK bir hatayla karşılaştı!";
 
 "alert.message" = "Program açılamadı!";
 "alert.info" = "Açma başarısız";

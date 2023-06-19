@@ -1,5 +1,5 @@
 //
-//  GPTInstallView.swift
+//  GPTKInstallView.swift
 //  Whisky
 //
 //  Created by Isaac Marovitz on 07/06/2023.
@@ -7,14 +7,14 @@
 
 import SwiftUI
 
-struct GPTInstallView: View {
+struct GPTKInstallView: View {
     @State private var dragOver = false
     @State private var installing = false
     @Environment(\.dismiss) var dismiss
 
     var body: some View {
         VStack(spacing: 20) {
-            Text("gptalert.init")
+            Text("gptkalert.init")
                 .foregroundStyle(.secondary)
             if installing {
                 ProgressView()
@@ -40,7 +40,7 @@ struct GPTInstallView: View {
                    let url = URL(string: path as String) {
                     if url.pathExtension == "dmg" {
                         installing = true
-                        GPT.install(url: url)
+                        GPTK.install(url: url)
                         dismiss()
                     } else {
                         print("Not a DMG!")
@@ -52,8 +52,8 @@ struct GPTInstallView: View {
     }
 }
 
-struct GPTInstallView_Previews: PreviewProvider {
+struct GPTKInstallView_Previews: PreviewProvider {
     static var previews: some View {
-        GPTInstallView()
+        GPTKInstallView()
     }
 }

@@ -41,8 +41,8 @@
 "info.wine" = "Wine Version";
 "info.win" = "Windows Version";
 
-"gptalert.init" = "Træk og slip Game Porting Toolkit DMG";
-"gptalert.message" = "GPT stødte på en fejl!";
+"gptkalert.init" = "Træk og slip Game Porting Toolkit DMG";
+"gptkalert.message" = "GPTK stødte på en fejl!";
 
 "alert.message" = "Programmet kunne ikke åbnes!";
 "alert.info" = "Kunne ikke åbne";

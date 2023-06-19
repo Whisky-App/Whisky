@@ -11,7 +11,7 @@ struct ContentView: View {
     @EnvironmentObject var bottleVM: BottleVM
     @State var selected: URL?
     @State var showBottleCreation: Bool = false
-    @State var showGPTInstallSheet: Bool = false
+    @State var showGPTKInstallSheet: Bool = false
 
     var body: some View {
         NavigationSplitView {
@@ -46,13 +46,13 @@ struct ContentView: View {
         .sheet(isPresented: $showBottleCreation) {
             BottleCreationView()
         }
-        .sheet(isPresented: $showGPTInstallSheet) {
-            GPTInstallView()
+        .sheet(isPresented: $showGPTKInstallSheet) {
+            GPTKInstallView()
         }
         .onAppear {
             bottleVM.loadBottles()
             WineInstaller.updateWine()
-            showGPTInstallSheet = !GPT.isGPTInstalled()
+            showGPTKInstallSheet = !GPTK.isGPTKInstalled()
         }
     }
 }
