@@ -33,7 +33,7 @@ Translated on [Crowdin](https://crowdin.com/project/whisky).
 
 # FAQ
 
-### Do I need to install Rosetta?
+### Do I need to install Rosetta on an Apple Silicon (M1, M2, etc.) Mac?
 
 Yes
 
