@@ -28,7 +28,7 @@
 "config.esync" = "ESync";
 "config.controlPanel" = "Åbn Kontrolpanel";
 "config.regedit" = "Åbn Registry Editor";
-"config.winecfg" = "Åben Wine konfiguration";
+"config.winecfg" = "Åben Wine Konfiguration";
 
 "program.title" = "Installerede programmer";
 "program.env" = "Miljøvariabler";
