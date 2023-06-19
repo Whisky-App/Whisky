@@ -19,11 +19,15 @@
 "button.deleteAlert.cancel" = "Annuleren";
 
 "config.winVersion" = "Windows Version";
+"config.buildVersion" = "Build Version";
 "config.title.metal" = "Metal";
 "config.metalHud" = "Metal HUD";
 "config.metalTrace" = "Metal Trace";
+"config.retinaMode" = "Retina Mode";
 "config.metalTrace.info" = "Hiermee kunt u GPU-workload vastleggen in Xcode";
 "config.esync" = "ESync";
+"config.controlPanel" = "Open Control Panel";
+"config.regedit" = "Open Registry Editor";
 "config.winecfg" = "Open Wine Configuratie";
 
 "program.title" = "Geïnstalleerde programma's";
@@ -37,8 +41,8 @@
 "info.wine" = "Wine Versie";
 "info.win" = "Windows Versie";
 
-"gptkalert.init" = "Sleep en laat los de Game Porting Toolkit DMG";
-"gptkalert.message" = "GPTK heeft een fout aangetroffen!";
+"gptkalert.init" = "Drag and drop the Game Porting Toolkit DMG";
+"gptkalert.message" = "GPTK encountered an error!";
 
 "alert.message" = "Kan het programma niet openen!";
 "alert.info" = "Niet geslaagd te openen";
@@ -46,15 +50,19 @@
 "create.title" = "Maak een nieuwe fles";
 "create.name" = "Fles naam:";
 "create.win" = "Windows versie:";
+"create.path" = "Bottle path:";
+"create.browse" = "Browse";
 "create.cancel" = "Annuleren";
 "create.create" = "Aanmaken";
+"create.warning.emptyName" = "Name can't be empty";
+"create.warning.alreadyExistsName" = "A bottle with this name already exists";
 
 "rename.title" = "Hernoem fles";
 "rename.name" = "Nieuwe naam:";
 "rename.rename" = "Hernoem";
 
 "check.updates" = "Controleer op updates...";
-"kill.bottles" = "Stop alle flessen onmiddellijk...";
+"kill.bottles" = "Kill All Bottles";
 "open.logs" = "Open Logs map";
 
 "showAlertOnFirstLaunch.messageText" = "Wilt u Whiskey verplaatsen naar uw map Toepassingen?";
