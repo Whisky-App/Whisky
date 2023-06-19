@@ -19,11 +19,15 @@
 "button.deleteAlert.cancel" = "Annulla";
 
 "config.winVersion" = "Versione di Windows";
+"config.buildVersion" = "Build Version";
 "config.title.metal" = "Metal";
 "config.metalHud" = "Metal HUD";
 "config.metalTrace" = "Metal Trace";
+"config.retinaMode" = "Retina Mode";
 "config.metalTrace.info" = "Permette di catturare il carico di lavoro della GPU in Xcode";
 "config.esync" = "ESync";
+"config.controlPanel" = "Open Control Panel";
+"config.regedit" = "Open Registry Editor";
 "config.winecfg" = "Apri Configurazione Wine";
 
 "program.title" = "Programmi Installati";
@@ -37,8 +41,8 @@
 "info.wine" = "Versione di Wine";
 "info.win" = "Versione di Windows";
 
-"gptkalert.init" = "Trasciana e Rilascia il file DMG di Game Porting Toolkit";
-"gptkalert.message" = "GPTK ha riscontrato un errore!";
+"gptkalert.init" = "Drag and drop the Game Porting Toolkit DMG";
+"gptkalert.message" = "GPTK encountered an error!";
 
 "alert.message" = "Impossibile aprire il programma!";
 "alert.info" = "Impossibile aprire";
@@ -46,15 +50,19 @@
 "create.title" = "Crea una nuova bottiglia";
 "create.name" = "Nome bottiglia:";
 "create.win" = "Versione di Windows:";
+"create.path" = "Bottle path:";
+"create.browse" = "Browse";
 "create.cancel" = "Annulla";
 "create.create" = "Crea";
+"create.warning.emptyName" = "Name can't be empty";
+"create.warning.alreadyExistsName" = "A bottle with this name already exists";
 
 "rename.title" = "Rinomina bottiglia";
 "rename.name" = "Nuovo nome:";
 "rename.rename" = "Rinomina";
 
 "check.updates" = "Controlla aggiornamenti...";
-"kill.bottles" = "Termina tutte le Bottiglie...";
+"kill.bottles" = "Kill All Bottles";
 "open.logs" = "Apri la cartella dei log";
 
 "showAlertOnFirstLaunch.messageText" = "Vuoi spostare Whisky nella tua cartella Applicazioni?";
