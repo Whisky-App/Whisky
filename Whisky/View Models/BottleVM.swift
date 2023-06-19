@@ -19,6 +19,7 @@ class BottleVM: ObservableObject {
         .appendingPathComponent("Bottles")
 
     @Published var bottles: [Bottle] = []
+    @Published var inFlightBottles: [String] = []
 
     enum NameFailureReason {
         case emptyName
@@ -41,6 +42,7 @@ class BottleVM: ObservableObject {
     @MainActor
     func loadBottles() {
         Task(priority: .background) {
+            inFlightBottles.removeAll()
             bottles.removeAll()
 
             do {
@@ -64,6 +66,7 @@ class BottleVM: ObservableObject {
     }
 
     func createNewBottle(bottleName: String, winVersion: WinVersion, bottleURL: URL) {
+        inFlightBottles.append(bottleName)
         Task(priority: .userInitiated) {
             do {
                 if !FileManager.default.fileExists(atPath: BottleVM.bottleDir.path) {

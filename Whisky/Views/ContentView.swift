@@ -15,8 +15,19 @@ struct ContentView: View {
 
     var body: some View {
         NavigationSplitView {
-            List(bottleVM.bottles, id: \.url, selection: $selected) { bottle in
-                BottleListEntry(bottle: bottle)
+            List(selection: $selected) {
+                ForEach(bottleVM.bottles, id: \.url) { bottle in
+                    BottleListEntry(bottle: bottle)
+                }
+                ForEach(bottleVM.inFlightBottles, id: \.self) { inFlight in
+                    HStack {
+                        Text(inFlight)
+                            .foregroundStyle(.secondary)
+                        Spacer()
+                        ProgressView()
+                            .controlSize(.small)
+                    }
+                }
             }
         } detail: {
             if let url = selected {
