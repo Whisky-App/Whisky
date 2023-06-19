@@ -31,6 +31,26 @@ struct BottleView: View {
                                     ShellLinkView(link: link)
                                 }
                                 .buttonStyle(.plain)
+                                .overlay {
+                                    HStack {
+                                        Spacer()
+                                        Button {
+                                            if let link = link.linkInfo, let program = link.program {
+                                                Task {
+                                                    await program.run()
+                                                }
+                                            }
+                                        } label: {
+                                            Image(systemName: "play.fill")
+                                                .resizable()
+                                                .foregroundColor(.green)
+                                                .frame(width: 16, height: 16)
+                                        }
+                                        .buttonStyle(.plain)
+                                    }
+                                    .frame(width: 45, height: 45) // Same size as ShellLinkView's icon
+                                    .padding(EdgeInsets(top: 0, leading: 0, bottom: 12, trailing: 0))
+                                }
                             }
                         }
                         .padding()
