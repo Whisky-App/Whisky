@@ -14,6 +14,7 @@ struct SetupView: View {
             Spacer()
             HStack {
                 Button("Quit") {
+                    exit(0)
                 }
                 .keyboardShortcut(.cancelAction)
                 Spacer()
