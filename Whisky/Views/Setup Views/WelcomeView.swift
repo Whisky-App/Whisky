@@ -11,6 +11,7 @@ struct WelcomeView: View {
     @State var rosettaInstalled: Bool?
     @State var wineInstalled: Bool?
     @State var gptkInstalled: Bool?
+    @Binding var canContinue: Bool
 
     var body: some View {
         VStack {
@@ -24,7 +25,7 @@ struct WelcomeView: View {
             .padding(.horizontal)
             Spacer()
             Form {
-                if cpuArch() == .arm {
+                if Arch.getArch() == .arm {
                     InstallStatusView(isInstalled: $rosettaInstalled,
                                       name: "Rosetta")
                 }
@@ -40,6 +41,7 @@ struct WelcomeView: View {
                     rosettaInstalled = Rosetta2.isRosettaInstalled
                     wineInstalled = WineInstaller.isWineInstalled()
                     gptkInstalled = GPTK.isGPTKInstalled()
+                    canContinue = true
                 }
             }
         }
@@ -77,36 +79,5 @@ struct InstallStatusView: View {
                 text = NSLocalizedString("setup.install.checking", comment: "")
             }
         }
-    }
-}
-
-struct WelcomeView_Previews: PreviewProvider {
-    static var previews: some View {
-        WelcomeView()
-            .frame(width: 400, height: 200)
-    }
-}
-
-enum CPUArch {
-    case arm
-    case intel
-    case unknown
-}
-
-func cpuArch() -> CPUArch {
-    var size: size_t = MemoryLayout<UInt32>.size
-    var type: UInt32 = 0
-
-    sysctlbyname("hw.cputype", &type, &size, nil, 0)
-
-    let arch: Int32 = Int32(type & ~CPU_ARCH_MASK)
-
-    switch arch {
-    case CPU_TYPE_ARM:
-        return .arm
-    case CPU_TYPE_X86_64, CPU_TYPE_X86:
-        return .intel
-    default:
-        return .unknown
     }
 }

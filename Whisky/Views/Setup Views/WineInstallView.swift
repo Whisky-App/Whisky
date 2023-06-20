@@ -9,7 +9,7 @@ import SwiftUI
 
 struct WineInstallView: View {
     @State var installing: Bool = true
-    var tarLocation: URL
+    @Binding var tarLocation: URL
 
     var body: some View {
         VStack {

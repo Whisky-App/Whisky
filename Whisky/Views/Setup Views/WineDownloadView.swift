@@ -13,6 +13,7 @@ struct WineDownloadView: View {
     @State private var totalBytes: Int64 = 0
     @State private var downloadTask: URLSessionDownloadTask?
     @State private var observation: NSKeyValueObservation?
+    @Binding var tarLocation: URL
 
     var body: some View {
         VStack {
@@ -45,7 +46,7 @@ struct WineDownloadView: View {
                     print(url)
                     downloadTask = URLSession.shared.downloadTask(with: url) { url, _, _ in
                         if let url = url {
-                            print(url)
+                            tarLocation = url
                         }
                     }
 
@@ -81,12 +82,5 @@ struct WineDownloadView: View {
         let completed = formatter.string(fromByteCount: completed)
         let total = formatter.string(fromByteCount: total)
         return "(\(completed)/\(total))"
-    }
-}
-
-struct WineDownloadView_Previews: PreviewProvider {
-    static var previews: some View {
-        WineDownloadView()
-            .frame(width: 400, height: 200)
     }
 }
