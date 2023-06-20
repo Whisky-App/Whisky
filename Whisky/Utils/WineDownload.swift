@@ -8,7 +8,7 @@
 import Foundation
 
 class WineDownload {
-    static func getLatestWineURL() async -> URL? {
+    static func getLatestWineURL() async -> DownloadInfo? {
         let githubURL = "https://api.github.com/repos/IsaacMarovitz/WhiskyBuilder/actions/artifacts"
         if let artifactsURL = URL(string: githubURL) {
             return await withCheckedContinuation { continuation in
@@ -26,7 +26,8 @@ class WineDownload {
                                 if let range = url.range(of: selection) {
                                     url = String(url[..<range.upperBound])
                                     url += "runs/\(latest.workflowRun.id)/\(latest.name).zip"
-                                    continuation.resume(returning: URL(string: url))
+                                    continuation.resume(returning: DownloadInfo(directURL: URL(string: url),
+                                                                                totalByteCount: latest.sizeInBytes))
                                     return
                                 }
                             }
@@ -40,10 +41,11 @@ class WineDownload {
         }
         return nil
     }
+}
 
-    static func downloadWine(from: URL) async {
-
-    }
+struct DownloadInfo {
+    let directURL: URL?
+    let totalByteCount: Int
 }
 
 struct Artifacts: Codable {
