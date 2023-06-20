@@ -37,8 +37,8 @@ body:
     attributes:
       label: What version of Whisky are you using?
       options:
-        - "pre-0.3.0"
-        - "<pre-0.3.0"
+        - "pre-0.3.1"
+        - "<pre-0.3.1"
     validations:
       required: true
   - type: dropdown
