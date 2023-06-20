@@ -8,6 +8,10 @@
 import SwiftUI
 
 struct WelcomeView: View {
+    @State var rosettaInstalled: Bool?
+    @State var wineInstalled: Bool?
+    @State var gptkInstalled: Bool?
+
     var body: some View {
         VStack {
             VStack {
@@ -21,28 +25,42 @@ struct WelcomeView: View {
             Spacer()
             Form {
                 if cpuArch() == .arm {
-                    HStack {
-                        Circle()
-                            .foregroundColor(.green)
-                            .frame(width: 10)
-                        Text("Rosetta installed")
-                    }
+                    InstallStatusView(isInstalled: $rosettaInstalled,
+                                      text: "Rosetta")
                 }
-                HStack {
-                    Circle()
-                        .foregroundColor(.red)
-                        .frame(width: 10)
-                    Text("Wine not installed")
-                }
-                HStack {
-                    Circle()
-                        .foregroundColor(.red)
-                        .frame(width: 10)
-                    Text("GPTK not installed")
-                }
+                InstallStatusView(isInstalled: $wineInstalled,
+                                  text: "Wine")
+                InstallStatusView(isInstalled: $gptkInstalled,
+                                  text: "GPTK")
             }
             .formStyle(.grouped)
             .scrollDisabled(true)
+            .onAppear {
+                Task {
+                    // Set bools here
+                }
+            }
+        }
+    }
+}
+
+struct InstallStatusView: View {
+    @Binding var isInstalled: Bool?
+    @State var text: String
+
+    var body: some View {
+        HStack {
+            Group {
+                if let installed = isInstalled {
+                    Circle()
+                        .foregroundColor(installed ? .green : .red)
+                } else {
+                    ProgressView()
+                        .controlSize(.small)
+                }
+            }
+            .frame(width: 10)
+            Text("Checking \(text) installation...")
         }
     }
 }
