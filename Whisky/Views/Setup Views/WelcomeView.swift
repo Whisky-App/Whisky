@@ -15,9 +15,9 @@ struct WelcomeView: View {
     var body: some View {
         VStack {
             VStack {
-                Text("Welcome to Whisky")
+                Text("setup.welcome")
                     .font(.title)
-                Text("Let's get you setup. This won't take a minute.")
+                Text("setup.welcome.subtitle")
                     .font(.subheadline)
                     .foregroundStyle(.secondary)
             }

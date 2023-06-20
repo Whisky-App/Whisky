@@ -70,6 +70,9 @@
 "showAlertOnFirstLaunch.button.moveToApplications" = "Move to Applications";
 "showAlertOnFirstLaunch.button.dontMove" = "Don't Move";
 
+"setup.welcome" = "Welcome to Whisky";
+"setup.welcome.subtitle" = "Let's get you set up. This won't take a minute.";
+
 "setup.install.checking" = "Checking %@ installation...";
 "setup.install.installed" = "%@ installed";
 "setup.install.notInstalled" = "%@ not installed";
