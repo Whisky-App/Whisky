@@ -69,3 +69,13 @@
 "showAlertOnFirstLaunch.informativeText" = "Em alguns casos, o Whisky pode não funcionar correctamente numa pasta diferente";
 "showAlertOnFirstLaunch.button.moveToApplications" = "Mover para Aplicações";
 "showAlertOnFirstLaunch.button.dontMove" = "Não Mover";
+
+"setup.welcome" = "Welcome to Whisky";
+"setup.welcome.subtitle" = "Let's get you set up. This won't take a minute.";
+
+"setup.install.checking" = "Checking %@ installation...";
+"setup.install.installed" = "%@ installed";
+"setup.install.notInstalled" = "%@ not installed";
+
+"setup.rosetta" = "Installing Rosetta";
+"setup.rosetta.subtitle" = "Rosetta allows x86 code, like Wine, to run on your Mac.";
