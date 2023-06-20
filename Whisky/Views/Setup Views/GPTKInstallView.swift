@@ -50,3 +50,10 @@ struct GPTKInstallView: View {
         Spacer()
     }
 }
+
+struct GPTKInstallView_Previews: PreviewProvider {
+    static var previews: some View {
+        GPTKInstallView()
+            .frame(width: 400, height: 200)
+    }
+}

@@ -8,6 +8,9 @@
 import SwiftUI
 
 struct WineInstallView: View {
+    @State var installing: Bool = true
+    var tarLocation: URL
+
     var body: some View {
         VStack {
             VStack {
@@ -17,13 +20,26 @@ struct WineInstallView: View {
                     .font(.subheadline)
                     .foregroundStyle(.secondary)
                 Spacer()
-                Image(systemName: "checkmark.circle")
-                    .resizable()
-                    .frame(width: 80, height: 80)
-                    .foregroundStyle(.green)
+                Group {
+                    if installing {
+                        ProgressView()
+                            .scaleEffect(2)
+                    } else {
+                        Image(systemName: "checkmark.circle")
+                            .resizable()
+                            .foregroundStyle(.green)
+                    }
+                }
+                .frame(width: 80, height: 80)
                 Spacer()
             }
             Spacer()
+        }
+        .onAppear {
+            Task {
+                WineInstaller.installWine(from: tarLocation)
+                installing = false
+            }
         }
     }
 }

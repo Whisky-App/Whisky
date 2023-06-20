@@ -11,6 +11,7 @@ struct ContentView: View {
     @EnvironmentObject var bottleVM: BottleVM
     @State var selected: URL?
     @State var showBottleCreation: Bool = false
+    @State var shouldUpdateWine: Bool = false
 
     var body: some View {
         NavigationSplitView {
@@ -58,7 +59,7 @@ struct ContentView: View {
         }
         .onAppear {
             bottleVM.loadBottles()
-            WineInstaller.updateWine()
+            shouldUpdateWine = WineInstaller.shouldUpdateWine()
         }
     }
 }

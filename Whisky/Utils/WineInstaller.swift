@@ -11,11 +11,6 @@ class WineInstaller {
     // Grab the WineBinaryVersion int from Info.plist
     static let WineBinaryVersion = Bundle.main.infoDictionary?["WineBinaryVersion"] as? Int ?? 0
 
-    static let libraryArchive: URL = (Bundle.main.resourceURL ?? URL(fileURLWithPath: ""))
-        .appendingPathComponent("Libraries")
-        .appendingPathExtension("tar")
-        .appendingPathExtension("gz")
-
     static let libraryFolder = FileManager.default.urls(for: .applicationSupportDirectory, in: .userDomainMask)[0]
         .appendingPathComponent("Whisky")
         .appendingPathComponent("Libraries")
@@ -24,7 +19,7 @@ class WineInstaller {
         return FileManager.default.fileExists(atPath: libraryFolder.path)
     }
 
-    static func installWine() {
+    static func installWine(from: URL) {
         do {
             let whiskySupportFolder = FileManager.default.urls(for: .applicationSupportDirectory,
                                                                in: .userDomainMask)[0]
@@ -38,7 +33,7 @@ class WineInstaller {
                 try FileManager.default.createDirectory(at: whiskySupportFolder, withIntermediateDirectories: true)
             }
 
-            try Tar.untar(tarBall: libraryArchive, toURL: whiskySupportFolder)
+            try Tar.untar(tarBall: from, toURL: whiskySupportFolder)
 
             // Write the binary version to the build_version file
             let buildVersionFile = libraryFolder.appendingPathComponent("build_version")
@@ -48,14 +43,12 @@ class WineInstaller {
         }
     }
 
-    static func updateWine() {
+    static func shouldUpdateWine() -> Bool {
         // Read the build version from the Wine directory
         let buildVersionFile = WineInstaller.libraryFolder.appendingPathComponent("build_version")
         let currentVersion = try? String(contentsOf: buildVersionFile, encoding: .utf8)
 
         // If the current version is not the same as the binary version, we need to update by calling install again
-        if currentVersion != String(WineBinaryVersion) {
-            installWine()
-        }
+        return currentVersion != String(WineBinaryVersion)
     }
 }
