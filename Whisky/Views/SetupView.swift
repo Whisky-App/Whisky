@@ -14,12 +14,11 @@ struct SetupView: View {
             Spacer()
             HStack {
                 Button("Quit") {
-                    
+                    exit(0)
                 }
                 .keyboardShortcut(.cancelAction)
                 Spacer()
                 Button("Next") {
-                    
                 }
                 .keyboardShortcut(.defaultAction)
             }
@@ -44,10 +43,17 @@ struct WelcomeView: View {
             Spacer()
             Form {
                 HStack {
-                    Circle()
-                        .foregroundColor(.green)
-                        .frame(width: 10)
-                    Text("Rosetta installed")
+                    if Rosetta2.isRosettaInstalled {
+                        Circle()
+                            .foregroundColor(.green)
+                            .frame(width: 10)
+                        Text("Rosetta installed")
+                    } else {
+                        Circle()
+                            .foregroundColor(.red)
+                            .frame(width: 10)
+                        Text("Rosetta is not installed")
+                    }
                 }
                 HStack {
                     Circle()
@@ -183,5 +189,11 @@ struct GPTKInstallView: View {
 struct SetupView_Previews: PreviewProvider {
     static var previews: some View {
         SetupView()
+    }
+}
+
+struct WelcomeView_Previews: PreviewProvider {
+    static var previews: some View {
+        WelcomeView()
     }
 }
