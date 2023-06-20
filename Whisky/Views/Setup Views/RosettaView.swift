@@ -13,9 +13,9 @@ struct RosettaView: View {
     var body: some View {
         VStack {
             VStack {
-                Text("Installing Rosetta")
+                Text("setup.rosetta")
                     .font(.title)
-                Text("Rosetta allows x86 code, like Wine, to run on your Mac.")
+                Text("setup.rosetta.subtitle")
                     .font(.subheadline)
                     .foregroundStyle(.secondary)
                 Spacer()
