@@ -83,6 +83,7 @@ struct InstallStatusView: View {
 struct WelcomeView_Previews: PreviewProvider {
     static var previews: some View {
         WelcomeView()
+            .frame(width: 400, height: 200)
     }
 }
 

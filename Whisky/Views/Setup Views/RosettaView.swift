@@ -8,6 +8,8 @@
 import SwiftUI
 
 struct RosettaView: View {
+    @State var installing: Bool = true
+
     var body: some View {
         VStack {
             VStack {
@@ -17,13 +19,36 @@ struct RosettaView: View {
                     .font(.subheadline)
                     .foregroundStyle(.secondary)
                 Spacer()
-                Image(systemName: "checkmark.circle")
-                    .resizable()
-                    .frame(width: 80, height: 80)
-                    .foregroundStyle(.green)
+                Group {
+                    if installing {
+                        ProgressView()
+                            .scaleEffect(2)
+                    } else {
+                        Image(systemName: "checkmark.circle")
+                            .resizable()
+                            .foregroundStyle(.green)
+                    }
+                }
+                .frame(width: 80, height: 80)
                 Spacer()
             }
             Spacer()
         }
+        .onAppear {
+            Rosetta2.launchRosettaInstaller()
+            Timer.scheduledTimer(withTimeInterval: 1, repeats: true) { timer in
+                if Rosetta2.isRosettaInstalled {
+                    installing = false
+                    timer.invalidate()
+                }
+            }
+        }
+    }
+}
+
+struct RosettaView_Previews: PreviewProvider {
+    static var previews: some View {
+        RosettaView()
+            .frame(width: 400, height: 200)
     }
 }
