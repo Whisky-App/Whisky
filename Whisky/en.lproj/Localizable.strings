@@ -69,3 +69,7 @@
 "showAlertOnFirstLaunch.informativeText" = "In some cases, Whisky wont't be able to function properly from a different folder";
 "showAlertOnFirstLaunch.button.moveToApplications" = "Move to Applications";
 "showAlertOnFirstLaunch.button.dontMove" = "Don't Move";
+
+"setup.install.checking" = "Checking %@ installation...";
+"setup.install.installed" = "%@ installed";
+"setup.install.notInstalled" = "%@ not installed";

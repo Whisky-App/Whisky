@@ -26,18 +26,20 @@ struct WelcomeView: View {
             Form {
                 if cpuArch() == .arm {
                     InstallStatusView(isInstalled: $rosettaInstalled,
-                                      text: "Rosetta")
+                                      name: "Rosetta")
                 }
                 InstallStatusView(isInstalled: $wineInstalled,
-                                  text: "Wine")
+                                  name: "Wine")
                 InstallStatusView(isInstalled: $gptkInstalled,
-                                  text: "GPTK")
+                                  name: "GPTK")
             }
             .formStyle(.grouped)
             .scrollDisabled(true)
             .onAppear {
                 Task {
-                    // Set bools here
+                    rosettaInstalled = Rosetta2.isRosettaInstalled
+                    wineInstalled = WineInstaller.isWineInstalled()
+                    gptkInstalled = GPTK.isGPTKInstalled()
                 }
             }
         }
@@ -46,7 +48,9 @@ struct WelcomeView: View {
 
 struct InstallStatusView: View {
     @Binding var isInstalled: Bool?
-    @State var text: String
+    @State var name: String
+    @State var text: String = NSLocalizedString("setup.install.checking",
+                                                comment: "")
 
     var body: some View {
         HStack {
@@ -60,7 +64,18 @@ struct InstallStatusView: View {
                 }
             }
             .frame(width: 10)
-            Text("Checking \(text) installation...")
+            Text(String.init(format: text, name))
+        }
+        .onChange(of: isInstalled) { _ in
+            if let installed = isInstalled {
+                if installed {
+                    text = NSLocalizedString("setup.install.installed", comment: "")
+                } else {
+                    text = NSLocalizedString("setup.install.notInstalled", comment: "")
+                }
+            } else {
+                text = NSLocalizedString("setup.install.checking", comment: "")
+            }
         }
     }
 }
