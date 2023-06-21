@@ -38,6 +38,7 @@
 "info.title" = "情報";
 "info.path" = "パス";
 "info.path.copy" = "パスのコピー";
+"info.winPath.copy" = "Copy Windows Path";
 "info.wine" = "Wine バージョン";
 "info.win" = "Windows バージョン";
 
