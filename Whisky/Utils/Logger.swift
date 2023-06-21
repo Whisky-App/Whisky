@@ -12,7 +12,7 @@ class Log {
     static let logsFolder = FileManager.default.urls(for: .libraryDirectory,
                                                     in: .userDomainMask)[0]
         .appendingPathComponent("Logs")
-        .appendingPathComponent("Whisky")
+        .appendingPathComponent(Bundle.main.bundleIdentifier ?? "com.isaacmarovitz.Whisky")
 
     let fileHandle: FileHandle
     let logger: Logger
