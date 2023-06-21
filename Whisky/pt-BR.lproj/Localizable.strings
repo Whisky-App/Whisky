@@ -10,24 +10,24 @@
 "button.showInFinder" = "Abrir no Finder";
 "button.run" = "Executar...";
 "button.ok" = "OK";
-"button.renameBottle" = "Alterar nome";
+"button.renameBottle" = "Renomear";
 "button.deleteBottle" = "Apagar...";
 "button.createBottle" = "Criar uma Bottle";
 "button.deleteAlert.msg" = "Apagar %@?";
-"button.deleteAlert.info" = "Tem certeza de que deseja apagar esta Bottle? Esta acção é permanente.";
+"button.deleteAlert.info" = "Tem certeza de que deseja apagar esta Bottle? Esta ação é permanente.";
 "button.deleteAlert.delete" = "Apagar";
 "button.deleteAlert.cancel" = "Cancelar";
 
 "config.winVersion" = "Versão do Windows";
 "config.buildVersion" = "Build Version";
 "config.title.metal" = "Metal";
-"config.metalHud" = "Hud Metal";
+"config.metalHud" = "HUD Metal";
 "config.metalTrace" = "Diagnóstico Metal";
-"config.retinaMode" = "Retina Mode";
+"config.retinaMode" = "Modo Retina";
 "config.metalTrace.info" = "Permite capturar a carga de trabalho da GPU no Xcode";
 "config.esync" = "ESync";
-"config.controlPanel" = "Open Control Panel";
-"config.regedit" = "Open Registry Editor";
+"config.controlPanel" = "Abrir Painel de Controle";
+"config.regedit" = "Abrir Editor do Registro";
 "config.winecfg" = "Abrir Configuração do Wine";
 
 "program.title" = "Programas Instalados";
@@ -38,7 +38,7 @@
 "info.title" = "Informações";
 "info.path" = "Caminho";
 "info.path.copy" = "Copiar Caminho";
-"info.winPath.copy" = "Copy Windows Path";
+"info.winPath.copy" = "Copiar caminho do Windows";
 "info.wine" = "Versão do Wine";
 "info.win" = "Versão do Windows";
 
@@ -51,7 +51,7 @@
 "create.title" = "Criar uma nova Bottle";
 "create.name" = "Nome da Bottle:";
 "create.win" = "Versão do Windows:";
-"create.path" = "Bottle path:";
+"create.path" = "Caminho da Bottle:";
 "create.browse" = "Browse";
 "create.cancel" = "Cancelar";
 "create.create" = "Criar";
@@ -71,21 +71,21 @@
 "showAlertOnFirstLaunch.button.moveToApplications" = "Mover para Aplicações";
 "showAlertOnFirstLaunch.button.dontMove" = "Não Mover";
 
-"setup.welcome" = "Welcome to Whisky";
+"setup.welcome" = "Bem-vindo ao Whisky";
 "setup.welcome.subtitle" = "Let's get you set up. This won't take a minute.";
 
 "setup.install.checking" = "Checking %@ installation...";
-"setup.install.installed" = "%@ installed";
-"setup.install.notInstalled" = "%@ not installed";
+"setup.install.installed" = "%@ instalado";
+"setup.install.notInstalled" = "%@ não instalado";
 
-"setup.rosetta" = "Installing Rosetta";
-"setup.rosetta.subtitle" = "Rosetta allows x86 code, like Wine, to run on your Mac.";
+"setup.rosetta" = "Instalando Rosetta";
+"setup.rosetta.subtitle" = "Rosetta permite código x86, como Wine, a rodar em seu Mac.";
 
-"setup.wine.download" = "Downloading Wine";
+"setup.wine.download" = "Baixando Wine";
 "setup.wine.download.subtitle" = "Speeds will vary on your internet connection.";
 "setup.wine.progress" = "Progress: %@ %@";
 
-"setup.wine.install" = "Installing Wine";
+"setup.wine.install" = "Instalando Wine";
 "setup.wine.install.subtitle" = "Almost there. Don't tune out yet.";
 
-"setup.gptk" = "Installing GPTK";
+"setup.gptk" = "Instalando GPTK";
