@@ -39,7 +39,6 @@ struct SetupView: View {
             }
         }
         .padding()
-        .frame(width: 400, height: 250)
         .interactiveDismissDisabled()
     }
 }
