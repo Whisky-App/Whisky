@@ -14,7 +14,7 @@ struct GPTKInstallView: View {
 
     var body: some View {
         VStack {
-            Text("Installing GPTK")
+            Text("setup.gptk")
                 .font(.title)
             Text("gptkalert.init")
                 .foregroundStyle(.secondary)

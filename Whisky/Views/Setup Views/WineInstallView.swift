@@ -16,9 +16,9 @@ struct WineInstallView: View {
     var body: some View {
         VStack {
             VStack {
-                Text("Installing Wine")
+                Text("setup.wine.install")
                     .font(.title)
-                Text("Almost there. Don't tune out yet.")
+                Text("setup.wine.install.subtitle")
                     .font(.subheadline)
                     .foregroundStyle(.secondary)
                 Spacer()

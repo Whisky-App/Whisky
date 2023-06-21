@@ -19,9 +19,9 @@ struct WineDownloadView: View {
     var body: some View {
         VStack {
             VStack {
-                Text("Downloading Wine")
+                Text("setup.wine.download")
                     .font(.title)
-                Text("Speeds will vary on your internet connection.")
+                Text("setup.wine.download.subtitle")
                     .font(.subheadline)
                     .foregroundStyle(.secondary)
                 Spacer()
