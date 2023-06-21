@@ -38,6 +38,7 @@
 "info.title" = "정보";
 "info.path" = "경로";
 "info.path.copy" = "경로 복사";
+"info.winPath.copy" = "Copy Windows Path";
 "info.wine" = "Wine 버전";
 "info.win" = "Windows 버전";
 
