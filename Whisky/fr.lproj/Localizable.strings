@@ -19,15 +19,15 @@
 "button.deleteAlert.cancel" = "Annuler";
 
 "config.winVersion" = "Version de Windows";
-"config.buildVersion" = "Version de build";
+"config.buildVersion" = "Version de Build";
 "config.title.metal" = "Metal";
 "config.metalHud" = "HUD Metal";
 "config.metalTrace" = "Trace de Metal";
 "config.retinaMode" = "Mode Retina";
 "config.metalTrace.info" = "Permet de capturer la charge de travail GPU en Xcode";
 "config.esync" = "ESync";
-"config.controlPanel" = "Ouvrir le panneau de configuration";
-"config.regedit" = "Éditeur de registre";
+"config.controlPanel" = "Ouvrir le Panneau de Configuration";
+"config.regedit" = "Ouvrir l'Éditeur de Registre";
 "config.winecfg" = "Ouvrir la Configuration Wine";
 
 "program.title" = "Programmes Installés";
@@ -56,7 +56,7 @@
 "create.cancel" = "Annuler";
 "create.create" = "Créer";
 "create.warning.emptyName" = "Le nom ne peut pas être vide";
-"create.warning.alreadyExistsName" = "Une bouteille existe déjà avec ce nom";
+"create.warning.alreadyExistsName" = "Une bouteille avec ce nom existe déjà";
 
 "rename.title" = "Renommer la bouteille";
 "rename.name" = "Nouveau nom :";
@@ -64,7 +64,7 @@
 
 "check.updates" = "Recherche des Mises à Jour...";
 "kill.bottles" = "Fermer Touts les Bouteilles";
-"open.logs" = "Ouvrir le dossier des logs";
+"open.logs" = "Ouvrir le Dossier des Logs";
 
 "showAlertOnFirstLaunch.messageText" = "Souhaitez-vous déplacer Whisky dans votre dossier Applications ?";
 "showAlertOnFirstLaunch.informativeText" = "Dans certains cas, Whisky ne pourra pas fonctionner correctement depuis un dossier différent";
