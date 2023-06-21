@@ -57,7 +57,7 @@
 "create.warning.emptyName" = "名前を空にすることはできません";
 "create.warning.alreadyExistsName" = "同名の Bottle が存在します";
 
-"rename.title" = "Bottle の名前変更";
+"rename.title" = "Bottle の名前を変更";
 "rename.name" = "新しい名前:";
 "rename.rename" = "変更";
 
@@ -71,15 +71,15 @@
 "showAlertOnFirstLaunch.button.dontMove" = "移動しない";
 
 "setup.welcome" = "Whisky へようこそ";
-"setup.welcome.subtitle" = "Let's get you set up. This won't take a minute.";
+"setup.welcome.subtitle" = "セットアップをしましょう。1分以内に終わります。";
 
-"setup.install.checking" = "Checking %@ installation...";
-"setup.install.installed" = "%@ installed";
-"setup.install.notInstalled" = "%@ not installed";
+"setup.install.checking" = "%@ のインストールを確認しています...";
+"setup.install.installed" = "%@ がインストールされました";
+"setup.install.notInstalled" = "%@ が未インストール";
 
-"setup.rosetta" = "Installing Rosetta";
-"setup.rosetta.subtitle" = "Rosetta allows x86 code, like Wine, to run on your Mac.";
+"setup.rosetta" = "Rosetta をインストール中";
+"setup.rosetta.subtitle" = "Rosetta は、Wine のような x86 バイナリを Mac 上で実行できるようにします。";
 
-"setup.wine.download" = "Downloading Wine";
-"setup.wine.download.subtitle" = "Speeds will vary on your internet connection.";
-"setup.wine.progress" = "Progress: %@ %@";
+"setup.wine.download" = "Wine をダウンロード中";
+"setup.wine.download.subtitle" = "速度はインターネット接続によって異なります。";
+"setup.wine.progress" = "進行状況: %@ %@";
