@@ -38,6 +38,7 @@
 "info.title" = "Thông tin";
 "info.path" = "Đường dẫn";
 "info.path.copy" = "Chép đường dẫn";
+"info.winPath.copy" = "Copy Windows Path";
 "info.wine" = "Phiên bản Wine";
 "info.win" = "Phiên bản Windows";
 
