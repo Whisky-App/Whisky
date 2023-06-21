@@ -25,6 +25,7 @@ public class Bottle: Hashable {
     var settings: BottleSettings
     var programs: [Program] = []
     var startMenuPrograms: [ShellLinkHeader] = []
+    var inFlight: Bool = false
 
     func openCDrive() {
         let cDrive = url.appendingPathComponent("drive_c")
@@ -154,20 +155,29 @@ public class Bottle: Hashable {
         }
     }
 
-    init() {
+    init(inFlight: Bool = false) {
         self.settings = BottleSettings(settingsURL: url,
                                        bottleURL: url)
+        self.inFlight = inFlight
     }
 
-    init(settingsURL: URL) throws {
+    init(settingsURL: URL, inFlight: Bool = false) throws {
         self.settings = try BottleSettings(settingsURL: settingsURL)
         self.url = settings.url
+        self.inFlight = inFlight
     }
 
-    init(settingsURL: URL, bottleURL: URL) {
+    init(settingsURL: URL, bottleURL: URL, inFlight: Bool = false) {
         self.settings = BottleSettings(settingsURL: settingsURL,
                                        bottleURL: bottleURL)
         self.url = settings.url
+        self.inFlight = inFlight
+    }
+}
+
+extension Array where Element == Bottle {
+    mutating func sortByName() {
+        self.sort { $0.name.lowercased() < $1.name.lowercased() }
     }
 }
 

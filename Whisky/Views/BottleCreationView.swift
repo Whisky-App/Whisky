@@ -14,6 +14,7 @@ struct BottleCreationView: View {
     @State var isValidBottleName: Bool = true
     @State var newBottleURL: URL = BottleVM.bottleDir
     @State var bottlePath: String = ""
+    @Binding var newlyCreatedBottleURL: URL?
     @Environment(\.dismiss) var dismiss
 
     var body: some View {
@@ -85,9 +86,10 @@ struct BottleCreationView: View {
                         invalidBottleNameDescription = failureReason.description
                         return
                     }
-                    BottleVM.shared.createNewBottle(bottleName: newBottleName,
-                                                    winVersion: newBottleVersion,
-                                                    bottleURL: newBottleURL)
+
+                    newlyCreatedBottleURL = BottleVM.shared.createNewBottle(bottleName: newBottleName,
+                                                                        winVersion: newBottleVersion,
+                                                                        bottleURL: newBottleURL)
                     dismiss()
                 }
                 .keyboardShortcut(.defaultAction)
@@ -105,7 +107,8 @@ struct BottleCreationView: View {
 }
 
 struct BottleCreationView_Previews: PreviewProvider {
+    @State private static var newlyCreatedBottleURL: URL?
     static var previews: some View {
-        BottleCreationView()
+        BottleCreationView(newlyCreatedBottleURL: $newlyCreatedBottleURL)
     }
 }

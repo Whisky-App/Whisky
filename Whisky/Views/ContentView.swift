@@ -12,20 +12,33 @@ struct ContentView: View {
     @AppStorage("showSetup") private var showSetup = true
     @State var selected: URL?
     @State var showBottleCreation: Bool = false
+    @State var newlyCreatedBottleURL: URL?
 
     var body: some View {
         NavigationSplitView {
-            List(selection: $selected) {
-                ForEach(bottleVM.bottles, id: \.url) { bottle in
-                    BottleListEntry(bottle: bottle)
+            ScrollViewReader { proxy in
+                List(selection: $selected) {
+                    ForEach(bottleVM.bottles, id: \.url) { bottle in
+                        if bottle.inFlight {
+                            HStack {
+                                Text(bottle.name)
+                                Spacer()
+                                ProgressView().controlSize(.small)
+                            }
+                            .opacity(0.5)
+                            .id(bottle.url)
+                        } else {
+                            BottleListEntry(bottle: bottle)
+                                .id(bottle.url)
+                        }
+                    }
                 }
-                ForEach(bottleVM.inFlightBottles, id: \.self) { inFlight in
-                    HStack {
-                        Text(inFlight)
-                            .foregroundStyle(.secondary)
-                        Spacer()
-                        ProgressView()
-                            .controlSize(.small)
+                .onChange(of: newlyCreatedBottleURL) { url in
+                    DispatchQueue.main.asyncAfter(deadline: .now() + 0.2) {
+                        selected = url
+                        withAnimation {
+                            proxy.scrollTo(url, anchor: .center)
+                        }
                     }
                 }
             }
@@ -40,7 +53,8 @@ struct ContentView: View {
                             bottleVM.bottles[index] = newValue
                         }
                     }))
-                        .id(bottle.url)
+                    .disabled(bottle.inFlight)
+                    .id(bottle.url)
                 }
             }
         }
@@ -55,7 +69,7 @@ struct ContentView: View {
             }
         }
         .sheet(isPresented: $showBottleCreation) {
-            BottleCreationView()
+            BottleCreationView(newlyCreatedBottleURL: $newlyCreatedBottleURL)
         }
         .sheet(isPresented: $showSetup) {
             SetupView(showSetup: $showSetup)
