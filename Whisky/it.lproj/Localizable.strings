@@ -84,3 +84,8 @@
 "setup.wine.download" = "Scaricando Wine";
 "setup.wine.download.subtitle" = "Le velocità varieranno in base alla tua connessione internet.";
 "setup.wine.progress" = "Progresso: %@ %@";
+
+"setup.wine.install" = "Installing Wine";
+"setup.wine.install.subtitle" = "Almost there. Don't tune out yet.";
+
+"setup.gptk" = "Installing GPTK";
