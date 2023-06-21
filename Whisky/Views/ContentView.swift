@@ -17,7 +17,7 @@ struct ContentView: View {
         NavigationSplitView {
             List(selection: $selected) {
                 ForEach(bottleVM.bottles, id: \.url) { bottle in
-                    BottleListEntry(bottle: bottle)
+                    BottleListEntry(bottle: bottle, selected: $selected)
                 }
                 ForEach(bottleVM.inFlightBottles, id: \.self) { inFlight in
                     HStack {
@@ -72,6 +72,7 @@ struct ContentView: View {
 struct BottleListEntry: View {
     let bottle: Bottle
     @State var showBottleRename: Bool = false
+    @Binding var selected: URL?
 
     var body: some View {
         Text(bottle.name)
@@ -102,6 +103,9 @@ struct BottleListEntry: View {
 
         if response == .alertFirstButtonReturn {
             Task(priority: .userInitiated) {
+                if selected == bottle.url {
+                    selected = nil
+                }
                 await bottle.delete()
             }
         }
