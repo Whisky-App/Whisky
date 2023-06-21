@@ -18,8 +18,8 @@
 "button.deleteAlert.delete" = "Verwijder";
 "button.deleteAlert.cancel" = "Annuleren";
 
-"config.winVersion" = "Windows Version";
-"config.buildVersion" = "Build Version";
+"config.winVersion" = "Windows-versie";
+"config.buildVersion" = "Build-versie";
 "config.title.metal" = "Metal";
 "config.metalHud" = "Metal HUD";
 "config.metalTrace" = "Metal Trace";
