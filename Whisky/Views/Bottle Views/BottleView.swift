@@ -109,6 +109,7 @@ struct BottleView: View {
                             } else {
                                 programLoading = false
                             }
+                            startMenuPrograms = bottle.updateStartMenuPrograms()
                         }
                     }
                 }
