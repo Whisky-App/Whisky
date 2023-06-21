@@ -70,7 +70,7 @@
 "showAlertOnFirstLaunch.button.moveToApplications" = "「アプリケーション」に移動";
 "showAlertOnFirstLaunch.button.dontMove" = "移動しない";
 
-"setup.welcome" = "Welcome to Whisky";
+"setup.welcome" = "Whisky へようこそ";
 "setup.welcome.subtitle" = "Let's get you set up. This won't take a minute.";
 
 "setup.install.checking" = "Checking %@ installation...";
