@@ -13,6 +13,7 @@ struct BottleView: View {
     @Binding var bottle: Bottle
     @State var programLoading: Bool = false
     @State var startMenuPrograms: [ShellLinkHeader] = []
+    @State var shortcuts: [Shortcut] = []
     // We don't actually care about the value
     // This just provides a way to trigger a refresh
     @State var loadStartMenu: Bool = false
@@ -22,7 +23,7 @@ struct BottleView: View {
     var body: some View {
         VStack {
             ScrollView {
-                if startMenuPrograms.count > 0 {
+                if startMenuPrograms.count > 0  || shortcuts.count > 0 {
                     NavigationStack {
                         LazyVGrid(columns: gridLayout, alignment: .center) {
                             ForEach(startMenuPrograms, id: \.self) { link in
@@ -42,6 +43,40 @@ struct BottleView: View {
                                                 Task {
                                                     await program.run()
                                                 }
+                                            }
+                                        } label: {
+                                            Image(systemName: "play.fill")
+                                                .resizable()
+                                                .foregroundColor(.green)
+                                                .frame(width: 16, height: 16)
+                                        }
+                                        .buttonStyle(.plain)
+                                    }
+                                    .frame(width: 45, height: 45) // Same size as ShellLinkView's icon
+                                    .padding(EdgeInsets(top: 0, leading: 0, bottom: 12, trailing: 0))
+                                }
+                            }
+                            ForEach(shortcuts, id: \.link) { shortcut in
+                                NavigationLink {
+                                    let program = Program(name: shortcut.name,
+                                                          url: shortcut.link,
+                                                          bottle: bottle)
+                                    ProgramView(program: .constant(program))
+                                } label: {
+                                    ShortcutView(bottle: bottle,
+                                                 shortcut: shortcut,
+                                                 loadStartMenu: $loadStartMenu)
+                                }
+                                .buttonStyle(.plain)
+                                .overlay {
+                                    HStack {
+                                        Spacer()
+                                        Button {
+                                            let program = Program(name: shortcut.name,
+                                                                  url: shortcut.link,
+                                                                  bottle: bottle)
+                                            Task {
+                                                await program.run()
                                             }
                                         } label: {
                                             Image(systemName: "play.fill")
@@ -79,10 +114,10 @@ struct BottleView: View {
                     }
                     .formStyle(.grouped)
                     .onAppear {
-                        startMenuPrograms = bottle.updateStartMenuPrograms()
+                        updateStartMenu()
                     }
                     .onChange(of: loadStartMenu) { _ in
-                        startMenuPrograms = bottle.updateStartMenuPrograms()
+                        updateStartMenu()
                     }
                 }
             }
@@ -115,7 +150,7 @@ struct BottleView: View {
                             } else {
                                 programLoading = false
                             }
-                            startMenuPrograms = bottle.updateStartMenuPrograms()
+                            updateStartMenu()
                         }
                     }
                 }
@@ -130,6 +165,11 @@ struct BottleView: View {
             .padding()
         }
         .navigationTitle(bottle.name)
+    }
+
+    func updateStartMenu() {
+        startMenuPrograms = bottle.updateStartMenuPrograms()
+        shortcuts = bottle.settings.shortcuts
     }
 }
 
@@ -201,6 +241,64 @@ struct ShellLinkView: View {
                 } catch {
                     print(error)
                 }
+            }
+        }
+    }
+}
+
+struct ShortcutView: View {
+    var bottle: Bottle
+    @State var shortcut: Shortcut
+    @State var image: NSImage?
+    @Binding var loadStartMenu: Bool
+
+    var body: some View {
+        VStack {
+            if let image = image {
+                Image(nsImage: image)
+                    .resizable()
+                    .frame(width: 45, height: 45)
+            } else {
+                Image(systemName: "app.dashed")
+                    .resizable()
+                    .frame(width: 45, height: 45)
+            }
+            Spacer()
+            Text(shortcut.link
+                .deletingPathExtension()
+                .lastPathComponent + "\n")
+                .multilineTextAlignment(.center)
+                .lineLimit(2)
+        }
+        .frame(width: 90, height: 90)
+        .padding(10)
+        .contextMenu {
+            Button("Delete Shortcut") {
+                bottle.settings.shortcuts.removeAll(where: { $0.link == shortcut.link })
+                loadStartMenu.toggle()
+            }
+        }
+        .onAppear {
+            let program = Program(name: shortcut.name,
+                                  url: shortcut.link,
+                                  bottle: bottle)
+            do {
+                let peFile = try PEFile(data: Data(contentsOf: program.url))
+                var icons: [NSImage] = []
+                if let resourceSection = peFile.resourceSection {
+                    for entries in resourceSection.allEntries where entries.icon.isValid {
+                        icons.append(entries.icon)
+                    }
+                } else {
+                    print("No resource section")
+                    return
+                }
+
+                if icons.count > 0 {
+                    image = icons[0]
+                }
+            } catch {
+                print(error)
             }
         }
     }
