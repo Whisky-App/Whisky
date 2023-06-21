@@ -38,6 +38,7 @@
 "info.title" = "Bilgi";
 "info.path" = "Yol";
 "info.path.copy" = "Yolu Kopyala";
+"info.winPath.copy" = "Copy Windows Path";
 "info.wine" = "Wine Sürümü";
 "info.win" = "Windows Sürümü";
 
