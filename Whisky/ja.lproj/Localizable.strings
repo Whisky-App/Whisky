@@ -84,3 +84,8 @@
 "setup.wine.download" = "Wine をダウンロード中";
 "setup.wine.download.subtitle" = "速度はインターネット接続によって異なります。";
 "setup.wine.progress" = "進行状況: %@ %@";
+
+"setup.wine.install" = "Installing Wine";
+"setup.wine.install.subtitle" = "Almost there. Don't tune out yet.";
+
+"setup.gptk" = "Installing GPTK";
