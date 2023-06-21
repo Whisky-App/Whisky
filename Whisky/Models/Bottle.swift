@@ -74,9 +74,11 @@ public class Bottle: Hashable {
 
         for program in startMenuProgramsURLs {
             do {
-                try startMenuPrograms.append(ShellLinkHeader(url: program,
-                                                             data: Data(contentsOf: program),
-                                                             bottle: self))
+                if !startMenuPrograms.contains(where: { $0.url == program }) {
+                    try startMenuPrograms.append(ShellLinkHeader(url: program,
+                                                                 data: Data(contentsOf: program),
+                                                                 bottle: self))
+                }
             } catch {
                 print(error)
             }
