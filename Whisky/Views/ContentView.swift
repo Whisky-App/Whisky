@@ -41,7 +41,8 @@ struct ContentView: View {
                     .frame(maxWidth: .infinity, maxHeight: .infinity)
                 }
             }
-            .frame(minWidth: 200, maxWidth: 200, maxHeight: .infinity)
+            .frame(minWidth: 200, maxWidth: 300, maxHeight: .infinity)
+            .navigationSplitViewColumnWidth(min: 200, ideal: 200, max: 300)
         } detail: {
             if let bottle = selected {
                 if let bottle = bottleVM.bottles.first(where: { $0.url == bottle }) {
