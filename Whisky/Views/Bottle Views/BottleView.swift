@@ -13,6 +13,9 @@ struct BottleView: View {
     @Binding var bottle: Bottle
     @State var programLoading: Bool = false
     @State var startMenuPrograms: [ShellLinkHeader] = []
+    // We don't actually care about the value
+    // This just provides a way to trigger a refresh
+    @State var loadStartMenu: Bool = false
 
     private let gridLayout = [GridItem(.adaptive(minimum: 100, maximum: .infinity))]
 
@@ -28,7 +31,7 @@ struct BottleView: View {
                                         ProgramView(program: .constant(program))
                                     }
                                 } label: {
-                                    ShellLinkView(link: link)
+                                    ShellLinkView(link: link, loadStartMenu: $loadStartMenu)
                                 }
                                 .buttonStyle(.plain)
                                 .overlay {
@@ -76,6 +79,9 @@ struct BottleView: View {
                     }
                     .formStyle(.grouped)
                     .onAppear {
+                        startMenuPrograms = bottle.updateStartMenuPrograms()
+                    }
+                    .onChange(of: loadStartMenu) { _ in
                         startMenuPrograms = bottle.updateStartMenuPrograms()
                     }
                 }
@@ -137,6 +143,7 @@ struct BottleView_Previews: PreviewProvider {
 struct ShellLinkView: View {
     @State var link: ShellLinkHeader
     @State var image: NSImage?
+    @Binding var loadStartMenu: Bool
 
     var body: some View {
         VStack {
@@ -164,6 +171,16 @@ struct ShellLinkView: View {
         }
         .frame(width: 90, height: 90)
         .padding(10)
+        .contextMenu {
+            Button("Delete Shortcut") {
+                do {
+                    try FileManager.default.removeItem(at: link.url)
+                    loadStartMenu.toggle()
+                } catch {
+                    print("Failed to delete shortcut: \(error)")
+                }
+            }
+        }
         .onAppear {
             if let linkInfo = link.linkInfo, let program = linkInfo.program {
                 do {
