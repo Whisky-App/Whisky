@@ -38,7 +38,7 @@
 "info.title" = "Сведения";
 "info.path" = "Путь:";
 "info.path.copy" = "Скопировать путь";
-"info.winPath.copy" = "Copy Windows Path";
+"info.winPath.copy" = "Скопировать путь Windows";
 "info.wine" = "Версия Wine:";
 "info.win" = "Версия Windows:";
 
@@ -51,12 +51,12 @@
 "create.title" = "Создать новую бутылку";
 "create.name" = "Название бутылки:";
 "create.win" = "Версия Windows:";
-"create.path" = "Bottle path:";
+"create.path" = "Путь бутылки:";
 "create.browse" = "Обзор";
 "create.cancel" = "Отмена";
 "create.create" = "Создать";
-"create.warning.emptyName" = "Name can't be empty";
-"create.warning.alreadyExistsName" = "Бутылка с таким именем уже существует";
+"create.warning.emptyName" = "Название не может быть пустым";
+"create.warning.alreadyExistsName" = "Бутылка с таким названием уже существует";
 
 "rename.title" = "Переименовать бутылку";
 "rename.name" = "Новое имя:";
@@ -72,18 +72,18 @@
 "showAlertOnFirstLaunch.button.dontMove" = "Не двигать";
 
 "setup.welcome" = "Добро пожаловать в Whisky";
-"setup.welcome.subtitle" = "Let's get you set up. This won't take a minute.";
+"setup.welcome.subtitle" = "Давайте настроим вас. Это не займет минуту.";
 
-"setup.install.checking" = "Checking %@ installation...";
-"setup.install.installed" = "%@ installed";
-"setup.install.notInstalled" = "%@ not installed";
+"setup.install.checking" = "Проверка %@ установки...";
+"setup.install.installed" = "%@ установлено";
+"setup.install.notInstalled" = "%@ не установлено";
 
 "setup.rosetta" = "Установка Rosetta";
-"setup.rosetta.subtitle" = "Rosetta allows x86 code, like Wine, to run on your Mac.";
+"setup.rosetta.subtitle" = "Rosetta позволяет использовать x86 код, например Wine, для запуска на вашем Mac.";
 
 "setup.wine.download" = "Скачивание Wine";
 "setup.wine.download.subtitle" = "Скорость скачивания зависит от вашего подключения к Интернету.";
-"setup.wine.progress" = "Progress: %@ %@";
+"setup.wine.progress" = "Выполнено: %@ %@";
 
 "setup.wine.install" = "Установка Wine";
 "setup.wine.install.subtitle" = "Почти там. Не уходите еще.";
