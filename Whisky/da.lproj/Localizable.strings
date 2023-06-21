@@ -28,7 +28,7 @@
 "config.esync" = "ESync";
 "config.controlPanel" = "Åbn Kontrolpanel";
 "config.regedit" = "Åbn Registry Editor";
-"config.winecfg" = "Åben Wine konfiguration";
+"config.winecfg" = "Åben Wine Konfiguration";
 
 "program.title" = "Installerede programmer";
 "program.env" = "Miljøvariabler";
@@ -69,3 +69,17 @@
 "showAlertOnFirstLaunch.informativeText" = "I nogle tilfælde vil Whisky ikke være i stand til at fungere korrekt fra en anden mappe";
 "showAlertOnFirstLaunch.button.moveToApplications" = "Flyt til mappen Applications";
 "showAlertOnFirstLaunch.button.dontMove" = "Flyt Ikke";
+
+"setup.welcome" = "Welcome to Whisky";
+"setup.welcome.subtitle" = "Let's get you set up. This won't take a minute.";
+
+"setup.install.checking" = "Checking %@ installation...";
+"setup.install.installed" = "%@ installed";
+"setup.install.notInstalled" = "%@ not installed";
+
+"setup.rosetta" = "Installing Rosetta";
+"setup.rosetta.subtitle" = "Rosetta allows x86 code, like Wine, to run on your Mac.";
+
+"setup.wine.download" = "Downloading Wine";
+"setup.wine.download.subtitle" = "Speeds will vary on your internet connection.";
+"setup.wine.progress" = "Progress: %@ %@";

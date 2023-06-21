@@ -23,6 +23,7 @@
 "config.title.metal" = "Metal";
 "config.metalHud" = "Hud Metal";
 "config.metalTrace" = "Diagnóstico Metal";
+"config.retinaMode" = "Retina Mode";
 "config.metalTrace.info" = "Permite capturar a carga de trabalho da GPU no Xcode";
 "config.esync" = "ESync";
 "config.controlPanel" = "Open Control Panel";
@@ -40,8 +41,8 @@
 "info.wine" = "Versão do Wine";
 "info.win" = "Versão do Windows";
 
-"gptalert.init" = "Arraste e solte o ficheiro DMG do Game Porting Toolkit";
-"gptalert.message" = "O GPT encontrou um erro!";
+"gptkalert.init" = "Arraste e solte o arquivo DMG do Game Porting Toolkit";
+"gptkalert.message" = "O GPTK encontrou um erro!";
 
 "alert.message" = "Falha ao abrir o programa!";
 "alert.info" = "Falha ao abrir";
@@ -49,6 +50,8 @@
 "create.title" = "Criar uma nova Bottle";
 "create.name" = "Nome da Bottle:";
 "create.win" = "Versão do Windows:";
+"create.path" = "Bottle path:";
+"create.browse" = "Browse";
 "create.cancel" = "Cancelar";
 "create.create" = "Criar";
 "create.warning.emptyName" = "O nome não pode ser vazio";
@@ -59,10 +62,24 @@
 "rename.rename" = "Alterar nome";
 
 "check.updates" = "Verificar Actualizações...";
-"kill.bottles" = "Encerrar todas as Bottles...";
+"kill.bottles" = "Encerrar Todos os Bottles";
 "open.logs" = "Abrir Pasta dos Logs";
 
 "showAlertOnFirstLaunch.messageText" = "Gostaria de mover o Whisky para a pasta das Aplicações ?";
 "showAlertOnFirstLaunch.informativeText" = "Em alguns casos, o Whisky pode não funcionar correctamente numa pasta diferente";
 "showAlertOnFirstLaunch.button.moveToApplications" = "Mover para Aplicações";
 "showAlertOnFirstLaunch.button.dontMove" = "Não Mover";
+
+"setup.welcome" = "Welcome to Whisky";
+"setup.welcome.subtitle" = "Let's get you set up. This won't take a minute.";
+
+"setup.install.checking" = "Checking %@ installation...";
+"setup.install.installed" = "%@ installed";
+"setup.install.notInstalled" = "%@ not installed";
+
+"setup.rosetta" = "Installing Rosetta";
+"setup.rosetta.subtitle" = "Rosetta allows x86 code, like Wine, to run on your Mac.";
+
+"setup.wine.download" = "Downloading Wine";
+"setup.wine.download.subtitle" = "Speeds will vary on your internet connection.";
+"setup.wine.progress" = "Progress: %@ %@";

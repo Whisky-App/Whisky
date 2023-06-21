@@ -23,7 +23,7 @@
 "config.title.metal" = "Metal";
 "config.metalHud" = "Metal HUD";
 "config.metalTrace" = "Metal İzleme";
-"config.retinaMode" = "Retina Mode";
+"config.retinaMode" = "Retina Modu";
 "config.metalTrace.info" = "Xcode'da GPU iş yükünü yakalamak için kullanılır";
 "config.esync" = "ESync";
 "config.controlPanel" = "Kontrol Panelini Aç";
@@ -50,8 +50,8 @@
 "create.title" = "Yeni bir Bottle Oluştur";
 "create.name" = "Bottle Adı:";
 "create.win" = "Windows sürümü:";
-"create.path" = "Bottle path:";
-"create.browse" = "Browse";
+"create.path" = "Bottle Dosya Yolu:";
+"create.browse" = "Gözat";
 "create.cancel" = "İptal";
 "create.create" = "Oluştur";
 "create.warning.emptyName" = "İsim Boş Olamaz";
@@ -69,3 +69,17 @@
 "showAlertOnFirstLaunch.informativeText" = "Bazı durumlarda, Whisky farklı bir klasörden düzgün çalışmayabilir.";
 "showAlertOnFirstLaunch.button.moveToApplications" = "Applications'a Taşı";
 "showAlertOnFirstLaunch.button.dontMove" = "Taşıma";
+
+"setup.welcome" = "Welcome to Whisky";
+"setup.welcome.subtitle" = "Let's get you set up. This won't take a minute.";
+
+"setup.install.checking" = "Checking %@ installation...";
+"setup.install.installed" = "%@ installed";
+"setup.install.notInstalled" = "%@ not installed";
+
+"setup.rosetta" = "Installing Rosetta";
+"setup.rosetta.subtitle" = "Rosetta allows x86 code, like Wine, to run on your Mac.";
+
+"setup.wine.download" = "Downloading Wine";
+"setup.wine.download.subtitle" = "Speeds will vary on your internet connection.";
+"setup.wine.progress" = "Progress: %@ %@";

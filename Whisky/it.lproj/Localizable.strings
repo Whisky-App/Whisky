@@ -4,7 +4,7 @@
 
 "tab.navTitle.config" = "%@ Configurazione";
 "tab.navTitle.programs" = "%@ Programmi";
-"tab.navTitle.info" = "%@ Informazioni";
+"tab.navTitle.info" = "Informazioni %@";
 
 "button.cDrive" = "Apri Disco C";
 "button.showInFinder" = "Mostra in Finder";
@@ -19,11 +19,15 @@
 "button.deleteAlert.cancel" = "Annulla";
 
 "config.winVersion" = "Versione di Windows";
+"config.buildVersion" = "Versione build";
 "config.title.metal" = "Metal";
 "config.metalHud" = "Metal HUD";
 "config.metalTrace" = "Metal Trace";
+"config.retinaMode" = "Modalità Retina";
 "config.metalTrace.info" = "Permette di catturare il carico di lavoro della GPU in Xcode";
 "config.esync" = "ESync";
+"config.controlPanel" = "Apri Pannello di Controllo";
+"config.regedit" = "Apri Editor dei Registri";
 "config.winecfg" = "Apri Configurazione Wine";
 
 "program.title" = "Programmi Installati";
@@ -37,7 +41,7 @@
 "info.wine" = "Versione di Wine";
 "info.win" = "Versione di Windows";
 
-"gptkalert.init" = "Trasciana e Rilascia il file DMG di Game Porting Toolkit";
+"gptkalert.init" = "Trascina e Rilascia il file DMG di Game Porting Toolkit";
 "gptkalert.message" = "GPTK ha riscontrato un errore!";
 
 "alert.message" = "Impossibile aprire il programma!";
@@ -46,18 +50,36 @@
 "create.title" = "Crea una nuova bottiglia";
 "create.name" = "Nome bottiglia:";
 "create.win" = "Versione di Windows:";
+"create.path" = "Percorso della bottiglia:";
+"create.browse" = "Esplora";
 "create.cancel" = "Annulla";
 "create.create" = "Crea";
+"create.warning.emptyName" = "Il nome non può essere vuoto";
+"create.warning.alreadyExistsName" = "Esiste già una bottiglia con questo nome";
 
 "rename.title" = "Rinomina bottiglia";
 "rename.name" = "Nuovo nome:";
 "rename.rename" = "Rinomina";
 
 "check.updates" = "Controlla aggiornamenti...";
-"kill.bottles" = "Termina tutte le Bottiglie...";
+"kill.bottles" = "Termina tutte le Bottiglie";
 "open.logs" = "Apri la cartella dei log";
 
 "showAlertOnFirstLaunch.messageText" = "Vuoi spostare Whisky nella tua cartella Applicazioni?";
 "showAlertOnFirstLaunch.informativeText" = "In alcuni casi, Whisky non potrà funzionare correttamente da un cartella diversa";
 "showAlertOnFirstLaunch.button.moveToApplications" = "Sposta in Applicazioni";
 "showAlertOnFirstLaunch.button.dontMove" = "Non Spostare";
+
+"setup.welcome" = "Benvenuto su Whisky";
+"setup.welcome.subtitle" = "Creiamo la tua configurazione. Ci vorrà menu di un minuto.";
+
+"setup.install.checking" = "Controllo installazione %@...";
+"setup.install.installed" = "%@ installato";
+"setup.install.notInstalled" = "%@ non installato";
+
+"setup.rosetta" = "Installazione di Rosetta";
+"setup.rosetta.subtitle" = "Rosetta permette al codice x86, come Wine, di funzionare sul tuo Mac.";
+
+"setup.wine.download" = "Scaricando Wine";
+"setup.wine.download.subtitle" = "Le velocità varieranno in base alla tua connessione internet.";
+"setup.wine.progress" = "Progresso: %@ %@";

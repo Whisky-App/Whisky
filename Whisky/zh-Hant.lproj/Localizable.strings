@@ -69,3 +69,17 @@
 "showAlertOnFirstLaunch.informativeText" = "在某些情況下，Whisky可能無法在不同的資料夾中正常運作";
 "showAlertOnFirstLaunch.button.moveToApplications" = "移動到應用程式";
 "showAlertOnFirstLaunch.button.dontMove" = "不移動";
+
+"setup.welcome" = "Welcome to Whisky";
+"setup.welcome.subtitle" = "Let's get you set up. This won't take a minute.";
+
+"setup.install.checking" = "Checking %@ installation...";
+"setup.install.installed" = "%@ installed";
+"setup.install.notInstalled" = "%@ not installed";
+
+"setup.rosetta" = "Installing Rosetta";
+"setup.rosetta.subtitle" = "Rosetta allows x86 code, like Wine, to run on your Mac.";
+
+"setup.wine.download" = "Downloading Wine";
+"setup.wine.download.subtitle" = "Speeds will vary on your internet connection.";
+"setup.wine.progress" = "Progress: %@ %@";

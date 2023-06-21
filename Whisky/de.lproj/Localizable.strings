@@ -19,14 +19,14 @@
 "button.deleteAlert.cancel" = "Abbrechen";
 
 "config.winVersion" = "Windows Version";
-"config.buildVersion" = "Build Version";
+"config.buildVersion" = "Build-Version";
 "config.title.metal" = "Metal";
 "config.metalHud" = "Metal HUD";
 "config.metalTrace" = "Metal Trace";
-"config.retinaMode" = "Retina Mode";
+"config.retinaMode" = "Retina-Modus";
 "config.metalTrace.info" = "Erlaub es dir, den GPU-Workload in Xcode aufzunehmen.";
 "config.esync" = "ESync";
-"config.controlPanel" = "Open Control Panel";
+"config.controlPanel" = "Systemsteuerung öffnen";
 "config.regedit" = "Registry-Editor öffnen";
 "config.winecfg" = "Öffne die Wine-Konfiguration";
 
@@ -50,8 +50,8 @@
 "create.title" = "Erstelle eine neue Bottle";
 "create.name" = "Bottle-Name:";
 "create.win" = "Windows version:";
-"create.path" = "Bottle path:";
-"create.browse" = "Browse";
+"create.path" = "Bottle-Pfad:";
+"create.browse" = "Durchsuchen";
 "create.cancel" = "Abbrechen";
 "create.create" = "Erstellen";
 "create.warning.emptyName" = "Der Name darf nicht leer sein";
@@ -69,3 +69,17 @@
 "showAlertOnFirstLaunch.informativeText" = "In manchen Fällen wird Whisky nicht richtig funktionieren, wenn es in einem anderen Ordner gespeichert ist.";
 "showAlertOnFirstLaunch.button.moveToApplications" = "In den Programm-Ordner legen";
 "showAlertOnFirstLaunch.button.dontMove" = "Nicht Bewegen";
+
+"setup.welcome" = "Willkommen zu Whisky";
+"setup.welcome.subtitle" = "Lass uns mit der Einrichtung beginnen. Dies dauert keine Minute.";
+
+"setup.install.checking" = "Überprüfen der %@ Installation...";
+"setup.install.installed" = "%@ installiert";
+"setup.install.notInstalled" = "%@ nicht installiert";
+
+"setup.rosetta" = "Installiere Rosetta";
+"setup.rosetta.subtitle" = "Rosetta erlaubt es, x86 code auf deinem Mac auszuführen, ähnlich wie Wine.";
+
+"setup.wine.download" = "Downloading Wine";
+"setup.wine.download.subtitle" = "Speeds will vary on your internet connection.";
+"setup.wine.progress" = "Progress: %@ %@";

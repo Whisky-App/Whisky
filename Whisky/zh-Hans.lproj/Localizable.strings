@@ -23,7 +23,7 @@
 "config.title.metal" = "Metal";
 "config.metalHud" = "Metal 监视器";
 "config.metalTrace" = "Metal 性能分析";
-"config.retinaMode" = "Retina Mode";
+"config.retinaMode" = "Retina 模式";
 "config.metalTrace.info" = "允许你在 Xcode 中抓取 GPU 工作负载";
 "config.esync" = "ESync（增强同步）技术";
 "config.controlPanel" = "打开控制面板";
@@ -50,8 +50,8 @@
 "create.title" = "创建新的容器";
 "create.name" = "容器名称：";
 "create.win" = "Windows 版本：";
-"create.path" = "Bottle path:";
-"create.browse" = "Browse";
+"create.path" = "容器路径：";
+"create.browse" = "浏览";
 "create.cancel" = "取消";
 "create.create" = "创建";
 "create.warning.emptyName" = "名称不能为空";
@@ -69,3 +69,17 @@
 "showAlertOnFirstLaunch.informativeText" = "在某些情况下，Whisky 可能无法在另外的文件夹中正常工作";
 "showAlertOnFirstLaunch.button.moveToApplications" = "移动到应用程序文件夹";
 "showAlertOnFirstLaunch.button.dontMove" = "不移动";
+
+"setup.welcome" = "Welcome to Whisky";
+"setup.welcome.subtitle" = "Let's get you set up. This won't take a minute.";
+
+"setup.install.checking" = "Checking %@ installation...";
+"setup.install.installed" = "%@ installed";
+"setup.install.notInstalled" = "%@ not installed";
+
+"setup.rosetta" = "Installing Rosetta";
+"setup.rosetta.subtitle" = "Rosetta allows x86 code, like Wine, to run on your Mac.";
+
+"setup.wine.download" = "Downloading Wine";
+"setup.wine.download.subtitle" = "Speeds will vary on your internet connection.";
+"setup.wine.progress" = "Progress: %@ %@";
