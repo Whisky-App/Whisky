@@ -88,4 +88,4 @@
 "setup.wine.install" = "Installing Wine";
 "setup.wine.install.subtitle" = "Almost there. Don't tune out yet.";
 
-"setup.gptk" = "Installing GPTK"
+"setup.gptk" = "Installing GPTK";
