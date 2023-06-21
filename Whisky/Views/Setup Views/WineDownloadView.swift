@@ -14,6 +14,7 @@ struct WineDownloadView: View {
     @State private var downloadTask: URLSessionDownloadTask?
     @State private var observation: NSKeyValueObservation?
     @Binding var tarLocation: URL
+    @Binding var path: [SetupStage]
 
     var body: some View {
         VStack {
@@ -39,14 +40,15 @@ struct WineDownloadView: View {
             }
             Spacer()
         }
+        .frame(width: 400, height: 200)
         .onAppear {
             Task {
                 if let downloadInfo = await WineDownload.getLatestWineURL(),
                     let url = downloadInfo.directURL {
-                    print(url)
                     downloadTask = URLSession.shared.downloadTask(with: url) { url, _, _ in
                         if let url = url {
                             tarLocation = url
+                            proceed()
                         }
                     }
 
@@ -82,5 +84,9 @@ struct WineDownloadView: View {
         let completed = formatter.string(fromByteCount: completed)
         let total = formatter.string(fromByteCount: total)
         return "(\(completed)/\(total))"
+    }
+
+    func proceed() {
+        path.append(.wineInstall)
     }
 }

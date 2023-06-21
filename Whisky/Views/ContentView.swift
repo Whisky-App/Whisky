@@ -9,6 +9,7 @@ import SwiftUI
 
 struct ContentView: View {
     @EnvironmentObject var bottleVM: BottleVM
+    @AppStorage("showSetup") private var showSetup = true
     @State var selected: URL?
     @State var showBottleCreation: Bool = false
     @State var shouldUpdateWine: Bool = false
@@ -56,6 +57,9 @@ struct ContentView: View {
         }
         .sheet(isPresented: $showBottleCreation) {
             BottleCreationView()
+        }
+        .sheet(isPresented: $showSetup) {
+            SetupView()
         }
         .onAppear {
             bottleVM.loadBottles()

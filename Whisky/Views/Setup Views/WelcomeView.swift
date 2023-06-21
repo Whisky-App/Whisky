@@ -11,7 +11,9 @@ struct WelcomeView: View {
     @State var rosettaInstalled: Bool?
     @State var wineInstalled: Bool?
     @State var gptkInstalled: Bool?
-    @Binding var canContinue: Bool
+    @State var canContinue: Bool = false
+    @Binding var path: [SetupStage]
+    @Environment(\.dismiss) var dismiss
 
     var body: some View {
         VStack {
@@ -43,6 +45,40 @@ struct WelcomeView: View {
                     gptkInstalled = GPTK.isGPTKInstalled()
                     canContinue = true
                 }
+            }
+            Spacer()
+            HStack {
+                Button("Quit") {
+                    exit(0)
+                }
+                .keyboardShortcut(.cancelAction)
+                Spacer()
+                Button("Next") {
+                    if let rosettaInstalled = rosettaInstalled,
+                       let wineInstalled = wineInstalled,
+                       let gptkInstalled = gptkInstalled {
+                        if Arch.getArch() == .arm {
+                            if !rosettaInstalled {
+                                path.append(.rosetta)
+                                return
+                            }
+                        }
+
+                        if !wineInstalled {
+                            path.append(.wineDownload)
+                            return
+                        }
+
+                        if !gptkInstalled {
+                            path.append(.gptk)
+                            return
+                        }
+
+                        dismiss()
+                    }
+                }
+                .keyboardShortcut(.defaultAction)
+                .disabled(!canContinue)
             }
         }
     }

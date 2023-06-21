@@ -10,6 +10,7 @@ import SwiftUI
 struct GPTKInstallView: View {
     @State private var dragOver = false
     @State private var installing = false
+    @Environment(\.dismiss) var dismiss
 
     var body: some View {
         VStack {
@@ -31,6 +32,7 @@ struct GPTKInstallView: View {
             }
             Spacer()
         }
+        .frame(width: 400, height: 200)
         .onDrop(of: ["public.file-url"], isTargeted: $dragOver) { providers -> Bool in
             providers.first?.loadDataRepresentation(forTypeIdentifier: "public.file-url",
                                                     completionHandler: { (data, _) in
@@ -40,6 +42,7 @@ struct GPTKInstallView: View {
                     if url.pathExtension == "dmg" {
                         installing = true
                         GPTK.install(url: url)
+                        proceed()
                     } else {
                         print("Not a DMG!")
                     }
@@ -47,7 +50,10 @@ struct GPTKInstallView: View {
             })
             return true
         }
-        Spacer()
+    }
+
+    func proceed() {
+        dismiss()
     }
 }
 

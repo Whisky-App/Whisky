@@ -9,6 +9,8 @@ import SwiftUI
 
 struct RosettaView: View {
     @State var installing: Bool = true
+    @Binding var path: [SetupStage]
+    @Environment(\.dismiss) var dismiss
 
     var body: some View {
         VStack {
@@ -34,21 +36,30 @@ struct RosettaView: View {
             }
             Spacer()
         }
+        .frame(width: 400, height: 200)
         .onAppear {
             Rosetta2.launchRosettaInstaller()
             Timer.scheduledTimer(withTimeInterval: 1, repeats: true) { timer in
                 if Rosetta2.isRosettaInstalled {
                     installing = false
+                    proceed()
                     timer.invalidate()
                 }
             }
         }
     }
-}
 
-struct RosettaView_Previews: PreviewProvider {
-    static var previews: some View {
-        RosettaView()
-            .frame(width: 400, height: 200)
+    func proceed() {
+        if !WineInstaller.isWineInstalled() {
+            path.append(.wineDownload)
+            return
+        }
+
+        if !GPTK.isGPTKInstalled() {
+            path.append(.gptk)
+            return
+        }
+
+        dismiss()
     }
 }

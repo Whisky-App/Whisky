@@ -8,87 +8,34 @@
 import SwiftUI
 
 enum SetupStage {
-    case welcome
     case rosetta
     case wineDownload
     case wineInstall
     case gptk
-    case finished
 }
 
 struct SetupView: View {
-    @State var canContinue: Bool = false
     @State private var path: [SetupStage] = []
     @State var tarLocation: URL = URL(fileURLWithPath: "")
+    @Environment(\.dismiss) var dismiss
 
     var body: some View {
         VStack {
             NavigationStack(path: $path) {
-                WelcomeView(canContinue: $canContinue)
+                WelcomeView(path: $path)
+                    .navigationBarBackButtonHidden(true)
                     .navigationDestination(for: SetupStage.self) { stage in
                         switch stage {
-                        case .welcome:
-                            WelcomeView(canContinue: $canContinue)
                         case .rosetta:
-                            RosettaView()
+                            RosettaView(path: $path)
                         case .wineDownload:
-                            WineDownloadView(tarLocation: $tarLocation)
+                            WineDownloadView(tarLocation: $tarLocation, path: $path)
                         case .wineInstall:
-                            WineInstallView(tarLocation: $tarLocation)
+                            WineInstallView(tarLocation: $tarLocation, path: $path)
                         case .gptk:
                             GPTKInstallView()
-                        case .finished:
-                            Text("all done")
                         }
                     }
-            }
-            Spacer()
-            HStack {
-                Button("Quit") {
-                    exit(0)
-                }
-                .keyboardShortcut(.cancelAction)
-                Spacer()
-                Button("Next") {
-                    switch path.last {
-                    case .welcome, .none:
-                        if Arch.getArch() == .arm {
-                            if !Rosetta2.isRosettaInstalled {
-                                path.append(.rosetta)
-                                break
-                            }
-                        }
-
-                        fallthrough
-                    case .rosetta:
-                        if !WineInstaller.isWineInstalled() {
-                            path.append(.wineDownload)
-                            break
-                        }
-
-                        if !GPTK.isGPTKInstalled() {
-                            path.append(.gptk)
-                            break
-                        }
-
-                        path.append(.finished)
-                    case .wineDownload:
-                        path.append(.wineInstall)
-                    case .wineInstall:
-                        if !GPTK.isGPTKInstalled() {
-                            path.append(.gptk)
-                            break
-                        }
-
-                        path.append(.finished)
-                    case .gptk:
-                        path.append(.finished)
-                    case .finished:
-                        break
-                    }
-                }
-                .keyboardShortcut(.defaultAction)
-                .disabled(!canContinue)
             }
         }
         .padding()
