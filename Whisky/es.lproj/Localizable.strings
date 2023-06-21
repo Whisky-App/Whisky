@@ -38,6 +38,7 @@
 "info.title" = "Información";
 "info.path" = "Ruta";
 "info.path.copy" = "Copiar Ruta";
+"info.winPath.copy" = "Copy Windows Path";
 "info.wine" = "Versión de Wine:";
 "info.win" = "Versión de Windows:";
 
