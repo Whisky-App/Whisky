@@ -12,7 +12,7 @@ class WineInstaller {
     static let WineBinaryVersion = Bundle.main.infoDictionary?["WineBinaryVersion"] as? Int ?? 0
 
     static let libraryFolder = FileManager.default.urls(for: .applicationSupportDirectory, in: .userDomainMask)[0]
-        .appendingPathComponent("Whisky")
+        .appendingPathComponent(Bundle.main.bundleIdentifier ?? "com.isaacmarovitz.Whisky")
         .appendingPathComponent("Libraries")
 
     static func isWineInstalled() -> Bool {
@@ -23,7 +23,7 @@ class WineInstaller {
         do {
             let whiskySupportFolder = FileManager.default.urls(for: .applicationSupportDirectory,
                                                                in: .userDomainMask)[0]
-                .appendingPathComponent("Whisky")
+                .appendingPathComponent(Bundle.main.bundleIdentifier ?? "com.isaacmarovitz.Whisky")
 
             if !FileManager.default.fileExists(atPath: whiskySupportFolder.path) {
                 try FileManager.default.createDirectory(at: whiskySupportFolder, withIntermediateDirectories: true)
