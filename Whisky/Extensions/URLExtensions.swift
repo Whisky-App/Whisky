@@ -15,4 +15,15 @@ extension URL {
             .replacingOccurrences(of: "/Users/\(NSUserName())", with: "~")
         return prettyPath
     }
+
+    func windowsPath() -> String {
+        var windowsPath = path
+        if let range = windowsPath.range(of: "drive_c") {
+            windowsPath = String(path[range.lowerBound...])
+        }
+
+        windowsPath = windowsPath.replacingOccurrences(of: "drive_c", with: "C:")
+        windowsPath = windowsPath.replacingOccurrences(of: "/", with: "\\")
+        return windowsPath
+    }
 }

@@ -99,10 +99,11 @@ struct BottleView: View {
                         Task(priority: .userInitiated) {
                             if result == .OK {
                                 if let url = panel.urls.first {
-                                    let program = Program(name: url.lastPathComponent,
-                                                          url: url,
-                                                          bottle: bottle)
-                                    await program.run()
+                                    do {
+                                        try await Wine.runExternalProgram(url: url, bottle: bottle)
+                                    } catch {
+                                        print("Failed to run external program: \(error)")
+                                    }
                                     programLoading = false
                                 }
                             } else {
