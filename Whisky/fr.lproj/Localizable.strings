@@ -23,7 +23,7 @@
 "config.title.metal" = "Metal";
 "config.metalHud" = "HUD Metal";
 "config.metalTrace" = "Trace de Metal";
-"config.retinaMode" = "Retina Mode";
+"config.retinaMode" = "Mode Retina";
 "config.metalTrace.info" = "Permet de capturer la charge de travail GPU en Xcode";
 "config.esync" = "ESync";
 "config.controlPanel" = "Ouvrir le panneau de configuration";
@@ -38,7 +38,7 @@
 "info.title" = "Info";
 "info.path" = "Chemin";
 "info.path.copy" = "Copier Chemin";
-"info.winPath.copy" = "Copy Windows Path";
+"info.winPath.copy" = "Copier le chemin Windows";
 "info.wine" = "Version de Wine";
 "info.win" = "Version de Windows";
 
@@ -51,8 +51,8 @@
 "create.title" = "Créer une nouvelle bouteille";
 "create.name" = "Nom de la bouteille :";
 "create.win" = "Version de Windows :";
-"create.path" = "Bottle path:";
-"create.browse" = "Browse";
+"create.path" = "Chemin de la bouteille :";
+"create.browse" = "Explorer";
 "create.cancel" = "Annuler";
 "create.create" = "Créer";
 "create.warning.emptyName" = "Le nom ne peut pas être vide";
@@ -71,21 +71,21 @@
 "showAlertOnFirstLaunch.button.moveToApplications" = "Déplacer vers Applications";
 "showAlertOnFirstLaunch.button.dontMove" = "Ne pas déplacer";
 
-"setup.welcome" = "Welcome to Whisky";
-"setup.welcome.subtitle" = "Let's get you set up. This won't take a minute.";
+"setup.welcome" = "Bienvenue à Whisky";
+"setup.welcome.subtitle" = "Mettons-nous en place. Cela ne prendra pas une minute.";
 
-"setup.install.checking" = "Checking %@ installation...";
-"setup.install.installed" = "%@ installed";
-"setup.install.notInstalled" = "%@ not installed";
+"setup.install.checking" = "Vérification de l'installation de %@...";
+"setup.install.installed" = "%@ installé";
+"setup.install.notInstalled" = "%@ pas installé";
 
-"setup.rosetta" = "Installing Rosetta";
-"setup.rosetta.subtitle" = "Rosetta allows x86 code, like Wine, to run on your Mac.";
+"setup.rosetta" = "Installation de Rosetta";
+"setup.rosetta.subtitle" = "Rosetta permet au code x86, comme Wine, de s'exécuter sur votre Mac.";
 
-"setup.wine.download" = "Downloading Wine";
-"setup.wine.download.subtitle" = "Speeds will vary on your internet connection.";
-"setup.wine.progress" = "Progress: %@ %@";
+"setup.wine.download" = "Téléchargement de Wine";
+"setup.wine.download.subtitle" = "La vitesse du téléchargement varie selon votre connexion Internet.";
+"setup.wine.progress" = "Progrès : %@ %@";
 
-"setup.wine.install" = "Installing Wine";
-"setup.wine.install.subtitle" = "Almost there. Don't tune out yet.";
+"setup.wine.install" = "Installation de Wine";
+"setup.wine.install.subtitle" = "Presque là. Veuillez patienter s'il vous plaît.";
 
-"setup.gptk" = "Installing GPTK";
+"setup.gptk" = "Installation de GPTK";
