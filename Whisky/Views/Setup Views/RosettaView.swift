@@ -10,7 +10,7 @@ import SwiftUI
 struct RosettaView: View {
     @State var installing: Bool = true
     @Binding var path: [SetupStage]
-    @Environment(\.dismiss) var dismiss
+    @Binding var showSetup: Bool
 
     var body: some View {
         VStack {
@@ -60,6 +60,6 @@ struct RosettaView: View {
             return
         }
 
-        dismiss()
+        showSetup = false
     }
 }

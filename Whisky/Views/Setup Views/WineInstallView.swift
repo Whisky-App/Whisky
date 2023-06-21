@@ -11,7 +11,7 @@ struct WineInstallView: View {
     @State var installing: Bool = true
     @Binding var tarLocation: URL
     @Binding var path: [SetupStage]
-    @Environment(\.dismiss) var dismiss
+    @Binding var showSetup: Bool
 
     var body: some View {
         VStack {
@@ -52,6 +52,6 @@ struct WineInstallView: View {
             return
         }
 
-        dismiss()
+        showSetup = false
     }
 }

@@ -12,7 +12,6 @@ struct ContentView: View {
     @AppStorage("showSetup") private var showSetup = true
     @State var selected: URL?
     @State var showBottleCreation: Bool = false
-    @State var shouldUpdateWine: Bool = false
 
     var body: some View {
         NavigationSplitView {
@@ -59,11 +58,13 @@ struct ContentView: View {
             BottleCreationView()
         }
         .sheet(isPresented: $showSetup) {
-            SetupView()
+            SetupView(showSetup: $showSetup)
         }
         .onAppear {
             bottleVM.loadBottles()
-            shouldUpdateWine = WineInstaller.shouldUpdateWine()
+            if WineInstaller.shouldUpdateWine() {
+                showSetup = true
+            }
         }
     }
 }

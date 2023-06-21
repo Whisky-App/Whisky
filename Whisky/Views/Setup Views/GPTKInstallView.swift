@@ -10,7 +10,7 @@ import SwiftUI
 struct GPTKInstallView: View {
     @State private var dragOver = false
     @State private var installing = false
-    @Environment(\.dismiss) var dismiss
+    @Binding var showSetup: Bool
 
     var body: some View {
         VStack {
@@ -53,13 +53,6 @@ struct GPTKInstallView: View {
     }
 
     func proceed() {
-        dismiss()
-    }
-}
-
-struct GPTKInstallView_Previews: PreviewProvider {
-    static var previews: some View {
-        GPTKInstallView()
-            .frame(width: 400, height: 200)
+        showSetup = false
     }
 }

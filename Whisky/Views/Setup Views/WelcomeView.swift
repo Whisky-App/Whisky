@@ -13,7 +13,7 @@ struct WelcomeView: View {
     @State var gptkInstalled: Bool?
     @State var canContinue: Bool = false
     @Binding var path: [SetupStage]
-    @Environment(\.dismiss) var dismiss
+    @Binding var showSetup: Bool
 
     var body: some View {
         VStack {
@@ -74,7 +74,7 @@ struct WelcomeView: View {
                             return
                         }
 
-                        dismiss()
+                        showSetup = false
                     }
                 }
                 .keyboardShortcut(.defaultAction)
