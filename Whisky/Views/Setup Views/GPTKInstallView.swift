@@ -16,6 +16,7 @@ struct GPTKInstallView: View {
         VStack {
             Text("setup.gptk")
                 .font(.title)
+                .fontWeight(.bold)
             Text("gptkalert.init")
                 .foregroundStyle(.secondary)
             Spacer()
@@ -32,6 +33,7 @@ struct GPTKInstallView: View {
             }
             Spacer()
         }
+        .padding(16)
         .frame(width: 400, height: 200)
         .onDrop(of: ["public.file-url"], isTargeted: $dragOver) { providers -> Bool in
             providers.first?.loadDataRepresentation(forTypeIdentifier: "public.file-url",

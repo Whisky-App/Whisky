@@ -18,6 +18,7 @@ struct WineInstallView: View {
             VStack {
                 Text("setup.wine.install")
                     .font(.title)
+                    .fontWeight(.bold)
                 Text("setup.wine.install.subtitle")
                     .font(.subheadline)
                     .foregroundStyle(.secondary)
@@ -36,6 +37,7 @@ struct WineInstallView: View {
             }
             Spacer()
         }
+        .padding(16)
         .frame(width: 400, height: 200)
         .onAppear {
             Task {

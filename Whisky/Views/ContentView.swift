@@ -15,23 +15,36 @@ struct ContentView: View {
 
     var body: some View {
         NavigationSplitView {
-            List(selection: $selected) {
-                ForEach(bottleVM.bottles, id: \.url) { bottle in
-                    BottleListEntry(bottle: bottle, selected: $selected)
-                }
-                ForEach(bottleVM.inFlightBottles, id: \.self) { inFlight in
-                    HStack {
-                        Text(inFlight)
-                            .foregroundStyle(.secondary)
-                        Spacer()
-                        ProgressView()
-                            .controlSize(.small)
+            VStack {
+                if bottleVM.bottles.isEmpty &&
+                    bottleVM.inFlightBottles.isEmpty {
+                    Text("main.noBottles")
+                        .font(.callout)
+                        .foregroundStyle(.secondary)
+                        .multilineTextAlignment(.center)
+                        .padding(10)
+                } else {
+                    List(selection: $selected) {
+                        ForEach(bottleVM.bottles, id: \.url) { bottle in
+                            BottleListEntry(bottle: bottle, selected: $selected)
+                        }
+                        ForEach(bottleVM.inFlightBottles, id: \.self) { inFlight in
+                            HStack {
+                                Text(inFlight)
+                                    .foregroundStyle(.secondary)
+                                Spacer()
+                                ProgressView()
+                                    .controlSize(.small)
+                            }
+                        }
                     }
+                    .frame(maxWidth: .infinity, maxHeight: .infinity)
                 }
             }
+            .frame(minWidth: 200, maxWidth: 200, maxHeight: .infinity)
         } detail: {
-            if let url = selected {
-                if let bottle = bottleVM.bottles.first(where: { $0.url == url }) {
+            if let bottle = selected {
+                if let bottle = bottleVM.bottles.first(where: { $0.url == bottle }) {
                     BottleView(bottle: Binding(get: {
                         // swiftlint:disable:next force_unwrapping
                         bottleVM.bottles[bottleVM.bottles.firstIndex(of: bottle)!]
@@ -40,7 +53,27 @@ struct ContentView: View {
                             bottleVM.bottles[index] = newValue
                         }
                     }))
-                        .id(bottle.url)
+                    .id(bottle.url)
+                }
+            } else {
+                if bottleVM.bottles.isEmpty &&
+                    bottleVM.inFlightBottles.isEmpty {
+                    VStack {
+                        Text("main.createFirst")
+                        Button {
+                            showBottleCreation.toggle()
+                        } label: {
+                            HStack {
+                                Image(systemName: "plus")
+                                Text("button.createBottle")
+                            }
+                            .padding(6)
+                        }
+                        .buttonStyle(.borderedProminent)
+                        .tint(.accentColor)
+                    }
+                } else {
+                    Text("main.noneSelected")
                 }
             }
         }

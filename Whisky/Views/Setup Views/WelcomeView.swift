@@ -20,6 +20,7 @@ struct WelcomeView: View {
             VStack {
                 Text("setup.welcome")
                     .font(.title)
+                    .fontWeight(.bold)
                 Text("setup.welcome.subtitle")
                     .font(.subheadline)
                     .foregroundStyle(.secondary)
@@ -81,6 +82,7 @@ struct WelcomeView: View {
                 .disabled(!canContinue)
             }
         }
+        .padding(16)
         .frame(width: 400, height: 250)
     }
 }

@@ -21,6 +21,7 @@ struct WineDownloadView: View {
             VStack {
                 Text("setup.wine.download")
                     .font(.title)
+                    .fontWeight(.bold)
                 Text("setup.wine.download.subtitle")
                     .font(.subheadline)
                     .foregroundStyle(.secondary)
@@ -40,6 +41,7 @@ struct WineDownloadView: View {
             }
             Spacer()
         }
+        .padding(16)
         .frame(width: 400, height: 200)
         .onAppear {
             Task {

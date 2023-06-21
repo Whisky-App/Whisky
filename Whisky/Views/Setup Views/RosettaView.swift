@@ -17,6 +17,7 @@ struct RosettaView: View {
             VStack {
                 Text("setup.rosetta")
                     .font(.title)
+                    .fontWeight(.bold)
                 Text("setup.rosetta.subtitle")
                     .font(.subheadline)
                     .foregroundStyle(.secondary)
@@ -36,6 +37,7 @@ struct RosettaView: View {
             }
             Spacer()
         }
+        .padding(16)
         .frame(width: 400, height: 200)
         .onAppear {
             Rosetta2.launchRosettaInstaller()
