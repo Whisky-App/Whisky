@@ -1,4 +1,4 @@
-"tab.config" = "Konfiguration";
+"tab.config" = "Konfigurationen";
 "tab.programs" = "Programme";
 "tab.info" = "Info";
 
@@ -38,7 +38,7 @@
 "info.title" = "Info";
 "info.path" = "Pfad";
 "info.path.copy" = "Kopiere den Pfad";
-"info.winPath.copy" = "Copy Windows Path";
+"info.winPath.copy" = "Wine-Pfad kopieren";
 "info.wine" = "Wine Version";
 "info.win" = "Windows Version";
 
@@ -81,11 +81,11 @@
 "setup.rosetta" = "Installiere Rosetta";
 "setup.rosetta.subtitle" = "Rosetta erlaubt es, x86 code auf deinem Mac auszuführen, ähnlich wie Wine.";
 
-"setup.wine.download" = "Downloading Wine";
-"setup.wine.download.subtitle" = "Speeds will vary on your internet connection.";
-"setup.wine.progress" = "Progress: %@ %@";
+"setup.wine.download" = "Wine herunterladen";
+"setup.wine.download.subtitle" = "Die Geschwindigkeit variiert je nach Internetverbindung.";
+"setup.wine.progress" = "Fortschritt: %@ %@";
 
-"setup.wine.install" = "Installing Wine";
-"setup.wine.install.subtitle" = "Almost there. Don't tune out yet.";
+"setup.wine.install" = "Wine wird installiert";
+"setup.wine.install.subtitle" = "Fast fertig. Noch nicht abbrechen.";
 
-"setup.gptk" = "Installing GPTK";
+"setup.gptk" = "GPTK wird installiert";
