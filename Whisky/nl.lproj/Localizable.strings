@@ -38,6 +38,7 @@
 "info.title" = "Informatie";
 "info.path" = "Pad";
 "info.path.copy" = "Pad kopiëren";
+"info.winPath.copy" = "Copy Windows Path";
 "info.wine" = "Wine Versie";
 "info.win" = "Windows Versie";
 
