@@ -14,7 +14,7 @@
 "button.deleteBottle" = "Delete...";
 "button.createBottle" = "Create Bottle";
 "button.deleteAlert.msg" = "Delete %@?";
-"button.deleteAlert.info" = "Are you sure you want to delete this bottle? This action is permanent.";
+"button.deleteAlert.info" = "Are you sure you want to delete this bottle? This action is irreversible.";
 "button.deleteAlert.delete" = "Delete";
 "button.deleteAlert.cancel" = "Cancel";
 
@@ -24,7 +24,7 @@
 "config.metalHud" = "Metal HUD";
 "config.metalTrace" = "Metal Trace";
 "config.retinaMode" = "Retina Mode";
-"config.metalTrace.info" = "Allows you to capture GPU workload in Xcode";
+"config.metalTrace.info" = "This allows you to capture the GPU workload in Xcode";
 "config.esync" = "ESync";
 "config.controlPanel" = "Open Control Panel";
 "config.regedit" = "Open Registry Editor";
@@ -43,31 +43,31 @@
 "info.win" = "Windows Version";
 
 "gptkalert.init" = "Drag and drop the Game Porting Toolkit DMG";
-"gptkalert.message" = "GPTK encountered an error!";
+"gptkalert.message" = "An error has occurred with GPTK!";
 
-"alert.message" = "Failed to open program!";
-"alert.info" = "Failed to open";
+"alert.message" = "Failed to open the program!";
+"alert.info" = "Open Failed";
 
-"create.title" = "Create a new bottle";
-"create.name" = "Bottle name:";
-"create.win" = "Windows version:";
-"create.path" = "Bottle path:";
+"create.title" = "Create a New Bottle";
+"create.name" = "Bottle Name:";
+"create.win" = "Windows Version:";
+"create.path" = "Bottle Path:";
 "create.browse" = "Browse";
 "create.cancel" = "Cancel";
 "create.create" = "Create";
-"create.warning.emptyName" = "Name can't be empty";
+"create.warning.emptyName" = "Name cannot be empty";
 "create.warning.alreadyExistsName" = "A bottle with this name already exists";
 
-"rename.title" = "Rename bottle";
-"rename.name" = "New name:";
+"rename.title" = "Rename Bottle";
+"rename.name" = "New Name:";
 "rename.rename" = "Rename";
 
 "check.updates" = "Check for Updates...";
-"kill.bottles" = "Kill All Bottles";
-"open.logs" = "Open Logs Folder";
+"kill.bottles" = "Terminate All Bottles";
+"open.logs" = "Open Log Folder";
 
 "showAlertOnFirstLaunch.messageText" = "Would you like to move Whisky to your Applications folder?";
-"showAlertOnFirstLaunch.informativeText" = "In some cases, Whisky wont't be able to function properly from a different folder";
+"showAlertOnFirstLaunch.informativeText" = "In some cases, Whisky won't function properly from a different folder";
 "showAlertOnFirstLaunch.button.moveToApplications" = "Move to Applications";
 "showAlertOnFirstLaunch.button.dontMove" = "Don't Move";
 
@@ -75,17 +75,17 @@
 "setup.welcome.subtitle" = "Let's get you set up. This won't take a minute.";
 
 "setup.install.checking" = "Checking %@ installation...";
-"setup.install.installed" = "%@ installed";
-"setup.install.notInstalled" = "%@ not installed";
+"setup.install.installed" = "%@ is installed";
+"setup.install.notInstalled" = "%@ is not installed";
 
 "setup.rosetta" = "Installing Rosetta";
-"setup.rosetta.subtitle" = "Rosetta allows x86 code, like Wine, to run on your Mac.";
+"setup.rosetta.subtitle" = "Rosetta allows x86 code, such as Wine, to run on your Mac.";
 
 "setup.wine.download" = "Downloading Wine";
-"setup.wine.download.subtitle" = "Speeds will vary on your internet connection.";
-"setup.wine.progress" = "Progress: %@ %@ ETA: %@";
+"setup.wine.download.subtitle" = "Download speed will vary based on your internet connection.";
+"setup.wine.progress" = "Progress: %@ %@";
 
 "setup.wine.install" = "Installing Wine";
-"setup.wine.install.subtitle" = "Almost there. Don't tune out yet.";
+"setup.wine.install.subtitle" = "Almost there. Stay with us.";
 
 "setup.gptk" = "Installing GPTK";
