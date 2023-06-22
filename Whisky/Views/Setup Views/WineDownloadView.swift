@@ -13,9 +13,12 @@ struct WineDownloadView: View {
     @State private var totalBytes: Int64 = 0
     @State private var downloadTask: URLSessionDownloadTask?
     @State private var observation: NSKeyValueObservation?
+    @State private var startTime: Date?
+    @State private var downloadSpeed: Double?
+    
     @Binding var tarLocation: URL
     @Binding var path: [SetupStage]
-
+    
     var body: some View {
         VStack {
             VStack {
@@ -30,8 +33,9 @@ struct WineDownloadView: View {
                     HStack {
                         Text(String(format: String(localized: "setup.wine.progress"),
                                     formatPercentage(fractionProgress),
-                                    formatBytes(completed: completedBytes, total: totalBytes)))
-                            .font(.subheadline)
+                                    formatBytes(completed: completedBytes, total: totalBytes),
+                                    estimateRemainingTime()))
+                        .font(.subheadline)
                         Spacer()
                     }
                 }
@@ -44,23 +48,30 @@ struct WineDownloadView: View {
         .onAppear {
             Task {
                 if let downloadInfo = await WineDownload.getLatestWineURL(),
-                    let url = downloadInfo.directURL {
+                   let url = downloadInfo.directURL {
                     downloadTask = URLSession.shared.downloadTask(with: url) { url, _, _ in
                         if let url = url {
                             tarLocation = url
                             proceed()
                         }
                     }
-
+                    
                     observation = downloadTask?.observe(\.countOfBytesReceived) { task, _ in
                         Task {
                             await MainActor.run {
+                                let currentTime = Date()
+                                let elapsedTime = currentTime.timeIntervalSince(startTime ?? currentTime)
+                                if completedBytes > 0 {
+                                    downloadSpeed = Double(completedBytes) / elapsedTime
+                                }
+                                
                                 fractionProgress = Double(task.countOfBytesReceived) / Double(totalBytes)
                                 completedBytes = task.countOfBytesReceived
                             }
                         }
                     }
-
+                    
+                    startTime = Date()
                     downloadTask?.resume()
                     await MainActor.run {
                         totalBytes = Int64(downloadInfo.totalByteCount)
@@ -69,7 +80,7 @@ struct WineDownloadView: View {
             }
         }
     }
-
+    
     func formatPercentage(_ value: Double) -> String {
         let formatter = NumberFormatter()
         formatter.numberStyle = .percent
@@ -77,7 +88,7 @@ struct WineDownloadView: View {
         formatter.minimumIntegerDigits = 1
         return formatter.string(from: value as NSNumber) ?? ""
     }
-
+    
     func formatBytes(completed: Int64, total: Int64) -> String {
         let formatter = ByteCountFormatter()
         formatter.countStyle = .file
@@ -85,7 +96,21 @@ struct WineDownloadView: View {
         let total = formatter.string(fromByteCount: total)
         return "(\(completed)/\(total))"
     }
-
+    
+    func estimateRemainingTime() -> String {
+        guard let speed = downloadSpeed else {
+            return "Estimating..."
+        }
+        
+        let remainingBytes = totalBytes - completedBytes
+        let remainingTimeInSeconds = Double(remainingBytes) / speed
+        
+        let formatter = DateComponentsFormatter()
+        formatter.allowedUnits = [.hour, .minute, .second]
+        formatter.unitsStyle = .abbreviated
+        return formatter.string(from: remainingTimeInSeconds) ?? ""
+    }
+    
     func proceed() {
         path.append(.wineInstall)
     }
