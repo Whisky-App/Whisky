@@ -86,6 +86,6 @@
 "setup.wine.progress" = "进度： %@ %@";
 
 "setup.wine.install" = "正在安装 Wine";
-"setup.wine.install.subtitle" = "快好了，清耐心等待。";
+"setup.wine.install.subtitle" = "快好了，请耐心等待。";
 
 "setup.gptk" = "正在安装 GPTK";
