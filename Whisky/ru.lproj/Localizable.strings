@@ -86,6 +86,6 @@
 "setup.wine.progress" = "Выполнено: %@ %@";
 
 "setup.wine.install" = "Установка Wine";
-"setup.wine.install.subtitle" = "Почти там. Не уходите еще.";
+"setup.wine.install.subtitle" = "Почти закончили. Не отключайтесь.";
 
 "setup.gptk" = "Установка GPTK";
