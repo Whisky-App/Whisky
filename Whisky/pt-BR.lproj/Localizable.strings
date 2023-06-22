@@ -42,8 +42,8 @@
 "info.wine" = "Versão do Wine";
 "info.win" = "Versão do Windows";
 
-"gptkalert.init" = "Drag and drop the Game Porting Toolkit DMG";
-"gptkalert.message" = "GPTK encountered an error!";
+"gptkalert.init" = "Arraste e solte o arquivo DMG do Game Porting Toolkit";
+"gptkalert.message" = "O GPTK encontrou um erro!";
 
 "alert.message" = "Falha ao abrir o programa!";
 "alert.info" = "Falha ao abrir";
@@ -82,10 +82,10 @@
 "setup.rosetta.subtitle" = "Rosetta permite código x86, como Wine, a rodar em seu Mac.";
 
 "setup.wine.download" = "Baixando Wine";
-"setup.wine.download.subtitle" = "Speeds will vary on your internet connection.";
+"setup.wine.download.subtitle" = "As velocidades irão variar de acordo com sua internet.";
 "setup.wine.progress" = "Progress: %@ %@";
 
 "setup.wine.install" = "Instalando Wine";
-"setup.wine.install.subtitle" = "Almost there. Don't tune out yet.";
+"setup.wine.install.subtitle" = "Quase lá. Por favor, aguarde.";
 
 "setup.gptk" = "Instalando GPTK";
