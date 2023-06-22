@@ -19,11 +19,11 @@
 "button.deleteAlert.cancel" = "取消";
 
 "config.winVersion" = "Windows版本";
-"config.buildVersion" = "Build Version";
+"config.buildVersion" = "組建版本";
 "config.title.metal" = "Metal";
 "config.metalHud" = "Metal 抬頭顯示";
 "config.metalTrace" = "Metal 追蹤";
-"config.retinaMode" = "Retina Mode";
+"config.retinaMode" = "Retina 模式";
 "config.metalTrace.info" = "允許您在Xcode中捕獲GPU工作負載";
 "config.esync" = "ESync";
 "config.controlPanel" = "Open Control Panel";
