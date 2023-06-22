@@ -1,4 +1,4 @@
-"tab.config" = "Параметри";
+"tab.config" = "Налаштування";
 "tab.programs" = "Програми";
 "tab.info" = "Інформація";
 
@@ -86,6 +86,6 @@
 "setup.wine.progress" = "Прогрес: %@ %@";
 
 "setup.wine.install" = "Встановлення Wine";
-"setup.wine.install.subtitle" = "Almost there. Don't tune out yet.";
+"setup.wine.install.subtitle" = "Майже готово.";
 
-"setup.gptk" = "Installing GPTK";
+"setup.gptk" = "Встановлення GPTK";
