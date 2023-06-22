@@ -6,15 +6,62 @@
 //
 
 import Foundation
+import SFSymbolEnum
 
-struct BottleSettingsData: Codable {
-    var wineVersion: String = "7.7"
-    var windowsVersion: WinVersion = .win10
-    var metalHud: Bool = false
-    var metalTrace: Bool = false
-    var esync: Bool = false
-    var url: URL = BottleVM.bottleDir
-    var shortcuts: [Shortcut] = []
+public struct Semver: Codable, Equatable {
+    var major: UInt
+    var minor: UInt
+    var patch: UInt
+    public func toString() -> String {
+        return "\(self.major).\(self.minor).\(self.patch)"
+    }
+    public static func parse(data: String) throws -> Self {
+        let split = try data.split(separator: ".").map({
+            let int = UInt($0)
+            if int == nil {
+                throw "UInt parsing failed"
+            }
+            return int
+        })
+        if split.count > 3 || split.count < 1 {
+            throw "Invalid semver"
+        }
+        
+        let major = split.count > 0 ? split[0] : 0
+        let minor = split.count > 1 ? split[1] : 0
+        let patch = split.count > 2 ? split[2] : 0
+        
+        return Self(major: major ?? 0, minor: minor ?? 0, patch: patch ?? 0)
+    }
+}
+
+// Thanks ChatGPT
+extension SFSymbol: Codable {
+    public init(from decoder: Decoder) throws {
+        let container = try decoder.singleValueContainer()
+        let rawValue = try container.decode(String.self)
+        if let symbol = Self(rawValue: rawValue) {
+            self = symbol
+        } else {
+            throw DecodingError.dataCorruptedError(in: container, debugDescription: "Invalid raw value: \(rawValue)")
+        }
+    }
+    
+    public func encode(to encoder: Encoder) throws {
+        var container = encoder.singleValueContainer()
+        try container.encode(rawValue)
+    }
+}
+
+enum Icon: Codable {
+    case emoji(String)
+    case symbol(SFSymbol)
+}
+
+struct Color: Codable {
+    var red: UInt8
+    var green: UInt8
+    var blue: UInt8
 }
 
 struct Shortcut: Codable {
@@ -22,105 +69,150 @@ struct Shortcut: Codable {
     var link: URL
 }
 
+struct BottleInfo: Codable {
+    var name: String = "Whisky"
+    var icon: Icon = .symbol(.wineglass)
+    var color: Color = .init(red: 0, green: 0, blue: 0)
+    var shortcuts: [Shortcut] = []
+}
+
+struct BottleWineConfig: Codable {
+    var wineVersion: Semver = Semver(major: 7, minor: 7, patch: 0)
+    var windowsVersion: WinVersion = .win10
+}
+
+struct BottleGameToolkitConfig: Codable {
+    var metalHud: Bool = false
+    var metalTrace: Bool = false
+    var esync: Bool = false
+}
+
+struct BottleMetadata: Codable {
+    var fileVersion: Semver = Semver(major: 2, minor: 0, patch: 0)
+    var info: BottleInfo = .init()
+    var wineConfig: BottleWineConfig = .init()
+    var gameToolkitConfig: BottleGameToolkitConfig = .init()
+}
+
 class BottleSettings {
-    var settings: BottleSettingsData {
+    private let bottleUrl: URL
+    private let metadataUrl: URL
+    
+    var settings: BottleMetadata {
         didSet {
             encode()
         }
     }
-
-    var wineVersion: String {
+    
+    var wineVersion: Semver {
         get {
-            return settings.wineVersion
+            return settings.wineConfig.wineVersion
         }
         set {
-            settings.wineVersion = newValue
+            settings.wineConfig.wineVersion = newValue
         }
     }
-
+    
     var windowsVersion: WinVersion {
         get {
-            return settings.windowsVersion
+            return settings.wineConfig.windowsVersion
         }
         set {
-            settings.windowsVersion = newValue
+            settings.wineConfig.windowsVersion = newValue
         }
     }
-
+    
     var metalHud: Bool {
         get {
-            return settings.metalHud
+            return settings.gameToolkitConfig.metalHud
         }
         set {
-            settings.metalHud = newValue
+            settings.gameToolkitConfig.metalHud = newValue
         }
     }
-
+    
     var metalTrace: Bool {
         get {
-            return settings.metalTrace
+            return settings.gameToolkitConfig.metalTrace
         }
         set {
-            settings.metalTrace = newValue
+            settings.gameToolkitConfig.metalTrace = newValue
         }
     }
-
+    
     var esync: Bool {
         get {
-            return settings.esync
+            return settings.gameToolkitConfig.esync
         }
         set {
-            settings.esync = newValue
+            settings.gameToolkitConfig.esync = newValue
         }
     }
-
-    var url: URL {
+    
+    var name: String {
         get {
-            return settings.url
-        }
-        set {
-            settings.url = newValue
+            return settings.info.name
+        } set {
+            settings.info.name = newValue
         }
     }
-
+    
+    var icon: Icon {
+        get {
+            return settings.info.icon
+        } set {
+            settings.info.icon = newValue
+        }
+    }
+    
+    var color: Color {
+        get {
+            return settings.info.color
+        } set {
+            settings.info.color = newValue
+        }
+    }
+    
     var shortcuts: [Shortcut] {
         get {
-            return settings.shortcuts
+            return settings.info.shortcuts
         }
         set {
-            settings.shortcuts = newValue
+            settings.info.shortcuts = newValue
         }
     }
-
-    let settingsUrl: URL
-
-    init(settingsURL: URL, bottleURL: URL) {
-        self.settingsUrl = settingsURL
-
-        settings = BottleSettingsData(url: bottleURL)
+    
+    init(bottleURL: URL) {
+        bottleUrl = bottleURL
+        metadataUrl = bottleURL
+            .appendingPathComponent("Metadata")
+            .appendingPathExtension("json")
+        
+        settings = .init()
+        
         if !decode() {
             encode()
         }
     }
-
-    init(settingsURL: URL) throws {
-        self.settingsUrl = settingsURL
-
-        settings = BottleSettingsData()
-        if !decode() {
-            throw "Failed to decode settings!"
-        }
-    }
-
+    
     @discardableResult
     public func decode() -> Bool {
+        let decoder = JSONDecoder()
+
         do {
-            let data = try Data(contentsOf: settingsUrl)
-            settings = try PropertyListDecoder().decode(BottleSettingsData.self, from: data)
-            if settings.wineVersion != BottleSettingsData().wineVersion {
-                print("Bottle has a different wine version!")
-                settings.wineVersion = BottleSettingsData().wineVersion
+            let data = try Data(contentsOf: self.metadataUrl)
+            settings = try decoder.decode(BottleMetadata.self, from: data)
+            
+            if settings.fileVersion != BottleMetadata().fileVersion {
+                print("Invalid file version \(settings.fileVersion)")
+                return false
             }
+            
+            if settings.wineConfig.wineVersion != BottleWineConfig().wineVersion {
+                print("Bottle has a different wine version!")
+                settings.wineConfig.wineVersion = BottleWineConfig().wineVersion
+            }
+            
             return true
         } catch {
             return false
@@ -129,12 +221,12 @@ class BottleSettings {
 
     @discardableResult
     public func encode() -> Bool {
-        let encoder = PropertyListEncoder()
-        encoder.outputFormat = .xml
+        let encoder = JSONEncoder()
+        encoder.outputFormatting = .prettyPrinted
 
         do {
             let data = try encoder.encode(settings)
-            try data.write(to: settingsUrl)
+            try data.write(to: metadataUrl)
             return true
         } catch {
             return false

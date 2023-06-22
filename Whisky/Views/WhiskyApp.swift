@@ -32,7 +32,7 @@ struct WhiskyApp: App {
                 SparkleView(updater: updaterController.updater)
             }
             CommandGroup(after: .newItem) {
-                Button("Import Bottle") {
+                Button("open.bottle") {
                     let panel = NSOpenPanel()
                     panel.canChooseFiles = false
                     panel.canChooseDirectories = true
@@ -41,24 +41,19 @@ struct WhiskyApp: App {
                     panel.begin { result in
                         if result == .OK {
                             if let url = panel.urls.first {
-                                let bottle = BottleSettingsData(url: url)
-                                let encoder = PropertyListEncoder()
-                                encoder.outputFormat = .xml
+                                let bottleMetadata = url
+                                    .appendingPathComponent("Metadata")
+                                    .appendingPathExtension("json")
+                                    .path()
 
-                                do {
-                                    let data = try encoder.encode(bottle)
-                                    let name = url.lastPathComponent
-                                    if case .success = BottleVM.shared.isValidBottleName(bottleName: name) {
-                                        try data.write(to: BottleVM.bottleDir
-                                            .appendingPathComponent(name)
-                                            .appendingPathExtension("plist"))
-                                        BottleVM.shared.loadBottles()
-                                    } else {
-                                        print("Invalid bottle name!")
-                                    }
-                                } catch {
-                                    print("Failed to import bottle!")
+                                if FileManager.default.fileExists(atPath: bottleMetadata) {
+                                    // Legacy files
+                                    let bottle = BottleSettings(bottleURL: url)
+                                    bottle.encode()
                                 }
+
+                                BottleVM.shared.bottlesList.paths.append(url)
+                                BottleVM.shared.loadBottles()
                             }
                         }
                     }

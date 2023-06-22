@@ -17,6 +17,8 @@ class BottleVM: ObservableObject {
 
     static let bottleDir = containerDir
         .appendingPathComponent("Bottles")
+    
+    let bottlesList = BottleVMEntries()
 
     @Published var bottles: [Bottle] = []
     @Published var inFlightBottles: [String] = []
@@ -44,23 +46,25 @@ class BottleVM: ObservableObject {
         Task(priority: .background) {
             inFlightBottles.removeAll()
             bottles.removeAll()
-
-            do {
-                let files = try FileManager.default.contentsOfDirectory(at: BottleVM.bottleDir,
-                                                                        includingPropertiesForKeys: nil,
-                                                                        options: .skipsHiddenFiles)
-                for file in files where file.pathExtension == "plist" {
-                    do {
-                        let bottle = try Bottle(settingsURL: file)
-                        bottles.append(bottle)
-                    } catch {
-                        print("Failed to load bottle at \(file.path)!")
+            // Update if needed
+            if !BottleVMEntries.exists() {
+                do {
+                    let files = try FileManager.default.contentsOfDirectory(at: BottleVM.bottleDir,                                                  includingPropertiesForKeys: nil,
+                                                                            options: .skipsHiddenFiles)
+                    for file in files where file.pathExtension == "plist" {
+                        if let bottlePath = convertFormat(plistPath: file) {
+                            bottlesList.paths.append(bottlePath)
+                        }
                     }
+                } catch {
+                    print("Failed to list files")
                 }
-            } catch {
-                print("Failed to load bottles: \(error)")
+                bottlesList.encode()
             }
 
+            bottles = bottlesList.paths.map({
+                Bottle(bottleUrl: $0)
+            })
             bottles.sort(by: { $0.name.lowercased() < $1.name.lowercased() })
         }
     }
@@ -74,33 +78,17 @@ class BottleVM: ObservableObject {
                                                             withIntermediateDirectories: true)
                 }
 
-                let newBottleDir = bottleURL.appendingPathComponent(bottleName)
+                let newBottleDir = bottleURL.appendingPathComponent(UUID().uuidString)
                 try FileManager.default.createDirectory(atPath: newBottleDir.path, withIntermediateDirectories: true)
 
-                let settingsURL = BottleVM.bottleDir
-                    .appendingPathComponent(bottleName)
-                    .appendingPathExtension("plist")
-
-                let bottle = Bottle(settingsURL: settingsURL,
-                                    bottleURL: newBottleDir)
+                let bottle = Bottle(bottleUrl: newBottleDir)
                 bottle.settings.windowsVersion = winVersion
                 try await Wine.changeWinVersion(bottle: bottle, win: winVersion)
-                bottle.settings.wineVersion = try await Wine.wineVersion()
+                bottle.settings.wineVersion = try Semver.parse(data: try await Wine.wineVersion())
                 await loadBottles()
             } catch {
                 print("Failed to create new bottle")
             }
         }
-    }
-
-    func isValidBottleName(bottleName: String) -> BottleValidationResult {
-        if bottleName.isEmpty {
-            return BottleValidationResult.failure(reason: NameFailureReason.emptyName)
-        }
-
-        if bottles.contains(where: {$0.name == bottleName}) {
-            return BottleValidationResult.failure(reason: NameFailureReason.alreadyExists)
-        }
-        return BottleValidationResult.success
     }
 }

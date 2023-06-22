@@ -123,7 +123,9 @@ public class Bottle: Hashable {
     func delete() {
         do {
             try FileManager.default.removeItem(at: url)
-            try FileManager.default.removeItem(at: settings.settingsUrl)
+            if let path = BottleVM.shared.bottlesList.paths.firstIndex(of: url) {
+                BottleVM.shared.bottlesList.paths.remove(at: path)
+            }
             BottleVM.shared.loadBottles()
         } catch {
             print("Failed to delete bottle")
@@ -132,42 +134,15 @@ public class Bottle: Hashable {
 
     @MainActor
     func rename(newName: String) {
-        let oldPlist = settings.settingsUrl
-        let newPlist = settings.settingsUrl
-            .deletingPathExtension()
-            .deletingLastPathComponent()
-            .appendingPathComponent(newName)
-            .appendingPathExtension("plist")
-
-        let oldFolder = url
-        let newFolder = url.deletingLastPathComponent()
-                           .appendingPathComponent(newName)
-
-        settings.url = newFolder
-
-        do {
-            try FileManager.default.moveItem(at: oldPlist, to: newPlist)
-            try FileManager.default.moveItem(at: oldFolder, to: newFolder)
-            BottleVM.shared.loadBottles()
-        } catch {
-            print(error)
-        }
+        settings.name = newName
     }
 
     init() {
-        self.settings = BottleSettings(settingsURL: url,
-                                       bottleURL: url)
+        self.settings = BottleSettings(bottleURL: url)
     }
-
-    init(settingsURL: URL) throws {
-        self.settings = try BottleSettings(settingsURL: settingsURL)
-        self.url = settings.url
-    }
-
-    init(settingsURL: URL, bottleURL: URL) {
-        self.settings = BottleSettings(settingsURL: settingsURL,
-                                       bottleURL: bottleURL)
-        self.url = settings.url
+    init(bottleUrl: URL) {
+        self.settings = BottleSettings(bottleURL: bottleUrl)
+        self.url = bottleUrl
     }
 }
 

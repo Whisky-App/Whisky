@@ -167,8 +167,8 @@ struct ArgumentEditorButton: ButtonStyle {
             .padding(4)
             // Without this the selectable area is reduced to just
             // the icons which isn't great
-            .background(Color(nsColor: NSColor.windowBackgroundColor)
-                .opacity(0.001))
+//            .background(Color(nsColor: NSColor.windowBackgroundColor)
+//                .opacity(0.001))
             .clipShape(RoundedRectangle(cornerRadius: 5))
     }
 }
