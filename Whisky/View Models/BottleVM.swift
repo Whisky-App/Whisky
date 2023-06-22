@@ -19,8 +19,6 @@ class BottleVM: ObservableObject {
         .appendingPathComponent("Bottles")
 
     @Published var bottles: [Bottle] = []
-    @Published var inFlightBottles: [String] = []
-
     enum NameFailureReason {
         case emptyName
         case alreadyExists
@@ -34,6 +32,7 @@ class BottleVM: ObservableObject {
             }
         }
     }
+
     enum BottleValidationResult {
         case success
         case failure(reason: NameFailureReason)
@@ -42,7 +41,6 @@ class BottleVM: ObservableObject {
     @MainActor
     func loadBottles() {
         Task(priority: .background) {
-            inFlightBottles.removeAll()
             bottles.removeAll()
 
             do {
@@ -61,12 +59,12 @@ class BottleVM: ObservableObject {
                 print("Failed to load bottles: \(error)")
             }
 
-            bottles.sort(by: { $0.name.lowercased() < $1.name.lowercased() })
+            bottles.sortByName()
         }
     }
 
-    func createNewBottle(bottleName: String, winVersion: WinVersion, bottleURL: URL) {
-        inFlightBottles.append(bottleName)
+    func createNewBottle(bottleName: String, winVersion: WinVersion, bottleURL: URL) -> URL {
+        let newBottleDir = bottleURL.appendingPathComponent(bottleName)
         Task(priority: .userInitiated) {
             do {
                 if !FileManager.default.fileExists(atPath: BottleVM.bottleDir.path) {
@@ -74,7 +72,6 @@ class BottleVM: ObservableObject {
                                                             withIntermediateDirectories: true)
                 }
 
-                let newBottleDir = bottleURL.appendingPathComponent(bottleName)
                 try FileManager.default.createDirectory(atPath: newBottleDir.path, withIntermediateDirectories: true)
 
                 let settingsURL = BottleVM.bottleDir
@@ -82,7 +79,11 @@ class BottleVM: ObservableObject {
                     .appendingPathExtension("plist")
 
                 let bottle = Bottle(settingsURL: settingsURL,
-                                    bottleURL: newBottleDir)
+                                    bottleURL: newBottleDir,
+                                    inFlight: true)
+                bottles.append(bottle)
+                bottles.sortByName()
+
                 bottle.settings.windowsVersion = winVersion
                 try await Wine.changeWinVersion(bottle: bottle, win: winVersion)
                 bottle.settings.wineVersion = try await Wine.wineVersion()
@@ -91,6 +92,7 @@ class BottleVM: ObservableObject {
                 print("Failed to create new bottle")
             }
         }
+        return newBottleDir
     }
 
     func isValidBottleName(bottleName: String) -> BottleValidationResult {
