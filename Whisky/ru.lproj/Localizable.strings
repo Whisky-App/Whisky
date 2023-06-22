@@ -26,8 +26,8 @@
 "config.retinaMode" = "Режим Retina";
 "config.metalTrace.info" = "Позволяет отслеживать рабочую нагрузку видеокарты через Xcode";
 "config.esync" = "ESync";
-"config.controlPanel" = "Открыть Панель Управления";
-"config.regedit" = "Открыть Редактор Реестра";
+"config.controlPanel" = "Открыть Панель управления";
+"config.regedit" = "Открыть Редактор реестра";
 "config.winecfg" = "Открыть настройки Wine";
 
 "program.title" = "Установленные программы";
@@ -72,14 +72,14 @@
 "showAlertOnFirstLaunch.button.dontMove" = "Не двигать";
 
 "setup.welcome" = "Добро пожаловать в Whisky";
-"setup.welcome.subtitle" = "Давайте настроим вас. Это не займет минуту.";
+"setup.welcome.subtitle" = "Производится первоначальная настройка. Это займёт не больше минуты.";
 
-"setup.install.checking" = "Проверка %@ установки...";
-"setup.install.installed" = "%@ установлено";
-"setup.install.notInstalled" = "%@ не установлено";
+"setup.install.checking" = "Проверка установки %@...";
+"setup.install.installed" = "%@ – установлено";
+"setup.install.notInstalled" = "%@ – не установлено";
 
 "setup.rosetta" = "Установка Rosetta";
-"setup.rosetta.subtitle" = "Rosetta позволяет использовать x86 код, например Wine, для запуска на вашем Mac.";
+"setup.rosetta.subtitle" = "Rosetta позволяет программам x86, таким как Wine, работать на вашем Mac.";
 
 "setup.wine.download" = "Скачивание Wine";
 "setup.wine.download.subtitle" = "Скорость скачивания зависит от вашего подключения к Интернету.";
