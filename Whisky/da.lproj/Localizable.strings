@@ -23,7 +23,7 @@
 "config.title.metal" = "Metal";
 "config.metalHud" = "Metal HUD";
 "config.metalTrace" = "Metal Trace";
-"config.retinaMode" = "Retina Mode";
+"config.retinaMode" = "Retina Tilstand";
 "config.metalTrace.info" = "Giver dig mulighed for at fange GPU-workload i Xcode";
 "config.esync" = "ESync";
 "config.controlPanel" = "Åbn Kontrolpanel";
@@ -38,7 +38,7 @@
 "info.title" = "Info";
 "info.path" = "Sti";
 "info.path.copy" = "Kopier sti";
-"info.winPath.copy" = "Copy Windows Path";
+"info.winPath.copy" = "Kopier Windows Sti";
 "info.wine" = "Wine Version";
 "info.win" = "Windows Version";
 
@@ -51,8 +51,8 @@
 "create.title" = "Opret en ny bottle";
 "create.name" = "Bottle navn:";
 "create.win" = "Windows version:";
-"create.path" = "Bottle path:";
-"create.browse" = "Browse";
+"create.path" = "Bottle sti:";
+"create.browse" = "Gennemse";
 "create.cancel" = "Annuller";
 "create.create" = "Opret";
 "create.warning.emptyName" = "Navn må ikke være tomt";
@@ -63,7 +63,7 @@
 "rename.rename" = "Omdøb";
 
 "check.updates" = "Tjek for Opdateringer...";
-"kill.bottles" = "Kill All Bottles";
+"kill.bottles" = "Dræb Alle Bottles";
 "open.logs" = "Åbn Logmappe";
 
 "showAlertOnFirstLaunch.messageText" = "Vil du flytte Whisky til Applications mappen?";
@@ -71,12 +71,12 @@
 "showAlertOnFirstLaunch.button.moveToApplications" = "Flyt til mappen Applications";
 "showAlertOnFirstLaunch.button.dontMove" = "Flyt Ikke";
 
-"setup.welcome" = "Welcome to Whisky";
-"setup.welcome.subtitle" = "Let's get you set up. This won't take a minute.";
+"setup.welcome" = "Velkommen til Whisky";
+"setup.welcome.subtitle" = "Lad os få dig sat op. Dette vil ikke tage et minut.";
 
-"setup.install.checking" = "Checking %@ installation...";
-"setup.install.installed" = "%@ installed";
-"setup.install.notInstalled" = "%@ not installed";
+"setup.install.checking" = "Tjekker %@ Installation...";
+"setup.install.installed" = "%@ installeret";
+"setup.install.notInstalled" = "%@ ikke installeret";
 
 "setup.rosetta" = "Installing Rosetta";
 "setup.rosetta.subtitle" = "Rosetta allows x86 code, like Wine, to run on your Mac.";
