@@ -38,7 +38,7 @@
 "info.title" = "情報";
 "info.path" = "パス";
 "info.path.copy" = "パスのコピー";
-"info.winPath.copy" = "Copy Windows Path";
+"info.winPath.copy" = "Windows のパスをコピー";
 "info.wine" = "Wine バージョン";
 "info.win" = "Windows バージョン";
 
@@ -85,7 +85,7 @@
 "setup.wine.download.subtitle" = "速度はインターネット接続によって異なります。";
 "setup.wine.progress" = "進行状況: %@ %@";
 
-"setup.wine.install" = "Installing Wine";
+"setup.wine.install" = "Wine をインストール中";
 "setup.wine.install.subtitle" = "Almost there. Don't tune out yet.";
 
-"setup.gptk" = "Installing GPTK";
+"setup.gptk" = "GPTK をインストール中";
