@@ -17,10 +17,6 @@ public class Bottle: Hashable {
         return hasher.combine(url)
     }
 
-    var name: String {
-        url.lastPathComponent
-    }
-
     var url: URL = URL.homeDirectory.appending(component: ".wine")
     var settings: BottleSettings
     var programs: [Program] = []

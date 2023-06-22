@@ -164,7 +164,7 @@ struct BottleView: View {
             }
             .padding()
         }
-        .navigationTitle(bottle.name)
+        .navigationTitle(bottle.settings.name)
     }
 
     func updateStartMenu() {

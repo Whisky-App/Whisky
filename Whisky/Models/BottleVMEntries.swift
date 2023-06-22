@@ -17,17 +17,14 @@ class BottleVMEntries {
         .appendingPathComponent("Library")
         .appendingPathComponent("Containers")
         .appendingPathComponent(Bundle.main.bundleIdentifier ?? "com.isaacmarovitz.Whisky")
-    
     static let bottleEntriesDir = containerDir
         .appendingPathComponent("BottleVM")
-        .appendingPathExtension("json")
-    
+        .appendingPathExtension("plist")
     private var file: BottleEntries {
         didSet {
             encode()
         }
     }
-    
     var paths: [URL] {
         get {
             file.paths
@@ -36,46 +33,37 @@ class BottleVMEntries {
             file.paths = newValue
         }
     }
-    
     static func exists() -> Bool {
         return FileManager.default.fileExists(atPath: Self.bottleEntriesDir.path())
     }
-    
     init() {
         file = .init()
-        
         if !Self.exists() {
-            return;
+            return
         }
-        
         if !decode() {
             encode()
         }
     }
-    
     @discardableResult
     func decode() -> Bool {
-        let decoder = JSONDecoder()
-        
+        let decoder = PropertyListDecoder()
         do {
             let data = try Data(contentsOf: Self.bottleEntriesDir)
             file = try decoder.decode(BottleEntries.self, from: data)
-            
             if file.fileVersion != BottleEntries().fileVersion {
                 print("Invalid file version \(file.fileVersion)")
                 return false
             }
-            
             return true
         } catch {
             return false
         }
     }
-    
     @discardableResult
     public func encode() -> Bool {
-        let encoder = JSONEncoder()
-        encoder.outputFormatting = .prettyPrinted
+        let encoder = PropertyListEncoder()
+        encoder.outputFormat = .xml
 
         do {
             let data = try encoder.encode(file)

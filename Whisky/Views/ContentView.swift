@@ -21,7 +21,7 @@ struct ContentView: View {
                 }
                 ForEach(bottleVM.inFlightBottles, id: \.self) { inFlight in
                     HStack {
-                        Text(inFlight)
+                        Text(inFlight.name)
                             .foregroundStyle(.secondary)
                         Spacer()
                         ProgressView()
@@ -75,7 +75,7 @@ struct BottleListEntry: View {
     @Binding var selected: URL?
 
     var body: some View {
-        Text(bottle.name)
+        Text(bottle.settings.name)
             .sheet(isPresented: $showBottleRename) {
                 BottleRenameView(bottle: bottle)
             }
@@ -92,7 +92,7 @@ struct BottleListEntry: View {
     func showDeleteAlert(bottle: Bottle) {
         let alert = NSAlert()
         alert.messageText = String(format: String(localized: "button.deleteAlert.msg"),
-                                   bottle.name)
+                                   bottle.settings.name)
         alert.informativeText = String(localized: "button.deleteAlert.info")
         alert.alertStyle = .warning
         let delete = alert.addButton(withTitle: String(localized: "button.deleteAlert.delete"))

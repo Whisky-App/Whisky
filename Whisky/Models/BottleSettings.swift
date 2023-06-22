@@ -7,6 +7,7 @@
 
 import Foundation
 import SFSymbolEnum
+import SwiftUI
 
 public struct Semver: Codable, Equatable {
     var major: UInt
@@ -16,7 +17,10 @@ public struct Semver: Codable, Equatable {
         return "\(self.major).\(self.minor).\(self.patch)"
     }
     public static func parse(data: String) throws -> Self {
-        let split = try data.split(separator: ".").map({
+        let split = try data
+            .filter("0123456789.".contains)
+            .split(separator: ".")
+            .map({
             let int = UInt($0)
             if int == nil {
                 throw "UInt parsing failed"
@@ -24,13 +28,11 @@ public struct Semver: Codable, Equatable {
             return int
         })
         if split.count > 3 || split.count < 1 {
-            throw "Invalid semver"
+            throw "Invalid semver: '\(data)'"
         }
-        
         let major = split.count > 0 ? split[0] : 0
         let minor = split.count > 1 ? split[1] : 0
         let patch = split.count > 2 ? split[2] : 0
-        
         return Self(major: major ?? 0, minor: minor ?? 0, patch: patch ?? 0)
     }
 }
@@ -46,7 +48,6 @@ extension SFSymbol: Codable {
             throw DecodingError.dataCorruptedError(in: container, debugDescription: "Invalid raw value: \(rawValue)")
         }
     }
-    
     public func encode(to encoder: Encoder) throws {
         var container = encoder.singleValueContainer()
         try container.encode(rawValue)
@@ -62,6 +63,9 @@ struct Color: Codable {
     var red: UInt8
     var green: UInt8
     var blue: UInt8
+    func toUIColor() -> SwiftUI.Color {
+        return .init(red: Double(self.red) / 255, green: Double(self.green) / 255, blue: Double(self.blue) / 255)
+    }
 }
 
 struct Shortcut: Codable {
@@ -97,13 +101,11 @@ struct BottleMetadata: Codable {
 class BottleSettings {
     private let bottleUrl: URL
     private let metadataUrl: URL
-    
     var settings: BottleMetadata {
         didSet {
             encode()
         }
     }
-    
     var wineVersion: Semver {
         get {
             return settings.wineConfig.wineVersion
@@ -112,7 +114,6 @@ class BottleSettings {
             settings.wineConfig.wineVersion = newValue
         }
     }
-    
     var windowsVersion: WinVersion {
         get {
             return settings.wineConfig.windowsVersion
@@ -121,7 +122,6 @@ class BottleSettings {
             settings.wineConfig.windowsVersion = newValue
         }
     }
-    
     var metalHud: Bool {
         get {
             return settings.gameToolkitConfig.metalHud
@@ -130,7 +130,6 @@ class BottleSettings {
             settings.gameToolkitConfig.metalHud = newValue
         }
     }
-    
     var metalTrace: Bool {
         get {
             return settings.gameToolkitConfig.metalTrace
@@ -139,7 +138,6 @@ class BottleSettings {
             settings.gameToolkitConfig.metalTrace = newValue
         }
     }
-    
     var esync: Bool {
         get {
             return settings.gameToolkitConfig.esync
@@ -148,7 +146,6 @@ class BottleSettings {
             settings.gameToolkitConfig.esync = newValue
         }
     }
-    
     var name: String {
         get {
             return settings.info.name
@@ -156,7 +153,6 @@ class BottleSettings {
             settings.info.name = newValue
         }
     }
-    
     var icon: Icon {
         get {
             return settings.info.icon
@@ -164,7 +160,6 @@ class BottleSettings {
             settings.info.icon = newValue
         }
     }
-    
     var color: Color {
         get {
             return settings.info.color
@@ -172,7 +167,6 @@ class BottleSettings {
             settings.info.color = newValue
         }
     }
-    
     var shortcuts: [Shortcut] {
         get {
             return settings.info.shortcuts
@@ -181,38 +175,31 @@ class BottleSettings {
             settings.info.shortcuts = newValue
         }
     }
-    
     init(bottleURL: URL) {
         bottleUrl = bottleURL
         metadataUrl = bottleURL
             .appendingPathComponent("Metadata")
-            .appendingPathExtension("json")
-        
+            .appendingPathExtension("plist")
         settings = .init()
-        
         if !decode() {
             encode()
         }
     }
-    
     @discardableResult
     public func decode() -> Bool {
-        let decoder = JSONDecoder()
+        let decoder = PropertyListDecoder()
 
         do {
             let data = try Data(contentsOf: self.metadataUrl)
             settings = try decoder.decode(BottleMetadata.self, from: data)
-            
             if settings.fileVersion != BottleMetadata().fileVersion {
                 print("Invalid file version \(settings.fileVersion)")
                 return false
             }
-            
             if settings.wineConfig.wineVersion != BottleWineConfig().wineVersion {
                 print("Bottle has a different wine version!")
                 settings.wineConfig.wineVersion = BottleWineConfig().wineVersion
             }
-            
             return true
         } catch {
             return false
@@ -221,8 +208,8 @@ class BottleSettings {
 
     @discardableResult
     public func encode() -> Bool {
-        let encoder = JSONEncoder()
-        encoder.outputFormatting = .prettyPrinted
+        let encoder = PropertyListEncoder()
+        encoder.outputFormat = .xml
 
         do {
             let data = try encoder.encode(settings)

@@ -22,7 +22,7 @@ private struct LegacyBottleFormat: Decodable {
     var shortcuts: [LegacyShortcut]?
 }
 
-func convertFormat(plistPath: URL) -> Optional<URL> {
+func convertFormat(plistPath: URL) -> URL? {
     do {
         let decoder = PropertyListDecoder()
         let data = try Data(contentsOf: plistPath)

@@ -43,7 +43,7 @@ struct WhiskyApp: App {
                             if let url = panel.urls.first {
                                 let bottleMetadata = url
                                     .appendingPathComponent("Metadata")
-                                    .appendingPathExtension("json")
+                                    .appendingPathExtension("plist")
                                     .path()
 
                                 if FileManager.default.fileExists(atPath: bottleMetadata) {

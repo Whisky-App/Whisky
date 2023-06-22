@@ -31,7 +31,7 @@ struct InfoView: View {
         }
         .formStyle(.grouped)
         .navigationTitle(String(format: String(localized: "tab.navTitle.info"),
-                                bottle.name))
+                                bottle.settings.name))
         .onAppear {
             prettyPath = bottle.url.prettyPath()
         }

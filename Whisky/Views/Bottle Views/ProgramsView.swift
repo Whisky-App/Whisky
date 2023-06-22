@@ -29,7 +29,7 @@ struct ProgramsView: View {
             }
             .formStyle(.grouped)
             .navigationTitle(String(format: String(localized: "tab.navTitle.programs"),
-                                    bottle.name))
+                                    bottle.settings.name))
             .onAppear {
                 programs = bottle.updateInstalledPrograms()
                 sortPrograms()
