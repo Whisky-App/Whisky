@@ -37,7 +37,6 @@ struct RosettaView: View {
             }
             Spacer()
         }
-        .padding(16)
         .frame(width: 400, height: 200)
         .onAppear {
             Rosetta2.launchRosettaInstaller()

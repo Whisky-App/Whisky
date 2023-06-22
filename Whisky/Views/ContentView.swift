@@ -15,33 +15,20 @@ struct ContentView: View {
 
     var body: some View {
         NavigationSplitView {
-            VStack {
-                if bottleVM.bottles.isEmpty &&
-                    bottleVM.inFlightBottles.isEmpty {
-                    Text("main.noBottles")
-                        .font(.callout)
-                        .foregroundStyle(.secondary)
-                        .multilineTextAlignment(.center)
-                        .padding(10)
-                } else {
-                    List(selection: $selected) {
-                        ForEach(bottleVM.bottles, id: \.url) { bottle in
-                            BottleListEntry(bottle: bottle, selected: $selected)
-                        }
-                        ForEach(bottleVM.inFlightBottles, id: \.self) { inFlight in
-                            HStack {
-                                Text(inFlight)
-                                    .foregroundStyle(.secondary)
-                                Spacer()
-                                ProgressView()
-                                    .controlSize(.small)
-                            }
-                        }
+            List(selection: $selected) {
+                ForEach(bottleVM.bottles, id: \.url) { bottle in
+                    BottleListEntry(bottle: bottle, selected: $selected)
+                }
+                ForEach(bottleVM.inFlightBottles, id: \.self) { inFlight in
+                    HStack {
+                        Text(inFlight)
+                            .foregroundStyle(.secondary)
+                        Spacer()
+                        ProgressView()
+                            .controlSize(.small)
                     }
-                    .frame(maxWidth: .infinity, maxHeight: .infinity)
                 }
             }
-            .frame(minWidth: 200, maxWidth: 300, maxHeight: .infinity)
             .navigationSplitViewColumnWidth(min: 200, ideal: 200, max: 300)
         } detail: {
             if let bottle = selected {

@@ -33,7 +33,6 @@ struct GPTKInstallView: View {
             }
             Spacer()
         }
-        .padding(16)
         .frame(width: 400, height: 200)
         .onDrop(of: ["public.file-url"], isTargeted: $dragOver) { providers -> Bool in
             providers.first?.loadDataRepresentation(forTypeIdentifier: "public.file-url",

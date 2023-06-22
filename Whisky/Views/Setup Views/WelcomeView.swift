@@ -82,7 +82,6 @@ struct WelcomeView: View {
                 .disabled(!canContinue)
             }
         }
-        .padding(16)
         .frame(width: 400, height: 250)
     }
 }
