@@ -28,7 +28,7 @@ struct ContentView: View {
                             .opacity(0.5)
                             .id(bottle.url)
                         } else {
-                            BottleListEntry(bottle: bottle)
+                            BottleListEntry(bottle: bottle, selected: $selected)
                                 .id(bottle.url)
                         }
                     }
@@ -86,6 +86,7 @@ struct ContentView: View {
 struct BottleListEntry: View {
     let bottle: Bottle
     @State var showBottleRename: Bool = false
+    @Binding var selected: URL?
 
     var body: some View {
         Text(bottle.name)
@@ -116,6 +117,9 @@ struct BottleListEntry: View {
 
         if response == .alertFirstButtonReturn {
             Task(priority: .userInitiated) {
+                if selected == bottle.url {
+                    selected = nil
+                }
                 await bottle.delete()
             }
         }

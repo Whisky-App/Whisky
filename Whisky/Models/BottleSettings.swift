@@ -14,6 +14,12 @@ struct BottleSettingsData: Codable {
     var metalTrace: Bool = false
     var esync: Bool = false
     var url: URL = BottleVM.bottleDir
+    var shortcuts: [Shortcut] = []
+}
+
+struct Shortcut: Codable {
+    var name: String
+    var link: URL
 }
 
 class BottleSettings {
@@ -74,6 +80,15 @@ class BottleSettings {
         }
         set {
             settings.url = newValue
+        }
+    }
+
+    var shortcuts: [Shortcut] {
+        get {
+            return settings.shortcuts
+        }
+        set {
+            settings.shortcuts = newValue
         }
     }
 

@@ -21,12 +21,14 @@ public class Program: Hashable {
     var url: URL
     var settings: ProgramSettings
     var bottle: Bottle
+    private(set) var favourited: Bool
 
     init(name: String, url: URL, bottle: Bottle) {
         self.name = name
         self.url = url
         self.bottle = bottle
         self.settings = ProgramSettings(bottleUrl: bottle.url, name: name)
+        self.favourited = bottle.settings.shortcuts.contains(where: { $0.link == url })
     }
 
     func run() async {
@@ -44,5 +46,17 @@ public class Program: Hashable {
                 alert.runModal()
             }
         }
+    }
+
+    func toggleFavourited() -> Bool {
+        if favourited {
+            bottle.settings.shortcuts.removeAll(where: { $0.link == url })
+            favourited = false
+        } else {
+            bottle.settings.shortcuts.append(Shortcut(name: name, link: url))
+            favourited = true
+        }
+
+        return favourited
     }
 }
