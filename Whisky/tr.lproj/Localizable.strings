@@ -6,6 +6,9 @@
 "tab.navTitle.programs" = "%@ Programlar";
 "tab.navTitle.info" = "%@ Bilgi";
 
+"main.noneSelected" = "Select a bottle";
+"main.createFirst" = "Create your first bottle to get started";
+
 "button.cDrive" = "C Sürücüsünü Aç";
 "button.showInFinder" = "Finder'da Göster";
 "button.run" = "Çalıştır...";
