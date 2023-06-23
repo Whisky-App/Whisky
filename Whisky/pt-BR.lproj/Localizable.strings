@@ -19,7 +19,7 @@
 "button.deleteAlert.cancel" = "Cancelar";
 
 "config.winVersion" = "Versão do Windows";
-"config.buildVersion" = "Build Version";
+"config.buildVersion" = "Versão da Compilação";
 "config.title.metal" = "Metal";
 "config.metalHud" = "HUD Metal";
 "config.metalTrace" = "Diagnóstico Metal";
@@ -52,18 +52,18 @@
 "create.name" = "Nome da Bottle:";
 "create.win" = "Versão do Windows:";
 "create.path" = "Caminho da Bottle:";
-"create.browse" = "Browse";
+"create.browse" = "Procurar";
 "create.cancel" = "Cancelar";
 "create.create" = "Criar";
 "create.warning.emptyName" = "O nome não pode ser vazio";
 "create.warning.alreadyExistsName" = "Uma Bottle com este nome já existe";
 
-"rename.title" = "Alterar nome da Bottle";
+"rename.title" = "Renomear Bottle";
 "rename.name" = "Novo nome:";
-"rename.rename" = "Alterar nome";
+"rename.rename" = "Renomear";
 
-"check.updates" = "Verificar Actualizações...";
-"kill.bottles" = "Encerrar todas as Bottles...";
+"check.updates" = "Procurar Atualizações...";
+"kill.bottles" = "Encerrar todas as Bottles";
 "open.logs" = "Abrir Pasta dos Logs";
 
 "showAlertOnFirstLaunch.messageText" = "Você gostaria de mover o Whisky para a pasta dos Aplicativos?";
@@ -72,9 +72,9 @@
 "showAlertOnFirstLaunch.button.dontMove" = "Não Mover";
 
 "setup.welcome" = "Bem-vindo ao Whisky";
-"setup.welcome.subtitle" = "Let's get you set up. This won't take a minute.";
+"setup.welcome.subtitle" = "Vamos preparar as coisas para você. Isso não vai demorar.";
 
-"setup.install.checking" = "Checking %@ installation...";
+"setup.install.checking" = "Verificando instalação de %@...";
 "setup.install.installed" = "%@ instalado";
 "setup.install.notInstalled" = "%@ não instalado";
 
@@ -83,7 +83,7 @@
 
 "setup.wine.download" = "Baixando Wine";
 "setup.wine.download.subtitle" = "As velocidades irão variar de acordo com sua internet.";
-"setup.wine.progress" = "Progress: %@ %@";
+"setup.wine.progress" = "Progresso: %@ %@";
 
 "setup.wine.install" = "Instalando Wine";
 "setup.wine.install.subtitle" = "Quase lá. Por favor, aguarde.";
