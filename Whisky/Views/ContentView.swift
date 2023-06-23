@@ -43,8 +43,8 @@ struct ContentView: View {
                 }
             }
         } detail: {
-            if let url = selected {
-                if let bottle = bottleVM.bottles.first(where: { $0.url == url }) {
+            if let bottle = selected {
+                if let bottle = bottleVM.bottles.first(where: { $0.url == bottle }) {
                     BottleView(bottle: Binding(get: {
                         // swiftlint:disable:next force_unwrapping
                         bottleVM.bottles[bottleVM.bottles.firstIndex(of: bottle)!]
@@ -55,6 +55,26 @@ struct ContentView: View {
                     }))
                     .disabled(bottle.inFlight)
                     .id(bottle.url)
+                }
+            } else {
+                if bottleVM.bottles.isEmpty &&
+                    bottleVM.inFlightBottles.isEmpty {
+                    VStack {
+                        Text("main.createFirst")
+                        Button {
+                            showBottleCreation.toggle()
+                        } label: {
+                            HStack {
+                                Image(systemName: "plus")
+                                Text("button.createBottle")
+                            }
+                            .padding(6)
+                        }
+                        .buttonStyle(.borderedProminent)
+                        .tint(.accentColor)
+                    }
+                } else {
+                    Text("main.noneSelected")
                 }
             }
         }
