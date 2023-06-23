@@ -6,6 +6,9 @@
 "tab.navTitle.programs" = "Programmes de %@";
 "tab.navTitle.info" = "Info sur %@";
 
+"main.noneSelected" = "Select a bottle";
+"main.createFirst" = "Create your first bottle to get started";
+
 "button.cDrive" = "Ouvrir C Drive";
 "button.showInFinder" = "Afficher dans Finder";
 "button.run" = "Exécuter...";
