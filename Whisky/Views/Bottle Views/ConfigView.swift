@@ -89,13 +89,16 @@ struct ConfigView: View {
                             Task(priority: .userInitiated) {
                                 retinaModeLoadingState = LoadingState.modifying
                                 do {
-                                    await Wine.changeRetinaMode(bottle: bottle, retinaMode: retinaMode)
+                                    try await Wine.changeRetinaMode(bottle: bottle, retinaMode: retinaMode)
                                 } catch {
                                     print("Failed to change build version")
                                 }
                                 retinaModeLoadingState = LoadingState.success
                             }
-                        }.disabled(retinaModeLoadingState == LoadingState.failed || retinaModeLoadingState == LoadingState.modifying)
+                        }.disabled(
+                            retinaModeLoadingState == LoadingState.failed ||
+                            retinaModeLoadingState == LoadingState.modifying
+                        )
                     } else {
                         HStack {
                             Text("config.retinaMode")

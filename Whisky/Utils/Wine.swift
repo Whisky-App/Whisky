@@ -131,16 +131,12 @@ class Wine {
         return output == "y"
     }
 
-    static func changeRetinaMode(bottle: Bottle, retinaMode: Bool) async {
-        do {
-            try await addRegistyKey(bottle: bottle,
-                                    key: #"HKCU\Software\Wine\Mac Driver"#,
-                                    name: "RetinaMode",
-                                    data: retinaMode ? "y" : "n",
-                                    type: .string)
-        } catch {
-            print("Failed to change RetinaMode")
-        }
+    static func changeRetinaMode(bottle: Bottle, retinaMode: Bool) async throws {
+        try await addRegistyKey(bottle: bottle,
+                                key: #"HKCU\Software\Wine\Mac Driver"#,
+                                name: "RetinaMode",
+                                data: retinaMode ? "y" : "n",
+                                type: .string)
     }
 
     @discardableResult
