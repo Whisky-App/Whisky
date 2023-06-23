@@ -65,9 +65,9 @@ class Wine {
         try process.run()
         log.write(line: "Launched Wine (\(process.processIdentifier))\n")
 
-        _ = try pipe.fileHandleForReading.readToEnd()
         process.waitUntilExit()
         log.write(line: "Process exited with code \(process.terminationStatus)")
+        _ = try pipe.fileHandleForReading.readToEnd()
 
         if process.terminationStatus != 0 {
             throw "Wine Crashed! (\(process.terminationStatus))"
@@ -123,16 +123,12 @@ class Wine {
                                   type: .string)
     }
 
-    static func retinaMode(bottle: Bottle) async -> Bool {
-        do {
-            let output = try await queryRegistyKey(bottle: bottle,
-                                                key: #"HKCU\Software\Wine\Mac Driver"#,
-                                                    name: "RetinaMode",
-                                                        type: .string)
-            return output == "y"
-        } catch {
-            return false
-        }
+    static func retinaMode(bottle: Bottle) async throws -> Bool {
+        let output = try await queryRegistyKey(bottle: bottle,
+                                        key: #"HKCU\Software\Wine\Mac Driver"#,
+                                        name: "RetinaMode",
+                                        type: .string)
+        return output == "y"
     }
 
     static func changeRetinaMode(bottle: Bottle, retinaMode: Bool) async {
@@ -179,8 +175,8 @@ class Wine {
         let lines = output.split(omittingEmptySubsequences: true, whereSeparator: \.isNewline)
         if let line = lines.first(where: { $0.contains(type.rawValue) }) {
             let array = line.split(omittingEmptySubsequences: true, whereSeparator: \.isWhitespace)
-            if let buildNumber = array.last {
-                return String(buildNumber)
+            if let value = array.last {
+                return String(value)
             }
         }
 
