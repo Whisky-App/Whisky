@@ -6,6 +6,9 @@
 "tab.navTitle.programs" = "%@ 上的程式";
 "tab.navTitle.info" = "%@ 的資訊";
 
+"main.noneSelected" = "Select a bottle";
+"main.createFirst" = "Create your first bottle to get started";
+
 "button.cDrive" = "開啟 C 磁碟";
 "button.showInFinder" = "在 Finder 中顯示";
 "button.run" = "執行...";
