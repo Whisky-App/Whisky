@@ -31,12 +31,13 @@ struct WineDownloadView: View {
                 VStack {
                     ProgressView(value: fractionProgress, total: 1)
                     HStack {
-                        Text(String(format: String(localized: "setup.wine.progress"),
-                                    formatPercentage(fractionProgress),
-                                    formatBytes(completed: completedBytes, total: totalBytes),
-                                    estimateRemainingTime()))
-                        .font(.subheadline)
-                        Spacer()
+                        HStack {
+                                Text(formatBytes(completed: completedBytes, total: totalBytes))
+                                Spacer()
+                                Text(estimateRemainingTime())
+                            }
+                            .font(.subheadline)
+                            Spacer()
                     }
                 }
                 .padding(.horizontal)
