@@ -6,6 +6,9 @@
 "tab.navTitle.programs" = "%@ Ohjelmat";
 "tab.navTitle.info" = "%@ Tiedot";
 
+"main.noneSelected" = "Select a bottle";
+"main.createFirst" = "Create your first bottle to get started";
+
 "button.cDrive" = "Avaa C levy";
 "button.showInFinder" = "Näytä Finderissa";
 "button.run" = "Käynnistä...";
