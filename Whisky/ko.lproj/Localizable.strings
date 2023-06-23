@@ -6,6 +6,9 @@
 "tab.navTitle.programs" = "%@ 프로그램";
 "tab.navTitle.info" = "%@ 정보";
 
+"main.noneSelected" = "Select a bottle";
+"main.createFirst" = "Create your first bottle to get started";
+
 "button.cDrive" = "C 드라이브 열기";
 "button.showInFinder" = "Finder에서 열기";
 "button.run" = "실행...";
