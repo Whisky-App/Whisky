@@ -86,6 +86,6 @@
 "setup.wine.progress" = "進行状況: %@ %@";
 
 "setup.wine.install" = "Wine をインストール中";
-"setup.wine.install.subtitle" = "Almost there. Don't tune out yet.";
+"setup.wine.install.subtitle" = "あと少しです。そのままお待ち下さい。";
 
 "setup.gptk" = "GPTK をインストール中";
