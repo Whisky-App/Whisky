@@ -11,10 +11,10 @@ struct WineDownloadView: View {
     @State private var fractionProgress: Double = 0
     @State private var completedBytes: Int64 = 0
     @State private var totalBytes: Int64 = 0
+    @State private var downloadSpeed: Double = 0
     @State private var downloadTask: URLSessionDownloadTask?
     @State private var observation: NSKeyValueObservation?
     @State private var startTime: Date?
-    @State private var downloadSpeed: Double?
     @Binding var tarLocation: URL
     @Binding var path: [SetupStage]
     var body: some View {
@@ -30,12 +30,16 @@ struct WineDownloadView: View {
                     ProgressView(value: fractionProgress, total: 1)
                     HStack {
                         HStack {
-                                Text("Progress: \(formatBytes(completed: completedBytes, total: totalBytes))")
-                                Spacer()
-                            Text("ETA: \(estimateRemainingTime() ?? "Estimating...")")
-                            }
-                            .font(.subheadline)
+                            Text(String(format: String(localized: "setup.wine.progress"),
+                                        formatPercentage(fractionProgress),
+                                        formatBytes(completed: completedBytes, total: totalBytes)))
                             Spacer()
+                            Text(shouldShowEstimate()
+                                 ? String(format: String(localized: "setup.wine.eta"),
+                                         formatRemainingTime(remainingBytes: totalBytes - completedBytes))
+                                 : String(localized: "setup.wine.estimating"))
+                        }
+                        .font(.subheadline)
                     }
                 }
                 .padding(.horizontal)
@@ -90,18 +94,17 @@ struct WineDownloadView: View {
         let total = formatter.string(fromByteCount: total)
         return "(\(completed)/\(total))"
     }
-    func estimateRemainingTime() -> String? {
-        guard let speed = downloadSpeed, speed != 0 else {
-            return nil
-        }
-
-        let remainingBytes = totalBytes - completedBytes
-        let remainingTimeInSeconds = Double(remainingBytes) / speed
+    func shouldShowEstimate() -> Bool {
+        let elapsedTime = Date().timeIntervalSince(startTime ?? Date())
+        return Int(elapsedTime.rounded()) > 5 && completedBytes != 0
+    }
+    func formatRemainingTime(remainingBytes: Int64) -> String {
+        let remainingTimeInSeconds = Double(remainingBytes) / downloadSpeed
 
         let formatter = DateComponentsFormatter()
         formatter.allowedUnits = [.hour, .minute, .second]
         formatter.unitsStyle = .abbreviated
-        return formatter.string(from: TimeInterval(remainingTimeInSeconds))
+        return formatter.string(from: TimeInterval(remainingTimeInSeconds)) ?? ""
     }
     func proceed() {
         path.append(.wineInstall)
