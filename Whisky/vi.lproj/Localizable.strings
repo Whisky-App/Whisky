@@ -6,6 +6,9 @@
 "tab.navTitle.programs" = "Chương trình trong %@";
 "tab.navTitle.info" = "Thông tin về %@";
 
+"main.noneSelected" = "Select a bottle";
+"main.createFirst" = "Create your first bottle to get started";
+
 "button.cDrive" = "Mở ổ C:";
 "button.showInFinder" = "Mở trong Finder";
 "button.run" = "Chạy...";
