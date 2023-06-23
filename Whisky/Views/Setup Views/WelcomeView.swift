@@ -20,6 +20,7 @@ struct WelcomeView: View {
             VStack {
                 Text("setup.welcome")
                     .font(.title)
+                    .fontWeight(.bold)
                 Text("setup.welcome.subtitle")
                     .font(.subheadline)
                     .foregroundStyle(.secondary)
