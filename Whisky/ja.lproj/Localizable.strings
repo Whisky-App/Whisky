@@ -6,6 +6,9 @@
 "tab.navTitle.programs" = "%@ のプログラム";
 "tab.navTitle.info" = "%@ の情報";
 
+"main.noneSelected" = "Select a bottle";
+"main.createFirst" = "Create your first bottle to get started";
+
 "button.cDrive" = "C ドライブを開く";
 "button.showInFinder" = "Finder で表示";
 "button.run" = "実行...";
