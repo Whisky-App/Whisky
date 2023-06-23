@@ -6,6 +6,9 @@
 "tab.navTitle.programs" = "%@的软件";
 "tab.navTitle.info" = "%@ 信息";
 
+"main.noneSelected" = "Select a bottle";
+"main.createFirst" = "Create your first bottle to get started";
+
 "button.cDrive" = "打开 C 盘";
 "button.showInFinder" = "在访达中显示";
 "button.run" = "运行...";
