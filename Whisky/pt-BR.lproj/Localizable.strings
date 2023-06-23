@@ -66,9 +66,9 @@
 "kill.bottles" = "Encerrar todas as Bottles...";
 "open.logs" = "Abrir Pasta dos Logs";
 
-"showAlertOnFirstLaunch.messageText" = "Gostaria de mover o Whisky para a pasta das Aplicações ?";
-"showAlertOnFirstLaunch.informativeText" = "Em alguns casos, o Whisky pode não funcionar correctamente numa pasta diferente";
-"showAlertOnFirstLaunch.button.moveToApplications" = "Mover para Aplicações";
+"showAlertOnFirstLaunch.messageText" = "Você gostaria de mover o Whisky para a pasta dos Aplicativos?";
+"showAlertOnFirstLaunch.informativeText" = "Em alguns casos, o Whisky pode não funcionar corretamente numa pasta diferente";
+"showAlertOnFirstLaunch.button.moveToApplications" = "Mover para Aplicativos";
 "showAlertOnFirstLaunch.button.dontMove" = "Não Mover";
 
 "setup.welcome" = "Bem-vindo ao Whisky";
