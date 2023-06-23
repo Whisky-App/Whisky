@@ -38,7 +38,7 @@
 "info.title" = "Bilgi";
 "info.path" = "Yol";
 "info.path.copy" = "Yolu Kopyala";
-"info.winPath.copy" = "Copy Windows Path";
+"info.winPath.copy" = "Windows Dosya Yolunu Kopyalayın";
 "info.wine" = "Wine Sürümü";
 "info.win" = "Windows Sürümü";
 
@@ -71,19 +71,19 @@
 "showAlertOnFirstLaunch.button.moveToApplications" = "Applications'a Taşı";
 "showAlertOnFirstLaunch.button.dontMove" = "Taşıma";
 
-"setup.welcome" = "Welcome to Whisky";
-"setup.welcome.subtitle" = "Let's get you set up. This won't take a minute.";
+"setup.welcome" = "Whisky'ye Hoşgeldiniz";
+"setup.welcome.subtitle" = "Hadi seni hazırlayalım. Bu çok da uzun sürmeyecek.";
 
-"setup.install.checking" = "Checking %@ installation...";
-"setup.install.installed" = "%@ installed";
-"setup.install.notInstalled" = "%@ not installed";
+"setup.install.checking" = "%@ kontrol ediliyor...";
+"setup.install.installed" = "%@ yüklendi";
+"setup.install.notInstalled" = "%@ yüklü değil";
 
-"setup.rosetta" = "Installing Rosetta";
-"setup.rosetta.subtitle" = "Rosetta allows x86 code, like Wine, to run on your Mac.";
+"setup.rosetta" = "Rosetta Yükleniyor";
+"setup.rosetta.subtitle" = "Rosetta, Wine gibi, x86 yazılımının Mac bilgisayarınızda çalışmasına izin verir.";
 
-"setup.wine.download" = "Downloading Wine";
-"setup.wine.download.subtitle" = "Speeds will vary on your internet connection.";
-"setup.wine.progress" = "Progress: %@ %@";
+"setup.wine.download" = "Wine İndiriliyor";
+"setup.wine.download.subtitle" = "Yükleme hızı internet bağlantınıza göre değişecektir.";
+"setup.wine.progress" = "İlerleme: %@ %@";
 
 "setup.wine.install" = "Installing Wine";
 "setup.wine.install.subtitle" = "Almost there. Don't tune out yet.";
