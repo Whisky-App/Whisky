@@ -85,7 +85,7 @@
 "setup.wine.download.subtitle" = "Yükleme hızı internet bağlantınıza göre değişecektir.";
 "setup.wine.progress" = "İlerleme: %@ %@";
 
-"setup.wine.install" = "Installing Wine";
-"setup.wine.install.subtitle" = "Almost there. Don't tune out yet.";
+"setup.wine.install" = "Wine Yükleniyor";
+"setup.wine.install.subtitle" = "Bitmek üzere. Lütfen Kapatmayınız.";
 
-"setup.gptk" = "Installing GPTK";
+"setup.gptk" = "GPTK Yükleniyor";
