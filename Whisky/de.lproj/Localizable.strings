@@ -93,3 +93,6 @@
 "setup.wine.install.subtitle" = "Fast fertig. Noch nicht abbrechen.";
 
 "setup.gptk" = "GPTK wird installiert";
+
+"alert.macos" = "Unsupported macOS Version!";
+"alert.macos.info" = "macOS Ventura is not officially support by GPTK. Issues may occur!";
