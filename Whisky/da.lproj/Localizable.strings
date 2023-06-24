@@ -32,6 +32,7 @@
 "config.controlPanel" = "Åbn Kontrolpanel";
 "config.regedit" = "Åbn Registry Editor";
 "config.winecfg" = "Åben Wine Konfiguration";
+"config.notAvailable" = "N/A";
 
 "program.title" = "Installerede programmer";
 "program.env" = "Miljøvariabler";
