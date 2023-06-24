@@ -12,6 +12,7 @@ struct BottleCreationView: View {
     @State var newBottleVersion: WinVersion = .win10
     @State var newBottleURL: URL = BottleVM.bottleDir
     @State var bottlePath: String = ""
+    @Binding var newlyCreatedBottleURL: URL?
     @Environment(\.dismiss) var dismiss
 
     var body: some View {
@@ -68,7 +69,7 @@ struct BottleCreationView: View {
                 }
                 .keyboardShortcut(.cancelAction)
                 Button("create.create") {
-                    BottleVM.shared.createNewBottle(bottleName: newBottleName,
+                    newlyCreatedBottleURL = BottleVM.shared.createNewBottle(bottleName: newBottleName,
                                                     winVersion: newBottleVersion,
                                                     bottleURL: newBottleURL)
                     dismiss()
@@ -88,7 +89,8 @@ struct BottleCreationView: View {
 }
 
 struct BottleCreationView_Previews: PreviewProvider {
+    @State private static var newlyCreatedBottleURL: URL?
     static var previews: some View {
-        BottleCreationView()
+        BottleCreationView(newlyCreatedBottleURL: $newlyCreatedBottleURL)
     }
 }

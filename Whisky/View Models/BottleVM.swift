@@ -25,12 +25,10 @@ class BottleVM: ObservableObject {
     let bottlesList = BottleVMEntries()
 
     @Published var bottles: [Bottle] = []
-    @Published var inFlightBottles: [InflightBottle] = []
 
     @MainActor
     func loadBottles() {
         Task(priority: .background) {
-            inFlightBottles.removeAll()
             bottles.removeAll()
             // Update if needed
             if !BottleVMEntries.exists() {
@@ -54,22 +52,35 @@ class BottleVM: ObservableObject {
             bottles = bottlesList.paths.map({
                 Bottle(bottleUrl: $0)
             })
-            bottles.sort(by: { $0.settings.name.lowercased() < $1.settings.name.lowercased() })
+            bottles.sortByName()
         }
     }
 
-    func createNewBottle(bottleName: String, winVersion: WinVersion, bottleURL: URL) {
+    func createNewBottle(bottleName: String, winVersion: WinVersion, bottleURL: URL) -> URL {
+        
+//         let flight: InflightBottle = .init(name: bottleName, url: newBottleDir)
+//         inFlightBottles.append(flight)
+//             bottles.sortByName()
+//         }
+//     }
+
+//     func createNewBottle(bottleName: String, winVersion: WinVersion, bottleURL: URL) -> URL {
         let newBottleDir = bottleURL.appendingPathComponent(UUID().uuidString)
-        let flight: InflightBottle = .init(name: bottleName, url: newBottleDir)
-        inFlightBottles.append(flight)
+
         Task(priority: .userInitiated) {
             do {
                 if !FileManager.default.fileExists(atPath: BottleVM.bottleDir.path) {
                     try FileManager.default.createDirectory(atPath: BottleVM.bottleDir.path,
                                                             withIntermediateDirectories: true)
                 }
+
                 try FileManager.default.createDirectory(atPath: newBottleDir.path, withIntermediateDirectories: true)
-                let bottle = Bottle(bottleUrl: newBottleDir)
+                let bottle = Bottle(bottleUrl: newBottleDir, inFlight: true)
+
+                bottles.append(bottle)
+                bottles.sortByName()
+
+
                 bottle.settings.windowsVersion = winVersion
                 bottle.settings.name = bottleName
                 try await Wine.changeWinVersion(bottle: bottle, win: winVersion)
@@ -85,5 +96,6 @@ class BottleVM: ObservableObject {
                 }
             }
         }
+        return newBottleDir
     }
 }

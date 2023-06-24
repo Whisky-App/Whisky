@@ -6,6 +6,9 @@
 "tab.navTitle.programs" = "%@ Programs";
 "tab.navTitle.info" = "%@ Info";
 
+"main.noneSelected" = "Select a bottle";
+"main.createFirst" = "Create your first bottle to get started";
+
 "button.cDrive" = "Open C Drive";
 "button.showInFinder" = "Show in Finder";
 "button.run" = "Run...";
@@ -29,6 +32,7 @@
 "config.controlPanel" = "Open Control Panel";
 "config.regedit" = "Open Registry Editor";
 "config.winecfg" = "Open Wine Configuration";
+"config.notAvailable" = "N/A";
 
 "program.title" = "Installed Programs";
 "program.env" = "Environment Variables";

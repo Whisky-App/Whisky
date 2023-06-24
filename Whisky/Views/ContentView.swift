@@ -12,26 +12,39 @@ struct ContentView: View {
     @AppStorage("showSetup") private var showSetup = true
     @State var selected: URL?
     @State var showBottleCreation: Bool = false
+    @State var newlyCreatedBottleURL: URL?
 
     var body: some View {
         NavigationSplitView {
-            List(selection: $selected) {
-                ForEach(bottleVM.bottles, id: \.url) { bottle in
-                    BottleListEntry(bottle: bottle, selected: $selected)
+            ScrollViewReader { proxy in
+                List(selection: $selected) {
+                    ForEach(bottleVM.bottles, id: \.url) { bottle in
+                        if bottle.inFlight {
+                            HStack {
+                                Text(bottle.name)
+                                Spacer()
+                                ProgressView().controlSize(.small)
+                            }
+                            .opacity(0.5)
+                            .id(bottle.url)
+                        } else {
+                            BottleListEntry(bottle: bottle, selected: $selected)
+                                .id(bottle.url)
+                        }
+                    }
                 }
-                ForEach(bottleVM.inFlightBottles, id: \.self) { inFlight in
-                    HStack {
-                        Text(inFlight.name)
-                            .foregroundStyle(.secondary)
-                        Spacer()
-                        ProgressView()
-                            .controlSize(.small)
+                .onChange(of: newlyCreatedBottleURL) { url in
+                    DispatchQueue.main.asyncAfter(deadline: .now() + 0.2) {
+                        selected = url
+                        withAnimation {
+                            proxy.scrollTo(url, anchor: .center)
+                        }
                     }
                 }
             }
         } detail: {
-            if let url = selected {
-                if let bottle = bottleVM.bottles.first(where: { $0.url == url }) {
+            if let bottle = selected {
+                if let bottle = bottleVM.bottles.first(where: { $0.url == bottle }) {
                     BottleView(bottle: Binding(get: {
                         // swiftlint:disable:next force_unwrapping
                         bottleVM.bottles[bottleVM.bottles.firstIndex(of: bottle)!]
@@ -40,7 +53,27 @@ struct ContentView: View {
                             bottleVM.bottles[index] = newValue
                         }
                     }))
-                        .id(bottle.url)
+                    .disabled(bottle.inFlight)
+                    .id(bottle.url)
+                }
+            } else {
+                if bottleVM.bottles.isEmpty {
+                    VStack {
+                        Text("main.createFirst")
+                        Button {
+                            showBottleCreation.toggle()
+                        } label: {
+                            HStack {
+                                Image(systemName: "plus")
+                                Text("button.createBottle")
+                            }
+                            .padding(6)
+                        }
+                        .buttonStyle(.borderedProminent)
+                        .tint(.accentColor)
+                    }
+                } else {
+                    Text("main.noneSelected")
                 }
             }
         }
@@ -55,7 +88,7 @@ struct ContentView: View {
             }
         }
         .sheet(isPresented: $showBottleCreation) {
-            BottleCreationView()
+            BottleCreationView(newlyCreatedBottleURL: $newlyCreatedBottleURL)
         }
         .sheet(isPresented: $showSetup) {
             SetupView(showSetup: $showSetup)
