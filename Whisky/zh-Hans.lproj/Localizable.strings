@@ -6,8 +6,8 @@
 "tab.navTitle.programs" = "%@的软件";
 "tab.navTitle.info" = "%@ 信息";
 
-"main.noneSelected" = "Select a bottle";
-"main.createFirst" = "Create your first bottle to get started";
+"main.noneSelected" = "选择容器";
+"main.createFirst" = "创建您的第一个容器来开始";
 
 "button.cDrive" = "打开 C 盘";
 "button.showInFinder" = "在访达中显示";
@@ -22,7 +22,7 @@
 "button.deleteAlert.cancel" = "取消";
 
 "config.winVersion" = "Windows 版本";
-"config.buildVersion" = "构建版本";
+"config.buildVersion" = "由洋甘菊翻译提供翻译，构建版本";
 "config.title.metal" = "Metal";
 "config.metalHud" = "Metal 监视器";
 "config.metalTrace" = "Metal 性能分析";
@@ -32,7 +32,7 @@
 "config.controlPanel" = "打开控制面板";
 "config.regedit" = "打开注册表编辑器";
 "config.winecfg" = "打开 Wine 配置";
-"config.notAvailable" = "N/A";
+"config.notAvailable" = "不适用";
 
 "program.title" = "已安装的程序";
 "program.env" = "环境变量";
