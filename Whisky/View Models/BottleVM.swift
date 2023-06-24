@@ -7,11 +7,6 @@
 
 import Foundation
 
-struct InflightBottle: Hashable {
-    var name: String
-    var url: URL
-}
-
 class BottleVM: ObservableObject {
     static let shared = BottleVM()
 
@@ -57,17 +52,10 @@ class BottleVM: ObservableObject {
     }
 
     func createNewBottle(bottleName: String, winVersion: WinVersion, bottleURL: URL) -> URL {
-        
-//         let flight: InflightBottle = .init(name: bottleName, url: newBottleDir)
-//         inFlightBottles.append(flight)
-//             bottles.sortByName()
-//         }
-//     }
-
-//     func createNewBottle(bottleName: String, winVersion: WinVersion, bottleURL: URL) -> URL {
         let newBottleDir = bottleURL.appendingPathComponent(UUID().uuidString)
 
         Task(priority: .userInitiated) {
+            var bottleId: Bottle? = .none
             do {
                 if !FileManager.default.fileExists(atPath: BottleVM.bottleDir.path) {
                     try FileManager.default.createDirectory(atPath: BottleVM.bottleDir.path,
@@ -76,10 +64,10 @@ class BottleVM: ObservableObject {
 
                 try FileManager.default.createDirectory(atPath: newBottleDir.path, withIntermediateDirectories: true)
                 let bottle = Bottle(bottleUrl: newBottleDir, inFlight: true)
+                bottleId = .some(bottle)
 
                 bottles.append(bottle)
                 bottles.sortByName()
-
 
                 bottle.settings.windowsVersion = winVersion
                 bottle.settings.name = bottleName
@@ -91,8 +79,10 @@ class BottleVM: ObservableObject {
                 await loadBottles()
             } catch {
                 print("Failed to create new bottle: \(error)")
-                if let index = inFlightBottles.firstIndex(of: flight) {
-                    inFlightBottles.remove(at: index)
+                if let bottle = bottleId {
+                    if let index = bottles.firstIndex(of: bottle) {
+                        bottles.remove(at: index)
+                    }
                 }
             }
         }

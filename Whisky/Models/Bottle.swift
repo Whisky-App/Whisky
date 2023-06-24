@@ -134,7 +134,6 @@ public class Bottle: Hashable {
         settings.name = newName
     }
 
-
     init(inFlight: Bool = false) {
         self.settings = BottleSettings(bottleURL: url)
         self.inFlight = inFlight
@@ -148,7 +147,7 @@ public class Bottle: Hashable {
 
 extension Array where Element == Bottle {
     mutating func sortByName() {
-        self.sort { $0.name.lowercased() < $1.name.lowercased() }
+        self.sort { $0.settings.name.lowercased() < $1.settings.name.lowercased() }
     }
 }
 
