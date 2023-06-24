@@ -32,6 +32,7 @@
 "config.controlPanel" = "Відкрити Панель управління";
 "config.regedit" = "Відкрити редактор реєстру";
 "config.winecfg" = "Відкрити налаштування Wine";
+"config.notAvailable" = "N/A";
 
 "program.title" = "Встановлені програми";
 "program.env" = "Змінні середовища";
