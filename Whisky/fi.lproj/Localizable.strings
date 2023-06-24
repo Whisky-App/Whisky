@@ -6,6 +6,9 @@
 "tab.navTitle.programs" = "%@ Ohjelmat";
 "tab.navTitle.info" = "%@ Tiedot";
 
+"main.noneSelected" = "Select a bottle";
+"main.createFirst" = "Create your first bottle to get started";
+
 "button.cDrive" = "Avaa C levy";
 "button.showInFinder" = "Näytä Finderissa";
 "button.run" = "Käynnistä...";
@@ -29,6 +32,7 @@
 "config.controlPanel" = "Open Control Panel";
 "config.regedit" = "Open Registry Editor";
 "config.winecfg" = "Avaa Wine konfiguraatio";
+"config.notAvailable" = "N/A";
 
 "program.title" = "Asennetut ohjelmat";
 "program.env" = "Ympäristön muuttujat";
@@ -38,6 +42,7 @@
 "info.title" = "Tiedot";
 "info.path" = "Polku";
 "info.path.copy" = "Kopio polku";
+"info.winPath.copy" = "Copy Windows Path";
 "info.wine" = "Wine versio";
 "info.win" = "Windows versio";
 
@@ -83,3 +88,8 @@
 "setup.wine.download" = "Downloading Wine";
 "setup.wine.download.subtitle" = "Speeds will vary on your internet connection.";
 "setup.wine.progress" = "Progress: %@ %@";
+
+"setup.wine.install" = "Installing Wine";
+"setup.wine.install.subtitle" = "Almost there. Don't tune out yet.";
+
+"setup.gptk" = "Installing GPTK";

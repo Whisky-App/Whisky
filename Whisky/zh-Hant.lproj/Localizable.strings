@@ -1,34 +1,39 @@
-"tab.config" = "設定";
+"tab.config" = "設置";
 "tab.programs" = "程式";
 "tab.info" = "資訊";
 
-"tab.navTitle.config" = "%@ 設定";
-"tab.navTitle.programs" = "%@ 程式";
-"tab.navTitle.info" = "%@ 資訊";
+"tab.navTitle.config" = "%@ 設置";
+"tab.navTitle.programs" = "%@ 上的程式";
+"tab.navTitle.info" = "%@ 的資訊";
 
-"button.cDrive" = "開啟C槽";
-"button.showInFinder" = "在Finder中顯示";
+"main.noneSelected" = "選擇容器";
+"main.createFirst" = "建立你的第一個容器以開始";
+
+"button.cDrive" = "開啟 C 磁碟";
+"button.showInFinder" = "在 Finder 中顯示";
 "button.run" = "執行...";
 "button.ok" = "確定";
 "button.renameBottle" = "重新命名";
 "button.deleteBottle" = "刪除...";
 "button.createBottle" = "建立容器";
 "button.deleteAlert.msg" = "刪除 %@?";
-"button.deleteAlert.info" = "您確定要刪除此容器嗎？此動作是永久的。";
+"button.deleteAlert.info" = "你確定要刪除此容器嗎？此動作將不可還原。";
 "button.deleteAlert.delete" = "刪除";
 "button.deleteAlert.cancel" = "取消";
 
-"config.winVersion" = "Windows版本";
-"config.buildVersion" = "Build Version";
+"config.winVersion" = "Windows 版本";
+"config.buildVersion" = "（由洋甘菊翻譯提供翻譯）
+組建版本";
 "config.title.metal" = "Metal";
 "config.metalHud" = "Metal 抬頭顯示";
 "config.metalTrace" = "Metal 追蹤";
-"config.retinaMode" = "Retina Mode";
-"config.metalTrace.info" = "允許您在Xcode中捕獲GPU工作負載";
-"config.esync" = "ESync";
-"config.controlPanel" = "Open Control Panel";
+"config.retinaMode" = "Retina 模式";
+"config.metalTrace.info" = "允許你在 Xcode 中獲取 GPU 工作負載";
+"config.esync" = "增強同步 (ESync)";
+"config.controlPanel" = "開啟控制台";
 "config.regedit" = "開啟註冊表編輯器";
-"config.winecfg" = "開啟Wine設定";
+"config.winecfg" = "開啟 Wine 設置";
+"config.notAvailable" = "不適用";
 
 "program.title" = "已安裝的程式";
 "program.env" = "環境變數";
@@ -38,24 +43,25 @@
 "info.title" = "資訊";
 "info.path" = "路徑";
 "info.path.copy" = "複製路徑";
-"info.wine" = "Wine版本";
-"info.win" = "Windows版本";
+"info.winPath.copy" = "複製 Windows 路徑";
+"info.wine" = "Wine 版本";
+"info.win" = "Windows 版本";
 
-"gptkalert.init" = "將 Game Porting Toolkit 的 DMG 文件拖到這裡";
-"gptkalert.message" = "GPTK遇到了一個錯誤！";
+"gptkalert.init" = "Game Porting Toolkit 的 DMG 檔案拉到這裡";
+"gptkalert.message" = "GPTK 遇到錯誤！";
 
 "alert.message" = "無法開啟程式！";
 "alert.info" = "開啟失敗";
 
 "create.title" = "建立一個新的容器";
 "create.name" = "容器名稱：";
-"create.win" = "Windows版本：";
-"create.path" = "Bottle path:";
-"create.browse" = "Browse";
+"create.win" = "Windows 版本：";
+"create.path" = "容器路徑：";
+"create.browse" = "瀏覽";
 "create.cancel" = "取消";
 "create.create" = "建立";
 "create.warning.emptyName" = "名稱不能為空";
-"create.warning.alreadyExistsName" = "已存在同樣名稱的容器";
+"create.warning.alreadyExistsName" = "已存在同名容器";
 
 "rename.title" = "重新命名容器";
 "rename.name" = "新名稱：";
@@ -65,21 +71,26 @@
 "kill.bottles" = "終止所有容器";
 "open.logs" = "開啟日誌資料夾";
 
-"showAlertOnFirstLaunch.messageText" = "您想要將Whisky移動到您的應用程式資料夾嗎？";
-"showAlertOnFirstLaunch.informativeText" = "在某些情況下，Whisky可能無法在不同的資料夾中正常運作";
+"showAlertOnFirstLaunch.messageText" = "你希望將 Whisky 移動到你的應用程式資料夾嗎？";
+"showAlertOnFirstLaunch.informativeText" = "在某些情況下，Whisky 可能無法在不同的資料夾中正常運作";
 "showAlertOnFirstLaunch.button.moveToApplications" = "移動到應用程式";
 "showAlertOnFirstLaunch.button.dontMove" = "不移動";
 
-"setup.welcome" = "Welcome to Whisky";
-"setup.welcome.subtitle" = "Let's get you set up. This won't take a minute.";
+"setup.welcome" = "歡迎使用 Whisky";
+"setup.welcome.subtitle" = "讓我們為你完成設置。此步驟不會花上一分鐘時間。";
 
-"setup.install.checking" = "Checking %@ installation...";
-"setup.install.installed" = "%@ installed";
-"setup.install.notInstalled" = "%@ not installed";
+"setup.install.checking" = "正在檢查  %@ 安裝…";
+"setup.install.installed" = "%@ 已安裝";
+"setup.install.notInstalled" = "%@ 未安裝";
 
-"setup.rosetta" = "Installing Rosetta";
-"setup.rosetta.subtitle" = "Rosetta allows x86 code, like Wine, to run on your Mac.";
+"setup.rosetta" = "正在安裝 Rosetta";
+"setup.rosetta.subtitle" = "Rosetta 允許 x86 代碼（如 Wine）在 Mac 上運行。";
 
-"setup.wine.download" = "Downloading Wine";
-"setup.wine.download.subtitle" = "Speeds will vary on your internet connection.";
-"setup.wine.progress" = "Progress: %@ %@";
+"setup.wine.download" = "正在下載 Wine";
+"setup.wine.download.subtitle" = "速度會因你的互聯網連接而有所不同。";
+"setup.wine.progress" = "進度：%@ %@";
+
+"setup.wine.install" = "正在安裝 Wine";
+"setup.wine.install.subtitle" = "快完成了。請不要退出。";
+
+"setup.gptk" = "正在安裝 GPTK";

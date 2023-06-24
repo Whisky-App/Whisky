@@ -6,6 +6,9 @@
 "tab.navTitle.programs" = "%@ Programy";
 "tab.navTitle.info" = "%@ Informacje";
 
+"main.noneSelected" = "Select a bottle";
+"main.createFirst" = "Create your first bottle to get started";
+
 "button.cDrive" = "Otwórz dysk C";
 "button.showInFinder" = "Pokaż w Finderze";
 "button.run" = "Uruchom...";
@@ -29,6 +32,7 @@
 "config.controlPanel" = "Otwórz Panel Sterowania";
 "config.regedit" = "Otwórz edytor rejestru";
 "config.winecfg" = "Otwórz konfigurację Wine";
+"config.notAvailable" = "N/A";
 
 "program.title" = "Zainstalowane programy";
 "program.env" = "Zmienne środowiskowe";
@@ -38,6 +42,7 @@
 "info.title" = "Informacje";
 "info.path" = "Ścieżka:";
 "info.path.copy" = "Skopiuj ścieżkę";
+"info.winPath.copy" = "Kopiuj ścieżkę systemu Windows";
 "info.wine" = "Wersja Wine:";
 "info.win" = "Wersja systemu Windows:";
 
@@ -70,16 +75,21 @@
 "showAlertOnFirstLaunch.button.moveToApplications" = "Przenieś do folderu Aplikacje";
 "showAlertOnFirstLaunch.button.dontMove" = "Nie przenoś";
 
-"setup.welcome" = "Welcome to Whisky";
-"setup.welcome.subtitle" = "Let's get you set up. This won't take a minute.";
+"setup.welcome" = "Witaj w Whisky";
+"setup.welcome.subtitle" = "Przygotujmy się. To nie potrwa długo.";
 
-"setup.install.checking" = "Checking %@ installation...";
-"setup.install.installed" = "%@ installed";
-"setup.install.notInstalled" = "%@ not installed";
+"setup.install.checking" = "Sprawdzanie %@ instalacji...";
+"setup.install.installed" = "%@ zainstalowano";
+"setup.install.notInstalled" = "%@ nie zainstalowano";
 
-"setup.rosetta" = "Installing Rosetta";
-"setup.rosetta.subtitle" = "Rosetta allows x86 code, like Wine, to run on your Mac.";
+"setup.rosetta" = "Instalowanie Rosetta";
+"setup.rosetta.subtitle" = "Rosetta pozwala kodowi x86, tak jak Wine, na uruchamianie na komputerze Mac.";
 
-"setup.wine.download" = "Downloading Wine";
-"setup.wine.download.subtitle" = "Speeds will vary on your internet connection.";
-"setup.wine.progress" = "Progress: %@ %@";
+"setup.wine.download" = "Pobieranie Wine";
+"setup.wine.download.subtitle" = "Prędkości będą się różnić w zależności od połączenia internetowego.";
+"setup.wine.progress" = "Postęp: %@ %@";
+
+"setup.wine.install" = "Instalowanie Wine";
+"setup.wine.install.subtitle" = "Prawie gotowe. Jeszcze nie wyłączaj.";
+
+"setup.gptk" = "Instalowanie GPTK";

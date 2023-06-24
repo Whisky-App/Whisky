@@ -6,6 +6,9 @@
 "tab.navTitle.programs" = "%@ – программы";
 "tab.navTitle.info" = "%@ – информация";
 
+"main.noneSelected" = "Select a bottle";
+"main.createFirst" = "Create your first bottle to get started";
+
 "button.cDrive" = "Открыть диск C";
 "button.showInFinder" = "Показать в Finder";
 "button.run" = "Выполнить...";
@@ -19,16 +22,17 @@
 "button.deleteAlert.cancel" = "Отмена";
 
 "config.winVersion" = "Версия Windows";
-"config.buildVersion" = "Build Version";
+"config.buildVersion" = "Версия сборки";
 "config.title.metal" = "Metal";
 "config.metalHud" = "Metal HUD";
 "config.metalTrace" = "Трассировка Metal";
-"config.retinaMode" = "Retina Mode";
+"config.retinaMode" = "Режим Retina";
 "config.metalTrace.info" = "Позволяет отслеживать рабочую нагрузку видеокарты через Xcode";
 "config.esync" = "ESync";
-"config.controlPanel" = "Open Control Panel";
-"config.regedit" = "Open Registry Editor";
+"config.controlPanel" = "Открыть Панель управления";
+"config.regedit" = "Открыть Редактор реестра";
 "config.winecfg" = "Открыть настройки Wine";
+"config.notAvailable" = "N/A";
 
 "program.title" = "Установленные программы";
 "program.env" = "Переменные окружения";
@@ -38,6 +42,7 @@
 "info.title" = "Сведения";
 "info.path" = "Путь:";
 "info.path.copy" = "Скопировать путь";
+"info.winPath.copy" = "Скопировать путь Windows";
 "info.wine" = "Версия Wine:";
 "info.win" = "Версия Windows:";
 
@@ -50,12 +55,12 @@
 "create.title" = "Создать новую бутылку";
 "create.name" = "Название бутылки:";
 "create.win" = "Версия Windows:";
-"create.path" = "Bottle path:";
-"create.browse" = "Browse";
+"create.path" = "Путь бутылки:";
+"create.browse" = "Обзор";
 "create.cancel" = "Отмена";
 "create.create" = "Создать";
-"create.warning.emptyName" = "Name can't be empty";
-"create.warning.alreadyExistsName" = "A bottle with this name already exists";
+"create.warning.emptyName" = "Название не может быть пустым";
+"create.warning.alreadyExistsName" = "Бутылка с таким названием уже существует";
 
 "rename.title" = "Переименовать бутылку";
 "rename.name" = "Новое имя:";
@@ -70,16 +75,21 @@
 "showAlertOnFirstLaunch.button.moveToApplications" = "Перенести в «Приложения»";
 "showAlertOnFirstLaunch.button.dontMove" = "Не двигать";
 
-"setup.welcome" = "Welcome to Whisky";
-"setup.welcome.subtitle" = "Let's get you set up. This won't take a minute.";
+"setup.welcome" = "Добро пожаловать в Whisky";
+"setup.welcome.subtitle" = "Производится первоначальная настройка. Это займёт не больше минуты.";
 
-"setup.install.checking" = "Checking %@ installation...";
-"setup.install.installed" = "%@ installed";
-"setup.install.notInstalled" = "%@ not installed";
+"setup.install.checking" = "Проверка установки %@...";
+"setup.install.installed" = "%@ – установлено";
+"setup.install.notInstalled" = "%@ – не установлено";
 
-"setup.rosetta" = "Installing Rosetta";
-"setup.rosetta.subtitle" = "Rosetta allows x86 code, like Wine, to run on your Mac.";
+"setup.rosetta" = "Установка Rosetta";
+"setup.rosetta.subtitle" = "Rosetta позволяет программам x86, таким как Wine, работать на вашем Mac.";
 
-"setup.wine.download" = "Downloading Wine";
-"setup.wine.download.subtitle" = "Speeds will vary on your internet connection.";
-"setup.wine.progress" = "Progress: %@ %@";
+"setup.wine.download" = "Скачивание Wine";
+"setup.wine.download.subtitle" = "Скорость скачивания зависит от вашего подключения к Интернету.";
+"setup.wine.progress" = "Выполнено: %@ %@";
+
+"setup.wine.install" = "Установка Wine";
+"setup.wine.install.subtitle" = "Почти закончили. Не отключайтесь.";
+
+"setup.gptk" = "Установка GPTK";

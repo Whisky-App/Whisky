@@ -6,6 +6,9 @@
 "tab.navTitle.programs" = "%@的软件";
 "tab.navTitle.info" = "%@ 信息";
 
+"main.noneSelected" = "选择容器";
+"main.createFirst" = "创建您的第一个容器来开始";
+
 "button.cDrive" = "打开 C 盘";
 "button.showInFinder" = "在访达中显示";
 "button.run" = "运行...";
@@ -19,7 +22,7 @@
 "button.deleteAlert.cancel" = "取消";
 
 "config.winVersion" = "Windows 版本";
-"config.buildVersion" = "构建版本";
+"config.buildVersion" = "由洋甘菊翻译提供翻译，构建版本";
 "config.title.metal" = "Metal";
 "config.metalHud" = "Metal 监视器";
 "config.metalTrace" = "Metal 性能分析";
@@ -29,6 +32,7 @@
 "config.controlPanel" = "打开控制面板";
 "config.regedit" = "打开注册表编辑器";
 "config.winecfg" = "打开 Wine 配置";
+"config.notAvailable" = "不适用";
 
 "program.title" = "已安装的程序";
 "program.env" = "环境变量";
@@ -38,6 +42,7 @@
 "info.title" = "关于";
 "info.path" = "路径";
 "info.path.copy" = "复制路径";
+"info.winPath.copy" = "复制 Windows 路径";
 "info.wine" = "Wine 版本";
 "info.win" = "Windows 版本";
 
@@ -70,16 +75,21 @@
 "showAlertOnFirstLaunch.button.moveToApplications" = "移动到应用程序文件夹";
 "showAlertOnFirstLaunch.button.dontMove" = "不移动";
 
-"setup.welcome" = "Welcome to Whisky";
-"setup.welcome.subtitle" = "Let's get you set up. This won't take a minute.";
+"setup.welcome" = "欢迎使用 Whisky";
+"setup.welcome.subtitle" = "让我们开始您的设置。这不需要一分钟。";
 
-"setup.install.checking" = "Checking %@ installation...";
-"setup.install.installed" = "%@ installed";
-"setup.install.notInstalled" = "%@ not installed";
+"setup.install.checking" = "正在检查 %@ 安装...";
+"setup.install.installed" = "%@ 已安装";
+"setup.install.notInstalled" = "%@ 未安装";
 
-"setup.rosetta" = "Installing Rosetta";
-"setup.rosetta.subtitle" = "Rosetta allows x86 code, like Wine, to run on your Mac.";
+"setup.rosetta" = "正在安装 Rosetta";
+"setup.rosetta.subtitle" = "Rosetta 允许 x86 代码在您的 Mac 上运行，比如 Wine。";
 
-"setup.wine.download" = "Downloading Wine";
-"setup.wine.download.subtitle" = "Speeds will vary on your internet connection.";
-"setup.wine.progress" = "Progress: %@ %@";
+"setup.wine.download" = "正在下载 Wine";
+"setup.wine.download.subtitle" = "下载时间根据您上网速度有所不同。";
+"setup.wine.progress" = "进度： %@ %@";
+
+"setup.wine.install" = "正在安装 Wine";
+"setup.wine.install.subtitle" = "快好了，请耐心等待。";
+
+"setup.gptk" = "正在安装 GPTK";

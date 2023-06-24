@@ -1,10 +1,13 @@
-"tab.config" = "Параметри";
+"tab.config" = "Налаштування";
 "tab.programs" = "Програми";
 "tab.info" = "Інформація";
 
 "tab.navTitle.config" = "%@ Параметри";
 "tab.navTitle.programs" = "%@ - програми";
 "tab.navTitle.info" = "%@ - інформація";
+
+"main.noneSelected" = "Select a bottle";
+"main.createFirst" = "Create your first bottle to get started";
 
 "button.cDrive" = "Відкрити диск C";
 "button.showInFinder" = "Показати у Finder";
@@ -23,12 +26,13 @@
 "config.title.metal" = "Metal";
 "config.metalHud" = "Metal HUD";
 "config.metalTrace" = "Metal Trace";
-"config.retinaMode" = "Retina Mode";
+"config.retinaMode" = "Режим Retina";
 "config.metalTrace.info" = "Дозволяє вам відстежувати робоче навантаження GPU в Xcode";
 "config.esync" = "ESync";
 "config.controlPanel" = "Відкрити Панель управління";
 "config.regedit" = "Відкрити редактор реєстру";
 "config.winecfg" = "Відкрити налаштування Wine";
+"config.notAvailable" = "N/A";
 
 "program.title" = "Встановлені програми";
 "program.env" = "Змінні середовища";
@@ -38,6 +42,7 @@
 "info.title" = "Інформація";
 "info.path" = "Шлях";
 "info.path.copy" = "Скопіювати шлях";
+"info.winPath.copy" = "Скопіювати шлях до Windows";
 "info.wine" = "Версія Wine";
 "info.win" = "Версія Windows";
 
@@ -50,8 +55,8 @@
 "create.title" = "Створити нову пляшку";
 "create.name" = "Назва пляшки:";
 "create.win" = "Версія Windows:";
-"create.path" = "Bottle path:";
-"create.browse" = "Browse";
+"create.path" = "Шлях до пляшки:";
+"create.browse" = "Огляд";
 "create.cancel" = "Скасувати";
 "create.create" = "Створити";
 "create.warning.emptyName" = "Назва не може бути пустою";
@@ -70,16 +75,21 @@
 "showAlertOnFirstLaunch.button.moveToApplications" = "Перемістити до Застосунків";
 "showAlertOnFirstLaunch.button.dontMove" = "Не переміщати";
 
-"setup.welcome" = "Welcome to Whisky";
-"setup.welcome.subtitle" = "Let's get you set up. This won't take a minute.";
+"setup.welcome" = "Ласкаво просимо до Whisky";
+"setup.welcome.subtitle" = "Ще трохи, зачекай.";
 
-"setup.install.checking" = "Checking %@ installation...";
-"setup.install.installed" = "%@ installed";
-"setup.install.notInstalled" = "%@ not installed";
+"setup.install.checking" = "Перевірка інсталяції %@...";
+"setup.install.installed" = "%@ встановлено";
+"setup.install.notInstalled" = "%@ не встановлено";
 
-"setup.rosetta" = "Installing Rosetta";
-"setup.rosetta.subtitle" = "Rosetta allows x86 code, like Wine, to run on your Mac.";
+"setup.rosetta" = "Встановлення Розетки";
+"setup.rosetta.subtitle" = "Розетта дозволяє запускати x86 код (напр. Wine) на вашому Mac.";
 
-"setup.wine.download" = "Downloading Wine";
-"setup.wine.download.subtitle" = "Speeds will vary on your internet connection.";
-"setup.wine.progress" = "Progress: %@ %@";
+"setup.wine.download" = "Завантаження Wine";
+"setup.wine.download.subtitle" = "Швидкості будуть відрізнятися від підключення до Інтернету.";
+"setup.wine.progress" = "Прогрес: %@ %@";
+
+"setup.wine.install" = "Встановлення Wine";
+"setup.wine.install.subtitle" = "Майже готово.";
+
+"setup.gptk" = "Встановлення GPTK";
