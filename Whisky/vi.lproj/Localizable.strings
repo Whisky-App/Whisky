@@ -32,6 +32,7 @@
 "config.controlPanel" = "Mở Control Panel";
 "config.regedit" = "Mở Regedit";
 "config.winecfg" = "Mở cấu hình Wine";
+"config.notAvailable" = "N/A";
 
 "program.title" = "Chương trình đã cài";
 "program.env" = "Biến môi trường";
