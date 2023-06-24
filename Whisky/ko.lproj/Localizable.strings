@@ -32,6 +32,7 @@
 "config.controlPanel" = "제어판 열기";
 "config.regedit" = "레지스트리 편집기 열기";
 "config.winecfg" = "Wine 설정 열기";
+"config.notAvailable" = "N/A";
 
 "program.title" = "설치된 프로그램";
 "program.env" = "환경 변수";
