@@ -32,6 +32,7 @@
 "config.controlPanel" = "打开控制面板";
 "config.regedit" = "打开注册表编辑器";
 "config.winecfg" = "打开 Wine 配置";
+"config.notAvailable" = "N/A";
 
 "program.title" = "已安装的程序";
 "program.env" = "环境变量";
