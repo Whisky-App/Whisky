@@ -12,6 +12,7 @@ struct ContentView: View {
     @AppStorage("showSetup") private var showSetup = true
     @State var selected: URL?
     @State var showBottleCreation: Bool = false
+    @State var bottlesLoaded: Bool = false
     @State var newlyCreatedBottleURL: URL?
 
     var body: some View {
@@ -57,7 +58,7 @@ struct ContentView: View {
                     .id(bottle.url)
                 }
             } else {
-                if bottleVM.bottles.isEmpty {
+                if bottleVM.bottles.isEmpty && bottlesLoaded {
                     VStack {
                         Text("main.createFirst")
                         Button {
@@ -95,6 +96,7 @@ struct ContentView: View {
         }
         .onAppear {
             bottleVM.loadBottles()
+            bottlesLoaded = true
             if WineInstaller.shouldUpdateWine() {
                 showSetup = true
             }
