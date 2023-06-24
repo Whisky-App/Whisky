@@ -32,6 +32,7 @@
 "config.controlPanel" = "Kontrol Panelini Aç";
 "config.regedit" = "Kayıt Düzenleyicisi'ni Aç";
 "config.winecfg" = "Wine Yapılandırmasını Aç";
+"config.notAvailable" = "N/A";
 
 "program.title" = "Yüklenmiş Programlar";
 "program.env" = "Ortam Değişkenleri";
