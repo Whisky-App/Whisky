@@ -32,6 +32,7 @@
 "config.controlPanel" = "Open Control Panel";
 "config.regedit" = "Open Registry Editor";
 "config.winecfg" = "Avaa Wine konfiguraatio";
+"config.notAvailable" = "N/A";
 
 "program.title" = "Asennetut ohjelmat";
 "program.env" = "Ympäristön muuttujat";
