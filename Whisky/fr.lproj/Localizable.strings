@@ -6,8 +6,8 @@
 "tab.navTitle.programs" = "Programmes de %@";
 "tab.navTitle.info" = "Info sur %@";
 
-"main.noneSelected" = "Select a bottle";
-"main.createFirst" = "Create your first bottle to get started";
+"main.noneSelected" = "Choisir une bouteille";
+"main.createFirst" = "Créez votre première bouteille pour commencer";
 
 "button.cDrive" = "Ouvrir C Drive";
 "button.showInFinder" = "Afficher dans Finder";
@@ -93,3 +93,6 @@
 "setup.wine.install.subtitle" = "Presque là. Veuillez patienter s'il vous plaît.";
 
 "setup.gptk" = "Installation de GPTK";
+
+"alert.macos" = "Unsupported macOS Version!";
+"alert.macos.info" = "macOS Ventura is not officially support by GPTK. Issues may occur!";
