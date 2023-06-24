@@ -6,8 +6,8 @@
 "tab.navTitle.programs" = "%@ 上的程式";
 "tab.navTitle.info" = "%@ 的資訊";
 
-"main.noneSelected" = "Select a bottle";
-"main.createFirst" = "Create your first bottle to get started";
+"main.noneSelected" = "選擇容器";
+"main.createFirst" = "建立你的第一個容器以開始";
 
 "button.cDrive" = "開啟 C 磁碟";
 "button.showInFinder" = "在 Finder 中顯示";
@@ -33,7 +33,7 @@
 "config.controlPanel" = "開啟控制台";
 "config.regedit" = "開啟註冊表編輯器";
 "config.winecfg" = "開啟 Wine 設置";
-"config.notAvailable" = "N/A";
+"config.notAvailable" = "不適用";
 
 "program.title" = "已安裝的程式";
 "program.env" = "環境變數";
