@@ -32,6 +32,7 @@
 "config.controlPanel" = "コントロール パネルを開く";
 "config.regedit" = "レジストリ エディターを開く";
 "config.winecfg" = "Wine 設定を開く";
+"config.notAvailable" = "N/A";
 
 "program.title" = "インストール済みプログラム";
 "program.env" = "環境変数";
