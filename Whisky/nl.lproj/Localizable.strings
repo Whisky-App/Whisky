@@ -32,6 +32,7 @@
 "config.controlPanel" = "Open Control Panel";
 "config.regedit" = "Open Registry Editor";
 "config.winecfg" = "Open Wine Configuratie";
+"config.notAvailable" = "N/A";
 
 "program.title" = "Geïnstalleerde programma's";
 "program.env" = "Omgevingsvariabelen";
