@@ -57,8 +57,7 @@ struct ContentView: View {
                     .id(bottle.url)
                 }
             } else {
-                if bottleVM.bottles.isEmpty &&
-                    bottleVM.inFlightBottles.isEmpty {
+                if bottleVM.bottles.isEmpty {
                     VStack {
                         Text("main.createFirst")
                         Button {
