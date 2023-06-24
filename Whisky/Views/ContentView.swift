@@ -98,6 +98,16 @@ struct ContentView: View {
             if WineInstaller.shouldUpdateWine() {
                 showSetup = true
             }
+            if ProcessInfo().operatingSystemVersion.majorVersion < 14 {
+                Task {
+                    let alert = NSAlert()
+                    alert.messageText = String(localized: "alert.macos")
+                    alert.informativeText = String(localized: "alert.macos.info")
+                    alert.alertStyle = .critical
+                    alert.addButton(withTitle: String(localized: "button.ok"))
+                    alert.runModal()
+                }
+            }
         }
     }
 }
