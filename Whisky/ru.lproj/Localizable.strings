@@ -32,6 +32,7 @@
 "config.controlPanel" = "Открыть Панель управления";
 "config.regedit" = "Открыть Редактор реестра";
 "config.winecfg" = "Открыть настройки Wine";
+"config.notAvailable" = "N/A";
 
 "program.title" = "Установленные программы";
 "program.env" = "Переменные окружения";
