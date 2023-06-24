@@ -7,15 +7,22 @@
 
 import SwiftUI
 
+enum LoadingState {
+    case loading
+    case modifying
+    case success
+    case failed
+}
+
 struct ConfigView: View {
     @Binding var bottle: Bottle
     @State var windowsVersion: WinVersion
+    @State var displayBuildVersion: String = ""
     @State var buildVersion: String = ""
-    @State var canChangeWinVersion: Bool = true
-    @State var canChangeBuildVersion: Bool = false
-    @State var winVersionLoaded: Bool = false
     @State var retinaMode: Bool = false
-    @State var canChangeRetinaMode: Bool = false
+    @State var winVersionLoadingState: LoadingState = LoadingState.loading
+    @State var buildVersionLoadingState: LoadingState = LoadingState.loading
+    @State var retinaModeLoadingState: LoadingState = LoadingState.loading
 
     init(bottle: Binding<Bottle>) {
         self._bottle = bottle
@@ -32,8 +39,14 @@ struct ConfigView: View {
                             Text($0.pretty())
                         }
                     }
-                    .disabled(!canChangeWinVersion)
-                    if !canChangeBuildVersion {
+                   .disabled(winVersionLoadingState != LoadingState.success)
+                    if buildVersionLoadingState == LoadingState.failed {
+                        HStack {
+                            Text("config.buildVersion")
+                            Spacer()
+                            Text("config.notAvailable").opacity(0.5)
+                        }
+                    } else if buildVersionLoadingState == LoadingState.loading {
                         HStack {
                             Text("config.buildVersion")
                             Spacer()
@@ -42,20 +55,22 @@ struct ConfigView: View {
                                 .controlSize(.small)
                         }
                     } else {
-                        TextField("config.buildVersion", text: $buildVersion)
+                        TextField("config.buildVersion", text: $displayBuildVersion)
                             .onSubmit {
-                                canChangeBuildVersion = false
+                                buildVersionLoadingState = LoadingState.modifying
                                 Task(priority: .userInitiated) {
-                                    if let version = Int(buildVersion) {
+                                    if let version = Int(displayBuildVersion) {
                                         do {
                                             try await Wine.changeBuildVersion(bottle: bottle, version: version)
                                         } catch {
                                             print("Failed to change build version")
                                         }
+                                    } else {
+                                        displayBuildVersion = buildVersion
                                     }
-                                    canChangeBuildVersion = true
+                                    buildVersionLoadingState = LoadingState.success
                                 }
-                            }
+                            }.disabled(buildVersionLoadingState == LoadingState.modifying)
                     }
                 }
                 Section("config.title.metal") {
@@ -66,15 +81,24 @@ struct ConfigView: View {
                         Text("config.metalTrace")
                         Text("config.metalTrace.info")
                     }
-                    if canChangeRetinaMode {
+                    if retinaModeLoadingState != LoadingState.loading {
                         Toggle(isOn: $retinaMode) {
                             Text("config.retinaMode")
                         }
                         .onChange(of: retinaMode) { _ in
                             Task(priority: .userInitiated) {
-                                await Wine.changeRetinaMode(bottle: bottle, retinaMode: retinaMode)
+                                retinaModeLoadingState = LoadingState.modifying
+                                do {
+                                    try await Wine.changeRetinaMode(bottle: bottle, retinaMode: retinaMode)
+                                } catch {
+                                    print("Failed to change build version")
+                                }
+                                retinaModeLoadingState = LoadingState.success
                             }
-                        }
+                        }.disabled(
+                            retinaModeLoadingState == LoadingState.failed ||
+                            retinaModeLoadingState == LoadingState.modifying
+                        )
                     } else {
                         HStack {
                             Text("config.retinaMode")
@@ -128,36 +152,33 @@ struct ConfigView: View {
                                 bottle.name))
         .onAppear {
             windowsVersion = bottle.settings.windowsVersion
-            winVersionLoaded = true
+            winVersionLoadingState = LoadingState.success
+
+            loadBuildName()
 
             Task(priority: .background) {
                 do {
-                    buildVersion = try await Wine.buildVersion(bottle: bottle)
-                    canChangeBuildVersion = true
+                    retinaMode = try await Wine.retinaMode(bottle: bottle)
+                    retinaModeLoadingState = LoadingState.success
                 } catch {
                     print(error)
+                    retinaModeLoadingState = LoadingState.failed
                 }
-            }
-            Task(priority: .background) { @MainActor in
-                retinaMode = await Wine.retinaMode(bottle: bottle)
-                canChangeRetinaMode = true
             }
         }
         .onChange(of: windowsVersion) { newValue in
-            if winVersionLoaded {
-                canChangeWinVersion = false
-                canChangeBuildVersion = false
+            if winVersionLoadingState == LoadingState.success {
+                winVersionLoadingState = LoadingState.loading
+                buildVersionLoadingState = LoadingState.loading
                 Task(priority: .userInitiated) {
                     do {
                         try await Wine.changeWinVersion(bottle: bottle, win: newValue)
-                        canChangeWinVersion = true
+                        winVersionLoadingState = LoadingState.success
                         bottle.settings.windowsVersion = newValue
-                        buildVersion = try await Wine.buildVersion(bottle: bottle)
-                        canChangeBuildVersion = true
+                        loadBuildName()
                     } catch {
                         print(error)
-                        canChangeWinVersion = true
-                        canChangeBuildVersion = true
+                        winVersionLoadingState = LoadingState.failed
                         windowsVersion = bottle.settings.windowsVersion
                     }
                 }
@@ -166,6 +187,19 @@ struct ConfigView: View {
         .onChange(of: buildVersion) { _ in
             // Remove anything that isn't a number
             buildVersion = buildVersion.filter("0123456789".contains)
+        }
+    }
+
+    func loadBuildName() {
+        Task(priority: .background) {
+            do {
+                buildVersion = try await Wine.buildVersion(bottle: bottle)
+                displayBuildVersion = buildVersion
+                buildVersionLoadingState = LoadingState.success
+            } catch {
+                print(error)
+                buildVersionLoadingState = LoadingState.failed
+            }
         }
     }
 }
