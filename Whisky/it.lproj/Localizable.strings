@@ -32,6 +32,7 @@
 "config.controlPanel" = "Apri Pannello di Controllo";
 "config.regedit" = "Apri Editor dei Registri";
 "config.winecfg" = "Apri Configurazione Wine";
+"config.notAvailable" = "N/A";
 
 "program.title" = "Programmi Installati";
 "program.env" = "Variabili d'Ambiente";
