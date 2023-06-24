@@ -7,6 +7,16 @@
 
 import Foundation
 
+struct WineCrashError: Error, CustomStringConvertible {
+    let output: String?
+    let description: String
+
+    init( description: String, output: String? = nil) {
+        self.output = output
+        self.description = description
+    }
+}
+
 class Wine {
     static let binFolder: URL = WineInstaller.libraryFolder
         .appendingPathComponent("Wine")
@@ -70,7 +80,8 @@ class Wine {
         _ = try pipe.fileHandleForReading.readToEnd()
 
         if process.terminationStatus != 0 {
-            throw "Wine Crashed! (\(process.terminationStatus))"
+            let crashOutput = await output.output
+            throw WineCrashError( description: "Wine Crashed! (\(process.terminationStatus))", output: crashOutput)
         }
 
         return await output.output
@@ -128,6 +139,9 @@ class Wine {
                                         key: #"HKCU\Software\Wine\Mac Driver"#,
                                         name: "RetinaMode",
                                         type: .string)
+        if output == "" {
+            try await changeRetinaMode(bottle: bottle, retinaMode: false)
+        }
         return output == "y"
     }
 
@@ -166,14 +180,23 @@ class Wine {
     }
 
     static func queryRegistyKey(bottle: Bottle, key: String, name: String,
-                                type: RegistryType) async throws -> String {
-        let output = try await run(["reg", "query", key, "-v", name], bottle: bottle)
-        let lines = output.split(omittingEmptySubsequences: true, whereSeparator: \.isNewline)
-        if let line = lines.first(where: { $0.contains(type.rawValue) }) {
-            let array = line.split(omittingEmptySubsequences: true, whereSeparator: \.isWhitespace)
-            if let value = array.last {
-                return String(value)
+                                type: RegistryType, defaultValue: String? = "") async throws -> String {
+        do {
+            let output = try await run(["reg", "query", key, "-v", name], bottle: bottle)
+            let lines = output.split(omittingEmptySubsequences: true, whereSeparator: \.isNewline)
+            if let line = lines.first(where: { $0.contains(type.rawValue) }) {
+                let array = line.split(omittingEmptySubsequences: true, whereSeparator: \.isWhitespace)
+                if let value = array.last {
+                    return String(value)
+                }
             }
+        } catch let error as WineCrashError {
+            if let output = error.output {
+                if output.contains("Unable to find the specified registry key") {
+                    return defaultValue ?? ""
+                }
+            }
+            throw error
         }
 
         throw WineInterfaceError.invalidResponce
