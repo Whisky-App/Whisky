@@ -33,6 +33,7 @@
 "config.controlPanel" = "開啟控制台";
 "config.regedit" = "開啟註冊表編輯器";
 "config.winecfg" = "開啟 Wine 設置";
+"config.notAvailable" = "N/A";
 
 "program.title" = "已安裝的程式";
 "program.env" = "環境變數";
