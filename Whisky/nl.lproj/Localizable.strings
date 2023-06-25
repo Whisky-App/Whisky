@@ -71,7 +71,7 @@
 "open.logs" = "Open Logs map";
 
 "showAlertOnFirstLaunch.messageText" = "Wilt u Whiskey verplaatsen naar uw map Toepassingen?";
-"showAlertOnFirstLaunch.informativeText" = "In some cases, Whisky wont't be able to function properly from a different folder";
+"showAlertOnFirstLaunch.informativeText" = "In sommige gevallen zal Whiskey niet goed kunnen functioneren vanuit een andere map";
 "showAlertOnFirstLaunch.button.moveToApplications" = "Ga naar Toepassingen";
 "showAlertOnFirstLaunch.button.dontMove" = "Niet verplaatsen";
 
