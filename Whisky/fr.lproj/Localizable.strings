@@ -71,7 +71,7 @@
 "open.logs" = "Ouvrir le Dossier des Logs";
 
 "showAlertOnFirstLaunch.messageText" = "Souhaitez-vous déplacer Whisky dans votre dossier Applications ?";
-"showAlertOnFirstLaunch.informativeText" = "In some cases, Whisky wont't be able to function properly from a different folder";
+"showAlertOnFirstLaunch.informativeText" = "Dans certains cas, Whisky ne pourra pas fonctionner correctement depuis un dossier différent";
 "showAlertOnFirstLaunch.button.moveToApplications" = "Déplacer vers Applications";
 "showAlertOnFirstLaunch.button.dontMove" = "Ne pas déplacer";
 
@@ -87,8 +87,8 @@
 
 "setup.wine.download" = "Téléchargement de Wine";
 "setup.wine.download.subtitle" = "La vitesse du téléchargement varie selon votre connexion Internet.";
-"setup.wine.progress" = "%@ of %@";
-"setup.wine.eta" = "- %@ remaining";
+"setup.wine.progress" = "%@ sur %@";
+"setup.wine.eta" = "- %@ restantes";
 
 "setup.wine.install" = "Installation de Wine";
 "setup.wine.install.subtitle" = "Presque là. Veuillez patienter s'il vous plaît.";
