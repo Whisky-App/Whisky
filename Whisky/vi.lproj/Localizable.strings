@@ -71,7 +71,7 @@
 "open.logs" = "Mở Folder Log";
 
 "showAlertOnFirstLaunch.messageText" = "Bạn có muốn chuyển Whisky tới folder Applications?";
-"showAlertOnFirstLaunch.informativeText" = "Trong một số trường hợp, Whisky sẽ không hoạt động đúng nếu không nằm trong Applications";
+"showAlertOnFirstLaunch.informativeText" = "In some cases, Whisky wont't be able to function properly from a different folder";
 "showAlertOnFirstLaunch.button.moveToApplications" = "Chuyển tới Applications";
 "showAlertOnFirstLaunch.button.dontMove" = "Không Chuyển";
 
