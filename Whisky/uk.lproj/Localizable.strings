@@ -87,7 +87,8 @@
 
 "setup.wine.download" = "Завантаження Wine";
 "setup.wine.download.subtitle" = "Швидкості будуть відрізнятися від підключення до Інтернету.";
-"setup.wine.progress" = "Прогрес: %@ %@";
+"setup.wine.progress" = "%@ of %@";
+"setup.wine.eta" = "- %@ remaining";
 
 "setup.wine.install" = "Встановлення Wine";
 "setup.wine.install.subtitle" = "Майже готово.";
