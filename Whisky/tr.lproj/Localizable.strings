@@ -87,7 +87,8 @@
 
 "setup.wine.download" = "Wine İndiriliyor";
 "setup.wine.download.subtitle" = "Yükleme hızı internet bağlantınıza göre değişecektir.";
-"setup.wine.progress" = "İlerleme: %@ %@";
+"setup.wine.progress" = "%@ of %@";
+"setup.wine.eta" = "- %@ remaining";
 
 "setup.wine.install" = "Wine Yükleniyor";
 "setup.wine.install.subtitle" = "Bitmek üzere. Lütfen Kapatmayınız.";
