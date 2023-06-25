@@ -71,7 +71,7 @@
 "open.logs" = "Åbn Logmappe";
 
 "showAlertOnFirstLaunch.messageText" = "Vil du flytte Whisky til Applications mappen?";
-"showAlertOnFirstLaunch.informativeText" = "In some cases, Whisky wont't be able to function properly from a different folder";
+"showAlertOnFirstLaunch.informativeText" = "I nogle tilfælde vil Whisky ikke være i stand til at fungere korrekt fra en anden mappe";
 "showAlertOnFirstLaunch.button.moveToApplications" = "Flyt til mappen Applications";
 "showAlertOnFirstLaunch.button.dontMove" = "Flyt Ikke";
 
