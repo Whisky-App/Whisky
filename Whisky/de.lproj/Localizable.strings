@@ -71,7 +71,7 @@
 "open.logs" = "Log-Folder öffnen";
 
 "showAlertOnFirstLaunch.messageText" = "Möchtest du Whisky in deinen Programm-Ordner legen?";
-"showAlertOnFirstLaunch.informativeText" = "In manchen Fällen wird Whisky nicht richtig funktionieren, wenn es in einem anderen Ordner gespeichert ist.";
+"showAlertOnFirstLaunch.informativeText" = "In some cases, Whisky wont't be able to function properly from a different folder";
 "showAlertOnFirstLaunch.button.moveToApplications" = "In den Programm-Ordner legen";
 "showAlertOnFirstLaunch.button.dontMove" = "Nicht Bewegen";
 
