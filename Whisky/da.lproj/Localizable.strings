@@ -87,7 +87,8 @@
 
 "setup.wine.download" = "Downloader Wine";
 "setup.wine.download.subtitle" = "Hastigheden vil variere udfra din internet hastighed.";
-"setup.wine.progress" = "Fremskridt: %@%@";
+"setup.wine.progress" = "%@ of %@";
+"setup.wine.eta" = "- %@ remaining";
 
 "setup.wine.install" = "Installere Wine";
 "setup.wine.install.subtitle" = "Er der næsten. Luk ikke programmet endnu.";
