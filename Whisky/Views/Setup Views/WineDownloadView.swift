@@ -32,13 +32,14 @@ struct WineDownloadView: View {
                     HStack {
                         HStack {
                             Text(String(format: String(localized: "setup.wine.progress"),
-                                        formatPercentage(fractionProgress),
-                                        formatBytes(completed: completedBytes, total: totalBytes)))
+                                        formatBytes(bytes: completedBytes),
+                                        formatBytes(bytes: totalBytes)))
+                            + Text(" ")
+                            + (shouldShowEstimate() ?
+                               Text(String(format: String(localized: "setup.wine.eta"),
+                                           formatRemainingTime(remainingBytes: totalBytes - completedBytes)))
+                               : Text(""))
                             Spacer()
-                            Text(shouldShowEstimate()
-                                 ? String(format: String(localized: "setup.wine.eta"),
-                                         formatRemainingTime(remainingBytes: totalBytes - completedBytes))
-                                 : String(localized: "setup.wine.estimating"))
                         }
                         .font(.subheadline)
                     }
@@ -81,32 +82,32 @@ struct WineDownloadView: View {
             }
         }
     }
-    func formatPercentage(_ value: Double) -> String {
-        let formatter = NumberFormatter()
-        formatter.numberStyle = .percent
-        formatter.maximumFractionDigits = 0
-        formatter.minimumIntegerDigits = 1
-        return formatter.string(from: value as NSNumber) ?? ""
-    }
-    func formatBytes(completed: Int64, total: Int64) -> String {
+
+    func formatBytes(bytes: Int64) -> String {
         let formatter = ByteCountFormatter()
         formatter.countStyle = .file
-        let completed = formatter.string(fromByteCount: completed)
-        let total = formatter.string(fromByteCount: total)
-        return "(\(completed)/\(total))"
+        formatter.zeroPadsFractionDigits = true
+        return formatter.string(fromByteCount: bytes)
     }
+
     func shouldShowEstimate() -> Bool {
         let elapsedTime = Date().timeIntervalSince(startTime ?? Date())
         return Int(elapsedTime.rounded()) > 5 && completedBytes != 0
     }
+
     func formatRemainingTime(remainingBytes: Int64) -> String {
         let remainingTimeInSeconds = Double(remainingBytes) / downloadSpeed
 
         let formatter = DateComponentsFormatter()
         formatter.allowedUnits = [.hour, .minute, .second]
-        formatter.unitsStyle = .abbreviated
-        return formatter.string(from: TimeInterval(remainingTimeInSeconds)) ?? ""
+        formatter.unitsStyle = .full
+        if shouldShowEstimate() {
+            return formatter.string(from: TimeInterval(remainingTimeInSeconds)) ?? ""
+        } else {
+            return ""
+        }
     }
+
     func proceed() {
         path.append(.wineInstall)
     }
