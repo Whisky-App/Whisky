@@ -1,13 +1,13 @@
 "tab.config" = "설정";
 "tab.programs" = "프로그램";
-"tab.info" = "(카모마일 번역에 의해 번역됨) 정보";
+"tab.info" = "정보";
 
 "tab.navTitle.config" = "%@ 설정";
 "tab.navTitle.programs" = "%@ 프로그램";
 "tab.navTitle.info" = "%@ 정보";
 
-"main.noneSelected" = "병 선택";
-"main.createFirst" = "첫 번째 보틀을 만들어 시작하기";
+"main.noneSelected" = "Bottle 선택";
+"main.createFirst" = "첫 번째 Bottle을 만들어 시작하기";
 
 "button.cDrive" = "C 드라이브 열기";
 "button.showInFinder" = "Finder에서 열기";
@@ -27,7 +27,7 @@
 "config.metalHud" = "Metal HUD";
 "config.metalTrace" = "Metal Trace";
 "config.retinaMode" = "망막 모드";
-"config.metalTrace.info" = "Xcode에서 GPU 워크로드를 확인할 수 있습니다.";
+"config.metalTrace.info" = "Xcode에서 GPU 워크로드를 확인할 수 있게 해줍니다.";
 "config.esync" = "ESync";
 "config.controlPanel" = "제어판 열기";
 "config.regedit" = "레지스트리 편집기 열기";
@@ -55,11 +55,11 @@
 "create.title" = "새로운 Bottle 생성";
 "create.name" = "Bottle 이름:";
 "create.win" = "Windows 버전:";
-"create.path" = "병 경로:";
+"create.path" = "Bottle 경로:";
 "create.browse" = "보기";
 "create.cancel" = "취소";
 "create.create" = "생성";
-"create.warning.emptyName" = "이름은 빈칸일 수 없습니다";
+"create.warning.emptyName" = "이름은 비어있을 수 없습니다";
 "create.warning.alreadyExistsName" = "해당 이름을 가진 Bottle이 이미 존재합니다";
 
 "rename.title" = "Bottle 이름 변경";
@@ -75,21 +75,21 @@
 "showAlertOnFirstLaunch.button.moveToApplications" = "애플리케이션 폴더로 옮기기";
 "showAlertOnFirstLaunch.button.dontMove" = "옮기지 않기";
 
-"setup.welcome" = "위스키에 오신 것을 환영합니다";
-"setup.welcome.subtitle" = "우리가 네가 준비할 수 있도록 도와주자. 아주 빠를 거예요.";
+"setup.welcome" = "Whiskey에 오신 것을 환영합니다";
+"setup.welcome.subtitle" = "우리는 당신이 준비할 수 있도록 도와줄 것입니다. 이것은 많은 시간을 필요로 하지 않습니다.";
 
 "setup.install.checking" = "%@ 설치를 확인하는 중입니다. . .";
 "setup.install.installed" = "%@이(가) 설치되었습니다.";
 "setup.install.notInstalled" = "%@ 설치되지 않음";
 
-"setup.rosetta" = "Rosetta 를 설치 중입니다.";
-"setup.rosetta.subtitle" = "로제타는 Wine과 같은 x86 코드를 맥에서 실행할 수 있게 해줍니다.";
+"setup.rosetta" = "Rosetta 2를 설치 중입니다.";
+"setup.rosetta.subtitle" = "Rosetta는 Wine과 같은 x86 코드를 맥에서 실행할 수 있게 해줍니다.";
 
-"setup.wine.download" = "“와인”을 다운로드 중입니다.";
+"setup.wine.download" = "Wine을 다운로드 중입니다.";
 "setup.wine.download.subtitle" = "속도는 인터넷 연결 상태에 따라 달라질 수 있습니다.";
 "setup.wine.progress" = "진행 상황: %@ %@";
 
-"setup.wine.install" = "와인 설치";
-"setup.wine.install.subtitle" = "거의 다 왔어요. 아직 끄지 마세요.";
+"setup.wine.install" = "Wine 설치";
+"setup.wine.install.subtitle" = "거의 완료 되었습니다. 종료하지 마세요.";
 
 "setup.gptk" = "GPTK 설치 중";
