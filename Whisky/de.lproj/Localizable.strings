@@ -87,7 +87,8 @@
 
 "setup.wine.download" = "Wine herunterladen";
 "setup.wine.download.subtitle" = "Die Geschwindigkeit variiert je nach Internetverbindung.";
-"setup.wine.progress" = "Fortschritt: %@ %@";
+"setup.wine.progress" = "%@ of %@";
+"setup.wine.eta" = "- %@ remaining";
 
 "setup.wine.install" = "Wine wird installiert";
 "setup.wine.install.subtitle" = "Fast fertig. Noch nicht abbrechen.";
