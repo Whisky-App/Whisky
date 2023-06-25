@@ -71,7 +71,7 @@
 "open.logs" = "Abrir Pasta dos Logs";
 
 "showAlertOnFirstLaunch.messageText" = "Gostaria de mover o Whisky para a pasta das Aplicações ?";
-"showAlertOnFirstLaunch.informativeText" = "Em alguns casos, o Whisky pode não funcionar correctamente numa pasta diferente";
+"showAlertOnFirstLaunch.informativeText" = "In some cases, Whisky wont't be able to function properly from a different folder";
 "showAlertOnFirstLaunch.button.moveToApplications" = "Mover para Aplicações";
 "showAlertOnFirstLaunch.button.dontMove" = "Não Mover";
 
