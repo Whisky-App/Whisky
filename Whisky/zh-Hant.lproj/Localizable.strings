@@ -72,7 +72,7 @@
 "open.logs" = "開啟日誌資料夾";
 
 "showAlertOnFirstLaunch.messageText" = "你希望將 Whisky 移動到你的應用程式資料夾嗎？";
-"showAlertOnFirstLaunch.informativeText" = "In some cases, Whisky wont't be able to function properly from a different folder";
+"showAlertOnFirstLaunch.informativeText" = "在某些情況下，Whisky 可能無法在不同的資料夾中正常運作";
 "showAlertOnFirstLaunch.button.moveToApplications" = "移動到應用程式";
 "showAlertOnFirstLaunch.button.dontMove" = "不移動";
 
