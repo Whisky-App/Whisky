@@ -87,7 +87,8 @@
 
 "setup.wine.download" = "正在下载 Wine";
 "setup.wine.download.subtitle" = "下载时间根据您上网速度有所不同。";
-"setup.wine.progress" = "进度： %@ %@";
+"setup.wine.progress" = "%@ of %@";
+"setup.wine.eta" = "- %@ remaining";
 
 "setup.wine.install" = "正在安装 Wine";
 "setup.wine.install.subtitle" = "快好了，请耐心等待。";
