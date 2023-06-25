@@ -71,7 +71,7 @@
 "open.logs" = "Открыть папку логов";
 
 "showAlertOnFirstLaunch.messageText" = "Вы хотите переместить Whisky в папку «Приложения»?";
-"showAlertOnFirstLaunch.informativeText" = "In some cases, Whisky wont't be able to function properly from a different folder";
+"showAlertOnFirstLaunch.informativeText" = "В некоторых случаях Whisky не сможет правильно функционировать из другой папки";
 "showAlertOnFirstLaunch.button.moveToApplications" = "Перенести в «Приложения»";
 "showAlertOnFirstLaunch.button.dontMove" = "Не двигать";
 
