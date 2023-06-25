@@ -71,7 +71,7 @@
 "open.logs" = "Abrir carpeta de registros";
 
 "showAlertOnFirstLaunch.messageText" = "¿Te gustaría mover Whisky a la carpeta de Aplicaciones?";
-"showAlertOnFirstLaunch.informativeText" = "In some cases, Whisky wont't be able to function properly from a different folder";
+"showAlertOnFirstLaunch.informativeText" = "En algunos casos, Whisky podría no funcionar correctamente desde una carpeta diferente";
 "showAlertOnFirstLaunch.button.moveToApplications" = "Mover a Aplicaciones";
 "showAlertOnFirstLaunch.button.dontMove" = "No Mover";
 
