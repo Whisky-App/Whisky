@@ -18,10 +18,10 @@ struct ContentView: View {
         NavigationSplitView {
             ScrollViewReader { proxy in
                 List(selection: $selected) {
-                    ForEach(bottleVM.bottles, id: \.url) { bottle in
+                    ForEach(bottleVM.bottles) { bottle in
                         if bottle.inFlight {
                             HStack {
-                                Text(bottle.name)
+                                Text(bottle.settings.name)
                                 Spacer()
                                 ProgressView().controlSize(.small)
                             }

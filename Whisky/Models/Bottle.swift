@@ -8,13 +8,17 @@
 import Foundation
 import AppKit
 
-public class Bottle: Hashable {
+public class Bottle: Hashable, Identifiable {
     public static func == (lhs: Bottle, rhs: Bottle) -> Bool {
         return lhs.url == rhs.url
     }
 
     public func hash(into hasher: inout Hasher) {
         return hasher.combine(url)
+    }
+    
+    public var id: URL {
+        get { self.url }
     }
 
     var url: URL = URL.homeDirectory.appending(component: ".wine")
