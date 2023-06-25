@@ -6,8 +6,8 @@
 "tab.navTitle.programs" = "%@ Programlar";
 "tab.navTitle.info" = "%@ Bilgi";
 
-"main.noneSelected" = "Select a bottle";
-"main.createFirst" = "Create your first bottle to get started";
+"main.noneSelected" = "Bottle Seçiniz";
+"main.createFirst" = "Başlamak için ilk Bottle'ınızı oluşturunuz";
 
 "button.cDrive" = "C Sürücüsünü Aç";
 "button.showInFinder" = "Finder'da Göster";
@@ -32,7 +32,7 @@
 "config.controlPanel" = "Kontrol Panelini Aç";
 "config.regedit" = "Kayıt Düzenleyicisi'ni Aç";
 "config.winecfg" = "Wine Yapılandırmasını Aç";
-"config.notAvailable" = "N/A";
+"config.notAvailable" = "Mevcut değil";
 
 "program.title" = "Yüklenmiş Programlar";
 "program.env" = "Ortam Değişkenleri";
@@ -94,5 +94,5 @@
 
 "setup.gptk" = "GPTK Yükleniyor";
 
-"alert.macos" = "Unsupported macOS Version!";
-"alert.macos.info" = "macOS Ventura is not officially support by GPTK. Issues may occur!";
+"alert.macos" = "Desteklenmeyen bir macOS sürümü kullanıyorsunuz!";
+"alert.macos.info" = "macOS Ventura GPTK tarafından resmi olarak desteklenmiyor. Sorun yaşayabilirsiniz!";
