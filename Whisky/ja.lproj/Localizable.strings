@@ -71,7 +71,7 @@
 "open.logs" = "ログフォルダを開く";
 
 "showAlertOnFirstLaunch.messageText" = "Whisky を「アプリケーション」フォルダに移動しますか？";
-"showAlertOnFirstLaunch.informativeText" = "場合によっては、異なるフォルダから Whisky を適切に使用できない場合があります";
+"showAlertOnFirstLaunch.informativeText" = "In some cases, Whisky wont't be able to function properly from a different folder";
 "showAlertOnFirstLaunch.button.moveToApplications" = "「アプリケーション」に移動";
 "showAlertOnFirstLaunch.button.dontMove" = "移動しない";
 
