@@ -6,6 +6,9 @@
 "tab.navTitle.programs" = "Chương trình trong %@";
 "tab.navTitle.info" = "Thông tin về %@";
 
+"main.noneSelected" = "Select a bottle";
+"main.createFirst" = "Create your first bottle to get started";
+
 "button.cDrive" = "Mở ổ C:";
 "button.showInFinder" = "Mở trong Finder";
 "button.run" = "Chạy...";
@@ -19,16 +22,17 @@
 "button.deleteAlert.cancel" = "Huỷ";
 
 "config.winVersion" = "Phiên bản Windows";
-"config.buildVersion" = "Build Version";
+"config.buildVersion" = "Bản dựng";
 "config.title.metal" = "Metal";
 "config.metalHud" = "Metal HUD";
-"config.metalTrace" = "Metal Trace";
-"config.retinaMode" = "Retina Mode";
+"config.metalTrace" = "Trace Metal";
+"config.retinaMode" = "Chế độ Retina";
 "config.metalTrace.info" = "Cho phép lấy thông tin GPU trong Xcode";
 "config.esync" = "ESync";
-"config.controlPanel" = "Open Control Panel";
-"config.regedit" = "Open Registry Editor";
+"config.controlPanel" = "Mở Control Panel";
+"config.regedit" = "Mở Regedit";
 "config.winecfg" = "Mở cấu hình Wine";
+"config.notAvailable" = "N/A";
 
 "program.title" = "Chương trình đã cài";
 "program.env" = "Biến môi trường";
@@ -38,6 +42,7 @@
 "info.title" = "Thông tin";
 "info.path" = "Đường dẫn";
 "info.path.copy" = "Chép đường dẫn";
+"info.winPath.copy" = "Sao đường dẫn Windows";
 "info.wine" = "Phiên bản Wine";
 "info.win" = "Phiên bản Windows";
 
@@ -50,12 +55,12 @@
 "create.title" = "Tạo bottle mới";
 "create.name" = "Tên Bottle:";
 "create.win" = "Phiển bản Windows:";
-"create.path" = "Bottle path:";
-"create.browse" = "Browse";
+"create.path" = "Đường dẫn bottle:";
+"create.browse" = "Duyệt";
 "create.cancel" = "Huỷ";
 "create.create" = "Tạo";
-"create.warning.emptyName" = "Name can't be empty";
-"create.warning.alreadyExistsName" = "A bottle with this name already exists";
+"create.warning.emptyName" = "Tên không thể để trống";
+"create.warning.alreadyExistsName" = "Một bottle có tên này đã tồn tại";
 
 "rename.title" = "Đổi tên bottle";
 "rename.name" = "Tên mới:";
@@ -70,16 +75,25 @@
 "showAlertOnFirstLaunch.button.moveToApplications" = "Chuyển tới Applications";
 "showAlertOnFirstLaunch.button.dontMove" = "Không Chuyển";
 
-"setup.welcome" = "Welcome to Whisky";
+"setup.welcome" = "Chào mừng đến với Whisky";
 "setup.welcome.subtitle" = "Let's get you set up. This won't take a minute.";
 
-"setup.install.checking" = "Checking %@ installation...";
-"setup.install.installed" = "%@ installed";
-"setup.install.notInstalled" = "%@ not installed";
+"setup.install.checking" = "Đang kiểm tra cài đặt %@...";
+"setup.install.installed" = "%@ đã được cài đặt";
+"setup.install.notInstalled" = "%@ chưa được cài đặt";
 
-"setup.rosetta" = "Installing Rosetta";
-"setup.rosetta.subtitle" = "Rosetta allows x86 code, like Wine, to run on your Mac.";
+"setup.rosetta" = "Đang cài đặt Rosetta";
+"setup.rosetta.subtitle" = "Rosetta cho phép các ứng dụng x86 như Wine chạy trên máy Mac của bạn.";
 
-"setup.wine.download" = "Downloading Wine";
-"setup.wine.download.subtitle" = "Speeds will vary on your internet connection.";
-"setup.wine.progress" = "Progress: %@ %@";
+"setup.wine.download" = "Đang tải xuống Wine";
+"setup.wine.download.subtitle" = "Tốc độ tải xuống sẽ phụ thuộc vào kết nối Internet của bạn.";
+"setup.wine.progress" = "%@ of %@";
+"setup.wine.eta" = "- %@ remaining";
+
+"setup.wine.install" = "Đang cài đặt Wine";
+"setup.wine.install.subtitle" = "Cài đặt sắp hoàn tất.";
+
+"setup.gptk" = "Đang cài đặt GPTK";
+
+"alert.macos" = "Unsupported macOS Version!";
+"alert.macos.info" = "macOS Ventura is not officially support by GPTK. Issues may occur!";

@@ -6,6 +6,9 @@
 "tab.navTitle.programs" = "%@ Programmer";
 "tab.navTitle.info" = "%@ Info";
 
+"main.noneSelected" = "Select a bottle";
+"main.createFirst" = "Create your first bottle to get started";
+
 "button.cDrive" = "Åben C drev";
 "button.showInFinder" = "Vis i Finder";
 "button.run" = "Kør program...";
@@ -23,21 +26,23 @@
 "config.title.metal" = "Metal";
 "config.metalHud" = "Metal HUD";
 "config.metalTrace" = "Metal Trace";
-"config.retinaMode" = "Retina Mode";
+"config.retinaMode" = "Retina Tilstand";
 "config.metalTrace.info" = "Giver dig mulighed for at fange GPU-workload i Xcode";
 "config.esync" = "ESync";
 "config.controlPanel" = "Åbn Kontrolpanel";
 "config.regedit" = "Åbn Registry Editor";
 "config.winecfg" = "Åben Wine Konfiguration";
+"config.notAvailable" = "N/A";
 
 "program.title" = "Installerede programmer";
 "program.env" = "Miljøvariabler";
-"program.args" = "Start Argumenter";
+"program.args" = "Argumenter";
 "program.config" = "Konfiguration";
 
 "info.title" = "Info";
 "info.path" = "Sti";
 "info.path.copy" = "Kopier sti";
+"info.winPath.copy" = "Kopier Windows Sti";
 "info.wine" = "Wine Version";
 "info.win" = "Windows Version";
 
@@ -50,8 +55,8 @@
 "create.title" = "Opret en ny bottle";
 "create.name" = "Bottle navn:";
 "create.win" = "Windows version:";
-"create.path" = "Bottle path:";
-"create.browse" = "Browse";
+"create.path" = "Bottle sti:";
+"create.browse" = "Gennemse";
 "create.cancel" = "Annuller";
 "create.create" = "Opret";
 "create.warning.emptyName" = "Navn må ikke være tomt";
@@ -62,7 +67,7 @@
 "rename.rename" = "Omdøb";
 
 "check.updates" = "Tjek for Opdateringer...";
-"kill.bottles" = "Kill All Bottles";
+"kill.bottles" = "Dræb Alle Bottles";
 "open.logs" = "Åbn Logmappe";
 
 "showAlertOnFirstLaunch.messageText" = "Vil du flytte Whisky til Applications mappen?";
@@ -70,16 +75,25 @@
 "showAlertOnFirstLaunch.button.moveToApplications" = "Flyt til mappen Applications";
 "showAlertOnFirstLaunch.button.dontMove" = "Flyt Ikke";
 
-"setup.welcome" = "Welcome to Whisky";
-"setup.welcome.subtitle" = "Let's get you set up. This won't take a minute.";
+"setup.welcome" = "Velkommen til Whisky";
+"setup.welcome.subtitle" = "Lad os få dig sat op. Dette vil ikke tage et minut.";
 
-"setup.install.checking" = "Checking %@ installation...";
-"setup.install.installed" = "%@ installed";
-"setup.install.notInstalled" = "%@ not installed";
+"setup.install.checking" = "Tjekker %@ Installation...";
+"setup.install.installed" = "%@ installeret";
+"setup.install.notInstalled" = "%@ ikke installeret";
 
-"setup.rosetta" = "Installing Rosetta";
-"setup.rosetta.subtitle" = "Rosetta allows x86 code, like Wine, to run on your Mac.";
+"setup.rosetta" = "Installere Rosetta";
+"setup.rosetta.subtitle" = "Rosetta tillader x86 kode, som Wine, til at køre på din Mac.";
 
-"setup.wine.download" = "Downloading Wine";
-"setup.wine.download.subtitle" = "Speeds will vary on your internet connection.";
-"setup.wine.progress" = "Progress: %@ %@";
+"setup.wine.download" = "Downloader Wine";
+"setup.wine.download.subtitle" = "Hastigheden vil variere udfra din internet hastighed.";
+"setup.wine.progress" = "%@ of %@";
+"setup.wine.eta" = "- %@ remaining";
+
+"setup.wine.install" = "Installere Wine";
+"setup.wine.install.subtitle" = "Er der næsten. Luk ikke programmet endnu.";
+
+"setup.gptk" = "Installere GPTK";
+
+"alert.macos" = "Unsupported macOS Version!";
+"alert.macos.info" = "macOS Ventura is not officially support by GPTK. Issues may occur!";

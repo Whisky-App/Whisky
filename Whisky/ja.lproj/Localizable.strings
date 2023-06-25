@@ -6,6 +6,9 @@
 "tab.navTitle.programs" = "%@ のプログラム";
 "tab.navTitle.info" = "%@ の情報";
 
+"main.noneSelected" = "Bottle を選ぶ";
+"main.createFirst" = "最初の Bottle を作って、使い始めましょう";
+
 "button.cDrive" = "C ドライブを開く";
 "button.showInFinder" = "Finder で表示";
 "button.run" = "実行...";
@@ -29,6 +32,7 @@
 "config.controlPanel" = "コントロール パネルを開く";
 "config.regedit" = "レジストリ エディターを開く";
 "config.winecfg" = "Wine 設定を開く";
+"config.notAvailable" = "N/A";
 
 "program.title" = "インストール済みプログラム";
 "program.env" = "環境変数";
@@ -38,6 +42,7 @@
 "info.title" = "情報";
 "info.path" = "パス";
 "info.path.copy" = "パスのコピー";
+"info.winPath.copy" = "Windows のパスをコピー";
 "info.wine" = "Wine バージョン";
 "info.win" = "Windows バージョン";
 
@@ -82,4 +87,13 @@
 
 "setup.wine.download" = "Wine をダウンロード中";
 "setup.wine.download.subtitle" = "速度はインターネット接続によって異なります。";
-"setup.wine.progress" = "進行状況: %@ %@";
+"setup.wine.progress" = "%@ of %@";
+"setup.wine.eta" = "- %@ remaining";
+
+"setup.wine.install" = "Wine をインストール中";
+"setup.wine.install.subtitle" = "あと少しです。そのままお待ち下さい。";
+
+"setup.gptk" = "GPTK をインストール中";
+
+"alert.macos" = "Unsupported macOS Version!";
+"alert.macos.info" = "macOS Ventura is not officially support by GPTK. Issues may occur!";

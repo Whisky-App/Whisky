@@ -23,32 +23,28 @@ class BottleVM: ObservableObject {
 
     @MainActor
     func loadBottles() {
-        Task(priority: .background) {
-            bottles.removeAll()
-            // Update if needed
-            if !BottleVMEntries.exists() {
-                do {
-                    let files = try FileManager.default.contentsOfDirectory(
-                        at: BottleVM.bottleDir,
-                        includingPropertiesForKeys: nil,
-                        options: .skipsHiddenFiles
-                    )
-                    for file in files where file.pathExtension == "plist" {
-                        if let bottlePath = convertFormat(plistPath: file) {
-                            bottlesList.paths.append(bottlePath)
-                        }
+        bottles.removeAll()
+        // Update if needed
+        if !BottleVMEntries.exists() {
+            do {
+                let files = try FileManager.default.contentsOfDirectory(at: BottleVM.bottleDir,
+                                                                    includingPropertiesForKeys: nil,
+                                                                    options: .skipsHiddenFiles)
+                for file in files where file.pathExtension == "plist" {
+                    if let bottlePath = convertFormat(plistPath: file) {
+                        bottlesList.paths.append(bottlePath)
                     }
-                } catch {
-                    print("Failed to list files")
                 }
-                bottlesList.encode()
+            } catch {
+                print("Failed to list files")
             }
-
-            bottles = bottlesList.paths.map({
-                Bottle(bottleUrl: $0)
-            })
-            bottles.sortByName()
+            bottlesList.encode()
         }
+
+        bottles = bottlesList.paths.map({
+            Bottle(bottleUrl: $0)
+        })
+        bottles.sortByName()
     }
 
     func createNewBottle(bottleName: String, winVersion: WinVersion, bottleURL: URL) -> URL {

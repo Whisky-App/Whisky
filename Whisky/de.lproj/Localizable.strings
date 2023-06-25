@@ -1,10 +1,13 @@
-"tab.config" = "Konfiguration";
+"tab.config" = "Konfigurationen";
 "tab.programs" = "Programme";
 "tab.info" = "Info";
 
 "tab.navTitle.config" = "%@ Konfiguration";
 "tab.navTitle.programs" = "%@ Programme";
 "tab.navTitle.info" = "%@ Info";
+
+"main.noneSelected" = "Select a bottle";
+"main.createFirst" = "Create your first bottle to get started";
 
 "button.cDrive" = "C Laufwerk öffnen";
 "button.showInFinder" = "Im Finder anzeigen";
@@ -29,6 +32,7 @@
 "config.controlPanel" = "Systemsteuerung öffnen";
 "config.regedit" = "Registry-Editor öffnen";
 "config.winecfg" = "Öffne die Wine-Konfiguration";
+"config.notAvailable" = "N/A";
 
 "program.title" = "Intallierte Programme";
 "program.env" = "Umgebungs-Variables";
@@ -38,6 +42,7 @@
 "info.title" = "Info";
 "info.path" = "Pfad";
 "info.path.copy" = "Kopiere den Pfad";
+"info.winPath.copy" = "Wine-Pfad kopieren";
 "info.wine" = "Wine Version";
 "info.win" = "Windows Version";
 
@@ -66,7 +71,7 @@
 "open.logs" = "Log-Folder öffnen";
 
 "showAlertOnFirstLaunch.messageText" = "Möchtest du Whisky in deinen Programm-Ordner legen?";
-"showAlertOnFirstLaunch.informativeText" = "In manchen Fällen wird Whisky nicht richtig funktionieren, wenn es in einem anderen Ordner gespeichert ist.";
+"showAlertOnFirstLaunch.informativeText" = "In manchen Fällen wird Whisky nicht richtig funktionieren, wenn es in einem anderen Ordner gespeichert ist";
 "showAlertOnFirstLaunch.button.moveToApplications" = "In den Programm-Ordner legen";
 "showAlertOnFirstLaunch.button.dontMove" = "Nicht Bewegen";
 
@@ -80,6 +85,15 @@
 "setup.rosetta" = "Installiere Rosetta";
 "setup.rosetta.subtitle" = "Rosetta erlaubt es, x86 code auf deinem Mac auszuführen, ähnlich wie Wine.";
 
-"setup.wine.download" = "Downloading Wine";
-"setup.wine.download.subtitle" = "Speeds will vary on your internet connection.";
-"setup.wine.progress" = "Progress: %@ %@";
+"setup.wine.download" = "Wine herunterladen";
+"setup.wine.download.subtitle" = "Die Geschwindigkeit variiert je nach Internetverbindung.";
+"setup.wine.progress" = "%@ of %@";
+"setup.wine.eta" = "- %@ remaining";
+
+"setup.wine.install" = "Wine wird installiert";
+"setup.wine.install.subtitle" = "Fast fertig. Noch nicht abbrechen.";
+
+"setup.gptk" = "GPTK wird installiert";
+
+"alert.macos" = "Unsupported macOS Version!";
+"alert.macos.info" = "macOS Ventura is not officially support by GPTK. Issues may occur!";
