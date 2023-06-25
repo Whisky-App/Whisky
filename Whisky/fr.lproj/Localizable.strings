@@ -94,5 +94,5 @@
 
 "setup.gptk" = "Installation de GPTK";
 
-"alert.macos" = "Unsupported macOS Version!";
-"alert.macos.info" = "macOS Ventura is not officially support by GPTK. Issues may occur!";
+"alert.macos" = "Version macOS non supportée !";
+"alert.macos.info" = "macOS Ventura n'est pas officiellement supporté par GPTK. Des problèmes peuvent survenir !";
