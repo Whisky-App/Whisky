@@ -71,7 +71,7 @@
 "open.logs" = "Log Klasörünü Aç";
 
 "showAlertOnFirstLaunch.messageText" = "Whisky'yi Applications klasörüne taşımak ister misiniz?";
-"showAlertOnFirstLaunch.informativeText" = "Bazı durumlarda, Whisky farklı bir klasörden düzgün çalışmayabilir.";
+"showAlertOnFirstLaunch.informativeText" = "In some cases, Whisky wont't be able to function properly from a different folder";
 "showAlertOnFirstLaunch.button.moveToApplications" = "Applications'a Taşı";
 "showAlertOnFirstLaunch.button.dontMove" = "Taşıma";
 
