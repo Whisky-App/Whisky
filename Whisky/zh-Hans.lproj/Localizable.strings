@@ -71,7 +71,7 @@
 "open.logs" = "打开日志文件夹";
 
 "showAlertOnFirstLaunch.messageText" = "你想要将 Whisky 移动到你的应用程序文件夹吗？";
-"showAlertOnFirstLaunch.informativeText" = "In some cases, Whisky wont't be able to function properly from a different folder";
+"showAlertOnFirstLaunch.informativeText" = "在某些情况下，Whisky 可能无法在另外的文件夹中正常工作";
 "showAlertOnFirstLaunch.button.moveToApplications" = "移动到应用程序文件夹";
 "showAlertOnFirstLaunch.button.dontMove" = "不移动";
 
