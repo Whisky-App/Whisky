@@ -87,7 +87,8 @@
 
 "setup.wine.download" = "Đang tải xuống Wine";
 "setup.wine.download.subtitle" = "Tốc độ tải xuống sẽ phụ thuộc vào kết nối Internet của bạn.";
-"setup.wine.progress" = "Tiến độ: %@ %@";
+"setup.wine.progress" = "%@ of %@";
+"setup.wine.eta" = "- %@ remaining";
 
 "setup.wine.install" = "Đang cài đặt Wine";
 "setup.wine.install.subtitle" = "Cài đặt sắp hoàn tất.";
