@@ -87,9 +87,13 @@
 
 "setup.wine.download" = "Descargando Wine";
 "setup.wine.download.subtitle" = "Speeds will vary on your internet connection.";
-"setup.wine.progress" = "Progreso: %@ %@";
+"setup.wine.progress" = "%@ of %@";
+"setup.wine.eta" = "- %@ remaining";
 
 "setup.wine.install" = "Instalando Wine";
 "setup.wine.install.subtitle" = "Almost there. Don't tune out yet.";
 
 "setup.gptk" = "Instalando GPTK";
+
+"alert.macos" = "Unsupported macOS Version!";
+"alert.macos.info" = "macOS Ventura is not officially support by GPTK. Issues may occur!";

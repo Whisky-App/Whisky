@@ -71,7 +71,7 @@
 "open.logs" = "Log-Folder öffnen";
 
 "showAlertOnFirstLaunch.messageText" = "Möchtest du Whisky in deinen Programm-Ordner legen?";
-"showAlertOnFirstLaunch.informativeText" = "In manchen Fällen wird Whisky nicht richtig funktionieren, wenn es in einem anderen Ordner gespeichert ist.";
+"showAlertOnFirstLaunch.informativeText" = "In manchen Fällen wird Whisky nicht richtig funktionieren, wenn es in einem anderen Ordner gespeichert ist";
 "showAlertOnFirstLaunch.button.moveToApplications" = "In den Programm-Ordner legen";
 "showAlertOnFirstLaunch.button.dontMove" = "Nicht Bewegen";
 
@@ -87,9 +87,13 @@
 
 "setup.wine.download" = "Wine herunterladen";
 "setup.wine.download.subtitle" = "Die Geschwindigkeit variiert je nach Internetverbindung.";
-"setup.wine.progress" = "Fortschritt: %@ %@";
+"setup.wine.progress" = "%@ of %@";
+"setup.wine.eta" = "- %@ remaining";
 
 "setup.wine.install" = "Wine wird installiert";
 "setup.wine.install.subtitle" = "Fast fertig. Noch nicht abbrechen.";
 
 "setup.gptk" = "GPTK wird installiert";
+
+"alert.macos" = "Unsupported macOS Version!";
+"alert.macos.info" = "macOS Ventura is not officially support by GPTK. Issues may occur!";
