@@ -6,6 +6,9 @@
 "tab.navTitle.programs" = "%@ Programas";
 "tab.navTitle.info" = "%@ Informações";
 
+"main.noneSelected" = "Select a bottle";
+"main.createFirst" = "Create your first bottle to get started";
+
 "button.cDrive" = "Abrir disco C";
 "button.showInFinder" = "Abrir no Finder";
 "button.run" = "Executar...";
@@ -29,6 +32,7 @@
 "config.controlPanel" = "Open Control Panel";
 "config.regedit" = "Open Registry Editor";
 "config.winecfg" = "Abrir Configuração do Wine";
+"config.notAvailable" = "N/A";
 
 "program.title" = "Programas Instalados";
 "program.env" = "Variáveis de Ambiente";
@@ -38,6 +42,7 @@
 "info.title" = "Informações";
 "info.path" = "Caminho";
 "info.path.copy" = "Copiar Caminho";
+"info.winPath.copy" = "Copy Windows Path";
 "info.wine" = "Versão do Wine";
 "info.win" = "Versão do Windows";
 
@@ -82,4 +87,9 @@
 
 "setup.wine.download" = "Downloading Wine";
 "setup.wine.download.subtitle" = "Speeds will vary on your internet connection.";
-"setup.wine.progress" = "Progress: %@ %@ ETA: %@";
+"setup.wine.progress" = "Progress: %@ %@";
+
+"setup.wine.install" = "Installing Wine";
+"setup.wine.install.subtitle" = "Almost there. Don't tune out yet.";
+
+"setup.gptk" = "Installing GPTK";

@@ -40,27 +40,25 @@ class BottleVM: ObservableObject {
 
     @MainActor
     func loadBottles() {
-        Task(priority: .background) {
-            bottles.removeAll()
+        bottles.removeAll()
 
-            do {
-                let files = try FileManager.default.contentsOfDirectory(at: BottleVM.bottleDir,
-                                                                        includingPropertiesForKeys: nil,
-                                                                        options: .skipsHiddenFiles)
-                for file in files where file.pathExtension == "plist" {
-                    do {
-                        let bottle = try Bottle(settingsURL: file)
-                        bottles.append(bottle)
-                    } catch {
-                        print("Failed to load bottle at \(file.path)!")
-                    }
+        do {
+            let files = try FileManager.default.contentsOfDirectory(at: BottleVM.bottleDir,
+                                                                    includingPropertiesForKeys: nil,
+                                                                    options: .skipsHiddenFiles)
+            for file in files where file.pathExtension == "plist" {
+                do {
+                    let bottle = try Bottle(settingsURL: file)
+                    bottles.append(bottle)
+                } catch {
+                    print("Failed to load bottle at \(file.path)!")
                 }
-            } catch {
-                print("Failed to load bottles: \(error)")
             }
-
-            bottles.sortByName()
+        } catch {
+            print("Failed to load bottles: \(error)")
         }
+
+        bottles.sortByName()
     }
 
     func createNewBottle(bottleName: String, winVersion: WinVersion, bottleURL: URL) -> URL {

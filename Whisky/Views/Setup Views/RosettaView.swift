@@ -17,6 +17,7 @@ struct RosettaView: View {
             VStack {
                 Text("setup.rosetta")
                     .font(.title)
+                    .fontWeight(.bold)
                 Text("setup.rosetta.subtitle")
                     .font(.subheadline)
                     .foregroundStyle(.secondary)

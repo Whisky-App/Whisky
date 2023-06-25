@@ -6,6 +6,9 @@
 "tab.navTitle.programs" = "%@ Programma";
 "tab.navTitle.info" = "%@ Informatie";
 
+"main.noneSelected" = "Select a bottle";
+"main.createFirst" = "Create your first bottle to get started";
+
 "button.cDrive" = "C-schijf openen";
 "button.showInFinder" = "Toon in Finder";
 "button.run" = "Starten...";
@@ -18,8 +21,8 @@
 "button.deleteAlert.delete" = "Verwijder";
 "button.deleteAlert.cancel" = "Annuleren";
 
-"config.winVersion" = "Windows Version";
-"config.buildVersion" = "Build Version";
+"config.winVersion" = "Windows-versie";
+"config.buildVersion" = "Build-versie";
 "config.title.metal" = "Metal";
 "config.metalHud" = "Metal HUD";
 "config.metalTrace" = "Metal Trace";
@@ -29,6 +32,7 @@
 "config.controlPanel" = "Open Control Panel";
 "config.regedit" = "Open Registry Editor";
 "config.winecfg" = "Open Wine Configuratie";
+"config.notAvailable" = "N/A";
 
 "program.title" = "Geïnstalleerde programma's";
 "program.env" = "Omgevingsvariabelen";
@@ -38,6 +42,7 @@
 "info.title" = "Informatie";
 "info.path" = "Pad";
 "info.path.copy" = "Pad kopiëren";
+"info.winPath.copy" = "Copy Windows Path";
 "info.wine" = "Wine Versie";
 "info.win" = "Windows Versie";
 
@@ -82,4 +87,9 @@
 
 "setup.wine.download" = "Downloading Wine";
 "setup.wine.download.subtitle" = "Speeds will vary on your internet connection.";
-"setup.wine.progress" = "Progress: %@ %@ ETA: %@";
+"setup.wine.progress" = "Progress: %@ %@";
+
+"setup.wine.install" = "Installing Wine";
+"setup.wine.install.subtitle" = "Almost there. Don't tune out yet.";
+
+"setup.gptk" = "Installing GPTK";

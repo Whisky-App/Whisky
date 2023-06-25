@@ -18,6 +18,7 @@ struct WineInstallView: View {
             VStack {
                 Text("setup.wine.install")
                     .font(.title)
+                    .fontWeight(.bold)
                 Text("setup.wine.install.subtitle")
                     .font(.subheadline)
                     .foregroundStyle(.secondary)

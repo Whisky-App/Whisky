@@ -12,6 +12,7 @@ struct ContentView: View {
     @AppStorage("showSetup") private var showSetup = true
     @State var selected: URL?
     @State var showBottleCreation: Bool = false
+    @State var bottlesLoaded: Bool = false
     @State var newlyCreatedBottleURL: URL?
 
     var body: some View {
@@ -43,8 +44,8 @@ struct ContentView: View {
                 }
             }
         } detail: {
-            if let url = selected {
-                if let bottle = bottleVM.bottles.first(where: { $0.url == url }) {
+            if let bottle = selected {
+                if let bottle = bottleVM.bottles.first(where: { $0.url == bottle }) {
                     BottleView(bottle: Binding(get: {
                         // swiftlint:disable:next force_unwrapping
                         bottleVM.bottles[bottleVM.bottles.firstIndex(of: bottle)!]
@@ -55,6 +56,25 @@ struct ContentView: View {
                     }))
                     .disabled(bottle.inFlight)
                     .id(bottle.url)
+                }
+            } else {
+                if bottleVM.bottles.isEmpty && bottlesLoaded {
+                    VStack {
+                        Text("main.createFirst")
+                        Button {
+                            showBottleCreation.toggle()
+                        } label: {
+                            HStack {
+                                Image(systemName: "plus")
+                                Text("button.createBottle")
+                            }
+                            .padding(6)
+                        }
+                        .buttonStyle(.borderedProminent)
+                        .tint(.accentColor)
+                    }
+                } else {
+                    Text("main.noneSelected")
                 }
             }
         }
@@ -76,8 +96,19 @@ struct ContentView: View {
         }
         .onAppear {
             bottleVM.loadBottles()
+            bottlesLoaded = true
             if WineInstaller.shouldUpdateWine() {
                 showSetup = true
+            }
+            if ProcessInfo().operatingSystemVersion.majorVersion < 14 {
+                Task {
+                    let alert = NSAlert()
+                    alert.messageText = String(localized: "alert.macos")
+                    alert.informativeText = String(localized: "alert.macos.info")
+                    alert.alertStyle = .critical
+                    alert.addButton(withTitle: String(localized: "button.ok"))
+                    alert.runModal()
+                }
             }
         }
     }

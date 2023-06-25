@@ -22,6 +22,7 @@ struct WineDownloadView: View {
             VStack {
                 Text("setup.wine.download")
                     .font(.title)
+                    .fontWeight(.bold)
                 Text("setup.wine.download.subtitle")
                     .font(.subheadline)
                     .foregroundStyle(.secondary)
