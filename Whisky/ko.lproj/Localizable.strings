@@ -87,7 +87,8 @@
 
 "setup.wine.download" = "“와인”을 다운로드 중입니다.";
 "setup.wine.download.subtitle" = "속도는 인터넷 연결 상태에 따라 달라질 수 있습니다.";
-"setup.wine.progress" = "진행 상황: %@ %@";
+"setup.wine.progress" = "%@ of %@";
+"setup.wine.eta" = "- %@ remaining";
 
 "setup.wine.install" = "와인 설치";
 "setup.wine.install.subtitle" = "거의 다 왔어요. 아직 끄지 마세요.";
