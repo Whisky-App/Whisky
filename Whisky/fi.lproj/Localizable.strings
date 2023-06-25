@@ -71,7 +71,7 @@
 "open.logs" = "Avaa log kansio";
 
 "showAlertOnFirstLaunch.messageText" = "Haluatko siirtää Whiskyn Applikaatio-kansioon?";
-"showAlertOnFirstLaunch.informativeText" = "In some cases, Whisky wont't be able to function properly from a different folder";
+"showAlertOnFirstLaunch.informativeText" = "Joissakin tapauksissa, Whiskyn ei ole mahdollista toimia kunnolla muista kansioista";
 "showAlertOnFirstLaunch.button.moveToApplications" = "Siirrä Applikaatioihin";
 "showAlertOnFirstLaunch.button.dontMove" = "Älä siirrä";
 
