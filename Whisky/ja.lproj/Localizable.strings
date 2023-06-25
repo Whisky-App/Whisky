@@ -87,7 +87,8 @@
 
 "setup.wine.download" = "Wine をダウンロード中";
 "setup.wine.download.subtitle" = "速度はインターネット接続によって異なります。";
-"setup.wine.progress" = "進行状況: %@ %@";
+"setup.wine.progress" = "%@ of %@";
+"setup.wine.eta" = "- %@ remaining";
 
 "setup.wine.install" = "Wine をインストール中";
 "setup.wine.install.subtitle" = "あと少しです。そのままお待ち下さい。";
