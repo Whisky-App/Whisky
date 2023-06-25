@@ -6,8 +6,8 @@
 "tab.navTitle.programs" = "%@ Programas";
 "tab.navTitle.info" = "%@ Informações";
 
-"main.noneSelected" = "Select a bottle";
-"main.createFirst" = "Create your first bottle to get started";
+"main.noneSelected" = "Selecione uma Bottle";
+"main.createFirst" = "Crie sua primeira Bottle para começar";
 
 "button.cDrive" = "Abrir disco C";
 "button.showInFinder" = "Abrir no Finder";
@@ -87,7 +87,7 @@
 
 "setup.wine.download" = "Baixando Wine";
 "setup.wine.download.subtitle" = "As velocidades irão variar de acordo com sua internet.";
-"setup.wine.progress" = "%@ of %@";
+"setup.wine.progress" = "%@ de %@";
 "setup.wine.eta" = "- %@ remaining";
 
 "setup.wine.install" = "Instalando Wine";
@@ -95,5 +95,5 @@
 
 "setup.gptk" = "Instalando GPTK";
 
-"alert.macos" = "Unsupported macOS Version!";
-"alert.macos.info" = "macOS Ventura is not officially support by GPTK. Issues may occur!";
+"alert.macos" = "Versão do macOS não suportada!";
+"alert.macos.info" = "O macOS Ventura não é oficialmente suportado pelo GPTK. Problemas podem ocorrer!";
