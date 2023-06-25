@@ -71,7 +71,7 @@
 "open.logs" = "Ouvrir le Dossier des Logs";
 
 "showAlertOnFirstLaunch.messageText" = "Souhaitez-vous déplacer Whisky dans votre dossier Applications ?";
-"showAlertOnFirstLaunch.informativeText" = "Dans certains cas, Whisky ne pourra pas fonctionner correctement depuis un dossier différent";
+"showAlertOnFirstLaunch.informativeText" = "In some cases, Whisky wont't be able to function properly from a different folder";
 "showAlertOnFirstLaunch.button.moveToApplications" = "Déplacer vers Applications";
 "showAlertOnFirstLaunch.button.dontMove" = "Ne pas déplacer";
 
