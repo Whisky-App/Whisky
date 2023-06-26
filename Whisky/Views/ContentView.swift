@@ -75,6 +75,9 @@ struct ContentView: View {
                     }
                 } else {
                     Text("main.noneSelected")
+                        .font(.largeTitle)
+                        .fontWeight(.semibold)
+                        .opacity(0.5)
                 }
             }
         }

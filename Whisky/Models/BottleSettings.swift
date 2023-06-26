@@ -37,37 +37,6 @@ public struct Semver: Codable, Equatable {
     }
 }
 
-// Thanks ChatGPT
-extension SFSymbol: Codable {
-    public init(from decoder: Decoder) throws {
-        let container = try decoder.singleValueContainer()
-        let rawValue = try container.decode(String.self)
-        if let symbol = Self(rawValue: rawValue) {
-            self = symbol
-        } else {
-            throw DecodingError.dataCorruptedError(in: container, debugDescription: "Invalid raw value: \(rawValue)")
-        }
-    }
-    public func encode(to encoder: Encoder) throws {
-        var container = encoder.singleValueContainer()
-        try container.encode(rawValue)
-    }
-}
-
-enum Icon: Codable {
-    case emoji(String)
-    case symbol(SFSymbol)
-}
-
-struct Color: Codable {
-    var red: UInt8
-    var green: UInt8
-    var blue: UInt8
-    func toUIColor() -> SwiftUI.Color {
-        return .init(red: Double(self.red) / 255, green: Double(self.green) / 255, blue: Double(self.blue) / 255)
-    }
-}
-
 struct Shortcut: Codable {
     var name: String
     var link: URL
@@ -75,8 +44,6 @@ struct Shortcut: Codable {
 
 struct BottleInfo: Codable {
     var name: String = "Whisky"
-    var icon: Icon = .symbol(.wineglass)
-    var color: Color = .init(red: 0, green: 0, blue: 0)
     var shortcuts: [Shortcut] = []
 }
 
@@ -92,7 +59,7 @@ struct BottleGameToolkitConfig: Codable {
 }
 
 struct BottleMetadata: Codable {
-    var fileVersion: Semver = Semver(major: 2, minor: 0, patch: 0)
+    var fileVersion: Semver = Semver(major: 1, minor: 0, patch: 0)
     var info: BottleInfo = .init()
     var wineConfig: BottleWineConfig = .init()
     var gameToolkitConfig: BottleGameToolkitConfig = .init()
@@ -151,20 +118,6 @@ class BottleSettings {
             return settings.info.name
         } set {
             settings.info.name = newValue
-        }
-    }
-    var icon: Icon {
-        get {
-            return settings.info.icon
-        } set {
-            settings.info.icon = newValue
-        }
-    }
-    var color: Color {
-        get {
-            return settings.info.color
-        } set {
-            settings.info.color = newValue
         }
     }
     var shortcuts: [Shortcut] {

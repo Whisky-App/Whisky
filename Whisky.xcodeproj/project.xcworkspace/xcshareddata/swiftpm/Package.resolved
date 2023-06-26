@@ -10,24 +10,6 @@
       }
     },
     {
-      "identity" : "sfsymbolenum",
-      "kind" : "remoteSourceControl",
-      "location" : "https://github.com/jollyjinx/SFSymbolEnum",
-      "state" : {
-        "revision" : "6a8cb4993b6b3a0e9941ba2049ba868397142794",
-        "version" : "2.3.0"
-      }
-    },
-    {
-      "identity" : "smile",
-      "kind" : "remoteSourceControl",
-      "location" : "https://github.com/onmyway133/Smile",
-      "state" : {
-        "revision" : "40604722a7a56f735124e069fcbb58307637744b",
-        "version" : "2.1.0"
-      }
-    },
-    {
       "identity" : "sparkle",
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/sparkle-project/Sparkle",

@@ -16,9 +16,8 @@ public class Bottle: Hashable, Identifiable {
     public func hash(into hasher: inout Hasher) {
         return hasher.combine(url)
     }
-    
     public var id: URL {
-        get { self.url }
+        self.url
     }
 
     var url: URL = URL.homeDirectory.appending(component: ".wine")
