@@ -88,7 +88,7 @@
 "setup.wine.download" = "Baixando Wine";
 "setup.wine.download.subtitle" = "As velocidades irão variar de acordo com sua internet.";
 "setup.wine.progress" = "%@ de %@";
-"setup.wine.eta" = "- %@ remaining";
+"setup.wine.eta" = "- %@ restantes";
 
 "setup.wine.install" = "Instalando Wine";
 "setup.wine.install.subtitle" = "Quase lá. Por favor, aguarde.";
