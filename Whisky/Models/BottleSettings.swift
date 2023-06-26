@@ -6,35 +6,7 @@
 //
 
 import Foundation
-import SwiftUI
-
-public struct Semver: Codable, Equatable {
-    var major: UInt
-    var minor: UInt
-    var patch: UInt
-    public func toString() -> String {
-        return "\(self.major).\(self.minor).\(self.patch)"
-    }
-    public static func parse(data: String) throws -> Self {
-        let split = try data
-            .filter("0123456789.".contains)
-            .split(separator: ".")
-            .map({
-            let int = UInt($0)
-            if int == nil {
-                throw "UInt parsing failed"
-            }
-            return int
-        })
-        if split.count > 3 || split.count < 1 {
-            throw "Invalid semver: '\(data)'"
-        }
-        let major = split.count > 0 ? split[0] : 0
-        let minor = split.count > 1 ? split[1] : 0
-        let patch = split.count > 2 ? split[2] : 0
-        return Self(major: major ?? 0, minor: minor ?? 0, patch: patch ?? 0)
-    }
-}
+import SemanticVersion
 
 struct Shortcut: Codable {
     var name: String
@@ -47,7 +19,7 @@ struct BottleInfo: Codable {
 }
 
 struct BottleWineConfig: Codable {
-    var wineVersion: Semver = Semver(major: 7, minor: 7, patch: 0)
+    var wineVersion: SemanticVersion = SemanticVersion(7, 7, 0)
     var windowsVersion: WinVersion = .win10
 }
 
@@ -58,7 +30,7 @@ struct BottleGameToolkitConfig: Codable {
 }
 
 struct BottleMetadata: Codable {
-    var fileVersion: Semver = Semver(major: 1, minor: 0, patch: 0)
+    var fileVersion: SemanticVersion = SemanticVersion(1, 0, 0)
     var info: BottleInfo = .init()
     var wineConfig: BottleWineConfig = .init()
     var gameToolkitConfig: BottleGameToolkitConfig = .init()
@@ -72,7 +44,7 @@ class BottleSettings {
             encode()
         }
     }
-    var wineVersion: Semver {
+    var wineVersion: SemanticVersion {
         get {
             return settings.wineConfig.wineVersion
         }

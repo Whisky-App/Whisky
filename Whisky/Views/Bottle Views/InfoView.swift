@@ -24,7 +24,7 @@ struct InfoView: View {
                     }
                 }
                 InfoItem(label: String(localized: "info.wine"),
-                         value: bottle.settings.wineVersion.toString())
+                         value: String(bottle.settings.wineVersion))
                 InfoItem(label: String(localized: "info.win"),
                          value: bottle.settings.windowsVersion.pretty())
             }

@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import SemanticVersion
 
 struct LegacyShortcut: Decodable {
     let name: String
@@ -30,7 +31,7 @@ func convertFormat(plistPath: URL) -> URL? {
         // Create new settings
         let settings = BottleSettings.init(bottleURL: plist.url)
         settings.name = plistPath.deletingPathExtension().lastPathComponent
-        settings.wineVersion = try Semver.parse(data: plist.wineVersion)
+        settings.wineVersion = SemanticVersion(plist.wineVersion) ?? SemanticVersion(0, 0, 0)
         settings.windowsVersion = plist.windowsVersion
         settings.metalHud = plist.metalHud
         settings.metalTrace = plist.metalTrace

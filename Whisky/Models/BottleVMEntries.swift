@@ -6,9 +6,10 @@
 //
 
 import Foundation
+import SemanticVersion
 
 struct BottleEntries: Codable {
-    var fileVersion: Semver = Semver(major: 1, minor: 0, patch: 0)
+    var fileVersion: SemanticVersion = SemanticVersion(1, 0, 0)
     var paths: [URL] = []
 }
 
