@@ -6,7 +6,6 @@
 //
 
 import Foundation
-import SFSymbolEnum
 import SwiftUI
 
 public struct Semver: Codable, Equatable {
