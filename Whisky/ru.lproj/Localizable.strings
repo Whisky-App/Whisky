@@ -6,7 +6,7 @@
 "tab.navTitle.programs" = "%@ – программы";
 "tab.navTitle.info" = "%@ – информация";
 
-"main.noneSelected" = "Select a bottle";
+"main.noneSelected" = "Выбрать бутылку";
 "main.createFirst" = "Create your first bottle to get started";
 
 "button.cDrive" = "Открыть диск C";
@@ -15,7 +15,7 @@
 "button.ok" = "ОК";
 "button.renameBottle" = "Переименовать";
 "button.deleteBottle" = "Удалить...";
-"button.createBottle" = "Создать Бутылку";
+"button.createBottle" = "Создать бутылку";
 "button.deleteAlert.msg" = "Удалить %@?";
 "button.deleteAlert.info" = "Вы уверены, что хотите удалить эту бутылку? Это действие необратимо.";
 "button.deleteAlert.delete" = "Удалить";
@@ -88,12 +88,12 @@
 "setup.wine.download" = "Скачивание Wine";
 "setup.wine.download.subtitle" = "Скорость скачивания зависит от вашего подключения к Интернету.";
 "setup.wine.progress" = "%@ of %@";
-"setup.wine.eta" = "- %@ remaining";
+"setup.wine.eta" = "- осталось %@";
 
 "setup.wine.install" = "Установка Wine";
 "setup.wine.install.subtitle" = "Почти закончили. Не отключайтесь.";
 
 "setup.gptk" = "Установка GPTK";
 
-"alert.macos" = "Unsupported macOS Version!";
-"alert.macos.info" = "macOS Ventura is not officially support by GPTK. Issues may occur!";
+"alert.macos" = "Текущая версия macOS не поддерживается!";
+"alert.macos.info" = "GPTK не имеет официальной поддержки macOS Ventura. Могут возникнуть проблемы!";
