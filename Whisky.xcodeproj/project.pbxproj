@@ -52,6 +52,7 @@
 		6EFE9ADF2A3DA5E1002232AB /* Ditto.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EFE9ADE2A3DA5E1002232AB /* Ditto.swift */; };
 		AB66A8642A4195B10006D238 /* Rosetta2.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB66A8632A4195B10006D238 /* Rosetta2.swift */; };
 		EB0745292A443EE200C15B92 /* BottleVMEntries.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB0745282A443EE200C15B92 /* BottleVMEntries.swift */; };
+		EB58FB552A499896002DC184 /* SemanticVersion in Frameworks */ = {isa = PBXBuildFile; productRef = EB58FB542A499896002DC184 /* SemanticVersion */; };
 		EBFF512A2A43C6A300CF9B56 /* ConvertFormat.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBFF51292A43C6A300CF9B56 /* ConvertFormat.swift */; };
 		EEA5A2462A31DD65008274AE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEA5A2452A31DD65008274AE /* AppDelegate.swift */; };
 /* End PBXBuildFile section */
@@ -130,6 +131,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				6E064B1229DD32A200D9A2D2 /* Sparkle in Frameworks */,
+				EB58FB552A499896002DC184 /* SemanticVersion in Frameworks */,
 				6E3F750129ED85E20066D318 /* Alamofire in Frameworks */,
 				6E3F750629ED9D650066D318 /* SwiftSoup in Frameworks */,
 			);
@@ -292,6 +294,7 @@
 				6E064B1129DD32A200D9A2D2 /* Sparkle */,
 				6E3F750029ED85E20066D318 /* Alamofire */,
 				6E3F750529ED9D650066D318 /* SwiftSoup */,
+				EB58FB542A499896002DC184 /* SemanticVersion */,
 			);
 			productName = Whisky;
 			productReference = 6E40495229CCA19C006E3F1B /* Whisky.app */;
@@ -343,6 +346,7 @@
 				6E064B1029DD32A200D9A2D2 /* XCRemoteSwiftPackageReference "Sparkle" */,
 				6E3F74FF29ED85E20066D318 /* XCRemoteSwiftPackageReference "Alamofire" */,
 				6E3F750429ED9D650066D318 /* XCRemoteSwiftPackageReference "SwiftSoup" */,
+				EB58FB532A499896002DC184 /* XCRemoteSwiftPackageReference "SemanticVersion" */,
 			);
 			productRefGroup = 6E40495329CCA19C006E3F1B /* Products */;
 			projectDirPath = "";
@@ -703,6 +707,14 @@
 				minimumVersion = 2.0.0;
 			};
 		};
+		EB58FB532A499896002DC184 /* XCRemoteSwiftPackageReference "SemanticVersion" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SwiftPackageIndex/SemanticVersion";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.3.6;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -720,6 +732,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 6E3F750429ED9D650066D318 /* XCRemoteSwiftPackageReference "SwiftSoup" */;
 			productName = SwiftSoup;
+		};
+		EB58FB542A499896002DC184 /* SemanticVersion */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = EB58FB532A499896002DC184 /* XCRemoteSwiftPackageReference "SemanticVersion" */;
+			productName = SemanticVersion;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
