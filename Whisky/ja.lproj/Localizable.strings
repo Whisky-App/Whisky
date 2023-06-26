@@ -6,7 +6,7 @@
 "tab.navTitle.programs" = "%@ のプログラム";
 "tab.navTitle.info" = "%@ の情報";
 
-"main.noneSelected" = "Bottle を選ぶ";
+"main.noneSelected" = "Bottle を選んで下さい";
 "main.createFirst" = "最初の Bottle を作って、使い始めましょう";
 
 "button.cDrive" = "C ドライブを開く";
@@ -87,13 +87,13 @@
 
 "setup.wine.download" = "Wine をダウンロード中";
 "setup.wine.download.subtitle" = "速度はインターネット接続によって異なります。";
-"setup.wine.progress" = "%@ of %@";
+"setup.wine.progress" = "%@ / %@";
 "setup.wine.eta" = "- 残り %@";
 
 "setup.wine.install" = "Wine をインストール中";
 "setup.wine.install.subtitle" = "あと少しです。そのままお待ち下さい。";
 
-"setup.gptk" = "GPTK をインストール中";
+"setup.gptk" = "GPTK をインストール";
 
 "alert.macos" = "お使いの macOS バージョンはサポートされていません。";
-"alert.macos.info" = "macOS Ventura is not officially support by GPTK. Issues may occur!";
+"alert.macos.info" = "GPTK は macOS Ventura を公式にサポートしていません。問題が起きる可能性があります。";
