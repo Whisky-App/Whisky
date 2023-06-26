@@ -59,8 +59,6 @@
 "create.browse" = "Browse";
 "create.cancel" = "Cancel";
 "create.create" = "Create";
-"create.warning.emptyName" = "Name can't be empty";
-"create.warning.alreadyExistsName" = "A bottle with this name already exists";
 
 "rename.title" = "Rename bottle";
 "rename.name" = "New name:";
