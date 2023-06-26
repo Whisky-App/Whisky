@@ -76,7 +76,7 @@
 "showAlertOnFirstLaunch.button.dontMove" = "不移动";
 
 "setup.welcome" = "欢迎使用 Whisky";
-"setup.welcome.subtitle" = "让我们开始您的设置。这不需要一分钟。";
+"setup.welcome.subtitle" = "让我们帮您安装好。这不会花一分钟。";
 
 "setup.install.checking" = "正在检查 %@ 安装...";
 "setup.install.installed" = "%@ 已安装";
@@ -87,13 +87,13 @@
 
 "setup.wine.download" = "正在下载 Wine";
 "setup.wine.download.subtitle" = "下载时间根据您上网速度有所不同。";
-"setup.wine.progress" = "%@ of %@";
-"setup.wine.eta" = "- %@ remaining";
+"setup.wine.progress" = "%2$@ 中的 %1$@";
+"setup.wine.eta" = "- 剩余%@";
 
 "setup.wine.install" = "正在安装 Wine";
 "setup.wine.install.subtitle" = "快好了，请耐心等待。";
 
 "setup.gptk" = "正在安装 GPTK";
 
-"alert.macos" = "Unsupported macOS Version!";
-"alert.macos.info" = "macOS Ventura is not officially support by GPTK. Issues may occur!";
+"alert.macos" = "不支持的macOS版本！";
+"alert.macos.info" = "GPTK没有macOS Ventura的官方支持。可能会出现问题。";
