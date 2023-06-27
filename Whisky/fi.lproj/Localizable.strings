@@ -6,8 +6,8 @@
 "tab.navTitle.programs" = "%@ Ohjelmat";
 "tab.navTitle.info" = "%@ Tiedot";
 
-"main.noneSelected" = "Select a bottle";
-"main.createFirst" = "Create your first bottle to get started";
+"main.noneSelected" = "Valitse pullo";
+"main.createFirst" = "Luo ensimmäinen pullo, jotta voit aloittaa";
 
 "button.cDrive" = "Avaa C levy";
 "button.showInFinder" = "Näytä Finderissa";
@@ -22,17 +22,17 @@
 "button.deleteAlert.cancel" = "Peru";
 
 "config.winVersion" = "Windows versio";
-"config.buildVersion" = "Build Version";
+"config.buildVersion" = "Ohjelmistoversio";
 "config.title.metal" = "Metal";
 "config.metalHud" = "Metal HUD";
 "config.metalTrace" = "Metal Jäljitin";
-"config.retinaMode" = "Retina Mode";
+"config.retinaMode" = "Retina tila";
 "config.metalTrace.info" = "Mahdollistaa GPU työn nappaamisen Xcodessa";
 "config.esync" = "ESync";
-"config.controlPanel" = "Open Control Panel";
-"config.regedit" = "Open Registry Editor";
+"config.controlPanel" = "Avaa ohjauspaneeli";
+"config.regedit" = "Avaa rekisterin muokkain";
 "config.winecfg" = "Avaa Wine konfiguraatio";
-"config.notAvailable" = "N/A";
+"config.notAvailable" = "Ei saatavilla";
 
 "program.title" = "Asennetut ohjelmat";
 "program.env" = "Ympäristön muuttujat";
@@ -42,7 +42,7 @@
 "info.title" = "Tiedot";
 "info.path" = "Polku";
 "info.path.copy" = "Kopio polku";
-"info.winPath.copy" = "Copy Windows Path";
+"info.winPath.copy" = "Kopioi Windows-polku";
 "info.wine" = "Wine versio";
 "info.win" = "Windows versio";
 
@@ -55,12 +55,12 @@
 "create.title" = "Luo uusi pullo";
 "create.name" = "Pullon nimi:";
 "create.win" = "Windows versio:";
-"create.path" = "Bottle path:";
-"create.browse" = "Browse";
+"create.path" = "Pullon polku:";
+"create.browse" = "Selaa";
 "create.cancel" = "Peru";
 "create.create" = "Luo";
-"create.warning.emptyName" = "Name can't be empty";
-"create.warning.alreadyExistsName" = "A bottle with this name already exists";
+"create.warning.emptyName" = "Nimi ei voi olla tyhjä";
+"create.warning.alreadyExistsName" = "Samanniminen pullo on jo olemassa";
 
 "rename.title" = "Uudelleen nimeä pullo";
 "rename.name" = "Uusi nimi:";
@@ -75,7 +75,7 @@
 "showAlertOnFirstLaunch.button.moveToApplications" = "Siirrä Applikaatioihin";
 "showAlertOnFirstLaunch.button.dontMove" = "Älä siirrä";
 
-"setup.welcome" = "Welcome to Whisky";
+"setup.welcome" = "Tervetuloa käyttämään Whiskyia";
 "setup.welcome.subtitle" = "Let's get you set up. This won't take a minute.";
 
 "setup.install.checking" = "Checking %@ installation...";
