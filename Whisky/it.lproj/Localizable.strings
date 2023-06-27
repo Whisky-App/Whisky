@@ -6,8 +6,8 @@
 "tab.navTitle.programs" = "%@ Programmi";
 "tab.navTitle.info" = "Informazioni %@";
 
-"main.noneSelected" = "Select a bottle";
-"main.createFirst" = "Create your first bottle to get started";
+"main.noneSelected" = "Seleziona una bottiglia";
+"main.createFirst" = "Crea la tua prima bottiglia per iniziare";
 
 "button.cDrive" = "Apri Disco C";
 "button.showInFinder" = "Mostra in Finder";
@@ -42,7 +42,7 @@
 "info.title" = "Informazioni";
 "info.path" = "Percorso";
 "info.path.copy" = "Copia Percorso";
-"info.winPath.copy" = "Copy Windows Path";
+"info.winPath.copy" = "Copia Percorso di Windows";
 "info.wine" = "Versione di Wine";
 "info.win" = "Versione di Windows";
 
@@ -87,13 +87,13 @@
 
 "setup.wine.download" = "Scaricando Wine";
 "setup.wine.download.subtitle" = "Le velocità varieranno in base alla tua connessione internet.";
-"setup.wine.progress" = "%@ of %@";
-"setup.wine.eta" = "- %@ remaining";
+"setup.wine.progress" = "%@ di %@";
+"setup.wine.eta" = "-%@ rimanenti";
 
-"setup.wine.install" = "Installing Wine";
-"setup.wine.install.subtitle" = "Almost there. Don't tune out yet.";
+"setup.wine.install" = "Installando Wine";
+"setup.wine.install.subtitle" = "Quasi fatto. Non disconnetterti ancora.";
 
-"setup.gptk" = "Installing GPTK";
+"setup.gptk" = "Installando GPTK";
 
-"alert.macos" = "Unsupported macOS Version!";
-"alert.macos.info" = "macOS Ventura is not officially support by GPTK. Issues may occur!";
+"alert.macos" = "Versione macOS non supportata!";
+"alert.macos.info" = "macOS Ventura non è ufficialmente supportato da GPTK. Potrebbero verificarsi dei problemi!";
