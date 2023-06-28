@@ -28,8 +28,11 @@ public class Bottle: Hashable {
     var inFlight: Bool = false
 
     func openCDrive() {
-        let cDrive = url.appendingPathComponent("drive_c")
-        NSWorkspace.shared.activateFileViewerSelecting([cDrive])
+        let cDrive = url
+            .appendingPathComponent("drive_c")
+            .appendingPathComponent("")
+
+        NSWorkspace.shared.open(cDrive)
     }
 
     @discardableResult
