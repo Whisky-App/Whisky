@@ -32,6 +32,12 @@ public class Bottle: Hashable {
         NSWorkspace.shared.activateFileViewerSelecting([cDrive])
     }
 
+    func quitAllInstances(of processName: String) {
+            let task = Process()
+            task.launchPath = "/usr/bin/pkill"
+            task.arguments = ["-f", processName]
+            task.launch()
+        }
     @discardableResult
     func updateStartMenuPrograms() -> [ShellLinkHeader] {
         let globalStartMenu = url
