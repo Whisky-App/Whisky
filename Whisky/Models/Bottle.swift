@@ -34,8 +34,8 @@ public class Bottle: Hashable {
 
     func quitAllInstances(of processName: String) {
             let task = Process()
-            task.launchPath = "/usr/bin/pkill"
-            task.arguments = ["-f", processName]
+            task.launchPath = "/usr/bin/killall"
+            task.arguments = [processName]
             task.launch()
         }
     @discardableResult
