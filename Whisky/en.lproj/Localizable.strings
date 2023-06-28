@@ -9,6 +9,7 @@
 "main.noneSelected" = "Select a bottle";
 "main.createFirst" = "Create your first bottle to get started";
 
+"button.quitAll" = "Quit All";
 "button.cDrive" = "Open C Drive";
 "button.showInFinder" = "Show in Finder";
 "button.run" = "Run...";

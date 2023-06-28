@@ -123,13 +123,11 @@ struct BottleView: View {
             }
             Spacer()
             HStack {
-                Button(action: {
+                Button("button.quitAll") {
                     let wineProcesses = ["wine64-preloader", "wineserver"]
                     for processName in wineProcesses {
                         bottle.quitAllInstances(of: processName)
                     }
-                }) {
-                    Text("Quit All")
                 }
                 Spacer()
                 Button("button.cDrive") {
