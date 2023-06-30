@@ -19,10 +19,10 @@ struct ContentView: View {
         NavigationSplitView {
             ScrollViewReader { proxy in
                 List(selection: $selected) {
-                    ForEach(bottleVM.bottles, id: \.url) { bottle in
+                    ForEach(bottleVM.bottles) { bottle in
                         if bottle.inFlight {
                             HStack {
-                                Text(bottle.name)
+                                Text(bottle.settings.name)
                                 Spacer()
                                 ProgressView().controlSize(.small)
                             }
@@ -75,6 +75,9 @@ struct ContentView: View {
                     }
                 } else {
                     Text("main.noneSelected")
+                        .font(.largeTitle)
+                        .fontWeight(.semibold)
+                        .opacity(0.5)
                 }
             }
         }
@@ -120,7 +123,7 @@ struct BottleListEntry: View {
     @Binding var selected: URL?
 
     var body: some View {
-        Text(bottle.name)
+        Text(bottle.settings.name)
             .sheet(isPresented: $showBottleRename) {
                 BottleRenameView(bottle: bottle)
             }
@@ -137,7 +140,7 @@ struct BottleListEntry: View {
     func showDeleteAlert(bottle: Bottle) {
         let alert = NSAlert()
         alert.messageText = String(format: String(localized: "button.deleteAlert.msg"),
-                                   bottle.name)
+                                   bottle.settings.name)
         alert.informativeText = String(localized: "button.deleteAlert.info")
         alert.alertStyle = .warning
         let delete = alert.addButton(withTitle: String(localized: "button.deleteAlert.delete"))

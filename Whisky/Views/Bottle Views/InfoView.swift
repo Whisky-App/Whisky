@@ -24,14 +24,14 @@ struct InfoView: View {
                     }
                 }
                 InfoItem(label: String(localized: "info.wine"),
-                         value: bottle.settings.wineVersion)
+                         value: String(bottle.settings.wineVersion))
                 InfoItem(label: String(localized: "info.win"),
                          value: bottle.settings.windowsVersion.pretty())
             }
         }
         .formStyle(.grouped)
         .navigationTitle(String(format: String(localized: "tab.navTitle.info"),
-                                bottle.name))
+                                bottle.settings.name))
         .onAppear {
             prettyPath = bottle.url.prettyPath()
         }

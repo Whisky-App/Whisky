@@ -149,7 +149,7 @@ struct ConfigView: View {
             .padding()
         }
         .navigationTitle(String(format: String(localized: "tab.navTitle.config"),
-                                bottle.name))
+                                bottle.settings.name))
         .onAppear {
             windowsVersion = bottle.settings.windowsVersion
             winVersionLoadingState = LoadingState.success

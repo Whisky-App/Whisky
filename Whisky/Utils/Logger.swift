@@ -52,7 +52,7 @@ class Log {
         header += "Date: \(Date.now.formatted(date: .numeric, time: .standard))\n"
         header += "macOS Version: \(ProcessInfo.processInfo.operatingSystemVersionString)\n"
         if let bottle = bottle {
-            header += "Bottle Name: \(bottle.name)\n"
+            header += "Bottle Name: \(bottle.settings.name)\n"
             header += "Wine Version: \(bottle.settings.wineVersion)\n"
             header += "Windows Version: \(bottle.settings.windowsVersion)\n"
             header += "Bottle URL: \(bottle.url.path)\n\n"

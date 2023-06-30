@@ -51,6 +51,9 @@
 		6EF557982A410599001A4F09 /* SetupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EF557972A410599001A4F09 /* SetupView.swift */; };
 		6EFE9ADF2A3DA5E1002232AB /* Ditto.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EFE9ADE2A3DA5E1002232AB /* Ditto.swift */; };
 		AB66A8642A4195B10006D238 /* Rosetta2.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB66A8632A4195B10006D238 /* Rosetta2.swift */; };
+		EB0745292A443EE200C15B92 /* BottleVMEntries.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB0745282A443EE200C15B92 /* BottleVMEntries.swift */; };
+		EB58FB552A499896002DC184 /* SemanticVersion in Frameworks */ = {isa = PBXBuildFile; productRef = EB58FB542A499896002DC184 /* SemanticVersion */; };
+		EBFF512A2A43C6A300CF9B56 /* ConvertFormat.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBFF51292A43C6A300CF9B56 /* ConvertFormat.swift */; };
 		EEA5A2462A31DD65008274AE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEA5A2452A31DD65008274AE /* AppDelegate.swift */; };
 /* End PBXBuildFile section */
 
@@ -115,6 +118,8 @@
 		AB8570C22A34FA4000BFBBE0 /* vi */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = vi; path = vi.lproj/Localizable.strings; sourceTree = "<group>"; };
 		B584FD842A3376E0009B00F4 /* zh-Hant */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hant"; path = "zh-Hant.lproj/Localizable.strings"; sourceTree = "<group>"; };
 		B584FD842A6676E0009B00F4 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Localizable.strings"; sourceTree = "<group>"; };
+		EB0745282A443EE200C15B92 /* BottleVMEntries.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottleVMEntries.swift; sourceTree = "<group>"; };
+		EBFF51292A43C6A300CF9B56 /* ConvertFormat.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConvertFormat.swift; sourceTree = "<group>"; };
 		EEA5A2452A31DD65008274AE /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F4575E7B2A33DC3D0022043E /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/Localizable.strings; sourceTree = "<group>"; };
 		F4575E7C2A33DC3D0022043D /* nl */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = nl; path = nl.lproj/Localizable.strings; sourceTree = "<group>"; };
@@ -126,6 +131,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				6E064B1229DD32A200D9A2D2 /* Sparkle in Frameworks */,
+				EB58FB552A499896002DC184 /* SemanticVersion in Frameworks */,
 				6E3F750129ED85E20066D318 /* Alamofire in Frameworks */,
 				6E3F750629ED9D650066D318 /* SwiftSoup in Frameworks */,
 			);
@@ -231,6 +237,7 @@
 				6E26058529D9267B00DDD788 /* ShellLink.swift */,
 				6E8A3B3D2A3613F400D19632 /* PortableExecutable.swift */,
 				6E8A3B3F2A36140300D19632 /* ResourceSection.swift */,
+				EB0745282A443EE200C15B92 /* BottleVMEntries.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -249,6 +256,7 @@
 				6EFE9ADE2A3DA5E1002232AB /* Ditto.swift */,
 				AB66A8632A4195B10006D238 /* Rosetta2.swift */,
 				6E4E682D2A41CB1E0030EE54 /* Arch.swift */,
+				EBFF51292A43C6A300CF9B56 /* ConvertFormat.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -286,6 +294,7 @@
 				6E064B1129DD32A200D9A2D2 /* Sparkle */,
 				6E3F750029ED85E20066D318 /* Alamofire */,
 				6E3F750529ED9D650066D318 /* SwiftSoup */,
+				EB58FB542A499896002DC184 /* SemanticVersion */,
 			);
 			productName = Whisky;
 			productReference = 6E40495229CCA19C006E3F1B /* Whisky.app */;
@@ -337,6 +346,7 @@
 				6E064B1029DD32A200D9A2D2 /* XCRemoteSwiftPackageReference "Sparkle" */,
 				6E3F74FF29ED85E20066D318 /* XCRemoteSwiftPackageReference "Alamofire" */,
 				6E3F750429ED9D650066D318 /* XCRemoteSwiftPackageReference "SwiftSoup" */,
+				EB58FB532A499896002DC184 /* XCRemoteSwiftPackageReference "SemanticVersion" */,
 			);
 			productRefGroup = 6E40495329CCA19C006E3F1B /* Products */;
 			projectDirPath = "";
@@ -402,7 +412,9 @@
 				6EFE9ADF2A3DA5E1002232AB /* Ditto.swift in Sources */,
 				6E8A3B3E2A3613F400D19632 /* PortableExecutable.swift in Sources */,
 				6E6C0CF62A419A8300356232 /* WineDownloadView.swift in Sources */,
+				EB0745292A443EE200C15B92 /* BottleVMEntries.swift in Sources */,
 				6EA2D48529DF130F00C84668 /* ProgramSettings.swift in Sources */,
+				EBFF512A2A43C6A300CF9B56 /* ConvertFormat.swift in Sources */,
 				6E50D98529CDF25B008C39F6 /* BottleCreationView.swift in Sources */,
 				6E0822882A39D73800195094 /* WineInstaller.swift in Sources */,
 				6E6C0CF42A419A7600356232 /* RosettaView.swift in Sources */,
@@ -695,6 +707,14 @@
 				minimumVersion = 2.0.0;
 			};
 		};
+		EB58FB532A499896002DC184 /* XCRemoteSwiftPackageReference "SemanticVersion" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SwiftPackageIndex/SemanticVersion";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.3.6;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -712,6 +732,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 6E3F750429ED9D650066D318 /* XCRemoteSwiftPackageReference "SwiftSoup" */;
 			productName = SwiftSoup;
+		};
+		EB58FB542A499896002DC184 /* SemanticVersion */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = EB58FB532A499896002DC184 /* XCRemoteSwiftPackageReference "SemanticVersion" */;
+			productName = SemanticVersion;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

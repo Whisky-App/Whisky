@@ -8,7 +8,7 @@
 import Foundation
 import AppKit
 
-public class Bottle: Hashable {
+public class Bottle: Hashable, Identifiable {
     public static func == (lhs: Bottle, rhs: Bottle) -> Bool {
         return lhs.url == rhs.url
     }
@@ -16,9 +16,8 @@ public class Bottle: Hashable {
     public func hash(into hasher: inout Hasher) {
         return hasher.combine(url)
     }
-
-    var name: String {
-        url.lastPathComponent
+    public var id: URL {
+        self.url
     }
 
     var url: URL = URL.homeDirectory.appending(component: ".wine")
@@ -123,7 +122,9 @@ public class Bottle: Hashable {
     func delete() {
         do {
             try FileManager.default.removeItem(at: url)
-            try FileManager.default.removeItem(at: settings.settingsUrl)
+            if let path = BottleVM.shared.bottlesList.paths.firstIndex(of: url) {
+                BottleVM.shared.bottlesList.paths.remove(at: path)
+            }
             BottleVM.shared.loadBottles()
         } catch {
             print("Failed to delete bottle")
@@ -132,51 +133,23 @@ public class Bottle: Hashable {
 
     @MainActor
     func rename(newName: String) {
-        let oldPlist = settings.settingsUrl
-        let newPlist = settings.settingsUrl
-            .deletingPathExtension()
-            .deletingLastPathComponent()
-            .appendingPathComponent(newName)
-            .appendingPathExtension("plist")
-
-        let oldFolder = url
-        let newFolder = url.deletingLastPathComponent()
-                           .appendingPathComponent(newName)
-
-        settings.url = newFolder
-
-        do {
-            try FileManager.default.moveItem(at: oldPlist, to: newPlist)
-            try FileManager.default.moveItem(at: oldFolder, to: newFolder)
-            BottleVM.shared.loadBottles()
-        } catch {
-            print(error)
-        }
+        settings.name = newName
     }
 
     init(inFlight: Bool = false) {
-        self.settings = BottleSettings(settingsURL: url,
-                                       bottleURL: url)
+        self.settings = BottleSettings(bottleURL: url)
         self.inFlight = inFlight
     }
-
-    init(settingsURL: URL, inFlight: Bool = false) throws {
-        self.settings = try BottleSettings(settingsURL: settingsURL)
-        self.url = settings.url
-        self.inFlight = inFlight
-    }
-
-    init(settingsURL: URL, bottleURL: URL, inFlight: Bool = false) {
-        self.settings = BottleSettings(settingsURL: settingsURL,
-                                       bottleURL: bottleURL)
-        self.url = settings.url
+    init(bottleUrl: URL, inFlight: Bool = false) {
+        self.settings = BottleSettings(bottleURL: bottleUrl)
+        self.url = bottleUrl
         self.inFlight = inFlight
     }
 }
 
 extension Array where Element == Bottle {
     mutating func sortByName() {
-        self.sort { $0.name.lowercased() < $1.name.lowercased() }
+        self.sort { $0.settings.name.lowercased() < $1.settings.name.lowercased() }
     }
 }
 

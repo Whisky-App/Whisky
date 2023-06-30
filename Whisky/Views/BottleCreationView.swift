@@ -10,8 +10,6 @@ import SwiftUI
 struct BottleCreationView: View {
     @State var newBottleName: String = ""
     @State var newBottleVersion: WinVersion = .win10
-    @State var invalidBottleNameDescription: String = ""
-    @State var isValidBottleName: Bool = true
     @State var newBottleURL: URL = BottleVM.bottleDir
     @State var bottlePath: String = ""
     @Binding var newlyCreatedBottleURL: URL?
@@ -29,9 +27,6 @@ struct BottleCreationView: View {
                 Text("create.name")
                 Spacer()
                 TextField("", text: $newBottleName)
-                .onChange(of: newBottleName) { _ in
-                    isValidBottleName = true
-                }
                 .frame(width: 180)
             }
             HStack {
@@ -68,28 +63,15 @@ struct BottleCreationView: View {
             }
             Spacer()
             HStack {
-                Text(invalidBottleNameDescription)
-                    .foregroundColor(.red)
-                    .font(.system(.footnote))
-                    .fixedSize(horizontal: false, vertical: true)
-                    .lineLimit(2)
-                    .frame(height: 30, alignment: .center)
-                    .opacity(isValidBottleName ? 0 : 1)
                 Spacer()
                 Button("create.cancel") {
                     dismiss()
                 }
                 .keyboardShortcut(.cancelAction)
                 Button("create.create") {
-                    if case .failure(let failureReason) = BottleVM.shared.isValidBottleName(bottleName: newBottleName) {
-                        isValidBottleName = false
-                        invalidBottleNameDescription = failureReason.description
-                        return
-                    }
-
                     newlyCreatedBottleURL = BottleVM.shared.createNewBottle(bottleName: newBottleName,
-                                                                        winVersion: newBottleVersion,
-                                                                        bottleURL: newBottleURL)
+                                                    winVersion: newBottleVersion,
+                                                    bottleURL: newBottleURL)
                     dismiss()
                 }
                 .keyboardShortcut(.defaultAction)

@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import SemanticVersion
 
 class BottleVM: ObservableObject {
     static let shared = BottleVM()
@@ -17,53 +18,41 @@ class BottleVM: ObservableObject {
 
     static let bottleDir = containerDir
         .appendingPathComponent("Bottles")
+    let bottlesList = BottleVMEntries()
 
     @Published var bottles: [Bottle] = []
-    enum NameFailureReason {
-        case emptyName
-        case alreadyExists
-
-        var description: String {
-            switch self {
-            case .emptyName:
-                return String(localized: "create.warning.emptyName")
-            case .alreadyExists:
-                return String(localized: "create.warning.alreadyExistsName")
-            }
-        }
-    }
-
-    enum BottleValidationResult {
-        case success
-        case failure(reason: NameFailureReason)
-    }
 
     @MainActor
     func loadBottles() {
         bottles.removeAll()
-
-        do {
-            let files = try FileManager.default.contentsOfDirectory(at: BottleVM.bottleDir,
+        // Update if needed
+        if !BottleVMEntries.exists() {
+            do {
+                let files = try FileManager.default.contentsOfDirectory(at: BottleVM.bottleDir,
                                                                     includingPropertiesForKeys: nil,
                                                                     options: .skipsHiddenFiles)
-            for file in files where file.pathExtension == "plist" {
-                do {
-                    let bottle = try Bottle(settingsURL: file)
-                    bottles.append(bottle)
-                } catch {
-                    print("Failed to load bottle at \(file.path)!")
+                for file in files where file.pathExtension == "plist" {
+                    if let bottlePath = convertFormat(plistPath: file) {
+                        bottlesList.paths.append(bottlePath)
+                    }
                 }
+            } catch {
+                print("Failed to list files")
             }
-        } catch {
-            print("Failed to load bottles: \(error)")
+            bottlesList.encode()
         }
 
+        bottles = bottlesList.paths.map({
+            Bottle(bottleUrl: $0)
+        })
         bottles.sortByName()
     }
 
     func createNewBottle(bottleName: String, winVersion: WinVersion, bottleURL: URL) -> URL {
-        let newBottleDir = bottleURL.appendingPathComponent(bottleName)
+        let newBottleDir = bottleURL.appendingPathComponent(UUID().uuidString)
+
         Task(priority: .userInitiated) {
+            var bottleId: Bottle? = .none
             do {
                 if !FileManager.default.fileExists(atPath: BottleVM.bottleDir.path) {
                     try FileManager.default.createDirectory(atPath: BottleVM.bottleDir.path,
@@ -71,36 +60,29 @@ class BottleVM: ObservableObject {
                 }
 
                 try FileManager.default.createDirectory(atPath: newBottleDir.path, withIntermediateDirectories: true)
+                let bottle = Bottle(bottleUrl: newBottleDir, inFlight: true)
+                bottleId = .some(bottle)
 
-                let settingsURL = BottleVM.bottleDir
-                    .appendingPathComponent(bottleName)
-                    .appendingPathExtension("plist")
-
-                let bottle = Bottle(settingsURL: settingsURL,
-                                    bottleURL: newBottleDir,
-                                    inFlight: true)
                 bottles.append(bottle)
                 bottles.sortByName()
 
                 bottle.settings.windowsVersion = winVersion
+                bottle.settings.name = bottleName
                 try await Wine.changeWinVersion(bottle: bottle, win: winVersion)
-                bottle.settings.wineVersion = try await Wine.wineVersion()
+                let wineVer = try await Wine.wineVersion()
+                bottle.settings.wineVersion = SemanticVersion(wineVer) ?? SemanticVersion(0, 0, 0)
+                // Add record
+                self.bottlesList.paths.append(newBottleDir)
                 await loadBottles()
             } catch {
-                print("Failed to create new bottle")
+                print("Failed to create new bottle: \(error)")
+                if let bottle = bottleId {
+                    if let index = bottles.firstIndex(of: bottle) {
+                        bottles.remove(at: index)
+                    }
+                }
             }
         }
         return newBottleDir
-    }
-
-    func isValidBottleName(bottleName: String) -> BottleValidationResult {
-        if bottleName.isEmpty {
-            return BottleValidationResult.failure(reason: NameFailureReason.emptyName)
-        }
-
-        if bottles.contains(where: {$0.name == bottleName}) {
-            return BottleValidationResult.failure(reason: NameFailureReason.alreadyExists)
-        }
-        return BottleValidationResult.success
     }
 }

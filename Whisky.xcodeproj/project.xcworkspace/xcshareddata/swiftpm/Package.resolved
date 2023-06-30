@@ -10,6 +10,15 @@
       }
     },
     {
+      "identity" : "semanticversion",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/SwiftPackageIndex/SemanticVersion",
+      "state" : {
+        "revision" : "a70840d5fca686ae3bd2fcf8aecc5ded0bd4f125",
+        "version" : "0.3.6"
+      }
+    },
+    {
       "identity" : "sparkle",
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/sparkle-project/Sparkle",

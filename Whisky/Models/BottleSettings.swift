@@ -6,120 +6,123 @@
 //
 
 import Foundation
-
-struct BottleSettingsData: Codable {
-    var wineVersion: String = "7.7"
-    var windowsVersion: WinVersion = .win10
-    var metalHud: Bool = false
-    var metalTrace: Bool = false
-    var esync: Bool = false
-    var url: URL = BottleVM.bottleDir
-    var shortcuts: [Shortcut] = []
-}
+import SemanticVersion
 
 struct Shortcut: Codable {
     var name: String
     var link: URL
 }
 
+struct BottleInfo: Codable {
+    var name: String = "Whisky"
+    var shortcuts: [Shortcut] = []
+}
+
+struct BottleWineConfig: Codable {
+    var wineVersion: SemanticVersion = SemanticVersion(7, 7, 0)
+    var windowsVersion: WinVersion = .win10
+}
+
+struct BottleGameToolkitConfig: Codable {
+    var metalHud: Bool = false
+    var metalTrace: Bool = false
+    var esync: Bool = false
+}
+
+struct BottleMetadata: Codable {
+    var fileVersion: SemanticVersion = SemanticVersion(1, 0, 0)
+    var info: BottleInfo = .init()
+    var wineConfig: BottleWineConfig = .init()
+    var gameToolkitConfig: BottleGameToolkitConfig = .init()
+}
+
 class BottleSettings {
-    var settings: BottleSettingsData {
+    private let bottleUrl: URL
+    private let metadataUrl: URL
+    var settings: BottleMetadata {
         didSet {
             encode()
         }
     }
-
-    var wineVersion: String {
+    var wineVersion: SemanticVersion {
         get {
-            return settings.wineVersion
+            return settings.wineConfig.wineVersion
         }
         set {
-            settings.wineVersion = newValue
+            settings.wineConfig.wineVersion = newValue
         }
     }
-
     var windowsVersion: WinVersion {
         get {
-            return settings.windowsVersion
+            return settings.wineConfig.windowsVersion
         }
         set {
-            settings.windowsVersion = newValue
+            settings.wineConfig.windowsVersion = newValue
         }
     }
-
     var metalHud: Bool {
         get {
-            return settings.metalHud
+            return settings.gameToolkitConfig.metalHud
         }
         set {
-            settings.metalHud = newValue
+            settings.gameToolkitConfig.metalHud = newValue
         }
     }
-
     var metalTrace: Bool {
         get {
-            return settings.metalTrace
+            return settings.gameToolkitConfig.metalTrace
         }
         set {
-            settings.metalTrace = newValue
+            settings.gameToolkitConfig.metalTrace = newValue
         }
     }
-
     var esync: Bool {
         get {
-            return settings.esync
+            return settings.gameToolkitConfig.esync
         }
         set {
-            settings.esync = newValue
+            settings.gameToolkitConfig.esync = newValue
         }
     }
-
-    var url: URL {
+    var name: String {
         get {
-            return settings.url
-        }
-        set {
-            settings.url = newValue
+            return settings.info.name
+        } set {
+            settings.info.name = newValue
         }
     }
-
     var shortcuts: [Shortcut] {
         get {
-            return settings.shortcuts
+            return settings.info.shortcuts
         }
         set {
-            settings.shortcuts = newValue
+            settings.info.shortcuts = newValue
         }
     }
-
-    let settingsUrl: URL
-
-    init(settingsURL: URL, bottleURL: URL) {
-        self.settingsUrl = settingsURL
-
-        settings = BottleSettingsData(url: bottleURL)
+    init(bottleURL: URL) {
+        bottleUrl = bottleURL
+        metadataUrl = bottleURL
+            .appendingPathComponent("Metadata")
+            .appendingPathExtension("plist")
+        settings = .init()
         if !decode() {
             encode()
         }
     }
-
-    init(settingsURL: URL) throws {
-        self.settingsUrl = settingsURL
-
-        settings = BottleSettingsData()
-        if !decode() {
-            throw "Failed to decode settings!"
-        }
-    }
-
     @discardableResult
     public func decode() -> Bool {
+        let decoder = PropertyListDecoder()
+
         do {
-            let data = try Data(contentsOf: settingsUrl)
-            settings = try PropertyListDecoder().decode(BottleSettingsData.self, from: data)
-            if settings.wineVersion != BottleSettingsData().wineVersion {
+            let data = try Data(contentsOf: self.metadataUrl)
+            settings = try decoder.decode(BottleMetadata.self, from: data)
+            if settings.fileVersion != BottleMetadata().fileVersion {
+                print("Invalid file version \(settings.fileVersion)")
+                return false
+            }
+            if settings.wineConfig.wineVersion != BottleWineConfig().wineVersion {
                 print("Bottle has a different wine version!")
-                settings.wineVersion = BottleSettingsData().wineVersion
+                settings.wineConfig.wineVersion = BottleWineConfig().wineVersion
             }
             return true
         } catch {
@@ -134,7 +137,7 @@ class BottleSettings {
 
         do {
             let data = try encoder.encode(settings)
-            try data.write(to: settingsUrl)
+            try data.write(to: metadataUrl)
             return true
         } catch {
             return false
