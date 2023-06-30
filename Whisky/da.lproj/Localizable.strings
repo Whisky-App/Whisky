@@ -6,8 +6,8 @@
 "tab.navTitle.programs" = "%@ Programmer";
 "tab.navTitle.info" = "%@ Info";
 
-"main.noneSelected" = "Select a bottle";
-"main.createFirst" = "Create your first bottle to get started";
+"main.noneSelected" = "Vælg en bottle";
+"main.createFirst" = "Opret din første bottle for at komme igang";
 
 "button.cDrive" = "Åben C drev";
 "button.showInFinder" = "Vis i Finder";
@@ -32,7 +32,7 @@
 "config.controlPanel" = "Åbn Kontrolpanel";
 "config.regedit" = "Åbn Registry Editor";
 "config.winecfg" = "Åben Wine Konfiguration";
-"config.notAvailable" = "N/A";
+"config.notAvailable" = "Ikke tilgængelig";
 
 "program.title" = "Installerede programmer";
 "program.env" = "Miljøvariabler";
@@ -87,13 +87,13 @@
 
 "setup.wine.download" = "Downloader Wine";
 "setup.wine.download.subtitle" = "Hastigheden vil variere udfra din internet hastighed.";
-"setup.wine.progress" = "%@ of %@";
-"setup.wine.eta" = "- %@ remaining";
+"setup.wine.progress" = "%@ af %@";
+"setup.wine.eta" = "- %@ tilbage";
 
 "setup.wine.install" = "Installere Wine";
 "setup.wine.install.subtitle" = "Er der næsten. Luk ikke programmet endnu.";
 
 "setup.gptk" = "Installere GPTK";
 
-"alert.macos" = "Unsupported macOS Version!";
-"alert.macos.info" = "macOS Ventura is not officially support by GPTK. Issues may occur!";
+"alert.macos" = "Ikke understøttet macOS Version!";
+"alert.macos.info" = "macOS Ventura understøttes ikke officielt af GPTK. Problemer kan opstå!";
