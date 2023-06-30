@@ -6,8 +6,8 @@
 "tab.navTitle.programs" = "%@ Ohjelmat";
 "tab.navTitle.info" = "%@ Tiedot";
 
-"main.noneSelected" = "Select a bottle";
-"main.createFirst" = "Create your first bottle to get started";
+"main.noneSelected" = "Valitse pullo";
+"main.createFirst" = "Luo ensimmäinen pullosi aloittaaksesi";
 
 "button.cDrive" = "Avaa C levy";
 "button.showInFinder" = "Näytä Finderissa";
@@ -17,22 +17,22 @@
 "button.deleteBottle" = "Poista...";
 "button.createBottle" = "Luo pullo";
 "button.deleteAlert.msg" = "Poista %@?";
-"button.deleteAlert.info" = "Oletko varma, että haluat poistaa tämän pullon? Tämä on pysyvä muutos.";
+"button.deleteAlert.info" = "Oletko varma, että haluat poistaa tämän pullon? Tätä ei voi perua.";
 "button.deleteAlert.delete" = "Poista";
 "button.deleteAlert.cancel" = "Peru";
 
-"config.winVersion" = "Windows versio";
-"config.buildVersion" = "Build Version";
+"config.winVersion" = "Windows-versio";
+"config.buildVersion" = "Build versio";
 "config.title.metal" = "Metal";
 "config.metalHud" = "Metal HUD";
-"config.metalTrace" = "Metal Jäljitin";
-"config.retinaMode" = "Retina Mode";
+"config.metalTrace" = "Metal-jäljitin";
+"config.retinaMode" = "Retina-tila";
 "config.metalTrace.info" = "Mahdollistaa GPU työn nappaamisen Xcodessa";
 "config.esync" = "ESync";
-"config.controlPanel" = "Open Control Panel";
-"config.regedit" = "Open Registry Editor";
+"config.controlPanel" = "Avaa ohjaus-paneeli";
+"config.regedit" = "Avaa rekisterin muokkaus";
 "config.winecfg" = "Avaa Wine konfiguraatio";
-"config.notAvailable" = "N/A";
+"config.notAvailable" = "Ei käytössä;
 
 "program.title" = "Asennetut ohjelmat";
 "program.env" = "Ympäristön muuttujat";
@@ -42,7 +42,7 @@
 "info.title" = "Tiedot";
 "info.path" = "Polku";
 "info.path.copy" = "Kopio polku";
-"info.winPath.copy" = "Copy Windows Path";
+"info.winPath.copy" = "Kopio Windows-polku";
 "info.wine" = "Wine versio";
 "info.win" = "Windows versio";
 
@@ -54,20 +54,20 @@
 
 "create.title" = "Luo uusi pullo";
 "create.name" = "Pullon nimi:";
-"create.win" = "Windows versio:";
-"create.path" = "Bottle path:";
-"create.browse" = "Browse";
+"create.win" = "Windows-versio:";
+"create.path" = "Pullon polku:";
+"create.browse" = "Selaa";
 "create.cancel" = "Peru";
 "create.create" = "Luo";
-"create.warning.emptyName" = "Name can't be empty";
-"create.warning.alreadyExistsName" = "A bottle with this name already exists";
+"create.warning.emptyName" = "Nimi ei voi olla tyhjä";
+"create.warning.alreadyExistsName" = "Tämän niminen pullo on jo olemassa";
 
 "rename.title" = "Uudelleen nimeä pullo";
 "rename.name" = "Uusi nimi:";
 "rename.rename" = "Uudelleen nimeä";
 
 "check.updates" = "Tarkista päivitykset...";
-"kill.bottles" = "Tapa kaikki pullot";
+"kill.bottles" = "Sulje kaikki pullot";
 "open.logs" = "Avaa log kansio";
 
 "showAlertOnFirstLaunch.messageText" = "Haluatko siirtää Whiskyn Applikaatio-kansioon?";
@@ -75,25 +75,25 @@
 "showAlertOnFirstLaunch.button.moveToApplications" = "Siirrä Applikaatioihin";
 "showAlertOnFirstLaunch.button.dontMove" = "Älä siirrä";
 
-"setup.welcome" = "Welcome to Whisky";
-"setup.welcome.subtitle" = "Let's get you set up. This won't take a minute.";
+"setup.welcome" = "Tervetuloa Whiskyyn";
+"setup.welcome.subtitle" = "Valmistellaan tämä sinulle. Tämä ei vie kuin hetken.";
 
-"setup.install.checking" = "Checking %@ installation...";
-"setup.install.installed" = "%@ installed";
-"setup.install.notInstalled" = "%@ not installed";
+"setup.install.checking" = "Tarkistetaan %@ asennusta...";
+"setup.install.installed" = "%@ asennettu";
+"setup.install.notInstalled" = "%@ ei ole asennettu";
 
-"setup.rosetta" = "Installing Rosetta";
-"setup.rosetta.subtitle" = "Rosetta allows x86 code, like Wine, to run on your Mac.";
+"setup.rosetta" = "Asennetaan Rosettaa";
+"setup.rosetta.subtitle" = "Rosetta mahdollistaa x86 koodin käyttämisen Macilläsi, kuten Wine.";
 
-"setup.wine.download" = "Downloading Wine";
-"setup.wine.download.subtitle" = "Speeds will vary on your internet connection.";
-"setup.wine.progress" = "%@ of %@";
-"setup.wine.eta" = "- %@ remaining";
+"setup.wine.download" = "Ladataan Wine";
+"setup.wine.download.subtitle" = "Nopeus vaihtelee internet-yhteydestäsi riippuen";
+"setup.wine.progress" = "%@ / %@";
+"setup.wine.eta" = "- %@ jäljellä";
 
-"setup.wine.install" = "Installing Wine";
-"setup.wine.install.subtitle" = "Almost there. Don't tune out yet.";
+"setup.wine.install" = "Asennetaan Wine";
+"setup.wine.install.subtitle" = "Melkein valmista. Älä poistu vielä.";
 
-"setup.gptk" = "Installing GPTK";
+"setup.gptk" = "Asennetaan GPTK";
 
-"alert.macos" = "Unsupported macOS Version!";
-"alert.macos.info" = "macOS Ventura is not officially support by GPTK. Issues may occur!";
+"alert.macos" = "Ei-tuettu macOS versio!";
+"alert.macos.info" = "macOS Ventura ei ole virallisesti GPTK:n tukema. Ongelmia saattaa ilmetä!";
