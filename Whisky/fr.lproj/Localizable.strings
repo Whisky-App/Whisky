@@ -67,7 +67,7 @@
 "check.updates" = "Recherche des Mises à Jour...";
 "kill.bottles" = "Fermer Touts les Bouteilles";
 "open.logs" = "Ouvrir le Dossier des Logs";
-"open.bottle" = "Import Bottle";
+"open.bottle" = "Importer une Bouteille";
 
 "showAlertOnFirstLaunch.messageText" = "Souhaitez-vous déplacer Whisky dans votre dossier Applications ?";
 "showAlertOnFirstLaunch.informativeText" = "Dans certains cas, Whisky ne pourra pas fonctionner correctement depuis un dossier différent";
