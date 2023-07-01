@@ -59,8 +59,6 @@
 "create.browse" = "Browse";
 "create.cancel" = "Annuleren";
 "create.create" = "Aanmaken";
-"create.warning.emptyName" = "Name can't be empty";
-"create.warning.alreadyExistsName" = "A bottle with this name already exists";
 
 "rename.title" = "Hernoem fles";
 "rename.name" = "Nieuwe naam:";
@@ -69,6 +67,7 @@
 "check.updates" = "Controleer op updates...";
 "kill.bottles" = "Kill All Bottles";
 "open.logs" = "Open Logs map";
+"open.bottle" = "Import Bottle";
 
 "showAlertOnFirstLaunch.messageText" = "Wilt u Whiskey verplaatsen naar uw map Toepassingen?";
 "showAlertOnFirstLaunch.informativeText" = "In sommige gevallen zal Whiskey niet goed kunnen functioneren vanuit een andere map";
