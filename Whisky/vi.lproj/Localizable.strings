@@ -59,8 +59,6 @@
 "create.browse" = "Duyệt";
 "create.cancel" = "Huỷ";
 "create.create" = "Tạo";
-"create.warning.emptyName" = "Tên không thể để trống";
-"create.warning.alreadyExistsName" = "Một bottle có tên này đã tồn tại";
 
 "rename.title" = "Đổi tên bottle";
 "rename.name" = "Tên mới:";
@@ -69,6 +67,7 @@
 "check.updates" = "Kiểm tra Cập nhật...";
 "kill.bottles" = "Dừng tất cả Bottle";
 "open.logs" = "Mở Folder Log";
+"open.bottle" = "Import Bottle";
 
 "showAlertOnFirstLaunch.messageText" = "Bạn có muốn chuyển Whisky tới folder Applications?";
 "showAlertOnFirstLaunch.informativeText" = "Trong một số trường hợp, Whisky sẽ không hoạt động đúng nếu không nằm trong Applications";
