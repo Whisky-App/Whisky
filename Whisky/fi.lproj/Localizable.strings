@@ -59,8 +59,6 @@
 "create.browse" = "Selaa";
 "create.cancel" = "Peru";
 "create.create" = "Luo";
-"create.warning.emptyName" = "Nimi ei voi olla tyhjä";
-"create.warning.alreadyExistsName" = "Samanniminen pullo on jo olemassa";
 
 "rename.title" = "Uudelleen nimeä pullo";
 "rename.name" = "Uusi nimi:";
@@ -69,6 +67,7 @@
 "check.updates" = "Tarkista päivitykset...";
 "kill.bottles" = "Tapa kaikki pullot";
 "open.logs" = "Avaa log kansio";
+"open.bottle" = "Import Bottle";
 
 "showAlertOnFirstLaunch.messageText" = "Haluatko siirtää Whiskyn Applikaatio-kansioon?";
 "showAlertOnFirstLaunch.informativeText" = "Joissakin tapauksissa, Whiskyn ei ole mahdollista toimia kunnolla muista kansioista";
