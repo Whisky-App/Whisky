@@ -59,8 +59,6 @@
 "create.browse" = "Обзор";
 "create.cancel" = "Отмена";
 "create.create" = "Создать";
-"create.warning.emptyName" = "Название не может быть пустым";
-"create.warning.alreadyExistsName" = "Бутылка с таким названием уже существует";
 
 "rename.title" = "Переименовать бутылку";
 "rename.name" = "Новое имя:";
@@ -69,6 +67,7 @@
 "check.updates" = "Проверить наличие обновлений...";
 "kill.bottles" = "Закрыть все бутылки";
 "open.logs" = "Открыть папку логов";
+"open.bottle" = "Import Bottle";
 
 "showAlertOnFirstLaunch.messageText" = "Вы хотите переместить Whisky в папку «Приложения»?";
 "showAlertOnFirstLaunch.informativeText" = "В некоторых случаях Whisky не сможет правильно функционировать из другой папки";
