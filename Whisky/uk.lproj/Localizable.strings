@@ -59,8 +59,6 @@
 "create.browse" = "Огляд";
 "create.cancel" = "Скасувати";
 "create.create" = "Створити";
-"create.warning.emptyName" = "Назва не може бути пустою";
-"create.warning.alreadyExistsName" = "Пляшка з таким ім'ям вже існує";
 
 "rename.title" = "Перейменувати пляшку";
 "rename.name" = "Нова назва:";
@@ -69,6 +67,7 @@
 "check.updates" = "Перевірити наявність оновлень...";
 "kill.bottles" = "Закрити всі пляшки";
 "open.logs" = "Відкрити папку журналів";
+"open.bottle" = "Import Bottle";
 
 "showAlertOnFirstLaunch.messageText" = "Хотіли б ви перемістити Whisky у вашу папку Застосунки?";
 "showAlertOnFirstLaunch.informativeText" = "У деяких випадках, Whisky може не працювати належним чином з іншої папки";
