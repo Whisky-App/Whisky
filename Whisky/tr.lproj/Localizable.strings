@@ -59,8 +59,6 @@
 "create.browse" = "Gözat";
 "create.cancel" = "İptal";
 "create.create" = "Oluştur";
-"create.warning.emptyName" = "İsim Boş Olamaz";
-"create.warning.alreadyExistsName" = "Bu İsmi Kullanan Bir Bottle Zaten Var";
 
 "rename.title" = "Bottle'ı Yeniden Adlandır";
 "rename.name" = "Yeni ad:";
@@ -69,6 +67,7 @@
 "check.updates" = "Güncellemeleri Kontrol Et...";
 "kill.bottles" = "Tüm Bottle'ları Sonlandır";
 "open.logs" = "Log Klasörünü Aç";
+"open.bottle" = "Import Bottle";
 
 "showAlertOnFirstLaunch.messageText" = "Whisky'yi Applications klasörüne taşımak ister misiniz?";
 "showAlertOnFirstLaunch.informativeText" = "Bazı durumlarda, Whisky farklı bir klasörden düzgün çalışmayabilir";
