@@ -67,7 +67,7 @@
 "check.updates" = "Tarkista päivitykset...";
 "kill.bottles" = "Tapa kaikki pullot";
 "open.logs" = "Avaa log kansio";
-"open.bottle" = "Import Bottle";
+"open.bottle" = "Tuo pullo";
 
 "showAlertOnFirstLaunch.messageText" = "Haluatko siirtää Whiskyn Applikaatio-kansioon?";
 "showAlertOnFirstLaunch.informativeText" = "Joissakin tapauksissa, Whiskyn ei ole mahdollista toimia kunnolla muista kansioista";
@@ -75,24 +75,24 @@
 "showAlertOnFirstLaunch.button.dontMove" = "Älä siirrä";
 
 "setup.welcome" = "Tervetuloa käyttämään Whiskyia";
-"setup.welcome.subtitle" = "Let's get you set up. This won't take a minute.";
+"setup.welcome.subtitle" = "Valmistellaan perusominaisuudet. Tämä vie vain hetken.";
 
-"setup.install.checking" = "Checking %@ installation...";
-"setup.install.installed" = "%@ installed";
-"setup.install.notInstalled" = "%@ not installed";
+"setup.install.checking" = "Tarkistetaan %@ asennusta...";
+"setup.install.installed" = "%@ asennettu";
+"setup.install.notInstalled" = "%@ ei asennettu";
 
-"setup.rosetta" = "Installing Rosetta";
-"setup.rosetta.subtitle" = "Rosetta allows x86 code, like Wine, to run on your Mac.";
+"setup.rosetta" = "Asennetaan Rosettaa";
+"setup.rosetta.subtitle" = "Rosetta, kuten Wine, mahdollistaa x86 koodin käyttämisen Macilläsi.";
 
-"setup.wine.download" = "Downloading Wine";
-"setup.wine.download.subtitle" = "Speeds will vary on your internet connection.";
-"setup.wine.progress" = "%@ of %@";
-"setup.wine.eta" = "- %@ remaining";
+"setup.wine.download" = "Ladataan Wine";
+"setup.wine.download.subtitle" = "Nopeus vaihtelee internetyhteytesi mukaan.";
+"setup.wine.progress" = "%@ / %@";
+"setup.wine.eta" = "- %@ jäljellä";
 
-"setup.wine.install" = "Installing Wine";
-"setup.wine.install.subtitle" = "Almost there. Don't tune out yet.";
+"setup.wine.install" = "Asennetaan Wine";
+"setup.wine.install.subtitle" = "Melkein valmista. Älä karkaa vielä.";
 
-"setup.gptk" = "Installing GPTK";
+"setup.gptk" = "Asennetaan GPTK";
 
-"alert.macos" = "Unsupported macOS Version!";
-"alert.macos.info" = "macOS Ventura is not officially support by GPTK. Issues may occur!";
+"alert.macos" = "Tukematon macOS versio!";
+"alert.macos.info" = "macOS Ventura ei ole virallisesti GPTKn tukema. Ongelmia saattaa ilmetä!";
