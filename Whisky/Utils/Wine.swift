@@ -51,7 +51,6 @@ class Wine {
             Task.detached {
                 await output.append(line)
             }
-            print(line)
             log.write(line: "\(line)", printLine: false)
         }
 
@@ -74,9 +73,15 @@ class Wine {
         }
 
         try process.run()
+        var isRunning = true
         log.write(line: "Launched Wine (\(process.processIdentifier))\n")
 
-        process.waitUntilExit()
+        while isRunning {
+            process.waitUntilExit()
+            if pipe.fileHandleForReading.availableData.count == 0 {
+                isRunning = false
+            }
+        }
         log.write(line: "Process exited with code \(process.terminationStatus)")
         _ = try pipe.fileHandleForReading.readToEnd()
 
