@@ -21,16 +21,16 @@ struct ShellLinkHeader: Hashable {
     init(url: URL, data: Data, bottle: Bottle) {
         self.url = url
         var offset: Int = 0
-        let headerSize = data.extract(UInt32.self)
+        let headerSize = data.extract(UInt32.self) ?? 0
         // Move past headerSize, and linkCLSID
         offset += 4 + 16
-        let rawLinkFlags = data.extract(UInt32.self, offset: offset)
+        let rawLinkFlags = data.extract(UInt32.self, offset: offset) ?? 0
         linkFlags = LinkFlags(rawValue: rawLinkFlags)
 
         offset = Int(headerSize)
         if linkFlags.contains(.hasLinkTargetIDList) {
             // We don't need this section so just get the size, and skip ahead
-            offset += Int(data.extract(UInt16.self, offset: offset)) + 2
+            offset += Int(data.extract(UInt16.self, offset: offset) ?? 0) + 2
         }
 
         if linkFlags.contains(.hasLinkInfo) {
@@ -62,19 +62,19 @@ struct LinkInfo: Hashable {
     init(data: Data, bottle: Bottle, offset: inout Int) {
         let startOfSection = offset
 
-        let linkInfoSize = data.extract(UInt32.self, offset: offset)
+        let linkInfoSize = data.extract(UInt32.self, offset: offset) ?? 0
 
         offset += 4
-        let linkInfoHeaderSize = data.extract(UInt32.self, offset: offset)
+        let linkInfoHeaderSize = data.extract(UInt32.self, offset: offset) ?? 0
 
         offset += 4
-        let rawLinkInfoFlags = data.extract(UInt32.self, offset: offset)
+        let rawLinkInfoFlags = data.extract(UInt32.self, offset: offset) ?? 0
         linkInfoFlags = LinkInfoFlags(rawValue: rawLinkInfoFlags)
 
         if linkInfoFlags.contains(.volumeIDAndLocalBasePath) {
             if linkInfoHeaderSize >= 0x00000024 {
                 offset += 20
-                let localBasePathOffsetUnicode = data.extract(UInt32.self, offset: offset)
+                let localBasePathOffsetUnicode = data.extract(UInt32.self, offset: offset) ?? 0
                 let localPathOffset = startOfSection + Int(localBasePathOffsetUnicode)
 
                 program = getProgram(data: data,
@@ -83,7 +83,7 @@ struct LinkInfo: Hashable {
                                      unicode: true)
             } else {
                 offset += 8
-                let localBasePathOffset = data.extract(UInt32.self, offset: offset)
+                let localBasePathOffset = data.extract(UInt32.self, offset: offset) ?? 0
                 let localPathOffset = startOfSection + Int(localBasePathOffset)
 
                 program = getProgram(data: data,

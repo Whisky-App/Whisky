@@ -30,23 +30,23 @@ struct PESection: Hashable {
         var offset = offset
         self.name = String(data: data[offset..<offset + 8], encoding: .utf8) ?? ""
         offset += 8
-        self.virtualSize = data.extract(UInt32.self, offset: offset)
+        self.virtualSize = data.extract(UInt32.self, offset: offset) ?? 0
         offset += 4
-        self.virtualAddress = data.extract(UInt32.self, offset: offset)
+        self.virtualAddress = data.extract(UInt32.self, offset: offset) ?? 0
         offset += 4
-        self.sizeOfRawData = data.extract(UInt32.self, offset: offset)
+        self.sizeOfRawData = data.extract(UInt32.self, offset: offset) ?? 0
         offset += 4
-        self.pointerToRawData = data.extract(UInt32.self, offset: offset)
+        self.pointerToRawData = data.extract(UInt32.self, offset: offset) ?? 0
         offset += 4
-        self.pointerToRelocations = data.extract(UInt32.self, offset: offset)
+        self.pointerToRelocations = data.extract(UInt32.self, offset: offset) ?? 0
         offset += 4
-        self.pointerToLineNumbers = data.extract(UInt32.self, offset: offset)
+        self.pointerToLineNumbers = data.extract(UInt32.self, offset: offset) ?? 0
         offset += 4
-        self.numberOfRelocations = data.extract(UInt16.self, offset: offset)
+        self.numberOfRelocations = data.extract(UInt16.self, offset: offset) ?? 0
         offset += 2
-        self.numberOfLineNumbers = data.extract(UInt16.self, offset: offset)
+        self.numberOfLineNumbers = data.extract(UInt16.self, offset: offset) ?? 0
         offset += 2
-        self.characteristics = data.extract(UInt32.self, offset: offset)
+        self.characteristics = data.extract(UInt32.self, offset: offset) ?? 0
         offset += 4
         if sizeOfRawData > 0 {
             let dataOffset = Int(pointerToRawData)
@@ -83,29 +83,29 @@ struct COFFFileHeader: Hashable {
 
     init(data: Data) throws {
         var offset = 0x3C
-        let peOffset = data.extract(UInt32.self, offset: offset)
+        let peOffset = data.extract(UInt32.self, offset: offset) ?? 0
         offset = Int(peOffset)
 
         offset += 4
-        let machine = data.extract(UInt16.self, offset: offset)
+        let machine = data.extract(UInt16.self, offset: offset) ?? 0
         offset += 2
 
-        let numberOfSections = data.extract(UInt16.self, offset: offset)
+        let numberOfSections = data.extract(UInt16.self, offset: offset) ?? 0
         offset += 2
 
-        let timeDateStamp = data.extract(UInt32.self, offset: offset)
+        let timeDateStamp = data.extract(UInt32.self, offset: offset) ?? 0
         offset += 4
 
-        let pointerToSymbolTable = data.extract(UInt32.self, offset: offset)
+        let pointerToSymbolTable = data.extract(UInt32.self, offset: offset) ?? 0
         offset += 4
 
-        let numberOfSymbols = data.extract(UInt32.self, offset: offset)
+        let numberOfSymbols = data.extract(UInt32.self, offset: offset) ?? 0
         offset += 4
 
-        let sizeOfOptionalHeader = data.extract(UInt16.self, offset: offset)
+        let sizeOfOptionalHeader = data.extract(UInt16.self, offset: offset) ?? 0
         offset += 2
 
-        let characteristics = data.extract(UInt16.self, offset: offset)
+        let characteristics = data.extract(UInt16.self, offset: offset) ?? 0
         offset += 2
 
         self.machine = machine
@@ -158,65 +158,65 @@ struct OptionalHeader: Hashable {
     // swiftlint:disable:next function_body_length
     init(data: Data, offset: Int) {
         var offset = offset
-        self.magic = data.extract(UInt16.self, offset: offset)
+        self.magic = data.extract(UInt16.self, offset: offset) ?? 0
         offset += 2
-        self.majorLinkerVersion = data.extract(UInt8.self, offset: offset)
+        self.majorLinkerVersion = data.extract(UInt8.self, offset: offset) ?? 0
         offset += 1
-        self.minorLinkerVersion = data.extract(UInt8.self, offset: offset)
+        self.minorLinkerVersion = data.extract(UInt8.self, offset: offset) ?? 0
         offset += 1
-        self.sizeOfCode = data.extract(UInt32.self, offset: offset)
+        self.sizeOfCode = data.extract(UInt32.self, offset: offset) ?? 0
         offset += 4
-        self.sizeOfInitializedData = data.extract(UInt32.self, offset: offset)
+        self.sizeOfInitializedData = data.extract(UInt32.self, offset: offset) ?? 0
         offset += 4
-        self.sizeOfUninitializedData = data.extract(UInt32.self, offset: offset)
+        self.sizeOfUninitializedData = data.extract(UInt32.self, offset: offset) ?? 0
         offset += 4
-        self.addressOfEntryPoint = data.extract(UInt32.self, offset: offset)
+        self.addressOfEntryPoint = data.extract(UInt32.self, offset: offset) ?? 0
         offset += 4
-        self.baseOfCode = data.extract(UInt32.self, offset: offset)
+        self.baseOfCode = data.extract(UInt32.self, offset: offset) ?? 0
         offset += 4
-        self.baseOfData = data.extract(UInt32.self, offset: offset)
+        self.baseOfData = data.extract(UInt32.self, offset: offset) ?? 0
         offset += 4
-        self.imageBase = data.extract(UInt32.self, offset: offset)
+        self.imageBase = data.extract(UInt32.self, offset: offset) ?? 0
         offset += 4
-        self.sectionAlignment = data.extract(UInt32.self, offset: offset)
+        self.sectionAlignment = data.extract(UInt32.self, offset: offset) ?? 0
         offset += 4
-        self.fileAlignment = data.extract(UInt32.self, offset: offset)
+        self.fileAlignment = data.extract(UInt32.self, offset: offset) ?? 0
         offset += 4
-        self.majorOperatingSystemVersion = data.extract(UInt16.self, offset: offset)
+        self.majorOperatingSystemVersion = data.extract(UInt16.self, offset: offset) ?? 0
         offset += 2
-        self.minorOperatingSystemVersion = data.extract(UInt16.self, offset: offset)
+        self.minorOperatingSystemVersion = data.extract(UInt16.self, offset: offset) ?? 0
         offset += 2
-        self.majorImageVersion = data.extract(UInt16.self, offset: offset)
+        self.majorImageVersion = data.extract(UInt16.self, offset: offset) ?? 0
         offset += 2
-        self.minorImageVersion = data.extract(UInt16.self, offset: offset)
+        self.minorImageVersion = data.extract(UInt16.self, offset: offset) ?? 0
         offset += 2
-        self.majorSubsystemVersion = data.extract(UInt16.self, offset: offset)
+        self.majorSubsystemVersion = data.extract(UInt16.self, offset: offset) ?? 0
         offset += 2
-        self.minorSubsystemVersion = data.extract(UInt16.self, offset: offset)
+        self.minorSubsystemVersion = data.extract(UInt16.self, offset: offset) ?? 0
         offset += 2
-        self.win32VersionValue = data.extract(UInt32.self, offset: offset)
+        self.win32VersionValue = data.extract(UInt32.self, offset: offset) ?? 0
         offset += 4
-        self.sizeOfImage = data.extract(UInt32.self, offset: offset)
+        self.sizeOfImage = data.extract(UInt32.self, offset: offset) ?? 0
         offset += 4
-        self.sizeOfHeaders = data.extract(UInt32.self, offset: offset)
+        self.sizeOfHeaders = data.extract(UInt32.self, offset: offset) ?? 0
         offset += 4
-        self.checkSum = data.extract(UInt32.self, offset: offset)
+        self.checkSum = data.extract(UInt32.self, offset: offset) ?? 0
         offset += 4
-        self.subsystem = data.extract(UInt16.self, offset: offset)
+        self.subsystem = data.extract(UInt16.self, offset: offset) ?? 0
         offset += 2
-        self.dllCharacteristics = data.extract(UInt16.self, offset: offset)
+        self.dllCharacteristics = data.extract(UInt16.self, offset: offset) ?? 0
         offset += 2
-        self.sizeOfStackReserve = data.extract(UInt32.self, offset: offset)
+        self.sizeOfStackReserve = data.extract(UInt32.self, offset: offset) ?? 0
         offset += 4
-        self.sizeOfStackCommit = data.extract(UInt32.self, offset: offset)
+        self.sizeOfStackCommit = data.extract(UInt32.self, offset: offset) ?? 0
         offset += 4
-        self.sizeOfHeapReserve = data.extract(UInt32.self, offset: offset)
+        self.sizeOfHeapReserve = data.extract(UInt32.self, offset: offset) ?? 0
         offset += 4
-        self.sizeOfHeapCommit = data.extract(UInt32.self, offset: offset)
+        self.sizeOfHeapCommit = data.extract(UInt32.self, offset: offset) ?? 0
         offset += 4
-        self.loaderFlags = data.extract(UInt32.self, offset: offset)
+        self.loaderFlags = data.extract(UInt32.self, offset: offset) ?? 0
         offset += 4
-        self.numberOfRvaAndSizes = data.extract(UInt32.self, offset: offset)
+        self.numberOfRvaAndSizes = data.extract(UInt32.self, offset: offset) ?? 0
     }
 }
 
@@ -226,7 +226,7 @@ struct PEFile: Hashable {
 
     init(data: Data) throws {
         // Verify it is a PE file by checking for the PE header
-        let offsetToPEHeader = data.extract(UInt32.self, offset: 0x3C)
+        let offsetToPEHeader = data.extract(UInt32.self, offset: 0x3C) ?? 0
         let peHeader = data.extract(UInt32.self, offset: Int(offsetToPEHeader))
         guard peHeader == 0x4550 else {
             throw PEError.invalidPEFile

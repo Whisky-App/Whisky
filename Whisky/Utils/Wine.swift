@@ -51,6 +51,7 @@ class Wine {
             Task.detached {
                 await output.append(line)
             }
+            print(line)
             log.write(line: "\(line)", printLine: false)
         }
 

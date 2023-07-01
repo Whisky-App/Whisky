@@ -15,9 +15,9 @@ struct ResourceDirectoryEntry: Hashable {
     init(data: Data, offset: Int) {
         var offset = offset
         // Can be name or ID
-        self.id = data.extract(UInt32.self, offset: offset)
+        self.id = data.extract(UInt32.self, offset: offset) ?? 0
         offset += 4
-        self.offsetToData = data.extract(UInt32.self, offset: offset)
+        self.offsetToData = data.extract(UInt32.self, offset: offset) ?? 0
         offset += 4
 
         self.dataIsDirectory = (offsetToData & 0x80000000) != 0
@@ -34,13 +34,13 @@ struct ResourceDataEntry: Hashable {
 
     init(data: Data, offset: Int, sectionTable: SectionTable) {
         var offset = offset
-        self.dataRVA = data.extract(UInt32.self, offset: offset)
+        self.dataRVA = data.extract(UInt32.self, offset: offset) ?? 0
         offset += 4
-        self.size = data.extract(UInt32.self, offset: offset)
+        self.size = data.extract(UInt32.self, offset: offset) ?? 0
         offset += 4
-        self.codePage = data.extract(UInt32.self, offset: offset)
+        self.codePage = data.extract(UInt32.self, offset: offset) ?? 0
         offset += 4
-        self.reserved = data.extract(UInt32.self, offset: offset)
+        self.reserved = data.extract(UInt32.self, offset: offset) ?? 0
         offset += 4
 
         if let offsetToData = resolveRVA(data: data, rva: dataRVA, sectionTable: sectionTable) {
@@ -84,17 +84,17 @@ struct ResourceDirectoryTable: Hashable {
          entries: inout [ResourceDataEntry],
          depth: Int = 0) {
         var offset = offset
-        self.characteristics = data.extract(UInt32.self, offset: offset)
+        self.characteristics = data.extract(UInt32.self, offset: offset) ?? 0
         offset += 4
-        self.timeDateStamp = data.extract(UInt32.self, offset: offset)
+        self.timeDateStamp = data.extract(UInt32.self, offset: offset) ?? 0
         offset += 4
-        self.majorVersion = data.extract(UInt16.self, offset: offset)
+        self.majorVersion = data.extract(UInt16.self, offset: offset) ?? 0
         offset += 2
-        self.minorVersion = data.extract(UInt16.self, offset: offset)
+        self.minorVersion = data.extract(UInt16.self, offset: offset) ?? 0
         offset += 2
-        self.numberOfNamedEntries = data.extract(UInt16.self, offset: offset)
+        self.numberOfNamedEntries = data.extract(UInt16.self, offset: offset) ?? 0
         offset += 2
-        self.numberOfIdEntries = data.extract(UInt16.self, offset: offset)
+        self.numberOfIdEntries = data.extract(UInt16.self, offset: offset) ?? 0
         offset += 2
         self.subtables = []
         self.entries = []

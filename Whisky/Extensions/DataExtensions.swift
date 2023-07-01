@@ -8,9 +8,13 @@
 import Foundation
 
 extension Data {
-    func extract<T>(_ type: T.Type, offset: Int = 0) -> T {
-        let data = self[offset..<offset + MemoryLayout<T>.size]
-        return data.withUnsafeBytes { $0.loadUnaligned(as: T.self) }
+    func extract<T>(_ type: T.Type, offset: Int = 0) -> T? {
+        if offset + MemoryLayout<T>.size < self.count {
+            let data = self[offset..<offset + MemoryLayout<T>.size]
+            return data.withUnsafeBytes { $0.loadUnaligned(as: T.self) }
+        } else {
+            return nil
+        }
     }
 
     // Thanks ChatGPT
