@@ -59,8 +59,6 @@
 "create.browse" = "Browse";
 "create.cancel" = "Cancelar";
 "create.create" = "Criar";
-"create.warning.emptyName" = "O nome não pode ser vazio";
-"create.warning.alreadyExistsName" = "Uma Bottle com este nome já existe";
 
 "rename.title" = "Alterar nome da Bottle";
 "rename.name" = "Novo nome:";
@@ -69,6 +67,7 @@
 "check.updates" = "Verificar Actualizações...";
 "kill.bottles" = "Encerrar Todos os Bottles";
 "open.logs" = "Abrir Pasta dos Logs";
+"open.bottle" = "Import Bottle";
 
 "showAlertOnFirstLaunch.messageText" = "Gostaria de mover o Whisky para a pasta das Aplicações ?";
 "showAlertOnFirstLaunch.informativeText" = "Em alguns casos, o Whisky pode não funcionar corretamente numa pasta diferente";
