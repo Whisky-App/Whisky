@@ -67,7 +67,7 @@
 "check.updates" = "更新を確認...";
 "kill.bottles" = "すべての Bottle を終了";
 "open.logs" = "ログフォルダを開く";
-"open.bottle" = "Import Bottle";
+"open.bottle" = "Bottle をインポート";
 
 "showAlertOnFirstLaunch.messageText" = "Whisky を「アプリケーション」フォルダに移動しますか？";
 "showAlertOnFirstLaunch.informativeText" = "場合によっては、異なるフォルダから Whisky を適切に使用できない場合があります";
