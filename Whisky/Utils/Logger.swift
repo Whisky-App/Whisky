@@ -54,6 +54,7 @@ class Log {
         if let bottle = bottle {
             header += "Bottle Name: \(bottle.settings.name)\n"
             header += "Wine Version: \(bottle.settings.wineVersion)\n"
+            header += "Wine Binary Version: \(WineInstaller.WineBinaryVersion)\n"
             header += "Windows Version: \(bottle.settings.windowsVersion)\n"
             header += "Bottle URL: \(bottle.url.path)\n\n"
         }
