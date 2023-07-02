@@ -6,8 +6,8 @@
 "tab.navTitle.programs" = "Programas de %@";
 "tab.navTitle.info" = "Información de %@";
 
-"main.noneSelected" = "Select a bottle";
-"main.createFirst" = "Create your first bottle to get started";
+"main.noneSelected" = "Selecciona un Contenedor";
+"main.createFirst" = "Crea tu primer contenedor para comenzar";
 
 "button.cDrive" = "Abrir \"Unidad C\"";
 "button.showInFinder" = "Mostrar en Finder";
@@ -32,7 +32,7 @@
 "config.controlPanel" = "Abrir Panel de Control";
 "config.regedit" = "Abrir Editor de Registro";
 "config.winecfg" = "Abrir configuración de Wine";
-"config.notAvailable" = "N/A";
+"config.notAvailable" = "No disponible";
 
 "program.title" = "Programas Instalados";
 "program.env" = "Variables de Entorno";
@@ -42,7 +42,7 @@
 "info.title" = "Información";
 "info.path" = "Ruta";
 "info.path.copy" = "Copiar Ruta";
-"info.winPath.copy" = "Copy Windows Path";
+"info.winPath.copy" = "Copiar ubicación de Windows";
 "info.wine" = "Versión de Wine:";
 "info.win" = "Versión de Windows:";
 
@@ -55,8 +55,8 @@
 "create.title" = "Crear un nuevo Contenedor";
 "create.name" = "Nombre del Contenedor:";
 "create.win" = "Versión de Windows:";
-"create.path" = "Bottle path:";
-"create.browse" = "Browse";
+"create.path" = "Ubicación del Contenedor:";
+"create.browse" = "Explorar";
 "create.cancel" = "Cancelar";
 "create.create" = "Crear";
 
@@ -67,7 +67,7 @@
 "check.updates" = "Buscar actualizaciones...";
 "kill.bottles" = "Detener todas las Botellas";
 "open.logs" = "Abrir carpeta de registros";
-"open.bottle" = "Import Bottle";
+"open.bottle" = "Importar Contenedor";
 
 "showAlertOnFirstLaunch.messageText" = "¿Te gustaría mover Whisky a la carpeta de Aplicaciones?";
 "showAlertOnFirstLaunch.informativeText" = "En algunos casos, Whisky podría no funcionar correctamente desde una carpeta diferente";
@@ -75,22 +75,22 @@
 "showAlertOnFirstLaunch.button.dontMove" = "No Mover";
 
 "setup.welcome" = "Bienvenido a Whisky";
-"setup.welcome.subtitle" = "Let's get you set up. This won't take a minute.";
+"setup.welcome.subtitle" = "Vamos a configurar. Sólo tomará un minuto.";
 
-"setup.install.checking" = "Checking %@ installation...";
-"setup.install.installed" = "%@ installed";
-"setup.install.notInstalled" = "%@ not installed";
+"setup.install.checking" = "Comprobando la instalación %@...";
+"setup.install.installed" = "%@ instalado";
+"setup.install.notInstalled" = "%@ instalado";
 
-"setup.rosetta" = "Installing Rosetta";
-"setup.rosetta.subtitle" = "Rosetta allows x86 code, like Wine, to run on your Mac.";
+"setup.rosetta" = "Instalando Rosetta";
+"setup.rosetta.subtitle" = "Rosetta permite que programas de arquitectura x86 (Wine por ejemplo) funcionen en tu Mac.";
 
 "setup.wine.download" = "Descargando Wine";
-"setup.wine.download.subtitle" = "Speeds will vary on your internet connection.";
-"setup.wine.progress" = "%@ of %@";
-"setup.wine.eta" = "- %@ remaining";
+"setup.wine.download.subtitle" = "La velocidad de descarga varía según tu conexión a Internet.";
+"setup.wine.progress" = "%@ de %@";
+"setup.wine.eta" = "- %@ restante";
 
 "setup.wine.install" = "Instalando Wine";
-"setup.wine.install.subtitle" = "Almost there. Don't tune out yet.";
+"setup.wine.install.subtitle" = "Un momento, ya casi está.";
 
 "setup.gptk" = "Instalando GPTK";
 
