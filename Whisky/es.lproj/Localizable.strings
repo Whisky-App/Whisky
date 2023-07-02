@@ -94,5 +94,5 @@
 
 "setup.gptk" = "Instalando GPTK";
 
-"alert.macos" = "Unsupported macOS Version!";
-"alert.macos.info" = "macOS Ventura is not officially support by GPTK. Issues may occur!";
+"alert.macos" = "No compatible con esta versión de macOS";
+"alert.macos.info" = "Game Porting Tool Kit no ofrece soporte oficial para macOS Ventura. Pueden ocurrir problemas!";
