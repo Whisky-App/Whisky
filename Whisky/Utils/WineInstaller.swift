@@ -39,9 +39,7 @@ class WineInstaller {
                 .appendingPathComponent("Libraries")
                 .appendingPathExtension("tar")
                 .appendingPathExtension("gz")
-            let wineInstallFolder = libraryFolder.appendingPathComponent("Wine")
-            try FileManager.default.createDirectory(at: wineInstallFolder, withIntermediateDirectories: true)
-            try Tar.untar(tarBall: tarFile, toURL: wineInstallFolder)
+            try Tar.untar(tarBall: tarFile, toURL: whiskySupportFolder)
             try FileManager.default.removeItem(at: tarFile)
 
             // Write the binary version to the build_version file
