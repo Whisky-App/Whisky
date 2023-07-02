@@ -121,6 +121,9 @@ public class Bottle: Hashable, Identifiable {
     @MainActor
     func delete() {
         do {
+            if let bottle = BottleVM.shared.bottles.first(where: { $0.url == url}) {
+                bottle.inFlight = true
+            }
             try FileManager.default.removeItem(at: url)
             if let path = BottleVM.shared.bottlesList.paths.firstIndex(of: url) {
                 BottleVM.shared.bottlesList.paths.remove(at: path)
