@@ -8,6 +8,10 @@
 import Foundation
 import SemanticVersion
 
+enum DXVKHUD: Codable {
+    case full, partial, fps, off
+}
+
 struct Shortcut: Codable {
     var name: String
     var link: URL
@@ -21,29 +25,37 @@ struct BottleInfo: Codable {
 struct BottleWineConfig: Codable {
     var wineVersion: SemanticVersion = SemanticVersion(7, 7, 0)
     var windowsVersion: WinVersion = .win10
+    var esync: Bool = false
 }
 
-struct BottleGameToolkitConfig: Codable {
+struct BottleMetalConfig: Codable {
     var metalHud: Bool = false
     var metalTrace: Bool = false
-    var esync: Bool = false
+}
+
+struct BottleDXVKConfig: Codable {
+    var dxvk: Bool = false
+    var dxvkHud: DXVKHUD = .off
 }
 
 struct BottleMetadata: Codable {
     var fileVersion: SemanticVersion = SemanticVersion(1, 0, 0)
     var info: BottleInfo = .init()
     var wineConfig: BottleWineConfig = .init()
-    var gameToolkitConfig: BottleGameToolkitConfig = .init()
+    var metalConfig: BottleMetalConfig = .init()
+    var dxvkConfig: BottleDXVKConfig = .init()
 }
 
 class BottleSettings {
     private let bottleUrl: URL
     private let metadataUrl: URL
+
     var settings: BottleMetadata {
         didSet {
             encode()
         }
     }
+
     var wineVersion: SemanticVersion {
         get {
             return settings.wineConfig.wineVersion
@@ -52,6 +64,7 @@ class BottleSettings {
             settings.wineConfig.wineVersion = newValue
         }
     }
+
     var windowsVersion: WinVersion {
         get {
             return settings.wineConfig.windowsVersion
@@ -60,30 +73,52 @@ class BottleSettings {
             settings.wineConfig.windowsVersion = newValue
         }
     }
-    var metalHud: Bool {
-        get {
-            return settings.gameToolkitConfig.metalHud
-        }
-        set {
-            settings.gameToolkitConfig.metalHud = newValue
-        }
-    }
-    var metalTrace: Bool {
-        get {
-            return settings.gameToolkitConfig.metalTrace
-        }
-        set {
-            settings.gameToolkitConfig.metalTrace = newValue
-        }
-    }
+
     var esync: Bool {
         get {
-            return settings.gameToolkitConfig.esync
+            return settings.wineConfig.esync
         }
         set {
-            settings.gameToolkitConfig.esync = newValue
+            settings.wineConfig.esync = newValue
         }
     }
+
+    var metalHud: Bool {
+        get {
+            return settings.metalConfig.metalHud
+        }
+        set {
+            settings.metalConfig.metalHud = newValue
+        }
+    }
+
+    var metalTrace: Bool {
+        get {
+            return settings.metalConfig.metalTrace
+        }
+        set {
+            settings.metalConfig.metalTrace = newValue
+        }
+    }
+
+    var dxvk: Bool {
+        get {
+            return settings.dxvkConfig.dxvk
+        }
+        set {
+            settings.dxvkConfig.dxvk = newValue
+        }
+    }
+
+    var dxvkHud: DXVKHUD {
+        get {
+            return settings.dxvkConfig.dxvkHud
+        }
+        set {
+            settings.dxvkConfig.dxvkHud = newValue
+        }
+    }
+
     var name: String {
         get {
             return settings.info.name
@@ -91,6 +126,7 @@ class BottleSettings {
             settings.info.name = newValue
         }
     }
+
     var shortcuts: [Shortcut] {
         get {
             return settings.info.shortcuts
@@ -99,6 +135,7 @@ class BottleSettings {
             settings.info.shortcuts = newValue
         }
     }
+
     init(bottleURL: URL) {
         bottleUrl = bottleURL
         metadataUrl = bottleURL
@@ -109,6 +146,7 @@ class BottleSettings {
             encode()
         }
     }
+
     @discardableResult
     public func decode() -> Bool {
         let decoder = PropertyListDecoder()
@@ -145,6 +183,20 @@ class BottleSettings {
     }
 
     func environmentVariables(environment: inout [String: String]) {
+        if dxvk {
+            environment.updateValue("dxgi,d3d9,d3d10core,d3d11=n,b", forKey: "WINEDLLOVERRIDES")
+            switch dxvkHud {
+            case .full:
+                environment.updateValue("full", forKey: "DXVK_HUD")
+            case .partial:
+                environment.updateValue("devinfo,fps,frametimes", forKey: "DXVK_HUD")
+            case .fps:
+                environment.updateValue("fps", forKey: "DXVK_HUD")
+            case .off:
+                break
+            }
+        }
+
         if esync {
             environment.updateValue("1", forKey: "WINEESYNC")
         }

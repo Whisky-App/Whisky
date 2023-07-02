@@ -73,6 +73,18 @@ struct ConfigView: View {
                             }.disabled(buildVersionLoadingState == LoadingState.modifying)
                     }
                 }
+                Section("config.title.dxvk") {
+                    Toggle(isOn: $bottle.settings.dxvk) {
+                        Text("config.dxvk")
+                    }
+                    Picker("config.dxvkHud", selection: $bottle.settings.dxvkHud) {
+                        Text("config.dxvkHud.full").tag(DXVKHUD.full)
+                        Text("config.dxvkHud.partial").tag(DXVKHUD.partial)
+                        Text("config.dxvkHud.fps").tag(DXVKHUD.fps)
+                        Text("config.dxvkHud.off").tag(DXVKHUD.off)
+                    }
+                    .disabled(!bottle.settings.dxvk)
+                }
                 Section("config.title.metal") {
                     Toggle(isOn: $bottle.settings.metalHud) {
                         Text("config.metalHud")
