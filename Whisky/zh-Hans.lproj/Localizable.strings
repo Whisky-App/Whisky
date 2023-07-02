@@ -59,8 +59,6 @@
 "create.browse" = "浏览";
 "create.cancel" = "取消";
 "create.create" = "创建";
-"create.warning.emptyName" = "名称不能为空";
-"create.warning.alreadyExistsName" = "同名容器已存在";
 
 "rename.title" = "重命名容器";
 "rename.name" = "新名称：";
@@ -69,6 +67,7 @@
 "check.updates" = "检查更新...";
 "kill.bottles" = "结束所有容器";
 "open.logs" = "打开日志文件夹";
+"open.bottle" = "Import Bottle";
 
 "showAlertOnFirstLaunch.messageText" = "你想要将 Whisky 移动到你的应用程序文件夹吗？";
 "showAlertOnFirstLaunch.informativeText" = "在某些情况下，Whisky 可能无法在另外的文件夹中正常工作";

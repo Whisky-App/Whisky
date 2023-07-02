@@ -60,8 +60,6 @@
 "create.browse" = "瀏覽";
 "create.cancel" = "取消";
 "create.create" = "建立";
-"create.warning.emptyName" = "名稱不能為空";
-"create.warning.alreadyExistsName" = "已存在同名容器";
 
 "rename.title" = "重新命名容器";
 "rename.name" = "新名稱：";
@@ -70,6 +68,7 @@
 "check.updates" = "檢查更新...";
 "kill.bottles" = "終止所有容器";
 "open.logs" = "開啟日誌資料夾";
+"open.bottle" = "Import Bottle";
 
 "showAlertOnFirstLaunch.messageText" = "你希望將 Whisky 移動到你的應用程式資料夾嗎？";
 "showAlertOnFirstLaunch.informativeText" = "在某些情況下，Whisky 可能無法在不同的資料夾中正常運作";

@@ -59,8 +59,6 @@
 "create.browse" = "Gennemse";
 "create.cancel" = "Annuller";
 "create.create" = "Opret";
-"create.warning.emptyName" = "Navn må ikke være tomt";
-"create.warning.alreadyExistsName" = "Der findes allerede en Bottle med dette navn";
 
 "rename.title" = "Omdøb bottle";
 "rename.name" = "Nyt navn:";
@@ -69,6 +67,7 @@
 "check.updates" = "Tjek for Opdateringer...";
 "kill.bottles" = "Dræb Alle Bottles";
 "open.logs" = "Åbn Logmappe";
+"open.bottle" = "Import Bottle";
 
 "showAlertOnFirstLaunch.messageText" = "Vil du flytte Whisky til Applications mappen?";
 "showAlertOnFirstLaunch.informativeText" = "I nogle tilfælde vil Whisky ikke være i stand til at fungere korrekt fra en anden mappe";

@@ -59,8 +59,6 @@
 "create.browse" = "変更...";
 "create.cancel" = "キャンセル";
 "create.create" = "作成";
-"create.warning.emptyName" = "名前を空にすることはできません";
-"create.warning.alreadyExistsName" = "同名の Bottle が存在します";
 
 "rename.title" = "Bottle の名前を変更";
 "rename.name" = "新しい名前:";
@@ -69,6 +67,7 @@
 "check.updates" = "更新を確認...";
 "kill.bottles" = "すべての Bottle を終了";
 "open.logs" = "ログフォルダを開く";
+"open.bottle" = "Bottle をインポート";
 
 "showAlertOnFirstLaunch.messageText" = "Whisky を「アプリケーション」フォルダに移動しますか？";
 "showAlertOnFirstLaunch.informativeText" = "場合によっては、異なるフォルダから Whisky を適切に使用できない場合があります";
