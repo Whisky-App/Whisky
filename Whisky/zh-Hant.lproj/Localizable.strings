@@ -34,6 +34,13 @@
 "config.regedit" = "開啟註冊表編輯器";
 "config.winecfg" = "開啟 Wine 設置";
 "config.notAvailable" = "不適用";
+"config.title.dxvk" = "DXVK";
+"config.dxvk" = "DXVK";
+"config.dxvkHud" = "DXVK HUD";
+"config.dxvkHud.full" = "Full";
+"config.dxvkHud.partial" = "Partial";
+"config.dxvkHud.fps" = "FPS";
+"config.dxvkHud.off" = "Off";
 
 "program.title" = "已安裝的程式";
 "program.env" = "環境變數";
