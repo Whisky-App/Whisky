@@ -51,7 +51,7 @@ class BottleVM: ObservableObject {
     func createNewBottle(bottleName: String, winVersion: WinVersion, bottleURL: URL) -> URL {
         let newBottleDir = bottleURL.appendingPathComponent(UUID().uuidString)
 
-        Task(priority: .userInitiated) {
+        Task.detached { @MainActor in
             var bottleId: Bottle? = .none
             do {
                 if !FileManager.default.fileExists(atPath: BottleVM.bottleDir.path) {
@@ -63,8 +63,8 @@ class BottleVM: ObservableObject {
                 let bottle = Bottle(bottleUrl: newBottleDir, inFlight: true)
                 bottleId = .some(bottle)
 
-                bottles.append(bottle)
-                bottles.sortByName()
+                self.bottles.append(bottle)
+                self.bottles.sortByName()
 
                 bottle.settings.windowsVersion = winVersion
                 bottle.settings.name = bottleName
@@ -73,12 +73,12 @@ class BottleVM: ObservableObject {
                 bottle.settings.wineVersion = SemanticVersion(wineVer) ?? SemanticVersion(0, 0, 0)
                 // Add record
                 self.bottlesList.paths.append(newBottleDir)
-                await loadBottles()
+                self.loadBottles()
             } catch {
                 print("Failed to create new bottle: \(error)")
                 if let bottle = bottleId {
-                    if let index = bottles.firstIndex(of: bottle) {
-                        bottles.remove(at: index)
+                    if let index = self.bottles.firstIndex(of: bottle) {
+                        self.bottles.remove(at: index)
                     }
                 }
             }
