@@ -52,6 +52,19 @@ class WineInstaller {
         }
     }
 
+    static func uninstallWine() {
+        let libraryFolder = FileManager.default.urls(for: .applicationSupportDirectory,
+                                                           in: .userDomainMask)[0]
+            .appendingPathComponent(Bundle.main.bundleIdentifier ?? "com.isaacmarovitz.Whisky")
+            .appendingPathComponent("Libraries")
+
+        do {
+            try FileManager.default.removeItem(at: libraryFolder)
+        } catch {
+            print("Failed to uninstall Wine: \(error)")
+        }
+    }
+
     static func shouldUpdateWine() -> Bool {
         // Read the build version from the Wine directory
         let buildVersionFile = WineInstaller.libraryFolder.appendingPathComponent("build_version")

@@ -101,6 +101,7 @@ struct ContentView: View {
             bottleVM.loadBottles()
             bottlesLoaded = true
             if WineInstaller.shouldUpdateWine() {
+                WineInstaller.uninstallWine()
                 showSetup = true
             }
             if ProcessInfo().operatingSystemVersion.majorVersion < 14 {
