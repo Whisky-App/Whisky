@@ -33,6 +33,13 @@
 "config.regedit" = "Apri Editor dei Registri";
 "config.winecfg" = "Apri Configurazione Wine";
 "config.notAvailable" = "N/A";
+"config.title.dxvk" = "DXVK";
+"config.dxvk" = "DXVK";
+"config.dxvkHud" = "DXVK HUD";
+"config.dxvkHud.full" = "Full";
+"config.dxvkHud.partial" = "Partial";
+"config.dxvkHud.fps" = "FPS";
+"config.dxvkHud.off" = "Off";
 
 "program.title" = "Programmi Installati";
 "program.env" = "Variabili d'Ambiente";
