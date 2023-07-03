@@ -34,6 +34,13 @@
 "config.regedit" = "開啟註冊表編輯器";
 "config.winecfg" = "開啟 Wine 設置";
 "config.notAvailable" = "不適用";
+"config.title.dxvk" = "DXVK";
+"config.dxvk" = "DXVK";
+"config.dxvkHud" = "DXVK HUD";
+"config.dxvkHud.full" = "全開";
+"config.dxvkHud.partial" = "部份";
+"config.dxvkHud.fps" = "幀數";
+"config.dxvkHud.off" = "關閉";
 
 "program.title" = "已安裝的程式";
 "program.env" = "環境變數";
@@ -68,7 +75,7 @@
 "check.updates" = "檢查更新...";
 "kill.bottles" = "終止所有容器";
 "open.logs" = "開啟日誌資料夾";
-"open.bottle" = "Import Bottle";
+"open.bottle" = "导入容器";
 
 "showAlertOnFirstLaunch.messageText" = "你希望將 Whisky 移動到你的應用程式資料夾嗎？";
 "showAlertOnFirstLaunch.informativeText" = "在某些情況下，Whisky 可能無法在不同的資料夾中正常運作";

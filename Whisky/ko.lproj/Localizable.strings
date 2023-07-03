@@ -33,6 +33,13 @@
 "config.regedit" = "레지스트리 편집기 열기";
 "config.winecfg" = "Wine 설정 열기";
 "config.notAvailable" = "사용 불가";
+"config.title.dxvk" = "DXVK";
+"config.dxvk" = "DXVK";
+"config.dxvkHud" = "DXVK HUD";
+"config.dxvkHud.full" = "Full";
+"config.dxvkHud.partial" = "Partial";
+"config.dxvkHud.fps" = "FPS";
+"config.dxvkHud.off" = "Off";
 
 "program.title" = "설치된 프로그램";
 "program.env" = "환경 변수";

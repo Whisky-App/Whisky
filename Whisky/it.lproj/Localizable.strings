@@ -33,6 +33,13 @@
 "config.regedit" = "Apri Editor dei Registri";
 "config.winecfg" = "Apri Configurazione Wine";
 "config.notAvailable" = "N/A";
+"config.title.dxvk" = "DXVK";
+"config.dxvk" = "DXVK";
+"config.dxvkHud" = "DXVK HUD";
+"config.dxvkHud.full" = "Completo";
+"config.dxvkHud.partial" = "Parziale";
+"config.dxvkHud.fps" = "FPS";
+"config.dxvkHud.off" = "Off";
 
 "program.title" = "Programmi Installati";
 "program.env" = "Variabili d'Ambiente";
@@ -67,7 +74,7 @@
 "check.updates" = "Controlla aggiornamenti...";
 "kill.bottles" = "Termina tutte le Bottiglie";
 "open.logs" = "Apri la cartella dei log";
-"open.bottle" = "Import Bottle";
+"open.bottle" = "Importa Bottiglia";
 
 "showAlertOnFirstLaunch.messageText" = "Vuoi spostare Whisky nella tua cartella Applicazioni?";
 "showAlertOnFirstLaunch.informativeText" = "In alcuni casi, Whisky non potrà funzionare correttamente da un cartella diversa";

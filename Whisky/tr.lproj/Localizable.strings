@@ -33,6 +33,13 @@
 "config.regedit" = "Kayıt Düzenleyicisi'ni Aç";
 "config.winecfg" = "Wine Yapılandırmasını Aç";
 "config.notAvailable" = "Mevcut değil";
+"config.title.dxvk" = "DXVK";
+"config.dxvk" = "DXVK";
+"config.dxvkHud" = "DXVK HUD";
+"config.dxvkHud.full" = "Full";
+"config.dxvkHud.partial" = "Partial";
+"config.dxvkHud.fps" = "FPS";
+"config.dxvkHud.off" = "Off";
 
 "program.title" = "Yüklenmiş Programlar";
 "program.env" = "Ortam Değişkenleri";
@@ -67,7 +74,7 @@
 "check.updates" = "Güncellemeleri Kontrol Et...";
 "kill.bottles" = "Tüm Bottle'ları Sonlandır";
 "open.logs" = "Log Klasörünü Aç";
-"open.bottle" = "Import Bottle";
+"open.bottle" = "Bottle'ı İçeri Aktarın";
 
 "showAlertOnFirstLaunch.messageText" = "Whisky'yi Applications klasörüne taşımak ister misiniz?";
 "showAlertOnFirstLaunch.informativeText" = "Bazı durumlarda, Whisky farklı bir klasörden düzgün çalışmayabilir";
@@ -86,8 +93,8 @@
 
 "setup.wine.download" = "Wine İndiriliyor";
 "setup.wine.download.subtitle" = "Yükleme hızı internet bağlantınıza göre değişecektir.";
-"setup.wine.progress" = "%@ of %@";
-"setup.wine.eta" = "- %@ remaining";
+"setup.wine.progress" = "%@'nin %@'si";
+"setup.wine.eta" = "-%@ kaldı";
 
 "setup.wine.install" = "Wine Yükleniyor";
 "setup.wine.install.subtitle" = "Bitmek üzere. Lütfen Kapatmayınız.";
