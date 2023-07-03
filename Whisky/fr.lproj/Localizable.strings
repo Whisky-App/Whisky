@@ -39,7 +39,7 @@
 "config.dxvkHud.full" = "Détaillé";
 "config.dxvkHud.partial" = "Partiel";
 "config.dxvkHud.fps" = "IPS";
-"config.dxvkHud.off" = "Off";
+"config.dxvkHud.off" = "Désactivé";
 
 "program.title" = "Programmes Installés";
 "program.env" = "Variables d'Environnement";
