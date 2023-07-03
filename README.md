@@ -34,7 +34,7 @@ Translated on [Crowdin](https://crowdin.com/project/whisky).
 # Homebrew
 
 Whisky is on homebrew! Install with 
-`brew install whisky`.
+`brew install --cask whisky`.
 
 ---
 
