@@ -35,10 +35,10 @@
 "config.notAvailable" = "N/A";
 "config.title.dxvk" = "DXVK";
 "config.dxvk" = "DXVK";
-"config.dxvkHud" = "DXVK HUD";
-"config.dxvkHud.full" = "Full";
-"config.dxvkHud.partial" = "Partial";
-"config.dxvkHud.fps" = "FPS";
+"config.dxvkHud" = "HUD DXVK";
+"config.dxvkHud.full" = "Détaillé";
+"config.dxvkHud.partial" = "Partiel";
+"config.dxvkHud.fps" = "IPS";
 "config.dxvkHud.off" = "Off";
 
 "program.title" = "Programmes Installés";
