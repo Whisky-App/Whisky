@@ -1,13 +1,13 @@
 "tab.config" = "설정";
 "tab.programs" = "프로그램";
-"tab.info" = "(카모마일 번역에 의해 번역됨) 정보";
+"tab.info" = "정보";
 
 "tab.navTitle.config" = "%@ 설정";
 "tab.navTitle.programs" = "%@ 프로그램";
 "tab.navTitle.info" = "%@ 정보";
 
-"main.noneSelected" = "병 선택";
-"main.createFirst" = "첫 번째 보틀을 만들어 시작하기";
+"main.noneSelected" = "Bottle을 선택하세요";
+"main.createFirst" = "첫 번째 Bottle을 만들어 시작하기";
 
 "button.cDrive" = "C 드라이브 열기";
 "button.showInFinder" = "Finder에서 열기";
@@ -26,7 +26,7 @@
 "config.title.metal" = "Metal";
 "config.metalHud" = "Metal HUD";
 "config.metalTrace" = "Metal Trace";
-"config.retinaMode" = "망막 모드";
+"config.retinaMode" = "Retina 모드";
 "config.metalTrace.info" = "Xcode에서 GPU 워크로드를 확인할 수 있습니다.";
 "config.esync" = "ESync";
 "config.controlPanel" = "제어판 열기";
@@ -35,11 +35,11 @@
 "config.notAvailable" = "사용 불가";
 "config.title.dxvk" = "DXVK";
 "config.dxvk" = "DXVK";
-"config.dxvkHud" = "DXVK HUD";
-"config.dxvkHud.full" = "Full";
-"config.dxvkHud.partial" = "Partial";
+"config.dxvkHud" = "DXVK";
+"config.dxvkHud.full" = "전체";
+"config.dxvkHud.partial" = "일부";
 "config.dxvkHud.fps" = "FPS";
-"config.dxvkHud.off" = "Off";
+"config.dxvkHud.off" = "끄기";
 
 "program.title" = "설치된 프로그램";
 "program.env" = "환경 변수";
@@ -56,14 +56,14 @@
 "gptkalert.init" = "Game Porting Toolkit DMG를 끌어다 놓으세요";
 "gptkalert.message" = "GPTK에서 오류가 발생했습니다!";
 
-"alert.message" = "프로그램을 여는데 실패했습니다!";
+"alert.message" = "프로그램을 여는 데 실패했습니다!";
 "alert.info" = "열기 실패";
 
 "create.title" = "새로운 Bottle 생성";
 "create.name" = "Bottle 이름:";
 "create.win" = "Windows 버전:";
-"create.path" = "병 경로:";
-"create.browse" = "보기";
+"create.path" = "Bottle 경로:";
+"create.browse" = "탐색";
 "create.cancel" = "취소";
 "create.create" = "생성";
 
@@ -73,33 +73,33 @@
 
 "check.updates" = "업데이트 확인...";
 "kill.bottles" = "모든 Bottle 종료하기";
-"open.logs" = "Log 폴더 열기";
-"open.bottle" = "Import Bottle";
+"open.logs" = "로그 폴더 열기";
+"open.bottle" = "Bottle 불러오기";
 
 "showAlertOnFirstLaunch.messageText" = "Whisky를 애플리케이션 폴더로 옮기시겠습니까?";
 "showAlertOnFirstLaunch.informativeText" = "경우에 따라 다른 폴더에서는 Whisky가 제대로 동작하지 않을 수 있습니다.";
 "showAlertOnFirstLaunch.button.moveToApplications" = "애플리케이션 폴더로 옮기기";
 "showAlertOnFirstLaunch.button.dontMove" = "옮기지 않기";
 
-"setup.welcome" = "위스키에 오신 것을 환영합니다";
-"setup.welcome.subtitle" = "우리가 네가 준비할 수 있도록 도와주자. 아주 빠를 거예요.";
+"setup.welcome" = "Whisky에 오신 것을 환영합니다";
+"setup.welcome.subtitle" = "설정하는 것을 도와드리겠습니다. 얼마 걸리지 않을 거예요.";
 
-"setup.install.checking" = "%@ 설치를 확인하는 중입니다. . .";
-"setup.install.installed" = "%@이(가) 설치되었습니다.";
+"setup.install.checking" = "%@ 설치를 확인하는 중입니다...";
+"setup.install.installed" = "%@ 설치됨";
 "setup.install.notInstalled" = "%@ 설치되지 않음";
 
-"setup.rosetta" = "Rosetta 를 설치 중입니다.";
-"setup.rosetta.subtitle" = "로제타는 Wine과 같은 x86 코드를 맥에서 실행할 수 있게 해줍니다.";
+"setup.rosetta" = "Rosetta를 설치 중입니다.";
+"setup.rosetta.subtitle" = "Rosetta는 Wine과 같은 x86 코드를 당신의 Mac에서 실행할 수 있게 해 줍니다.";
 
-"setup.wine.download" = "“와인”을 다운로드 중입니다.";
+"setup.wine.download" = "Wine을 다운로드 중입니다.";
 "setup.wine.download.subtitle" = "속도는 인터넷 연결 상태에 따라 달라질 수 있습니다.";
-"setup.wine.progress" = "%@ of %@";
-"setup.wine.eta" = "- %@ remaining";
+"setup.wine.progress" = "%2$@ 중 %1$@";
+"setup.wine.eta" = "- %@ 남음";
 
-"setup.wine.install" = "와인 설치";
+"setup.wine.install" = "와인 설치 중";
 "setup.wine.install.subtitle" = "거의 다 왔어요. 아직 끄지 마세요.";
 
 "setup.gptk" = "GPTK 설치 중";
 
-"alert.macos" = "Unsupported macOS Version!";
-"alert.macos.info" = "macOS Ventura is not officially support by GPTK. Issues may occur!";
+"alert.macos" = "지원되지 않는 macOS 버전!";
+"alert.macos.info" = "GPTK는 macOS Ventura를 공식적으로 지원하지 않습니다. 문제가 발생할 수 있습니다!";
