@@ -22,9 +22,9 @@
 "button.deleteAlert.cancel" = "取消";
 
 "config.winVersion" = "Windows 版本";
-"config.buildVersion" = "由洋甘菊翻译提供翻译，构建版本";
+"config.buildVersion" = "构建版本";
 "config.title.metal" = "Metal";
-"config.metalHud" = "Metal 监视器";
+"config.metalHud" = "Metal HUD";
 "config.metalTrace" = "Metal 性能分析";
 "config.retinaMode" = "Retina 模式";
 "config.metalTrace.info" = "允许你在 Xcode 中抓取 GPU 工作负载";
@@ -74,7 +74,7 @@
 "check.updates" = "检查更新...";
 "kill.bottles" = "结束所有容器";
 "open.logs" = "打开日志文件夹";
-"open.bottle" = "Import Bottle";
+"open.bottle" = "导入容器";
 
 "showAlertOnFirstLaunch.messageText" = "你想要将 Whisky 移动到你的应用程序文件夹吗？";
 "showAlertOnFirstLaunch.informativeText" = "在某些情况下，Whisky 可能无法在另外的文件夹中正常工作";
