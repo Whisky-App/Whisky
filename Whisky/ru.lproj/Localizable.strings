@@ -36,10 +36,10 @@
 "config.title.dxvk" = "DXVK";
 "config.dxvk" = "DXVK";
 "config.dxvkHud" = "DXVK HUD";
-"config.dxvkHud.full" = "Full";
-"config.dxvkHud.partial" = "Partial";
-"config.dxvkHud.fps" = "FPS";
-"config.dxvkHud.off" = "Off";
+"config.dxvkHud.full" = "Полный";
+"config.dxvkHud.partial" = "Частичный";
+"config.dxvkHud.fps" = "Только FPS";
+"config.dxvkHud.off" = "Выключен";
 
 "program.title" = "Установленные программы";
 "program.env" = "Переменные окружения";
@@ -74,7 +74,7 @@
 "check.updates" = "Проверить наличие обновлений...";
 "kill.bottles" = "Закрыть все бутылки";
 "open.logs" = "Открыть папку логов";
-"open.bottle" = "Import Bottle";
+"open.bottle" = "Импортировать бутылку";
 
 "showAlertOnFirstLaunch.messageText" = "Вы хотите переместить Whisky в папку «Приложения»?";
 "showAlertOnFirstLaunch.informativeText" = "В некоторых случаях Whisky не сможет правильно функционировать из другой папки";
