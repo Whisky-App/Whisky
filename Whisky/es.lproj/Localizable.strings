@@ -36,9 +36,9 @@
 "config.title.dxvk" = "DXVK";
 "config.dxvk" = "DXVK";
 "config.dxvkHud" = "DXVK HUD";
-"config.dxvkHud.full" = "Full";
-"config.dxvkHud.partial" = "Partial";
-"config.dxvkHud.fps" = "FPS";
+"config.dxvkHud.full" = "Completo";
+"config.dxvkHud.partial" = "Parcial";
+"config.dxvkHud.fps" = "CPS";
 "config.dxvkHud.off" = "Off";
 
 "program.title" = "Programas Instalados";
