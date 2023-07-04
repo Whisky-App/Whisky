@@ -26,7 +26,7 @@
 "config.title.metal" = "Metal";
 "config.metalHud" = "Metal HUD";
 "config.metalTrace" = "Metal Jäljitin";
-"config.retinaMode" = "Retina tila";
+"config.retinaMode" = "Retina-tila";
 "config.metalTrace.info" = "Mahdollistaa GPU työn nappaamisen Xcodessa";
 "config.esync" = "ESync";
 "config.controlPanel" = "Avaa ohjauspaneeli";
@@ -36,10 +36,10 @@
 "config.title.dxvk" = "DXVK";
 "config.dxvk" = "DXVK";
 "config.dxvkHud" = "DXVK HUD";
-"config.dxvkHud.full" = "Full";
-"config.dxvkHud.partial" = "Partial";
+"config.dxvkHud.full" = "Koko";
+"config.dxvkHud.partial" = "Osittainen";
 "config.dxvkHud.fps" = "FPS";
-"config.dxvkHud.off" = "Off";
+"config.dxvkHud.off" = "Pois";
 
 "program.title" = "Asennetut ohjelmat";
 "program.env" = "Ympäristön muuttujat";
