@@ -20,6 +20,7 @@
 "button.deleteAlert.info" = "Are you sure you want to delete this bottle? This action is permanent.";
 "button.deleteAlert.delete" = "Delete";
 "button.deleteAlert.cancel" = "Cancel";
+"button.reinstall" = "Reinstall";
 
 "config.winVersion" = "Windows Version";
 "config.buildVersion" = "Build Version";
@@ -88,6 +89,7 @@
 "setup.install.checking" = "Checking %@ installation...";
 "setup.install.installed" = "%@ installed";
 "setup.install.notInstalled" = "%@ not installed";
+"setup.install.reinstall" = "%@ is to be reinstalled";
 
 "setup.rosetta" = "Installing Rosetta";
 "setup.rosetta.subtitle" = "Rosetta allows x86 code, like Wine, to run on your Mac.";
