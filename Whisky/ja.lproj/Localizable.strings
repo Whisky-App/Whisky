@@ -34,12 +34,12 @@
 "config.winecfg" = "Wine 設定を開く";
 "config.notAvailable" = "N/A";
 "config.title.dxvk" = "DXVK";
-"config.dxvk" = "DXVK";
+"config.dxvk" = "DXVK を使用する";
 "config.dxvkHud" = "DXVK HUD";
-"config.dxvkHud.full" = "Full";
-"config.dxvkHud.partial" = "Partial";
-"config.dxvkHud.fps" = "FPS";
-"config.dxvkHud.off" = "Off";
+"config.dxvkHud.full" = "完全";
+"config.dxvkHud.partial" = "一部";
+"config.dxvkHud.fps" = "FPS のみ";
+"config.dxvkHud.off" = "オフ";
 
 "program.title" = "インストール済みプログラム";
 "program.env" = "環境変数";
@@ -53,7 +53,7 @@
 "info.wine" = "Wine バージョン";
 "info.win" = "Windows バージョン";
 
-"gptkalert.init" = "Game Porting Toolkit の DMG ファイルをドラッグ & ドロップしてください";
+"gptkalert.init" = "Game Porting Toolkit の DMG ファイルをドロップしてください。";
 "gptkalert.message" = "GPTK でエラーが発生しました！";
 
 "alert.message" = "プログラムの起動に失敗しました！";
