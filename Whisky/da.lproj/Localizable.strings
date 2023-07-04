@@ -36,10 +36,10 @@
 "config.title.dxvk" = "DXVK";
 "config.dxvk" = "DXVK";
 "config.dxvkHud" = "DXVK HUD";
-"config.dxvkHud.full" = "Full";
-"config.dxvkHud.partial" = "Partial";
+"config.dxvkHud.full" = "Fuld";
+"config.dxvkHud.partial" = "Delvis";
 "config.dxvkHud.fps" = "FPS";
-"config.dxvkHud.off" = "Off";
+"config.dxvkHud.off" = "Fra";
 
 "program.title" = "Installerede programmer";
 "program.env" = "Miljøvariabler";
@@ -74,7 +74,7 @@
 "check.updates" = "Tjek for Opdateringer...";
 "kill.bottles" = "Dræb Alle Bottles";
 "open.logs" = "Åbn Logmappe";
-"open.bottle" = "Import Bottle";
+"open.bottle" = "Importér Bottle";
 
 "showAlertOnFirstLaunch.messageText" = "Vil du flytte Whisky til Applications mappen?";
 "showAlertOnFirstLaunch.informativeText" = "I nogle tilfælde vil Whisky ikke være i stand til at fungere korrekt fra en anden mappe";
