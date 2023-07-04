@@ -9,10 +9,9 @@ import SwiftUI
 
 struct ContentView: View {
     @EnvironmentObject var bottleVM: BottleVM
-    @AppStorage("showSetup") private var showSetup = true
+    @EnvironmentObject var model: AppModel
     @State var selected: URL?
     @State var showBottleCreation: Bool = false
-    @State var bottlesLoaded: Bool = false
     @State var newlyCreatedBottleURL: URL?
 
     var body: some View {
@@ -58,7 +57,7 @@ struct ContentView: View {
                     .id(bottle.url)
                 }
             } else {
-                if bottleVM.bottles.isEmpty && bottlesLoaded {
+                if bottleVM.bottles.isEmpty && model.bottlesLoaded {
                     VStack {
                         Text("main.createFirst")
                         Button {
@@ -94,26 +93,8 @@ struct ContentView: View {
         .sheet(isPresented: $showBottleCreation) {
             BottleCreationView(newlyCreatedBottleURL: $newlyCreatedBottleURL)
         }
-        .sheet(isPresented: $showSetup) {
-            SetupView(showSetup: $showSetup)
-        }
-        .onAppear {
-            bottleVM.loadBottles()
-            bottlesLoaded = true
-            if WineInstaller.shouldUpdateWine() {
-                WineInstaller.uninstallWine()
-                showSetup = true
-            }
-            if ProcessInfo().operatingSystemVersion.majorVersion < 14 {
-                Task {
-                    let alert = NSAlert()
-                    alert.messageText = String(localized: "alert.macos")
-                    alert.informativeText = String(localized: "alert.macos.info")
-                    alert.alertStyle = .critical
-                    alert.addButton(withTitle: String(localized: "button.ok"))
-                    alert.runModal()
-                }
-            }
+        .sheet(isPresented: $model.showSetup) {
+            SetupView(showSetup: $model.showSetup)
         }
     }
 }

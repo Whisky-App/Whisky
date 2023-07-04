@@ -12,6 +12,7 @@ import Sparkle
 struct WhiskyApp: App {
     @NSApplicationDelegateAdaptor(AppDelegate.self) var appDelegate
     private let updaterController: SPUStandardUpdaterController
+    @ObservedObject var model = AppModel()
 
     init() {
         updaterController = SPUStandardUpdaterController(startingUpdater: true,
@@ -23,13 +24,33 @@ struct WhiskyApp: App {
         WindowGroup {
             ContentView()
                 .environmentObject(BottleVM.shared)
+                .environmentObject(model)
                 .onAppear {
                     NSWindow.allowsAutomaticWindowTabbing = false
+                    BottleVM.shared.loadBottles()
+                    model.bottlesLoaded = true
+                    if WineInstaller.shouldUpdateWine() {
+                        WineInstaller.uninstallWine()
+                        model.showSetup = true
+                    }
+                    if ProcessInfo().operatingSystemVersion.majorVersion < 14 {
+                        Task {
+                            let alert = NSAlert()
+                            alert.messageText = String(localized: "alert.macos")
+                            alert.informativeText = String(localized: "alert.macos.info")
+                            alert.alertStyle = .critical
+                            alert.addButton(withTitle: String(localized: "button.ok"))
+                            alert.runModal()
+                        }
+                    }
                 }
         }
         .commands {
             CommandGroup(after: .appInfo) {
                 SparkleView(updater: updaterController.updater)
+                Button("open.setup") {
+                    model.showSetup = true
+                }
             }
             CommandGroup(after: .newItem) {
                 Button("open.bottle") {
