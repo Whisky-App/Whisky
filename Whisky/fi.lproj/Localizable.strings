@@ -81,7 +81,7 @@
 "showAlertOnFirstLaunch.button.moveToApplications" = "Siirrä Applikaatioihin";
 "showAlertOnFirstLaunch.button.dontMove" = "Älä siirrä";
 
-"setup.welcome" = "Tervetuloa käyttämään Whiskyia";
+"setup.welcome" = "Tervetuloa käyttämään Whiskyä";
 "setup.welcome.subtitle" = "Valmistellaan perusominaisuudet. Tämä vie vain hetken.";
 
 "setup.install.checking" = "Tarkistetaan %@ asennusta...";
