@@ -38,7 +38,10 @@ struct RosettaView: View {
             Spacer()
         }
         .frame(width: 400, height: 200)
-        .onAppear {
+        .onChange(of: path) { _ in
+            if path.last != SetupStage.rosetta {
+                return
+            }
             Rosetta2.launchRosettaInstaller()
             Timer.scheduledTimer(withTimeInterval: 1, repeats: true) { timer in
                 if Rosetta2.isRosettaInstalled {
@@ -48,19 +51,13 @@ struct RosettaView: View {
                 }
             }
         }
+
     }
 
     func proceed() {
-        if !WineInstaller.isWineInstalled() {
-            path.append(.wineDownload)
-            return
+        path.removeLast()
+        if path.isEmpty {
+            showSetup = false
         }
-
-        if !GPTK.isGPTKInstalled() {
-            path.append(.gptk)
-            return
-        }
-
-        showSetup = false
     }
 }

@@ -10,6 +10,7 @@ import SwiftUI
 struct GPTKInstallView: View {
     @State private var dragOver = false
     @State private var installing = false
+    @Binding var path: [SetupStage]
     @Binding var showSetup: Bool
 
     var body: some View {
@@ -54,6 +55,9 @@ struct GPTKInstallView: View {
     }
 
     func proceed() {
-        showSetup = false
+        path.removeLast()
+        if path.isEmpty {
+            showSetup = false
+        }
     }
 }

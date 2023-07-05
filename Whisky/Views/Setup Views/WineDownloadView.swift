@@ -50,7 +50,11 @@ struct WineDownloadView: View {
             Spacer()
         }
         .frame(width: 400, height: 200)
-        .onAppear {
+        .onChange(of: path) { _ in
+            if path.last != SetupStage.wineDownload {
+                return
+            }
+
             Task {
                 if let downloadInfo = await WineDownload.getLatestWineURL(),
                    let url = downloadInfo.directURL {
@@ -109,6 +113,6 @@ struct WineDownloadView: View {
     }
 
     func proceed() {
-        path.append(.wineInstall)
+        path.removeLast()
     }
 }

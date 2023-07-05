@@ -33,7 +33,7 @@ struct SetupView: View {
                         case .wineInstall:
                             WineInstallView(tarLocation: $tarLocation, path: $path, showSetup: $showSetup)
                         case .gptk:
-                            GPTKInstallView(showSetup: $showSetup)
+                            GPTKInstallView(path: $path, showSetup: $showSetup)
                         }
                     }
             }

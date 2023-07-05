@@ -38,7 +38,11 @@ struct WineInstallView: View {
             Spacer()
         }
         .frame(width: 400, height: 200)
-        .onAppear {
+        .onChange(of: path) { _ in
+            if path.last != SetupStage.wineInstall {
+                return
+            }
+
             Task {
                 WineInstaller.installWine(from: tarLocation)
                 installing = false
@@ -48,11 +52,9 @@ struct WineInstallView: View {
     }
 
     func proceed() {
-        if !GPTK.isGPTKInstalled() {
-            path.append(.gptk)
-            return
+        path.removeLast()
+        if path.isEmpty {
+            showSetup = false
         }
-
-        showSetup = false
     }
 }

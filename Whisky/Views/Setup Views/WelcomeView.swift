@@ -71,21 +71,16 @@ struct WelcomeView: View {
                         if Arch.getArch() == .arm {
                             if !rosettaInstalled || rossettaReinstall {
                                 path.append(.rosetta)
-                                return
                             }
                         }
 
                         if !wineInstalled || wineReinstall {
                             path.append(.wineDownload)
-                            return
                         }
 
                         if !gptkInstalled || gptkReinstall {
                             path.append(.gptk)
-                            return
                         }
-
-                        showSetup = false
                     }
                 }
                 .keyboardShortcut(.defaultAction)
