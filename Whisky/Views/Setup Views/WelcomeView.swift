@@ -33,14 +33,28 @@ struct WelcomeView: View {
                 if Arch.getArch() == .arm {
                     InstallStatusView(isInstalled: $rosettaInstalled,
                                       reinstall: $rossettaReinstall,
-                                      name: "Rosetta")
+                                      name: "Rosetta") { reinstall in
+                        rossettaReinstall = reinstall
+                    }
                 }
                 InstallStatusView(isInstalled: $wineInstalled,
                                   reinstall: $wineReinstall,
-                                  name: "Wine")
+                                  name: "Wine") { reinstall in
+                    wineReinstall = reinstall
+
+                    if wineReinstall {
+                        gptkReinstall = true
+                    }
+                }
                 InstallStatusView(isInstalled: $gptkInstalled,
                                   reinstall: $gptkReinstall,
-                                  name: "GPTK")
+                                  name: "GPTK") { reinstall in
+                    gptkReinstall = reinstall
+
+                    if !gptkReinstall {
+                        wineReinstall = false
+                    }
+                }
             }
             .formStyle(.grouped)
             .scrollDisabled(true)
@@ -101,8 +115,23 @@ struct InstallStatusView: View {
     @Binding var reinstall: Bool
     @State var showReinstallBtn: Bool = false
     @State var name: String
-    @State var text: String = NSLocalizedString("setup.install.checking",
-                                                comment: "")
+    var text: String {
+        get {
+            if let installed = isInstalled {
+                if installed {
+                    if reinstall {
+                        return NSLocalizedString("setup.install.reinstall", comment: "")
+                    }
+                    return NSLocalizedString("setup.install.installed", comment: "")
+                } else {
+                    return NSLocalizedString("setup.install.notInstalled", comment: "")
+                }
+            } else {
+                return NSLocalizedString("setup.install.checking", comment: "")
+            }
+        }
+    }
+    var action: ((_ reinstall: Bool) -> Void)
 
     var body: some View {
         HStack {
@@ -123,12 +152,7 @@ struct InstallStatusView: View {
             if showReinstallBtn {
                 Spacer()
                 Button("button.reinstall") {
-                    if !reinstall {
-                        text = NSLocalizedString("setup.install.reinstall", comment: "")
-                    } else {
-                        text = NSLocalizedString("setup.install.installed", comment: "")
-                    }
-                    reinstall = !reinstall
+                    self.action(!reinstall)
                 }
             }
         }
@@ -136,17 +160,6 @@ struct InstallStatusView: View {
         .onHover { hovering in
             if isInstalled == true {
                 showReinstallBtn = hovering
-            }
-        }
-        .onChange(of: isInstalled) { _ in
-            if let installed = isInstalled {
-                if installed {
-                    text = NSLocalizedString("setup.install.installed", comment: "")
-                } else {
-                    text = NSLocalizedString("setup.install.notInstalled", comment: "")
-                }
-            } else {
-                text = NSLocalizedString("setup.install.checking", comment: "")
             }
         }
     }
