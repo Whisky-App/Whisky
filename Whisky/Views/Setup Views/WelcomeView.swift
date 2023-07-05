@@ -15,8 +15,7 @@ struct WelcomeView: View {
     @State var wineReinstall: Bool = false
     @State var gptkReinstall: Bool = false
     @State var canContinue: Bool = false
-    @Binding var path: [SetupStage]
-    @Binding var showSetup: Bool
+    @EnvironmentObject var model: AppModel
 
     var body: some View {
         VStack {
@@ -61,26 +60,32 @@ struct WelcomeView: View {
                 .keyboardShortcut(.cancelAction)
                 Spacer()
                 Button("Cancel") {
-                    showSetup = false
+                    model.showSetup = false
                 }
                 .disabled(rosettaInstalled != true || wineInstalled != true || gptkInstalled != true)
                 Button("Next") {
+                    var path: [SetupStage] = []
                     if let rosettaInstalled = rosettaInstalled,
                        let wineInstalled = wineInstalled,
                        let gptkInstalled = gptkInstalled {
+                        if !gptkInstalled || gptkReinstall {
+                            path.append(.gptk)
+                        }
+
+                        if !wineInstalled || wineReinstall {
+                            path.append(.wineInstall)
+                            path.append(.wineDownload)
+                        }
+
                         if Arch.getArch() == .arm {
                             if !rosettaInstalled || rossettaReinstall {
                                 path.append(.rosetta)
                             }
                         }
-
-                        if !wineInstalled || wineReinstall {
-                            path.append(.wineDownload)
-                        }
-
-                        if !gptkInstalled || gptkReinstall {
-                            path.append(.gptk)
-                        }
+                    }
+                    model.path = path
+                    Task {
+                        await model.proceedSetup()
                     }
                 }
                 .keyboardShortcut(.defaultAction)

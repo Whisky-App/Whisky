@@ -8,9 +8,7 @@
 import SwiftUI
 
 struct RosettaView: View {
-    @State var installing: Bool = true
-    @Binding var path: [SetupStage]
-    @Binding var showSetup: Bool
+    @EnvironmentObject var model: AppModel
 
     var body: some View {
         VStack {
@@ -23,7 +21,7 @@ struct RosettaView: View {
                     .foregroundStyle(.secondary)
                 Spacer()
                 Group {
-                    if installing {
+                    if model.rosettaInstalling {
                         ProgressView()
                             .scaleEffect(2)
                     } else {
@@ -38,26 +36,5 @@ struct RosettaView: View {
             Spacer()
         }
         .frame(width: 400, height: 200)
-        .onChange(of: path) { _ in
-            if path.last != SetupStage.rosetta {
-                return
-            }
-            Rosetta2.launchRosettaInstaller()
-            Timer.scheduledTimer(withTimeInterval: 1, repeats: true) { timer in
-                if Rosetta2.isRosettaInstalled {
-                    installing = false
-                    proceed()
-                    timer.invalidate()
-                }
-            }
-        }
-
-    }
-
-    func proceed() {
-        path.removeLast()
-        if path.isEmpty {
-            showSetup = false
-        }
     }
 }

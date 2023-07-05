@@ -15,25 +15,28 @@ enum SetupStage {
 }
 
 struct SetupView: View {
-    @State private var path: [SetupStage] = []
-    @State var tarLocation: URL = URL(fileURLWithPath: "")
-    @Binding var showSetup: Bool
+    @EnvironmentObject var model: AppModel
 
     var body: some View {
         VStack {
-            NavigationStack(path: $path) {
-                WelcomeView(path: $path, showSetup: $showSetup)
+            NavigationStack(path: $model.path) {
+                WelcomeView()
+                    .environmentObject(model)
                     .navigationBarBackButtonHidden(true)
                     .navigationDestination(for: SetupStage.self) { stage in
                         switch stage {
                         case .rosetta:
-                            RosettaView(path: $path, showSetup: $showSetup)
+                            RosettaView()
+                                .environmentObject(model)
                         case .wineDownload:
-                            WineDownloadView(tarLocation: $tarLocation, path: $path)
+                            WineDownloadView()
+                                .environmentObject(model)
                         case .wineInstall:
-                            WineInstallView(tarLocation: $tarLocation, path: $path, showSetup: $showSetup)
+                            WineInstallView()
+                                .environmentObject(model)
                         case .gptk:
-                            GPTKInstallView(path: $path, showSetup: $showSetup)
+                            GPTKInstallView()
+                                .environmentObject(model)
                         }
                     }
             }

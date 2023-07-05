@@ -94,7 +94,8 @@ struct ContentView: View {
             BottleCreationView(newlyCreatedBottleURL: $newlyCreatedBottleURL)
         }
         .sheet(isPresented: $model.showSetup) {
-            SetupView(showSetup: $model.showSetup)
+            SetupView()
+                .environmentObject(model)
         }
     }
 }

@@ -19,7 +19,7 @@ class WineInstaller {
         return FileManager.default.fileExists(atPath: libraryFolder.path)
     }
 
-    static func installWine(from: URL) {
+    static func installWine(from: URL) async {
         do {
             let whiskySupportFolder = FileManager.default.urls(for: .applicationSupportDirectory,
                                                                in: .userDomainMask)[0]
@@ -33,14 +33,18 @@ class WineInstaller {
                 try FileManager.default.createDirectory(at: whiskySupportFolder, withIntermediateDirectories: true)
             }
 
-            try Tar.untar(tarBall: from, toURL: whiskySupportFolder)
+            _ = await Task {
+                try Tar.untar(tarBall: from, toURL: whiskySupportFolder)
+            }.result
 
             let tarFile = whiskySupportFolder
                 .appendingPathComponent("Libraries")
                 .appendingPathExtension("tar")
                 .appendingPathExtension("gz")
-            try Tar.untar(tarBall: tarFile, toURL: whiskySupportFolder)
-            try FileManager.default.removeItem(at: tarFile)
+            _ = await Task {
+                try Tar.untar(tarBall: tarFile, toURL: whiskySupportFolder)
+                try FileManager.default.removeItem(at: tarFile)
+            }.result
 
             // Write the binary version to the build_version file
             let buildVersionFile = libraryFolder.appendingPathComponent("build_version")

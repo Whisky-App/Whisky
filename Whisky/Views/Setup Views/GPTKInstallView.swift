@@ -9,9 +9,7 @@ import SwiftUI
 
 struct GPTKInstallView: View {
     @State private var dragOver = false
-    @State private var installing = false
-    @Binding var path: [SetupStage]
-    @Binding var showSetup: Bool
+    @EnvironmentObject var model: AppModel
 
     var body: some View {
         VStack {
@@ -21,7 +19,7 @@ struct GPTKInstallView: View {
             Text("gptkalert.init")
                 .foregroundStyle(.secondary)
             Spacer()
-            if installing {
+            if model.gptkInstalling {
                 ProgressView()
                     .progressViewStyle(.circular)
                     .frame(width: 80)
@@ -42,22 +40,13 @@ struct GPTKInstallView: View {
                    let path = NSString(data: data, encoding: 4),
                    let url = URL(string: path as String) {
                     if url.pathExtension == "dmg" {
-                        installing = true
-                        GPTK.install(url: url)
-                        proceed()
+                        model.gptkLocation = url
                     } else {
                         print("Not a DMG!")
                     }
                 }
             })
             return true
-        }
-    }
-
-    func proceed() {
-        path.removeLast()
-        if path.isEmpty {
-            showSetup = false
         }
     }
 }

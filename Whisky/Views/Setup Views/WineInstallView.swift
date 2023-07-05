@@ -8,10 +8,7 @@
 import SwiftUI
 
 struct WineInstallView: View {
-    @State var installing: Bool = true
-    @Binding var tarLocation: URL
-    @Binding var path: [SetupStage]
-    @Binding var showSetup: Bool
+    @EnvironmentObject var model: AppModel
 
     var body: some View {
         VStack {
@@ -23,7 +20,7 @@ struct WineInstallView: View {
                     .font(.subheadline)
                     .foregroundStyle(.secondary)
                 Spacer()
-                if installing {
+                if model.wineInstalling {
                     ProgressView()
                         .progressViewStyle(.circular)
                         .frame(width: 80)
@@ -38,23 +35,5 @@ struct WineInstallView: View {
             Spacer()
         }
         .frame(width: 400, height: 200)
-        .onChange(of: path) { _ in
-            if path.last != SetupStage.wineInstall {
-                return
-            }
-
-            Task {
-                WineInstaller.installWine(from: tarLocation)
-                installing = false
-                proceed()
-            }
-        }
-    }
-
-    func proceed() {
-        path.removeLast()
-        if path.isEmpty {
-            showSetup = false
-        }
     }
 }
