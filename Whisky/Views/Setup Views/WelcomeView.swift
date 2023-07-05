@@ -17,6 +17,12 @@ struct WelcomeView: View {
     @State var canContinue: Bool = false
     @EnvironmentObject var model: AppModel
 
+    var canSkip: Bool {
+        get {
+            return rosettaInstalled == true && wineInstalled == true && gptkInstalled == true
+        }
+    }
+
     var body: some View {
         VStack {
             VStack {
@@ -71,12 +77,13 @@ struct WelcomeView: View {
                 Button("Quit") {
                     exit(0)
                 }
-                .keyboardShortcut(.cancelAction)
+                .keyboardShortcut(canSkip ? nil : .cancelAction)
                 Spacer()
                 Button("Cancel") {
                     model.showSetup = false
                 }
-                .disabled(rosettaInstalled != true || wineInstalled != true || gptkInstalled != true)
+                .disabled(!canSkip)
+                .keyboardShortcut(canSkip ? .cancelAction : nil)
                 Button("Next") {
                     var path: [SetupStage] = []
                     if let rosettaInstalled = rosettaInstalled,
