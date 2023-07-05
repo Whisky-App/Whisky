@@ -35,11 +35,11 @@
 "config.notAvailable" = "No disponible";
 "config.title.dxvk" = "DXVK";
 "config.dxvk" = "DXVK";
-"config.dxvkHud" = "DXVK HUD";
+"config.dxvkHud" = "Mostrar Info & Stats de DXVK";
 "config.dxvkHud.full" = "Completo";
 "config.dxvkHud.partial" = "Parcial";
 "config.dxvkHud.fps" = "CPS";
-"config.dxvkHud.off" = "Off";
+"config.dxvkHud.off" = "Apagado";
 
 "program.title" = "Programas Instalados";
 "program.env" = "Variables de Entorno";
