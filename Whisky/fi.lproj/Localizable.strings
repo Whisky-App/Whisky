@@ -14,6 +14,8 @@
 "button.run" = "Käynnistä...";
 "button.ok" = "OK";
 "button.renameBottle" = "Nimeä uudelleen";
+"button.moveBottle" = "Move";
+"button.exportBottle" = "Export as Archive";
 "button.deleteBottle" = "Poista...";
 "button.createBottle" = "Luo pullo";
 "button.deleteAlert.msg" = "Poista %@?";
