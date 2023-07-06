@@ -48,6 +48,59 @@ public class Program: Hashable {
         }
     }
 
+    func runInTerminal() async {
+        var wineCmd = "\(Wine.wineBinary.esc) start '\(url.windowsPath())' \(settings.arguments)"
+
+        var env: [String: String]
+        env = ["WINEPREFIX": bottle.url.esc,
+               "WINEDEBUG": "fixme-all",
+               "WINEBOOT_HIDE_DIALOG": "1"]
+
+        for environment in settings.environment.keys {
+            env[environment] = settings.environment[environment]
+        }
+
+        bottle.settings.environmentVariables(environment: &env)
+
+        if bottle.settings.dxvk {
+            Wine.enableDXVK(bottle: bottle)
+        }
+
+        for environment in env {
+            wineCmd = "\(environment.key)=\(environment.value) " + wineCmd
+        }
+
+        wineCmd = wineCmd.replacingOccurrences(of: "\\", with: "\\\\")
+
+        let script = """
+        tell application "Terminal"
+            activate
+            do script "\(wineCmd)"
+        end tell
+        """
+
+        var error: NSDictionary?
+        if let appleScript = NSAppleScript(source: script) {
+            appleScript.executeAndReturnError(&error)
+
+            if let error = error {
+                print(error)
+                if let description = error["NSAppleScriptErrorMessage"] as? String {
+                    await MainActor.run {
+                        let alert = NSAlert()
+                        alert.messageText = String(localized: "alert.message")
+                        alert.informativeText = String(localized: "alert.info")
+                            + " \(url.lastPathComponent): "
+                            + description
+                        alert.alertStyle = .critical
+                        alert.addButton(withTitle: String(localized: "button.ok"))
+                        alert.runModal()
+                    }
+                }
+            }
+        }
+    }
+
     func toggleFavourited() -> Bool {
         if favourited {
             bottle.settings.shortcuts.removeAll(where: { $0.link == url })

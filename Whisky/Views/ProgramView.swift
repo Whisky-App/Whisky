@@ -57,8 +57,14 @@ struct ProgramView: View {
                 Button("button.run") {
                     programLoading = true
                     Task(priority: .userInitiated) {
-                        await program.run()
-                        programLoading = false
+                        if NSEvent.modifierFlags.contains(.shift) {
+                            print("Running in terminal...")
+                            await program.runInTerminal()
+                            programLoading = false
+                        } else {
+                            await program.run()
+                            programLoading = false
+                        }
                     }
                 }
                 .disabled(programLoading)
