@@ -14,6 +14,8 @@
 "button.run" = "Çalıştır...";
 "button.ok" = "Tamam";
 "button.renameBottle" = "Bottle'ı Yeniden Adlandır";
+"button.moveBottle" = "Move";
+"button.exportBottle" = "Export as Archive";
 "button.deleteBottle" = "Sil...";
 "button.createBottle" = "Bottle Oluştur";
 "button.deleteAlert.msg" = "%@ silinsin mi?";
