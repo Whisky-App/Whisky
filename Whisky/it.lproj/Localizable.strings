@@ -14,8 +14,8 @@
 "button.run" = "Avvia...";
 "button.ok" = "OK";
 "button.renameBottle" = "Rinomina";
-"button.moveBottle" = "Move";
-"button.exportBottle" = "Export as Archive";
+"button.moveBottle" = "Sposta";
+"button.exportBottle" = "Esporta come Archivio";
 "button.deleteBottle" = "Elimina...";
 "button.createBottle" = "Crea Bottiglia";
 "button.deleteAlert.msg" = "Elimina %@?";
