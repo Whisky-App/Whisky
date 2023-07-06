@@ -14,6 +14,8 @@
 "button.run" = "실행...";
 "button.ok" = "확인";
 "button.renameBottle" = "이름 변경";
+"button.moveBottle" = "Move";
+"button.exportBottle" = "Export as Archive";
 "button.deleteBottle" = "삭제...";
 "button.createBottle" = "Bottle 생성";
 "button.deleteAlert.msg" = "%@을(를) 삭제하시겠습니까?";
