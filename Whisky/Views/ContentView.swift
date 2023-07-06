@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import UniformTypeIdentifiers
 
 struct ContentView: View {
     @EnvironmentObject var bottleVM: BottleVM
@@ -132,6 +133,42 @@ struct BottleListEntry: View {
                 Button("button.renameBottle") {
                     showBottleRename.toggle()
                 }
+                Divider()
+                Button("button.moveBottle") {
+                    let panel = NSOpenPanel()
+                    panel.canChooseFiles = false
+                    panel.canChooseDirectories = true
+                    panel.allowsMultipleSelection = false
+                    panel.canCreateDirectories = true
+                    panel.begin { result in
+                        if result == .OK {
+                            if let url = panel.urls.first {
+                                let newBottePath = url
+                                    .appendingPathComponent(bottle.url.lastPathComponent)
+
+                                bottle.move(destination: newBottePath)
+                            }
+                        }
+                    }
+                }
+                Button("button.exportBottle") {
+                    let panel = NSSavePanel()
+                    panel.canCreateDirectories = true
+                    panel.allowedContentTypes = [UTType.gzip]
+                    panel.allowsOtherFileTypes = false
+                    panel.isExtensionHidden = false
+                    panel.nameFieldStringValue = bottle.settings.name + ".tar"
+                    panel.begin { result in
+                        if result == .OK {
+                            if let url = panel.url {
+                                Task.detached(priority: .background) {
+                                    bottle.exportAsArchive(destination: url)
+                                }
+                            }
+                        }
+                    }
+                }
+                Divider()
                 Button("button.deleteBottle") {
                     showDeleteAlert(bottle: bottle)
                 }

@@ -119,9 +119,33 @@ public class Bottle: Hashable, Identifiable {
     }
 
     @MainActor
+    func move(destination: URL) {
+        do {
+            if let bottle = BottleVM.shared.bottles.first(where: { $0.url == url }) {
+                bottle.inFlight = true
+            }
+            try FileManager.default.moveItem(at: url, to: destination)
+            if let path = BottleVM.shared.bottlesList.paths.firstIndex(of: url) {
+                BottleVM.shared.bottlesList.paths[path] = destination
+            }
+            BottleVM.shared.loadBottles()
+        } catch {
+            print("Failed to move bottle")
+        }
+    }
+
+    func exportAsArchive(destination: URL) {
+        do {
+            try Tar.tar(folder: url, toURL: destination)
+        } catch {
+            print("Failed to export bottle")
+        }
+    }
+
+    @MainActor
     func delete() {
         do {
-            if let bottle = BottleVM.shared.bottles.first(where: { $0.url == url}) {
+            if let bottle = BottleVM.shared.bottles.first(where: { $0.url == url }) {
                 bottle.inFlight = true
             }
             try FileManager.default.removeItem(at: url)
