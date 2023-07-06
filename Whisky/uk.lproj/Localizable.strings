@@ -14,6 +14,8 @@
 "button.run" = "Запустити...";
 "button.ok" = "ОК";
 "button.renameBottle" = "Перейменувати";
+"button.moveBottle" = "Move";
+"button.exportBottle" = "Export as Archive";
 "button.deleteBottle" = "Видалити...";
 "button.createBottle" = "Створити пляшку";
 "button.deleteAlert.msg" = "Видалити %@?";
