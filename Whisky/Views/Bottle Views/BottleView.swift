@@ -41,12 +41,7 @@ struct BottleView: View {
                                         Button {
                                             if let link = link.linkInfo, let program = link.program {
                                                 Task {
-                                                    if NSEvent.modifierFlags.contains(.shift) {
-                                                        print("Running in terminal...")
-                                                        await program.runInTerminal()
-                                                    } else {
-                                                        await program.run()
-                                                    }
+                                                    await program.run()
                                                 }
                                             }
                                         } label: {
@@ -81,12 +76,7 @@ struct BottleView: View {
                                                                   url: shortcut.link,
                                                                   bottle: bottle)
                                             Task {
-                                                if NSEvent.modifierFlags.contains(.shift) {
-                                                    print("Running in terminal...")
-                                                    await program.runInTerminal()
-                                                } else {
-                                                    await program.run()
-                                                }
+                                                await program.run()
                                             }
                                         } label: {
                                             Image(systemName: "play.fill")

@@ -32,6 +32,15 @@ public class Program: Hashable {
     }
 
     func run() async {
+        if NSEvent.modifierFlags.contains(.shift) {
+            print("Running in terminal...")
+            await runInTerminal()
+        } else {
+            await runInWine()
+        }
+    }
+
+    func runInWine() async {
         do {
             try await Wine.runProgram(program: self)
         } catch {
@@ -51,21 +60,8 @@ public class Program: Hashable {
     func runInTerminal() async {
         var wineCmd = "\(Wine.wineBinary.esc) start '\(url.windowsPath())' \(settings.arguments)"
 
-        var env: [String: String]
-        env = ["WINEPREFIX": bottle.url.esc,
-               "WINEDEBUG": "fixme-all",
-               "WINEBOOT_HIDE_DIALOG": "1"]
-
-        for environment in settings.environment.keys {
-            env[environment] = settings.environment[environment]
-        }
-
-        bottle.settings.environmentVariables(environment: &env)
-
-        if bottle.settings.dxvk {
-            Wine.enableDXVK(bottle: bottle)
-        }
-
+        let env = Wine.constructEnvironemnt(bottle: bottle,
+                                            environment: settings.environment)
         for environment in env {
             wineCmd = "\(environment.key)=\(environment.value) " + wineCmd
         }

@@ -31,7 +31,6 @@ class Wine {
     static let wineserverBinary: URL = binFolder
         .appendingPathComponent("wineserver")
 
-    // swiftlint:disable function_body_length
     @discardableResult
     static func run(_ args: [String],
                     bottle: Bottle? = nil,
@@ -59,25 +58,12 @@ class Wine {
         }
 
         if let bottle = bottle {
-            var env: [String: String]
-            env = ["WINEPREFIX": bottle.url.path,
-                   "WINEDEBUG": "fixme-all",
-                   "WINEBOOT_HIDE_DIALOG": "1"]
-
-            if let environment = environment {
-                for variable in environment.keys {
-                    env[variable] = environment[variable]
-                }
-            }
-
-            bottle.settings
-                  .environmentVariables(environment: &env)
-
             if bottle.settings.dxvk {
                 enableDXVK(bottle: bottle)
             }
 
-            process.environment = env
+            process.environment = constructEnvironemnt(bottle: bottle,
+                                                       environment: environment)
         }
 
         try process.run()
@@ -101,7 +87,6 @@ class Wine {
         return await output.output
     }
 
-    // swiftlint:enable function_body_length
     static func runWineserver(_ args: [String], bottle: Bottle) throws {
         let process = Process()
         let pipe = Pipe()
@@ -240,6 +225,23 @@ class Wine {
 
     static func killBottle(bottle: Bottle) throws {
         return try runWineserver(["-k"], bottle: bottle)
+    }
+
+    static func constructEnvironemnt(bottle: Bottle, environment: [String: String]?) -> [String: String] {
+        var env: [String: String]
+        env = ["WINEPREFIX": bottle.url.path,
+               "WINEDEBUG": "fixme-all",
+               "WINEBOOT_HIDE_DIALOG": "1"]
+
+        if let environment = environment {
+            for variable in environment.keys {
+                env[variable] = environment[variable]
+            }
+        }
+
+        bottle.settings
+              .environmentVariables(environment: &env)
+        return env
     }
 
     static func enableDXVK(bottle: Bottle) {
