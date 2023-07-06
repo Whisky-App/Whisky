@@ -14,6 +14,8 @@
 "button.run" = "Kør program...";
 "button.ok" = "OK";
 "button.renameBottle" = "Omdøb";
+"button.moveBottle" = "Move";
+"button.exportBottle" = "Export as Archive";
 "button.deleteBottle" = "Slet...";
 "button.createBottle" = "Opret Bottle";
 "button.deleteAlert.msg" = "Slet %@?";
