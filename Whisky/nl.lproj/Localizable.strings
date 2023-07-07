@@ -6,14 +6,16 @@
 "tab.navTitle.programs" = "%@ Programma";
 "tab.navTitle.info" = "%@ Informatie";
 
-"main.noneSelected" = "Select a bottle";
-"main.createFirst" = "Create your first bottle to get started";
+"main.noneSelected" = "Selecteer Fles";
+"main.createFirst" = "Maak je eerste fles om te beginnen";
 
 "button.cDrive" = "C-schijf openen";
 "button.showInFinder" = "Toon in Finder";
 "button.run" = "Starten...";
 "button.ok" = "OK";
 "button.renameBottle" = "Hernoemen";
+"button.moveBottle" = "Move";
+"button.exportBottle" = "Export as Archive";
 "button.deleteBottle" = "Verwijderen...";
 "button.createBottle" = "Fles maken";
 "button.deleteAlert.msg" = "Verwijder %@?";
@@ -26,20 +28,20 @@
 "config.title.metal" = "Metal";
 "config.metalHud" = "Metal HUD";
 "config.metalTrace" = "Metal Trace";
-"config.retinaMode" = "Retina Mode";
+"config.retinaMode" = "Retina Modus";
 "config.metalTrace.info" = "Hiermee kunt u GPU-workload vastleggen in Xcode";
 "config.esync" = "ESync";
-"config.controlPanel" = "Open Control Panel";
-"config.regedit" = "Open Registry Editor";
+"config.controlPanel" = "Open controlepaneel";
+"config.regedit" = "Open Register Editor";
 "config.winecfg" = "Open Wine Configuratie";
 "config.notAvailable" = "N/A";
 "config.title.dxvk" = "DXVK";
 "config.dxvk" = "DXVK";
 "config.dxvkHud" = "DXVK HUD";
-"config.dxvkHud.full" = "Full";
-"config.dxvkHud.partial" = "Partial";
+"config.dxvkHud.full" = "Volledig";
+"config.dxvkHud.partial" = "Gedeeltelijk";
 "config.dxvkHud.fps" = "FPS";
-"config.dxvkHud.off" = "Off";
+"config.dxvkHud.off" = "Uit";
 
 "program.title" = "Geïnstalleerde programma's";
 "program.env" = "Omgevingsvariabelen";
@@ -49,12 +51,12 @@
 "info.title" = "Informatie";
 "info.path" = "Pad";
 "info.path.copy" = "Pad kopiëren";
-"info.winPath.copy" = "Copy Windows Path";
+"info.winPath.copy" = "Kopieer Windows Pad";
 "info.wine" = "Wine Versie";
 "info.win" = "Windows Versie";
 
-"gptkalert.init" = "Drag and drop the Game Porting Toolkit DMG";
-"gptkalert.message" = "GPTK encountered an error!";
+"gptkalert.init" = "Sleep de Game Porting Toolkit DMG";
+"gptkalert.message" = "Er is een fout opgetreden bij de GPTK!";
 
 "alert.message" = "Kan het programma niet openen!";
 "alert.info" = "Niet geslaagd te openen";
@@ -62,8 +64,8 @@
 "create.title" = "Maak een nieuwe fles";
 "create.name" = "Fles naam:";
 "create.win" = "Windows versie:";
-"create.path" = "Bottle path:";
-"create.browse" = "Browse";
+"create.path" = "Fles pad:";
+"create.browse" = "Zoek";
 "create.cancel" = "Annuleren";
 "create.create" = "Aanmaken";
 
@@ -72,34 +74,36 @@
 "rename.rename" = "Hernoem";
 
 "check.updates" = "Controleer op updates...";
-"kill.bottles" = "Kill All Bottles";
+"kill.bottles" = "Stop alle flessen";
 "open.logs" = "Open Logs map";
-"open.bottle" = "Import Bottle";
+"open.bottle" = "Importeer Fles";
+"open.setup" = "Setup...";
 
 "showAlertOnFirstLaunch.messageText" = "Wilt u Whiskey verplaatsen naar uw map Toepassingen?";
 "showAlertOnFirstLaunch.informativeText" = "In sommige gevallen zal Whiskey niet goed kunnen functioneren vanuit een andere map";
 "showAlertOnFirstLaunch.button.moveToApplications" = "Ga naar Toepassingen";
 "showAlertOnFirstLaunch.button.dontMove" = "Niet verplaatsen";
 
-"setup.welcome" = "Welcome to Whisky";
-"setup.welcome.subtitle" = "Let's get you set up. This won't take a minute.";
+"setup.welcome" = "Welkom bij Whisky";
+"setup.welcome.subtitle" = "Laten we ervoor zorgen dat alles klaarstaat. Dit duurt een ogenblik.";
 
-"setup.install.checking" = "Checking %@ installation...";
-"setup.install.installed" = "%@ installed";
-"setup.install.notInstalled" = "%@ not installed";
+"setup.install.checking" = "De %@ installatie controleren...";
+"setup.install.installed" = "%@ geïnstalleerd";
+"setup.install.notInstalled" = "%@ niet geïnstalleerd";
+"setup.uninstall" = "Uninstall";
 
-"setup.rosetta" = "Installing Rosetta";
-"setup.rosetta.subtitle" = "Rosetta allows x86 code, like Wine, to run on your Mac.";
+"setup.rosetta" = "Rosetta installeren";
+"setup.rosetta.subtitle" = "Rosetta laat x86 code, zoals Wine, uitgevoerd worden op je Mac.";
 
-"setup.wine.download" = "Downloading Wine";
-"setup.wine.download.subtitle" = "Speeds will vary on your internet connection.";
-"setup.wine.progress" = "%@ of %@";
-"setup.wine.eta" = "- %@ remaining";
+"setup.wine.download" = "Wine downloaden";
+"setup.wine.download.subtitle" = "Snelheden zullen variëren gebaseerd op je internet connectie.";
+"setup.wine.progress" = "%@ van de %@";
+"setup.wine.eta" = "- %@ resterend";
 
-"setup.wine.install" = "Installing Wine";
-"setup.wine.install.subtitle" = "Almost there. Don't tune out yet.";
+"setup.wine.install" = "Wine installeren";
+"setup.wine.install.subtitle" = "Bijna daar. Nog niet weg gaan.";
 
-"setup.gptk" = "Installing GPTK";
+"setup.gptk" = "GPTK Installeren";
 
-"alert.macos" = "Unsupported macOS Version!";
-"alert.macos.info" = "macOS Ventura is not officially support by GPTK. Issues may occur!";
+"alert.macos" = "Niet-ondersteunde macOS versie!";
+"alert.macos.info" = "macOS Venture is niet officieel ondersteunt door GPTK. Er kunnen problemen zijn!";

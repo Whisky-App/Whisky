@@ -1,19 +1,21 @@
-"tab.config" = "設置";
+"tab.config" = "設定";
 "tab.programs" = "程式";
 "tab.info" = "資訊";
 
-"tab.navTitle.config" = "%@ 設置";
+"tab.navTitle.config" = "%@ 設定";
 "tab.navTitle.programs" = "%@ 上的程式";
 "tab.navTitle.info" = "%@ 的資訊";
 
 "main.noneSelected" = "選擇容器";
 "main.createFirst" = "建立你的第一個容器以開始";
 
-"button.cDrive" = "開啟 C 磁碟";
+"button.cDrive" = "開啟C槽";
 "button.showInFinder" = "在 Finder 中顯示";
 "button.run" = "執行...";
 "button.ok" = "確定";
 "button.renameBottle" = "重新命名";
+"button.moveBottle" = "Move";
+"button.exportBottle" = "Export as Archive";
 "button.deleteBottle" = "刪除...";
 "button.createBottle" = "建立容器";
 "button.deleteAlert.msg" = "刪除 %@?";
@@ -32,7 +34,7 @@
 "config.esync" = "增強同步 (ESync)";
 "config.controlPanel" = "開啟控制台";
 "config.regedit" = "開啟註冊表編輯器";
-"config.winecfg" = "開啟 Wine 設置";
+"config.winecfg" = "開啟Wine設定";
 "config.notAvailable" = "不適用";
 "config.title.dxvk" = "DXVK";
 "config.dxvk" = "DXVK";
@@ -54,7 +56,7 @@
 "info.wine" = "Wine 版本";
 "info.win" = "Windows 版本";
 
-"gptkalert.init" = "Game Porting Toolkit 的 DMG 檔案拉到這裡";
+"gptkalert.init" = "將 Game Porting Toolkit 的 DMG 文件拖到這裡";
 "gptkalert.message" = "GPTK 遇到錯誤！";
 
 "alert.message" = "無法開啟程式！";
@@ -76,6 +78,7 @@
 "kill.bottles" = "終止所有容器";
 "open.logs" = "開啟日誌資料夾";
 "open.bottle" = "导入容器";
+"open.setup" = "Setup...";
 
 "showAlertOnFirstLaunch.messageText" = "你希望將 Whisky 移動到你的應用程式資料夾嗎？";
 "showAlertOnFirstLaunch.informativeText" = "在某些情況下，Whisky 可能無法在不同的資料夾中正常運作";
@@ -88,6 +91,7 @@
 "setup.install.checking" = "正在檢查  %@ 安裝…";
 "setup.install.installed" = "%@ 已安裝";
 "setup.install.notInstalled" = "%@ 未安裝";
+"setup.uninstall" = "Uninstall";
 
 "setup.rosetta" = "正在安裝 Rosetta";
 "setup.rosetta.subtitle" = "Rosetta 允許 x86 代碼（如 Wine）在 Mac 上運行。";

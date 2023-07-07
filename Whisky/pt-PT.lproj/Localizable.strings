@@ -14,6 +14,8 @@
 "button.run" = "Executar...";
 "button.ok" = "OK";
 "button.renameBottle" = "Alterar nome";
+"button.moveBottle" = "Move";
+"button.exportBottle" = "Export as Archive";
 "button.deleteBottle" = "Apagar...";
 "button.createBottle" = "Criar uma Bottle";
 "button.deleteAlert.msg" = "Apagar %@?";
@@ -75,6 +77,7 @@
 "kill.bottles" = "Encerrar Todos os Bottles";
 "open.logs" = "Abrir Pasta dos Logs";
 "open.bottle" = "Import Bottle";
+"open.setup" = "Setup...";
 
 "showAlertOnFirstLaunch.messageText" = "Gostaria de mover o Whisky para a pasta das Aplicações ?";
 "showAlertOnFirstLaunch.informativeText" = "Em alguns casos, o Whisky pode não funcionar corretamente numa pasta diferente";
@@ -87,6 +90,7 @@
 "setup.install.checking" = "Checking %@ installation...";
 "setup.install.installed" = "%@ installed";
 "setup.install.notInstalled" = "%@ not installed";
+"setup.uninstall" = "Uninstall";
 
 "setup.rosetta" = "Installing Rosetta";
 "setup.rosetta.subtitle" = "Rosetta allows x86 code, like Wine, to run on your Mac.";

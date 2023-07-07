@@ -14,6 +14,8 @@
 "button.run" = "Käynnistä...";
 "button.ok" = "OK";
 "button.renameBottle" = "Nimeä uudelleen";
+"button.moveBottle" = "Move";
+"button.exportBottle" = "Export as Archive";
 "button.deleteBottle" = "Poista...";
 "button.createBottle" = "Luo pullo";
 "button.deleteAlert.msg" = "Poista %@?";
@@ -26,7 +28,7 @@
 "config.title.metal" = "Metal";
 "config.metalHud" = "Metal HUD";
 "config.metalTrace" = "Metal Jäljitin";
-"config.retinaMode" = "Retina tila";
+"config.retinaMode" = "Retina-tila";
 "config.metalTrace.info" = "Mahdollistaa GPU työn nappaamisen Xcodessa";
 "config.esync" = "ESync";
 "config.controlPanel" = "Avaa ohjauspaneeli";
@@ -36,10 +38,10 @@
 "config.title.dxvk" = "DXVK";
 "config.dxvk" = "DXVK";
 "config.dxvkHud" = "DXVK HUD";
-"config.dxvkHud.full" = "Full";
-"config.dxvkHud.partial" = "Partial";
+"config.dxvkHud.full" = "Koko";
+"config.dxvkHud.partial" = "Osittainen";
 "config.dxvkHud.fps" = "FPS";
-"config.dxvkHud.off" = "Off";
+"config.dxvkHud.off" = "Pois";
 
 "program.title" = "Asennetut ohjelmat";
 "program.env" = "Ympäristön muuttujat";
@@ -75,18 +77,20 @@
 "kill.bottles" = "Tapa kaikki pullot";
 "open.logs" = "Avaa log kansio";
 "open.bottle" = "Tuo pullo";
+"open.setup" = "Setup...";
 
 "showAlertOnFirstLaunch.messageText" = "Haluatko siirtää Whiskyn Applikaatio-kansioon?";
 "showAlertOnFirstLaunch.informativeText" = "Joissakin tapauksissa, Whiskyn ei ole mahdollista toimia kunnolla muista kansioista";
 "showAlertOnFirstLaunch.button.moveToApplications" = "Siirrä Applikaatioihin";
 "showAlertOnFirstLaunch.button.dontMove" = "Älä siirrä";
 
-"setup.welcome" = "Tervetuloa käyttämään Whiskyia";
+"setup.welcome" = "Tervetuloa käyttämään Whiskyä";
 "setup.welcome.subtitle" = "Valmistellaan perusominaisuudet. Tämä vie vain hetken.";
 
 "setup.install.checking" = "Tarkistetaan %@ asennusta...";
 "setup.install.installed" = "%@ asennettu";
 "setup.install.notInstalled" = "%@ ei asennettu";
+"setup.uninstall" = "Uninstall";
 
 "setup.rosetta" = "Asennetaan Rosettaa";
 "setup.rosetta.subtitle" = "Rosetta, kuten Wine, mahdollistaa x86 koodin käyttämisen Macilläsi.";

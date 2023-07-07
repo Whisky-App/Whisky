@@ -14,6 +14,8 @@
 "button.run" = "Kør program...";
 "button.ok" = "OK";
 "button.renameBottle" = "Omdøb";
+"button.moveBottle" = "Move";
+"button.exportBottle" = "Export as Archive";
 "button.deleteBottle" = "Slet...";
 "button.createBottle" = "Opret Bottle";
 "button.deleteAlert.msg" = "Slet %@?";
@@ -36,10 +38,10 @@
 "config.title.dxvk" = "DXVK";
 "config.dxvk" = "DXVK";
 "config.dxvkHud" = "DXVK HUD";
-"config.dxvkHud.full" = "Full";
-"config.dxvkHud.partial" = "Partial";
+"config.dxvkHud.full" = "Fuld";
+"config.dxvkHud.partial" = "Delvis";
 "config.dxvkHud.fps" = "FPS";
-"config.dxvkHud.off" = "Off";
+"config.dxvkHud.off" = "Fra";
 
 "program.title" = "Installerede programmer";
 "program.env" = "Miljøvariabler";
@@ -74,7 +76,8 @@
 "check.updates" = "Tjek for Opdateringer...";
 "kill.bottles" = "Dræb Alle Bottles";
 "open.logs" = "Åbn Logmappe";
-"open.bottle" = "Import Bottle";
+"open.bottle" = "Importér Bottle";
+"open.setup" = "Setup...";
 
 "showAlertOnFirstLaunch.messageText" = "Vil du flytte Whisky til Applications mappen?";
 "showAlertOnFirstLaunch.informativeText" = "I nogle tilfælde vil Whisky ikke være i stand til at fungere korrekt fra en anden mappe";
@@ -87,6 +90,7 @@
 "setup.install.checking" = "Tjekker %@ Installation...";
 "setup.install.installed" = "%@ installeret";
 "setup.install.notInstalled" = "%@ ikke installeret";
+"setup.uninstall" = "Uninstall";
 
 "setup.rosetta" = "Installere Rosetta";
 "setup.rosetta.subtitle" = "Rosetta tillader x86 kode, som Wine, til at køre på din Mac.";
