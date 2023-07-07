@@ -54,6 +54,7 @@
 "info.winPath.copy" = "Windows のパスをコピー";
 "info.wine" = "Wine バージョン";
 "info.win" = "Windows バージョン";
+"info.gptk" = "GPTK Version";
 
 "gptkalert.init" = "Game Porting Toolkit の DMG ファイルをドロップしてください。";
 "gptkalert.message" = "GPTK でエラーが発生しました！";
@@ -106,4 +107,4 @@
 "setup.gptk" = "GPTK をインストール";
 
 "alert.macos" = "お使いの macOS バージョンはサポートされていません。";
-"alert.macos.info" = "GPTK は macOS Ventura を公式にサポートしていません。問題が起きる可能性があります。";
+"alert.macos.info" = "macOS Ventura is not officially supported by GPTK. Issues may occur!";
