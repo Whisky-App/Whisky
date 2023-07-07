@@ -54,6 +54,7 @@
 "info.winPath.copy" = "Скопіювати шлях до Windows";
 "info.wine" = "Версія Wine";
 "info.win" = "Версія Windows";
+"info.gptk" = "GPTK Version";
 
 "gptkalert.init" = "Перетягніть DMG образ Game Porting Toolkit";
 "gptkalert.message" = "GPTK зіткнувся з помилкою!";
@@ -106,4 +107,4 @@
 "setup.gptk" = "Встановлення GPTK";
 
 "alert.macos" = "Unsupported macOS Version!";
-"alert.macos.info" = "macOS Ventura is not officially support by GPTK. Issues may occur!";
+"alert.macos.info" = "macOS Ventura is not officially supported by GPTK. Issues may occur!";
