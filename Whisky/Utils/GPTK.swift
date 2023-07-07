@@ -13,7 +13,7 @@ class GPTK {
     static let libFolder: URL = WineInstaller.libraryFolder
         .appendingPathComponent("Wine")
         .appendingPathComponent("lib")
-    
+
     static let d3dmSym = libFolder
         .appendingPathComponent("D3DMetal")
         .appendingPathExtension("framework")
