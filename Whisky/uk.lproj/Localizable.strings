@@ -77,6 +77,7 @@
 "kill.bottles" = "Закрити всі пляшки";
 "open.logs" = "Відкрити папку журналів";
 "open.bottle" = "Import Bottle";
+"open.setup" = "Setup...";
 
 "showAlertOnFirstLaunch.messageText" = "Хотіли б ви перемістити Whisky у вашу папку Застосунки?";
 "showAlertOnFirstLaunch.informativeText" = "У деяких випадках, Whisky може не працювати належним чином з іншої папки";
@@ -89,6 +90,7 @@
 "setup.install.checking" = "Перевірка інсталяції %@...";
 "setup.install.installed" = "%@ встановлено";
 "setup.install.notInstalled" = "%@ не встановлено";
+"setup.uninstall" = "Uninstall";
 
 "setup.rosetta" = "Встановлення Розетки";
 "setup.rosetta.subtitle" = "Розетта дозволяє запускати x86 код (напр. Wine) на вашому Mac.";
