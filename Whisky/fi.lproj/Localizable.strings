@@ -54,6 +54,7 @@
 "info.winPath.copy" = "Kopioi Windows-polku";
 "info.wine" = "Wine versio";
 "info.win" = "Windows versio";
+"info.gptk" = "GPTK Version";
 
 "gptkalert.init" = "Vedä ja pudota Game Porting Toolkit DMG";
 "gptkalert.message" = "GPTK ajautui virheeseen!";
@@ -106,4 +107,4 @@
 "setup.gptk" = "Asennetaan GPTK";
 
 "alert.macos" = "Tukematon macOS versio!";
-"alert.macos.info" = "macOS Ventura ei ole virallisesti GPTKn tukema. Ongelmia saattaa ilmetä!";
+"alert.macos.info" = "macOS Ventura is not officially supported by GPTK. Issues may occur!";
