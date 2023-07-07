@@ -14,8 +14,8 @@
 "button.run" = "运行...";
 "button.ok" = "确定";
 "button.renameBottle" = "重命名";
-"button.moveBottle" = "Move";
-"button.exportBottle" = "Export as Archive";
+"button.moveBottle" = "移动";
+"button.exportBottle" = "导出为存档";
 "button.deleteBottle" = "删除...";
 "button.createBottle" = "创建容器";
 "button.deleteAlert.msg" = "你真的想删除 %@吗?";
