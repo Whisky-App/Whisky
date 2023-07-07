@@ -77,6 +77,7 @@
 "kill.bottles" = "Tapa kaikki pullot";
 "open.logs" = "Avaa log kansio";
 "open.bottle" = "Tuo pullo";
+"open.setup" = "Setup...";
 
 "showAlertOnFirstLaunch.messageText" = "Haluatko siirtää Whiskyn Applikaatio-kansioon?";
 "showAlertOnFirstLaunch.informativeText" = "Joissakin tapauksissa, Whiskyn ei ole mahdollista toimia kunnolla muista kansioista";
@@ -89,6 +90,7 @@
 "setup.install.checking" = "Tarkistetaan %@ asennusta...";
 "setup.install.installed" = "%@ asennettu";
 "setup.install.notInstalled" = "%@ ei asennettu";
+"setup.uninstall" = "Uninstall";
 
 "setup.rosetta" = "Asennetaan Rosettaa";
 "setup.rosetta.subtitle" = "Rosetta, kuten Wine, mahdollistaa x86 koodin käyttämisen Macilläsi.";
