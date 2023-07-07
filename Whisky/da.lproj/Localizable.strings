@@ -77,6 +77,7 @@
 "kill.bottles" = "Dræb Alle Bottles";
 "open.logs" = "Åbn Logmappe";
 "open.bottle" = "Importér Bottle";
+"open.setup" = "Setup...";
 
 "showAlertOnFirstLaunch.messageText" = "Vil du flytte Whisky til Applications mappen?";
 "showAlertOnFirstLaunch.informativeText" = "I nogle tilfælde vil Whisky ikke være i stand til at fungere korrekt fra en anden mappe";
@@ -89,6 +90,7 @@
 "setup.install.checking" = "Tjekker %@ Installation...";
 "setup.install.installed" = "%@ installeret";
 "setup.install.notInstalled" = "%@ ikke installeret";
+"setup.uninstall" = "Uninstall";
 
 "setup.rosetta" = "Installere Rosetta";
 "setup.rosetta.subtitle" = "Rosetta tillader x86 kode, som Wine, til at køre på din Mac.";
