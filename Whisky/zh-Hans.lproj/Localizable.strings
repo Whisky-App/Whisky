@@ -54,6 +54,7 @@
 "info.winPath.copy" = "复制 Windows 路径";
 "info.wine" = "Wine 版本";
 "info.win" = "Windows 版本";
+"info.gptk" = "GPTK Version";
 
 "gptkalert.init" = "将 Game Porting Toolkit 的 DMG 文件拖到这里";
 "gptkalert.message" = "GPTK 遇到了一个错误！";
@@ -106,4 +107,4 @@
 "setup.gptk" = "正在安装 GPTK";
 
 "alert.macos" = "不支持的macOS版本！";
-"alert.macos.info" = "GPTK没有macOS Ventura的官方支持。可能会出现问题。";
+"alert.macos.info" = "macOS Ventura is not officially supported by GPTK. Issues may occur!";
