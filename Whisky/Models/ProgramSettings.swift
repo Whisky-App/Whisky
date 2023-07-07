@@ -57,6 +57,11 @@ class ProgramSettings {
         if !decode() {
             encode()
         }
+
+        // Dirty 'fix' for Steam with DXVK
+        if name.contains("steam") {
+            environment["WINEDLLOVERRIDES"] = "dxgi,d3d9,d3d10core,d3d11=b"
+        }
     }
 
     @discardableResult

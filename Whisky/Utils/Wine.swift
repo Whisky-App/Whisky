@@ -233,14 +233,15 @@ class Wine {
                "WINEDEBUG": "fixme-all",
                "WINEBOOT_HIDE_DIALOG": "1"]
 
+        bottle.settings
+              .environmentVariables(environment: &env)
+
         if let environment = environment {
             for variable in environment.keys {
                 env[variable] = environment[variable]
             }
         }
 
-        bottle.settings
-              .environmentVariables(environment: &env)
         return env
     }
 
