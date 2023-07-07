@@ -77,6 +77,7 @@
 "kill.bottles" = "Tüm Bottle'ları Sonlandır";
 "open.logs" = "Log Klasörünü Aç";
 "open.bottle" = "Bottle'ı İçeri Aktarın";
+"open.setup" = "Setup...";
 
 "showAlertOnFirstLaunch.messageText" = "Whisky'yi Applications klasörüne taşımak ister misiniz?";
 "showAlertOnFirstLaunch.informativeText" = "Bazı durumlarda, Whisky farklı bir klasörden düzgün çalışmayabilir";
@@ -89,6 +90,7 @@
 "setup.install.checking" = "%@ kontrol ediliyor...";
 "setup.install.installed" = "%@ yüklendi";
 "setup.install.notInstalled" = "%@ yüklü değil";
+"setup.uninstall" = "Uninstall";
 
 "setup.rosetta" = "Rosetta Yükleniyor";
 "setup.rosetta.subtitle" = "Rosetta, Wine gibi, x86 yazılımının Mac bilgisayarınızda çalışmasına izin verir.";
