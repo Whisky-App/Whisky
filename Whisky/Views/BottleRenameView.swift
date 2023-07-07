@@ -10,6 +10,7 @@ import SwiftUI
 struct BottleRenameView: View {
     let bottle: Bottle
     @State var newBottleName: String = ""
+    @State var nameValid: Bool = false
     @Environment(\.dismiss) var dismiss
 
     var body: some View {
@@ -25,6 +26,9 @@ struct BottleRenameView: View {
                 Spacer()
                 TextField("", text: $newBottleName)
                     .frame(width: 180)
+                    .onChange(of: newBottleName) { name in
+                        nameValid = !name.isEmpty
+                    }
             }
             Spacer()
             HStack {
@@ -38,6 +42,7 @@ struct BottleRenameView: View {
                     dismiss()
                 }
                 .keyboardShortcut(.defaultAction)
+                .disabled(!nameValid)
             }
         }
         .padding()

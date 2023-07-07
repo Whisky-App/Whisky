@@ -12,6 +12,7 @@ struct BottleCreationView: View {
     @State var newBottleVersion: WinVersion = .win10
     @State var newBottleURL: URL = BottleVM.bottleDir
     @State var bottlePath: String = ""
+    @State var nameValid: Bool = false
     @Binding var newlyCreatedBottleURL: URL?
     @Environment(\.dismiss) var dismiss
 
@@ -27,7 +28,10 @@ struct BottleCreationView: View {
                 Text("create.name")
                 Spacer()
                 TextField("", text: $newBottleName)
-                .frame(width: 180)
+                    .frame(width: 180)
+                    .onChange(of: newBottleName) { name in
+                        nameValid = !name.isEmpty
+                    }
             }
             HStack {
                 Text("create.win")
@@ -75,6 +79,7 @@ struct BottleCreationView: View {
                     dismiss()
                 }
                 .keyboardShortcut(.defaultAction)
+                .disabled(!nameValid)
             }
         }
         .padding()
