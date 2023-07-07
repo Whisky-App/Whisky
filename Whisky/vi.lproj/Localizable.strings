@@ -77,6 +77,7 @@
 "kill.bottles" = "Dừng tất cả Bottle";
 "open.logs" = "Mở Folder Log";
 "open.bottle" = "Import Bottle";
+"open.setup" = "Setup...";
 
 "showAlertOnFirstLaunch.messageText" = "Bạn có muốn chuyển Whisky tới folder Applications?";
 "showAlertOnFirstLaunch.informativeText" = "Trong một số trường hợp, Whisky sẽ không hoạt động đúng nếu không nằm trong Applications";
@@ -89,6 +90,7 @@
 "setup.install.checking" = "Đang kiểm tra cài đặt %@...";
 "setup.install.installed" = "%@ đã được cài đặt";
 "setup.install.notInstalled" = "%@ chưa được cài đặt";
+"setup.uninstall" = "Uninstall";
 
 "setup.rosetta" = "Đang cài đặt Rosetta";
 "setup.rosetta.subtitle" = "Rosetta cho phép các ứng dụng x86 như Wine chạy trên máy Mac của bạn.";
