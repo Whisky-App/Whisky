@@ -11,7 +11,7 @@ struct WelcomeView: View {
     @State var rosettaInstalled: Bool?
     @State var wineInstalled: Bool?
     @State var gptkInstalled: Bool?
-    @State var canContinue: Bool = false
+    @State var shouldCheckInstallStatus: Bool = false
     @Binding var path: [SetupStage]
     @Binding var showSetup: Bool
 
@@ -30,22 +30,25 @@ struct WelcomeView: View {
             Form {
                 if Arch.getArch() == .arm {
                     InstallStatusView(isInstalled: $rosettaInstalled,
+                                      shouldCheckInstallStatus: $shouldCheckInstallStatus,
                                       name: "Rosetta")
                 }
                 InstallStatusView(isInstalled: $wineInstalled,
+                                  shouldCheckInstallStatus: $shouldCheckInstallStatus,
+                                  showUninstall: true,
                                   name: "Wine")
                 InstallStatusView(isInstalled: $gptkInstalled,
+                                  shouldCheckInstallStatus: $shouldCheckInstallStatus,
+                                  showUninstall: true,
                                   name: "GPTK")
             }
             .formStyle(.grouped)
             .scrollDisabled(true)
             .onAppear {
-                Task {
-                    rosettaInstalled = Rosetta2.isRosettaInstalled
-                    wineInstalled = WineInstaller.isWineInstalled()
-                    gptkInstalled = GPTK.isGPTKInstalled()
-                    canContinue = true
-                }
+                checkInstallStatus()
+            }
+            .onChange(of: shouldCheckInstallStatus) { _ in
+                checkInstallStatus()
             }
             Spacer()
             HStack {
@@ -79,15 +82,22 @@ struct WelcomeView: View {
                     }
                 }
                 .keyboardShortcut(.defaultAction)
-                .disabled(!canContinue)
             }
         }
         .frame(width: 400, height: 250)
+    }
+
+    func checkInstallStatus() {
+        rosettaInstalled = Rosetta2.isRosettaInstalled
+        wineInstalled = WineInstaller.isWineInstalled()
+        gptkInstalled = GPTK.isGPTKInstalled()
     }
 }
 
 struct InstallStatusView: View {
     @Binding var isInstalled: Bool?
+    @Binding var shouldCheckInstallStatus: Bool
+    @State var showUninstall: Bool = false
     @State var name: String
     @State var text: String = NSLocalizedString("setup.install.checking",
                                                 comment: "")
@@ -105,6 +115,14 @@ struct InstallStatusView: View {
             }
             .frame(width: 10)
             Text(String.init(format: text, name))
+            Spacer()
+            if let installed = isInstalled {
+                if installed && showUninstall {
+                    Button("setup.uninstall") {
+                        uninstall()
+                    }
+                }
+            }
         }
         .onChange(of: isInstalled) { _ in
             if let installed = isInstalled {
@@ -117,5 +135,15 @@ struct InstallStatusView: View {
                 text = NSLocalizedString("setup.install.checking", comment: "")
             }
         }
+    }
+
+    func uninstall() {
+        if name == "Wine" {
+            WineInstaller.uninstall()
+        }
+        if name == "GPTK" {
+            GPTK.uninstall()
+        }
+        shouldCheckInstallStatus.toggle()
     }
 }

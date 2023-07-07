@@ -40,7 +40,7 @@ struct WineInstallView: View {
         .frame(width: 400, height: 200)
         .onAppear {
             Task {
-                WineInstaller.installWine(from: tarLocation)
+                WineInstaller.install(from: tarLocation)
                 installing = false
                 proceed()
             }

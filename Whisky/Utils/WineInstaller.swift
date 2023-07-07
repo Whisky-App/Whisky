@@ -19,7 +19,7 @@ class WineInstaller {
         return FileManager.default.fileExists(atPath: libraryFolder.path)
     }
 
-    static func installWine(from: URL) {
+    static func install(from: URL) {
         do {
             let whiskySupportFolder = FileManager.default.urls(for: .applicationSupportDirectory,
                                                                in: .userDomainMask)[0]
@@ -50,7 +50,7 @@ class WineInstaller {
         }
     }
 
-    static func uninstallWine() {
+    static func uninstall() {
         let libraryFolder = FileManager.default.urls(for: .applicationSupportDirectory,
                                                            in: .userDomainMask)[0]
             .appendingPathComponent(Bundle.main.bundleIdentifier ?? "com.isaacmarovitz.Whisky")

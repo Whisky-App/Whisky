@@ -10,7 +10,7 @@ import UniformTypeIdentifiers
 
 struct ContentView: View {
     @EnvironmentObject var bottleVM: BottleVM
-    @AppStorage("showSetup") private var showSetup = true
+    @Binding var showSetup: Bool
     @State var selected: URL?
     @State var showBottleCreation: Bool = false
     @State var bottlesLoaded: Bool = false
@@ -101,8 +101,11 @@ struct ContentView: View {
         .onAppear {
             bottleVM.loadBottles()
             bottlesLoaded = true
+            if !GPTK.isGPTKInstalled() || !WineInstaller.isWineInstalled() {
+                showSetup = true
+            }
             if WineInstaller.shouldUpdateWine() {
-                WineInstaller.uninstallWine()
+                WineInstaller.uninstall()
                 showSetup = true
             }
             if ProcessInfo().operatingSystemVersion.majorVersion < 14 {
@@ -200,7 +203,7 @@ struct BottleListEntry: View {
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView()
+        ContentView(showSetup: .constant(false))
             .environmentObject(BottleVM.shared)
     }
 }

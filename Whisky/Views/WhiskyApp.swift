@@ -10,6 +10,7 @@ import Sparkle
 
 @main
 struct WhiskyApp: App {
+    @State var showSetup: Bool = false
     @NSApplicationDelegateAdaptor(AppDelegate.self) var appDelegate
     private let updaterController: SPUStandardUpdaterController
 
@@ -21,7 +22,7 @@ struct WhiskyApp: App {
 
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            ContentView(showSetup: $showSetup)
                 .environmentObject(BottleVM.shared)
                 .onAppear {
                     NSWindow.allowsAutomaticWindowTabbing = false
@@ -30,6 +31,10 @@ struct WhiskyApp: App {
         .commands {
             CommandGroup(after: .appInfo) {
                 SparkleView(updater: updaterController.updater)
+                Divider()
+                Button("open.setup") {
+                    showSetup = true
+                }
             }
             CommandGroup(after: .newItem) {
                 Button("open.bottle") {

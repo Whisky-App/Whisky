@@ -10,6 +10,28 @@ import AppKit
 
 // GPTK = Game Porting Toolkit
 class GPTK {
+    static let libFolder: URL = WineInstaller.libraryFolder
+        .appendingPathComponent("Wine")
+        .appendingPathComponent("lib")
+    
+    static let d3dmSym = libFolder
+        .appendingPathComponent("D3DMetal")
+        .appendingPathExtension("framework")
+
+    static let d3dmOg = libFolder
+        .appendingPathComponent("external")
+        .appendingPathComponent("D3DMetal")
+        .appendingPathExtension("framework")
+
+    static let libSym = libFolder
+        .appendingPathComponent("libd3dshared")
+        .appendingPathExtension("dylib")
+
+    static let libOg = libFolder
+        .appendingPathComponent("external")
+        .appendingPathComponent("libd3dshared")
+        .appendingPathExtension("dylib")
+
     static func isGPTKInstalled() -> Bool {
         let libFolder: URL = WineInstaller.libraryFolder
             .appendingPathComponent("Wine")
@@ -23,34 +45,26 @@ class GPTK {
     }
 
     static func install(url: URL) {
-        let libFolder: URL = WineInstaller.libraryFolder
-            .appendingPathComponent("Wine")
-            .appendingPathComponent("lib")
-
         do {
             let path = try Hdiutil.mount(url: url) + "/lib"
 
             Ditto.ditto(fromPath: path, toPath: libFolder.path)
 
-            let d3dmSym = libFolder
-                .appendingPathComponent("D3DMetal")
-                .appendingPathExtension("framework")
-            let libSym = libFolder
-                .appendingPathComponent("libd3dshared")
-                .appendingPathExtension("dylib")
-            let d3dmOg = libFolder
-                .appendingPathComponent("external")
-                .appendingPathComponent("D3DMetal")
-                .appendingPathExtension("framework")
-            let libOg = libFolder
-                .appendingPathComponent("external")
-                .appendingPathComponent("libd3dshared")
-                .appendingPathExtension("dylib")
-
             try FileManager.default.createSymbolicLink(at: d3dmSym, withDestinationURL: d3dmOg)
             try FileManager.default.createSymbolicLink(at: libSym, withDestinationURL: libOg)
 
             try Hdiutil.unmount(path: path)
+        } catch {
+            print(error)
+        }
+    }
+
+    static func uninstall() {
+        do {
+            try FileManager.default.removeItem(at: d3dmSym)
+            try FileManager.default.removeItem(at: d3dmOg)
+            try FileManager.default.removeItem(at: libSym)
+            try FileManager.default.removeItem(at: libOg)
         } catch {
             print(error)
         }
