@@ -78,6 +78,7 @@
 "kill.bottles" = "終止所有容器";
 "open.logs" = "開啟日誌資料夾";
 "open.bottle" = "导入容器";
+"open.setup" = "Setup...";
 
 "showAlertOnFirstLaunch.messageText" = "你希望將 Whisky 移動到你的應用程式資料夾嗎？";
 "showAlertOnFirstLaunch.informativeText" = "在某些情況下，Whisky 可能無法在不同的資料夾中正常運作";
@@ -90,6 +91,7 @@
 "setup.install.checking" = "正在檢查  %@ 安裝…";
 "setup.install.installed" = "%@ 已安裝";
 "setup.install.notInstalled" = "%@ 未安裝";
+"setup.uninstall" = "Uninstall";
 
 "setup.rosetta" = "正在安裝 Rosetta";
 "setup.rosetta.subtitle" = "Rosetta 允許 x86 代碼（如 Wine）在 Mac 上運行。";
