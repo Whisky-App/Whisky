@@ -77,6 +77,7 @@
 "kill.bottles" = "모든 Bottle 종료하기";
 "open.logs" = "로그 폴더 열기";
 "open.bottle" = "Bottle 불러오기";
+"open.setup" = "Setup...";
 
 "showAlertOnFirstLaunch.messageText" = "Whisky를 애플리케이션 폴더로 옮기시겠습니까?";
 "showAlertOnFirstLaunch.informativeText" = "경우에 따라 다른 폴더에서는 Whisky가 제대로 동작하지 않을 수 있습니다.";
@@ -89,6 +90,7 @@
 "setup.install.checking" = "%@ 설치를 확인하는 중입니다...";
 "setup.install.installed" = "%@ 설치됨";
 "setup.install.notInstalled" = "%@ 설치되지 않음";
+"setup.uninstall" = "Uninstall";
 
 "setup.rosetta" = "Rosetta를 설치 중입니다.";
 "setup.rosetta.subtitle" = "Rosetta는 Wine과 같은 x86 코드를 당신의 Mac에서 실행할 수 있게 해 줍니다.";
