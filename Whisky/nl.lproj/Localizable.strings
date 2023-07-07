@@ -77,6 +77,7 @@
 "kill.bottles" = "Stop alle flessen";
 "open.logs" = "Open Logs map";
 "open.bottle" = "Importeer Fles";
+"open.setup" = "Setup...";
 
 "showAlertOnFirstLaunch.messageText" = "Wilt u Whiskey verplaatsen naar uw map Toepassingen?";
 "showAlertOnFirstLaunch.informativeText" = "In sommige gevallen zal Whiskey niet goed kunnen functioneren vanuit een andere map";
@@ -89,6 +90,7 @@
 "setup.install.checking" = "De %@ installatie controleren...";
 "setup.install.installed" = "%@ geïnstalleerd";
 "setup.install.notInstalled" = "%@ niet geïnstalleerd";
+"setup.uninstall" = "Uninstall";
 
 "setup.rosetta" = "Rosetta installeren";
 "setup.rosetta.subtitle" = "Rosetta laat x86 code, zoals Wine, uitgevoerd worden op je Mac.";
