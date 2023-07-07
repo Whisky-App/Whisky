@@ -14,8 +14,8 @@
 "button.run" = "実行...";
 "button.ok" = "OK";
 "button.renameBottle" = "名前の変更";
-"button.moveBottle" = "Move";
-"button.exportBottle" = "Export as Archive";
+"button.moveBottle" = "移動";
+"button.exportBottle" = "アーカイブとしてエクスポート";
 "button.deleteBottle" = "削除...";
 "button.createBottle" = "Bottle を作成";
 "button.deleteAlert.msg" = "%@ を削除しますか？";
