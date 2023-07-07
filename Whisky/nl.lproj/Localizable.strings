@@ -54,6 +54,7 @@
 "info.winPath.copy" = "Kopieer Windows Pad";
 "info.wine" = "Wine Versie";
 "info.win" = "Windows Versie";
+"info.gptk" = "GPTK Version";
 
 "gptkalert.init" = "Sleep de Game Porting Toolkit DMG";
 "gptkalert.message" = "Er is een fout opgetreden bij de GPTK!";
@@ -106,4 +107,4 @@
 "setup.gptk" = "GPTK Installeren";
 
 "alert.macos" = "Niet-ondersteunde macOS versie!";
-"alert.macos.info" = "macOS Venture is niet officieel ondersteunt door GPTK. Er kunnen problemen zijn!";
+"alert.macos.info" = "macOS Ventura is not officially supported by GPTK. Issues may occur!";
