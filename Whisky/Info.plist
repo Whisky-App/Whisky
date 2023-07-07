@@ -28,8 +28,6 @@
 			</dict>
 		</dict>
 	</array>
-	<key>NSAppleEventsUsageDescription</key>
-	<string>Whisky needs to access Terminal to launcher processes in a Terminal window.</string>
 	<key>WineBinaryVersion</key>
 	<integer>4</integer>
 </dict>

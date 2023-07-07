@@ -70,6 +70,28 @@ class GPTK {
         }
     }
 
+    struct VersionInfo: Codable {
+        let CFBundleShortVersionString: String
+    }
+
+    static func gptkVersion() -> String? {
+        do {
+            let versionPlist = d3dmOg
+                .appendingPathComponent("Versions")
+                .appendingPathComponent("A")
+                .appendingPathComponent("Resources")
+                .appendingPathComponent("version")
+                .appendingPathExtension("plist")
+
+            let decoder = PropertyListDecoder()
+            let data = try Data(contentsOf: versionPlist)
+            let info = try decoder.decode(VersionInfo.self, from: data)
+            return info.CFBundleShortVersionString
+        } catch {
+            return nil
+        }
+    }
+
     static func gptkError(error: String) {
         let alert = NSAlert()
         alert.messageText = String(localized: "gptkalert.message")

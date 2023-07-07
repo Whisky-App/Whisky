@@ -27,6 +27,10 @@ struct InfoView: View {
                          value: String(bottle.settings.wineVersion))
                 InfoItem(label: String(localized: "info.win"),
                          value: bottle.settings.windowsVersion.pretty())
+                if let version = GPTK.gptkVersion() {
+                    InfoItem(label: String(localized: "info.gptk"),
+                             value: version)
+                }
             }
         }
         .formStyle(.grouped)
