@@ -62,7 +62,7 @@ class Wine {
                 enableDXVK(bottle: bottle)
             }
 
-            process.environment = constructEnvironemnt(bottle: bottle,
+            process.environment = constructEnvironment(bottle: bottle,
                                                        environment: environment)
         }
 
@@ -227,7 +227,7 @@ class Wine {
         return try runWineserver(["-k"], bottle: bottle)
     }
 
-    static func constructEnvironemnt(bottle: Bottle, environment: [String: String]?) -> [String: String] {
+    static func constructEnvironment(bottle: Bottle, environment: [String: String]?) -> [String: String] {
         var env: [String: String]
         env = ["WINEPREFIX": bottle.url.path,
                "WINEDEBUG": "fixme-all",
