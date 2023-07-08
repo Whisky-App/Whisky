@@ -54,7 +54,7 @@
 "info.winPath.copy" = "复制 Windows 路径";
 "info.wine" = "Wine 版本";
 "info.win" = "Windows 版本";
-"info.gptk" = "GPTK Version";
+"info.gptk" = "GPTK 版本";
 
 "gptkalert.init" = "将 Game Porting Toolkit 的 DMG 文件拖到这里";
 "gptkalert.message" = "GPTK 遇到了一个错误！";
@@ -78,7 +78,7 @@
 "kill.bottles" = "结束所有容器";
 "open.logs" = "打开日志文件夹";
 "open.bottle" = "导入容器";
-"open.setup" = "Setup...";
+"open.setup" = "设置...";
 
 "showAlertOnFirstLaunch.messageText" = "你想要将 Whisky 移动到你的应用程序文件夹吗？";
 "showAlertOnFirstLaunch.informativeText" = "在某些情况下，Whisky 可能无法在另外的文件夹中正常工作";
@@ -91,7 +91,7 @@
 "setup.install.checking" = "正在检查 %@ 安装...";
 "setup.install.installed" = "%@ 已安装";
 "setup.install.notInstalled" = "%@ 未安装";
-"setup.uninstall" = "Uninstall";
+"setup.uninstall" = "卸载";
 
 "setup.rosetta" = "正在安装 Rosetta";
 "setup.rosetta.subtitle" = "Rosetta 允许 x86 代码在您的 Mac 上运行，比如 Wine。";
@@ -107,4 +107,4 @@
 "setup.gptk" = "正在安装 GPTK";
 
 "alert.macos" = "不支持的macOS版本！";
-"alert.macos.info" = "macOS Ventura is not officially supported by GPTK. Issues may occur!";
+"alert.macos.info" = "macOS Ventura未得到GPTK的官方支持。可能会出现问题！";
