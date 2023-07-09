@@ -15,7 +15,7 @@
 "button.ok" = "确定";
 "button.renameBottle" = "重命名";
 "button.moveBottle" = "移动";
-"button.exportBottle" = "导出存档";
+"button.exportBottle" = "导出为存档";
 "button.deleteBottle" = "删除...";
 "button.createBottle" = "创建容器";
 "button.deleteAlert.msg" = "你真的想删除 %@ 吗?";
@@ -43,7 +43,7 @@
 "config.dxvkHud.fps" = "帧数";
 "config.dxvkHud.off" = "关闭";
 
-"program.title" = "已安装的程序";
+"program.title" = "已安装的软件";
 "program.env" = "环境变量";
 "program.args" = "参数";
 "program.config" = "配置";
@@ -94,7 +94,7 @@
 "setup.uninstall" = "卸载";
 
 "setup.rosetta" = "正在安装 Rosetta";
-"setup.rosetta.subtitle" = "Rosetta 支持像 Wine 这样的 x86 代码在您的 Mac 上运行。";
+"setup.rosetta.subtitle" = "Rosetta 允许 x86 代码在您的 Mac 上运行，比如 Wine。";
 
 "setup.wine.download" = "正在下载 Wine";
 "setup.wine.download.subtitle" = "下载时间根据您上网速度有所不同。";
