@@ -14,8 +14,8 @@
 "button.run" = "Uruchom...";
 "button.ok" = "OK";
 "button.renameBottle" = "Zmień nazwę";
-"button.moveBottle" = "Move";
-"button.exportBottle" = "Export as Archive";
+"button.moveBottle" = "Przenieś";
+"button.exportBottle" = "Eksportuj jako archiwum";
 "button.deleteBottle" = "Usuń...";
 "button.createBottle" = "Utwórz butelkę";
 "button.deleteAlert.msg" = "Usunąć %@?";
@@ -38,10 +38,10 @@
 "config.title.dxvk" = "DXVK";
 "config.dxvk" = "DXVK";
 "config.dxvkHud" = "DXVK HUD";
-"config.dxvkHud.full" = "Full";
-"config.dxvkHud.partial" = "Partial";
-"config.dxvkHud.fps" = "FPS";
-"config.dxvkHud.off" = "Off";
+"config.dxvkHud.full" = "Pełny";
+"config.dxvkHud.partial" = "Częściowy";
+"config.dxvkHud.fps" = "FPS (kl./s)";
+"config.dxvkHud.off" = "Wyłączony";
 
 "program.title" = "Zainstalowane programy";
 "program.env" = "Zmienne środowiskowe";
@@ -54,7 +54,7 @@
 "info.winPath.copy" = "Kopiuj ścieżkę systemu Windows";
 "info.wine" = "Wersja Wine:";
 "info.win" = "Wersja systemu Windows:";
-"info.gptk" = "GPTK Version";
+"info.gptk" = "Wersja GPTK";
 
 "gptkalert.init" = "Przeciągnij i upuść plik Game Porting Toolkit.dmg";
 "gptkalert.message" = "GPTK napotkał błąd!";
@@ -78,7 +78,7 @@
 "kill.bottles" = "Zakończ wszystkie butelki";
 "open.logs" = "Otwórz folder z logami";
 "open.bottle" = "Importuj butelkę";
-"open.setup" = "Setup...";
+"open.setup" = "Konfiguracja...";
 
 "showAlertOnFirstLaunch.messageText" = "Czy chcesz przenieść Whisky do folderu Aplikacje?";
 "showAlertOnFirstLaunch.informativeText" = "W niektórych przypadkach Whisky nie będzie w stanie działać poprawnie w innym folderze";
@@ -91,7 +91,7 @@
 "setup.install.checking" = "Sprawdzanie %@ instalacji...";
 "setup.install.installed" = "%@ zainstalowano";
 "setup.install.notInstalled" = "%@ nie zainstalowano";
-"setup.uninstall" = "Uninstall";
+"setup.uninstall" = "Odinstaluj";
 
 "setup.rosetta" = "Instalowanie Rosetta";
 "setup.rosetta.subtitle" = "Rosetta pozwala kodowi x86, tak jak Wine, na uruchamianie na komputerze Mac.";
@@ -107,4 +107,4 @@
 "setup.gptk" = "Instalowanie GPTK";
 
 "alert.macos" = "Nieobsługiwana wersja macOS!";
-"alert.macos.info" = "macOS Ventura is not officially supported by GPTK. Issues may occur!";
+"alert.macos.info" = "macOS Ventura nie jest oficjalnie wspierana przez GPTK. Mogą wystąpić problemy!";
