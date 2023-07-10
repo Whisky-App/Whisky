@@ -14,8 +14,8 @@
 "button.run" = "실행...";
 "button.ok" = "확인";
 "button.renameBottle" = "이름 변경";
-"button.moveBottle" = "Move";
-"button.exportBottle" = "Export as Archive";
+"button.moveBottle" = "이동";
+"button.exportBottle" = "아카이브로 내보내기";
 "button.deleteBottle" = "삭제...";
 "button.createBottle" = "Bottle 생성";
 "button.deleteAlert.msg" = "%@을(를) 삭제하시겠습니까?";
@@ -37,7 +37,7 @@
 "config.notAvailable" = "사용 불가";
 "config.title.dxvk" = "DXVK";
 "config.dxvk" = "DXVK";
-"config.dxvkHud" = "DXVK";
+"config.dxvkHud" = "DXVK HUD";
 "config.dxvkHud.full" = "전체";
 "config.dxvkHud.partial" = "일부";
 "config.dxvkHud.fps" = "FPS";
@@ -54,7 +54,7 @@
 "info.winPath.copy" = "Windows 경로 복사";
 "info.wine" = "Wine 버전";
 "info.win" = "Windows 버전";
-"info.gptk" = "GPTK Version";
+"info.gptk" = "GPTK 버전";
 
 "gptkalert.init" = "Game Porting Toolkit DMG를 끌어다 놓으세요";
 "gptkalert.message" = "GPTK에서 오류가 발생했습니다!";
@@ -78,7 +78,7 @@
 "kill.bottles" = "모든 Bottle 종료하기";
 "open.logs" = "로그 폴더 열기";
 "open.bottle" = "Bottle 불러오기";
-"open.setup" = "Setup...";
+"open.setup" = "설치...";
 
 "showAlertOnFirstLaunch.messageText" = "Whisky를 애플리케이션 폴더로 옮기시겠습니까?";
 "showAlertOnFirstLaunch.informativeText" = "경우에 따라 다른 폴더에서는 Whisky가 제대로 동작하지 않을 수 있습니다.";
@@ -91,7 +91,7 @@
 "setup.install.checking" = "%@ 설치를 확인하는 중입니다...";
 "setup.install.installed" = "%@ 설치됨";
 "setup.install.notInstalled" = "%@ 설치되지 않음";
-"setup.uninstall" = "Uninstall";
+"setup.uninstall" = "제거";
 
 "setup.rosetta" = "Rosetta를 설치 중입니다.";
 "setup.rosetta.subtitle" = "Rosetta는 Wine과 같은 x86 코드를 당신의 Mac에서 실행할 수 있게 해 줍니다.";
@@ -107,4 +107,4 @@
 "setup.gptk" = "GPTK 설치 중";
 
 "alert.macos" = "지원되지 않는 macOS 버전!";
-"alert.macos.info" = "macOS Ventura is not officially supported by GPTK. Issues may occur!";
+"alert.macos.info" = "GPTK는 macOS Ventura를 공식적으로 지원하지 않습니다. 문제가 발생할 수 있습니다!";
