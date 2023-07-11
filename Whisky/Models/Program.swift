@@ -60,7 +60,7 @@ public class Program: Hashable {
     func runInTerminal() async {
         var wineCmd = "\(Wine.wineBinary.esc) start '\(url.windowsPath())' \(settings.arguments)"
 
-        let env = Wine.constructEnvironemnt(bottle: bottle,
+        let env = Wine.constructEnvironment(bottle: bottle,
                                             environment: settings.environment)
         for environment in env {
             wineCmd = "\(environment.key)=\(environment.value) " + wineCmd

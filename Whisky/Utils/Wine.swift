@@ -152,6 +152,28 @@ class Wine {
                                 data: retinaMode ? "y" : "n",
                                 type: .string)
     }
+    static func dpiResolution(bottle: Bottle) async throws -> Int {
+        let output = try await queryRegistyKey(
+            bottle: bottle,
+            key: #"HKCU\Control Panel\Desktop"#,
+            name: "LogPixels",
+            type: .dword
+        )
+        let int = Int(output)
+        if let intData = int {
+            return intData
+        }
+        print("Failed to convert str LogPixels to int (default 216)")
+        return 216
+    }
+    static func changeDpiResolution(bottle: Bottle, dpi: Int) async throws {
+        try await addRegistyKey(bottle: bottle,
+            key: #"HKCU\Control Panel\Desktop"#,
+            name: "LogPixels",
+            data: String(dpi),
+            type: .dword
+        )
+    }
 
     @discardableResult
     static func control(bottle: Bottle) async throws -> String {

@@ -20,9 +20,12 @@ struct ConfigView: View {
     @State var displayBuildVersion: String = ""
     @State var buildVersion: String = ""
     @State var retinaMode: Bool = false
-    @State var winVersionLoadingState: LoadingState = LoadingState.loading
-    @State var buildVersionLoadingState: LoadingState = LoadingState.loading
-    @State var retinaModeLoadingState: LoadingState = LoadingState.loading
+    @State var dpiConfig: Int = 216
+    @State var winVersionLoadingState: LoadingState = .loading
+    @State var buildVersionLoadingState: LoadingState = .loading
+    @State var retinaModeLoadingState: LoadingState = .loading
+    @State var dpiConfigLoadingState: LoadingState = .loading
+    @State var dpiSheetPresented: Bool = false
 
     init(bottle: Binding<Bottle>) {
         self._bottle = bottle
@@ -33,31 +36,18 @@ struct ConfigView: View {
         VStack {
             Form {
                 Section {
-                    Picker("config.winVersion",
-                           selection: $windowsVersion) {
-                        ForEach(WinVersion.allCases.reversed(), id: \.self) {
-                            Text($0.pretty())
+                    SettingItemView(loadingState: $winVersionLoadingState, title: "config.winVersion") {
+                        Picker("config.winVersion", selection: $windowsVersion) {
+                            ForEach(WinVersion.allCases.reversed(), id: \.self) {
+                                Text($0.pretty())
+                            }
                         }
                     }
-                   .disabled(winVersionLoadingState != LoadingState.success)
-                    if buildVersionLoadingState == LoadingState.failed {
-                        HStack {
-                            Text("config.buildVersion")
-                            Spacer()
-                            Text("config.notAvailable").opacity(0.5)
-                        }
-                    } else if buildVersionLoadingState == LoadingState.loading {
-                        HStack {
-                            Text("config.buildVersion")
-                            Spacer()
-                            ProgressView()
-                                .progressViewStyle(.circular)
-                                .controlSize(.small)
-                        }
-                    } else {
+                    SettingItemView(loadingState: $buildVersionLoadingState, title: "config.buildVersion") {
                         TextField("config.buildVersion", text: $displayBuildVersion)
+                            .textFieldStyle(PlainTextFieldStyle())
                             .onSubmit {
-                                buildVersionLoadingState = LoadingState.modifying
+                                buildVersionLoadingState = .modifying
                                 Task(priority: .userInitiated) {
                                     if let version = Int(displayBuildVersion) {
                                         do {
@@ -68,9 +58,45 @@ struct ConfigView: View {
                                     } else {
                                         displayBuildVersion = buildVersion
                                     }
-                                    buildVersionLoadingState = LoadingState.success
+                                    buildVersionLoadingState = .success
                                 }
-                            }.disabled(buildVersionLoadingState == LoadingState.modifying)
+                            }
+                    }
+                    SettingItemView(loadingState: $retinaModeLoadingState, title: "config.retinaMode") {
+                        Toggle("config.retinaMode", isOn: $retinaMode)
+                        .onChange(of: retinaMode) { _ in
+                            Task(priority: .userInitiated) {
+                                retinaModeLoadingState = .modifying
+                                do {
+                                    try await Wine.changeRetinaMode(bottle: bottle, retinaMode: retinaMode)
+                                } catch {
+                                    print("Failed to change build version")
+                                }
+                                retinaModeLoadingState = .success
+                            }
+                        }
+                    }
+                    HStack {
+                        Text("config.dpi")
+                        Spacer()
+                        if dpiConfigLoadingState == .failed {
+                            Text("config.notAvailable").opacity(0.5)
+                        } else if dpiConfigLoadingState == .success {
+                            Button("config.inspect") {
+                                dpiSheetPresented = true
+                            }
+                            .sheet(isPresented: $dpiSheetPresented, content: {
+                                DPIConfigSheetView(
+                                    dpiConfig: $dpiConfig,
+                                    isRetinaMode: $retinaMode,
+                                    presented: $dpiSheetPresented
+                                )
+                            })
+                        } else {
+                            ProgressView()
+                                .progressViewStyle(.circular)
+                                .controlSize(.small)
+                        }
                     }
                 }
                 Section("config.title.dxvk") {
@@ -92,33 +118,6 @@ struct ConfigView: View {
                     Toggle(isOn: $bottle.settings.metalTrace) {
                         Text("config.metalTrace")
                         Text("config.metalTrace.info")
-                    }
-                    if retinaModeLoadingState != LoadingState.loading {
-                        Toggle(isOn: $retinaMode) {
-                            Text("config.retinaMode")
-                        }
-                        .onChange(of: retinaMode) { _ in
-                            Task(priority: .userInitiated) {
-                                retinaModeLoadingState = LoadingState.modifying
-                                do {
-                                    try await Wine.changeRetinaMode(bottle: bottle, retinaMode: retinaMode)
-                                } catch {
-                                    print("Failed to change build version")
-                                }
-                                retinaModeLoadingState = LoadingState.success
-                            }
-                        }.disabled(
-                            retinaModeLoadingState == LoadingState.failed ||
-                            retinaModeLoadingState == LoadingState.modifying
-                        )
-                    } else {
-                        HStack {
-                            Text("config.retinaMode")
-                            Spacer()
-                            ProgressView()
-                                .progressViewStyle(.circular)
-                                .controlSize(.small)
-                        }
                     }
                 }
                 Section {
@@ -164,33 +163,42 @@ struct ConfigView: View {
                                 bottle.settings.name))
         .onAppear {
             windowsVersion = bottle.settings.windowsVersion
-            winVersionLoadingState = LoadingState.success
+            winVersionLoadingState = .success
 
             loadBuildName()
 
-            Task(priority: .background) {
+            Task(priority: .userInitiated) {
                 do {
                     retinaMode = try await Wine.retinaMode(bottle: bottle)
-                    retinaModeLoadingState = LoadingState.success
+                    retinaModeLoadingState = .success
                 } catch {
                     print(error)
-                    retinaModeLoadingState = LoadingState.failed
+                    retinaModeLoadingState = .failed
+                }
+            }
+            Task(priority: .userInitiated) {
+                do {
+                    dpiConfig = try await Wine.dpiResolution(bottle: bottle)
+                    dpiConfigLoadingState = .success
+                } catch {
+                    print(error)
+                    dpiConfigLoadingState = .failed
                 }
             }
         }
         .onChange(of: windowsVersion) { newValue in
-            if winVersionLoadingState == LoadingState.success {
-                winVersionLoadingState = LoadingState.loading
-                buildVersionLoadingState = LoadingState.loading
+            if winVersionLoadingState == .success {
+                winVersionLoadingState = .loading
+                buildVersionLoadingState = .loading
                 Task(priority: .userInitiated) {
                     do {
                         try await Wine.changeWinVersion(bottle: bottle, win: newValue)
-                        winVersionLoadingState = LoadingState.success
+                        winVersionLoadingState = .success
                         bottle.settings.windowsVersion = newValue
                         loadBuildName()
                     } catch {
                         print(error)
-                        winVersionLoadingState = LoadingState.failed
+                        winVersionLoadingState = .failed
                         windowsVersion = bottle.settings.windowsVersion
                     }
                 }
@@ -200,17 +208,134 @@ struct ConfigView: View {
             // Remove anything that isn't a number
             buildVersion = buildVersion.filter("0123456789".contains)
         }
+        .onChange(of: dpiConfig) { _ in
+            Task(priority: .userInitiated) {
+                dpiConfigLoadingState = .modifying
+                do {
+                    try await Wine.changeDpiResolution(bottle: bottle, dpi: dpiConfig)
+                    dpiConfigLoadingState = .success
+                } catch {
+                    print(error)
+                    dpiConfigLoadingState = .failed
+                }
+            }
+        }
     }
 
     func loadBuildName() {
-        Task(priority: .background) {
+        Task(priority: .userInitiated) {
             do {
                 buildVersion = try await Wine.buildVersion(bottle: bottle)
                 displayBuildVersion = buildVersion
-                buildVersionLoadingState = LoadingState.success
+                buildVersionLoadingState = .success
             } catch {
                 print(error)
-                buildVersionLoadingState = LoadingState.failed
+                buildVersionLoadingState = .failed
+            }
+        }
+    }
+}
+
+struct DPIConfigSheetView: View {
+    @Binding var dpiConfig: Int
+    @Binding var isRetinaMode: Bool
+    @Binding var presented: Bool
+    @State var stagedChanges: Float
+    @FocusState var textFocused: Bool
+    init(dpiConfig: Binding<Int>, isRetinaMode: Binding<Bool>, presented: Binding<Bool>) {
+        self._dpiConfig = dpiConfig
+        self._isRetinaMode = isRetinaMode
+        self._presented = presented
+        self.stagedChanges = Float(dpiConfig.wrappedValue)
+    }
+    var body: some View {
+        VStack {
+            HStack {
+                Text("configDpi.title")
+                    .fontWeight(.bold)
+                Spacer()
+            }
+            Divider()
+            GroupBox(label: Label("configDpi.preview", systemImage: "text.magnifyingglass")) {
+                VStack {
+                    HStack {
+                        Text("configDpi.previewText")
+                            .padding(16)
+                            .font(.system(size: CGFloat(
+                                Double(stagedChanges) *
+                                (isRetinaMode ? 0.1 : 0.05)
+                            )))
+                        Spacer()
+                    }
+                    Spacer()
+                }
+                .frame(maxHeight: 80)
+            }
+            HStack {
+                Slider(value: $stagedChanges, in: 96...480, step: 32, onEditingChanged: { _ in
+                    textFocused = false
+                })
+                TextField("", value: $stagedChanges, format: .number)
+                    .frame(width: 40)
+                    .focused($textFocused)
+                Text("configDpi.dpi")
+            }
+            Spacer()
+            HStack {
+                Spacer()
+                Button("create.cancel") {
+                    presented = false
+                }
+                .keyboardShortcut(.cancelAction)
+                Button("button.ok") {
+                    dpiConfig = Int(stagedChanges)
+                    presented = false
+                }
+                .keyboardShortcut(.defaultAction)
+            }
+        }
+        .padding()
+        .frame(width: 500, height: 240)
+    }
+}
+
+struct SettingItemView<V: View>: View {
+    @Binding var loadingState: LoadingState
+    var title: String.LocalizationValue
+    @ViewBuilder var content: () -> V
+    init(
+        loadingState: Binding<LoadingState>,
+        title: String.LocalizationValue,
+        @ViewBuilder content: @escaping () -> V
+    ) {
+        self._loadingState = loadingState
+        self.title = title
+        self.content = content
+    }
+    var body: some View {
+        if loadingState == .failed {
+            HStack {
+                Text(String(localized: title))
+                Spacer()
+                Text("config.notAvailable").opacity(0.5)
+            }
+        } else if loadingState == .loading {
+            HStack {
+                Text(String(localized: title))
+                Spacer()
+                ProgressView()
+                    .progressViewStyle(.circular)
+                    .controlSize(.small)
+            }
+        } else {
+            HStack(spacing: 16) {
+                content()
+                    .disabled(loadingState == .modifying)
+                if loadingState == .modifying {
+                    ProgressView()
+                        .progressViewStyle(.circular)
+                        .controlSize(.small)
+                }
             }
         }
     }
