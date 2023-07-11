@@ -42,7 +42,7 @@
 "config.dxvkHud.partial" = "Partial";
 "config.dxvkHud.fps" = "FPS";
 "config.dxvkHud.off" = "Off";
-"config.dpi" = "DPI";
+"config.dpi" = "DPI Scaling";
 "config.inspect" = "Configure...";
 
 "configDpi.title" = "DPI Settings";

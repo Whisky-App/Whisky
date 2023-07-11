@@ -261,15 +261,15 @@ struct DPIConfigSheetView: View {
                     HStack {
                         Text("configDpi.previewText")
                             .padding(16)
-                            .font(.system(size: CGFloat(
-                                Double(stagedChanges) *
-                                (isRetinaMode ? 0.1 : 0.05)
-                            )))
+                            .font(.system(size:
+                                (10 * CGFloat(stagedChanges)) / 72 *
+                                          (isRetinaMode ? 0.5 : 1)
+                            ))
                         Spacer()
                     }
                     Spacer()
                 }
-                .frame(maxHeight: 80)
+                .frame(maxWidth: .infinity, maxHeight: 80)
             }
             HStack {
                 Slider(value: $stagedChanges, in: 96...480, step: 32, onEditingChanged: { _ in

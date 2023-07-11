@@ -159,12 +159,12 @@ class Wine {
             name: "LogPixels",
             type: .dword
         )
-        let int = Int(output)
+        let noPrefix = output.replacingOccurrences(of: "0x", with: "")
+        let int = Int(noPrefix, radix: 16)
         if let intData = int {
             return intData
         }
-        print("Failed to convert str LogPixels to int (default 216)")
-        return 216
+        throw "Failed to convert str LogPixels to int (default 216)"
     }
     static func changeDpiResolution(bottle: Bottle, dpi: Int) async throws {
         try await addRegistyKey(bottle: bottle,
