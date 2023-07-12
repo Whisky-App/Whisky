@@ -17,6 +17,8 @@ struct BottleView: View {
     // We don't actually care about the value
     // This just provides a way to trigger a refresh
     @State var loadStartMenu: Bool = false
+    @State var winetricksInstalled: Bool = false
+    @State var showWinetricksSheet: Bool = false
 
     private let gridLayout = [GridItem(.adaptive(minimum: 100, maximum: .infinity))]
 
@@ -124,6 +126,11 @@ struct BottleView: View {
             Spacer()
             HStack {
                 Spacer()
+                if winetricksInstalled {
+                    Button("button.winetricks") {
+                        showWinetricksSheet.toggle()
+                    }
+                }
                 Button("button.cDrive") {
                     bottle.openCDrive()
                 }
@@ -165,11 +172,57 @@ struct BottleView: View {
             .padding()
         }
         .navigationTitle(bottle.settings.name)
+        .sheet(isPresented: $showWinetricksSheet) {
+            WinetricksView(bottle: bottle)
+        }
+        .onAppear {
+            Task.detached(priority: .background) {
+                winetricksInstalled = Winetricks.isWinetricksInstalled()
+            }
+        }
     }
 
     func updateStartMenu() {
         startMenuPrograms = bottle.updateStartMenuPrograms()
         shortcuts = bottle.settings.shortcuts
+    }
+}
+
+struct WinetricksView: View {
+    var bottle: Bottle
+    @State var winetricksCommand: String = ""
+    @Environment(\.dismiss) var dismiss
+
+    var body: some View {
+        VStack {
+            HStack {
+                Text("winetricks.title")
+                    .bold()
+                Spacer()
+            }
+            Divider()
+            TextField("", text: $winetricksCommand)
+                .textFieldStyle(.roundedBorder)
+                .font(.system(.body, design: .monospaced))
+                .labelsHidden()
+            Spacer()
+            HStack {
+                Spacer()
+                Button("create.cancel") {
+                    dismiss()
+                }
+                .keyboardShortcut(.cancelAction)
+                Button("button.run") {
+                    Task.detached(priority: .userInitiated) {
+                        await Winetricks.runCommand(command: winetricksCommand, bottle: bottle)
+                    }
+                    dismiss()
+                }
+                .keyboardShortcut(.defaultAction)
+            }
+        }
+        .padding()
+        .frame(width: 350, height: 140)
     }
 }
 
