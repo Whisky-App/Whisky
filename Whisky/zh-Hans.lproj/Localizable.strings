@@ -3,11 +3,11 @@
 "tab.info" = "关于";
 
 "tab.navTitle.config" = "%@ 配置";
-"tab.navTitle.programs" = "%@的软件";
+"tab.navTitle.programs" = "%@ 软件";
 "tab.navTitle.info" = "%@ 信息";
 
 "main.noneSelected" = "选择容器";
-"main.createFirst" = "创建您的第一个容器来开始";
+"main.createFirst" = "从创建第一个容器开始";
 
 "button.cDrive" = "打开 C 盘";
 "button.showInFinder" = "在访达中显示";
@@ -18,7 +18,7 @@
 "button.exportBottle" = "导出为存档";
 "button.deleteBottle" = "删除...";
 "button.createBottle" = "创建容器";
-"button.deleteAlert.msg" = "你真的想删除 %@吗?";
+"button.deleteAlert.msg" = "你真的想删除 %@ 吗?";
 "button.deleteAlert.info" = "你确定要删除这个容器吗？这个操作是永久性的。";
 "button.deleteAlert.delete" = "删除";
 "button.deleteAlert.cancel" = "取消";
@@ -42,8 +42,15 @@
 "config.dxvkHud.partial" = "部分";
 "config.dxvkHud.fps" = "帧数";
 "config.dxvkHud.off" = "关闭";
+"config.dpi" = "DPI Scaling";
+"config.inspect" = "Configure...";
 
-"program.title" = "已安装的程序";
+"configDpi.title" = "DPI Settings";
+"configDpi.preview" = "Text will look like this:";
+"configDpi.previewText" = "The quick brown fox jumped over the lazy dog.";
+"configDpi.dpi" = "DPI";
+
+"program.title" = "已安装的软件";
 "program.env" = "环境变量";
 "program.args" = "参数";
 "program.config" = "配置";
@@ -54,6 +61,7 @@
 "info.winPath.copy" = "复制 Windows 路径";
 "info.wine" = "Wine 版本";
 "info.win" = "Windows 版本";
+"info.gptk" = "GPTK 版本";
 
 "gptkalert.init" = "将 Game Porting Toolkit 的 DMG 文件拖到这里";
 "gptkalert.message" = "GPTK 遇到了一个错误！";
@@ -77,7 +85,7 @@
 "kill.bottles" = "结束所有容器";
 "open.logs" = "打开日志文件夹";
 "open.bottle" = "导入容器";
-"open.setup" = "Setup...";
+"open.setup" = "设置...";
 
 "showAlertOnFirstLaunch.messageText" = "你想要将 Whisky 移动到你的应用程序文件夹吗？";
 "showAlertOnFirstLaunch.informativeText" = "在某些情况下，Whisky 可能无法在另外的文件夹中正常工作";
@@ -90,7 +98,7 @@
 "setup.install.checking" = "正在检查 %@ 安装...";
 "setup.install.installed" = "%@ 已安装";
 "setup.install.notInstalled" = "%@ 未安装";
-"setup.uninstall" = "Uninstall";
+"setup.uninstall" = "卸载";
 
 "setup.rosetta" = "正在安装 Rosetta";
 "setup.rosetta.subtitle" = "Rosetta 允许 x86 代码在您的 Mac 上运行，比如 Wine。";
@@ -105,5 +113,5 @@
 
 "setup.gptk" = "正在安装 GPTK";
 
-"alert.macos" = "不支持的macOS版本！";
-"alert.macos.info" = "GPTK没有macOS Ventura的官方支持。可能会出现问题。";
+"alert.macos" = "不支持的 macOS 版本！";
+"alert.macos.info" = "macOS Ventura 未得到 GPTK 的官方支持。可能会出现问题！";

@@ -14,8 +14,8 @@
 "button.run" = "執行...";
 "button.ok" = "確定";
 "button.renameBottle" = "重新命名";
-"button.moveBottle" = "Move";
-"button.exportBottle" = "Export as Archive";
+"button.moveBottle" = "移動";
+"button.exportBottle" = "匯出為存檔";
 "button.deleteBottle" = "刪除...";
 "button.createBottle" = "建立容器";
 "button.deleteAlert.msg" = "刪除 %@?";
@@ -43,6 +43,13 @@
 "config.dxvkHud.partial" = "部份";
 "config.dxvkHud.fps" = "幀數";
 "config.dxvkHud.off" = "關閉";
+"config.dpi" = "DPI Scaling";
+"config.inspect" = "Configure...";
+
+"configDpi.title" = "DPI Settings";
+"configDpi.preview" = "Text will look like this:";
+"configDpi.previewText" = "The quick brown fox jumped over the lazy dog.";
+"configDpi.dpi" = "DPI";
 
 "program.title" = "已安裝的程式";
 "program.env" = "環境變數";
@@ -55,6 +62,7 @@
 "info.winPath.copy" = "複製 Windows 路徑";
 "info.wine" = "Wine 版本";
 "info.win" = "Windows 版本";
+"info.gptk" = "GPTK版本";
 
 "gptkalert.init" = "將 Game Porting Toolkit 的 DMG 文件拖到這裡";
 "gptkalert.message" = "GPTK 遇到錯誤！";
@@ -78,7 +86,7 @@
 "kill.bottles" = "終止所有容器";
 "open.logs" = "開啟日誌資料夾";
 "open.bottle" = "导入容器";
-"open.setup" = "Setup...";
+"open.setup" = "設置...";
 
 "showAlertOnFirstLaunch.messageText" = "你希望將 Whisky 移動到你的應用程式資料夾嗎？";
 "showAlertOnFirstLaunch.informativeText" = "在某些情況下，Whisky 可能無法在不同的資料夾中正常運作";
@@ -91,7 +99,7 @@
 "setup.install.checking" = "正在檢查  %@ 安裝…";
 "setup.install.installed" = "%@ 已安裝";
 "setup.install.notInstalled" = "%@ 未安裝";
-"setup.uninstall" = "Uninstall";
+"setup.uninstall" = "解除安裝";
 
 "setup.rosetta" = "正在安裝 Rosetta";
 "setup.rosetta.subtitle" = "Rosetta 允許 x86 代碼（如 Wine）在 Mac 上運行。";
@@ -107,4 +115,4 @@
 "setup.gptk" = "正在安裝 GPTK";
 
 "alert.macos" = "不支持的macOS版本！";
-"alert.macos.info" = "GPTK沒有macOS Ventura的官方支持。可能會出現問題。";
+"alert.macos.info" = "macOS Ventura未得到GPTK的官方支持。 可能會出現問題！";

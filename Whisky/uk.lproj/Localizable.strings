@@ -42,6 +42,13 @@
 "config.dxvkHud.partial" = "Partial";
 "config.dxvkHud.fps" = "FPS";
 "config.dxvkHud.off" = "Off";
+"config.dpi" = "DPI Scaling";
+"config.inspect" = "Configure...";
+
+"configDpi.title" = "DPI Settings";
+"configDpi.preview" = "Text will look like this:";
+"configDpi.previewText" = "The quick brown fox jumped over the lazy dog.";
+"configDpi.dpi" = "DPI";
 
 "program.title" = "Встановлені програми";
 "program.env" = "Змінні середовища";
@@ -54,6 +61,7 @@
 "info.winPath.copy" = "Скопіювати шлях до Windows";
 "info.wine" = "Версія Wine";
 "info.win" = "Версія Windows";
+"info.gptk" = "GPTK Version";
 
 "gptkalert.init" = "Перетягніть DMG образ Game Porting Toolkit";
 "gptkalert.message" = "GPTK зіткнувся з помилкою!";
@@ -106,4 +114,4 @@
 "setup.gptk" = "Встановлення GPTK";
 
 "alert.macos" = "Unsupported macOS Version!";
-"alert.macos.info" = "macOS Ventura is not officially support by GPTK. Issues may occur!";
+"alert.macos.info" = "macOS Ventura is not officially supported by GPTK. Issues may occur!";

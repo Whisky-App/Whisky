@@ -42,6 +42,13 @@
 "config.dxvkHud.partial" = "Partial";
 "config.dxvkHud.fps" = "FPS";
 "config.dxvkHud.off" = "Off";
+"config.dpi" = "DPI Scaling";
+"config.inspect" = "Configure...";
+
+"configDpi.title" = "DPI Settings";
+"configDpi.preview" = "Text will look like this:";
+"configDpi.previewText" = "The quick brown fox jumped over the lazy dog.";
+"configDpi.dpi" = "DPI";
 
 "program.title" = "Intallierte Programme";
 "program.env" = "Umgebungs-Variables";
@@ -54,6 +61,7 @@
 "info.winPath.copy" = "Wine-Pfad kopieren";
 "info.wine" = "Wine Version";
 "info.win" = "Windows Version";
+"info.gptk" = "GPTK Version";
 
 "gptkalert.init" = "Ziehe das Game-Porting-Toolkit-DMG-Laufwerk hier hinein";
 "gptkalert.message" = "Bei GPTK ist ein Fehler aufgetreten.";
@@ -106,4 +114,4 @@
 "setup.gptk" = "GPTK wird installiert";
 
 "alert.macos" = "Unsupported macOS Version!";
-"alert.macos.info" = "macOS Ventura is not officially support by GPTK. Issues may occur!";
+"alert.macos.info" = "macOS Ventura is not officially supported by GPTK. Issues may occur!";

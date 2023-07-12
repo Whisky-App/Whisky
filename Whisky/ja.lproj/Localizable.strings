@@ -23,7 +23,7 @@
 "button.deleteAlert.delete" = "削除";
 "button.deleteAlert.cancel" = "キャンセル";
 
-"config.winVersion" = "Windows バージョン";
+"config.winVersion" = "Windows のバージョン";
 "config.buildVersion" = "ビルド番号";
 "config.title.metal" = "Metal";
 "config.metalHud" = "Metal HUD";
@@ -42,6 +42,13 @@
 "config.dxvkHud.partial" = "一部";
 "config.dxvkHud.fps" = "FPS のみ";
 "config.dxvkHud.off" = "オフ";
+"config.dpi" = "DPI Scaling";
+"config.inspect" = "Configure...";
+
+"configDpi.title" = "DPI Settings";
+"configDpi.preview" = "Text will look like this:";
+"configDpi.previewText" = "The quick brown fox jumped over the lazy dog.";
+"configDpi.dpi" = "DPI";
 
 "program.title" = "インストール済みプログラム";
 "program.env" = "環境変数";
@@ -52,8 +59,9 @@
 "info.path" = "パス";
 "info.path.copy" = "パスのコピー";
 "info.winPath.copy" = "Windows のパスをコピー";
-"info.wine" = "Wine バージョン";
-"info.win" = "Windows バージョン";
+"info.wine" = "Wine のバージョン";
+"info.win" = "Windows のバージョン";
+"info.gptk" = "GPTK のバージョン";
 
 "gptkalert.init" = "Game Porting Toolkit の DMG ファイルをドロップしてください。";
 "gptkalert.message" = "GPTK でエラーが発生しました！";
@@ -77,7 +85,7 @@
 "kill.bottles" = "すべての Bottle を終了";
 "open.logs" = "ログフォルダを開く";
 "open.bottle" = "Bottle をインポート";
-"open.setup" = "Setup...";
+"open.setup" = "セットアップ...";
 
 "showAlertOnFirstLaunch.messageText" = "Whisky を「アプリケーション」フォルダに移動しますか？";
 "showAlertOnFirstLaunch.informativeText" = "場合によっては、異なるフォルダから Whisky を適切に使用できない場合があります";
@@ -90,7 +98,7 @@
 "setup.install.checking" = "%@ のインストールを確認しています...";
 "setup.install.installed" = "%@ がインストールされました";
 "setup.install.notInstalled" = "%@ が未インストール";
-"setup.uninstall" = "Uninstall";
+"setup.uninstall" = "アンインストール";
 
 "setup.rosetta" = "Rosetta をインストール中";
 "setup.rosetta.subtitle" = "Rosetta は、Wine のような x86 バイナリを Mac 上で実行できるようにします。";
@@ -106,4 +114,4 @@
 "setup.gptk" = "GPTK をインストール";
 
 "alert.macos" = "お使いの macOS バージョンはサポートされていません。";
-"alert.macos.info" = "GPTK は macOS Ventura を公式にサポートしていません。問題が起きる可能性があります。";
+"alert.macos.info" = "macOS Ventura は GPTK をサポートしていません。問題が起きる可能性があります。";

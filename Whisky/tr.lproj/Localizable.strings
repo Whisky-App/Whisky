@@ -14,8 +14,8 @@
 "button.run" = "Çalıştır...";
 "button.ok" = "Tamam";
 "button.renameBottle" = "Bottle'ı Yeniden Adlandır";
-"button.moveBottle" = "Move";
-"button.exportBottle" = "Export as Archive";
+"button.moveBottle" = "Taşı";
+"button.exportBottle" = "Arşiv olarak dışarı aktar";
 "button.deleteBottle" = "Sil...";
 "button.createBottle" = "Bottle Oluştur";
 "button.deleteAlert.msg" = "%@ silinsin mi?";
@@ -37,11 +37,18 @@
 "config.notAvailable" = "Mevcut değil";
 "config.title.dxvk" = "DXVK";
 "config.dxvk" = "DXVK";
-"config.dxvkHud" = "DXVK HUD";
-"config.dxvkHud.full" = "Full";
-"config.dxvkHud.partial" = "Partial";
+"config.dxvkHud" = "DXVK Arayüzü";
+"config.dxvkHud.full" = "Tam";
+"config.dxvkHud.partial" = "Kısmi";
 "config.dxvkHud.fps" = "FPS";
-"config.dxvkHud.off" = "Off";
+"config.dxvkHud.off" = "Kapalı";
+"config.dpi" = "DPI Scaling";
+"config.inspect" = "Configure...";
+
+"configDpi.title" = "DPI Settings";
+"configDpi.preview" = "Text will look like this:";
+"configDpi.previewText" = "The quick brown fox jumped over the lazy dog.";
+"configDpi.dpi" = "DPI";
 
 "program.title" = "Yüklenmiş Programlar";
 "program.env" = "Ortam Değişkenleri";
@@ -54,6 +61,7 @@
 "info.winPath.copy" = "Windows Dosya Yolunu Kopyalayın";
 "info.wine" = "Wine Sürümü";
 "info.win" = "Windows Sürümü";
+"info.gptk" = "GPTK Version";
 
 "gptkalert.init" = "Game Porting Toolkit DMG dosyasını sürükleyip bırakın";
 "gptkalert.message" = "GPTK bir hatayla karşılaştı!";
@@ -77,7 +85,7 @@
 "kill.bottles" = "Tüm Bottle'ları Sonlandır";
 "open.logs" = "Log Klasörünü Aç";
 "open.bottle" = "Bottle'ı İçeri Aktarın";
-"open.setup" = "Setup...";
+"open.setup" = "Kur...";
 
 "showAlertOnFirstLaunch.messageText" = "Whisky'yi Applications klasörüne taşımak ister misiniz?";
 "showAlertOnFirstLaunch.informativeText" = "Bazı durumlarda, Whisky farklı bir klasörden düzgün çalışmayabilir";
@@ -90,7 +98,7 @@
 "setup.install.checking" = "%@ kontrol ediliyor...";
 "setup.install.installed" = "%@ yüklendi";
 "setup.install.notInstalled" = "%@ yüklü değil";
-"setup.uninstall" = "Uninstall";
+"setup.uninstall" = "Kaldır";
 
 "setup.rosetta" = "Rosetta Yükleniyor";
 "setup.rosetta.subtitle" = "Rosetta, Wine gibi, x86 yazılımının Mac bilgisayarınızda çalışmasına izin verir.";

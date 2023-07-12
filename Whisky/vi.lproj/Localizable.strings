@@ -42,6 +42,13 @@
 "config.dxvkHud.partial" = "Partial";
 "config.dxvkHud.fps" = "FPS";
 "config.dxvkHud.off" = "Off";
+"config.dpi" = "DPI Scaling";
+"config.inspect" = "Configure...";
+
+"configDpi.title" = "DPI Settings";
+"configDpi.preview" = "Text will look like this:";
+"configDpi.previewText" = "The quick brown fox jumped over the lazy dog.";
+"configDpi.dpi" = "DPI";
 
 "program.title" = "Chương trình đã cài";
 "program.env" = "Biến môi trường";
@@ -54,6 +61,7 @@
 "info.winPath.copy" = "Sao đường dẫn Windows";
 "info.wine" = "Phiên bản Wine";
 "info.win" = "Phiên bản Windows";
+"info.gptk" = "GPTK Version";
 
 "gptkalert.init" = "Kéo thả file DMG của Game Porting Toolkit";
 "gptkalert.message" = "Lỗi file GPTK!";
@@ -106,4 +114,4 @@
 "setup.gptk" = "Đang cài đặt GPTK";
 
 "alert.macos" = "Unsupported macOS Version!";
-"alert.macos.info" = "macOS Ventura is not officially support by GPTK. Issues may occur!";
+"alert.macos.info" = "macOS Ventura is not officially supported by GPTK. Issues may occur!";

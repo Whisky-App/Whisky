@@ -42,6 +42,13 @@
 "config.dxvkHud.partial" = "Parziale";
 "config.dxvkHud.fps" = "FPS";
 "config.dxvkHud.off" = "Off";
+"config.dpi" = "DPI Scaling";
+"config.inspect" = "Configure...";
+
+"configDpi.title" = "DPI Settings";
+"configDpi.preview" = "Text will look like this:";
+"configDpi.previewText" = "The quick brown fox jumped over the lazy dog.";
+"configDpi.dpi" = "DPI";
 
 "program.title" = "Programmi Installati";
 "program.env" = "Variabili d'Ambiente";
@@ -54,6 +61,7 @@
 "info.winPath.copy" = "Copia Percorso di Windows";
 "info.wine" = "Versione di Wine";
 "info.win" = "Versione di Windows";
+"info.gptk" = "Versione di GPTK";
 
 "gptkalert.init" = "Trascina e Rilascia il file DMG di Game Porting Toolkit";
 "gptkalert.message" = "GPTK ha riscontrato un errore!";
@@ -90,13 +98,13 @@
 "setup.install.checking" = "Controllo installazione %@...";
 "setup.install.installed" = "%@ installato";
 "setup.install.notInstalled" = "%@ non installato";
-"setup.uninstall" = "Uninstall";
+"setup.uninstall" = "Disinstalla";
 
 "setup.rosetta" = "Installazione di Rosetta";
 "setup.rosetta.subtitle" = "Rosetta permette al codice x86, come Wine, di funzionare sul tuo Mac.";
 
-"setup.wine.download" = "Scaricando Wine";
-"setup.wine.download.subtitle" = "Le velocità varieranno in base alla tua connessione internet.";
+"setup.wine.download" = "Scarico Wine";
+"setup.wine.download.subtitle" = "La velocità di download varia in base alla tua connessione internet.";
 "setup.wine.progress" = "%@ di %@";
 "setup.wine.eta" = "-%@ rimanenti";
 
@@ -106,4 +114,4 @@
 "setup.gptk" = "Installando GPTK";
 
 "alert.macos" = "Versione macOS non supportata!";
-"alert.macos.info" = "macOS Ventura non è ufficialmente supportato da GPTK. Potrebbero verificarsi dei problemi!";
+"alert.macos.info" = "macOS Ventura non è supportato da GPTK. Potrebbero verificarsi dei problemi!";

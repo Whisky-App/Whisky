@@ -42,6 +42,13 @@
 "config.dxvkHud.partial" = "Parcial";
 "config.dxvkHud.fps" = "CPS";
 "config.dxvkHud.off" = "Apagado";
+"config.dpi" = "DPI Scaling";
+"config.inspect" = "Configure...";
+
+"configDpi.title" = "DPI Settings";
+"configDpi.preview" = "Text will look like this:";
+"configDpi.previewText" = "The quick brown fox jumped over the lazy dog.";
+"configDpi.dpi" = "DPI";
 
 "program.title" = "Programas Instalados";
 "program.env" = "Variables de Entorno";
@@ -54,6 +61,7 @@
 "info.winPath.copy" = "Copiar ubicación de Windows";
 "info.wine" = "Versión de Wine:";
 "info.win" = "Versión de Windows:";
+"info.gptk" = "GPTK Version";
 
 "gptkalert.init" = "Arrastra y suelta el archivo DMG de Gaming Porting Toolkit";
 "gptkalert.message" = "GPTK encontró un error!";
@@ -106,4 +114,4 @@
 "setup.gptk" = "Instalando GPTK";
 
 "alert.macos" = "No compatible con esta versión de macOS";
-"alert.macos.info" = "Game Porting Tool Kit no ofrece soporte oficial para macOS Ventura. Pueden ocurrir problemas!";
+"alert.macos.info" = "macOS Ventura is not officially supported by GPTK. Issues may occur!";

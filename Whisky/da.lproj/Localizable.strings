@@ -42,6 +42,13 @@
 "config.dxvkHud.partial" = "Delvis";
 "config.dxvkHud.fps" = "FPS";
 "config.dxvkHud.off" = "Fra";
+"config.dpi" = "DPI Scaling";
+"config.inspect" = "Configure...";
+
+"configDpi.title" = "DPI Settings";
+"configDpi.preview" = "Text will look like this:";
+"configDpi.previewText" = "The quick brown fox jumped over the lazy dog.";
+"configDpi.dpi" = "DPI";
 
 "program.title" = "Installerede programmer";
 "program.env" = "Miljøvariabler";
@@ -54,6 +61,7 @@
 "info.winPath.copy" = "Kopier Windows Sti";
 "info.wine" = "Wine Version";
 "info.win" = "Windows Version";
+"info.gptk" = "GPTK Version";
 
 "gptkalert.init" = "Træk og slip Game Porting Toolkit DMG";
 "gptkalert.message" = "GPTK stødte på en fejl!";
@@ -106,4 +114,4 @@
 "setup.gptk" = "Installere GPTK";
 
 "alert.macos" = "Ikke understøttet macOS Version!";
-"alert.macos.info" = "macOS Ventura understøttes ikke officielt af GPTK. Problemer kan opstå!";
+"alert.macos.info" = "macOS Ventura is not officially supported by GPTK. Issues may occur!";

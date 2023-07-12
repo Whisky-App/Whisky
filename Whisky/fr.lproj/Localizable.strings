@@ -42,6 +42,13 @@
 "config.dxvkHud.partial" = "Partiel";
 "config.dxvkHud.fps" = "IPS";
 "config.dxvkHud.off" = "Désactivé";
+"config.dpi" = "Mise à l'échelle du PPP";
+"config.inspect" = "Configurer ...";
+
+"configDpi.title" = "Paramètres du PPP";
+"configDpi.preview" = "Le texte ressemblera à ça :";
+"configDpi.previewText" = "Voix ambiguë d'un cœur qui, au zéphyr, préfère les jattes de kiwis.";
+"configDpi.dpi" = "PPP";
 
 "program.title" = "Programmes Installés";
 "program.env" = "Variables d'Environnement";
@@ -54,6 +61,7 @@
 "info.winPath.copy" = "Copier le chemin Windows";
 "info.wine" = "Version de Wine";
 "info.win" = "Version de Windows";
+"info.gptk" = "Version du GPTK";
 
 "gptkalert.init" = "Glissez et déposez le fichier DMG Game Porting Toolkit";
 "gptkalert.message" = "GPTK a rencontré une erreur !";
