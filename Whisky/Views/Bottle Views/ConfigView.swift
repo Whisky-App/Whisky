@@ -176,7 +176,8 @@ struct ConfigView: View {
                     dpiConfigLoadingState = .success
                 } catch {
                     print(error)
-                    dpiConfigLoadingState = .failed
+                    // If DPI has not yet been edited, there will be no registry entry
+                    dpiConfigLoadingState = .success
                 }
             }
         }
