@@ -48,4 +48,16 @@ Make sure you're logged in to the Apple Developer website. If it still won't wor
 
 No, you don't, in fact you shouldn't follow them.
 
+### How do I play Diablo IV?
+- Make sure you're using the latest version of Whisky
+- Create a fresh Windows 10 bottle
+- Go to Config
+    - Change Windows Version to `19042` (Make sure to press enter to submit the change)
+    - Enable ESync
+- Install Battle.net but following setup
+- On the login screen, press the cog icon and go to Advanced and disable `Use hardware acceleration when available`
+- Restart Battle.net when prompted
+    - If Battle.net doesn't restart, go to Whisky and press `Kill All Bottles` under the `File` menu, then reopen Battle.net
+- Login and install Diablo IV as normal
+
 *Whisky doesn't exist without CrossOver. This project is not meant to outcompete it or surpass it in any way. Please continue to support the fantastic work of CodeWeavers.*
