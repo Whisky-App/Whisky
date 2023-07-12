@@ -42,6 +42,13 @@
 "config.dxvkHud.partial" = "Partiel";
 "config.dxvkHud.fps" = "IPS";
 "config.dxvkHud.off" = "Désactivé";
+"config.dpi" = "DPI Scaling";
+"config.inspect" = "Configure...";
+
+"configDpi.title" = "DPI Settings";
+"configDpi.preview" = "Text will look like this:";
+"configDpi.previewText" = "The quick brown fox jumped over the lazy dog.";
+"configDpi.dpi" = "DPI";
 
 "program.title" = "Programmes Installés";
 "program.env" = "Variables d'Environnement";
