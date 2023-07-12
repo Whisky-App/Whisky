@@ -42,6 +42,13 @@
 "config.dxvkHud.partial" = "部分";
 "config.dxvkHud.fps" = "帧数";
 "config.dxvkHud.off" = "关闭";
+"config.dpi" = "DPI Scaling";
+"config.inspect" = "Configure...";
+
+"configDpi.title" = "DPI Settings";
+"configDpi.preview" = "Text will look like this:";
+"configDpi.previewText" = "The quick brown fox jumped over the lazy dog.";
+"configDpi.dpi" = "DPI";
 
 "program.title" = "已安装的软件";
 "program.env" = "环境变量";
