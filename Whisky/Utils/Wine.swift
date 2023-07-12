@@ -17,6 +17,7 @@ struct WineCrashError: Error, CustomStringConvertible {
     }
 }
 
+// swiftlint:disable:next type_body_length
 class Wine {
     static let binFolder: URL = WineInstaller.libraryFolder
         .appendingPathComponent("Wine")
@@ -151,6 +152,30 @@ class Wine {
                                 name: "RetinaMode",
                                 data: retinaMode ? "y" : "n",
                                 type: .string)
+    }
+
+    static func dpiResolution(bottle: Bottle) async throws -> Int {
+        let output = try await queryRegistyKey(
+            bottle: bottle,
+            key: #"HKCU\Control Panel\Desktop"#,
+            name: "LogPixels",
+            type: .dword
+        )
+        let noPrefix = output.replacingOccurrences(of: "0x", with: "")
+        let int = Int(noPrefix, radix: 16)
+        if let intData = int {
+            return intData
+        }
+        throw "Failed to convert str LogPixels to int (default 216)"
+    }
+
+    static func changeDpiResolution(bottle: Bottle, dpi: Int) async throws {
+        try await addRegistyKey(bottle: bottle,
+            key: #"HKCU\Control Panel\Desktop"#,
+            name: "LogPixels",
+            data: String(dpi),
+            type: .dword
+        )
     }
 
     @discardableResult
