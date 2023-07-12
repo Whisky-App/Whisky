@@ -20,7 +20,7 @@ struct ConfigView: View {
     @State var displayBuildVersion: String = ""
     @State var buildVersion: String = ""
     @State var retinaMode: Bool = false
-    @State var dpiConfig: Int = 216
+    @State var dpiConfig: Int = 96
     @State var winVersionLoadingState: LoadingState = .loading
     @State var buildVersionLoadingState: LoadingState = .loading
     @State var retinaModeLoadingState: LoadingState = .loading
@@ -36,14 +36,14 @@ struct ConfigView: View {
         VStack {
             Form {
                 Section {
-                    SettingItemView(loadingState: $winVersionLoadingState, title: "config.winVersion") {
+                    SettingItemView(title: "config.winVersion", loadingState: $winVersionLoadingState) {
                         Picker("config.winVersion", selection: $windowsVersion) {
                             ForEach(WinVersion.allCases.reversed(), id: \.self) {
                                 Text($0.pretty())
                             }
                         }
                     }
-                    SettingItemView(loadingState: $buildVersionLoadingState, title: "config.buildVersion") {
+                    SettingItemView(title: "config.buildVersion", loadingState: $buildVersionLoadingState) {
                         TextField("config.buildVersion", text: $displayBuildVersion)
                             .textFieldStyle(PlainTextFieldStyle())
                             .onSubmit {
@@ -62,7 +62,7 @@ struct ConfigView: View {
                                 }
                             }
                     }
-                    SettingItemView(loadingState: $retinaModeLoadingState, title: "config.retinaMode") {
+                    SettingItemView(title: "config.retinaMode", loadingState: $retinaModeLoadingState) {
                         Toggle("config.retinaMode", isOn: $retinaMode)
                         .onChange(of: retinaMode) { _ in
                             Task(priority: .userInitiated) {
@@ -76,26 +76,20 @@ struct ConfigView: View {
                             }
                         }
                     }
-                    HStack {
-                        Text("config.dpi")
-                        Spacer()
-                        if dpiConfigLoadingState == .failed {
-                            Text("config.notAvailable").opacity(0.5)
-                        } else if dpiConfigLoadingState == .success {
+                    SettingItemView(title: "config.dpi", loadingState: $dpiConfigLoadingState) {
+                        HStack {
+                            Text("config.dpi")
+                            Spacer()
                             Button("config.inspect") {
                                 dpiSheetPresented = true
                             }
-                            .sheet(isPresented: $dpiSheetPresented, content: {
+                            .sheet(isPresented: $dpiSheetPresented) {
                                 DPIConfigSheetView(
                                     dpiConfig: $dpiConfig,
                                     isRetinaMode: $retinaMode,
                                     presented: $dpiSheetPresented
                                 )
-                            })
-                        } else {
-                            ProgressView()
-                                .progressViewStyle(.circular)
-                                .controlSize(.small)
+                            }
                         }
                     }
                 }
@@ -209,14 +203,16 @@ struct ConfigView: View {
             buildVersion = buildVersion.filter("0123456789".contains)
         }
         .onChange(of: dpiConfig) { _ in
-            Task(priority: .userInitiated) {
-                dpiConfigLoadingState = .modifying
-                do {
-                    try await Wine.changeDpiResolution(bottle: bottle, dpi: dpiConfig)
-                    dpiConfigLoadingState = .success
-                } catch {
-                    print(error)
-                    dpiConfigLoadingState = .failed
+            if dpiConfigLoadingState == .success {
+                Task(priority: .userInitiated) {
+                    dpiConfigLoadingState = .modifying
+                    do {
+                        try await Wine.changeDpiResolution(bottle: bottle, dpi: dpiConfig)
+                        dpiConfigLoadingState = .success
+                    } catch {
+                        print(error)
+                        dpiConfigLoadingState = .failed
+                    }
                 }
             }
         }
@@ -242,12 +238,14 @@ struct DPIConfigSheetView: View {
     @Binding var presented: Bool
     @State var stagedChanges: Float
     @FocusState var textFocused: Bool
+
     init(dpiConfig: Binding<Int>, isRetinaMode: Binding<Bool>, presented: Binding<Bool>) {
         self._dpiConfig = dpiConfig
         self._isRetinaMode = isRetinaMode
         self._presented = presented
         self.stagedChanges = Float(dpiConfig.wrappedValue)
     }
+
     var body: some View {
         VStack {
             HStack {
@@ -272,7 +270,7 @@ struct DPIConfigSheetView: View {
                 .frame(maxWidth: .infinity, maxHeight: 80)
             }
             HStack {
-                Slider(value: $stagedChanges, in: 96...480, step: 32, onEditingChanged: { _ in
+                Slider(value: $stagedChanges, in: 96...480, step: 24, onEditingChanged: { _ in
                     textFocused = false
                 })
                 TextField("", value: $stagedChanges, format: .number)
@@ -300,18 +298,10 @@ struct DPIConfigSheetView: View {
 }
 
 struct SettingItemView<V: View>: View {
-    @Binding var loadingState: LoadingState
     var title: String.LocalizationValue
+    @Binding var loadingState: LoadingState
     @ViewBuilder var content: () -> V
-    init(
-        loadingState: Binding<LoadingState>,
-        title: String.LocalizationValue,
-        @ViewBuilder content: @escaping () -> V
-    ) {
-        self._loadingState = loadingState
-        self.title = title
-        self.content = content
-    }
+
     var body: some View {
         if loadingState == .failed {
             HStack {
