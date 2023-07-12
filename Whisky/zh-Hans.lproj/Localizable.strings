@@ -115,3 +115,6 @@
 
 "alert.macos" = "不支持的 macOS 版本！";
 "alert.macos.info" = "macOS Ventura 未得到 GPTK 的官方支持。可能会出现问题！";
+
+"winetricks.title" = "Run Winetricks command";
+"button.winetricks" = "Winetricks...";
