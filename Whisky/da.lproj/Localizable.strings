@@ -42,6 +42,13 @@
 "config.dxvkHud.partial" = "Delvis";
 "config.dxvkHud.fps" = "FPS";
 "config.dxvkHud.off" = "Fra";
+"config.dpi" = "DPI Scaling";
+"config.inspect" = "Configure...";
+
+"configDpi.title" = "DPI Settings";
+"configDpi.preview" = "Text will look like this:";
+"configDpi.previewText" = "The quick brown fox jumped over the lazy dog.";
+"configDpi.dpi" = "DPI";
 
 "program.title" = "Installerede programmer";
 "program.env" = "Miljøvariabler";
