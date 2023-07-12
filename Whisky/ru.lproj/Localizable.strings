@@ -42,6 +42,13 @@
 "config.dxvkHud.partial" = "Частичный";
 "config.dxvkHud.fps" = "Только FPS";
 "config.dxvkHud.off" = "Выключен";
+"config.dpi" = "DPI Scaling";
+"config.inspect" = "Configure...";
+
+"configDpi.title" = "DPI Settings";
+"configDpi.preview" = "Text will look like this:";
+"configDpi.previewText" = "The quick brown fox jumped over the lazy dog.";
+"configDpi.dpi" = "DPI";
 
 "program.title" = "Установленные программы";
 "program.env" = "Переменные окружения";
