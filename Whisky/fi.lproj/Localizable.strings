@@ -42,6 +42,13 @@
 "config.dxvkHud.partial" = "Osittainen";
 "config.dxvkHud.fps" = "FPS";
 "config.dxvkHud.off" = "Pois";
+"config.dpi" = "DPI Scaling";
+"config.inspect" = "Configure...";
+
+"configDpi.title" = "DPI Settings";
+"configDpi.preview" = "Text will look like this:";
+"configDpi.previewText" = "The quick brown fox jumped over the lazy dog.";
+"configDpi.dpi" = "DPI";
 
 "program.title" = "Asennetut ohjelmat";
 "program.env" = "Ympäristön muuttujat";
