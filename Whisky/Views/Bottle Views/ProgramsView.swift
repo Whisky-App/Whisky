@@ -13,6 +13,7 @@ struct ProgramsView: View {
     // We don't actually care about the value
     // This just provides a way to trigger a refresh
     @State var resortPrograms: Bool = false
+    @Binding var reloadStartMenu: Bool
 
     var body: some View {
         NavigationStack {
@@ -35,6 +36,7 @@ struct ProgramsView: View {
                 sortPrograms()
             }
             .onChange(of: resortPrograms) { _ in
+                reloadStartMenu.toggle()
                 sortPrograms()
             }
         }
@@ -101,7 +103,8 @@ struct ProgramItemView: View {
 }
 
 struct ProgramsView_Previews: PreviewProvider {
+    @State private static var reloadStartMenu: Bool = false
     static var previews: some View {
-        ProgramsView(bottle: Bottle())
+        ProgramsView(bottle: Bottle(), reloadStartMenu: $reloadStartMenu)
     }
 }

@@ -102,7 +102,7 @@ struct BottleView: View {
                             Label("tab.config", systemImage: "gearshape.fill")
                         }
                         NavigationLink {
-                            ProgramsView(bottle: bottle)
+                            ProgramsView(bottle: bottle, reloadStartMenu: $loadStartMenu)
                         } label: {
                             Label("tab.programs", systemImage: "macwindow")
                         }
