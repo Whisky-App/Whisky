@@ -115,3 +115,6 @@
 
 "alert.macos" = "Version macOS non supportée !";
 "alert.macos.info" = "macOS Ventura n'est pas officiellement supporté par GPTK. Des problèmes peuvent survenir !";
+
+"winetricks.title" = "Run Winetricks command";
+"button.winetricks" = "Winetricks...";
