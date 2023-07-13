@@ -47,7 +47,7 @@
 
 "configDpi.title" = "Paramètres du PPP";
 "configDpi.preview" = "Le texte ressemblera à ça :";
-"configDpi.previewText" = "Voix ambiguë d'un cœur qui, au zéphyr, préfère les jattes de kiwis.";
+"configDpi.previewText" = "The quick brown fox jumped over the lazy dog.";
 "configDpi.dpi" = "PPP";
 
 "program.title" = "Programmes Installés";
