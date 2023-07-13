@@ -27,6 +27,25 @@
 				</array>
 			</dict>
 		</dict>
+		<dict>
+			<key>UTTypeConformsTo</key>
+			<array>
+				<string>public.data</string>
+			</array>
+			<key>UTTypeDescription</key>
+			<string>Microsoft Windows Shortcut</string>
+			<key>UTTypeIcons</key>
+			<dict/>
+			<key>UTTypeIdentifier</key>
+			<string>com.microsoft.windows-shortcut</string>
+			<key>UTTypeTagSpecification</key>
+			<dict>
+				<key>public.filename-extension</key>
+				<array>
+					<string>lnk</string>
+				</array>
+			</dict>
+		</dict>
 	</array>
 	<key>WineBinaryVersion</key>
 	<integer>4</integer>
