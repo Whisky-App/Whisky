@@ -42,11 +42,11 @@
 "config.dxvkHud.partial" = "部分";
 "config.dxvkHud.fps" = "帧数";
 "config.dxvkHud.off" = "关闭";
-"config.dpi" = "DPI Scaling";
-"config.inspect" = "Configure...";
+"config.dpi" = "DPI 缩放";
+"config.inspect" = "配置...";
 
-"configDpi.title" = "DPI Settings";
-"configDpi.preview" = "Text will look like this:";
+"configDpi.title" = "DPI 设置";
+"configDpi.preview" = "文本会看起来会像这样：";
 "configDpi.previewText" = "The quick brown fox jumped over the lazy dog.";
 "configDpi.dpi" = "DPI";
 
@@ -115,3 +115,6 @@
 
 "alert.macos" = "不支持的 macOS 版本！";
 "alert.macos.info" = "macOS Ventura 未得到 GPTK 的官方支持。可能会出现问题！";
+
+"winetricks.title" = "运行Winetricks命令";
+"button.winetricks" = "Winetrick...";

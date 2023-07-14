@@ -42,12 +42,12 @@
 "config.dxvkHud.partial" = "一部";
 "config.dxvkHud.fps" = "FPS のみ";
 "config.dxvkHud.off" = "オフ";
-"config.dpi" = "DPI Scaling";
-"config.inspect" = "Configure...";
+"config.dpi" = "DPI スケーリング";
+"config.inspect" = "設定...";
 
-"configDpi.title" = "DPI Settings";
-"configDpi.preview" = "Text will look like this:";
-"configDpi.previewText" = "The quick brown fox jumped over the lazy dog.";
+"configDpi.title" = "DPI 設定";
+"configDpi.preview" = "テキストはこのように見えます:";
+"configDpi.previewText" = "色は匂へど　散りぬるを　我が世誰ぞ　常ならむ　有為の奥山　今日越えて　浅き夢見じ　酔ひもせず";
 "configDpi.dpi" = "DPI";
 
 "program.title" = "インストール済みプログラム";
@@ -115,3 +115,6 @@
 
 "alert.macos" = "お使いの macOS バージョンはサポートされていません。";
 "alert.macos.info" = "macOS Ventura は GPTK をサポートしていません。問題が起きる可能性があります。";
+
+"winetricks.title" = "Winetricks コマンドを実行";
+"button.winetricks" = "Winetricks...";

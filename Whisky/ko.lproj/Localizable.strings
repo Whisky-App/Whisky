@@ -42,12 +42,12 @@
 "config.dxvkHud.partial" = "일부";
 "config.dxvkHud.fps" = "FPS";
 "config.dxvkHud.off" = "끄기";
-"config.dpi" = "DPI Scaling";
-"config.inspect" = "Configure...";
+"config.dpi" = "DPI 스케일링";
+"config.inspect" = "구성...";
 
-"configDpi.title" = "DPI Settings";
-"configDpi.preview" = "Text will look like this:";
-"configDpi.previewText" = "The quick brown fox jumped over the lazy dog.";
+"configDpi.title" = "DPI 설정";
+"configDpi.preview" = "텍스트는 다음과 같이 표시될 것입니다:";
+"configDpi.previewText" = "다람쥐 헌 쳇바퀴에 타고파.";
 "configDpi.dpi" = "DPI";
 
 "program.title" = "설치된 프로그램";
@@ -115,3 +115,6 @@
 
 "alert.macos" = "지원되지 않는 macOS 버전!";
 "alert.macos.info" = "GPTK는 macOS Ventura를 공식적으로 지원하지 않습니다. 문제가 발생할 수 있습니다!";
+
+"winetricks.title" = "Winetricks 명령어 실행";
+"button.winetricks" = "Winetricks...";

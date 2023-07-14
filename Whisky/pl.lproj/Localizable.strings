@@ -42,12 +42,12 @@
 "config.dxvkHud.partial" = "Częściowy";
 "config.dxvkHud.fps" = "FPS (kl./s)";
 "config.dxvkHud.off" = "Wyłączony";
-"config.dpi" = "DPI Scaling";
-"config.inspect" = "Configure...";
+"config.dpi" = "Skalowanie DPI";
+"config.inspect" = "Konfiguruj...";
 
-"configDpi.title" = "DPI Settings";
-"configDpi.preview" = "Text will look like this:";
-"configDpi.previewText" = "The quick brown fox jumped over the lazy dog.";
+"configDpi.title" = "Ustawienia DPI";
+"configDpi.preview" = "Tekst będzie wyglądał tak:";
+"configDpi.previewText" = "Szybki brązowy lis przeskorzył przez leniwego psa.";
 "configDpi.dpi" = "DPI";
 
 "program.title" = "Zainstalowane programy";
@@ -115,3 +115,6 @@
 
 "alert.macos" = "Nieobsługiwana wersja macOS!";
 "alert.macos.info" = "macOS Ventura nie jest oficjalnie wspierana przez GPTK. Mogą wystąpić problemy!";
+
+"winetricks.title" = "Uruchom polecenie Winetricks";
+"button.winetricks" = "Winetricks...";

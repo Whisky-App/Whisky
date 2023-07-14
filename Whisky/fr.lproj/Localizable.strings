@@ -43,7 +43,7 @@
 "config.dxvkHud.fps" = "IPS";
 "config.dxvkHud.off" = "Désactivé";
 "config.dpi" = "Mise à l'échelle du PPP";
-"config.inspect" = "Configurer ...";
+"config.inspect" = "Configurer...";
 
 "configDpi.title" = "Paramètres du PPP";
 "configDpi.preview" = "Le texte ressemblera à ça :";
@@ -81,7 +81,7 @@
 "rename.name" = "Nouveau nom :";
 "rename.rename" = "Renommer";
 
-"check.updates" = "Recherche des Mises à Jour...";
+"check.updates" = "Recherche de Mises à Jour...";
 "kill.bottles" = "Fermer Touts les Bouteilles";
 "open.logs" = "Ouvrir le Dossier des Logs";
 "open.bottle" = "Importer une Bouteille";
@@ -115,3 +115,6 @@
 
 "alert.macos" = "Version macOS non supportée !";
 "alert.macos.info" = "macOS Ventura n'est pas officiellement supporté par GPTK. Des problèmes peuvent survenir !";
+
+"winetricks.title" = "Exécuter une commande Winetricks";
+"button.winetricks" = "Winetricks...";
