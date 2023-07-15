@@ -14,8 +14,8 @@
 "button.run" = "Ejecutar...";
 "button.ok" = "OK";
 "button.renameBottle" = "Renombrar";
-"button.moveBottle" = "Move";
-"button.exportBottle" = "Export as Archive";
+"button.moveBottle" = "Mover";
+"button.exportBottle" = "Exportar como archivo";
 "button.deleteBottle" = "Eliminar...";
 "button.createBottle" = "Crear un Contenedor";
 "button.deleteAlert.msg" = "Eliminar %@?";
@@ -42,12 +42,12 @@
 "config.dxvkHud.partial" = "Parcial";
 "config.dxvkHud.fps" = "CPS";
 "config.dxvkHud.off" = "Apagado";
-"config.dpi" = "DPI Scaling";
-"config.inspect" = "Configure...";
+"config.dpi" = "Escala de DPI";
+"config.inspect" = "Configurar...";
 
-"configDpi.title" = "DPI Settings";
-"configDpi.preview" = "Text will look like this:";
-"configDpi.previewText" = "The quick brown fox jumped over the lazy dog.";
+"configDpi.title" = "Ajustes DPI";
+"configDpi.preview" = "Se verá así:";
+"configDpi.previewText" = "El zorro rápido y marrón saltó sobre el perro perezoso.";
 "configDpi.dpi" = "DPI";
 
 "program.title" = "Programas Instalados";
@@ -61,7 +61,7 @@
 "info.winPath.copy" = "Copiar ubicación de Windows";
 "info.wine" = "Versión de Wine:";
 "info.win" = "Versión de Windows:";
-"info.gptk" = "GPTK Version";
+"info.gptk" = "Versión de GPTK";
 
 "gptkalert.init" = "Arrastra y suelta el archivo DMG de Gaming Porting Toolkit";
 "gptkalert.message" = "GPTK encontró un error!";
@@ -85,7 +85,7 @@
 "kill.bottles" = "Detener todas las Botellas";
 "open.logs" = "Abrir carpeta de registros";
 "open.bottle" = "Importar Contenedor";
-"open.setup" = "Setup...";
+"open.setup" = "Instalar...";
 
 "showAlertOnFirstLaunch.messageText" = "¿Te gustaría mover Whisky a la carpeta de Aplicaciones?";
 "showAlertOnFirstLaunch.informativeText" = "En algunos casos, Whisky podría no funcionar correctamente desde una carpeta diferente";
@@ -98,7 +98,7 @@
 "setup.install.checking" = "Comprobando la instalación %@...";
 "setup.install.installed" = "%@ instalado";
 "setup.install.notInstalled" = "%@ instalado";
-"setup.uninstall" = "Uninstall";
+"setup.uninstall" = "Desinstalar";
 
 "setup.rosetta" = "Instalando Rosetta";
 "setup.rosetta.subtitle" = "Rosetta permite que programas de arquitectura x86 (Wine por ejemplo) funcionen en tu Mac.";
@@ -114,7 +114,7 @@
 "setup.gptk" = "Instalando GPTK";
 
 "alert.macos" = "No compatible con esta versión de macOS";
-"alert.macos.info" = "macOS Ventura is not officially supported by GPTK. Issues may occur!";
+"alert.macos.info" = "macOS Ventura no está soportado oficialmente por GPTK. ¡Pueden ocurrir problemas!";
 
 "winetricks.title" = "Run Winetricks command";
 "button.winetricks" = "Winetricks...";
