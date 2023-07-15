@@ -17,9 +17,9 @@
 "button.moveBottle" = "Mover";
 "button.exportBottle" = "Exportar como archivo";
 "button.deleteBottle" = "Eliminar...";
-"button.createBottle" = "Crear un Contenedor";
+"button.createBottle" = "Crear Botella";
 "button.deleteAlert.msg" = "Eliminar %@?";
-"button.deleteAlert.info" = "¿Estás seguro de que quieres eliminar este Contenedor? Esta acción es permanente.";
+"button.deleteAlert.info" = "¿Estás seguro de que quieres eliminar esta botella? Esta acción es permanente.";
 "button.deleteAlert.delete" = "Eliminar";
 "button.deleteAlert.cancel" = "Cancelar";
 
@@ -38,7 +38,7 @@
 "config.title.dxvk" = "DXVK";
 "config.dxvk" = "DXVK";
 "config.dxvkHud" = "Mostrar Info & Stats de DXVK";
-"config.dxvkHud.full" = "Completo";
+"config.dxvkHud.full" = "Completa";
 "config.dxvkHud.partial" = "Parcial";
 "config.dxvkHud.fps" = "CPS";
 "config.dxvkHud.off" = "Apagado";
@@ -116,5 +116,5 @@
 "alert.macos" = "No compatible con esta versión de macOS";
 "alert.macos.info" = "macOS Ventura no está soportado oficialmente por GPTK. ¡Pueden ocurrir problemas!";
 
-"winetricks.title" = "Run Winetricks command";
+"winetricks.title" = "Ejecutar comando de Winetricks";
 "button.winetricks" = "Winetricks...";
