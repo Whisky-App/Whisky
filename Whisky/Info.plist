@@ -24,7 +24,7 @@
 			<key>CFBundleTypeIconSystemGenerated</key>
 			<integer>1</integer>
 			<key>CFBundleTypeName</key>
-			<string>Windows Installer</string>
+			<string>Windows MSI Installer</string>
 			<key>CFBundleTypeRole</key>
 			<string>Editor</string>
 		</dict>
@@ -45,7 +45,7 @@
 	<string>https://raw.githubusercontent.com/IsaacMarovitz/Whisky/sparkle/appcast.xml</string>
 	<key>SUPublicEDKey</key>
 	<string>tnZFAvPUfCpM7Tr7Sx5gKRm6BUQQ6htJQeOMP44evms=</string>
-	<key>UTExportedTypeDeclarations</key>
+	<key>UTImportedTypeDeclarations</key>
 	<array>
 		<dict>
 			<key>UTTypeConformsTo</key>
@@ -53,11 +53,40 @@
 				<string>public.data</string>
 			</array>
 			<key>UTTypeDescription</key>
-			<string>Microsoft Shortcut</string>
+			<string>Windows MSI Installer</string>
 			<key>UTTypeIcons</key>
-			<dict/>
+			<dict>
+				<key>UTTypeIconBadgeName</key>
+				<string>AppIcon</string>
+				<key>UTTypeIconText</key>
+				<string>installer</string>
+			</dict>
 			<key>UTTypeIdentifier</key>
-			<string>com.microsoft.shortcut</string>
+			<string>com.microsoft.msi-installer</string>
+			<key>UTTypeTagSpecification</key>
+			<dict>
+				<key>public.filename-extension</key>
+				<array>
+					<string>msi</string>
+				</array>
+			</dict>
+		</dict>
+		<dict>
+			<key>UTTypeConformsTo</key>
+			<array>
+				<string>public.data</string>
+			</array>
+			<key>UTTypeDescription</key>
+			<string>Windows Shortcut</string>
+			<key>UTTypeIcons</key>
+			<dict>
+				<key>UTTypeIconBadgeName</key>
+				<string>AppIcon</string>
+				<key>UTTypeIconText</key>
+				<string>shortcut</string>
+			</dict>
+			<key>UTTypeIdentifier</key>
+			<string>com.microsoft.lnk-shortcut</string>
 			<key>UTTypeTagSpecification</key>
 			<dict>
 				<key>public.filename-extension</key>
@@ -70,18 +99,24 @@
 			<key>UTTypeConformsTo</key>
 			<array>
 				<string>public.data</string>
+				<string>public.executable</string>
 			</array>
 			<key>UTTypeDescription</key>
-			<string>Microsoft MSI Installer</string>
+			<string>Windows Executable</string>
 			<key>UTTypeIcons</key>
-			<dict/>
+			<dict>
+				<key>UTTypeIconBadgeName</key>
+				<string>AppIcon</string>
+				<key>UTTypeIconText</key>
+				<string>executable</string>
+			</dict>
 			<key>UTTypeIdentifier</key>
-			<string>com.microsoft.msi-installer</string>
+			<string>public.windows-executable</string>
 			<key>UTTypeTagSpecification</key>
 			<dict>
 				<key>public.filename-extension</key>
 				<array>
-					<string>msi</string>
+					<string>exe</string>
 				</array>
 			</dict>
 		</dict>

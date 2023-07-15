@@ -8,7 +8,6 @@
 import UniformTypeIdentifiers
 
 extension UTType {
-    static let portableExecutable = UTType(exportedAs: "com.microsoft.portable-executable")
-    static let msiInstaller = UTType(exportedAs: "com.microsoft.msi-installer")
-    static let shortcut = UTType(exportedAs: "com.microsoft.shortcut")
+    static let msiInstaller = UTType(importedAs: "com.microsoft.msi-installer")
+    static let shortcut = UTType(importedAs: "com.microsoft.lnk-shortcut")
 }
