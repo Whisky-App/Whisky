@@ -14,8 +14,8 @@
 "button.run" = "Käynnistä...";
 "button.ok" = "OK";
 "button.renameBottle" = "Nimeä uudelleen";
-"button.moveBottle" = "Move";
-"button.exportBottle" = "Export as Archive";
+"button.moveBottle" = "Siirrä";
+"button.exportBottle" = "Vie arkistona";
 "button.deleteBottle" = "Poista...";
 "button.createBottle" = "Luo pullo";
 "button.deleteAlert.msg" = "Poista %@?";
@@ -42,12 +42,12 @@
 "config.dxvkHud.partial" = "Osittainen";
 "config.dxvkHud.fps" = "FPS";
 "config.dxvkHud.off" = "Pois";
-"config.dpi" = "DPI Scaling";
-"config.inspect" = "Configure...";
+"config.dpi" = "DPI skaalaus";
+"config.inspect" = "Konfiguroi...";
 
-"configDpi.title" = "DPI Settings";
-"configDpi.preview" = "Text will look like this:";
-"configDpi.previewText" = "The quick brown fox jumped over the lazy dog.";
+"configDpi.title" = "DPI asetukset";
+"configDpi.preview" = "Teksti tulee näyttämään tältä:";
+"configDpi.previewText" = "Albert osti fagotin ja töräytti puhkuvan melodian.";
 "configDpi.dpi" = "DPI";
 
 "program.title" = "Asennetut ohjelmat";
@@ -61,7 +61,7 @@
 "info.winPath.copy" = "Kopioi Windows-polku";
 "info.wine" = "Wine versio";
 "info.win" = "Windows versio";
-"info.gptk" = "GPTK Version";
+"info.gptk" = "GPTK versio";
 
 "gptkalert.init" = "Vedä ja pudota Game Porting Toolkit DMG";
 "gptkalert.message" = "GPTK ajautui virheeseen!";
@@ -85,7 +85,7 @@
 "kill.bottles" = "Tapa kaikki pullot";
 "open.logs" = "Avaa log kansio";
 "open.bottle" = "Tuo pullo";
-"open.setup" = "Setup...";
+"open.setup" = "Asennus...";
 
 "showAlertOnFirstLaunch.messageText" = "Haluatko siirtää Whiskyn Applikaatio-kansioon?";
 "showAlertOnFirstLaunch.informativeText" = "Joissakin tapauksissa, Whiskyn ei ole mahdollista toimia kunnolla muista kansioista";
