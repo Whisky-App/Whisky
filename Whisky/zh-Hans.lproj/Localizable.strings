@@ -1,6 +1,6 @@
 "tab.config" = "配置";
 "tab.programs" = "程序";
-"tab.info" = "关于";
+"tab.info" = "简介";
 
 "tab.navTitle.config" = "%@ 配置";
 "tab.navTitle.programs" = "%@ 软件";
