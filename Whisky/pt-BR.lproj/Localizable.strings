@@ -14,8 +14,8 @@
 "button.run" = "Executar...";
 "button.ok" = "OK";
 "button.renameBottle" = "Renomear";
-"button.moveBottle" = "Move";
-"button.exportBottle" = "Export as Archive";
+"button.moveBottle" = "Mover";
+"button.exportBottle" = "Exportar como arquivo";
 "button.deleteBottle" = "Apagar...";
 "button.createBottle" = "Criar uma Bottle";
 "button.deleteAlert.msg" = "Apagar %@?";
@@ -37,17 +37,17 @@
 "config.notAvailable" = "Indisponível";
 "config.title.dxvk" = "DXVK";
 "config.dxvk" = "DXVK";
-"config.dxvkHud" = "DXVK HUD";
-"config.dxvkHud.full" = "Full";
-"config.dxvkHud.partial" = "Partial";
+"config.dxvkHud" = "HUD DXVK";
+"config.dxvkHud.full" = "Completa";
+"config.dxvkHud.partial" = "Simplificada";
 "config.dxvkHud.fps" = "FPS";
-"config.dxvkHud.off" = "Off";
-"config.dpi" = "DPI Scaling";
-"config.inspect" = "Configure...";
+"config.dxvkHud.off" = "Desativada";
+"config.dpi" = "Escala de DPI";
+"config.inspect" = "Configurar...";
 
-"configDpi.title" = "DPI Settings";
-"configDpi.preview" = "Text will look like this:";
-"configDpi.previewText" = "The quick brown fox jumped over the lazy dog.";
+"configDpi.title" = "Configurações de DPI";
+"configDpi.preview" = "O texto ficará assim:";
+"configDpi.previewText" = "A rápida raposa marrom pula sobre o cachorro preguiçoso.";
 "configDpi.dpi" = "DPI";
 
 "program.title" = "Programas Instalados";
@@ -61,7 +61,7 @@
 "info.winPath.copy" = "Copiar caminho do Windows";
 "info.wine" = "Versão do Wine";
 "info.win" = "Versão do Windows";
-"info.gptk" = "GPTK Version";
+"info.gptk" = "Versão do GPTK";
 
 "gptkalert.init" = "Arraste e solte o arquivo DMG do Game Porting Toolkit";
 "gptkalert.message" = "O GPTK encontrou um erro!";
@@ -84,7 +84,7 @@
 "check.updates" = "Procurar Atualizações...";
 "kill.bottles" = "Encerrar todas as Bottles";
 "open.logs" = "Abrir Pasta dos Logs";
-"open.bottle" = "Import Bottle";
+"open.bottle" = "Importar Bottle";
 "open.setup" = "Setup...";
 
 "showAlertOnFirstLaunch.messageText" = "Você gostaria de mover o Whisky para a pasta dos Aplicativos?";
@@ -98,7 +98,7 @@
 "setup.install.checking" = "Verificando instalação de %@...";
 "setup.install.installed" = "%@ instalado";
 "setup.install.notInstalled" = "%@ não instalado";
-"setup.uninstall" = "Uninstall";
+"setup.uninstall" = "Desinstalar";
 
 "setup.rosetta" = "Instalando Rosetta";
 "setup.rosetta.subtitle" = "Rosetta permite código x86, como Wine, a rodar em seu Mac.";
@@ -114,7 +114,7 @@
 "setup.gptk" = "Instalando GPTK";
 
 "alert.macos" = "Versão do macOS não suportada!";
-"alert.macos.info" = "macOS Ventura is not officially supported by GPTK. Issues may occur!";
+"alert.macos.info" = "O macOS Ventura não é oficialmente suportado pelo GPTK. Problemas podem ocorrer!";
 
-"winetricks.title" = "Run Winetricks command";
+"winetricks.title" = "Executar comando Winetricks";
 "button.winetricks" = "Winetricks...";
