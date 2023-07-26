@@ -46,18 +46,8 @@ struct WhiskyApp: App {
                     panel.begin { result in
                         if result == .OK {
                             if let url = panel.urls.first {
-                                let bottleMetadata = url
-                                    .appendingPathComponent("Metadata")
-                                    .appendingPathExtension("plist")
-                                    .path()
-
-                                if FileManager.default.fileExists(atPath: bottleMetadata) {
-                                    // Legacy files
-                                    let bottle = BottleSettings(bottleURL: url)
-                                    bottle.encode()
-                                }
-
                                 BottleVM.shared.bottlesList.paths.append(url)
+                                BottleVM.shared.bottlesList.encode()
                                 BottleVM.shared.loadBottles()
                             }
                         }
