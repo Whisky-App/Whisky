@@ -86,6 +86,7 @@
 "open.logs" = "Abrir carpeta de registros";
 "open.bottle" = "Importar Contenedor";
 "open.setup" = "Instalar...";
+"wine.clearShaderCaches" = "Clear Shader Caches";
 
 "showAlertOnFirstLaunch.messageText" = "¿Te gustaría mover Whisky a la carpeta de Aplicaciones?";
 "showAlertOnFirstLaunch.informativeText" = "En algunos casos, Whisky podría no funcionar correctamente desde una carpeta diferente";
