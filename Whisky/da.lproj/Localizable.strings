@@ -86,6 +86,7 @@
 "open.logs" = "Åbn Logmappe";
 "open.bottle" = "Importér Bottle";
 "open.setup" = "Setup...";
+"wine.clearShaderCaches" = "Clear Shader Caches";
 
 "showAlertOnFirstLaunch.messageText" = "Vil du flytte Whisky til Applications mappen?";
 "showAlertOnFirstLaunch.informativeText" = "I nogle tilfælde vil Whisky ikke være i stand til at fungere korrekt fra en anden mappe";
