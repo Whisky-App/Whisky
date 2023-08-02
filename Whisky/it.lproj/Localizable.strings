@@ -47,7 +47,7 @@
 
 "configDpi.title" = "DPI Settings";
 "configDpi.preview" = "Text will look like this:";
-"configDpi.previewText" = "The quick brown fox jumps over the lazy dog.";
+"configDpi.previewText" = "Ma la volpe, col suo balzo, ha raggiunto il quieto Fido.";
 "configDpi.dpi" = "DPI";
 
 "program.title" = "Programmi Installati";
