@@ -86,6 +86,7 @@
 "open.logs" = "Avaa log kansio";
 "open.bottle" = "Tuo pullo";
 "open.setup" = "Asennus...";
+"wine.clearShaderCaches" = "Clear Shader Caches";
 
 "showAlertOnFirstLaunch.messageText" = "Haluatko siirtää Whiskyn Applikaatio-kansioon?";
 "showAlertOnFirstLaunch.informativeText" = "Joissakin tapauksissa, Whiskyn ei ole mahdollista toimia kunnolla muista kansioista";
