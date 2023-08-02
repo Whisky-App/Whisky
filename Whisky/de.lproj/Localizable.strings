@@ -86,6 +86,7 @@
 "open.logs" = "Log-Folder öffnen";
 "open.bottle" = "Flasche importieren";
 "open.setup" = "Einrichtung...";
+"wine.clearShaderCaches" = "Clear Shader Caches";
 
 "showAlertOnFirstLaunch.messageText" = "Möchtest du Whisky in deinen Programm-Ordner legen?";
 "showAlertOnFirstLaunch.informativeText" = "In manchen Fällen wird Whisky nicht richtig funktionieren, wenn es in einem anderen Ordner gespeichert ist";
