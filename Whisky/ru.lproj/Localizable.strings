@@ -86,6 +86,7 @@
 "open.logs" = "Открыть папку логов";
 "open.bottle" = "Импортировать бутылку";
 "open.setup" = "Установить...";
+"wine.clearShaderCaches" = "Clear Shader Caches";
 
 "showAlertOnFirstLaunch.messageText" = "Вы хотите переместить Whisky в папку «Приложения»?";
 "showAlertOnFirstLaunch.informativeText" = "В некоторых случаях Whisky не сможет правильно функционировать из другой папки";
