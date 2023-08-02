@@ -86,6 +86,7 @@
 "open.logs" = "ログフォルダを開く";
 "open.bottle" = "Bottle をインポート";
 "open.setup" = "セットアップ...";
+"wine.clearShaderCaches" = "Clear Shader Caches";
 
 "showAlertOnFirstLaunch.messageText" = "Whisky を「アプリケーション」フォルダに移動しますか？";
 "showAlertOnFirstLaunch.informativeText" = "場合によっては、異なるフォルダから Whisky を適切に使用できない場合があります";
