@@ -14,8 +14,8 @@
 "button.run" = "Выполнить...";
 "button.ok" = "ОК";
 "button.renameBottle" = "Переименовать";
-"button.moveBottle" = "Move";
-"button.exportBottle" = "Export as Archive";
+"button.moveBottle" = "Переместить";
+"button.exportBottle" = "Экспортировать как архив";
 "button.deleteBottle" = "Удалить...";
 "button.createBottle" = "Создать бутылку";
 "button.deleteAlert.msg" = "Удалить %@?";
@@ -42,12 +42,12 @@
 "config.dxvkHud.partial" = "Частичный";
 "config.dxvkHud.fps" = "Только FPS";
 "config.dxvkHud.off" = "Выключен";
-"config.dpi" = "DPI Scaling";
-"config.inspect" = "Configure...";
+"config.dpi" = "Масштабирование DPI";
+"config.inspect" = "Настроить...";
 
-"configDpi.title" = "DPI Settings";
-"configDpi.preview" = "Text will look like this:";
-"configDpi.previewText" = "The quick brown fox jumped over the lazy dog.";
+"configDpi.title" = "Настройки DPI";
+"configDpi.preview" = "Текст будет выглядеть так:";
+"configDpi.previewText" = "Съешь же ещё этих мягких французских булок да выпей чаю.";
 "configDpi.dpi" = "DPI";
 
 "program.title" = "Установленные программы";
@@ -61,7 +61,7 @@
 "info.winPath.copy" = "Скопировать путь Windows";
 "info.wine" = "Версия Wine:";
 "info.win" = "Версия Windows:";
-"info.gptk" = "GPTK Version";
+"info.gptk" = "Версия GPTK";
 
 "gptkalert.init" = "Перетащите DMG образ Game Porting Toolkit";
 "gptkalert.message" = "Случилась ошибка в GPTK!";
@@ -85,7 +85,7 @@
 "kill.bottles" = "Закрыть все бутылки";
 "open.logs" = "Открыть папку логов";
 "open.bottle" = "Импортировать бутылку";
-"open.setup" = "Setup...";
+"open.setup" = "Установить...";
 
 "showAlertOnFirstLaunch.messageText" = "Вы хотите переместить Whisky в папку «Приложения»?";
 "showAlertOnFirstLaunch.informativeText" = "В некоторых случаях Whisky не сможет правильно функционировать из другой папки";
@@ -98,7 +98,7 @@
 "setup.install.checking" = "Проверка установки %@...";
 "setup.install.installed" = "%@ – установлено";
 "setup.install.notInstalled" = "%@ – не установлено";
-"setup.uninstall" = "Uninstall";
+"setup.uninstall" = "Удалить";
 
 "setup.rosetta" = "Установка Rosetta";
 "setup.rosetta.subtitle" = "Rosetta позволяет программам x86, таким как Wine, работать на вашем Mac.";
@@ -114,7 +114,7 @@
 "setup.gptk" = "Установка GPTK";
 
 "alert.macos" = "Текущая версия macOS не поддерживается!";
-"alert.macos.info" = "macOS Ventura is not officially supported by GPTK. Issues may occur!";
+"alert.macos.info" = "macOS Ventura официально не поддерживается GPTK. Могут возникнуть проблемы!";
 
-"winetricks.title" = "Run Winetricks command";
+"winetricks.title" = "Выполнить команду Winetricks";
 "button.winetricks" = "Winetricks...";

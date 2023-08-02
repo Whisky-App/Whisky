@@ -82,7 +82,7 @@
 "rename.rename" = "Alterar nome";
 
 "check.updates" = "Verificar Actualizações...";
-"kill.bottles" = "Encerrar Todos os Bottles";
+"kill.bottles" = "Encerrar todas as Bottles...";
 "open.logs" = "Abrir Pasta dos Logs";
 "open.bottle" = "Import Bottle";
 "open.setup" = "Setup...";
