@@ -19,7 +19,7 @@
 "button.deleteBottle" = "Löschen...";
 "button.createBottle" = "Bottle erstellen";
 "button.deleteAlert.msg" = "Lösche %@?";
-"button.deleteAlert.info" = "Bist du sicher, dass du diese Bottle löschen möchtest? Die Aktion ist unwiederruflich.";
+"button.deleteAlert.info" = "Bist du sicher, dass du diese Bottle löschen möchtest? Die Aktion ist unwiderruflich.";
 "button.deleteAlert.delete" = "Löschen";
 "button.deleteAlert.cancel" = "Abbrechen";
 
@@ -29,7 +29,7 @@
 "config.metalHud" = "Metal HUD";
 "config.metalTrace" = "Metal Trace";
 "config.retinaMode" = "Retina-Modus";
-"config.metalTrace.info" = "Erlaub es dir, den GPU-Workload in Xcode aufzunehmen.";
+"config.metalTrace.info" = "Erlaub es dir, den GPU-Workload in Xcode aufzunehmen";
 "config.esync" = "ESync";
 "config.controlPanel" = "Systemsteuerung öffnen";
 "config.regedit" = "Registry-Editor öffnen";
@@ -50,8 +50,8 @@
 "configDpi.previewText" = "Victor jagt zwölf Boxkämpfer quer über den großen Sylter Deich.";
 "configDpi.dpi" = "DPI";
 
-"program.title" = "Intallierte Programme";
-"program.env" = "Umgebungs-Variables";
+"program.title" = "Installierte Programme";
+"program.env" = "Umgebungsvariablen";
 "program.args" = "Argumente";
 "program.config" = "Konfiguration";
 
@@ -67,11 +67,11 @@
 "gptkalert.message" = "Bei GPTK ist ein Fehler aufgetreten.";
 
 "alert.message" = "Das öffnen des Programms ist fehlgeschlagen.";
-"alert.info" = "Öffen fehlgeschlagen";
+"alert.info" = "Öffnen fehlgeschlagen";
 
 "create.title" = "Erstelle eine neue Bottle";
 "create.name" = "Bottle-Name:";
-"create.win" = "Windows version:";
+"create.win" = "Windows Version:";
 "create.path" = "Bottle-Pfad:";
 "create.browse" = "Durchsuchen";
 "create.cancel" = "Abbrechen";
