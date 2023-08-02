@@ -2,45 +2,6 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
-	<key>CFBundleDocumentTypes</key>
-	<array>
-		<dict>
-			<key>CFBundleTypeExtensions</key>
-			<array>
-				<string>exe</string>
-			</array>
-			<key>CFBundleTypeIconSystemGenerated</key>
-			<integer>1</integer>
-			<key>CFBundleTypeName</key>
-			<string>Windows Executable</string>
-			<key>CFBundleTypeRole</key>
-			<string>Editor</string>
-		</dict>
-		<dict>
-			<key>CFBundleTypeExtensions</key>
-			<array>
-				<string>msi</string>
-			</array>
-			<key>CFBundleTypeIconSystemGenerated</key>
-			<integer>1</integer>
-			<key>CFBundleTypeName</key>
-			<string>Windows MSI Installer</string>
-			<key>CFBundleTypeRole</key>
-			<string>Editor</string>
-		</dict>
-		<dict>
-			<key>CFBundleTypeExtensions</key>
-			<array>
-				<string>lnk</string>
-			</array>
-			<key>CFBundleTypeIconSystemGenerated</key>
-			<integer>1</integer>
-			<key>CFBundleTypeName</key>
-			<string>Windows Shortcut</string>
-			<key>CFBundleTypeRole</key>
-			<string>Editor</string>
-		</dict>
-	</array>
 	<key>SUFeedURL</key>
 	<string>https://raw.githubusercontent.com/IsaacMarovitz/Whisky/sparkle/appcast.xml</string>
 	<key>SUPublicEDKey</key>
@@ -53,14 +14,9 @@
 				<string>public.data</string>
 			</array>
 			<key>UTTypeDescription</key>
-			<string>Windows MSI Installer</string>
+			<string>Microsoft MSI Installer</string>
 			<key>UTTypeIcons</key>
-			<dict>
-				<key>UTTypeIconBadgeName</key>
-				<string>AppIcon</string>
-				<key>UTTypeIconText</key>
-				<string>installer</string>
-			</dict>
+			<dict/>
 			<key>UTTypeIdentifier</key>
 			<string>com.microsoft.msi-installer</string>
 			<key>UTTypeTagSpecification</key>
@@ -68,55 +24,6 @@
 				<key>public.filename-extension</key>
 				<array>
 					<string>msi</string>
-				</array>
-			</dict>
-		</dict>
-		<dict>
-			<key>UTTypeConformsTo</key>
-			<array>
-				<string>public.data</string>
-			</array>
-			<key>UTTypeDescription</key>
-			<string>Windows Shortcut</string>
-			<key>UTTypeIcons</key>
-			<dict>
-				<key>UTTypeIconBadgeName</key>
-				<string>AppIcon</string>
-				<key>UTTypeIconText</key>
-				<string>shortcut</string>
-			</dict>
-			<key>UTTypeIdentifier</key>
-			<string>com.microsoft.lnk-shortcut</string>
-			<key>UTTypeTagSpecification</key>
-			<dict>
-				<key>public.filename-extension</key>
-				<array>
-					<string>lnk</string>
-				</array>
-			</dict>
-		</dict>
-		<dict>
-			<key>UTTypeConformsTo</key>
-			<array>
-				<string>public.data</string>
-				<string>public.executable</string>
-			</array>
-			<key>UTTypeDescription</key>
-			<string>Windows Executable</string>
-			<key>UTTypeIcons</key>
-			<dict>
-				<key>UTTypeIconBadgeName</key>
-				<string>AppIcon</string>
-				<key>UTTypeIconText</key>
-				<string>executable</string>
-			</dict>
-			<key>UTTypeIdentifier</key>
-			<string>public.windows-executable</string>
-			<key>UTTypeTagSpecification</key>
-			<dict>
-				<key>public.filename-extension</key>
-				<array>
-					<string>exe</string>
 				</array>
 			</dict>
 		</dict>

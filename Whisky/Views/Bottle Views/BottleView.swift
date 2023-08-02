@@ -140,8 +140,7 @@ struct BottleView: View {
                     panel.canChooseDirectories = false
                     panel.canChooseFiles = true
                     panel.allowedContentTypes = [UTType.exe,
-                                                 UTType.msiInstaller,
-                                                 UTType.shortcut]
+                                                 UTType(importedAs: "com.microsoft.msi-installer")]
                     panel.directoryURL = bottle.url.appendingPathComponent("drive_c")
                     panel.begin { result in
                         programLoading = true
