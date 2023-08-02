@@ -87,6 +87,7 @@
 "open.logs" = "開啟日誌資料夾";
 "open.bottle" = "导入容器";
 "open.setup" = "設置...";
+"wine.clearShaderCaches" = "Clear Shader Caches";
 
 "showAlertOnFirstLaunch.messageText" = "你希望將 Whisky 移動到你的應用程式資料夾嗎？";
 "showAlertOnFirstLaunch.informativeText" = "在某些情況下，Whisky 可能無法在不同的資料夾中正常運作";
