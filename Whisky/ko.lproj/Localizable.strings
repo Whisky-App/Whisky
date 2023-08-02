@@ -47,7 +47,7 @@
 
 "configDpi.title" = "DPI 설정";
 "configDpi.preview" = "텍스트는 다음과 같이 표시될 것입니다:";
-"configDpi.previewText" = "다람쥐 헌 쳇바퀴에 타고파.";
+"configDpi.previewText" = "The quick brown fox jumped over the lazy dog.";
 "configDpi.dpi" = "DPI";
 
 "program.title" = "설치된 프로그램";
