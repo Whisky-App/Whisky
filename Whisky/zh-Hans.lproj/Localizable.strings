@@ -47,7 +47,7 @@
 
 "configDpi.title" = "DPI 设置";
 "configDpi.preview" = "文字外观示例：";
-"configDpi.previewText" = "敏捷的棕色狐狸跳过懒狗。";
+"configDpi.previewText" = "The quick brown fox jumps over the lazy dog.";
 "configDpi.dpi" = "DPI";
 
 "program.title" = "已安装的程序";
