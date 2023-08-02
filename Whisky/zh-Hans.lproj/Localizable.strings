@@ -1,5 +1,5 @@
 "tab.config" = "配置";
-"tab.programs" = "程序";
+"tab.programs" = "软件";
 "tab.info" = "简介";
 
 "tab.navTitle.config" = "%@ 配置";
@@ -29,8 +29,8 @@
 "config.metalHud" = "Metal HUD";
 "config.metalTrace" = "Metal 性能分析";
 "config.retinaMode" = "Retina 模式";
-"config.metalTrace.info" = "允许你在Xcode中捕获GPU工作负载";
-"config.esync" = "ESync（增强同步）技术";
+"config.metalTrace.info" = "允许你在 Xcode 中抓取 GPU 工作负载";
+"config.esync" = "ESync（增强同步）";
 "config.controlPanel" = "打开控制面板";
 "config.regedit" = "打开注册表编辑器";
 "config.winecfg" = "打开 Wine 配置";
@@ -66,7 +66,7 @@
 "gptkalert.init" = "将 Game Porting Toolkit 的 DMG 文件拖到这里";
 "gptkalert.message" = "GPTK 遇到了一个错误！";
 
-"alert.message" = "无法打开程序！";
+"alert.message" = "打开软件失败！";
 "alert.info" = "打开失败";
 
 "create.title" = "创建新的容器";
@@ -82,13 +82,13 @@
 "rename.rename" = "重命名";
 
 "check.updates" = "检查更新...";
-"kill.bottles" = "结束所有容器";
+"kill.bottles" = "停止所有容器";
 "open.logs" = "打开日志文件夹";
 "open.bottle" = "导入容器";
 "open.setup" = "安装...";
 
 "showAlertOnFirstLaunch.messageText" = "你想要将 Whisky 移动到你的应用程序文件夹吗？";
-"showAlertOnFirstLaunch.informativeText" = "在某些情况下，Whisky 可能无法在另外的文件夹中正常工作";
+"showAlertOnFirstLaunch.informativeText" = "在某些情况下，Whisky 可能无法在其他的文件夹中正常工作";
 "showAlertOnFirstLaunch.button.moveToApplications" = "移动到应用程序文件夹";
 "showAlertOnFirstLaunch.button.dontMove" = "不要移动";
 
@@ -113,7 +113,7 @@
 
 "setup.gptk" = "正在安装 GPTK";
 
-"alert.macos" = "不支持的 macOS 版本！";
+"alert.macos" = "当前的macOS版本不受支持。";
 "alert.macos.info" = "macOS Ventura 没有 GPTK 的官方支持，可能会出现问题！";
 
 "winetricks.title" = "运行 Winetricks 命令";
