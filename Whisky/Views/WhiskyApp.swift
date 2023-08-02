@@ -64,6 +64,10 @@ struct WhiskyApp: App {
                     WhiskyApp.killBottles()
                 }
                 .keyboardShortcut("K", modifiers: [.command, .shift])
+                Button("wine.clearShaderCaches") {
+                    WhiskyApp.killBottles() // Better not make things more complicated for ourselves
+                    WhiskyApp.wipeShaderCaches()
+                }
             }
         }
     }
@@ -80,5 +84,32 @@ struct WhiskyApp: App {
 
     static func openLogsFolder() {
         NSWorkspace.shared.selectFile(nil, inFileViewerRootedAtPath: Log.logsFolder.path)
+    }
+
+    static func wipeShaderCaches() {
+        let getconf = Process()
+        getconf.executableURL = URL(fileURLWithPath: "/usr/bin/getconf")
+        getconf.arguments = ["DARWIN_USER_CACHE_DIR"]
+        let pipe = Pipe()
+        getconf.standardOutput = pipe
+        do {
+            try getconf.run()
+        } catch {
+            return
+        }
+        getconf.waitUntilExit()
+
+        let getconfOutput = pipe.fileHandleForReading.readDataToEndOfFile()
+        guard let getconfOutputString = String(data: getconfOutput, encoding: .utf8) else {
+            return
+        }
+
+        let d3dmPath = URL(fileURLWithPath: getconfOutputString.trimmingCharacters(in: .whitespacesAndNewlines))
+            .appendingPathComponent("d3dm").path
+        do {
+            try FileManager.default.removeItem(atPath: d3dmPath)
+        } catch {
+            return
+        }
     }
 }
