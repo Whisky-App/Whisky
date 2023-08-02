@@ -1,4 +1,4 @@
-"tab.config" = "Konfigurationen";
+"tab.config" = "Konfiguration";
 "tab.programs" = "Programme";
 "tab.info" = "Info";
 
@@ -6,16 +6,16 @@
 "tab.navTitle.programs" = "%@ Programme";
 "tab.navTitle.info" = "%@ Info";
 
-"main.noneSelected" = "Select a bottle";
-"main.createFirst" = "Create your first bottle to get started";
+"main.noneSelected" = "Flasche auswählen";
+"main.createFirst" = "Erstellen Sie Ihre erste Flasche, um loszulegen";
 
 "button.cDrive" = "C Laufwerk öffnen";
 "button.showInFinder" = "Im Finder anzeigen";
 "button.run" = "Starten...";
 "button.ok" = "OK";
 "button.renameBottle" = "Umbenennen";
-"button.moveBottle" = "Move";
-"button.exportBottle" = "Export as Archive";
+"button.moveBottle" = "Verschieben";
+"button.exportBottle" = "Als Archiv exportieren";
 "button.deleteBottle" = "Löschen...";
 "button.createBottle" = "Bottle erstellen";
 "button.deleteAlert.msg" = "Lösche %@?";
@@ -34,19 +34,19 @@
 "config.controlPanel" = "Systemsteuerung öffnen";
 "config.regedit" = "Registry-Editor öffnen";
 "config.winecfg" = "Öffne die Wine-Konfiguration";
-"config.notAvailable" = "N/A";
+"config.notAvailable" = "Keine Angabe";
 "config.title.dxvk" = "DXVK";
 "config.dxvk" = "DXVK";
 "config.dxvkHud" = "DXVK HUD";
-"config.dxvkHud.full" = "Full";
-"config.dxvkHud.partial" = "Partial";
+"config.dxvkHud.full" = "Voll";
+"config.dxvkHud.partial" = "Teilweise";
 "config.dxvkHud.fps" = "FPS";
-"config.dxvkHud.off" = "Off";
-"config.dpi" = "DPI Scaling";
-"config.inspect" = "Configure...";
+"config.dxvkHud.off" = "Aus";
+"config.dpi" = "DPI-Skalierung";
+"config.inspect" = "Konfigurieren...";
 
-"configDpi.title" = "DPI Settings";
-"configDpi.preview" = "Text will look like this:";
+"configDpi.title" = "DPI-Einstellungen";
+"configDpi.preview" = "Der Text wird wie folgt aussehen:";
 "configDpi.previewText" = "Victor jagt zwölf Boxkämpfer quer über den großen Sylter Deich.";
 "configDpi.dpi" = "DPI";
 
@@ -84,8 +84,8 @@
 "check.updates" = "Nach Updates suchen...";
 "kill.bottles" = "Beende sofort alle Bottles";
 "open.logs" = "Log-Folder öffnen";
-"open.bottle" = "Import Bottle";
-"open.setup" = "Setup...";
+"open.bottle" = "Flasche importieren";
+"open.setup" = "Einrichtung...";
 
 "showAlertOnFirstLaunch.messageText" = "Möchtest du Whisky in deinen Programm-Ordner legen?";
 "showAlertOnFirstLaunch.informativeText" = "In manchen Fällen wird Whisky nicht richtig funktionieren, wenn es in einem anderen Ordner gespeichert ist";
@@ -98,23 +98,23 @@
 "setup.install.checking" = "Überprüfen der %@ Installation...";
 "setup.install.installed" = "%@ installiert";
 "setup.install.notInstalled" = "%@ nicht installiert";
-"setup.uninstall" = "Uninstall";
+"setup.uninstall" = "Deinstallieren";
 
 "setup.rosetta" = "Installiere Rosetta";
 "setup.rosetta.subtitle" = "Rosetta erlaubt es, x86 code auf deinem Mac auszuführen, ähnlich wie Wine.";
 
 "setup.wine.download" = "Wine herunterladen";
 "setup.wine.download.subtitle" = "Die Geschwindigkeit variiert je nach Internetverbindung.";
-"setup.wine.progress" = "%@ of %@";
-"setup.wine.eta" = "- %@ remaining";
+"setup.wine.progress" = "%@ von %@";
+"setup.wine.eta" = "- %@ verbleibend";
 
 "setup.wine.install" = "Wine wird installiert";
 "setup.wine.install.subtitle" = "Fast fertig. Noch nicht abbrechen.";
 
 "setup.gptk" = "GPTK wird installiert";
 
-"alert.macos" = "Unsupported macOS Version!";
-"alert.macos.info" = "macOS Ventura is not officially supported by GPTK. Issues may occur!";
+"alert.macos" = "Die auf dem Gerät installierte macOS Version wird nicht unterstützt!";
+"alert.macos.info" = "macOS Ventura wird nicht offiziell von GPTK unterstützt. Probleme können auftreten!";
 
-"winetricks.title" = "Run Winetricks command";
+"winetricks.title" = "Winetricks-Befehl ausführen";
 "button.winetricks" = "Winetricks...";
