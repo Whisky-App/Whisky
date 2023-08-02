@@ -75,7 +75,7 @@ struct WhiskyApp: App {
                 }
                 .keyboardShortcut("K", modifiers: [.command, .shift])
                 Button("wine.clearShaderCaches") {
-                    WhiskyApp.killBottles() // better not make things more complicated for ourselves
+                    WhiskyApp.killBottles() // Better not make things more complicated for ourselves
                     WhiskyApp.wipeShaderCaches()
                 }
             }
