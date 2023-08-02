@@ -43,12 +43,12 @@
 "config.dxvkHud.partial" = "部份";
 "config.dxvkHud.fps" = "幀數";
 "config.dxvkHud.off" = "關閉";
-"config.dpi" = "DPI Scaling";
-"config.inspect" = "Configure...";
+"config.dpi" = "DPI 縮放";
+"config.inspect" = "設定...";
 
-"configDpi.title" = "DPI Settings";
-"configDpi.preview" = "Text will look like this:";
-"configDpi.previewText" = "The quick brown fox jumped over the lazy dog.";
+"configDpi.title" = "DPI 設定";
+"configDpi.preview" = "文本外觀範例：";
+"configDpi.previewText" = "敏捷的棕色狐狸跳過了懶狗。";
 "configDpi.dpi" = "DPI";
 
 "program.title" = "已安裝的程式";

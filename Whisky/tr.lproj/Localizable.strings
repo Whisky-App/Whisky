@@ -42,12 +42,12 @@
 "config.dxvkHud.partial" = "Kısmi";
 "config.dxvkHud.fps" = "FPS";
 "config.dxvkHud.off" = "Kapalı";
-"config.dpi" = "DPI Scaling";
-"config.inspect" = "Configure...";
+"config.dpi" = "DPI Ölçeklendirme";
+"config.inspect" = "Konfigüre et...";
 
-"configDpi.title" = "DPI Settings";
-"configDpi.preview" = "Text will look like this:";
-"configDpi.previewText" = "The quick brown fox jumped over the lazy dog.";
+"configDpi.title" = "DPI Ayarları";
+"configDpi.preview" = "Metin bu şekilde gözükecek:";
+"configDpi.previewText" = "Pijamalı hasta yağız şoföre çabucak güvendi.";
 "configDpi.dpi" = "DPI";
 
 "program.title" = "Yüklenmiş Programlar";
@@ -61,7 +61,7 @@
 "info.winPath.copy" = "Windows Dosya Yolunu Kopyalayın";
 "info.wine" = "Wine Sürümü";
 "info.win" = "Windows Sürümü";
-"info.gptk" = "GPTK Version";
+"info.gptk" = "GPTK Versiyonu";
 
 "gptkalert.init" = "Game Porting Toolkit DMG dosyasını sürükleyip bırakın";
 "gptkalert.message" = "GPTK bir hatayla karşılaştı!";
@@ -116,5 +116,5 @@
 "alert.macos" = "Desteklenmeyen bir macOS sürümü kullanıyorsunuz!";
 "alert.macos.info" = "macOS Ventura GPTK tarafından resmi olarak desteklenmiyor. Sorun yaşayabilirsiniz!";
 
-"winetricks.title" = "Run Winetricks command";
+"winetricks.title" = "Winetricks komutlarını çalıştırın";
 "button.winetricks" = "Winetricks...";

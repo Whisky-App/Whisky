@@ -1,6 +1,6 @@
 "tab.config" = "配置";
 "tab.programs" = "软件";
-"tab.info" = "关于";
+"tab.info" = "简介";
 
 "tab.navTitle.config" = "%@ 配置";
 "tab.navTitle.programs" = "%@ 软件";
@@ -18,8 +18,8 @@
 "button.exportBottle" = "导出为存档";
 "button.deleteBottle" = "删除...";
 "button.createBottle" = "创建容器";
-"button.deleteAlert.msg" = "你真的想删除 %@ 吗?";
-"button.deleteAlert.info" = "你确定要删除这个容器吗？这个操作是永久性的。";
+"button.deleteAlert.msg" = "删除 %@?";
+"button.deleteAlert.info" = "你确定要删除这个容器吗？这将是不可逆的。";
 "button.deleteAlert.delete" = "删除";
 "button.deleteAlert.cancel" = "取消";
 
@@ -30,7 +30,7 @@
 "config.metalTrace" = "Metal 性能分析";
 "config.retinaMode" = "Retina 模式";
 "config.metalTrace.info" = "允许你在 Xcode 中抓取 GPU 工作负载";
-"config.esync" = "ESync（增强同步）技术";
+"config.esync" = "ESync（增强同步）";
 "config.controlPanel" = "打开控制面板";
 "config.regedit" = "打开注册表编辑器";
 "config.winecfg" = "打开 Wine 配置";
@@ -38,19 +38,19 @@
 "config.title.dxvk" = "DXVK";
 "config.dxvk" = "DXVK";
 "config.dxvkHud" = "DXVK HUD";
-"config.dxvkHud.full" = "全开";
+"config.dxvkHud.full" = "全部";
 "config.dxvkHud.partial" = "部分";
-"config.dxvkHud.fps" = "帧数";
+"config.dxvkHud.fps" = "FPS";
 "config.dxvkHud.off" = "关闭";
 "config.dpi" = "DPI 缩放";
 "config.inspect" = "配置...";
 
 "configDpi.title" = "DPI 设置";
-"configDpi.preview" = "文本会看起来会像这样：";
-"configDpi.previewText" = "The quick brown fox jumped over the lazy dog.";
+"configDpi.preview" = "文字外观示例：";
+"configDpi.previewText" = "敏捷的棕色狐狸跳过懒狗。";
 "configDpi.dpi" = "DPI";
 
-"program.title" = "已安装的软件";
+"program.title" = "已安装的程序";
 "program.env" = "环境变量";
 "program.args" = "参数";
 "program.config" = "配置";
@@ -82,39 +82,39 @@
 "rename.rename" = "重命名";
 
 "check.updates" = "检查更新...";
-"kill.bottles" = "结束所有容器";
+"kill.bottles" = "停止所有容器";
 "open.logs" = "打开日志文件夹";
 "open.bottle" = "导入容器";
-"open.setup" = "设置...";
+"open.setup" = "安装...";
 
 "showAlertOnFirstLaunch.messageText" = "你想要将 Whisky 移动到你的应用程序文件夹吗？";
-"showAlertOnFirstLaunch.informativeText" = "在某些情况下，Whisky 可能无法在另外的文件夹中正常工作";
+"showAlertOnFirstLaunch.informativeText" = "在某些情况下，Whisky 可能无法在其他的文件夹中正常工作";
 "showAlertOnFirstLaunch.button.moveToApplications" = "移动到应用程序文件夹";
-"showAlertOnFirstLaunch.button.dontMove" = "不移动";
+"showAlertOnFirstLaunch.button.dontMove" = "不要移动";
 
 "setup.welcome" = "欢迎使用 Whisky";
-"setup.welcome.subtitle" = "让我们帮您安装好。这不会花一分钟。";
+"setup.welcome.subtitle" = "让我们帮您安装好，这不会用很长时间。";
 
-"setup.install.checking" = "正在检查 %@ 安装...";
+"setup.install.checking" = "正在检查 %@ 是否安装...";
 "setup.install.installed" = "%@ 已安装";
 "setup.install.notInstalled" = "%@ 未安装";
 "setup.uninstall" = "卸载";
 
 "setup.rosetta" = "正在安装 Rosetta";
-"setup.rosetta.subtitle" = "Rosetta 允许 x86 代码在您的 Mac 上运行，比如 Wine。";
+"setup.rosetta.subtitle" = "Rosetta 让您的 Mac 可以运行 Wine 等 x86 架构的程序。";
 
 "setup.wine.download" = "正在下载 Wine";
-"setup.wine.download.subtitle" = "下载时间根据您上网速度有所不同。";
+"setup.wine.download.subtitle" = "下载速度受您的网络质量影响。";
 "setup.wine.progress" = "%2$@ 中的 %1$@";
-"setup.wine.eta" = "- 剩余%@";
+"setup.wine.eta" = "- 剩余 %@";
 
 "setup.wine.install" = "正在安装 Wine";
-"setup.wine.install.subtitle" = "快好了，请耐心等待。";
+"setup.wine.install.subtitle" = "就快完成了，请不要离开。";
 
 "setup.gptk" = "正在安装 GPTK";
 
-"alert.macos" = "不支持的 macOS 版本！";
-"alert.macos.info" = "macOS Ventura 未得到 GPTK 的官方支持。可能会出现问题！";
+"alert.macos" = "当前的macOS版本不受支持。";
+"alert.macos.info" = "macOS Ventura 没有 GPTK 的官方支持，可能会出现问题！";
 
-"winetricks.title" = "运行Winetricks命令";
+"winetricks.title" = "运行 Winetricks 命令";
 "button.winetricks" = "Winetrick...";

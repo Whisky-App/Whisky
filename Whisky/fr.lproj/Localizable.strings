@@ -9,7 +9,7 @@
 "main.noneSelected" = "Choisir une bouteille";
 "main.createFirst" = "Créez votre première bouteille pour commencer";
 
-"button.cDrive" = "Ouvrir C Drive";
+"button.cDrive" = "Ouvrir le lecteur C";
 "button.showInFinder" = "Afficher dans Finder";
 "button.run" = "Exécuter...";
 "button.ok" = "OK";
@@ -19,7 +19,7 @@
 "button.deleteBottle" = "Supprimer...";
 "button.createBottle" = "Créer une bouteille";
 "button.deleteAlert.msg" = "Supprimer %@ ?";
-"button.deleteAlert.info" = "Êtes-vous sûr de vouloir supprimer cette bouteille ? Cette action est permanente.";
+"button.deleteAlert.info" = "Êtes-vous sûr de vouloir supprimer cette bouteille ? Cette action est définitive.";
 "button.deleteAlert.delete" = "Supprimer";
 "button.deleteAlert.cancel" = "Annuler";
 
@@ -29,11 +29,11 @@
 "config.metalHud" = "HUD Metal";
 "config.metalTrace" = "Trace de Metal";
 "config.retinaMode" = "Mode Retina";
-"config.metalTrace.info" = "Permet de capturer la charge de travail GPU en Xcode";
+"config.metalTrace.info" = "Permet de capturer la charge de travail GPU dans Xcode";
 "config.esync" = "ESync";
 "config.controlPanel" = "Ouvrir le Panneau de Configuration";
 "config.regedit" = "Ouvrir l'Éditeur de Registre";
-"config.winecfg" = "Ouvrir la Configuration Wine";
+"config.winecfg" = "Ouvrir la configuration de Wine";
 "config.notAvailable" = "N/A";
 "config.title.dxvk" = "DXVK";
 "config.dxvk" = "DXVK";
@@ -51,13 +51,13 @@
 "configDpi.dpi" = "PPP";
 
 "program.title" = "Programmes Installés";
-"program.env" = "Variables d'Environnement";
+"program.env" = "Variables d'environnement";
 "program.args" = "Paramètres";
 "program.config" = "Config";
 
 "info.title" = "Info";
 "info.path" = "Chemin";
-"info.path.copy" = "Copier Chemin";
+"info.path.copy" = "Copier le chemin";
 "info.winPath.copy" = "Copier le chemin Windows";
 "info.wine" = "Version de Wine";
 "info.win" = "Version de Windows";
