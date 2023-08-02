@@ -47,7 +47,7 @@
 
 "configDpi.title" = "DPI Ayarları";
 "configDpi.preview" = "Metin bu şekilde gözükecek:";
-"configDpi.previewText" = "Pijamalı hasta yağız şoföre çabucak güvendi.";
+"configDpi.previewText" = "The quick brown fox jumps over the lazy dog.";
 "configDpi.dpi" = "DPI";
 
 "program.title" = "Yüklenmiş Programlar";
