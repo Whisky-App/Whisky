@@ -25,27 +25,59 @@ class BottleVM: ObservableObject {
     @MainActor
     func loadBottles() {
         bottles.removeAll()
+
+        for (index, path) in bottlesList.paths.enumerated().reversed() where loadBottle(bottleURL: path) == nil {
+            bottlesList.paths.remove(at: index)
+        }
+
         // Update if needed
         if !BottleVMEntries.exists() {
             do {
                 let files = try FileManager.default.contentsOfDirectory(at: BottleVM.bottleDir,
                                                                     includingPropertiesForKeys: nil,
                                                                     options: .skipsHiddenFiles)
-                for file in files where file.pathExtension == "plist" {
-                    if let bottlePath = convertFormat(plistPath: file) {
-                        bottlesList.paths.append(bottlePath)
-                    }
+                for file in files where loadBottle(bottleURL: file) != nil {
+                    bottlesList.paths.append(file)
                 }
             } catch {
                 print("Failed to list files")
             }
             bottlesList.encode()
         }
-
         bottles = bottlesList.paths.map({
             Bottle(bottleUrl: $0)
         })
         bottles.sortByName()
+    }
+
+    func loadBottle(bottleURL: URL) -> BottleSettings? {
+        // Try loading as legacy bottle
+        do {
+            let files = try FileManager.default.contentsOfDirectory(at: bottleURL, includingPropertiesForKeys: nil)
+            for file in files where file.pathExtension == "plist" {
+                if let bottlePath = convertFormat(plistPath: file) {
+                    return BottleSettings(bottleURL: bottlePath)
+                } else {
+                    print("Failed to load as legacy bottle")
+                }
+            }
+        } catch {
+            print("Failed to load as legacy bottle")
+        }
+
+        // Try loading as a normal bottle
+        let bottleMetadata = bottleURL
+            .appendingPathComponent("Metadata")
+            .appendingPathExtension("plist")
+            .path()
+
+        if FileManager.default.fileExists(atPath: bottleMetadata) {
+            let bottle = BottleSettings(bottleURL: bottleURL)
+            bottle.encode()
+            return bottle
+        }
+
+        return .none
     }
 
     func createNewBottle(bottleName: String, winVersion: WinVersion, bottleURL: URL) -> URL {
