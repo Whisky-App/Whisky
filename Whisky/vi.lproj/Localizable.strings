@@ -86,6 +86,7 @@
 "open.logs" = "Mở Folder Log";
 "open.bottle" = "Import Bottle";
 "open.setup" = "Setup...";
+"wine.clearShaderCaches" = "Clear Shader Caches";
 
 "showAlertOnFirstLaunch.messageText" = "Bạn có muốn chuyển Whisky tới folder Applications?";
 "showAlertOnFirstLaunch.informativeText" = "Trong một số trường hợp, Whisky sẽ không hoạt động đúng nếu không nằm trong Applications";

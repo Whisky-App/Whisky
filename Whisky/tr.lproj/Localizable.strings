@@ -86,6 +86,7 @@
 "open.logs" = "Log Klasörünü Aç";
 "open.bottle" = "Bottle'ı İçeri Aktarın";
 "open.setup" = "Kur...";
+"wine.clearShaderCaches" = "Clear Shader Caches";
 
 "showAlertOnFirstLaunch.messageText" = "Whisky'yi Applications klasörüne taşımak ister misiniz?";
 "showAlertOnFirstLaunch.informativeText" = "Bazı durumlarda, Whisky farklı bir klasörden düzgün çalışmayabilir";
