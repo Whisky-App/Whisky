@@ -6,16 +6,16 @@
 "tab.navTitle.programs" = "%@ Programas";
 "tab.navTitle.info" = "%@ Informações";
 
-"main.noneSelected" = "Select a bottle";
-"main.createFirst" = "Create your first bottle to get started";
+"main.noneSelected" = "Selecione uma bottle";
+"main.createFirst" = "Crie a sua primeira bottle para começar";
 
 "button.cDrive" = "Abrir disco C";
 "button.showInFinder" = "Abrir no Finder";
 "button.run" = "Executar...";
 "button.ok" = "OK";
 "button.renameBottle" = "Alterar nome";
-"button.moveBottle" = "Move";
-"button.exportBottle" = "Export as Archive";
+"button.moveBottle" = "Mover";
+"button.exportBottle" = "Exportar como Arquivo";
 "button.deleteBottle" = "Apagar...";
 "button.createBottle" = "Criar uma Bottle";
 "button.deleteAlert.msg" = "Apagar %@?";
@@ -24,29 +24,29 @@
 "button.deleteAlert.cancel" = "Cancelar";
 
 "config.winVersion" = "Versão do Windows";
-"config.buildVersion" = "Build Version";
+"config.buildVersion" = "Versão da compilação";
 "config.title.metal" = "Metal";
 "config.metalHud" = "Hud Metal";
 "config.metalTrace" = "Diagnóstico Metal";
-"config.retinaMode" = "Retina Mode";
+"config.retinaMode" = "Modo Retina";
 "config.metalTrace.info" = "Permite capturar a carga de trabalho da GPU no Xcode";
 "config.esync" = "ESync";
-"config.controlPanel" = "Open Control Panel";
-"config.regedit" = "Open Registry Editor";
+"config.controlPanel" = "Abrir Painel de Controlo";
+"config.regedit" = "Abrir Editor de Registo";
 "config.winecfg" = "Abrir Configuração do Wine";
-"config.notAvailable" = "N/A";
+"config.notAvailable" = "N/D";
 "config.title.dxvk" = "DXVK";
 "config.dxvk" = "DXVK";
-"config.dxvkHud" = "DXVK HUD";
-"config.dxvkHud.full" = "Full";
-"config.dxvkHud.partial" = "Partial";
+"config.dxvkHud" = "HUD DXVK";
+"config.dxvkHud.full" = "Completo";
+"config.dxvkHud.partial" = "Parcial";
 "config.dxvkHud.fps" = "FPS";
-"config.dxvkHud.off" = "Off";
-"config.dpi" = "DPI Scaling";
-"config.inspect" = "Configure...";
+"config.dxvkHud.off" = "Desligado";
+"config.dpi" = "Escala de DPI";
+"config.inspect" = "Configurar...";
 
-"configDpi.title" = "DPI Settings";
-"configDpi.preview" = "Text will look like this:";
+"configDpi.title" = "Configurações de DPI";
+"configDpi.preview" = "O texto ficará assim:";
 "configDpi.previewText" = "The quick brown fox jumped over the lazy dog.";
 "configDpi.dpi" = "DPI";
 
@@ -58,10 +58,10 @@
 "info.title" = "Informações";
 "info.path" = "Caminho";
 "info.path.copy" = "Copiar Caminho";
-"info.winPath.copy" = "Copy Windows Path";
+"info.winPath.copy" = "Copiar Endereço do Windows";
 "info.wine" = "Versão do Wine";
 "info.win" = "Versão do Windows";
-"info.gptk" = "GPTK Version";
+"info.gptk" = "Versão do GPTK";
 
 "gptkalert.init" = "Arraste e solte o arquivo DMG do Game Porting Toolkit";
 "gptkalert.message" = "O GPTK encontrou um erro!";
@@ -72,8 +72,8 @@
 "create.title" = "Criar uma nova Bottle";
 "create.name" = "Nome da Bottle:";
 "create.win" = "Versão do Windows:";
-"create.path" = "Bottle path:";
-"create.browse" = "Browse";
+"create.path" = "Caminho do Bottle:";
+"create.browse" = "Explorar";
 "create.cancel" = "Cancelar";
 "create.create" = "Criar";
 
@@ -84,38 +84,38 @@
 "check.updates" = "Verificar Actualizações...";
 "kill.bottles" = "Encerrar todas as Bottles...";
 "open.logs" = "Abrir Pasta dos Logs";
-"open.bottle" = "Import Bottle";
-"open.setup" = "Setup...";
-"wine.clearShaderCaches" = "Clear Shader Caches";
+"open.bottle" = "Importar Bottle";
+"open.setup" = "Configurar...";
+"wine.clearShaderCaches" = "Limpar Cache de Shader";
 
 "showAlertOnFirstLaunch.messageText" = "Gostaria de mover o Whisky para a pasta das Aplicações ?";
 "showAlertOnFirstLaunch.informativeText" = "Em alguns casos, o Whisky pode não funcionar corretamente numa pasta diferente";
 "showAlertOnFirstLaunch.button.moveToApplications" = "Mover para Aplicações";
 "showAlertOnFirstLaunch.button.dontMove" = "Não Mover";
 
-"setup.welcome" = "Welcome to Whisky";
-"setup.welcome.subtitle" = "Let's get you set up. This won't take a minute.";
+"setup.welcome" = "Bem-vindo ao Whisky";
+"setup.welcome.subtitle" = "Vamos prepará-lo. Isto não irá demorar um minuto.";
 
-"setup.install.checking" = "Checking %@ installation...";
-"setup.install.installed" = "%@ installed";
-"setup.install.notInstalled" = "%@ not installed";
-"setup.uninstall" = "Uninstall";
+"setup.install.checking" = "Verificando a instalação de %@...";
+"setup.install.installed" = "%@ instalado";
+"setup.install.notInstalled" = "%@ não instalado";
+"setup.uninstall" = "Remover";
 
-"setup.rosetta" = "Installing Rosetta";
-"setup.rosetta.subtitle" = "Rosetta allows x86 code, like Wine, to run on your Mac.";
+"setup.rosetta" = "Instalando Rosetta";
+"setup.rosetta.subtitle" = "Rosetta permite que código x86, como o Wine, execute no seu Mac.";
 
-"setup.wine.download" = "Downloading Wine";
-"setup.wine.download.subtitle" = "Speeds will vary on your internet connection.";
-"setup.wine.progress" = "%@ of %@";
-"setup.wine.eta" = "- %@ remaining";
+"setup.wine.download" = "Transferindo Wine";
+"setup.wine.download.subtitle" = "As velocidades variam de acordo com a sua ligação de Internet.";
+"setup.wine.progress" = "%@ de %@";
+"setup.wine.eta" = "- %@ em falta";
 
-"setup.wine.install" = "Installing Wine";
-"setup.wine.install.subtitle" = "Almost there. Don't tune out yet.";
+"setup.wine.install" = "Instalando Wine";
+"setup.wine.install.subtitle" = "Quase lá. Não desligue ainda.";
 
-"setup.gptk" = "Installing GPTK";
+"setup.gptk" = "A instalar GPTK";
 
-"alert.macos" = "Unsupported macOS Version!";
-"alert.macos.info" = "macOS Ventura is not officially supported by GPTK. Issues may occur!";
+"alert.macos" = "Versão de macOS não suportada!";
+"alert.macos.info" = "O macOS Ventura não é oficialmente suportado pelo GPTK. Problemas podem ocorrer!";
 
-"winetricks.title" = "Run Winetricks command";
+"winetricks.title" = "Executar o comando Winetricks";
 "button.winetricks" = "Winetricks...";
