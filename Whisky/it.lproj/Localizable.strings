@@ -43,10 +43,10 @@
 "config.dxvkHud.fps" = "FPS";
 "config.dxvkHud.off" = "Off";
 "config.dpi" = "DPI Scaling";
-"config.inspect" = "Configure...";
+"config.inspect" = "Configura...";
 
-"configDpi.title" = "DPI Settings";
-"configDpi.preview" = "Text will look like this:";
+"configDpi.title" = "Impostazioni DPI";
+"configDpi.preview" = "Il testo apparirà così:";
 "configDpi.previewText" = "The quick brown fox jumped over the lazy dog.";
 "configDpi.dpi" = "DPI";
 
@@ -86,7 +86,7 @@
 "open.logs" = "Apri la cartella dei log";
 "open.bottle" = "Importa Bottiglia";
 "open.setup" = "Setup...";
-"wine.clearShaderCaches" = "Clear Shader Caches";
+"wine.clearShaderCaches" = "Pulisci Cache Shader";
 
 "showAlertOnFirstLaunch.messageText" = "Vuoi spostare Whisky nella tua cartella Applicazioni?";
 "showAlertOnFirstLaunch.informativeText" = "In alcuni casi, Whisky non potrà funzionare correttamente da un cartella diversa";
@@ -117,5 +117,5 @@
 "alert.macos" = "Versione macOS non supportata!";
 "alert.macos.info" = "macOS Ventura non è supportato da GPTK. Potrebbero verificarsi dei problemi!";
 
-"winetricks.title" = "Run Winetricks command";
+"winetricks.title" = "Esegui comando Winetricks";
 "button.winetricks" = "Winetricks...";
