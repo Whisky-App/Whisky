@@ -3,10 +3,10 @@
 "tab.info" = "Сведения";
 
 "tab.navTitle.config" = "Конфигурация %@";
-"tab.navTitle.programs" = "%@ – программы";
-"tab.navTitle.info" = "%@ – информация";
+"tab.navTitle.programs" = "Программы %@";
+"tab.navTitle.info" = "Информация %@";
 
-"main.noneSelected" = "Выбрать бутылку";
+"main.noneSelected" = "Выберите бутылку";
 "main.createFirst" = "Создайте первую бутылку, чтобы начать";
 
 "button.cDrive" = "Открыть диск C";
@@ -17,7 +17,7 @@
 "button.moveBottle" = "Переместить";
 "button.exportBottle" = "Экспортировать как архив";
 "button.deleteBottle" = "Удалить...";
-"button.createBottle" = "Создать бутылку";
+"button.createBottle" = "Создать Бутылку";
 "button.deleteAlert.msg" = "Удалить %@?";
 "button.deleteAlert.info" = "Вы уверены, что хотите удалить эту бутылку? Это действие необратимо.";
 "button.deleteAlert.delete" = "Удалить";
@@ -33,7 +33,7 @@
 "config.esync" = "ESync";
 "config.controlPanel" = "Открыть Панель управления";
 "config.regedit" = "Открыть Редактор реестра";
-"config.winecfg" = "Открыть настройки Wine";
+"config.winecfg" = "Открыть конфигурацию Wine";
 "config.notAvailable" = "Недоступно";
 "config.title.dxvk" = "DXVK";
 "config.dxvk" = "DXVK";
