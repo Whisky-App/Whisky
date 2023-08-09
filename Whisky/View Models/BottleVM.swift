@@ -69,7 +69,7 @@ class BottleVM: ObservableObject {
         let bottleMetadata = bottleURL
             .appendingPathComponent("Metadata")
             .appendingPathExtension("plist")
-            .path()
+            .path(percentEncoded: false)
 
         if FileManager.default.fileExists(atPath: bottleMetadata) {
             let bottle = BottleSettings(bottleURL: bottleURL)
@@ -86,12 +86,14 @@ class BottleVM: ObservableObject {
         Task.detached { @MainActor in
             var bottleId: Bottle? = .none
             do {
-                if !FileManager.default.fileExists(atPath: BottleVM.bottleDir.path) {
-                    try FileManager.default.createDirectory(atPath: BottleVM.bottleDir.path,
+                let bottleDirPath = BottleVM.bottleDir.path(percentEncoded: false)
+                if !FileManager.default.fileExists(atPath: bottleDirPath) {
+                    try FileManager.default.createDirectory(atPath: bottleDirPath,
                                                             withIntermediateDirectories: true)
                 }
 
-                try FileManager.default.createDirectory(atPath: newBottleDir.path, withIntermediateDirectories: true)
+                try FileManager.default.createDirectory(atPath: newBottleDir.path(percentEncoded: false),
+                                                        withIntermediateDirectories: true)
                 let bottle = Bottle(bottleUrl: newBottleDir, inFlight: true)
                 bottleId = .some(bottle)
 

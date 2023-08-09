@@ -45,7 +45,7 @@ class ProgramSettings {
                                     .appendingPathComponent(name)
                                     .appendingPathExtension("plist")
 
-        if !FileManager.default.fileExists(atPath: settingsFolder.path) {
+        if !FileManager.default.fileExists(atPath: settingsFolder.path(percentEncoded: false)) {
             do {
                 try FileManager.default.createDirectory(at: settingsFolder, withIntermediateDirectories: true)
             } catch {
