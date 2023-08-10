@@ -86,7 +86,7 @@
 "open.logs" = "打开日志文件夹";
 "open.bottle" = "导入容器";
 "open.setup" = "安装...";
-"wine.clearShaderCaches" = "Clear Shader Caches";
+"wine.clearShaderCaches" = "清空 Shader 缓存";
 
 "showAlertOnFirstLaunch.messageText" = "你想要将 Whisky 移动到你的应用程序文件夹吗？";
 "showAlertOnFirstLaunch.informativeText" = "在某些情况下，Whisky 可能无法在其他的文件夹中正常工作";

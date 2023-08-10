@@ -14,8 +14,8 @@
 "button.run" = "Starten...";
 "button.ok" = "OK";
 "button.renameBottle" = "Hernoemen";
-"button.moveBottle" = "Move";
-"button.exportBottle" = "Export as Archive";
+"button.moveBottle" = "Verplaats";
+"button.exportBottle" = "Exporteer als archief";
 "button.deleteBottle" = "Verwijderen...";
 "button.createBottle" = "Fles maken";
 "button.deleteAlert.msg" = "Verwijder %@?";
@@ -42,11 +42,11 @@
 "config.dxvkHud.partial" = "Gedeeltelijk";
 "config.dxvkHud.fps" = "FPS";
 "config.dxvkHud.off" = "Uit";
-"config.dpi" = "DPI Scaling";
-"config.inspect" = "Configure...";
+"config.dpi" = "DPI Schalen";
+"config.inspect" = "Configureer...";
 
-"configDpi.title" = "DPI Settings";
-"configDpi.preview" = "Text will look like this:";
+"configDpi.title" = "DPI-instellingen";
+"configDpi.preview" = "Tekst ziet er als volgt uit:";
 "configDpi.previewText" = "Pa’s wijze lynx bezag vroom het fikse aquaduct.";
 "configDpi.dpi" = "DPI";
 
@@ -61,7 +61,7 @@
 "info.winPath.copy" = "Kopieer Windows Pad";
 "info.wine" = "Wine Versie";
 "info.win" = "Windows Versie";
-"info.gptk" = "GPTK Version";
+"info.gptk" = "GPTK versie";
 
 "gptkalert.init" = "Sleep de Game Porting Toolkit DMG";
 "gptkalert.message" = "Er is een fout opgetreden bij de GPTK!";
@@ -85,8 +85,8 @@
 "kill.bottles" = "Stop alle flessen";
 "open.logs" = "Open Logs map";
 "open.bottle" = "Importeer Fles";
-"open.setup" = "Setup...";
-"wine.clearShaderCaches" = "Clear Shader Caches";
+"open.setup" = "Installatie...";
+"wine.clearShaderCaches" = "Verwijder shader caches";
 
 "showAlertOnFirstLaunch.messageText" = "Wilt u Whiskey verplaatsen naar uw map Toepassingen?";
 "showAlertOnFirstLaunch.informativeText" = "In sommige gevallen zal Whiskey niet goed kunnen functioneren vanuit een andere map";
@@ -99,7 +99,7 @@
 "setup.install.checking" = "De %@ installatie controleren...";
 "setup.install.installed" = "%@ geïnstalleerd";
 "setup.install.notInstalled" = "%@ niet geïnstalleerd";
-"setup.uninstall" = "Uninstall";
+"setup.uninstall" = "Deïnstalleren";
 
 "setup.rosetta" = "Rosetta installeren";
 "setup.rosetta.subtitle" = "Rosetta laat x86 code, zoals Wine, uitgevoerd worden op je Mac.";
@@ -115,7 +115,7 @@
 "setup.gptk" = "GPTK Installeren";
 
 "alert.macos" = "Niet-ondersteunde macOS versie!";
-"alert.macos.info" = "macOS Ventura is not officially supported by GPTK. Issues may occur!";
+"alert.macos.info" = "macOS Venture is niet officieel ondersteunt door GPTK. Er kunnen zich problemen voordoen!";
 
-"winetricks.title" = "Run Winetricks command";
+"winetricks.title" = "Voer Winetricks commando uit";
 "button.winetricks" = "Winetricks...";

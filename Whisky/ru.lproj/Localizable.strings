@@ -1,12 +1,12 @@
-"tab.config" = "Настройки";
+"tab.config" = "Конфигурация";
 "tab.programs" = "Программы";
 "tab.info" = "Сведения";
 
-"tab.navTitle.config" = "%@ – настройки";
-"tab.navTitle.programs" = "%@ – программы";
-"tab.navTitle.info" = "%@ – информация";
+"tab.navTitle.config" = "Конфигурация %@";
+"tab.navTitle.programs" = "Программы %@";
+"tab.navTitle.info" = "Информация %@";
 
-"main.noneSelected" = "Выбрать бутылку";
+"main.noneSelected" = "Выберите бутылку";
 "main.createFirst" = "Создайте первую бутылку, чтобы начать";
 
 "button.cDrive" = "Открыть диск C";
@@ -17,7 +17,7 @@
 "button.moveBottle" = "Переместить";
 "button.exportBottle" = "Экспортировать как архив";
 "button.deleteBottle" = "Удалить...";
-"button.createBottle" = "Создать бутылку";
+"button.createBottle" = "Создать Бутылку";
 "button.deleteAlert.msg" = "Удалить %@?";
 "button.deleteAlert.info" = "Вы уверены, что хотите удалить эту бутылку? Это действие необратимо.";
 "button.deleteAlert.delete" = "Удалить";
@@ -33,7 +33,7 @@
 "config.esync" = "ESync";
 "config.controlPanel" = "Открыть Панель управления";
 "config.regedit" = "Открыть Редактор реестра";
-"config.winecfg" = "Открыть настройки Wine";
+"config.winecfg" = "Открыть конфигурацию Wine";
 "config.notAvailable" = "Недоступно";
 "config.title.dxvk" = "DXVK";
 "config.dxvk" = "DXVK";
@@ -86,7 +86,7 @@
 "open.logs" = "Открыть папку логов";
 "open.bottle" = "Импортировать бутылку";
 "open.setup" = "Установить...";
-"wine.clearShaderCaches" = "Clear Shader Caches";
+"wine.clearShaderCaches" = "Очистить кэш шейдеров";
 
 "showAlertOnFirstLaunch.messageText" = "Вы хотите переместить Whisky в папку «Приложения»?";
 "showAlertOnFirstLaunch.informativeText" = "В некоторых случаях Whisky не сможет правильно функционировать из другой папки";

@@ -6,16 +6,16 @@
 "tab.navTitle.programs" = "Chương trình trong %@";
 "tab.navTitle.info" = "Thông tin về %@";
 
-"main.noneSelected" = "Select a bottle";
-"main.createFirst" = "Create your first bottle to get started";
+"main.noneSelected" = "Chọn một bottle";
+"main.createFirst" = "Tạo bottle đầu tiên để bắt đầu";
 
 "button.cDrive" = "Mở ổ C:";
 "button.showInFinder" = "Mở trong Finder";
 "button.run" = "Chạy...";
 "button.ok" = "OK";
 "button.renameBottle" = "Đổi tên";
-"button.moveBottle" = "Move";
-"button.exportBottle" = "Export as Archive";
+"button.moveBottle" = "Di chuyển bottle";
+"button.exportBottle" = "Lưu bottle ra file";
 "button.deleteBottle" = "Xoá...";
 "button.createBottle" = "Tạo Bottle";
 "button.deleteAlert.msg" = "Xoá %@?";
@@ -34,19 +34,19 @@
 "config.controlPanel" = "Mở Control Panel";
 "config.regedit" = "Mở Regedit";
 "config.winecfg" = "Mở cấu hình Wine";
-"config.notAvailable" = "N/A";
+"config.notAvailable" = "Không có sẵn";
 "config.title.dxvk" = "DXVK";
 "config.dxvk" = "DXVK";
-"config.dxvkHud" = "DXVK HUD";
-"config.dxvkHud.full" = "Full";
-"config.dxvkHud.partial" = "Partial";
+"config.dxvkHud" = "HUD DXVK";
+"config.dxvkHud.full" = "Đầy đủ";
+"config.dxvkHud.partial" = "Một phần";
 "config.dxvkHud.fps" = "FPS";
-"config.dxvkHud.off" = "Off";
-"config.dpi" = "DPI Scaling";
-"config.inspect" = "Configure...";
+"config.dxvkHud.off" = "Tắt";
+"config.dpi" = "DPI";
+"config.inspect" = "Cấu hình...";
 
-"configDpi.title" = "DPI Settings";
-"configDpi.preview" = "Text will look like this:";
+"configDpi.title" = "Cài đặt DPI";
+"configDpi.preview" = "Chữ sẽ trông như thế này:";
 "configDpi.previewText" = "The quick brown fox jumps over the lazy dog.";
 "configDpi.dpi" = "DPI";
 
@@ -61,7 +61,7 @@
 "info.winPath.copy" = "Sao đường dẫn Windows";
 "info.wine" = "Phiên bản Wine";
 "info.win" = "Phiên bản Windows";
-"info.gptk" = "GPTK Version";
+"info.gptk" = "Phiên bản GPTK";
 
 "gptkalert.init" = "Kéo thả file DMG của Game Porting Toolkit";
 "gptkalert.message" = "Lỗi file GPTK!";
@@ -84,9 +84,9 @@
 "check.updates" = "Kiểm tra Cập nhật...";
 "kill.bottles" = "Dừng tất cả Bottle";
 "open.logs" = "Mở Folder Log";
-"open.bottle" = "Import Bottle";
-"open.setup" = "Setup...";
-"wine.clearShaderCaches" = "Clear Shader Caches";
+"open.bottle" = "Nhập Bottle";
+"open.setup" = "Thiết lập...";
+"wine.clearShaderCaches" = "Xoá cache shader";
 
 "showAlertOnFirstLaunch.messageText" = "Bạn có muốn chuyển Whisky tới folder Applications?";
 "showAlertOnFirstLaunch.informativeText" = "Trong một số trường hợp, Whisky sẽ không hoạt động đúng nếu không nằm trong Applications";
@@ -99,23 +99,23 @@
 "setup.install.checking" = "Đang kiểm tra cài đặt %@...";
 "setup.install.installed" = "%@ đã được cài đặt";
 "setup.install.notInstalled" = "%@ chưa được cài đặt";
-"setup.uninstall" = "Uninstall";
+"setup.uninstall" = "Gỡ cài đặt";
 
 "setup.rosetta" = "Đang cài đặt Rosetta";
 "setup.rosetta.subtitle" = "Rosetta cho phép các ứng dụng x86 như Wine chạy trên máy Mac của bạn.";
 
 "setup.wine.download" = "Đang tải xuống Wine";
 "setup.wine.download.subtitle" = "Tốc độ tải xuống sẽ phụ thuộc vào kết nối Internet của bạn.";
-"setup.wine.progress" = "%@ of %@";
-"setup.wine.eta" = "- %@ remaining";
+"setup.wine.progress" = "%@ của %@";
+"setup.wine.eta" = "- %@ còn lại";
 
 "setup.wine.install" = "Đang cài đặt Wine";
 "setup.wine.install.subtitle" = "Cài đặt sắp hoàn tất.";
 
 "setup.gptk" = "Đang cài đặt GPTK";
 
-"alert.macos" = "Unsupported macOS Version!";
-"alert.macos.info" = "macOS Ventura is not officially supported by GPTK. Issues may occur!";
+"alert.macos" = "Phiên bản macOS không được hỗ trợ!";
+"alert.macos.info" = "GPTK không hỗ trợ macOS Ventura. Một số lỗi có thể xảy ra!";
 
-"winetricks.title" = "Run Winetricks command";
+"winetricks.title" = "Chạy lệnh Winetricks";
 "button.winetricks" = "Winetricks...";
