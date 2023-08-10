@@ -47,7 +47,7 @@
 
 "configDpi.title" = "Cài đặt DPI";
 "configDpi.preview" = "Chữ sẽ trông như thế này:";
-"configDpi.previewText" = "The quick brown fox jumped over the lazy dog.";
+"configDpi.previewText" = "The quick brown fox jumps over the lazy dog.";
 "configDpi.dpi" = "DPI";
 
 "program.title" = "Chương trình đã cài";
