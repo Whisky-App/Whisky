@@ -11,6 +11,7 @@ import AppKit
 class Winetricks {
     static func isWinetricksInstalled() -> Bool {
         return FileManager.default.fileExists(atPath: "/opt/homebrew/bin/winetricks")
+               || FileManager.default.fileExists(atPath: "/usr/local/bin/winetricks")
     }
 
     static func runCommand(command: String, bottle: Bottle) async {
