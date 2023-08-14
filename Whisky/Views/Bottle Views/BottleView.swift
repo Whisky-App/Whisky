@@ -131,6 +131,34 @@ struct BottleView: View {
                         showWinetricksSheet.toggle()
                     }
                 }
+                Button("button.addShortcut") {
+                    let panel = NSOpenPanel()
+                    panel.allowsMultipleSelection = false
+                    panel.canChooseDirectories = false
+                    panel.canChooseFiles = true
+                    panel.allowedContentTypes = [UTType.exe,
+                                                 UTType(importedAs: "com.microsoft.msi-installer")]
+                    panel.directoryURL = bottle.url.appendingPathComponent("drive_c")
+                    panel.begin { result in
+                        programLoading = true
+                        Task(priority: .userInitiated) {
+                            if result == .OK {
+                                if let url = panel.urls.first {
+                                    do {
+                                        let name = url.lastPathComponent
+                                        try await Wine.addShortcut(name: name, url: url, bottle: bottle)
+                                    } catch {
+                                        print("Failed to add external program shortcut: \(error)")
+                                    }
+                                    programLoading = false
+                                }
+                            } else {
+                                programLoading = false
+                            }
+                            updateStartMenu()
+                        }
+                    }
+                }
                 Button("button.cDrive") {
                     bottle.openCDrive()
                 }
