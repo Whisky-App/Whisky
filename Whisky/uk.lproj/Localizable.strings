@@ -6,16 +6,16 @@
 "tab.navTitle.programs" = "%@ - програми";
 "tab.navTitle.info" = "%@ - інформація";
 
-"main.noneSelected" = "Select a bottle";
-"main.createFirst" = "Create your first bottle to get started";
+"main.noneSelected" = "Обрати пляшку";
+"main.createFirst" = "Створіть свою першу пляшку, щоб почати";
 
 "button.cDrive" = "Відкрити диск C";
 "button.showInFinder" = "Показати у Finder";
 "button.run" = "Запустити...";
 "button.ok" = "ОК";
 "button.renameBottle" = "Перейменувати";
-"button.moveBottle" = "Move";
-"button.exportBottle" = "Export as Archive";
+"button.moveBottle" = "Перемістити";
+"button.exportBottle" = "Експортувати як архів";
 "button.deleteBottle" = "Видалити...";
 "button.createBottle" = "Створити пляшку";
 "button.deleteAlert.msg" = "Видалити %@?";
