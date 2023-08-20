@@ -9,14 +9,37 @@ import Foundation
 import AppKit
 
 class Winetricks {
+    static let winetricksPath = WineInstaller.libraryFolder.appending(path: "winetricks")
+
     static func isWinetricksInstalled() -> Bool {
-        return FileManager.default.fileExists(atPath: "/opt/homebrew/bin/winetricks")
-               || FileManager.default.fileExists(atPath: "/usr/local/bin/winetricks")
+        return true // because we will install it ourselves anyway, who cares.
+    }
+
+    @discardableResult
+    static func getWinetricks() -> Bool {
+        guard let url = URL(string:
+                                "https://raw.githubusercontent.com/Winetricks/winetricks/master/src/winetricks") else {
+            return false
+        }
+
+        guard let data = try? Data(contentsOf: url) else {
+            return false
+        }
+
+        do {
+            try data.write(to: winetricksPath)
+            try FileManager.default.setAttributes([.posixPermissions: 0o755], ofItemAtPath: winetricksPath.path)
+        } catch {
+            return false
+        }
+
+        return true
     }
 
     static func runCommand(command: String, bottle: Bottle) async {
+        getWinetricks()
         // swiftlint:disable:next line_length
-        let winetricksCmd = #"PATH=\"\#(Wine.binFolder.path):$PATH\" WINE=wine64 WINEPREFIX=\"\#(bottle.url.path)\" winetricks \#(command)"#
+        let winetricksCmd = #"PATH=\"\#(Wine.binFolder.path):$PATH\" WINE=wine64 WINEPREFIX=\"\#(bottle.url.path)\" '\#(winetricksPath.path)' \#(command)"#
 
         let script = """
         tell application "Terminal"
