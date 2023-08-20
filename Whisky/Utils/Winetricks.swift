@@ -37,7 +37,10 @@ class Winetricks {
     }
 
     static func runCommand(command: String, bottle: Bottle) async {
-        getWinetricks()
+        if !getWinetricks() {
+            // abort (can happen if using an unreliable connection causing script DL to fail)
+            return
+        }
         // swiftlint:disable:next line_length
         let winetricksCmd = #"PATH=\"\#(Wine.binFolder.path):$PATH\" WINE=wine64 WINEPREFIX=\"\#(bottle.url.path)\" '\#(winetricksPath.path)' \#(command)"#
 
