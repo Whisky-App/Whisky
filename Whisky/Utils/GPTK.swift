@@ -46,7 +46,14 @@ class GPTK {
 
     static func install(url: URL) {
         do {
-            let path = try Hdiutil.mount(url: url) + "/lib"
+            let volumePath = try Hdiutil.mount(url: url)
+            let path: String
+            // Check if `redist/` exist in the volume
+            if isDir(atPath: volumePath + "/redist") {
+                path = volumePath + "/redist/lib"
+            } else {
+                path = volumePath + "/lib"
+            }
 
             Ditto.ditto(fromPath: path, toPath: libFolder.path)
 
