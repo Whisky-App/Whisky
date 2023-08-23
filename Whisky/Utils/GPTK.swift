@@ -46,7 +46,7 @@ class GPTK {
 
     static func install(url: URL) {
         do {
-            let path = try Hdiutil.mount(url: url) + "/lib"
+            let path = try Hdiutil.mount(url: url) + "/redist/lib"
 
             Ditto.ditto(fromPath: path, toPath: libFolder.path)
 
