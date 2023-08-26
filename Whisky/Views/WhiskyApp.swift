@@ -35,6 +35,11 @@ struct WhiskyApp: App {
                 Button("open.setup") {
                     showSetup = true
                 }
+				Button("install.cli") {
+					Task {
+						await WhiskyCmd.install()
+					}
+				}
             }
             CommandGroup(after: .newItem) {
                 Button("open.bottle") {
