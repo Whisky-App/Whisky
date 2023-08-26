@@ -7,19 +7,20 @@
 
 import Foundation
 
-class WineInstaller {
+public class WineInstaller {
     // Grab the WineBinaryVersion int from Info.plist
-    static let WineBinaryVersion = Bundle.main.infoDictionary?["WineBinaryVersion"] as? Int ?? 0
+    public static let WineBinaryVersion = Bundle.main.infoDictionary?["WineBinaryVersion"] as? Int ?? 0
 
-    static let libraryFolder = FileManager.default.urls(for: .applicationSupportDirectory, in: .userDomainMask)[0]
+    public static let libraryFolder = FileManager.default.urls(for: .applicationSupportDirectory,
+															   in: .userDomainMask)[0]
         .appendingPathComponent(Bundle.main.bundleIdentifier ?? "com.isaacmarovitz.Whisky")
         .appendingPathComponent("Libraries")
 
-    static func isWineInstalled() -> Bool {
+    public static func isWineInstalled() -> Bool {
         return FileManager.default.fileExists(atPath: libraryFolder.path)
     }
 
-    static func install(from: URL) {
+    public static func install(from: URL) {
         do {
             let whiskySupportFolder = FileManager.default.urls(for: .applicationSupportDirectory,
                                                                in: .userDomainMask)[0]
@@ -50,7 +51,7 @@ class WineInstaller {
         }
     }
 
-    static func uninstall() {
+    public static func uninstall() {
         let libraryFolder = FileManager.default.urls(for: .applicationSupportDirectory,
                                                            in: .userDomainMask)[0]
             .appendingPathComponent(Bundle.main.bundleIdentifier ?? "com.isaacmarovitz.Whisky")
@@ -63,7 +64,7 @@ class WineInstaller {
         }
     }
 
-    static func shouldUpdateWine() -> Bool {
+    public static func shouldUpdateWine() -> Bool {
         // Read the build version from the Wine directory
         let buildVersionFile = WineInstaller.libraryFolder.appendingPathComponent("build_version")
         let currentVersion = try? String(contentsOf: buildVersionFile, encoding: .utf8)

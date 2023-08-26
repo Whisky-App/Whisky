@@ -9,7 +9,7 @@ import Foundation
 import AppKit
 
 // GPTK = Game Porting Toolkit
-class GPTK {
+public class GPTK {
     static let libFolder: URL = WineInstaller.libraryFolder
         .appendingPathComponent("Wine")
         .appendingPathComponent("lib")
@@ -32,7 +32,7 @@ class GPTK {
         .appendingPathComponent("libd3dshared")
         .appendingPathExtension("dylib")
 
-    static func isGPTKInstalled() -> Bool {
+    public static func isGPTKInstalled() -> Bool {
         let libFolder: URL = WineInstaller.libraryFolder
             .appendingPathComponent("Wine")
             .appendingPathComponent("lib")
@@ -44,7 +44,7 @@ class GPTK {
         return FileManager.default.fileExists(atPath: d3dmFolder.path)
     }
 
-    static func install(url: URL) {
+    public static func install(url: URL) {
         do {
             let volumePath = try Hdiutil.mount(url: url)
             let path: String
@@ -66,7 +66,7 @@ class GPTK {
         }
     }
 
-    static func uninstall() {
+    public static func uninstall() {
         do {
             try FileManager.default.removeItem(at: d3dmSym)
             try FileManager.default.removeItem(at: d3dmOg)
@@ -81,7 +81,7 @@ class GPTK {
         let CFBundleShortVersionString: String
     }
 
-    static func gptkVersion() -> String? {
+    public static func gptkVersion() -> String? {
         do {
             let versionPlist = d3dmOg
                 .appendingPathComponent("Versions")

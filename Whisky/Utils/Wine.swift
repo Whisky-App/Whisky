@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import WhiskyKit
 
 struct WineCrashError: Error, CustomStringConvertible {
     let output: String?
@@ -320,8 +321,6 @@ class Wine {
         }
     }
 }
-
-extension String: Error {}
 
 enum WineInterfaceError: Error {
     case invalidResponce

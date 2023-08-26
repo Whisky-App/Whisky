@@ -59,3 +59,5 @@ class Hdiutil {
         }
     }
 }
+
+extension String: Error {}

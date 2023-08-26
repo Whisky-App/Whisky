@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import WhiskyKit
 
 struct WineInstallView: View {
     @State var installing: Bool = true

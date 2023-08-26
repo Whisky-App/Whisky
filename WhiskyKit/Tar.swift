@@ -7,10 +7,10 @@
 
 import Foundation
 
-class Tar {
+public class Tar {
     static let tarBinary: URL = URL(fileURLWithPath: "/usr/bin/tar")
 
-    static func tar(folder: URL, toURL: URL) throws {
+    public static func tar(folder: URL, toURL: URL) throws {
         let process = Process()
         let pipe = Pipe()
 
@@ -31,7 +31,7 @@ class Tar {
         }
     }
 
-    static func untar(tarBall: URL, toURL: URL) throws {
+    public static func untar(tarBall: URL, toURL: URL) throws {
         let process = Process()
         let pipe = Pipe()
 

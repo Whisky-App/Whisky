@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import WhiskyKit
 
 struct WelcomeView: View {
     @State var rosettaInstalled: Bool?

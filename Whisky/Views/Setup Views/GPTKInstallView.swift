@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import WhiskyKit
 
 struct GPTKInstallView: View {
     @State private var dragOver = false

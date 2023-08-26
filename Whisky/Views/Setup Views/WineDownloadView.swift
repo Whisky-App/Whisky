@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import WhiskyKit
 
 struct WineDownloadView: View {
     @State private var fractionProgress: Double = 0

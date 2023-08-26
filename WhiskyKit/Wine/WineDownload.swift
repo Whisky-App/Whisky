@@ -7,8 +7,8 @@
 
 import Foundation
 
-class WineDownload {
-    static func getLatestWineURL() async -> DownloadInfo? {
+public class WineDownload {
+    public static func getLatestWineURL() async -> DownloadInfo? {
         let githubURL = "https://api.github.com/repos/IsaacMarovitz/WhiskyBuilder/actions/artifacts"
         if let artifactsURL = URL(string: githubURL) {
             return await withCheckedContinuation { continuation in
@@ -43,9 +43,9 @@ class WineDownload {
     }
 }
 
-struct DownloadInfo {
-    let directURL: URL?
-    let totalByteCount: Int
+public struct DownloadInfo {
+    public let directURL: URL?
+    public let totalByteCount: Int
 }
 
 struct Artifacts: Codable {

@@ -7,6 +7,7 @@
 
 import Foundation
 import SemanticVersion
+import WhiskyKit
 
 class BottleVM: ObservableObject {
     static let shared = BottleVM()

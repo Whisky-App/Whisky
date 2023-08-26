@@ -7,6 +7,7 @@
 
 import SwiftUI
 import UniformTypeIdentifiers
+import WhiskyKit
 
 struct ContentView: View {
     @EnvironmentObject var bottleVM: BottleVM

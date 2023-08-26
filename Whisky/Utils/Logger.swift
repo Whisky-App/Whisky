@@ -7,6 +7,7 @@
 
 import Foundation
 import OSLog
+import WhiskyKit
 
 class Log {
     static let logsFolder = FileManager.default.urls(for: .libraryDirectory,
