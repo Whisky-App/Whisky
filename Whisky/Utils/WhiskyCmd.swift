@@ -15,7 +15,7 @@ class WhiskyCmd {
 		if let whiskyCmdURL = whiskyCmdURL {
 			// swiftlint:disable line_length
 			let script = """
-			do shell script "ln -s \(whiskyCmdURL.path(percentEncoded: false)) /usr/local/bin/whisky" with administrator privileges
+			do shell script "ln -fs \(whiskyCmdURL.path(percentEncoded: false)) /usr/local/bin/whisky" with administrator privileges
 			"""
 			// swiftlint:enable line_length
 
