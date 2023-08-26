@@ -12,7 +12,8 @@ import ArgumentParser
 struct Whisky: ParsableCommand {
 	static var configuration = CommandConfiguration(
 		abstract: "A CLI interface for Whisky.",
-		subcommands: [Create.self,
+		subcommands: [List.self,
+					  Create.self,
 					  Add.self,
 					  Export.self,
 					  Delete.self,
@@ -22,6 +23,14 @@ struct Whisky: ParsableCommand {
 }
 
 extension Whisky {
+	struct List: ParsableCommand {
+		static var configuration = CommandConfiguration(abstract: "List existing bottles.")
+
+		mutating func run() throws {
+			print("Create a bottle")
+		}
+	}
+
 	struct Create: ParsableCommand {
 		static var configuration = CommandConfiguration(abstract: "Create a new bottle.")
 
