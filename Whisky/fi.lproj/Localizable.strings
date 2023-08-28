@@ -104,15 +104,13 @@
 "setup.rosetta" = "Asennetaan Rosettaa";
 "setup.rosetta.subtitle" = "Rosetta, kuten Wine, mahdollistaa x86 koodin käyttämisen Macilläsi.";
 
-"setup.wine.download" = "Ladataan Wine";
-"setup.wine.download.subtitle" = "Nopeus vaihtelee internetyhteytesi mukaan.";
-"setup.wine.progress" = "%@ / %@";
-"setup.wine.eta" = "- %@ jäljellä";
+"setup.gptk.download" = "Ladataan GPTK";
+"setup.gptk.download.subtitle" = "Nopeus vaihtelee internetyhteytesi mukaan.";
+"setup.gptk.progress" = "%@ / %@";
+"setup.gptk.eta" = "- %@ jäljellä";
 
-"setup.wine.install" = "Asennetaan Wine";
-"setup.wine.install.subtitle" = "Melkein valmista. Älä karkaa vielä.";
-
-"setup.gptk" = "Asennetaan GPTK";
+"setup.gptk.install" = "Asennetaan GPTK";
+"setup.gptk.install.subtitle" = "Melkein valmista. Älä karkaa vielä.";
 
 "alert.macos" = "Tukematon macOS versio!";
 "alert.macos.info" = "macOS Ventura ei ole virallisesti GPTKn tukema. Ongelmia saattaa ilmetä!";

@@ -104,15 +104,13 @@
 "setup.rosetta" = "Rosetta をインストール中";
 "setup.rosetta.subtitle" = "Rosetta は、Wine のような x86 バイナリを Mac 上で実行できるようにします。";
 
-"setup.wine.download" = "Wine をダウンロード中";
-"setup.wine.download.subtitle" = "速度はインターネット接続によって異なります。";
-"setup.wine.progress" = "%@ / %@";
-"setup.wine.eta" = "- 残り %@";
+"setup.gptk.download" = "GPTK をダウンロード中";
+"setup.gptk.download.subtitle" = "速度はインターネット接続によって異なります。";
+"setup.gptk.progress" = "%@ / %@";
+"setup.gptk.eta" = "- 残り %@";
 
-"setup.wine.install" = "Wine をインストール中";
-"setup.wine.install.subtitle" = "あと少しです。そのままお待ち下さい。";
-
-"setup.gptk" = "GPTK をインストール";
+"setup.gptk.install" = "GPTK をインストール中";
+"setup.gptk.install.subtitle" = "あと少しです。そのままお待ち下さい。";
 
 "alert.macos" = "お使いの macOS バージョンはサポートされていません。";
 "alert.macos.info" = "macOS Ventura は GPTK をサポートしていません。問題が起きる可能性があります。";

@@ -104,15 +104,13 @@
 "setup.rosetta" = "Rosetta installeren";
 "setup.rosetta.subtitle" = "Rosetta laat x86 code, zoals Wine, uitgevoerd worden op je Mac.";
 
-"setup.wine.download" = "Wine downloaden";
-"setup.wine.download.subtitle" = "Snelheden zullen variëren gebaseerd op je internet connectie.";
-"setup.wine.progress" = "%@ van de %@";
-"setup.wine.eta" = "- %@ resterend";
+"setup.gptk.download" = "Wine downloaden";
+"setup.gptk.download.subtitle" = "Snelheden zullen variëren gebaseerd op je internet connectie.";
+"setup.gptk.progress" = "%@ van de %@";
+"setup.gptk.eta" = "- %@ resterend";
 
-"setup.wine.install" = "Wine installeren";
-"setup.wine.install.subtitle" = "Bijna daar. Nog niet weg gaan.";
-
-"setup.gptk" = "GPTK Installeren";
+"setup.gptk.install" = "Wine installeren";
+"setup.gptk.install.subtitle" = "Bijna daar. Nog niet weg gaan.";
 
 "alert.macos" = "Niet-ondersteunde macOS versie!";
 "alert.macos.info" = "macOS Venture is niet officieel ondersteunt door GPTK. Er kunnen zich problemen voordoen!";

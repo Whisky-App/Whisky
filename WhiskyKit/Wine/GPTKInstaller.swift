@@ -1,5 +1,5 @@
 //
-//  Installer.swift
+//  GPTKInstaller.swift
 //  Whisky
 //
 //  Created by Isaac Marovitz on 14/06/2023.
@@ -7,7 +7,7 @@
 
 import Foundation
 
-public class WineInstaller {
+public class GPTKInstaller {
     // Grab the WineBinaryVersion int from Info.plist
     public static let WineBinaryVersion = Bundle.main.infoDictionary?["WineBinaryVersion"] as? Int ?? 0
 
@@ -16,7 +16,7 @@ public class WineInstaller {
         .appendingPathComponent(Bundle.main.bundleIdentifier ?? "com.isaacmarovitz.Whisky")
         .appendingPathComponent("Libraries")
 
-    public static func isWineInstalled() -> Bool {
+    public static func isGPTKInstalled() -> Bool {
         return FileManager.default.fileExists(atPath: libraryFolder.path)
     }
 
@@ -47,7 +47,7 @@ public class WineInstaller {
             let buildVersionFile = libraryFolder.appendingPathComponent("build_version")
             try String(WineBinaryVersion).write(to: buildVersionFile, atomically: true, encoding: .utf8)
         } catch {
-            print("Failed to install Wine: \(error)")
+            print("Failed to install GPTK: \(error)")
         }
     }
 
@@ -60,16 +60,39 @@ public class WineInstaller {
         do {
             try FileManager.default.removeItem(at: libraryFolder)
         } catch {
-            print("Failed to uninstall Wine: \(error)")
+            print("Failed to uninstall GPTK: \(error)")
         }
     }
 
-    public static func shouldUpdateWine() -> Bool {
+    public static func shouldUpdateGPTK() -> Bool {
         // Read the build version from the Wine directory
-        let buildVersionFile = WineInstaller.libraryFolder.appendingPathComponent("build_version")
+        let buildVersionFile = libraryFolder.appendingPathComponent("build_version")
         let currentVersion = try? String(contentsOf: buildVersionFile, encoding: .utf8)
 
         // If the current version is not the same as the binary version, we need to update by calling install again
         return currentVersion != String(WineBinaryVersion)
     }
+
+	// TODO: Fix this
+	public static func gptkVersion() -> String? {
+		do {
+			let versionPlist = libraryFolder
+				.appendingPathComponent("Versions")
+				.appendingPathComponent("A")
+				.appendingPathComponent("Resources")
+				.appendingPathComponent("version")
+				.appendingPathExtension("plist")
+
+			let decoder = PropertyListDecoder()
+			let data = try Data(contentsOf: versionPlist)
+			let info = try decoder.decode(VersionInfo.self, from: data)
+			return info.CFBundleShortVersionString
+		} catch {
+			return nil
+		}
+	}
 }
+
+struct VersionInfo: Codable {
+		let CFBundleShortVersionString: String
+	}

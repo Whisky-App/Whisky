@@ -104,15 +104,13 @@
 "setup.rosetta" = "Rosetta Yükleniyor";
 "setup.rosetta.subtitle" = "Rosetta, Wine gibi, x86 yazılımının Mac bilgisayarınızda çalışmasına izin verir.";
 
-"setup.wine.download" = "Wine İndiriliyor";
-"setup.wine.download.subtitle" = "Yükleme hızı internet bağlantınıza göre değişecektir.";
-"setup.wine.progress" = "%@'nin %@'si";
-"setup.wine.eta" = "-%@ kaldı";
+"setup.gptk.download" = "Wine İndiriliyor";
+"setup.gptk.download.subtitle" = "Yükleme hızı internet bağlantınıza göre değişecektir.";
+"setup.gptk.progress" = "%@'nin %@'si";
+"setup.gptk.eta" = "-%@ kaldı";
 
-"setup.wine.install" = "Wine Yükleniyor";
-"setup.wine.install.subtitle" = "Bitmek üzere. Lütfen Kapatmayınız.";
-
-"setup.gptk" = "GPTK Yükleniyor";
+"setup.gptk.install" = "Wine Yükleniyor";
+"setup.gptk.install.subtitle" = "Bitmek üzere. Lütfen Kapatmayınız.";
 
 "alert.macos" = "Desteklenmeyen bir macOS sürümü kullanıyorsunuz!";
 "alert.macos.info" = "macOS Ventura GPTK tarafından resmi olarak desteklenmiyor. Sorun yaşayabilirsiniz!";

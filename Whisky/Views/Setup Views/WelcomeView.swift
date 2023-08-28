@@ -10,7 +10,6 @@ import WhiskyKit
 
 struct WelcomeView: View {
     @State var rosettaInstalled: Bool?
-    @State var wineInstalled: Bool?
     @State var gptkInstalled: Bool?
     @State var shouldCheckInstallStatus: Bool = false
     @Binding var path: [SetupStage]
@@ -34,10 +33,6 @@ struct WelcomeView: View {
                                       shouldCheckInstallStatus: $shouldCheckInstallStatus,
                                       name: "Rosetta")
                 }
-                InstallStatusView(isInstalled: $wineInstalled,
-                                  shouldCheckInstallStatus: $shouldCheckInstallStatus,
-                                  showUninstall: true,
-                                  name: "Wine")
                 InstallStatusView(isInstalled: $gptkInstalled,
                                   shouldCheckInstallStatus: $shouldCheckInstallStatus,
                                   showUninstall: true,
@@ -60,7 +55,6 @@ struct WelcomeView: View {
                 Spacer()
                 Button("Next") {
                     if let rosettaInstalled = rosettaInstalled,
-                       let wineInstalled = wineInstalled,
                        let gptkInstalled = gptkInstalled {
                         if Arch.getArch() == .arm {
                             if !rosettaInstalled {
@@ -69,13 +63,8 @@ struct WelcomeView: View {
                             }
                         }
 
-                        if !wineInstalled {
-                            path.append(.wineDownload)
-                            return
-                        }
-
                         if !gptkInstalled {
-                            path.append(.gptk)
+                            path.append(.gptkDownload)
                             return
                         }
 
@@ -90,8 +79,7 @@ struct WelcomeView: View {
 
     func checkInstallStatus() {
         rosettaInstalled = Rosetta2.isRosettaInstalled
-        wineInstalled = WineInstaller.isWineInstalled()
-        gptkInstalled = GPTK.isGPTKInstalled()
+		gptkInstalled = GPTKInstaller.isGPTKInstalled()
     }
 }
 
@@ -139,12 +127,10 @@ struct InstallStatusView: View {
     }
 
     func uninstall() {
-        if name == "Wine" {
-            WineInstaller.uninstall()
-        }
         if name == "GPTK" {
-            GPTK.uninstall()
+            GPTKInstaller.uninstall()
         }
+
         shouldCheckInstallStatus.toggle()
     }
 }

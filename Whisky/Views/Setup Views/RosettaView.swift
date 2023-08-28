@@ -52,13 +52,8 @@ struct RosettaView: View {
     }
 
     func proceed() {
-        if !WineInstaller.isWineInstalled() {
-            path.append(.wineDownload)
-            return
-        }
-
-        if !GPTK.isGPTKInstalled() {
-            path.append(.gptk)
+        if !GPTKInstaller.isGPTKInstalled() {
+            path.append(.gptkDownload)
             return
         }
 

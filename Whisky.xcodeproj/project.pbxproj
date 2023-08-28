@@ -38,9 +38,8 @@
 		6E6915452A3265BB0085BBB7 /* Logger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E6915442A3265BB0085BBB7 /* Logger.swift */; };
 		6E6C0CF22A419A6800356232 /* WelcomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E6C0CF12A419A6800356232 /* WelcomeView.swift */; };
 		6E6C0CF42A419A7600356232 /* RosettaView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E6C0CF32A419A7600356232 /* RosettaView.swift */; };
-		6E6C0CF62A419A8300356232 /* WineDownloadView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E6C0CF52A419A8300356232 /* WineDownloadView.swift */; };
-		6E6C0CF82A419A8C00356232 /* WineInstallView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E6C0CF72A419A8C00356232 /* WineInstallView.swift */; };
-		6E6C0CFA2A419A9700356232 /* GPTKInstallView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E6C0CF92A419A9700356232 /* GPTKInstallView.swift */; };
+		6E6C0CF62A419A8300356232 /* GPTKDownloadView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E6C0CF52A419A8300356232 /* GPTKDownloadView.swift */; };
+		6E6C0CF82A419A8C00356232 /* GPTKInstallView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E6C0CF72A419A8C00356232 /* GPTKInstallView.swift */; };
 		6E70A49B2A9A2197007799E9 /* Main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E70A49A2A9A2197007799E9 /* Main.swift */; };
 		6E70A4A12A9A280C007799E9 /* WhiskyCmd.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E70A4A02A9A280C007799E9 /* WhiskyCmd.swift */; };
 		6E70A4A42A9A2B50007799E9 /* WhiskyCmd in Resources */ = {isa = PBXBuildFile; fileRef = 6E70A4982A9A2197007799E9 /* WhiskyCmd */; };
@@ -54,11 +53,8 @@
 		6EDF9AB72A9A6E50006CAA7E /* WhiskyKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6EDF9AA92A9A6CA9006CAA7E /* WhiskyKit.framework */; };
 		6EDF9AB82A9A6E50006CAA7E /* WhiskyKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 6EDF9AA92A9A6CA9006CAA7E /* WhiskyKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		6EDF9ABD2A9A6E83006CAA7E /* SemanticVersion in Frameworks */ = {isa = PBXBuildFile; productRef = 6EDF9ABC2A9A6E83006CAA7E /* SemanticVersion */; };
-		6EDF9ABE2A9A6F3D006CAA7E /* WineDownload.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EF557952A40B8D1001A4F09 /* WineDownload.swift */; };
-		6EDF9ABF2A9A6F3D006CAA7E /* WineInstaller.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E0822862A39D73800195094 /* WineInstaller.swift */; };
-		6EDF9AC02A9A6F3D006CAA7E /* GPTK.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E5E23E72A30D59600ABC192 /* GPTK.swift */; };
-		6EDF9AC12A9A6F3D006CAA7E /* Hdiutil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E5E23EB2A30DBCA00ABC192 /* Hdiutil.swift */; };
-		6EDF9AC22A9A6F3D006CAA7E /* Ditto.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EFE9ADE2A3DA5E1002232AB /* Ditto.swift */; };
+		6EDF9ABE2A9A6F3D006CAA7E /* GPTKDownloader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EF557952A40B8D1001A4F09 /* GPTKDownloader.swift */; };
+		6EDF9ABF2A9A6F3D006CAA7E /* GPTKInstaller.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E0822862A39D73800195094 /* GPTKInstaller.swift */; };
 		6EDF9AC32A9A6F46006CAA7E /* Tar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E0822852A39D73800195094 /* Tar.swift */; };
 		6EF557982A410599001A4F09 /* SetupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EF557972A410599001A4F09 /* SetupView.swift */; };
 		AB66A8642A4195B10006D238 /* Rosetta2.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB66A8632A4195B10006D238 /* Rosetta2.swift */; };
@@ -125,7 +121,7 @@
 		624D7CCB2A335A9A00995C9A /* ko */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ko; path = ko.lproj/Localizable.strings; sourceTree = "<group>"; };
 		6E064B1329DD331F00D9A2D2 /* SparkleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SparkleView.swift; sourceTree = "<group>"; };
 		6E0822852A39D73800195094 /* Tar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Tar.swift; sourceTree = "<group>"; };
-		6E0822862A39D73800195094 /* WineInstaller.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WineInstaller.swift; sourceTree = "<group>"; };
+		6E0822862A39D73800195094 /* GPTKInstaller.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GPTKInstaller.swift; sourceTree = "<group>"; };
 		6E08228B2A39F83900195094 /* da */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = da; path = da.lproj/Localizable.strings; sourceTree = "<group>"; };
 		6E26058529D9267B00DDD788 /* ShellLink.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShellLink.swift; sourceTree = "<group>"; };
 		6E26058929D9282000DDD788 /* DataExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataExtensions.swift; sourceTree = "<group>"; };
@@ -152,8 +148,6 @@
 		6E50D98429CDF25B008C39F6 /* BottleCreationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottleCreationView.swift; sourceTree = "<group>"; };
 		6E5197D129D7202100CF655E /* BottleSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottleSettings.swift; sourceTree = "<group>"; };
 		6E5D41792A39021B0038ABEA /* URLExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLExtensions.swift; sourceTree = "<group>"; };
-		6E5E23E72A30D59600ABC192 /* GPTK.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GPTK.swift; sourceTree = "<group>"; };
-		6E5E23EB2A30DBCA00ABC192 /* Hdiutil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Hdiutil.swift; sourceTree = "<group>"; };
 		6E621CEE2A5F631200C9AAB3 /* Winetricks.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Winetricks.swift; sourceTree = "<group>"; };
 		6E62F24D29E0A58A0098FEFD /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/Localizable.strings; sourceTree = "<group>"; };
 		6E62F24E29E0A58E0098FEFD /* pl */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = pl; path = pl.lproj/Localizable.strings; sourceTree = "<group>"; };
@@ -162,9 +156,8 @@
 		6E6C0CEF2A410F6500356232 /* pt-BR */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "pt-BR"; path = "pt-BR.lproj/Localizable.strings"; sourceTree = "<group>"; };
 		6E6C0CF12A419A6800356232 /* WelcomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeView.swift; sourceTree = "<group>"; };
 		6E6C0CF32A419A7600356232 /* RosettaView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RosettaView.swift; sourceTree = "<group>"; };
-		6E6C0CF52A419A8300356232 /* WineDownloadView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WineDownloadView.swift; sourceTree = "<group>"; };
-		6E6C0CF72A419A8C00356232 /* WineInstallView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WineInstallView.swift; sourceTree = "<group>"; };
-		6E6C0CF92A419A9700356232 /* GPTKInstallView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GPTKInstallView.swift; sourceTree = "<group>"; };
+		6E6C0CF52A419A8300356232 /* GPTKDownloadView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GPTKDownloadView.swift; sourceTree = "<group>"; };
+		6E6C0CF72A419A8C00356232 /* GPTKInstallView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GPTKInstallView.swift; sourceTree = "<group>"; };
 		6E70A4982A9A2197007799E9 /* WhiskyCmd */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = WhiskyCmd; sourceTree = BUILT_PRODUCTS_DIR; };
 		6E70A49A2A9A2197007799E9 /* Main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Main.swift; sourceTree = "<group>"; };
 		6E70A4A02A9A280C007799E9 /* WhiskyCmd.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WhiskyCmd.swift; sourceTree = "<group>"; };
@@ -178,9 +171,8 @@
 		6EA2D48429DF130F00C84668 /* ProgramSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgramSettings.swift; sourceTree = "<group>"; };
 		6EDF9AA92A9A6CA9006CAA7E /* WhiskyKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = WhiskyKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		6EDF9AB52A9A6D8C006CAA7E /* BottleData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottleData.swift; sourceTree = "<group>"; };
-		6EF557952A40B8D1001A4F09 /* WineDownload.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WineDownload.swift; sourceTree = "<group>"; };
+		6EF557952A40B8D1001A4F09 /* GPTKDownloader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GPTKDownloader.swift; sourceTree = "<group>"; };
 		6EF557972A410599001A4F09 /* SetupView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetupView.swift; sourceTree = "<group>"; };
-		6EFE9ADE2A3DA5E1002232AB /* Ditto.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Ditto.swift; sourceTree = "<group>"; };
 		AB66A8632A4195B10006D238 /* Rosetta2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Rosetta2.swift; sourceTree = "<group>"; };
 		AB8570C22A34FA4000BFBBE0 /* vi */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = vi; path = vi.lproj/Localizable.strings; sourceTree = "<group>"; };
 		B584FD842A3376E0009B00F4 /* zh-Hant */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hant"; path = "zh-Hant.lproj/Localizable.strings"; sourceTree = "<group>"; };
@@ -357,9 +349,8 @@
 			children = (
 				6E6C0CF12A419A6800356232 /* WelcomeView.swift */,
 				6E6C0CF32A419A7600356232 /* RosettaView.swift */,
-				6E6C0CF52A419A8300356232 /* WineDownloadView.swift */,
-				6E6C0CF72A419A8C00356232 /* WineInstallView.swift */,
-				6E6C0CF92A419A9700356232 /* GPTKInstallView.swift */,
+				6E6C0CF52A419A8300356232 /* GPTKDownloadView.swift */,
+				6E6C0CF72A419A8C00356232 /* GPTKInstallView.swift */,
 			);
 			path = "Setup Views";
 			sourceTree = "<group>";
@@ -375,7 +366,6 @@
 		6EDF9AAA2A9A6CA9006CAA7E /* WhiskyKit */ = {
 			isa = PBXGroup;
 			children = (
-				6EDF9AC52A9A6FB8006CAA7E /* GPTK */,
 				6EDF9AC42A9A6FB5006CAA7E /* Wine */,
 				6EDF9AB52A9A6D8C006CAA7E /* BottleData.swift */,
 				6E0822852A39D73800195094 /* Tar.swift */,
@@ -386,20 +376,10 @@
 		6EDF9AC42A9A6FB5006CAA7E /* Wine */ = {
 			isa = PBXGroup;
 			children = (
-				6EF557952A40B8D1001A4F09 /* WineDownload.swift */,
-				6E0822862A39D73800195094 /* WineInstaller.swift */,
+				6EF557952A40B8D1001A4F09 /* GPTKDownloader.swift */,
+				6E0822862A39D73800195094 /* GPTKInstaller.swift */,
 			);
 			path = Wine;
-			sourceTree = "<group>";
-		};
-		6EDF9AC52A9A6FB8006CAA7E /* GPTK */ = {
-			isa = PBXGroup;
-			children = (
-				6E5E23E72A30D59600ABC192 /* GPTK.swift */,
-				6E5E23EB2A30DBCA00ABC192 /* Hdiutil.swift */,
-				6EFE9ADE2A3DA5E1002232AB /* Ditto.swift */,
-			);
-			path = GPTK;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -607,17 +587,16 @@
 				6E50D98029CD0850008C39F6 /* Wine.swift in Sources */,
 				AB66A8642A4195B10006D238 /* Rosetta2.swift in Sources */,
 				6E5197D229D7202100CF655E /* BottleSettings.swift in Sources */,
-				6E6C0CFA2A419A9700356232 /* GPTKInstallView.swift in Sources */,
 				6E355E5A29D782B2002D83BE /* ProgramsView.swift in Sources */,
 				6E355E5829D78249002D83BE /* ConfigView.swift in Sources */,
 				6EA2D47E29DDAE5E00C84668 /* BottleRenameView.swift in Sources */,
 				6E8A3B3E2A3613F400D19632 /* PortableExecutable.swift in Sources */,
-				6E6C0CF62A419A8300356232 /* WineDownloadView.swift in Sources */,
+				6E6C0CF62A419A8300356232 /* GPTKDownloadView.swift in Sources */,
 				6EA2D48529DF130F00C84668 /* ProgramSettings.swift in Sources */,
 				EBFF512A2A43C6A300CF9B56 /* ConvertFormat.swift in Sources */,
 				6E50D98529CDF25B008C39F6 /* BottleCreationView.swift in Sources */,
 				6E6C0CF42A419A7600356232 /* RosettaView.swift in Sources */,
-				6E6C0CF82A419A8C00356232 /* WineInstallView.swift in Sources */,
+				6E6C0CF82A419A8C00356232 /* GPTKInstallView.swift in Sources */,
 				6E40498329CCA91B006E3F1B /* Bottle.swift in Sources */,
 				6E8A3B402A36140300D19632 /* ResourceSection.swift in Sources */,
 				6E621CEF2A5F631300C9AAB3 /* Winetricks.swift in Sources */,
@@ -650,13 +629,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6EDF9ABE2A9A6F3D006CAA7E /* WineDownload.swift in Sources */,
-				6EDF9ABF2A9A6F3D006CAA7E /* WineInstaller.swift in Sources */,
+				6EDF9ABE2A9A6F3D006CAA7E /* GPTKDownloader.swift in Sources */,
+				6EDF9ABF2A9A6F3D006CAA7E /* GPTKInstaller.swift in Sources */,
 				6EDF9AC32A9A6F46006CAA7E /* Tar.swift in Sources */,
 				6EDF9AB62A9A6D8C006CAA7E /* BottleData.swift in Sources */,
-				6EDF9AC12A9A6F3D006CAA7E /* Hdiutil.swift in Sources */,
-				6EDF9AC22A9A6F3D006CAA7E /* Ditto.swift in Sources */,
-				6EDF9AC02A9A6F3D006CAA7E /* GPTK.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

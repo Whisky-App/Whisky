@@ -1,5 +1,5 @@
 //
-//  WineDownloadView.swift
+//  GPTKDownloadView.swift
 //  Whisky
 //
 //  Created by Isaac Marovitz on 20/06/2023.
@@ -8,7 +8,7 @@
 import SwiftUI
 import WhiskyKit
 
-struct WineDownloadView: View {
+struct GPTKDownloadView: View {
     @State private var fractionProgress: Double = 0
     @State private var completedBytes: Int64 = 0
     @State private var totalBytes: Int64 = 0
@@ -21,10 +21,10 @@ struct WineDownloadView: View {
     var body: some View {
         VStack {
             VStack {
-                Text("setup.wine.download")
+                Text("setup.gptk.download")
                     .font(.title)
                     .fontWeight(.bold)
-                Text("setup.wine.download.subtitle")
+                Text("setup.gptk.download.subtitle")
                     .font(.subheadline)
                     .foregroundStyle(.secondary)
                 Spacer()
@@ -32,12 +32,12 @@ struct WineDownloadView: View {
                     ProgressView(value: fractionProgress, total: 1)
                     HStack {
                         HStack {
-                            Text(String(format: String(localized: "setup.wine.progress"),
+                            Text(String(format: String(localized: "setup.gptk.progress"),
                                         formatBytes(bytes: completedBytes),
                                         formatBytes(bytes: totalBytes)))
                             + Text(" ")
                             + (shouldShowEstimate() ?
-                               Text(String(format: String(localized: "setup.wine.eta"),
+                               Text(String(format: String(localized: "setup.gptk.eta"),
                                            formatRemainingTime(remainingBytes: totalBytes - completedBytes)))
                                : Text(""))
                             Spacer()
@@ -53,7 +53,7 @@ struct WineDownloadView: View {
         .frame(width: 400, height: 200)
         .onAppear {
             Task {
-                if let downloadInfo = await WineDownload.getLatestWineURL(),
+                if let downloadInfo = await GPTKDownloader.getLatestGPTKURL(),
                    let url = downloadInfo.directURL {
                     downloadTask = URLSession.shared.downloadTask(with: url) { url, _, _ in
                         if let url = url {
@@ -110,6 +110,6 @@ struct WineDownloadView: View {
     }
 
     func proceed() {
-        path.append(.wineInstall)
+        path.append(.gptkInstall)
     }
 }

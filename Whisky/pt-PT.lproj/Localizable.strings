@@ -104,15 +104,13 @@
 "setup.rosetta" = "Instalando Rosetta";
 "setup.rosetta.subtitle" = "Rosetta permite que código x86, como o Wine, execute no seu Mac.";
 
-"setup.wine.download" = "Transferindo Wine";
-"setup.wine.download.subtitle" = "As velocidades variam de acordo com a sua ligação de Internet.";
-"setup.wine.progress" = "%@ de %@";
-"setup.wine.eta" = "- %@ em falta";
+"setup.gptk.download" = "Transferindo Wine";
+"setup.gptk.download.subtitle" = "As velocidades variam de acordo com a sua ligação de Internet.";
+"setup.gptk.progress" = "%@ de %@";
+"setup.gptk.eta" = "- %@ em falta";
 
-"setup.wine.install" = "Instalando Wine";
-"setup.wine.install.subtitle" = "Quase lá. Não desligue ainda.";
-
-"setup.gptk" = "A instalar GPTK";
+"setup.gptk.install" = "Instalando Wine";
+"setup.gptk.install.subtitle" = "Quase lá. Não desligue ainda.";
 
 "alert.macos" = "Versão de macOS não suportada!";
 "alert.macos.info" = "O macOS Ventura não é oficialmente suportado pelo GPTK. Problemas podem ocorrer!";

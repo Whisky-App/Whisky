@@ -20,11 +20,11 @@ struct WineCrashError: Error, CustomStringConvertible {
 
 // swiftlint:disable:next type_body_length
 class Wine {
-    static let binFolder: URL = WineInstaller.libraryFolder
+    static let binFolder: URL = GPTKInstaller.libraryFolder
         .appendingPathComponent("Wine")
         .appendingPathComponent("bin")
 
-    static let dxvkFolder: URL = WineInstaller.libraryFolder
+    static let dxvkFolder: URL = GPTKInstaller.libraryFolder
         .appendingPathComponent("DXVK")
 
     static let wineBinary: URL = binFolder

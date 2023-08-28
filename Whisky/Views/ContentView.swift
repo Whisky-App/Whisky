@@ -102,11 +102,11 @@ struct ContentView: View {
         .onAppear {
             bottleVM.loadBottles()
             bottlesLoaded = true
-            if !GPTK.isGPTKInstalled() || !WineInstaller.isWineInstalled() {
+            if !GPTKInstaller.isGPTKInstalled() {
                 showSetup = true
             }
-            if WineInstaller.shouldUpdateWine() {
-                WineInstaller.uninstall()
+            if GPTKInstaller.shouldUpdateGPTK() {
+                GPTKInstaller.uninstall()
                 showSetup = true
             }
             if ProcessInfo().operatingSystemVersion.majorVersion < 14 {

@@ -52,3 +52,5 @@ public class Tar {
         }
     }
 }
+
+extension String: Error {}

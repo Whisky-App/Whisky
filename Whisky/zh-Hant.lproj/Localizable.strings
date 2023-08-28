@@ -105,15 +105,13 @@
 "setup.rosetta" = "正在安裝 Rosetta";
 "setup.rosetta.subtitle" = "Rosetta 允許 x86 代碼（如 Wine）在 Mac 上運行。";
 
-"setup.wine.download" = "正在下載 Wine";
-"setup.wine.download.subtitle" = "速度會因你的互聯網連接而有所不同。";
-"setup.wine.progress" = "%2$@ 中的 %1$@";
-"setup.wine.eta" = "- 剩餘%@";
+"setup.gptk.download" = "正在下載 GPTK";
+"setup.gptk.download.subtitle" = "速度會因你的互聯網連接而有所不同。";
+"setup.gptk.progress" = "%2$@ 中的 %1$@";
+"setup.gptk.eta" = "- 剩餘%@";
 
-"setup.wine.install" = "正在安裝 Wine";
-"setup.wine.install.subtitle" = "快完成了。請不要退出。";
-
-"setup.gptk" = "正在安裝 GPTK";
+"setup.gptk.install" = "正在安裝 GPTK";
+"setup.gptk.install.subtitle" = "快完成了。請不要退出。";
 
 "alert.macos" = "不支持的macOS版本！";
 "alert.macos.info" = "macOS Ventura未得到GPTK的官方支持。 可能會出現問題！";

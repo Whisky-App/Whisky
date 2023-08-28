@@ -104,15 +104,13 @@
 "setup.rosetta" = "Đang cài đặt Rosetta";
 "setup.rosetta.subtitle" = "Rosetta cho phép các ứng dụng x86 như Wine chạy trên máy Mac của bạn.";
 
-"setup.wine.download" = "Đang tải xuống Wine";
-"setup.wine.download.subtitle" = "Tốc độ tải xuống sẽ phụ thuộc vào kết nối Internet của bạn.";
-"setup.wine.progress" = "%@ của %@";
-"setup.wine.eta" = "- %@ còn lại";
+"setup.gptk.download" = "Đang tải xuống Wine";
+"setup.gptk.download.subtitle" = "Tốc độ tải xuống sẽ phụ thuộc vào kết nối Internet của bạn.";
+"setup.gptk.progress" = "%@ của %@";
+"setup.gptk.eta" = "- %@ còn lại";
 
-"setup.wine.install" = "Đang cài đặt Wine";
-"setup.wine.install.subtitle" = "Cài đặt sắp hoàn tất.";
-
-"setup.gptk" = "Đang cài đặt GPTK";
+"setup.gptk.install" = "Đang cài đặt Wine";
+"setup.gptk.install.subtitle" = "Cài đặt sắp hoàn tất.";
 
 "alert.macos" = "Phiên bản macOS không được hỗ trợ!";
 "alert.macos.info" = "GPTK không hỗ trợ macOS Ventura. Một số lỗi có thể xảy ra!";

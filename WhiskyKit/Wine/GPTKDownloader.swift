@@ -1,5 +1,5 @@
 //
-//  WineDownload.swift
+//  GPTKDownloader.swift
 //  Whisky
 //
 //  Created by Isaac Marovitz on 19/06/2023.
@@ -7,8 +7,8 @@
 
 import Foundation
 
-public class WineDownload {
-    public static func getLatestWineURL() async -> DownloadInfo? {
+public class GPTKDownloader {
+    public static func getLatestGPTKURL() async -> DownloadInfo? {
         let githubURL = "https://api.github.com/repos/IsaacMarovitz/WhiskyBuilder/actions/artifacts"
         if let artifactsURL = URL(string: githubURL) {
             return await withCheckedContinuation { continuation in
