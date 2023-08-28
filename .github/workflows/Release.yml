@@ -1,0 +1,21 @@
+name: Release
+
+on:
+  release:
+    types: [published]
+
+jobs:
+  release:
+    name: Release
+    runs-on: macos-13
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+      - name: Create Discord Embed
+        uses: tsickert/discord-webhook@v5.3.0
+        with:
+          webhook-url: ${{ secrets.WEBHOOK }}
+          embed-title: ${{ github.event.release.name }}
+          embed-url: https://github.com/IsaacMarovitz/Whisky/releases/download/${{ github.event.release.tagName }}/Whisky.zip
+          embed-description: ${{ github.event.release.body }}
+          embed-color: 9442302
