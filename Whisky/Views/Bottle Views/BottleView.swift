@@ -141,7 +141,7 @@ struct BottleView: View {
                     panel.canChooseFiles = true
                     panel.allowedContentTypes = [UTType.exe,
                                                  UTType(importedAs: "com.microsoft.msi-installer")]
-                    panel.directoryURL = bottle.url.appendingPathComponent("drive_c")
+                    panel.directoryURL = bottle.url.appending(path: "drive_c")
                     panel.begin { result in
                         programLoading = true
                         Task(priority: .userInitiated) {

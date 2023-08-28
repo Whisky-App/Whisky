@@ -35,11 +35,11 @@ struct WhiskyApp: App {
                 Button("open.setup") {
                     showSetup = true
                 }
-				Button("install.cli") {
-					Task {
-						await WhiskyCmd.install()
-					}
-				}
+                Button("install.cli") {
+                    Task {
+                        await WhiskyCmd.install()
+                    }
+                }
             }
             CommandGroup(after: .newItem) {
                 Button("open.bottle") {
@@ -110,7 +110,7 @@ struct WhiskyApp: App {
         }
 
         let d3dmPath = URL(fileURLWithPath: getconfOutputString.trimmingCharacters(in: .whitespacesAndNewlines))
-            .appendingPathComponent("d3dm").path
+            .appending(path: "d3dm").path
         do {
             try FileManager.default.removeItem(atPath: d3dmPath)
         } catch {

@@ -13,12 +13,12 @@ class BottleVM: ObservableObject {
     static let shared = BottleVM()
 
     static let containerDir = FileManager.default.homeDirectoryForCurrentUser
-        .appendingPathComponent("Library")
-        .appendingPathComponent("Containers")
-        .appendingPathComponent(Bundle.main.bundleIdentifier ?? "com.isaacmarovitz.Whisky")
+        .appending(path: "Library")
+        .appending(path: "Containers")
+        .appending(path: Bundle.main.bundleIdentifier ?? "com.isaacmarovitz.Whisky")
 
     static let bottleDir = containerDir
-        .appendingPathComponent("Bottles")
+        .appending(path: "Bottles")
     let bottlesList = BottleVMEntries()
 
     @Published var bottles: [Bottle] = []
@@ -68,7 +68,7 @@ class BottleVM: ObservableObject {
 
         // Try loading as a normal bottle
         let bottleMetadata = bottleURL
-            .appendingPathComponent("Metadata")
+            .appending(path: "Metadata")
             .appendingPathExtension("plist")
             .path(percentEncoded: false)
 
@@ -82,7 +82,7 @@ class BottleVM: ObservableObject {
     }
 
     func createNewBottle(bottleName: String, winVersion: WinVersion, bottleURL: URL) -> URL {
-        let newBottleDir = bottleURL.appendingPathComponent(UUID().uuidString)
+        let newBottleDir = bottleURL.appending(path: UUID().uuidString)
 
         Task.detached { @MainActor in
             var bottleId: Bottle? = .none

@@ -28,27 +28,27 @@ public class Bottle: Hashable, Identifiable {
     var inFlight: Bool = false
 
     func openCDrive() {
-        NSWorkspace.shared.open(url.appendingPathComponent("drive_c"))
+        NSWorkspace.shared.open(url.appending(path: "drive_c"))
     }
 
     @discardableResult
     func updateStartMenuPrograms() -> [ShellLinkHeader] {
         let globalStartMenu = url
-            .appendingPathComponent("drive_c")
-            .appendingPathComponent("ProgramData")
-            .appendingPathComponent("Microsoft")
-            .appendingPathComponent("Windows")
-            .appendingPathComponent("Start Menu")
+            .appending(path: "drive_c")
+            .appending(path: "ProgramData")
+            .appending(path: "Microsoft")
+            .appending(path: "Windows")
+            .appending(path: "Start Menu")
 
         let userStartMenu = url
-            .appendingPathComponent("drive_c")
-            .appendingPathComponent("users")
-            .appendingPathComponent("crossover")
-            .appendingPathComponent("AppData")
-            .appendingPathComponent("Roaming")
-            .appendingPathComponent("Microsoft")
-            .appendingPathComponent("Windows")
-            .appendingPathComponent("Start Menu")
+            .appending(path: "drive_c")
+            .appending(path: "users")
+            .appending(path: "crossover")
+            .appending(path: "AppData")
+            .appending(path: "Roaming")
+            .appending(path: "Microsoft")
+            .appending(path: "Windows")
+            .appending(path: "Start Menu")
         startMenuPrograms.removeAll()
 
         var startMenuProgramsURLs: [URL] = []
@@ -90,11 +90,11 @@ public class Bottle: Hashable, Identifiable {
     @discardableResult
     func updateInstalledPrograms() -> [Program] {
         let programFiles = url
-            .appendingPathComponent("drive_c")
-            .appendingPathComponent("Program Files")
+            .appending(path: "drive_c")
+            .appending(path: "Program Files")
         let programFilesx86 = url
-            .appendingPathComponent("drive_c")
-            .appendingPathComponent("Program Files (x86)")
+            .appending(path: "drive_c")
+            .appending(path: "Program Files (x86)")
         programs.removeAll()
 
         let enumerator64 = FileManager.default.enumerator(at: programFiles,

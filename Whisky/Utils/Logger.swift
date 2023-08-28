@@ -12,8 +12,8 @@ import WhiskyKit
 class Log {
     static let logsFolder = FileManager.default.urls(for: .libraryDirectory,
                                                     in: .userDomainMask)[0]
-        .appendingPathComponent("Logs")
-        .appendingPathComponent(Bundle.main.bundleIdentifier ?? "com.isaacmarovitz.Whisky")
+        .appending(path: "Logs")
+        .appending(path: Bundle.main.bundleIdentifier ?? "com.isaacmarovitz.Whisky")
 
     let fileHandle: FileHandle
     let logger: Logger
@@ -26,7 +26,7 @@ class Log {
 
             let dateString = Date.now.ISO8601Format()
             let fileURL = Log.logsFolder
-                .appendingPathComponent(dateString)
+                .appending(path: dateString)
                 .appendingPathExtension("log")
 
             try "".write(to: fileURL, atomically: true, encoding: .utf8)

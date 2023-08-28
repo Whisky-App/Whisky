@@ -138,7 +138,7 @@ struct BottleListEntry: View {
                         if result == .OK {
                             if let url = panel.urls.first {
                                 let newBottePath = url
-                                    .appendingPathComponent(bottle.url.lastPathComponent)
+                                    .appending(path: bottle.url.lastPathComponent)
 
                                 bottle.move(destination: newBottePath)
                             }

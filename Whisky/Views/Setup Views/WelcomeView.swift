@@ -79,7 +79,7 @@ struct WelcomeView: View {
 
     func checkInstallStatus() {
         rosettaInstalled = Rosetta2.isRosettaInstalled
-		gptkInstalled = GPTKInstaller.isGPTKInstalled()
+        gptkInstalled = GPTKInstaller.isGPTKInstalled()
     }
 }
 

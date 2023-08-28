@@ -12,9 +12,9 @@ public class GPTKInstaller {
     public static let WineBinaryVersion = Bundle.main.infoDictionary?["WineBinaryVersion"] as? Int ?? 0
 
     public static let libraryFolder = FileManager.default.urls(for: .applicationSupportDirectory,
-															   in: .userDomainMask)[0]
-        .appendingPathComponent(Bundle.main.bundleIdentifier ?? "com.isaacmarovitz.Whisky")
-        .appendingPathComponent("Libraries")
+                                                               in: .userDomainMask)[0]
+        .appending(path: Bundle.main.bundleIdentifier ?? "com.isaacmarovitz.Whisky")
+        .appending(path: "Libraries")
 
     public static func isGPTKInstalled() -> Bool {
         return FileManager.default.fileExists(atPath: libraryFolder.path)
@@ -24,7 +24,7 @@ public class GPTKInstaller {
         do {
             let whiskySupportFolder = FileManager.default.urls(for: .applicationSupportDirectory,
                                                                in: .userDomainMask)[0]
-                .appendingPathComponent(Bundle.main.bundleIdentifier ?? "com.isaacmarovitz.Whisky")
+                .appending(path: Bundle.main.bundleIdentifier ?? "com.isaacmarovitz.Whisky")
 
             if !FileManager.default.fileExists(atPath: whiskySupportFolder.path) {
                 try FileManager.default.createDirectory(at: whiskySupportFolder, withIntermediateDirectories: true)
@@ -37,14 +37,14 @@ public class GPTKInstaller {
             try Tar.untar(tarBall: from, toURL: whiskySupportFolder)
 
             let tarFile = whiskySupportFolder
-                .appendingPathComponent("Libraries")
+                .appending(path: "Libraries")
                 .appendingPathExtension("tar")
                 .appendingPathExtension("gz")
             try Tar.untar(tarBall: tarFile, toURL: whiskySupportFolder)
             try FileManager.default.removeItem(at: tarFile)
 
             // Write the binary version to the build_version file
-            let buildVersionFile = libraryFolder.appendingPathComponent("build_version")
+            let buildVersionFile = libraryFolder.appending(path: "build_version")
             try String(WineBinaryVersion).write(to: buildVersionFile, atomically: true, encoding: .utf8)
         } catch {
             print("Failed to install GPTK: \(error)")
@@ -54,8 +54,8 @@ public class GPTKInstaller {
     public static func uninstall() {
         let libraryFolder = FileManager.default.urls(for: .applicationSupportDirectory,
                                                            in: .userDomainMask)[0]
-            .appendingPathComponent(Bundle.main.bundleIdentifier ?? "com.isaacmarovitz.Whisky")
-            .appendingPathComponent("Libraries")
+            .appending(path: Bundle.main.bundleIdentifier ?? "com.isaacmarovitz.Whisky")
+            .appending(path: "Libraries")
 
         do {
             try FileManager.default.removeItem(at: libraryFolder)
@@ -66,33 +66,35 @@ public class GPTKInstaller {
 
     public static func shouldUpdateGPTK() -> Bool {
         // Read the build version from the Wine directory
-        let buildVersionFile = libraryFolder.appendingPathComponent("build_version")
+        let buildVersionFile = libraryFolder.appending(path: "build_version")
         let currentVersion = try? String(contentsOf: buildVersionFile, encoding: .utf8)
 
         // If the current version is not the same as the binary version, we need to update by calling install again
         return currentVersion != String(WineBinaryVersion)
     }
 
-	// TODO: Fix this
-	public static func gptkVersion() -> String? {
-		do {
-			let versionPlist = libraryFolder
-				.appendingPathComponent("Versions")
-				.appendingPathComponent("A")
-				.appendingPathComponent("Resources")
-				.appendingPathComponent("version")
-				.appendingPathExtension("plist")
+    public static func gptkVersion() -> String? {
+        do {
+            let versionPlist = libraryFolder
+                .appending(path: "Wine")
+                .appending(path: "external")
+                .appending(path: "D3DMetal.framework")
+                .appending(path: "Versions")
+                .appending(path: "A")
+                .appending(path: "Resources")
+                .appending(path: "version")
+                .appendingPathExtension("plist")
 
-			let decoder = PropertyListDecoder()
-			let data = try Data(contentsOf: versionPlist)
-			let info = try decoder.decode(VersionInfo.self, from: data)
-			return info.CFBundleShortVersionString
-		} catch {
-			return nil
-		}
-	}
+            let decoder = PropertyListDecoder()
+            let data = try Data(contentsOf: versionPlist)
+            let info = try decoder.decode(VersionInfo.self, from: data)
+            return info.CFBundleShortVersionString
+        } catch {
+            return nil
+        }
+    }
 }
 
 struct VersionInfo: Codable {
-	let CFBundleShortVersionString: String
+    let CFBundleShortVersionString: String
 }

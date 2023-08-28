@@ -40,9 +40,9 @@ class ProgramSettings {
     let settingsUrl: URL
 
     init(bottleUrl: URL, name: String) {
-        let settingsFolder = bottleUrl.appendingPathComponent("Program Settings")
+        let settingsFolder = bottleUrl.appending(path: "Program Settings")
         self.settingsUrl = settingsFolder
-                                    .appendingPathComponent(name)
+                                    .appending(path: name)
                                     .appendingPathExtension("plist")
 
         if !FileManager.default.fileExists(atPath: settingsFolder.path(percentEncoded: false)) {

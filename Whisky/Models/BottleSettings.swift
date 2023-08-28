@@ -139,7 +139,7 @@ class BottleSettings {
     init(bottleURL: URL) {
         bottleUrl = bottleURL
         metadataUrl = bottleURL
-            .appendingPathComponent("Metadata")
+            .appending(path: "Metadata")
             .appendingPathExtension("plist")
         settings = .init()
         if !decode() {

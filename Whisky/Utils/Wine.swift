@@ -21,17 +21,17 @@ struct WineCrashError: Error, CustomStringConvertible {
 // swiftlint:disable:next type_body_length
 class Wine {
     static let binFolder: URL = GPTKInstaller.libraryFolder
-        .appendingPathComponent("Wine")
-        .appendingPathComponent("bin")
+        .appending(path: "Wine")
+        .appending(path: "bin")
 
     static let dxvkFolder: URL = GPTKInstaller.libraryFolder
-        .appendingPathComponent("DXVK")
+        .appending(path: "DXVK")
 
     static let wineBinary: URL = binFolder
-        .appendingPathComponent("wine64")
+        .appending(path: "wine64")
 
     static let wineserverBinary: URL = binFolder
-        .appendingPathComponent("wineserver")
+        .appending(path: "wineserver")
 
     @discardableResult
     static func run(_ args: [String],
@@ -273,18 +273,18 @@ class Wine {
 
     static func enableDXVK(bottle: Bottle) {
         let enumerator64 = FileManager.default.enumerator(at: Wine.dxvkFolder
-                                                                .appendingPathComponent("x64"),
+                                                                .appending(path: "x64"),
                                                           includingPropertiesForKeys: [.isRegularFileKey])
 
         while let url = enumerator64?.nextObject() as? URL {
             if url.pathExtension == "dll" {
                 let system32 = bottle.url
-                    .appendingPathComponent("drive_c")
-                    .appendingPathComponent("windows")
-                    .appendingPathComponent("system32")
+                    .appending(path: "drive_c")
+                    .appending(path: "windows")
+                    .appending(path: "system32")
 
                 let original = system32
-                    .appendingPathComponent(url.lastPathComponent)
+                    .appending(path: url.lastPathComponent)
 
                 do {
                     try FileManager.default.removeItem(at: original)
@@ -297,18 +297,18 @@ class Wine {
         }
 
         let enumerator32 = FileManager.default.enumerator(at: Wine.dxvkFolder
-                                                                .appendingPathComponent("x32"),
+                                                                .appending(path: "x32"),
                                                           includingPropertiesForKeys: [.isRegularFileKey])
 
         while let url = enumerator32?.nextObject() as? URL {
             if url.pathExtension == "dll" {
                 let syswow64 = bottle.url
-                    .appendingPathComponent("drive_c")
-                    .appendingPathComponent("windows")
-                    .appendingPathComponent("syswow64")
+                    .appending(path: "drive_c")
+                    .appending(path: "windows")
+                    .appending(path: "syswow64")
 
                 let original = syswow64
-                    .appendingPathComponent(url.lastPathComponent)
+                    .appending(path: url.lastPathComponent)
 
                 do {
                     try FileManager.default.removeItem(at: original)

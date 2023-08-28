@@ -18,9 +18,7 @@
 		6E355E5E29D7D85D002D83BE /* ProgramView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E355E5D29D7D85D002D83BE /* ProgramView.swift */; };
 		6E355E6029D7D8BD002D83BE /* Program.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E355E5F29D7D8BD002D83BE /* Program.swift */; };
 		6E3F750129ED85E20066D318 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 6E3F750029ED85E20066D318 /* Alamofire */; };
-		6E3F750329ED85F20066D318 /* AppDB.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E3F750229ED85F20066D318 /* AppDB.swift */; };
 		6E3F750629ED9D650066D318 /* SwiftSoup in Frameworks */ = {isa = PBXBuildFile; productRef = 6E3F750529ED9D650066D318 /* SwiftSoup */; };
-		6E3F750829EDBF7F0066D318 /* AppDBView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E3F750729EDBF7F0066D318 /* AppDBView.swift */; };
 		6E40495629CCA19C006E3F1B /* WhiskyApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E40495529CCA19C006E3F1B /* WhiskyApp.swift */; };
 		6E40495829CCA19C006E3F1B /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E40495729CCA19C006E3F1B /* ContentView.swift */; };
 		6E40495A29CCA19C006E3F1B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6E40495929CCA19C006E3F1B /* Assets.xcassets */; };
@@ -132,8 +130,6 @@
 		6E355E5B29D7830C002D83BE /* InfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoView.swift; sourceTree = "<group>"; };
 		6E355E5D29D7D85D002D83BE /* ProgramView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgramView.swift; sourceTree = "<group>"; };
 		6E355E5F29D7D8BD002D83BE /* Program.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Program.swift; sourceTree = "<group>"; };
-		6E3F750229ED85F20066D318 /* AppDB.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDB.swift; sourceTree = "<group>"; };
-		6E3F750729EDBF7F0066D318 /* AppDBView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDBView.swift; sourceTree = "<group>"; };
 		6E40495229CCA19C006E3F1B /* Whisky.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Whisky.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6E40495529CCA19C006E3F1B /* WhiskyApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WhiskyApp.swift; sourceTree = "<group>"; };
 		6E40495729CCA19C006E3F1B /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -293,7 +289,6 @@
 				6E50D98429CDF25B008C39F6 /* BottleCreationView.swift */,
 				6EA2D47D29DDAE5E00C84668 /* BottleRenameView.swift */,
 				6E355E5D29D7D85D002D83BE /* ProgramView.swift */,
-				6E3F750729EDBF7F0066D318 /* AppDBView.swift */,
 				6E6C0CF02A419A5800356232 /* Setup Views */,
 				6E355E5629D78202002D83BE /* Bottle Views */,
 			);
@@ -327,7 +322,6 @@
 			children = (
 				6E50D97F29CD0850008C39F6 /* Wine.swift */,
 				6E621CEE2A5F631200C9AAB3 /* Winetricks.swift */,
-				6E3F750229ED85F20066D318 /* AppDB.swift */,
 				6E6915442A3265BB0085BBB7 /* Logger.swift */,
 				AB66A8632A4195B10006D238 /* Rosetta2.swift */,
 				6E4E682D2A41CB1E0030EE54 /* Arch.swift */,
@@ -602,12 +596,10 @@
 				6E621CEF2A5F631300C9AAB3 /* Winetricks.swift in Sources */,
 				6E26058A29D9282000DDD788 /* DataExtensions.swift in Sources */,
 				6E064B1429DD331F00D9A2D2 /* SparkleView.swift in Sources */,
-				6E3F750829EDBF7F0066D318 /* AppDBView.swift in Sources */,
 				6E40495629CCA19C006E3F1B /* WhiskyApp.swift in Sources */,
 				6E50D98329CD6066008C39F6 /* BottleVM.swift in Sources */,
 				6E5D417A2A39021B0038ABEA /* URLExtensions.swift in Sources */,
 				6E4E682E2A41CB1E0030EE54 /* Arch.swift in Sources */,
-				6E3F750329ED85F20066D318 /* AppDB.swift in Sources */,
 				6E6915452A3265BB0085BBB7 /* Logger.swift in Sources */,
 				6E355E6029D7D8BD002D83BE /* Program.swift in Sources */,
 				6E6C0CF22A419A6800356232 /* WelcomeView.swift in Sources */,
