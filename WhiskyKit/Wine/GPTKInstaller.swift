@@ -94,5 +94,5 @@ public class GPTKInstaller {
 }
 
 struct VersionInfo: Codable {
-		let CFBundleShortVersionString: String
-	}
+	let CFBundleShortVersionString: String
+}
