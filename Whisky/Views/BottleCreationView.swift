@@ -29,7 +29,7 @@ struct BottleCreationView: View {
                 Spacer()
                 TextField("", text: $newBottleName)
                     .frame(width: 180)
-                    .onChange(of: newBottleName) { name in
+                    .onChange(of: newBottleName) { _, name in
                         nameValid = !name.isEmpty
                     }
             }
@@ -83,7 +83,7 @@ struct BottleCreationView: View {
             }
         }
         .padding()
-        .onChange(of: newBottleURL) { _ in
+        .onChange(of: newBottleURL) {
             bottlePath = newBottleURL.prettyPath()
         }
         .onAppear {

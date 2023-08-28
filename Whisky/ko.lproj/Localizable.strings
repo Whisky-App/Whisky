@@ -112,8 +112,5 @@
 "setup.gptk.install" = "와인 설치 중";
 "setup.gptk.install.subtitle" = "거의 다 왔어요. 아직 끄지 마세요.";
 
-"alert.macos" = "지원되지 않는 macOS 버전!";
-"alert.macos.info" = "GPTK는 macOS Ventura를 공식적으로 지원하지 않습니다. 문제가 발생할 수 있습니다!";
-
 "winetricks.title" = "Winetricks 명령어 실행";
 "button.winetricks" = "Winetricks...";

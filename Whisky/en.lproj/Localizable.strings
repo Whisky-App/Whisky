@@ -113,8 +113,5 @@
 "setup.gptk.install" = "Installing GPTK";
 "setup.gptk.install.subtitle" = "Almost there. Don't tune out yet.";
 
-"alert.macos" = "Unsupported macOS Version!";
-"alert.macos.info" = "macOS Ventura is not officially supported by GPTK. Issues may occur!";
-
 "winetricks.title" = "Run Winetricks command";
 "button.winetricks" = "Winetricks...";

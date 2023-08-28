@@ -112,8 +112,5 @@
 "setup.gptk.install" = "Wine Yükleniyor";
 "setup.gptk.install.subtitle" = "Bitmek üzere. Lütfen Kapatmayınız.";
 
-"alert.macos" = "Desteklenmeyen bir macOS sürümü kullanıyorsunuz!";
-"alert.macos.info" = "macOS Ventura GPTK tarafından resmi olarak desteklenmiyor. Sorun yaşayabilirsiniz!";
-
 "winetricks.title" = "Winetricks komutlarını çalıştırın";
 "button.winetricks" = "Winetricks...";

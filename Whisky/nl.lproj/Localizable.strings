@@ -112,8 +112,5 @@
 "setup.gptk.install" = "Wine installeren";
 "setup.gptk.install.subtitle" = "Bijna daar. Nog niet weg gaan.";
 
-"alert.macos" = "Niet-ondersteunde macOS versie!";
-"alert.macos.info" = "macOS Venture is niet officieel ondersteunt door GPTK. Er kunnen zich problemen voordoen!";
-
 "winetricks.title" = "Voer Winetricks commando uit";
 "button.winetricks" = "Winetricks...";

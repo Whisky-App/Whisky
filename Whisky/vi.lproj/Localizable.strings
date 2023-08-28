@@ -112,8 +112,5 @@
 "setup.gptk.install" = "Đang cài đặt Wine";
 "setup.gptk.install.subtitle" = "Cài đặt sắp hoàn tất.";
 
-"alert.macos" = "Phiên bản macOS không được hỗ trợ!";
-"alert.macos.info" = "GPTK không hỗ trợ macOS Ventura. Một số lỗi có thể xảy ra!";
-
 "winetricks.title" = "Chạy lệnh Winetricks";
 "button.winetricks" = "Winetricks...";

@@ -112,8 +112,5 @@
 "setup.gptk.install" = "Instalando Wine";
 "setup.gptk.install.subtitle" = "Quase lá. Por favor, aguarde.";
 
-"alert.macos" = "Versão do macOS não suportada!";
-"alert.macos.info" = "O macOS Ventura não é oficialmente suportado pelo GPTK. Problemas podem ocorrer!";
-
 "winetricks.title" = "Executar comando Winetricks";
 "button.winetricks" = "Winetricks...";

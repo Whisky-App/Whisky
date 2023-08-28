@@ -26,7 +26,7 @@ struct BottleRenameView: View {
                 Spacer()
                 TextField("", text: $newBottleName)
                     .frame(width: 180)
-                    .onChange(of: newBottleName) { name in
+                    .onChange(of: newBottleName) { _, name in
                         nameValid = !name.isEmpty
                     }
             }

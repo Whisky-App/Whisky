@@ -118,7 +118,7 @@ struct BottleView: View {
                     .onAppear {
                         updateStartMenu()
                     }
-                    .onChange(of: loadStartMenu) { _ in
+                    .onChange(of: loadStartMenu) {
                         updateStartMenu()
                     }
                 }

@@ -17,7 +17,7 @@ struct AppDBView: View {
             EntryView(entry: entry)
         }
         .listStyle(.inset(alternatesRowBackgrounds: true))
-        .onChange(of: search) { newValue  in
+        .onChange(of: search) { _, newValue in
             if newValue.isEmpty {
                 entries.removeAll()
                 return

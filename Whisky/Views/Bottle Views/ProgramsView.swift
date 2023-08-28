@@ -35,7 +35,7 @@ struct ProgramsView: View {
                 programs = bottle.updateInstalledPrograms()
                 sortPrograms()
             }
-            .onChange(of: resortPrograms) { _ in
+            .onChange(of: resortPrograms) {
                 reloadStartMenu.toggle()
                 sortPrograms()
             }

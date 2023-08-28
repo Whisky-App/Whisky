@@ -112,8 +112,5 @@
 "setup.gptk.install" = "正在安装 GPTK";
 "setup.gptk.install.subtitle" = "就快完成了，请不要离开。";
 
-"alert.macos" = "当前的macOS版本不受支持。";
-"alert.macos.info" = "macOS Ventura 没有 GPTK 的官方支持，可能会出现问题！";
-
 "winetricks.title" = "运行 Winetricks 命令";
 "button.winetricks" = "Winetrick...";

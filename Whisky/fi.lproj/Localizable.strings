@@ -112,8 +112,5 @@
 "setup.gptk.install" = "Asennetaan GPTK";
 "setup.gptk.install.subtitle" = "Melkein valmista. Älä karkaa vielä.";
 
-"alert.macos" = "Tukematon macOS versio!";
-"alert.macos.info" = "macOS Ventura ei ole virallisesti GPTKn tukema. Ongelmia saattaa ilmetä!";
-
 "winetricks.title" = "Suorita Winetricks komento";
 "button.winetricks" = "Winetricks...";

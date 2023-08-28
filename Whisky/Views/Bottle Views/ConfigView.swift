@@ -64,7 +64,7 @@ struct ConfigView: View {
                     }
                     SettingItemView(title: "config.retinaMode", loadingState: $retinaModeLoadingState) {
                         Toggle("config.retinaMode", isOn: $retinaMode)
-                        .onChange(of: retinaMode) { _ in
+                        .onChange(of: retinaMode) {
                             Task(priority: .userInitiated) {
                                 retinaModeLoadingState = .modifying
                                 do {
@@ -181,7 +181,7 @@ struct ConfigView: View {
                 }
             }
         }
-        .onChange(of: windowsVersion) { newValue in
+        .onChange(of: windowsVersion) { _, newValue in
             if winVersionLoadingState == .success {
                 winVersionLoadingState = .loading
                 buildVersionLoadingState = .loading
@@ -199,11 +199,11 @@ struct ConfigView: View {
                 }
             }
         }
-        .onChange(of: buildVersion) { _ in
+        .onChange(of: buildVersion) {
             // Remove anything that isn't a number
             buildVersion = buildVersion.filter("0123456789".contains)
         }
-        .onChange(of: dpiConfig) { _ in
+        .onChange(of: dpiConfig) {
             if dpiConfigLoadingState == .success {
                 Task(priority: .userInitiated) {
                     dpiConfigLoadingState = .modifying

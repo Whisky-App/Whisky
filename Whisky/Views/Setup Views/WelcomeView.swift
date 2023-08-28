@@ -43,7 +43,7 @@ struct WelcomeView: View {
             .onAppear {
                 checkInstallStatus()
             }
-            .onChange(of: shouldCheckInstallStatus) { _ in
+            .onChange(of: shouldCheckInstallStatus) {
                 checkInstallStatus()
             }
             Spacer()
@@ -113,7 +113,7 @@ struct InstallStatusView: View {
                 }
             }
         }
-        .onChange(of: isInstalled) { _ in
+        .onChange(of: isInstalled) {
             if let installed = isInstalled {
                 if installed {
                     text = NSLocalizedString("setup.install.installed", comment: "")
