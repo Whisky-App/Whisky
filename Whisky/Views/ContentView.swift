@@ -107,13 +107,15 @@ struct ContentView: View {
                 showSetup = true
             }
             Task.detached {
-                if await GPTKInstaller.shouldUpdateGPTK() {
+                let updateInfo = await GPTKInstaller.shouldUpdateGPTK()
+
+                if updateInfo.0 {
                     await MainActor.run {
                         let alert = NSAlert()
                         alert.messageText = String(localized: "update.gptk.title")
                         alert.informativeText = String(format: String(localized: "update.gptk.description"),
                                                        String(GPTKInstaller.gptkVersion() ?? SemanticVersion(0, 0, 0)),
-                                                       "0.0.0")
+                                                       String(updateInfo.1))
                         alert.alertStyle = .warning
                         alert.addButton(withTitle: String(localized: "update.gptk.update"))
                         alert.addButton(withTitle: String(localized: "button.deleteAlert.cancel"))

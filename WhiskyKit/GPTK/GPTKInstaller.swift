@@ -58,7 +58,7 @@ public class GPTKInstaller {
         }
     }
 
-    public static func shouldUpdateGPTK() async -> Bool {
+    public static func shouldUpdateGPTK() async -> (Bool, SemanticVersion) {
         if let localVersion = gptkVersion() {
             let githubURL = "https://raw.githubusercontent.com/Whisky-App/WhiskyBuilder/main/GPTKVersion.plist"
 
@@ -72,7 +72,7 @@ public class GPTKInstaller {
                                 let remoteVersion = remoteInfo.version
 
                                 let isRemoteNewer = remoteVersion > localVersion
-                                continuation.resume(returning: isRemoteNewer)
+                                continuation.resume(returning: (isRemoteNewer, remoteVersion))
                                 return
                             }
                             if let error = error {
@@ -81,13 +81,13 @@ public class GPTKInstaller {
                         } catch {
                             print(error)
                         }
-                        continuation.resume(returning: false)
+                        continuation.resume(returning: (false, SemanticVersion(0, 0, 0)))
                     }.resume()
                 }
             }
         }
 
-        return false
+        return (false, SemanticVersion(0, 0, 0))
     }
 
     public static func gptkVersion() -> SemanticVersion? {
