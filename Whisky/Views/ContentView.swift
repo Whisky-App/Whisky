@@ -8,6 +8,7 @@
 import SwiftUI
 import UniformTypeIdentifiers
 import WhiskyKit
+import SemanticVersion
 
 struct ContentView: View {
     @EnvironmentObject var bottleVM: BottleVM
@@ -111,7 +112,8 @@ struct ContentView: View {
                         let alert = NSAlert()
                         alert.messageText = String(localized: "update.gptk.title")
                         alert.informativeText = String(format: String(localized: "update.gptk.description"),
-                                                       "0.0.0", "0.0.0")
+                                                       String(GPTKInstaller.gptkVersion() ?? SemanticVersion(0, 0, 0)),
+                                                       "0.0.0")
                         alert.alertStyle = .warning
                         alert.addButton(withTitle: String(localized: "update.gptk.update"))
                         alert.addButton(withTitle: String(localized: "button.deleteAlert.cancel"))

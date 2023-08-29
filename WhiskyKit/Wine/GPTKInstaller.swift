@@ -59,15 +59,7 @@ public class GPTKInstaller {
     }
 
     public static func shouldUpdateGPTK() async -> Bool {
-        let decoder = PropertyListDecoder()
-        let versionPlist = libraryFolder
-            .appending(path: "GPTKVersion")
-            .appendingPathExtension("plist")
-
-        do {
-            let localData = try Data(contentsOf: versionPlist)
-            let localInfo = try decoder.decode(GPTKVersion.self, from: localData)
-            let localVersion = localInfo.version
+        if let localVersion = gptkVersion() {
             let githubURL = "https://raw.githubusercontent.com/Whisky-App/WhiskyBuilder/main/GPTKVersion.plist"
 
             if let remoteUrl = URL(string: githubURL) {
@@ -75,6 +67,7 @@ public class GPTKInstaller {
                     URLSession.shared.dataTask(with: URLRequest(url: remoteUrl)) { data, _, error in
                         do {
                             if error == nil, let data = data {
+                                let decoder = PropertyListDecoder()
                                 let remoteInfo = try decoder.decode(GPTKVersion.self, from: data)
                                 let remoteVersion = remoteInfo.version
 
@@ -92,38 +85,26 @@ public class GPTKInstaller {
                     }.resume()
                 }
             }
-        } catch {
-            print(error)
         }
 
         return false
     }
 
-    public static func gptkVersion() -> String? {
+    public static func gptkVersion() -> SemanticVersion? {
         do {
             let versionPlist = libraryFolder
-                .appending(path: "Wine")
-                .appending(path: "external")
-                .appending(path: "D3DMetal.framework")
-                .appending(path: "Versions")
-                .appending(path: "A")
-                .appending(path: "Resources")
-                .appending(path: "version")
+                .appending(path: "GPTKVersion")
                 .appendingPathExtension("plist")
 
             let decoder = PropertyListDecoder()
             let data = try Data(contentsOf: versionPlist)
-            let info = try decoder.decode(VersionInfo.self, from: data)
-            return info.CFBundleShortVersionString
+            let info = try decoder.decode(GPTKVersion.self, from: data)
+            return info.version
         } catch {
             print(error)
             return nil
         }
     }
-}
-
-struct VersionInfo: Codable {
-    let CFBundleShortVersionString: String
 }
 
 struct GPTKVersion: Codable {
