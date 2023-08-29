@@ -58,7 +58,6 @@
 "info.title" = "Thông tin";
 "info.path" = "Đường dẫn";
 "info.path.copy" = "Chép đường dẫn";
-"info.winPath.copy" = "Sao đường dẫn Windows";
 "info.wine" = "Phiên bản Wine";
 "info.win" = "Phiên bản Windows";
 "info.gptk" = "Phiên bản GPTK";

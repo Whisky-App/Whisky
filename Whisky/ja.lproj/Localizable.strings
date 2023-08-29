@@ -58,7 +58,6 @@
 "info.title" = "情報";
 "info.path" = "パス";
 "info.path.copy" = "パスのコピー";
-"info.winPath.copy" = "Windows のパスをコピー";
 "info.wine" = "Wine のバージョン";
 "info.win" = "Windows のバージョン";
 "info.gptk" = "GPTK のバージョン";

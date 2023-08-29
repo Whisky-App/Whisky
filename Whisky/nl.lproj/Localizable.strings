@@ -58,7 +58,6 @@
 "info.title" = "Informatie";
 "info.path" = "Pad";
 "info.path.copy" = "Pad kopiëren";
-"info.winPath.copy" = "Kopieer Windows Pad";
 "info.wine" = "Wine Versie";
 "info.win" = "Windows Versie";
 "info.gptk" = "GPTK versie";

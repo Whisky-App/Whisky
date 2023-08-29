@@ -58,7 +58,6 @@
 "info.title" = "Інформація";
 "info.path" = "Шлях";
 "info.path.copy" = "Скопіювати шлях";
-"info.winPath.copy" = "Скопіювати шлях до Windows";
 "info.wine" = "Версія Wine";
 "info.win" = "Версія Windows";
 "info.gptk" = "GPTK Version";

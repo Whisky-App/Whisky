@@ -18,13 +18,8 @@ struct ProgramView: View {
             Form {
                 Section("info.title") {
                     HStack {
-                        InfoItem(label: String(localized: "info.path"), value: program.url.windowsPath())
+                        InfoItem(label: String(localized: "info.path"), value: program.url.prettyPath())
                         .contextMenu {
-                            Button("info.winPath.copy") {
-                                let pasteboard = NSPasteboard.general
-                                pasteboard.clearContents()
-                                pasteboard.setString(program.url.windowsPath(), forType: .string)
-                            }
                             Button("info.path.copy") {
                                 let pasteboard = NSPasteboard.general
                                 pasteboard.clearContents()

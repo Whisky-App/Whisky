@@ -58,7 +58,6 @@
 "info.title" = "Tiedot";
 "info.path" = "Polku";
 "info.path.copy" = "Kopio polku";
-"info.winPath.copy" = "Kopioi Windows-polku";
 "info.wine" = "Wine versio";
 "info.win" = "Windows versio";
 "info.gptk" = "GPTK versio";

@@ -58,7 +58,6 @@
 "info.title" = "Bilgi";
 "info.path" = "Yol";
 "info.path.copy" = "Yolu Kopyala";
-"info.winPath.copy" = "Windows Dosya Yolunu Kopyalayın";
 "info.wine" = "Wine Sürümü";
 "info.win" = "Windows Sürümü";
 "info.gptk" = "GPTK Versiyonu";

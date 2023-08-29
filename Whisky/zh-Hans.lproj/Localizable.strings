@@ -58,7 +58,6 @@
 "info.title" = "关于";
 "info.path" = "路径";
 "info.path.copy" = "复制路径";
-"info.winPath.copy" = "复制 Windows 路径";
 "info.wine" = "Wine 版本";
 "info.win" = "Windows 版本";
 "info.gptk" = "GPTK 版本";

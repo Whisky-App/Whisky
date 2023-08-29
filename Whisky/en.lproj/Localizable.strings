@@ -58,7 +58,6 @@
 "info.title" = "Info";
 "info.path" = "Path";
 "info.path.copy" = "Copy Path";
-"info.winPath.copy" = "Copy Windows Path";
 "info.wine" = "Wine Version";
 "info.win" = "Windows Version";
 "info.gptk" = "GPTK Version";
