@@ -17,7 +17,6 @@ struct BottleView: View {
     // We don't actually care about the value
     // This just provides a way to trigger a refresh
     @State var loadStartMenu: Bool = false
-    @State var winetricksInstalled: Bool = false
     @State var showWinetricksSheet: Bool = false
 
     private let gridLayout = [GridItem(.adaptive(minimum: 100, maximum: .infinity))]
@@ -126,10 +125,8 @@ struct BottleView: View {
             Spacer()
             HStack {
                 Spacer()
-                if winetricksInstalled {
-                    Button("button.winetricks") {
-                        showWinetricksSheet.toggle()
-                    }
+                Button("button.winetricks") {
+                    showWinetricksSheet.toggle()
                 }
                 Button("button.cDrive") {
                     bottle.openCDrive()
@@ -174,11 +171,6 @@ struct BottleView: View {
         .navigationTitle(bottle.settings.name)
         .sheet(isPresented: $showWinetricksSheet) {
             WinetricksView(bottle: bottle)
-        }
-        .onAppear {
-            Task.detached(priority: .background) {
-                winetricksInstalled = Winetricks.isWinetricksInstalled()
-            }
         }
     }
 

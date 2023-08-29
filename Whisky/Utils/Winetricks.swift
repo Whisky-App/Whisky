@@ -7,16 +7,15 @@
 
 import Foundation
 import AppKit
+import WhiskyKit
 
 class Winetricks {
-    static func isWinetricksInstalled() -> Bool {
-        return FileManager.default.fileExists(atPath: "/opt/homebrew/bin/winetricks")
-               || FileManager.default.fileExists(atPath: "/usr/local/bin/winetricks")
-    }
+    static let winetricksURL: URL = GPTKInstaller.libraryFolder
+        .appending(path: "winetricks")
 
     static func runCommand(command: String, bottle: Bottle) async {
         // swiftlint:disable:next line_length
-        let winetricksCmd = #"PATH=\"\#(Wine.binFolder.path):$PATH\" WINE=wine64 WINEPREFIX=\"\#(bottle.url.path)\" winetricks \#(command)"#
+        let winetricksCmd = #"PATH=\"\#(Wine.binFolder.path):$PATH\" WINE=wine64 WINEPREFIX=\"\#(bottle.url.path)\" \"\#(winetricksURL.path(percentEncoded: false))\" \#(command)"#
 
         let script = """
         tell application "Terminal"
