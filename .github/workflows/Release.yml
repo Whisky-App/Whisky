@@ -14,6 +14,6 @@ jobs:
         with:
           webhook-url: ${{ secrets.WEBHOOK }}
           embed-title: ${{ github.event.release.name }}
-          embed-url: https://github.com/IsaacMarovitz/Whisky/releases/download/${{ github.event.release.tag_name }}/Whisky.zip
+          embed-url: https://github.com/Whisky-App/Whisky/releases/download/${{ github.event.release.tag_name }}/Whisky.zip
           embed-description: ${{ github.event.release.body }}
           embed-color: 9442302
