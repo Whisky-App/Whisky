@@ -8,9 +8,6 @@
 import Foundation
 
 public class GPTKInstaller {
-    // Grab the WineBinaryVersion int from Info.plist
-    public static let WineBinaryVersion = Bundle.main.infoDictionary?["WineBinaryVersion"] as? Int ?? 0
-
     public static let libraryFolder = FileManager.default.urls(for: .applicationSupportDirectory,
                                                                in: .userDomainMask)[0]
         .appending(path: Bundle.main.bundleIdentifier ?? "com.isaacmarovitz.Whisky")
@@ -42,10 +39,6 @@ public class GPTKInstaller {
                 .appendingPathExtension("gz")
             try Tar.untar(tarBall: tarFile, toURL: whiskySupportFolder)
             try FileManager.default.removeItem(at: tarFile)
-
-            // Write the binary version to the build_version file
-            let buildVersionFile = libraryFolder.appending(path: "build_version")
-            try String(WineBinaryVersion).write(to: buildVersionFile, atomically: true, encoding: .utf8)
         } catch {
             print("Failed to install GPTK: \(error)")
         }
@@ -64,13 +57,9 @@ public class GPTKInstaller {
         }
     }
 
+    // TODO: Check WhiskyBuilder Repo for GPTK version
     public static func shouldUpdateGPTK() -> Bool {
-        // Read the build version from the Wine directory
-        let buildVersionFile = libraryFolder.appending(path: "build_version")
-        let currentVersion = try? String(contentsOf: buildVersionFile, encoding: .utf8)
-
-        // If the current version is not the same as the binary version, we need to update by calling install again
-        return currentVersion != String(WineBinaryVersion)
+        return false
     }
 
     public static func gptkVersion() -> String? {
@@ -90,6 +79,7 @@ public class GPTKInstaller {
             let info = try decoder.decode(VersionInfo.self, from: data)
             return info.CFBundleShortVersionString
         } catch {
+            print(error)
             return nil
         }
     }
