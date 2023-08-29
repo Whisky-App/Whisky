@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import SemanticVersion
 
 public class GPTKInstaller {
     public static let libraryFolder = FileManager.default.urls(for: .applicationSupportDirectory,
@@ -57,8 +58,44 @@ public class GPTKInstaller {
         }
     }
 
-    // TODO: Check WhiskyBuilder Repo for GPTK version
-    public static func shouldUpdateGPTK() -> Bool {
+    public static func shouldUpdateGPTK() async -> Bool {
+        let decoder = PropertyListDecoder()
+        let versionPlist = libraryFolder
+            .appending(path: "GPTKVersion")
+            .appendingPathExtension("plist")
+
+        do {
+            let localData = try Data(contentsOf: versionPlist)
+            let localInfo = try decoder.decode(GPTKVersion.self, from: localData)
+            let localVersion = localInfo.version
+            let githubURL = "https://raw.githubusercontent.com/Whisky-App/WhiskyBuilder/main/GPTKVersion.plist"
+
+            if let remoteUrl = URL(string: githubURL) {
+                return await withCheckedContinuation { continuation in
+                    URLSession.shared.dataTask(with: URLRequest(url: remoteUrl)) { data, _, error in
+                        do {
+                            if error == nil, let data = data {
+                                let remoteInfo = try decoder.decode(GPTKVersion.self, from: data)
+                                let remoteVersion = remoteInfo.version
+
+                                let isRemoteNewer = remoteVersion > localVersion
+                                continuation.resume(returning: isRemoteNewer)
+                                return
+                            }
+                            if let error = error {
+                                print(error)
+                            }
+                        } catch {
+                            print(error)
+                        }
+                        continuation.resume(returning: false)
+                    }.resume()
+                }
+            }
+        } catch {
+            print(error)
+        }
+
         return false
     }
 
@@ -87,4 +124,8 @@ public class GPTKInstaller {
 
 struct VersionInfo: Codable {
     let CFBundleShortVersionString: String
+}
+
+struct GPTKVersion: Codable {
+    var version: SemanticVersion = SemanticVersion(1, 0, 0)
 }

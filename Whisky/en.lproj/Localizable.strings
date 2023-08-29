@@ -113,5 +113,9 @@
 "setup.gptk.install" = "Installing GPTK";
 "setup.gptk.install.subtitle" = "Almost there. Don't tune out yet.";
 
+"update.gptk.title" = "New Version of GPTK Available";
+"update.gptk.description" = "You are running GPTK version %@, but %@ is available. Would you like to update?";
+"update.gptk.update" = "Update";
+
 "winetricks.title" = "Run Winetricks command";
 "button.winetricks" = "Winetricks...";

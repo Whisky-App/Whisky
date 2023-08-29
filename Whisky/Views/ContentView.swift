@@ -105,9 +105,25 @@ struct ContentView: View {
             if !GPTKInstaller.isGPTKInstalled() {
                 showSetup = true
             }
-            if GPTKInstaller.shouldUpdateGPTK() {
-                GPTKInstaller.uninstall()
-                showSetup = true
+            Task.detached {
+                if await GPTKInstaller.shouldUpdateGPTK() {
+                    await MainActor.run {
+                        let alert = NSAlert()
+                        alert.messageText = String(localized: "update.gptk.title")
+                        alert.informativeText = String(format: String(localized: "update.gptk.description"),
+                                                       "0.0.0", "0.0.0")
+                        alert.alertStyle = .warning
+                        alert.addButton(withTitle: String(localized: "update.gptk.update"))
+                        alert.addButton(withTitle: String(localized: "button.deleteAlert.cancel"))
+
+                        let response = alert.runModal()
+
+                        if response == .alertFirstButtonReturn {
+                            GPTKInstaller.uninstall()
+                            showSetup = true
+                        }
+                    }
+                }
             }
         }
     }
