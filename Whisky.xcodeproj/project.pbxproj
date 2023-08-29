@@ -360,20 +360,20 @@
 		6EDF9AAA2A9A6CA9006CAA7E /* WhiskyKit */ = {
 			isa = PBXGroup;
 			children = (
-				6EDF9AC42A9A6FB5006CAA7E /* Wine */,
+				6EDF9AC42A9A6FB5006CAA7E /* GPTK */,
 				6EDF9AB52A9A6D8C006CAA7E /* BottleData.swift */,
 				6E0822852A39D73800195094 /* Tar.swift */,
 			);
 			path = WhiskyKit;
 			sourceTree = "<group>";
 		};
-		6EDF9AC42A9A6FB5006CAA7E /* Wine */ = {
+		6EDF9AC42A9A6FB5006CAA7E /* GPTK */ = {
 			isa = PBXGroup;
 			children = (
 				6EF557952A40B8D1001A4F09 /* GPTKDownloader.swift */,
 				6E0822862A39D73800195094 /* GPTKInstaller.swift */,
 			);
-			path = Wine;
+			path = GPTK;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
