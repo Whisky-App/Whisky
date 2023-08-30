@@ -16,12 +16,13 @@
 "button.renameBottle" = "Rename";
 "button.moveBottle" = "Move";
 "button.exportBottle" = "Export as Archive";
-"button.deleteBottle" = "Delete...";
+"button.removeAlert" = "Remove...";
 "button.createBottle" = "Create Bottle";
-"button.deleteAlert.msg" = "Delete %@?";
-"button.deleteAlert.info" = "Are you sure you want to delete this bottle? This action is permanent.";
-"button.deleteAlert.delete" = "Delete";
-"button.deleteAlert.cancel" = "Cancel";
+"button.removeAlert.msg" = "Remove %@?";
+"button.removeAlert.info" = "Are you sure you want to remove this bottle? This action is permanent.";
+"button.removeAlert.checkbox" = "Delete files from disk";
+"button.removeAlert.delete" = "Remove";
+"button.removeAlert.cancel" = "Cancel";
 
 "config.winVersion" = "Windows Version";
 "config.buildVersion" = "Build Version";
@@ -58,7 +59,6 @@
 "info.title" = "Info";
 "info.path" = "Path";
 "info.path.copy" = "Copy Path";
-"info.winPath.copy" = "Copy Windows Path";
 "info.wine" = "Wine Version";
 "info.win" = "Windows Version";
 "info.gptk" = "GPTK Version";
@@ -86,6 +86,7 @@
 "open.logs" = "Open Logs Folder";
 "open.bottle" = "Import Bottle";
 "open.setup" = "Setup...";
+"install.cli" = "Install Whisky CLI...";
 "wine.clearShaderCaches" = "Clear Shader Caches";
 
 "showAlertOnFirstLaunch.messageText" = "Would you like to move Whisky to your Applications folder?";
@@ -104,18 +105,17 @@
 "setup.rosetta" = "Installing Rosetta";
 "setup.rosetta.subtitle" = "Rosetta allows x86 code, like Wine, to run on your Mac.";
 
-"setup.wine.download" = "Downloading Wine";
-"setup.wine.download.subtitle" = "Speeds will vary on your internet connection.";
-"setup.wine.progress" = "%@ of %@";
-"setup.wine.eta" = "- %@ remaining";
+"setup.gptk.download" = "Downloading GPTK";
+"setup.gptk.download.subtitle" = "Speeds will vary on your internet connection.";
+"setup.gptk.progress" = "%@ of %@";
+"setup.gptk.eta" = "- %@ remaining";
 
-"setup.wine.install" = "Installing Wine";
-"setup.wine.install.subtitle" = "Almost there. Don't tune out yet.";
+"setup.gptk.install" = "Installing GPTK";
+"setup.gptk.install.subtitle" = "Almost there. Don't tune out yet.";
 
-"setup.gptk" = "Installing GPTK";
-
-"alert.macos" = "Unsupported macOS Version!";
-"alert.macos.info" = "macOS Ventura is not officially supported by GPTK. Issues may occur!";
+"update.gptk.title" = "New Version of GPTK Available";
+"update.gptk.description" = "You are running GPTK %@, but %@ is available. Would you like to update?";
+"update.gptk.update" = "Update";
 
 "winetricks.title" = "Run Winetricks command";
 "button.winetricks" = "Winetricks...";
