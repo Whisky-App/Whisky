@@ -40,7 +40,6 @@
 		6E6C0CF82A419A8C00356232 /* GPTKInstallView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E6C0CF72A419A8C00356232 /* GPTKInstallView.swift */; };
 		6E70A49B2A9A2197007799E9 /* Main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E70A49A2A9A2197007799E9 /* Main.swift */; };
 		6E70A4A12A9A280C007799E9 /* WhiskyCmd.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E70A4A02A9A280C007799E9 /* WhiskyCmd.swift */; };
-		6E70A4A42A9A2B50007799E9 /* WhiskyCmd in Resources */ = {isa = PBXBuildFile; fileRef = 6E70A4982A9A2197007799E9 /* WhiskyCmd */; };
 		6E8A3B3E2A3613F400D19632 /* PortableExecutable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E8A3B3D2A3613F400D19632 /* PortableExecutable.swift */; };
 		6E8A3B402A36140300D19632 /* ResourceSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E8A3B3F2A36140300D19632 /* ResourceSection.swift */; };
 		6EA2D47E29DDAE5E00C84668 /* BottleRenameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EA2D47D29DDAE5E00C84668 /* BottleRenameView.swift */; };
@@ -530,7 +529,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6E70A4A42A9A2B50007799E9 /* WhiskyCmd in Resources */,
 				6E355E4F29D74DE0002D83BE /* Localizable.strings in Resources */,
 				6E40495D29CCA19C006E3F1B /* Preview Assets.xcassets in Resources */,
 				6E40495A29CCA19C006E3F1B /* Assets.xcassets in Resources */,
