@@ -144,18 +144,22 @@ public class Bottle: Hashable, Identifiable {
     }
 
     @MainActor
-    func delete() {
+    func remove(delete: Bool) {
         do {
             if let bottle = BottleVM.shared.bottles.first(where: { $0.url == url }) {
                 bottle.inFlight = true
             }
-            try FileManager.default.removeItem(at: url)
+
+            if delete {
+                try FileManager.default.removeItem(at: url)
+            }
+
             if let path = BottleVM.shared.bottlesList.paths.firstIndex(of: url) {
                 BottleVM.shared.bottlesList.paths.remove(at: path)
             }
             BottleVM.shared.loadBottles()
         } catch {
-            print("Failed to delete bottle")
+            print("Failed to remove bottle")
         }
     }
 

@@ -183,21 +183,23 @@ struct BottleListEntry: View {
                     }
                 }
                 Divider()
-                Button("button.deleteBottle") {
-                    showDeleteAlert(bottle: bottle)
+                Button("button.removeAlert") {
+                    showRemoveAlert(bottle: bottle)
                 }
             }
     }
 
-    func showDeleteAlert(bottle: Bottle) {
+    func showRemoveAlert(bottle: Bottle) {
+        let checkbox = NSButton(checkboxWithTitle: "button.removeAlert.checkbox", target: self, action: nil)
         let alert = NSAlert()
-        alert.messageText = String(format: String(localized: "button.deleteAlert.msg"),
+        alert.messageText = String(format: String(localized: "button.removeAlert.msg"),
                                    bottle.settings.name)
-        alert.informativeText = String(localized: "button.deleteAlert.info")
+        alert.informativeText = String(localized: "button.removeAlert.info")
         alert.alertStyle = .warning
-        let delete = alert.addButton(withTitle: String(localized: "button.deleteAlert.delete"))
+        let delete = alert.addButton(withTitle: String(localized: "button.removeAlert.delete"))
         delete.hasDestructiveAction = true
-        alert.addButton(withTitle: String(localized: "button.deleteAlert.cancel"))
+        alert.addButton(withTitle: String(localized: "button.removeAlert.cancel"))
+        alert.accessoryView = checkbox
 
         let response = alert.runModal()
 
@@ -206,7 +208,7 @@ struct BottleListEntry: View {
                 if selected == bottle.url {
                     selected = nil
                 }
-                await bottle.delete()
+                await bottle.remove(delete: checkbox.state == .on)
             }
         }
     }

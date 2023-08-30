@@ -16,12 +16,13 @@
 "button.renameBottle" = "Rename";
 "button.moveBottle" = "Move";
 "button.exportBottle" = "Export as Archive";
-"button.deleteBottle" = "Delete...";
+"button.removeAlert" = "Remove...";
 "button.createBottle" = "Create Bottle";
-"button.deleteAlert.msg" = "Delete %@?";
-"button.deleteAlert.info" = "Are you sure you want to delete this bottle? This action is permanent.";
-"button.deleteAlert.delete" = "Delete";
-"button.deleteAlert.cancel" = "Cancel";
+"button.removeAlert.msg" = "Remove %@?";
+"button.removeAlert.info" = "Are you sure you want to remove this bottle? This action is permanent.";
+"button.removeAlert.checkbox" = "Delete files from disk";
+"button.removeAlert.delete" = "Remove";
+"button.removeAlert.cancel" = "Cancel";
 
 "config.winVersion" = "Windows Version";
 "config.buildVersion" = "Build Version";
