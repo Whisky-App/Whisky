@@ -249,6 +249,12 @@ class Wine {
                              bottle: bottle)
     }
 
+    @discardableResult
+    static func runBatchFile(url: URL, bottle: Bottle) async throws -> String {
+        return try await run(["cmd", "/c", url.path(percentEncoded: false)],
+                             bottle: bottle)
+    }
+
     static func killBottle(bottle: Bottle) throws {
         return try runWineserver(["-k"], bottle: bottle)
     }

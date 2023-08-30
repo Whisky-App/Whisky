@@ -137,7 +137,8 @@ struct BottleView: View {
                     panel.canChooseDirectories = false
                     panel.canChooseFiles = true
                     panel.allowedContentTypes = [UTType.exe,
-                                                 UTType(importedAs: "com.microsoft.msi-installer")]
+                                                 UTType(importedAs: "com.microsoft.msi-installer"),
+                                                 UTType(importedAs: "com.microsoft.bat")]
                     panel.directoryURL = bottle.url.appending(path: "drive_c")
                     panel.begin { result in
                         programLoading = true
@@ -145,7 +146,11 @@ struct BottleView: View {
                             if result == .OK {
                                 if let url = panel.urls.first {
                                     do {
-                                        try await Wine.runExternalProgram(url: url, bottle: bottle)
+                                        if url.pathExtension == "bat" {
+                                            try await Wine.runBatchFile(url: url, bottle: bottle)
+                                        } else {
+                                            try await Wine.runExternalProgram(url: url, bottle: bottle)
+                                        }
                                     } catch {
                                         print("Failed to run external program: \(error)")
                                     }
