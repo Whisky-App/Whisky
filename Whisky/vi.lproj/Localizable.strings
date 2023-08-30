@@ -16,12 +16,13 @@
 "button.renameBottle" = "Đổi tên";
 "button.moveBottle" = "Di chuyển bottle";
 "button.exportBottle" = "Lưu bottle ra file";
-"button.deleteBottle" = "Xoá...";
+"button.removeAlert" = "Remove...";
 "button.createBottle" = "Tạo Bottle";
-"button.deleteAlert.msg" = "Xoá %@?";
-"button.deleteAlert.info" = "Bạn có muốn xoá bottle này không? Hành động này không thể bị huỷ.";
-"button.deleteAlert.delete" = "Xoá";
-"button.deleteAlert.cancel" = "Huỷ";
+"button.removeAlert.msg" = "Remove %@?";
+"button.removeAlert.info" = "Are you sure you want to remove this bottle? This action is permanent.";
+"button.removeAlert.checkbox" = "Delete files from disk";
+"button.removeAlert.delete" = "Remove";
+"button.removeAlert.cancel" = "Cancel";
 
 "config.winVersion" = "Phiên bản Windows";
 "config.buildVersion" = "Bản dựng";
@@ -85,6 +86,7 @@
 "open.logs" = "Mở Folder Log";
 "open.bottle" = "Nhập Bottle";
 "open.setup" = "Thiết lập...";
+"install.cli" = "Install Whisky CLI...";
 "wine.clearShaderCaches" = "Xoá cache shader";
 
 "showAlertOnFirstLaunch.messageText" = "Bạn có muốn chuyển Whisky tới folder Applications?";
@@ -110,6 +112,10 @@
 
 "setup.gptk.install" = "Đang cài đặt Wine";
 "setup.gptk.install.subtitle" = "Cài đặt sắp hoàn tất.";
+
+"update.gptk.title" = "New Version of GPTK Available";
+"update.gptk.description" = "You are running GPTK %@, but %@ is available. Would you like to update?";
+"update.gptk.update" = "Update";
 
 "winetricks.title" = "Chạy lệnh Winetricks";
 "button.winetricks" = "Winetricks...";
