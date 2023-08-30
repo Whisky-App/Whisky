@@ -16,12 +16,13 @@
 "button.renameBottle" = "Hernoemen";
 "button.moveBottle" = "Verplaats";
 "button.exportBottle" = "Exporteer als archief";
-"button.deleteBottle" = "Verwijderen...";
+"button.removeAlert" = "Remove...";
 "button.createBottle" = "Fles maken";
-"button.deleteAlert.msg" = "Verwijder %@?";
-"button.deleteAlert.info" = "Weet u zeker dat u deze fles wilt verwijderen? Deze actie is permanent.";
-"button.deleteAlert.delete" = "Verwijder";
-"button.deleteAlert.cancel" = "Annuleren";
+"button.removeAlert.msg" = "Remove %@?";
+"button.removeAlert.info" = "Are you sure you want to remove this bottle? This action is permanent.";
+"button.removeAlert.checkbox" = "Delete files from disk";
+"button.removeAlert.delete" = "Remove";
+"button.removeAlert.cancel" = "Cancel";
 
 "config.winVersion" = "Windows-versie";
 "config.buildVersion" = "Build-versie";
@@ -85,6 +86,7 @@
 "open.logs" = "Open Logs map";
 "open.bottle" = "Importeer Fles";
 "open.setup" = "Installatie...";
+"install.cli" = "Install Whisky CLI...";
 "wine.clearShaderCaches" = "Verwijder shader caches";
 
 "showAlertOnFirstLaunch.messageText" = "Wilt u Whiskey verplaatsen naar uw map Toepassingen?";
@@ -110,6 +112,10 @@
 
 "setup.gptk.install" = "Wine installeren";
 "setup.gptk.install.subtitle" = "Bijna daar. Nog niet weg gaan.";
+
+"update.gptk.title" = "New Version of GPTK Available";
+"update.gptk.description" = "You are running GPTK %@, but %@ is available. Would you like to update?";
+"update.gptk.update" = "Update";
 
 "winetricks.title" = "Voer Winetricks commando uit";
 "button.winetricks" = "Winetricks...";
