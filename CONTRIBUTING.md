@@ -14,7 +14,11 @@ Generally, it is not advised to disable a SwiftLint rule, but there are certain 
 
 SwiftLint does not fully check indentation, but we ask that you indent with 4-width spaces. This can be automatically configured in Xcode's settings.
 
-All added strings must be properly localised and added to the EN strings file. Do not add keys for other languages or translate within your PR. All translation should be handled on [Crowdin](https://crowdin.com/project/whisky).
+All added strings must be properly localised and added to the EN strings file. Do not add keys for other languages or translate within your PR. All translations should be handled on [Crowdin](https://crowdin.com/project/whisky).
+
+# Making your PR
+
+Please provide a detailed description of your changes in your PR. If your commits contain UI changes, we ask that you provide screenshots.
 
 # Review
 
