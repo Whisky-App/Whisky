@@ -16,12 +16,13 @@
 "button.renameBottle" = "이름 변경";
 "button.moveBottle" = "이동";
 "button.exportBottle" = "아카이브로 내보내기";
-"button.deleteBottle" = "삭제...";
+"button.removeAlert" = "Remove...";
 "button.createBottle" = "Bottle 생성";
-"button.deleteAlert.msg" = "%@을(를) 삭제하시겠습니까?";
-"button.deleteAlert.info" = "정말로 이 Bottle을 삭제하시겠습니까? 이 행동은 되돌릴 수 없습니다.";
-"button.deleteAlert.delete" = "삭제";
-"button.deleteAlert.cancel" = "취소";
+"button.removeAlert.msg" = "Remove %@?";
+"button.removeAlert.info" = "Are you sure you want to remove this bottle? This action is permanent.";
+"button.removeAlert.checkbox" = "Delete files from disk";
+"button.removeAlert.delete" = "Remove";
+"button.removeAlert.cancel" = "Cancel";
 
 "config.winVersion" = "Windows 버전";
 "config.buildVersion" = "빌드 버전";
@@ -85,6 +86,7 @@
 "open.logs" = "로그 폴더 열기";
 "open.bottle" = "Bottle 불러오기";
 "open.setup" = "설치...";
+"install.cli" = "Install Whisky CLI...";
 "wine.clearShaderCaches" = "셰이더 캐시 초기화";
 
 "showAlertOnFirstLaunch.messageText" = "Whisky를 애플리케이션 폴더로 옮기시겠습니까?";
@@ -110,6 +112,10 @@
 
 "setup.gptk.install" = "와인 설치 중";
 "setup.gptk.install.subtitle" = "거의 다 왔어요. 아직 끄지 마세요.";
+
+"update.gptk.title" = "New Version of GPTK Available";
+"update.gptk.description" = "You are running GPTK %@, but %@ is available. Would you like to update?";
+"update.gptk.update" = "Update";
 
 "winetricks.title" = "Winetricks 명령어 실행";
 "button.winetricks" = "Winetricks...";
