@@ -16,13 +16,13 @@
 "button.renameBottle" = "Renommer";
 "button.moveBottle" = "Transférer";
 "button.exportBottle" = "Exporter Archive";
-"button.removeAlert" = "Remove...";
+"button.removeAlert" = "Supprimer...";
 "button.createBottle" = "Créer une bouteille";
-"button.removeAlert.msg" = "Remove %@?";
-"button.removeAlert.info" = "Are you sure you want to remove this bottle? This action is permanent.";
-"button.removeAlert.checkbox" = "Delete files from disk";
-"button.removeAlert.delete" = "Remove";
-"button.removeAlert.cancel" = "Cancel";
+"button.removeAlert.msg" = "Supprimer %@?";
+"button.removeAlert.info" = "Êtes-vous sûr de vouloir supprimer cette bouteille ? Cette action est définitive.";
+"button.removeAlert.checkbox" = "Supprimer les fichiers du disque";
+"button.removeAlert.delete" = "Supprimer";
+"button.removeAlert.cancel" = "Annuler";
 
 "config.winVersion" = "Version de Windows";
 "config.buildVersion" = "Version de Build";
