@@ -16,13 +16,13 @@
 "button.renameBottle" = "이름 변경";
 "button.moveBottle" = "이동";
 "button.exportBottle" = "아카이브로 내보내기";
-"button.removeAlert" = "Remove...";
+"button.removeAlert" = "삭제...";
 "button.createBottle" = "Bottle 생성";
-"button.removeAlert.msg" = "Remove %@?";
-"button.removeAlert.info" = "Are you sure you want to remove this bottle? This action is permanent.";
-"button.removeAlert.checkbox" = "Delete files from disk";
-"button.removeAlert.delete" = "Remove";
-"button.removeAlert.cancel" = "Cancel";
+"button.removeAlert.msg" = "%@을(를) 삭제하시겠습니까?";
+"button.removeAlert.info" = "정말로 이 Bottle을 삭제하시겠습니까? 이 행동은 되돌릴 수 없습니다.";
+"button.removeAlert.checkbox" = "디스크에서 파일 삭제";
+"button.removeAlert.delete" = "삭제";
+"button.removeAlert.cancel" = "취소";
 
 "config.winVersion" = "Windows 버전";
 "config.buildVersion" = "빌드 버전";
@@ -86,7 +86,7 @@
 "open.logs" = "로그 폴더 열기";
 "open.bottle" = "Bottle 불러오기";
 "open.setup" = "설치...";
-"install.cli" = "Install Whisky CLI...";
+"install.cli" = "Whisky CLI 설치...";
 "wine.clearShaderCaches" = "셰이더 캐시 초기화";
 
 "showAlertOnFirstLaunch.messageText" = "Whisky를 애플리케이션 폴더로 옮기시겠습니까?";
@@ -105,17 +105,17 @@
 "setup.rosetta" = "Rosetta를 설치 중입니다.";
 "setup.rosetta.subtitle" = "Rosetta는 Wine과 같은 x86 코드를 당신의 Mac에서 실행할 수 있게 해 줍니다.";
 
-"setup.gptk.download" = "GPTK을 다운로드 중입니다.";
+"setup.gptk.download" = "GPTK를 다운로드 중입니다.";
 "setup.gptk.download.subtitle" = "속도는 인터넷 연결 상태에 따라 달라질 수 있습니다.";
 "setup.gptk.progress" = "%2$@ 중 %1$@";
 "setup.gptk.eta" = "- %@ 남음";
 
-"setup.gptk.install" = "와인 설치 중";
+"setup.gptk.install" = "GPTK 설치 중";
 "setup.gptk.install.subtitle" = "거의 다 왔어요. 아직 끄지 마세요.";
 
-"update.gptk.title" = "New Version of GPTK Available";
-"update.gptk.description" = "You are running GPTK %@, but %@ is available. Would you like to update?";
-"update.gptk.update" = "Update";
+"update.gptk.title" = "새로운 버전의 GPTK를 사용할 수 있습니다";
+"update.gptk.description" = "GPTK %@ 버전을 사용 중이지만 %@ 버전을 사용할 수 있습니다. 업데이트하시겠습니까?";
+"update.gptk.update" = "업데이트";
 
 "winetricks.title" = "Winetricks 명령어 실행";
 "button.winetricks" = "Winetricks...";
