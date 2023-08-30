@@ -16,12 +16,13 @@
 "button.renameBottle" = "Nimeä uudelleen";
 "button.moveBottle" = "Siirrä";
 "button.exportBottle" = "Vie arkistona";
-"button.deleteBottle" = "Poista...";
+"button.removeAlert" = "Remove...";
 "button.createBottle" = "Luo pullo";
-"button.deleteAlert.msg" = "Poista %@?";
-"button.deleteAlert.info" = "Oletko varma, että haluat poistaa tämän pullon? Tämä on pysyvä muutos.";
-"button.deleteAlert.delete" = "Poista";
-"button.deleteAlert.cancel" = "Peru";
+"button.removeAlert.msg" = "Remove %@?";
+"button.removeAlert.info" = "Are you sure you want to remove this bottle? This action is permanent.";
+"button.removeAlert.checkbox" = "Delete files from disk";
+"button.removeAlert.delete" = "Remove";
+"button.removeAlert.cancel" = "Cancel";
 
 "config.winVersion" = "Windows versio";
 "config.buildVersion" = "Ohjelmistoversio";
@@ -85,6 +86,7 @@
 "open.logs" = "Avaa log kansio";
 "open.bottle" = "Tuo pullo";
 "open.setup" = "Asennus...";
+"install.cli" = "Install Whisky CLI...";
 "wine.clearShaderCaches" = "Clear Shader Caches";
 
 "showAlertOnFirstLaunch.messageText" = "Haluatko siirtää Whiskyn Applikaatio-kansioon?";
@@ -110,6 +112,10 @@
 
 "setup.gptk.install" = "Asennetaan GPTK";
 "setup.gptk.install.subtitle" = "Melkein valmista. Älä karkaa vielä.";
+
+"update.gptk.title" = "New Version of GPTK Available";
+"update.gptk.description" = "You are running GPTK %@, but %@ is available. Would you like to update?";
+"update.gptk.update" = "Update";
 
 "winetricks.title" = "Suorita Winetricks komento";
 "button.winetricks" = "Winetricks...";

@@ -16,12 +16,13 @@
 "button.renameBottle" = "名前の変更";
 "button.moveBottle" = "移動";
 "button.exportBottle" = "アーカイブとしてエクスポート";
-"button.deleteBottle" = "削除...";
+"button.removeAlert" = "Remove...";
 "button.createBottle" = "Bottle を作成";
-"button.deleteAlert.msg" = "%@ を削除しますか？";
-"button.deleteAlert.info" = "この Bottle を削除してもよろしいですか？ この操作は取り消せません。";
-"button.deleteAlert.delete" = "削除";
-"button.deleteAlert.cancel" = "キャンセル";
+"button.removeAlert.msg" = "Remove %@?";
+"button.removeAlert.info" = "Are you sure you want to remove this bottle? This action is permanent.";
+"button.removeAlert.checkbox" = "Delete files from disk";
+"button.removeAlert.delete" = "Remove";
+"button.removeAlert.cancel" = "Cancel";
 
 "config.winVersion" = "Windows のバージョン";
 "config.buildVersion" = "ビルド番号";
@@ -85,6 +86,7 @@
 "open.logs" = "ログフォルダを開く";
 "open.bottle" = "Bottle をインポート";
 "open.setup" = "セットアップ...";
+"install.cli" = "Install Whisky CLI...";
 "wine.clearShaderCaches" = "シェーダーのキャッシュを消去";
 
 "showAlertOnFirstLaunch.messageText" = "Whisky を「アプリケーション」フォルダに移動しますか？";
@@ -110,6 +112,10 @@
 
 "setup.gptk.install" = "GPTK をインストール中";
 "setup.gptk.install.subtitle" = "あと少しです。そのままお待ち下さい。";
+
+"update.gptk.title" = "New Version of GPTK Available";
+"update.gptk.description" = "You are running GPTK %@, but %@ is available. Would you like to update?";
+"update.gptk.update" = "Update";
 
 "winetricks.title" = "Winetricks コマンドを実行";
 "button.winetricks" = "Winetricks...";
