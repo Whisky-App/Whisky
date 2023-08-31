@@ -40,6 +40,10 @@ Whisky is on homebrew! Install with
 
 # FAQ
 
+### Do I need macOS Sonoma?
+
+Yes, you do.
+
 ### Do I need to follow the steps in the toolkit's README?
 
 No, you don't, in fact you shouldn't follow them.
