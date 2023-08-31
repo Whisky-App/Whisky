@@ -19,7 +19,7 @@
 "button.removeAlert" = "Borrar...";
 "button.createBottle" = "Crear Botella";
 "button.removeAlert.msg" = "Borrar %@?";
-"button.removeAlert.info" = "Are you sure you want to remove this bottle? This action is permanent.";
+"button.removeAlert.info" = "¿Estás seguro de que quieres eliminar esta botella? Esta acción es permanente.";
 "button.removeAlert.checkbox" = "Borrar archivos del disco";
 "button.removeAlert.delete" = "Borrar";
 "button.removeAlert.cancel" = "Cancelar";
@@ -114,7 +114,7 @@
 "setup.gptk.install.subtitle" = "Un momento, ya casi está.";
 
 "update.gptk.title" = "Nueva versión de GPTK disponible";
-"update.gptk.description" = "You are running GPTK %@, but %@ is available. Would you like to update?";
+"update.gptk.description" = "Estás ejecutando GPTK %@, pero %@ está disponible. ¿Quieres actualizar?";
 "update.gptk.update" = "Actualizar";
 
 "winetricks.title" = "Ejecutar comando de Winetricks";
