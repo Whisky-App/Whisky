@@ -45,7 +45,6 @@ Whisky is on homebrew! Install with
 - Requires [Apple Silicon](https://support.apple.com/en-us/HT211814)
 - OS: macOS Sonoma or later
 
-
 ### Do I need to follow the steps in the toolkit's README?
 
 No, you don't, in fact you shouldn't follow them.
