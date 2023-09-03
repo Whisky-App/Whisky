@@ -16,13 +16,13 @@
 "button.renameBottle" = "Rinomina";
 "button.moveBottle" = "Sposta";
 "button.exportBottle" = "Esporta come Archivio";
-"button.removeAlert" = "Remove...";
+"button.removeAlert" = "Rimuovi...";
 "button.createBottle" = "Crea Bottiglia";
-"button.removeAlert.msg" = "Remove %@?";
-"button.removeAlert.info" = "Are you sure you want to remove this bottle? This action is permanent.";
-"button.removeAlert.checkbox" = "Delete files from disk";
-"button.removeAlert.delete" = "Remove";
-"button.removeAlert.cancel" = "Cancel";
+"button.removeAlert.msg" = "Vuoi rimuovere %@?";
+"button.removeAlert.info" = "Sei sicuro di voler eliminare questa bottle? L'azione è permanente.";
+"button.removeAlert.checkbox" = "Elimina i file dal disco";
+"button.removeAlert.delete" = "Rimuovi";
+"button.removeAlert.cancel" = "Annulla";
 
 "config.winVersion" = "Versione di Windows";
 "config.buildVersion" = "Versione build";
@@ -86,7 +86,7 @@
 "open.logs" = "Apri la cartella dei log";
 "open.bottle" = "Importa Bottiglia";
 "open.setup" = "Setup...";
-"install.cli" = "Install Whisky CLI...";
+"install.cli" = "Installa Whisky CLI...";
 "wine.clearShaderCaches" = "Pulisci Cache Shader";
 
 "showAlertOnFirstLaunch.messageText" = "Vuoi spostare Whisky nella tua cartella Applicazioni?";
@@ -113,9 +113,9 @@
 "setup.gptk.install" = "Installando Wine";
 "setup.gptk.install.subtitle" = "Quasi fatto. Non disconnetterti ancora.";
 
-"update.gptk.title" = "New Version of GPTK Available";
-"update.gptk.description" = "You are running GPTK %@, but %@ is available. Would you like to update?";
-"update.gptk.update" = "Update";
+"update.gptk.title" = "Nuova versione di GPTK disponibile";
+"update.gptk.description" = "Stai utilizzando GPTK %@ ma %@ è disponibile. Vuoi aggiornare?";
+"update.gptk.update" = "Aggiornamento";
 
 "winetricks.title" = "Esegui comando Winetricks";
 "button.winetricks" = "Winetricks...";

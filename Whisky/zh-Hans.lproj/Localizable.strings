@@ -16,13 +16,13 @@
 "button.renameBottle" = "重命名";
 "button.moveBottle" = "移动";
 "button.exportBottle" = "导出为存档";
-"button.removeAlert" = "Remove...";
+"button.removeAlert" = "删除...";
 "button.createBottle" = "创建容器";
-"button.removeAlert.msg" = "Remove %@?";
-"button.removeAlert.info" = "Are you sure you want to remove this bottle? This action is permanent.";
-"button.removeAlert.checkbox" = "Delete files from disk";
-"button.removeAlert.delete" = "Remove";
-"button.removeAlert.cancel" = "Cancel";
+"button.removeAlert.msg" = "删除 %@？";
+"button.removeAlert.info" = "你确定要删除这个容器吗？这将是不可逆的。";
+"button.removeAlert.checkbox" = "从磁盘中删除文件";
+"button.removeAlert.delete" = "删除";
+"button.removeAlert.cancel" = "取消";
 
 "config.winVersion" = "Windows 版本";
 "config.buildVersion" = "构建版本";
@@ -86,7 +86,7 @@
 "open.logs" = "打开日志文件夹";
 "open.bottle" = "导入容器";
 "open.setup" = "安装...";
-"install.cli" = "Install Whisky CLI...";
+"install.cli" = "安装 Whisky CLI...";
 "wine.clearShaderCaches" = "清空 Shader 缓存";
 
 "showAlertOnFirstLaunch.messageText" = "你想要将 Whisky 移动到你的应用程序文件夹吗？";
@@ -113,9 +113,9 @@
 "setup.gptk.install" = "正在安装 GPTK";
 "setup.gptk.install.subtitle" = "就快完成了，请不要离开。";
 
-"update.gptk.title" = "New Version of GPTK Available";
-"update.gptk.description" = "You are running GPTK %@, but %@ is available. Would you like to update?";
-"update.gptk.update" = "Update";
+"update.gptk.title" = "可用的 GPTK 新版本";
+"update.gptk.description" = "您正在运行 GPTK %@，但 %@ 可用。您想要更新吗？";
+"update.gptk.update" = "更新";
 
 "winetricks.title" = "运行 Winetricks 命令";
 "button.winetricks" = "Winetrick...";
