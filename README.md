@@ -40,9 +40,11 @@ Whisky is on homebrew! Install with
 
 # FAQ
 
-### Do I need macOS Sonoma?
+### What are the System Requirements?
 
-Yes, you do.
+- Requires [apple silicon chip](https://support.apple.com/en-us/HT211814)
+- OS: macOS Sonoma (version 14) or later
+
 
 ### Do I need to follow the steps in the toolkit's README?
 
