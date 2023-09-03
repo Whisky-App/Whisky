@@ -42,8 +42,8 @@ Whisky is on homebrew! Install with
 
 ### What are the System Requirements?
 
-- Requires [Apple Silicon](https://support.apple.com/en-us/HT211814)
-- OS: macOS Sonoma or later
+- [Apple Silicon](https://support.apple.com/en-us/HT211814)
+- macOS Sonoma or later
 
 ### Do I need to follow the steps in the toolkit's README?
 
