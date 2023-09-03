@@ -28,11 +28,9 @@ struct WelcomeView: View {
             .padding(.horizontal)
             Spacer()
             Form {
-                if Arch.getArch() == .arm {
-                    InstallStatusView(isInstalled: $rosettaInstalled,
-                                      shouldCheckInstallStatus: $shouldCheckInstallStatus,
-                                      name: "Rosetta")
-                }
+                InstallStatusView(isInstalled: $rosettaInstalled,
+                                  shouldCheckInstallStatus: $shouldCheckInstallStatus,
+                                  name: "Rosetta")
                 InstallStatusView(isInstalled: $gptkInstalled,
                                   shouldCheckInstallStatus: $shouldCheckInstallStatus,
                                   showUninstall: true,
@@ -56,11 +54,9 @@ struct WelcomeView: View {
                 Button("Next") {
                     if let rosettaInstalled = rosettaInstalled,
                        let gptkInstalled = gptkInstalled {
-                        if Arch.getArch() == .arm {
-                            if !rosettaInstalled {
-                                path.append(.rosetta)
-                                return
-                            }
+                        if !rosettaInstalled {
+                            path.append(.rosetta)
+                            return
                         }
 
                         if !gptkInstalled {
