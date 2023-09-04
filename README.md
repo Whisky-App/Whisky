@@ -31,6 +31,10 @@ Translated on [Crowdin](https://crowdin.com/project/whisky).
 
 ---
 
+# System Requirements
+- CPU: Apple Silicon (M1/M2 and its variants)
+- OS: macOS Sonoma 14.0 or later
+
 # Homebrew
 
 Whisky is on homebrew! Install with 
