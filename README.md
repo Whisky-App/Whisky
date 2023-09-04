@@ -40,8 +40,6 @@ Translated on [Crowdin](https://crowdin.com/project/whisky).
 Whisky is on homebrew! Install with 
 `brew install --cask whisky`.
 
----
-
 # FAQ
 
 ### Do I need to follow the steps in the toolkit's README?
