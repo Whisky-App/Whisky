@@ -46,7 +46,6 @@ body:
     attributes:
       label: What version of macOS are you using?
       options:
-        - "Ventura (macOS 13)"
         - "Sonoma (macOS 14)"
     validations:
       required: true
