@@ -17,10 +17,10 @@ struct GPTKInstallView: View {
     var body: some View {
         VStack {
             VStack {
-                Text("setup.wine.install")
+                Text("setup.gptk.install")
                     .font(.title)
                     .fontWeight(.bold)
-                Text("setup.wine.install.subtitle")
+                Text("setup.gptk.install.subtitle")
                     .font(.subheadline)
                     .foregroundStyle(.secondary)
                 Spacer()
@@ -40,10 +40,15 @@ struct GPTKInstallView: View {
         }
         .frame(width: 400, height: 200)
         .onAppear {
-            Task {
+            Task.detached {
                 GPTKInstaller.install(from: tarLocation)
-                installing = false
-                proceed()
+                await MainActor.run {
+                    installing = false
+                }
+                sleep(2)
+                await MainActor.run {
+                    proceed()
+                }
             }
         }
     }
