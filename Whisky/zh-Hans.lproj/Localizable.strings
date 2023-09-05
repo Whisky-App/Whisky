@@ -97,6 +97,9 @@
 "setup.welcome" = "欢迎使用 Whisky";
 "setup.welcome.subtitle" = "让我们帮您安装好，这不会用很长时间。";
 
+"setup.title" = "Dependencies Setup";
+"setup.subtitle" = "Manage Whisky's required dependencies.";
+
 "setup.install.checking" = "正在检查 %@ 是否安装...";
 "setup.install.installed" = "%@ 已安装";
 "setup.install.notInstalled" = "%@ 未安装";
@@ -112,6 +115,10 @@
 
 "setup.gptk.install" = "正在安装 GPTK";
 "setup.gptk.install.subtitle" = "就快完成了，请不要离开。";
+
+"setup.quit" = "Quit";
+"setup.done" = "Done";
+"setup.next" = "Next";
 
 "update.gptk.title" = "可用的 GPTK 新版本";
 "update.gptk.description" = "您正在运行 GPTK %@，但 %@ 可用。您想要更新吗？";
