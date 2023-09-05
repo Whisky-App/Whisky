@@ -97,6 +97,9 @@
 "setup.welcome" = "Chào mừng đến với Whisky";
 "setup.welcome.subtitle" = "Let's get you set up. This won't take a minute.";
 
+"setup.title" = "Dependencies Setup";
+"setup.subtitle" = "Manage Whisky's required dependencies.";
+
 "setup.install.checking" = "Đang kiểm tra cài đặt %@...";
 "setup.install.installed" = "%@ đã được cài đặt";
 "setup.install.notInstalled" = "%@ chưa được cài đặt";
@@ -112,6 +115,10 @@
 
 "setup.gptk.install" = "Đang cài đặt Wine";
 "setup.gptk.install.subtitle" = "Cài đặt sắp hoàn tất.";
+
+"setup.quit" = "Quit";
+"setup.done" = "Done";
+"setup.next" = "Next";
 
 "update.gptk.title" = "New Version of GPTK Available";
 "update.gptk.description" = "You are running GPTK %@, but %@ is available. Would you like to update?";
