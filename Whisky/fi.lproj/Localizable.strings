@@ -97,6 +97,9 @@
 "setup.welcome" = "Tervetuloa käyttämään Whiskyä";
 "setup.welcome.subtitle" = "Valmistellaan perusominaisuudet. Tämä vie vain hetken.";
 
+"setup.title" = "Dependencies Setup";
+"setup.subtitle" = "Manage Whisky's required dependencies.";
+
 "setup.install.checking" = "Tarkistetaan %@ asennusta...";
 "setup.install.installed" = "%@ asennettu";
 "setup.install.notInstalled" = "%@ ei asennettu";
@@ -112,6 +115,10 @@
 
 "setup.gptk.install" = "Asennetaan GPTK";
 "setup.gptk.install.subtitle" = "Melkein valmista. Älä karkaa vielä.";
+
+"setup.quit" = "Quit";
+"setup.done" = "Done";
+"setup.next" = "Next";
 
 "update.gptk.title" = "New Version of GPTK Available";
 "update.gptk.description" = "You are running GPTK %@, but %@ is available. Would you like to update?";
