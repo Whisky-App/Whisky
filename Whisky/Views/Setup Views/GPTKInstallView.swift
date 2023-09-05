@@ -46,13 +46,12 @@ struct GPTKInstallView: View {
                     installing = false
                 }
                 sleep(2)
-                await MainActor.run {
-                    proceed()
-                }
+                await proceed()
             }
         }
     }
 
+    @MainActor
     func proceed() {
         showSetup = false
     }

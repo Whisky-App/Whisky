@@ -41,16 +41,32 @@ struct RosettaView: View {
         .frame(width: 400, height: 200)
         .onAppear {
             Rosetta2.launchRosettaInstaller()
+            var runCount = 0
             Timer.scheduledTimer(withTimeInterval: 1, repeats: true) { timer in
+                runCount += 1
+
                 if Rosetta2.isRosettaInstalled {
-                    installing = false
-                    proceed()
                     timer.invalidate()
+                    installing = false
+                    Task.detached {
+                        sleep(2)
+                        await proceed()
+                    }
+                }
+                if runCount >= 300 {
+                    // Timer has run for too long
+                    timer.invalidate()
+                    installing = false
+                    Task.detached {
+                        sleep(2)
+                        await proceed()
+                    }
                 }
             }
         }
     }
 
+    @MainActor
     func proceed() {
         if !GPTKInstaller.isGPTKInstalled() {
             path.append(.gptkDownload)
