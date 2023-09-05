@@ -98,7 +98,7 @@ struct ContentView: View {
             BottleCreationView(newlyCreatedBottleURL: $newlyCreatedBottleURL)
         }
         .sheet(isPresented: $showSetup) {
-            SetupView(showSetup: $showSetup)
+            SetupView(showSetup: $showSetup, firstTime: false)
         }
         .onAppear {
             bottleVM.loadBottles()

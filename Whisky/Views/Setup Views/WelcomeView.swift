@@ -14,16 +14,26 @@ struct WelcomeView: View {
     @State var shouldCheckInstallStatus: Bool = false
     @Binding var path: [SetupStage]
     @Binding var showSetup: Bool
+    var firstTime: Bool
 
     var body: some View {
         VStack {
             VStack {
-                Text("setup.welcome")
-                    .font(.title)
-                    .fontWeight(.bold)
-                Text("setup.welcome.subtitle")
-                    .font(.subheadline)
-                    .foregroundStyle(.secondary)
+                if firstTime {
+                    Text("setup.welcome")
+                        .font(.title)
+                        .fontWeight(.bold)
+                    Text("setup.welcome.subtitle")
+                        .font(.subheadline)
+                        .foregroundStyle(.secondary)
+                } else {
+                    Text("setup.title")
+                        .font(.title)
+                        .fontWeight(.bold)
+                    Text("setup.subtitle")
+                        .font(.subheadline)
+                        .foregroundStyle(.secondary)
+                }
             }
             .padding(.horizontal)
             Spacer()
@@ -46,14 +56,16 @@ struct WelcomeView: View {
             }
             Spacer()
             HStack {
-                Button("Quit") {
-                    exit(0)
-                }
-                .keyboardShortcut(.cancelAction)
-                Spacer()
-                Button("Next") {
-                    if let rosettaInstalled = rosettaInstalled,
-                       let gptkInstalled = gptkInstalled {
+                if let rosettaInstalled = rosettaInstalled,
+                   let gptkInstalled = gptkInstalled {
+                    if !rosettaInstalled || !gptkInstalled {
+                        Button("setup.quit") {
+                            exit(0)
+                        }
+                        .keyboardShortcut(.cancelAction)
+                    }
+                    Spacer()
+                    Button(rosettaInstalled && gptkInstalled ? "setup.done" : "setup.next") {
                         if !rosettaInstalled {
                             path.append(.rosetta)
                             return
@@ -66,8 +78,8 @@ struct WelcomeView: View {
 
                         showSetup = false
                     }
+                    .keyboardShortcut(.defaultAction)
                 }
-                .keyboardShortcut(.defaultAction)
             }
         }
         .frame(width: 400, height: 250)

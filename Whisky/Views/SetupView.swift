@@ -17,11 +17,12 @@ struct SetupView: View {
     @State private var path: [SetupStage] = []
     @State var tarLocation: URL = URL(fileURLWithPath: "")
     @Binding var showSetup: Bool
+    var firstTime: Bool = true
 
     var body: some View {
         VStack {
             NavigationStack(path: $path) {
-                WelcomeView(path: $path, showSetup: $showSetup)
+                WelcomeView(path: $path, showSetup: $showSetup, firstTime: firstTime)
                     .navigationBarBackButtonHidden(true)
                     .navigationDestination(for: SetupStage.self) { stage in
                         switch stage {
