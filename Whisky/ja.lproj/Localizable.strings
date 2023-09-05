@@ -97,6 +97,9 @@
 "setup.welcome" = "Whisky へようこそ";
 "setup.welcome.subtitle" = "セットアップをしましょう。1分以内に終わります。";
 
+"setup.title" = "Dependencies Setup";
+"setup.subtitle" = "Manage Whisky's required dependencies.";
+
 "setup.install.checking" = "%@ のインストールを確認しています...";
 "setup.install.installed" = "%@ がインストールされました";
 "setup.install.notInstalled" = "%@ が未インストール";
@@ -112,6 +115,10 @@
 
 "setup.gptk.install" = "GPTK をインストール中";
 "setup.gptk.install.subtitle" = "あと少しです。そのままお待ち下さい。";
+
+"setup.quit" = "Quit";
+"setup.done" = "Done";
+"setup.next" = "Next";
 
 "update.gptk.title" = "New Version of GPTK Available";
 "update.gptk.description" = "You are running GPTK %@, but %@ is available. Would you like to update?";
