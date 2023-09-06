@@ -251,7 +251,7 @@ class Wine {
     static func killBottle(bottle: Bottle) throws {
         return try runWineserver(["-k"], bottle: bottle)
     }
-    
+
     static func addShortcut(name: String, url: URL, bottle: Bottle) async throws {
         let shortcut = Shortcut(name: name, link: url)
         bottle.settings.shortcuts.append(shortcut)
