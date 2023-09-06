@@ -97,6 +97,9 @@
 "setup.welcome" = "Whisky에 오신 것을 환영합니다";
 "setup.welcome.subtitle" = "설정하는 것을 도와드리겠습니다. 얼마 걸리지 않을 거예요.";
 
+"setup.title" = "Dependencies Setup";
+"setup.subtitle" = "Manage Whisky's required dependencies.";
+
 "setup.install.checking" = "%@ 설치를 확인하는 중입니다...";
 "setup.install.installed" = "%@ 설치됨";
 "setup.install.notInstalled" = "%@ 설치되지 않음";
@@ -112,6 +115,10 @@
 
 "setup.gptk.install" = "GPTK 설치 중";
 "setup.gptk.install.subtitle" = "거의 다 왔어요. 아직 끄지 마세요.";
+
+"setup.quit" = "Quit";
+"setup.done" = "Done";
+"setup.next" = "Next";
 
 "update.gptk.title" = "새로운 버전의 GPTK를 사용할 수 있습니다";
 "update.gptk.description" = "GPTK %@ 버전을 사용 중이지만 %@ 버전을 사용할 수 있습니다. 업데이트하시겠습니까?";

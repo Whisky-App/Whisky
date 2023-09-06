@@ -97,6 +97,9 @@
 "setup.welcome" = "Whisky'ye Hoşgeldiniz";
 "setup.welcome.subtitle" = "Hadi seni hazırlayalım. Bu çok da uzun sürmeyecek.";
 
+"setup.title" = "Dependencies Setup";
+"setup.subtitle" = "Manage Whisky's required dependencies.";
+
 "setup.install.checking" = "%@ kontrol ediliyor...";
 "setup.install.installed" = "%@ yüklendi";
 "setup.install.notInstalled" = "%@ yüklü değil";
@@ -112,6 +115,10 @@
 
 "setup.gptk.install" = "Wine Yükleniyor";
 "setup.gptk.install.subtitle" = "Bitmek üzere. Lütfen Kapatmayınız.";
+
+"setup.quit" = "Quit";
+"setup.done" = "Done";
+"setup.next" = "Next";
 
 "update.gptk.title" = "New Version of GPTK Available";
 "update.gptk.description" = "You are running GPTK %@, but %@ is available. Would you like to update?";
