@@ -14,15 +14,15 @@
 "button.run" = "Kør program...";
 "button.ok" = "OK";
 "button.renameBottle" = "Omdøb";
-"button.moveBottle" = "Move";
-"button.exportBottle" = "Export as Archive";
-"button.removeAlert" = "Remove...";
+"button.moveBottle" = "Flyt";
+"button.exportBottle" = "Eksporter som arkiv";
+"button.removeAlert" = "Fjern...";
 "button.createBottle" = "Opret Bottle";
-"button.removeAlert.msg" = "Remove %@?";
-"button.removeAlert.info" = "Are you sure you want to remove this bottle? This action is permanent.";
-"button.removeAlert.checkbox" = "Delete files from disk";
-"button.removeAlert.delete" = "Remove";
-"button.removeAlert.cancel" = "Cancel";
+"button.removeAlert.msg" = "Fjern %@?";
+"button.removeAlert.info" = "Er du sikker på, at du vil fjerne denne flaske? Denne handling er permanent.";
+"button.removeAlert.checkbox" = "Slet filer fra disk";
+"button.removeAlert.delete" = "Fjern";
+"button.removeAlert.cancel" = "Annuller";
 
 "config.winVersion" = "Windows Version";
 "config.buildVersion" = "Build Version";
@@ -43,11 +43,11 @@
 "config.dxvkHud.partial" = "Delvis";
 "config.dxvkHud.fps" = "FPS";
 "config.dxvkHud.off" = "Fra";
-"config.dpi" = "DPI Scaling";
-"config.inspect" = "Configure...";
+"config.dpi" = "DPI Skalering";
+"config.inspect" = "Konfigurer...";
 
-"configDpi.title" = "DPI Settings";
-"configDpi.preview" = "Text will look like this:";
+"configDpi.title" = "DPI Indstillinger";
+"configDpi.preview" = "Teksten vil se sådan ud:";
 "configDpi.previewText" = "Quizdeltagerne spiste jordbær med fløde, mens cirkusklovnen Walther spillede på xylofon.";
 "configDpi.dpi" = "DPI";
 
@@ -85,9 +85,9 @@
 "kill.bottles" = "Dræb Alle Bottles";
 "open.logs" = "Åbn Logmappe";
 "open.bottle" = "Importér Bottle";
-"open.setup" = "Setup...";
-"install.cli" = "Install Whisky CLI...";
-"wine.clearShaderCaches" = "Clear Shader Caches";
+"open.setup" = "Opsætning...";
+"install.cli" = "Installer Whisky CLI...";
+"wine.clearShaderCaches" = "Ryd Shader Caches";
 
 "showAlertOnFirstLaunch.messageText" = "Vil du flytte Whisky til Applications mappen?";
 "showAlertOnFirstLaunch.informativeText" = "I nogle tilfælde vil Whisky ikke være i stand til at fungere korrekt fra en anden mappe";
@@ -97,13 +97,13 @@
 "setup.welcome" = "Velkommen til Whisky";
 "setup.welcome.subtitle" = "Lad os få dig sat op. Dette vil ikke tage et minut.";
 
-"setup.title" = "Dependencies Setup";
-"setup.subtitle" = "Manage Whisky's required dependencies.";
+"setup.title" = "Opsætning af afhængigheder";
+"setup.subtitle" = "Administrer Whisky's nødvendige afhængigheder.";
 
 "setup.install.checking" = "Tjekker %@ Installation...";
 "setup.install.installed" = "%@ installeret";
 "setup.install.notInstalled" = "%@ ikke installeret";
-"setup.uninstall" = "Uninstall";
+"setup.uninstall" = "Afinstaller";
 
 "setup.rosetta" = "Installere Rosetta";
 "setup.rosetta.subtitle" = "Rosetta tillader x86 kode, som Wine, til at køre på din Mac.";
@@ -116,13 +116,13 @@
 "setup.gptk.install" = "Installere Wine";
 "setup.gptk.install.subtitle" = "Er der næsten. Luk ikke programmet endnu.";
 
-"setup.quit" = "Quit";
-"setup.done" = "Done";
-"setup.next" = "Next";
+"setup.quit" = "Afslut";
+"setup.done" = "Udført";
+"setup.next" = "Næste";
 
-"update.gptk.title" = "New Version of GPTK Available";
-"update.gptk.description" = "You are running GPTK %@, but %@ is available. Would you like to update?";
-"update.gptk.update" = "Update";
+"update.gptk.title" = "Ny version af GPTK tilgængelig";
+"update.gptk.description" = "Du kører GPTK %@, men %@ er tilgængelig. Ønsker du at opdatere?";
+"update.gptk.update" = "Opdater";
 
-"winetricks.title" = "Run Winetricks command";
+"winetricks.title" = "Kør kommandoen Winetricks";
 "button.winetricks" = "Winetricks...";

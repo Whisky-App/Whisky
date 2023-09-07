@@ -2,7 +2,7 @@
 "tab.programs" = "Програми";
 "tab.info" = "Інформація";
 
-"tab.navTitle.config" = "%@ Параметри";
+"tab.navTitle.config" = "Параметри %@";
 "tab.navTitle.programs" = "%@ - програми";
 "tab.navTitle.info" = "%@ - інформація";
 
@@ -12,43 +12,43 @@
 "button.cDrive" = "Відкрити диск C";
 "button.showInFinder" = "Показати у Finder";
 "button.run" = "Запустити...";
-"button.ok" = "ОК";
+"button.ok" = "Гаразд";
 "button.renameBottle" = "Перейменувати";
 "button.moveBottle" = "Перемістити";
 "button.exportBottle" = "Експортувати як архів";
-"button.removeAlert" = "Remove...";
+"button.removeAlert" = "Видалити...";
 "button.createBottle" = "Створити пляшку";
-"button.removeAlert.msg" = "Remove %@?";
-"button.removeAlert.info" = "Are you sure you want to remove this bottle? This action is permanent.";
-"button.removeAlert.checkbox" = "Delete files from disk";
-"button.removeAlert.delete" = "Remove";
-"button.removeAlert.cancel" = "Cancel";
+"button.removeAlert.msg" = "Видалити %@?";
+"button.removeAlert.info" = "Ви впевнені, що хочете видалити цю пляшку? Цю дію не можна скасувати.";
+"button.removeAlert.checkbox" = "Видалити файли з диска";
+"button.removeAlert.delete" = "Видалити";
+"button.removeAlert.cancel" = "Скасувати";
 
 "config.winVersion" = "Версія Windows";
-"config.buildVersion" = "Версія програми";
+"config.buildVersion" = "Версія складання";
 "config.title.metal" = "Metal";
 "config.metalHud" = "Metal HUD";
 "config.metalTrace" = "Metal Trace";
 "config.retinaMode" = "Режим Retina";
-"config.metalTrace.info" = "Дозволяє вам відстежувати робоче навантаження GPU в Xcode";
+"config.metalTrace.info" = "Дозволяє вам відстежувати навантаження GPU в Xcode";
 "config.esync" = "ESync";
-"config.controlPanel" = "Відкрити Панель управління";
-"config.regedit" = "Відкрити редактор реєстру";
+"config.controlPanel" = "Відкрити Панель Керування";
+"config.regedit" = "Відкрити Редактор Реєстру";
 "config.winecfg" = "Відкрити налаштування Wine";
-"config.notAvailable" = "N/A";
+"config.notAvailable" = "Н/Д";
 "config.title.dxvk" = "DXVK";
 "config.dxvk" = "DXVK";
 "config.dxvkHud" = "DXVK HUD";
-"config.dxvkHud.full" = "Full";
-"config.dxvkHud.partial" = "Partial";
-"config.dxvkHud.fps" = "FPS";
-"config.dxvkHud.off" = "Off";
-"config.dpi" = "DPI Scaling";
-"config.inspect" = "Configure...";
+"config.dxvkHud.full" = "Повний";
+"config.dxvkHud.partial" = "Частковий";
+"config.dxvkHud.fps" = "Кадр/с";
+"config.dxvkHud.off" = "Вимкнено";
+"config.dpi" = "Масштабування DPI";
+"config.inspect" = "Налаштувати...";
 
-"configDpi.title" = "DPI Settings";
-"configDpi.preview" = "Text will look like this:";
-"configDpi.previewText" = "The quick brown fox jumps over the lazy dog.";
+"configDpi.title" = "Налаштування DPI";
+"configDpi.preview" = "Текст виглядатиме так:";
+"configDpi.previewText" = "Жебракують філософи при ґанку церкви в Гадячі, ще й шатро їхнє п’яне знаємо.";
 "configDpi.dpi" = "DPI";
 
 "program.title" = "Встановлені програми";
@@ -61,9 +61,9 @@
 "info.path.copy" = "Скопіювати шлях";
 "info.wine" = "Версія Wine";
 "info.win" = "Версія Windows";
-"info.gptk" = "GPTK Version";
+"info.gptk" = "Версія GPTK";
 
-"gptkalert.init" = "Перетягніть DMG образ Game Porting Toolkit";
+"gptkalert.init" = "Перетягніть сюди DMG образ Game Porting Toolkit";
 "gptkalert.message" = "GPTK зіткнувся з помилкою!";
 
 "alert.message" = "Не вдалося відкрити програму!";
@@ -82,12 +82,12 @@
 "rename.rename" = "Перейменувати";
 
 "check.updates" = "Перевірити наявність оновлень...";
-"kill.bottles" = "Закрити всі пляшки";
+"kill.bottles" = "Примусово завершити всі пляшки";
 "open.logs" = "Відкрити папку журналів";
-"open.bottle" = "Import Bottle";
-"open.setup" = "Setup...";
-"install.cli" = "Install Whisky CLI...";
-"wine.clearShaderCaches" = "Clear Shader Caches";
+"open.bottle" = "Імпортувати пляшку";
+"open.setup" = "Налаштування...";
+"install.cli" = "Встановити інтерфейс командного рядка...";
+"wine.clearShaderCaches" = "Очищення кеша шейдерів";
 
 "showAlertOnFirstLaunch.messageText" = "Хотіли б ви перемістити Whisky у вашу папку Застосунки?";
 "showAlertOnFirstLaunch.informativeText" = "У деяких випадках, Whisky може не працювати належним чином з іншої папки";
@@ -95,34 +95,34 @@
 "showAlertOnFirstLaunch.button.dontMove" = "Не переміщати";
 
 "setup.welcome" = "Ласкаво просимо до Whisky";
-"setup.welcome.subtitle" = "Ще трохи, зачекай.";
+"setup.welcome.subtitle" = "Давайте все налаштуємо, це не займе багато часу.";
 
-"setup.title" = "Dependencies Setup";
-"setup.subtitle" = "Manage Whisky's required dependencies.";
+"setup.title" = "Встановлення залежностей";
+"setup.subtitle" = "Керування необхідними залежностями Whisky.";
 
 "setup.install.checking" = "Перевірка інсталяції %@...";
 "setup.install.installed" = "%@ встановлено";
 "setup.install.notInstalled" = "%@ не встановлено";
-"setup.uninstall" = "Uninstall";
+"setup.uninstall" = "Видалити";
 
-"setup.rosetta" = "Встановлення Розетки";
-"setup.rosetta.subtitle" = "Розетта дозволяє запускати x86 код (напр. Wine) на вашому Mac.";
+"setup.rosetta" = "Встановлення Rosetta";
+"setup.rosetta.subtitle" = "Rosetta дозволяє запускати x86 код (напр. Wine) на вашому Mac.";
 
 "setup.gptk.download" = "Завантаження GPTK";
-"setup.gptk.download.subtitle" = "Швидкості будуть відрізнятися від підключення до Інтернету.";
-"setup.gptk.progress" = "%@ of %@";
-"setup.gptk.eta" = "- %@ remaining";
+"setup.gptk.download.subtitle" = "Швидкість залежить від швидкості Вашого підключення до Інтернету.";
+"setup.gptk.progress" = "%@ з %@";
+"setup.gptk.eta" = "- залишилось %@";
 
 "setup.gptk.install" = "Встановлення GPTK";
 "setup.gptk.install.subtitle" = "Майже готово.";
 
-"setup.quit" = "Quit";
-"setup.done" = "Done";
-"setup.next" = "Next";
+"setup.quit" = "Вийти";
+"setup.done" = "Готово";
+"setup.next" = "Далі";
 
-"update.gptk.title" = "New Version of GPTK Available";
-"update.gptk.description" = "You are running GPTK %@, but %@ is available. Would you like to update?";
-"update.gptk.update" = "Update";
+"update.gptk.title" = "Доступна нова версія GPTK";
+"update.gptk.description" = "Ви використовуєте GPTK %@, але доступна версія %@. Оновити?";
+"update.gptk.update" = "Оновити";
 
-"winetricks.title" = "Run Winetricks command";
+"winetricks.title" = "Запустити команду Winetricks";
 "button.winetricks" = "Winetricks...";
