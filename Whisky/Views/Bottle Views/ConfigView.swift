@@ -274,7 +274,7 @@ struct DPIConfigSheetView: View {
                 Slider(value: $stagedChanges, in: 96...480, step: 24, onEditingChanged: { _ in
                     textFocused = false
                 })
-                TextField("", value: $stagedChanges, format: .number)
+                TextField(String(), value: $stagedChanges, format: .number)
                     .frame(width: 40)
                     .focused($textFocused)
                 Text("configDpi.dpi")

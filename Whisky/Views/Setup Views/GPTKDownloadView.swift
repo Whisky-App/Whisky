@@ -39,7 +39,7 @@ struct GPTKDownloadView: View {
                             + (shouldShowEstimate() ?
                                Text(String(format: String(localized: "setup.gptk.eta"),
                                            formatRemainingTime(remainingBytes: totalBytes - completedBytes)))
-                               : Text(""))
+                               : Text(String()))
                             Spacer()
                         }
                         .font(.subheadline)

@@ -198,7 +198,7 @@ struct WinetricksView: View {
                 Spacer()
             }
             Divider()
-            TextField("", text: $winetricksCommand)
+            TextField(String(), text: $winetricksCommand)
                 .textFieldStyle(.roundedBorder)
                 .font(.system(.body, design: .monospaced))
                 .labelsHidden()

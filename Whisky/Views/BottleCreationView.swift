@@ -27,7 +27,7 @@ struct BottleCreationView: View {
             HStack(alignment: .top) {
                 Text("create.name")
                 Spacer()
-                TextField("", text: $newBottleName)
+                TextField(String(), text: $newBottleName)
                     .frame(width: 180)
                     .onChange(of: newBottleName) { _, name in
                         nameValid = !name.isEmpty
@@ -36,7 +36,7 @@ struct BottleCreationView: View {
             HStack {
                 Text("create.win")
                 Spacer()
-                Picker("", selection: $newBottleVersion) {
+                Picker(String(), selection: $newBottleVersion) {
                     ForEach(WinVersion.allCases.reversed(), id: \.self) {
                         Text($0.pretty())
                     }

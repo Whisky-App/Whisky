@@ -96,8 +96,7 @@ struct InstallStatusView: View {
     @Binding var shouldCheckInstallStatus: Bool
     @State var showUninstall: Bool = false
     @State var name: String
-    @State var text: String = NSLocalizedString("setup.install.checking",
-                                                comment: "")
+    @State var text: String = String(localized: "setup.install.checking")
 
     var body: some View {
         HStack {
@@ -124,12 +123,12 @@ struct InstallStatusView: View {
         .onChange(of: isInstalled) {
             if let installed = isInstalled {
                 if installed {
-                    text = NSLocalizedString("setup.install.installed", comment: "")
+                    text = String(localized: "setup.install.installed")
                 } else {
-                    text = NSLocalizedString("setup.install.notInstalled", comment: "")
+                    text = String(localized: "setup.install.notInstalled")
                 }
             } else {
-                text = NSLocalizedString("setup.install.checking", comment: "")
+                text = String(localized: "setup.install.checking")
             }
         }
     }

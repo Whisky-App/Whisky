@@ -24,7 +24,7 @@ struct BottleRenameView: View {
             HStack(alignment: .top) {
                 Text("rename.name")
                 Spacer()
-                TextField("", text: $newBottleName)
+                TextField(String(), text: $newBottleName)
                     .frame(width: 180)
                     .onChange(of: newBottleName) { _, name in
                         nameValid = !name.isEmpty

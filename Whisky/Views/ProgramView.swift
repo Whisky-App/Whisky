@@ -34,7 +34,7 @@ struct ProgramView: View {
                             Text("program.args")
                             Spacer()
                         }
-                        TextField("", text: $program.settings.arguments)
+                        TextField(String(), text: $program.settings.arguments)
                             .textFieldStyle(.roundedBorder)
                             .font(.system(.body, design: .monospaced))
                             .labelsHidden()
@@ -185,7 +185,7 @@ struct KeyItem: View {
 
     var body: some View {
         HStack {
-            TextField("", text: $newKey)
+            TextField(String(), text: $newKey)
             .textFieldStyle(.roundedBorder)
             .onChange(of: newKey) {
                 newKey = String(newKey.filter { !$0.isWhitespace })
@@ -199,7 +199,7 @@ struct KeyItem: View {
                 }
             }
             Spacer()
-            TextField("", text: $value)
+            TextField(String(), text: $value)
             .textFieldStyle(.roundedBorder)
             .focused($isValueFieldFocused)
             .onChange(of: isValueFieldFocused) { _, focus in
