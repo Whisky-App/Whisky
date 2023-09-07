@@ -30,15 +30,15 @@
 "config.metalHud" = "Metal HUD";
 "config.metalTrace" = "Metal Trace";
 "config.retinaMode" = "Режим Retina";
-"config.metalTrace.info" = "Дозволяє вам відстежувати робоче навантаження GPU в Xcode";
+"config.metalTrace.info" = "Дозволяє вам відстежувати навантаження GPU в Xcode";
 "config.esync" = "ESync";
-"config.controlPanel" = "Відкрити Панель управління";
-"config.regedit" = "Відкрити редактор реєстру";
+"config.controlPanel" = "Відкрити Панель Керування";
+"config.regedit" = "Відкрити Редактор Реєстру";
 "config.winecfg" = "Відкрити налаштування Wine";
 "config.notAvailable" = "Н/Д";
 "config.title.dxvk" = "DXVK";
 "config.dxvk" = "DXVK";
-"config.dxvkHud" = "DXVK оверлей";
+"config.dxvkHud" = "DXVK HUD";
 "config.dxvkHud.full" = "Повний";
 "config.dxvkHud.partial" = "Частковий";
 "config.dxvkHud.fps" = "Кадр/с";
@@ -63,7 +63,7 @@
 "info.win" = "Версія Windows";
 "info.gptk" = "Версія GPTK";
 
-"gptkalert.init" = "Перетягніть DMG образ Game Porting Toolkit";
+"gptkalert.init" = "Перетягніть сюди DMG образ Game Porting Toolkit";
 "gptkalert.message" = "GPTK зіткнувся з помилкою!";
 
 "alert.message" = "Не вдалося відкрити програму!";
@@ -82,7 +82,7 @@
 "rename.rename" = "Перейменувати";
 
 "check.updates" = "Перевірити наявність оновлень...";
-"kill.bottles" = "Закрити всі пляшки";
+"kill.bottles" = "Примусово завершити всі пляшки";
 "open.logs" = "Відкрити папку журналів";
 "open.bottle" = "Імпортувати пляшку";
 "open.setup" = "Налаштування...";
@@ -95,7 +95,7 @@
 "showAlertOnFirstLaunch.button.dontMove" = "Не переміщати";
 
 "setup.welcome" = "Ласкаво просимо до Whisky";
-"setup.welcome.subtitle" = "Ще трохи, зачекай.";
+"setup.welcome.subtitle" = "Давайте все налаштуємо, це не займе багато часу.";
 
 "setup.title" = "Встановлення залежностей";
 "setup.subtitle" = "Керування необхідними залежностями Whisky.";
@@ -105,11 +105,11 @@
 "setup.install.notInstalled" = "%@ не встановлено";
 "setup.uninstall" = "Видалити";
 
-"setup.rosetta" = "Встановлення Розетки";
-"setup.rosetta.subtitle" = "Розетта дозволяє запускати x86 код (напр. Wine) на вашому Mac.";
+"setup.rosetta" = "Встановлення Rosetta";
+"setup.rosetta.subtitle" = "Rosetta дозволяє запускати x86 код (напр. Wine) на вашому Mac.";
 
 "setup.gptk.download" = "Завантаження GPTK";
-"setup.gptk.download.subtitle" = "Швидкості будуть відрізнятися від підключення до Інтернету.";
+"setup.gptk.download.subtitle" = "Швидкість залежить від швидкості Вашого підключення до Інтернету.";
 "setup.gptk.progress" = "%@ з %@";
 "setup.gptk.eta" = "- залишилось %@";
 
@@ -121,7 +121,7 @@
 "setup.next" = "Далі";
 
 "update.gptk.title" = "Доступна нова версія GPTK";
-"update.gptk.description" = "Ви використовуєте GPTK %@, але %@ доступний. Оновити?";
+"update.gptk.description" = "Ви використовуєте GPTK %@, але доступна версія %@. Оновити?";
 "update.gptk.update" = "Оновити";
 
 "winetricks.title" = "Запустити команду Winetricks";
