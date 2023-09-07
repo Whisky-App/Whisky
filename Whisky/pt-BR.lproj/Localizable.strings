@@ -16,13 +16,13 @@
 "button.renameBottle" = "Renomear";
 "button.moveBottle" = "Mover";
 "button.exportBottle" = "Exportar como arquivo";
-"button.removeAlert" = "Remove...";
+"button.removeAlert" = "Remover...";
 "button.createBottle" = "Criar uma Bottle";
-"button.removeAlert.msg" = "Remove %@?";
-"button.removeAlert.info" = "Are you sure you want to remove this bottle? This action is permanent.";
-"button.removeAlert.checkbox" = "Delete files from disk";
-"button.removeAlert.delete" = "Remove";
-"button.removeAlert.cancel" = "Cancel";
+"button.removeAlert.msg" = "Remover %@?";
+"button.removeAlert.info" = "Tem a certeza de que pretende remover esta garrafa? Esta ação é permanente.";
+"button.removeAlert.checkbox" = "Eliminar ficheiros do disco";
+"button.removeAlert.delete" = "Remover";
+"button.removeAlert.cancel" = "Cancelar";
 
 "config.winVersion" = "Versão do Windows";
 "config.buildVersion" = "Versão da Compilação";
@@ -85,8 +85,8 @@
 "kill.bottles" = "Encerrar todas as Bottles";
 "open.logs" = "Abrir Pasta dos Logs";
 "open.bottle" = "Importar Bottle";
-"open.setup" = "Setup...";
-"install.cli" = "Install Whisky CLI...";
+"open.setup" = "Instalação...";
+"install.cli" = "Instalar o Whisky CLI...";
 "wine.clearShaderCaches" = "Limpar Cache de Shader";
 
 "showAlertOnFirstLaunch.messageText" = "Você gostaria de mover o Whisky para a pasta dos Aplicativos?";
@@ -97,8 +97,8 @@
 "setup.welcome" = "Bem-vindo ao Whisky";
 "setup.welcome.subtitle" = "Vamos preparar as coisas para você. Isso não vai demorar.";
 
-"setup.title" = "Dependencies Setup";
-"setup.subtitle" = "Manage Whisky's required dependencies.";
+"setup.title" = "Configuração de dependências";
+"setup.subtitle" = "Gerir as dependências necessárias do Whisky.";
 
 "setup.install.checking" = "Verificando instalação de %@...";
 "setup.install.installed" = "%@ instalado";
@@ -116,13 +116,13 @@
 "setup.gptk.install" = "Instalando Wine";
 "setup.gptk.install.subtitle" = "Quase lá. Por favor, aguarde.";
 
-"setup.quit" = "Quit";
-"setup.done" = "Done";
-"setup.next" = "Next";
+"setup.quit" = "Sair";
+"setup.done" = "Feito";
+"setup.next" = "Seguinte";
 
-"update.gptk.title" = "New Version of GPTK Available";
-"update.gptk.description" = "You are running GPTK %@, but %@ is available. Would you like to update?";
-"update.gptk.update" = "Update";
+"update.gptk.title" = "Nova versão do GPTK disponível";
+"update.gptk.description" = "Está a executar o GPTK %@, mas %@ está disponível. Gostaria de atualizar?";
+"update.gptk.update" = "Atualização";
 
 "winetricks.title" = "Executar comando Winetricks";
 "button.winetricks" = "Winetricks...";
