@@ -118,7 +118,7 @@ struct ContentView: View {
                                                        String(updateInfo.1))
                         alert.alertStyle = .warning
                         alert.addButton(withTitle: String(localized: "update.gptk.update"))
-                        alert.addButton(withTitle: String(localized: "button.deleteAlert.cancel"))
+                        alert.addButton(withTitle: String(localized: "button.removeAlert.cancel"))
 
                         let response = alert.runModal()
 
