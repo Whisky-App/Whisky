@@ -37,8 +37,8 @@ body:
     attributes:
       label: What version of Whisky are you using?
       options:
-        - "1.2.1"
-        - "<1.2.1"
+        - "1.2.2"
+        - "<1.2.2"
     validations:
       required: true
   - type: dropdown
