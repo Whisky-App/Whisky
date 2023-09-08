@@ -97,8 +97,8 @@
 "setup.welcome" = "Bienvenue à Whisky";
 "setup.welcome.subtitle" = "Mettons-nous en place. Cela ne prendra pas une minute.";
 
-"setup.title" = "Dependencies Setup";
-"setup.subtitle" = "Manage Whisky's required dependencies.";
+"setup.title" = "Configuration des Dépendances";
+"setup.subtitle" = "Gérer les dépendances requises de Whisky.";
 
 "setup.install.checking" = "Vérification de l'installation de %@...";
 "setup.install.installed" = "%@ installé";
@@ -116,9 +116,9 @@
 "setup.gptk.install" = "Installation de GPTK";
 "setup.gptk.install.subtitle" = "Presque là. Veuillez patienter s'il vous plaît.";
 
-"setup.quit" = "Quit";
-"setup.done" = "Done";
-"setup.next" = "Next";
+"setup.quit" = "Quitter";
+"setup.done" = "Terminé";
+"setup.next" = "Suivant";
 
 "update.gptk.title" = "Nouvelle version de GPTK disponible";
 "update.gptk.description" = "Vous utilisez GPTK %@, mais %@ est disponible. Voulez-vous mettre à jour ?";

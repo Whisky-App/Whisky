@@ -116,9 +116,9 @@
 "setup.gptk.install" = "正在安装 GPTK";
 "setup.gptk.install.subtitle" = "就快完成了，请不要离开。";
 
-"setup.quit" = "Quit";
-"setup.done" = "Done";
-"setup.next" = "Next";
+"setup.quit" = "退出";
+"setup.done" = "完成";
+"setup.next" = "下一页";
 
 "update.gptk.title" = "可用的 GPTK 新版本";
 "update.gptk.description" = "您正在运行 GPTK %@，但 %@ 可用。您想要更新吗？";
