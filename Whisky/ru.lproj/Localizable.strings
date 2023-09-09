@@ -16,13 +16,13 @@
 "button.renameBottle" = "Переименовать";
 "button.moveBottle" = "Переместить";
 "button.exportBottle" = "Экспортировать как архив";
-"button.removeAlert" = "Remove...";
+"button.removeAlert" = "Удалить...";
 "button.createBottle" = "Создать Бутылку";
-"button.removeAlert.msg" = "Remove %@?";
-"button.removeAlert.info" = "Are you sure you want to remove this bottle? This action is permanent.";
-"button.removeAlert.checkbox" = "Delete files from disk";
-"button.removeAlert.delete" = "Remove";
-"button.removeAlert.cancel" = "Cancel";
+"button.removeAlert.msg" = "Удалить %@?";
+"button.removeAlert.info" = "Вы уверены, что хотите удалить эту бутылку? Это действие необратимо.";
+"button.removeAlert.checkbox" = "Удалить файлы с диска";
+"button.removeAlert.delete" = "Удалить";
+"button.removeAlert.cancel" = "Отмена";
 
 "config.winVersion" = "Версия Windows";
 "config.buildVersion" = "Версия сборки";
@@ -98,7 +98,7 @@
 "setup.welcome.subtitle" = "Производится первоначальная настройка. Это займёт не больше минуты.";
 
 "setup.title" = "Установка зависимостей";
-"setup.subtitle" = "Manage Whisky's required dependencies.";
+"setup.subtitle" = "Управление требуемыми зависимостями Whisky.";
 
 "setup.install.checking" = "Проверка установки %@...";
 "setup.install.installed" = "%@ – установлено";
@@ -117,12 +117,12 @@
 "setup.gptk.install.subtitle" = "Почти закончили. Не отключайтесь.";
 
 "setup.quit" = "Выйти";
-"setup.done" = "Done";
+"setup.done" = "Готово";
 "setup.next" = "Далее";
 
 "update.gptk.title" = "Доступна новая версия GPTK";
 "update.gptk.description" = "Вы используете GPTK %@, но %@ доступен. Желаете обновить?";
-"update.gptk.update" = "Update";
+"update.gptk.update" = "Обновить";
 
 "winetricks.title" = "Выполнить команду Winetricks";
 "button.winetricks" = "Winetricks...";
