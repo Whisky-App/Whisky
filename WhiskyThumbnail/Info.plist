@@ -8,7 +8,6 @@
 		<dict>
 			<key>QLSupportedContentTypes</key>
 			<array>
-				<string>com.microsoft.msi-installer</string>
 				<string>com.microsoft.windows-executable</string>
 			</array>
 			<key>QLThumbnailMinimumDimension</key>

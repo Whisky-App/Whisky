@@ -13,7 +13,20 @@ import WhiskyKit
 class ThumbnailProvider: QLThumbnailProvider {
     override func provideThumbnail(for request: QLFileThumbnailRequest,
                                    _ handler: @escaping (QLThumbnailReply?, Error?) -> Void) {
-        let thumbnailFrame = CGRect(x: 0, y: 0, width: request.maximumSize.width, height: request.maximumSize.height)
+        let thumbnailSize = CGSize(width: request.maximumSize.width,
+                                   height: request.maximumSize.height)
+
+        let iconScaleFactor = 0.8
+        let whiskyIconScaleFactor = 0.4
+
+        let iconFrame = CGRect(x: (request.maximumSize.width - request.maximumSize.width * iconScaleFactor) / 2.0,
+                               y: (request.maximumSize.height - request.maximumSize.height * iconScaleFactor) / 2.0,
+                               width: request.maximumSize.width * iconScaleFactor,
+                               height: request.maximumSize.height * iconScaleFactor)
+        let whiskyIconFrame = CGRect(x: request.maximumSize.width - request.maximumSize.width * whiskyIconScaleFactor,
+                                     y: 0,
+                                     width: request.maximumSize.width * whiskyIconScaleFactor,
+                                     height: request.maximumSize.height * whiskyIconScaleFactor)
         do {
             var image: NSImage?
             var icons: [NSImage] = []
@@ -30,9 +43,11 @@ class ThumbnailProvider: QLThumbnailProvider {
                 image = icons[0]
             }
 
-            let reply: QLThumbnailReply = QLThumbnailReply.init(contextSize: thumbnailFrame.size) { () -> Bool in
+            let reply: QLThumbnailReply = QLThumbnailReply.init(contextSize: thumbnailSize) { () -> Bool in
                 if let image = image {
-                    image.draw(in: thumbnailFrame)
+                    image.draw(in: iconFrame)
+                    let whiskyIcon = NSImage(named: NSImage.Name("Icon"))
+                    whiskyIcon?.draw(in: whiskyIconFrame, from: .zero, operation: .sourceOver, fraction: 1)
                     return true
                 }
 
