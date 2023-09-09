@@ -7,27 +7,7 @@
 	<key>SUPublicEDKey</key>
 	<string>tnZFAvPUfCpM7Tr7Sx5gKRm6BUQQ6htJQeOMP44evms=</string>
 	<key>UTExportedTypeDeclarations</key>
-	<array>
-		<dict>
-			<key>UTTypeConformsTo</key>
-			<array>
-				<string>public.data</string>
-			</array>
-			<key>UTTypeDescription</key>
-			<string>Dummy</string>
-			<key>UTTypeIcons</key>
-			<dict/>
-			<key>UTTypeIdentifier</key>
-			<string>com.whisky.dummy</string>
-			<key>UTTypeTagSpecification</key>
-			<dict>
-				<key>public.filename-extension</key>
-				<array>
-					<string>dummy</string>
-				</array>
-			</dict>
-		</dict>
-	</array>
+	<array/>
 	<key>UTImportedTypeDeclarations</key>
 	<array>
 		<dict>
