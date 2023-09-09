@@ -46,6 +46,7 @@
 		6E6C0CF82A419A8C00356232 /* GPTKInstallView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E6C0CF72A419A8C00356232 /* GPTKInstallView.swift */; };
 		6E70A49B2A9A2197007799E9 /* Main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E70A49A2A9A2197007799E9 /* Main.swift */; };
 		6E70A4A12A9A280C007799E9 /* WhiskyCmd.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E70A4A02A9A280C007799E9 /* WhiskyCmd.swift */; };
+		6E93DD072AAD097D0088060A /* exe.icns in Resources */ = {isa = PBXBuildFile; fileRef = 6E93DD062AAD097D0088060A /* exe.icns */; };
 		6EA2D47E29DDAE5E00C84668 /* BottleRenameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EA2D47D29DDAE5E00C84668 /* BottleRenameView.swift */; };
 		6EA2D48529DF130F00C84668 /* ProgramSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EA2D48429DF130F00C84668 /* ProgramSettings.swift */; };
 		6EC962422AACE3A000052E14 /* WhiskyKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6EDF9AA92A9A6CA9006CAA7E /* WhiskyKit.framework */; };
@@ -198,6 +199,7 @@
 		6E8A3B3A2A35FCEA00D19632 /* tr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = tr; path = tr.lproj/Localizable.strings; sourceTree = "<group>"; };
 		6E8A3B3D2A3613F400D19632 /* PortableExecutable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PortableExecutable.swift; sourceTree = "<group>"; };
 		6E8A3B3F2A36140300D19632 /* ResourceSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResourceSection.swift; sourceTree = "<group>"; };
+		6E93DD062AAD097D0088060A /* exe.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = exe.icns; sourceTree = "<group>"; };
 		6EA2D47D29DDAE5E00C84668 /* BottleRenameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottleRenameView.swift; sourceTree = "<group>"; };
 		6EA2D48429DF130F00C84668 /* ProgramSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgramSettings.swift; sourceTree = "<group>"; };
 		6EDF9AA92A9A6CA9006CAA7E /* WhiskyKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = WhiskyKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -309,6 +311,7 @@
 				6E26058729D927F900DDD788 /* Extensions */,
 				6E5197CD29D71FCD00CF655E /* Views */,
 				6E40495929CCA19C006E3F1B /* Assets.xcassets */,
+				6E93DD062AAD097D0088060A /* exe.icns */,
 				6E899D1129CFC41D00A4A083 /* Info.plist */,
 				6E40495E29CCA19C006E3F1B /* Whisky.entitlements */,
 				6E40495B29CCA19C006E3F1B /* Preview Content */,
@@ -621,6 +624,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6E93DD072AAD097D0088060A /* exe.icns in Resources */,
 				6E355E4F29D74DE0002D83BE /* Localizable.strings in Resources */,
 				6E40495D29CCA19C006E3F1B /* Preview Assets.xcassets in Resources */,
 				6E40495A29CCA19C006E3F1B /* Assets.xcassets in Resources */,
