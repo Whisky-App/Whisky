@@ -102,7 +102,6 @@ public struct ResourceDirectoryTable: Hashable {
         offset += 2
 
         var subtables: [ResourceDirectoryTable] = []
-        var entries: [ResourceDataEntry] = []
 
         var numberOfNamedEntriesIterated = 0
         for _ in 0..<numberOfNamedEntries + numberOfIdEntries {
