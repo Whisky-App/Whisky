@@ -86,7 +86,7 @@
 "open.logs" = "Открыть папку логов";
 "open.bottle" = "Импортировать бутылку";
 "open.setup" = "Установить...";
-"install.cli" = "Install Whisky CLI...";
+"install.cli" = "Установить Whisky CLI...";
 "wine.clearShaderCaches" = "Очистить кэш шейдеров";
 
 "showAlertOnFirstLaunch.messageText" = "Вы хотите переместить Whisky в папку «Приложения»?";
@@ -97,7 +97,7 @@
 "setup.welcome" = "Добро пожаловать в Whisky";
 "setup.welcome.subtitle" = "Производится первоначальная настройка. Это займёт не больше минуты.";
 
-"setup.title" = "Dependencies Setup";
+"setup.title" = "Установка зависимостей";
 "setup.subtitle" = "Manage Whisky's required dependencies.";
 
 "setup.install.checking" = "Проверка установки %@...";
@@ -116,12 +116,12 @@
 "setup.gptk.install" = "Установка GPTK";
 "setup.gptk.install.subtitle" = "Почти закончили. Не отключайтесь.";
 
-"setup.quit" = "Quit";
+"setup.quit" = "Выйти";
 "setup.done" = "Done";
-"setup.next" = "Next";
+"setup.next" = "Далее";
 
-"update.gptk.title" = "New Version of GPTK Available";
-"update.gptk.description" = "You are running GPTK %@, but %@ is available. Would you like to update?";
+"update.gptk.title" = "Доступна новая версия GPTK";
+"update.gptk.description" = "Вы используете GPTK %@, но %@ доступен. Желаете обновить?";
 "update.gptk.update" = "Update";
 
 "winetricks.title" = "Выполнить команду Winetricks";
