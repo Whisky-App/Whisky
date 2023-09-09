@@ -11,8 +11,9 @@ import AppKit
 import WhiskyKit
 
 class ThumbnailProvider: QLThumbnailProvider {
-    override func provideThumbnail(for request: QLFileThumbnailRequest, _ handler: @escaping (QLThumbnailReply?, Error?) -> Void) {
-        var thumbnailFrame = CGRect(x: 0, y: 0, width: request.maximumSize.width, height: request.maximumSize.height)
+    override func provideThumbnail(for request: QLFileThumbnailRequest,
+                                   _ handler: @escaping (QLThumbnailReply?, Error?) -> Void) {
+        let thumbnailFrame = CGRect(x: 0, y: 0, width: request.maximumSize.width, height: request.maximumSize.height)
         do {
             var image: NSImage?
             var icons: [NSImage] = []

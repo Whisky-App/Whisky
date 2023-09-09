@@ -47,6 +47,7 @@
 		6E70A4A12A9A280C007799E9 /* WhiskyCmd.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E70A4A02A9A280C007799E9 /* WhiskyCmd.swift */; };
 		6EA2D47E29DDAE5E00C84668 /* BottleRenameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EA2D47D29DDAE5E00C84668 /* BottleRenameView.swift */; };
 		6EA2D48529DF130F00C84668 /* ProgramSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EA2D48429DF130F00C84668 /* ProgramSettings.swift */; };
+		6EC962422AACE3A000052E14 /* WhiskyKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6EDF9AA92A9A6CA9006CAA7E /* WhiskyKit.framework */; };
 		6EDF9AAF2A9A6CA9006CAA7E /* WhiskyKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6EDF9AA92A9A6CA9006CAA7E /* WhiskyKit.framework */; };
 		6EDF9AB02A9A6CA9006CAA7E /* WhiskyKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 6EDF9AA92A9A6CA9006CAA7E /* WhiskyKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		6EDF9AB62A9A6D8C006CAA7E /* BottleData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EDF9AB52A9A6D8C006CAA7E /* BottleData.swift */; };
@@ -70,6 +71,13 @@
 			proxyType = 1;
 			remoteGlobalIDString = 6E4353D92AACD7A600E40689;
 			remoteInfo = WhiskyThumbnail;
+		};
+		6EC962442AACE3A000052E14 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 6E40494A29CCA19C006E3F1B /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 6EDF9AA82A9A6CA9006CAA7E;
+			remoteInfo = WhiskyKit;
 		};
 		6EDF9AAD2A9A6CA9006CAA7E /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -222,6 +230,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				6E4353DC2AACD7A700E40689 /* QuickLookThumbnailing.framework in Frameworks */,
+				6EC962422AACE3A000052E14 /* WhiskyKit.framework in Frameworks */,
 				6E4353DE2AACD7A700E40689 /* Quartz.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -483,6 +492,7 @@
 			buildRules = (
 			);
 			dependencies = (
+				6EC962452AACE3A000052E14 /* PBXTargetDependency */,
 			);
 			name = WhiskyThumbnail;
 			productName = WhiskyThumbnail;
@@ -726,6 +736,11 @@
 			isa = PBXTargetDependency;
 			target = 6E4353D92AACD7A600E40689 /* WhiskyThumbnail */;
 			targetProxy = 6E4353E42AACD7A700E40689 /* PBXContainerItemProxy */;
+		};
+		6EC962452AACE3A000052E14 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 6EDF9AA82A9A6CA9006CAA7E /* WhiskyKit */;
+			targetProxy = 6EC962442AACE3A000052E14 /* PBXContainerItemProxy */;
 		};
 		6EDF9AAE2A9A6CA9006CAA7E /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;

@@ -8,6 +8,7 @@
 import SwiftUI
 import UniformTypeIdentifiers
 import QuickLookThumbnailing
+import WhiskyKit
 
 struct BottleView: View {
     @Binding var bottle: Bottle

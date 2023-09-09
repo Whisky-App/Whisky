@@ -1,16 +1,16 @@
 //
 //  ResourceSection.swift
-//  Whisky
+//  WhiskyKit
 //
 
 import Foundation
 import AppKit
 
-struct ResourceDirectoryEntry: Hashable {
-    var id: UInt32
-    var offsetToData: UInt32
-    var offsetToSubdirectory: UInt32
-    var dataIsDirectory: Bool
+public struct ResourceDirectoryEntry: Hashable {
+    public let id: UInt32
+    public let offsetToData: UInt32
+    public let offsetToSubdirectory: UInt32
+    public let dataIsDirectory: Bool
 
     init(data: Data, offset: Int) {
         var offset = offset
@@ -25,12 +25,12 @@ struct ResourceDirectoryEntry: Hashable {
     }
 }
 
-struct ResourceDataEntry: Hashable {
-    var dataRVA: UInt32
-    var size: UInt32
-    var codePage: UInt32
-    var reserved: UInt32
-    var icon: NSImage = NSImage()
+public struct ResourceDataEntry: Hashable {
+    public let dataRVA: UInt32
+    public let size: UInt32
+    public let codePage: UInt32
+    public let reserved: UInt32
+    public let icon: NSImage
 
     init(data: Data, offset: Int, sectionTable: SectionTable) {
         var offset = offset
@@ -43,18 +43,21 @@ struct ResourceDataEntry: Hashable {
         self.reserved = data.extract(UInt32.self, offset: offset) ?? 0
         offset += 4
 
-        if let offsetToData = resolveRVA(data: data, rva: dataRVA, sectionTable: sectionTable) {
+        if let offsetToData = ResourceDataEntry.resolveRVA(rva: dataRVA, sectionTable: sectionTable) {
             let iconData = data.subdata(in: Int(offsetToData)..<Int(offsetToData + size))
             if let rep = NSBitmapImageRep(data: iconData) {
                 icon = NSImage(size: rep.size)
                 icon.addRepresentation(rep)
+            } else {
+                icon = NSImage()
             }
         } else {
             print("Failed to resolve RVA")
+            icon = NSImage()
         }
     }
 
-    func resolveRVA (data: Data, rva: UInt32, sectionTable: SectionTable) -> UInt32? {
+    static func resolveRVA (rva: UInt32, sectionTable: SectionTable) -> UInt32? {
         for section in sectionTable.sections {
             if section.virtualAddress <= rva && rva < (section.virtualAddress + section.virtualSize) {
                 let virtualAddress = section.pointerToRawData + (rva - section.virtualAddress)
@@ -66,17 +69,18 @@ struct ResourceDataEntry: Hashable {
     }
 }
 
-struct ResourceDirectoryTable: Hashable {
-    var characteristics: UInt32
-    var timeDateStamp: UInt32
-    var majorVersion: UInt16
-    var minorVersion: UInt16
-    var numberOfNamedEntries: UInt16
-    var numberOfIdEntries: UInt16
+public struct ResourceDirectoryTable: Hashable {
+    public let characteristics: UInt32
+    public let timeDateStamp: UInt32
+    public let majorVersion: UInt16
+    public let minorVersion: UInt16
+    public let numberOfNamedEntries: UInt16
+    public let numberOfIdEntries: UInt16
 
-    var subtables: [ResourceDirectoryTable]
-    var entries: [ResourceDataEntry]
+    public let subtables: [ResourceDirectoryTable]
+    public let entries: [ResourceDataEntry]
 
+    // swiftlint:disable:next function_body_length
     init(data: Data,
          address: Int,
          offset: Int,
@@ -96,8 +100,9 @@ struct ResourceDirectoryTable: Hashable {
         offset += 2
         self.numberOfIdEntries = data.extract(UInt16.self, offset: offset) ?? 0
         offset += 2
-        self.subtables = []
-        self.entries = []
+
+        var subtables: [ResourceDirectoryTable] = []
+        var entries: [ResourceDataEntry] = []
 
         var numberOfNamedEntriesIterated = 0
         for _ in 0..<numberOfNamedEntries + numberOfIdEntries {
@@ -115,7 +120,7 @@ struct ResourceDirectoryTable: Hashable {
                 // In the root directory, we only want to append entries of type icon
                 if depth == 0 {
                     if ResourceTypes(rawValue: entry.id) == .icon {
-                        self.subtables.append(ResourceDirectoryTable(data: data,
+                        subtables.append(ResourceDirectoryTable(data: data,
                                                                      address: address,
                                                                      offset: Int(entry.offsetToSubdirectory) + address,
                                                                      sectionTable: sectionTable,
@@ -123,7 +128,7 @@ struct ResourceDirectoryTable: Hashable {
                                                                      depth: depth + 1))
                     }
                 } else {
-                    self.subtables.append(ResourceDirectoryTable(data: data,
+                    subtables.append(ResourceDirectoryTable(data: data,
                                                                  address: address,
                                                                  offset: Int(entry.offsetToSubdirectory) + address,
                                                                  sectionTable: sectionTable,
@@ -134,15 +139,18 @@ struct ResourceDirectoryTable: Hashable {
                 let entry = ResourceDataEntry(data: data,
                                               offset: Int(entry.offsetToData) + address,
                                               sectionTable: sectionTable)
-                self.entries.append(entry)
+                entries.append(entry)
                 entries.append(entry)
             }
         }
+
+        self.subtables = subtables
+        self.entries = entries
     }
 }
 
-// swiftlint:disable line_length
-struct ResourceSection: Hashable {
+public struct ResourceSection: Hashable {
+    // swiftlint:disable line_length
     /*
     Resources are indexed by a multiple-level binary-sorted tree structure. The general design can incorporate 2**31 levels. By convention, however, Windows uses three levels:
 
@@ -151,21 +159,24 @@ struct ResourceSection: Hashable {
 
     A leaf's Type, Name, and Language IDs are determined by the path that is taken through directory tables to reach the leaf. The first table determines Type ID, the second table (pointed to by the directory entry in the first table) determines Name ID, and the third table determines Language ID.
     */
-    var rootDirectoryTable: ResourceDirectoryTable
-    var allEntries: [ResourceDataEntry] = []
+    // swiftlint:enable line_length
+
+    public let rootDirectoryTable: ResourceDirectoryTable
+    public let allEntries: [ResourceDataEntry]
 
     init(data: Data, sectionTable: SectionTable, imageBase: UInt32) throws {
         guard let resourceSection = sectionTable.sections.first(where: { $0.name.starts(with: ".rsrc") }) else {
             throw ResourceError.noResourceSection
         }
+        var entries: [ResourceDataEntry] = []
         self.rootDirectoryTable = ResourceDirectoryTable(data: data,
                                                          address: Int(resourceSection.pointerToRawData),
                                                          offset: Int(resourceSection.pointerToRawData),
                                                          sectionTable: sectionTable,
-                                                         entries: &allEntries)
+                                                         entries: &entries)
+        self.allEntries = entries
     }
 }
-// swiftlint:enable line_length
 
 struct ResourceError: Error {
     var message: String

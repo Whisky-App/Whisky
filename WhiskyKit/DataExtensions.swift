@@ -1,6 +1,6 @@
 //
 //  DataExtensions.swift
-//  Whisky
+//  WhiskyKit
 //
 //  Created by Isaac Marovitz on 01/04/2023.
 //

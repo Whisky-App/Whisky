@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import WhiskyKit
 
 struct ProgramView: View {
     @Binding var program: Program
