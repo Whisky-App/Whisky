@@ -97,8 +97,8 @@
 "setup.welcome" = "Benvenuto su Whisky";
 "setup.welcome.subtitle" = "Creiamo la tua configurazione. Ci vorrà menu di un minuto.";
 
-"setup.title" = "Dependencies Setup";
-"setup.subtitle" = "Manage Whisky's required dependencies.";
+"setup.title" = "Configurazione Dipendenze";
+"setup.subtitle" = "Gestisci le dipendenze richieste di Whisky.";
 
 "setup.install.checking" = "Controllo installazione %@...";
 "setup.install.installed" = "%@ installato";
