@@ -1,39 +1,47 @@
 //
 //  ThumbnailProvider.swift
-//  WhiskyThumbnail
+//  Whisky
 //
 //  Created by Isaac Marovitz on 09/09/2023.
 //
 
+import Foundation
 import QuickLookThumbnailing
+import AppKit
+import WhiskyKit
 
 class ThumbnailProvider: QLThumbnailProvider {
-    
     override func provideThumbnail(for request: QLFileThumbnailRequest, _ handler: @escaping (QLThumbnailReply?, Error?) -> Void) {
-        
-        // There are three ways to provide a thumbnail through a QLThumbnailReply. Only one of them should be used.
-        
-        // First way: Draw the thumbnail into the current context, set up with UIKit's coordinate system.
-        handler(QLThumbnailReply(contextSize: request.maximumSize, currentContextDrawing: { () -> Bool in
-            // Draw the thumbnail here.
-            
-            // Return true if the thumbnail was successfully drawn inside this block.
-            return true
-        }), nil)
-        
-        /*
-        
-        // Second way: Draw the thumbnail into a context passed to your block, set up with Core Graphics's coordinate system.
-        handler(QLThumbnailReply(contextSize: request.maximumSize, drawing: { (context) -> Bool in
-            // Draw the thumbnail here.
-         
-            // Return true if the thumbnail was successfully drawn inside this block.
-            return true
-        }), nil)
-         
-        // Third way: Set an image file URL.
-        handler(QLThumbnailReply(imageFileURL: Bundle.main.url(forResource: "fileThumbnail", withExtension: "jpg")!), nil)
-        
-        */
+        var thumbnailFrame = CGRect(x: 0, y: 0, width: request.maximumSize.width, height: request.maximumSize.height)
+        do {
+            var image: NSImage?
+            var icons: [NSImage] = []
+
+            let peFile = try PEFile(data: Data(contentsOf: request.fileURL))
+
+            if let resourceSection = peFile.resourceSection {
+                for entries in resourceSection.allEntries where entries.icon.isValid {
+                    icons.append(entries.icon)
+                }
+            }
+
+            if icons.count > 0 {
+                image = icons[0]
+            }
+
+            let reply: QLThumbnailReply = QLThumbnailReply.init(contextSize: thumbnailFrame.size) { () -> Bool in
+                if let image = image {
+                    image.draw(in: thumbnailFrame)
+                    return true
+                }
+
+                // We didn't draw anything
+                return false
+            }
+
+            handler(reply, nil)
+        } catch {
+            handler(nil, nil)
+        }
     }
 }

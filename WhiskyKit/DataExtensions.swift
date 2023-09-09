@@ -8,7 +8,7 @@
 import Foundation
 
 extension Data {
-    func extract<T>(_ type: T.Type, offset: Int = 0) -> T? {
+    public func extract<T>(_ type: T.Type, offset: Int = 0) -> T? {
         if offset + MemoryLayout<T>.size < self.count {
             let data = self[offset..<offset + MemoryLayout<T>.size]
             return data.withUnsafeBytes { $0.loadUnaligned(as: T.self) }
@@ -18,7 +18,7 @@ extension Data {
     }
 
     // Thanks ChatGPT
-    func nullTerminatedStrings(using encoding: String.Encoding = .utf8) -> [String] {
+    public func nullTerminatedStrings(using encoding: String.Encoding = .utf8) -> [String] {
         var strings = [String]()
         self.withUnsafeBytes { (ptr: UnsafeRawBufferPointer) in
             if let baseAddress = ptr.baseAddress {
