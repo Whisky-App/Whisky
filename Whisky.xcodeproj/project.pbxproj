@@ -25,6 +25,11 @@
 		6E40495D29CCA19C006E3F1B /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6E40495C29CCA19C006E3F1B /* Preview Assets.xcassets */; };
 		6E40498129CCA8B0006E3F1B /* BottleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E40498029CCA8B0006E3F1B /* BottleView.swift */; };
 		6E40498329CCA91B006E3F1B /* Bottle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E40498229CCA91B006E3F1B /* Bottle.swift */; };
+		6E4353DC2AACD7A700E40689 /* QuickLookThumbnailing.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6E4353DB2AACD7A600E40689 /* QuickLookThumbnailing.framework */; };
+		6E4353DE2AACD7A700E40689 /* Quartz.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6E4353DD2AACD7A700E40689 /* Quartz.framework */; };
+		6E4353E12AACD7A700E40689 /* ThumbnailProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E4353E02AACD7A700E40689 /* ThumbnailProvider.swift */; };
+		6E4353E72AACD7A700E40689 /* WhiskyThumbnail.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = 6E4353DA2AACD7A600E40689 /* WhiskyThumbnail.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		6E4353EC2AACD82800E40689 /* ThumbnailProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E4353D42AACD52A00E40689 /* ThumbnailProvider.swift */; };
 		6E50D98029CD0850008C39F6 /* Wine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E50D97F29CD0850008C39F6 /* Wine.swift */; };
 		6E50D98329CD6066008C39F6 /* BottleVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E50D98229CD6066008C39F6 /* BottleVM.swift */; };
 		6E50D98529CDF25B008C39F6 /* BottleCreationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E50D98429CDF25B008C39F6 /* BottleCreationView.swift */; };
@@ -60,6 +65,13 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		6E4353E42AACD7A700E40689 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 6E40494A29CCA19C006E3F1B /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 6E4353D92AACD7A600E40689;
+			remoteInfo = WhiskyThumbnail;
+		};
 		6EDF9AAD2A9A6CA9006CAA7E /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 6E40494A29CCA19C006E3F1B /* Project object */;
@@ -77,6 +89,17 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
+		6E4353E62AACD7A700E40689 /* Embed Foundation Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 8;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				6E4353E72AACD7A700E40689 /* WhiskyThumbnail.appex in Embed Foundation Extensions */,
+			);
+			name = "Embed Foundation Extensions";
+			runOnlyForDeploymentPostprocessing = 1;
+		};
 		6E70A4962A9A2197007799E9 /* CopyFiles */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
@@ -136,6 +159,13 @@
 		6E40495E29CCA19C006E3F1B /* Whisky.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Whisky.entitlements; sourceTree = "<group>"; };
 		6E40498029CCA8B0006E3F1B /* BottleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottleView.swift; sourceTree = "<group>"; };
 		6E40498229CCA91B006E3F1B /* Bottle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bottle.swift; sourceTree = "<group>"; };
+		6E4353D42AACD52A00E40689 /* ThumbnailProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThumbnailProvider.swift; sourceTree = "<group>"; };
+		6E4353DA2AACD7A600E40689 /* WhiskyThumbnail.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = WhiskyThumbnail.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		6E4353DB2AACD7A600E40689 /* QuickLookThumbnailing.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuickLookThumbnailing.framework; path = System/Library/Frameworks/QuickLookThumbnailing.framework; sourceTree = SDKROOT; };
+		6E4353DD2AACD7A700E40689 /* Quartz.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Quartz.framework; path = System/Library/Frameworks/Quartz.framework; sourceTree = SDKROOT; };
+		6E4353E02AACD7A700E40689 /* ThumbnailProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThumbnailProvider.swift; sourceTree = "<group>"; };
+		6E4353E22AACD7A700E40689 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		6E4353E32AACD7A700E40689 /* WhiskyThumbnail.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = WhiskyThumbnail.entitlements; sourceTree = "<group>"; };
 		6E50D97F29CD0850008C39F6 /* Wine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Wine.swift; sourceTree = "<group>"; };
 		6E50D98229CD6066008C39F6 /* BottleVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottleVM.swift; sourceTree = "<group>"; };
 		6E50D98429CDF25B008C39F6 /* BottleCreationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottleCreationView.swift; sourceTree = "<group>"; };
@@ -189,6 +219,15 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		6E4353D72AACD7A600E40689 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6E4353DC2AACD7A700E40689 /* QuickLookThumbnailing.framework in Frameworks */,
+				6E4353DE2AACD7A700E40689 /* Quartz.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		6E70A4952A9A2197007799E9 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -235,6 +274,7 @@
 				6E40495429CCA19C006E3F1B /* Whisky */,
 				6E70A4992A9A2197007799E9 /* WhiskyCmd */,
 				6EDF9AAA2A9A6CA9006CAA7E /* WhiskyKit */,
+				6E4353DF2AACD7A700E40689 /* WhiskyThumbnail */,
 				6E40495329CCA19C006E3F1B /* Products */,
 				6E5967692A9A424900D64F70 /* Frameworks */,
 			);
@@ -246,6 +286,7 @@
 				6E40495229CCA19C006E3F1B /* Whisky.app */,
 				6E70A4982A9A2197007799E9 /* WhiskyCmd */,
 				6EDF9AA92A9A6CA9006CAA7E /* WhiskyKit.framework */,
+				6E4353DA2AACD7A600E40689 /* WhiskyThumbnail.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -274,6 +315,16 @@
 				6E40495C29CCA19C006E3F1B /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		6E4353DF2AACD7A700E40689 /* WhiskyThumbnail */ = {
+			isa = PBXGroup;
+			children = (
+				6E4353E02AACD7A700E40689 /* ThumbnailProvider.swift */,
+				6E4353E22AACD7A700E40689 /* Info.plist */,
+				6E4353E32AACD7A700E40689 /* WhiskyThumbnail.entitlements */,
+			);
+			path = WhiskyThumbnail;
 			sourceTree = "<group>";
 		};
 		6E5197CD29D71FCD00CF655E /* Views */ = {
@@ -323,6 +374,7 @@
 				AB66A8632A4195B10006D238 /* Rosetta2.swift */,
 				EBFF51292A43C6A300CF9B56 /* ConvertFormat.swift */,
 				6E70A4A02A9A280C007799E9 /* WhiskyCmd.swift */,
+				6E4353D42AACD52A00E40689 /* ThumbnailProvider.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -330,6 +382,8 @@
 		6E5967692A9A424900D64F70 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				6E4353DB2AACD7A600E40689 /* QuickLookThumbnailing.framework */,
+				6E4353DD2AACD7A700E40689 /* Quartz.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -394,11 +448,13 @@
 				6E40495029CCA19C006E3F1B /* Resources */,
 				6E50D98129CD0EAF008C39F6 /* SwiftLint */,
 				6EDF9AB42A9A6CA9006CAA7E /* Embed Frameworks */,
+				6E4353E62AACD7A700E40689 /* Embed Foundation Extensions */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 				6EDF9AAE2A9A6CA9006CAA7E /* PBXTargetDependency */,
+				6E4353E52AACD7A700E40689 /* PBXTargetDependency */,
 			);
 			name = Whisky;
 			packageProductDependencies = (
@@ -410,6 +466,23 @@
 			productName = Whisky;
 			productReference = 6E40495229CCA19C006E3F1B /* Whisky.app */;
 			productType = "com.apple.product-type.application";
+		};
+		6E4353D92AACD7A600E40689 /* WhiskyThumbnail */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 6E4353E82AACD7A700E40689 /* Build configuration list for PBXNativeTarget "WhiskyThumbnail" */;
+			buildPhases = (
+				6E4353D62AACD7A600E40689 /* Sources */,
+				6E4353D72AACD7A600E40689 /* Frameworks */,
+				6E4353D82AACD7A600E40689 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = WhiskyThumbnail;
+			productName = WhiskyThumbnail;
+			productReference = 6E4353DA2AACD7A600E40689 /* WhiskyThumbnail.appex */;
+			productType = "com.apple.product-type.app-extension";
 		};
 		6E70A4972A9A2197007799E9 /* WhiskyCmd */ = {
 			isa = PBXNativeTarget;
@@ -467,6 +540,9 @@
 					6E40495129CCA19C006E3F1B = {
 						CreatedOnToolsVersion = 14.2;
 					};
+					6E4353D92AACD7A600E40689 = {
+						CreatedOnToolsVersion = 15.0;
+					};
 					6E70A4972A9A2197007799E9 = {
 						CreatedOnToolsVersion = 15.0;
 					};
@@ -517,6 +593,7 @@
 				6E40495129CCA19C006E3F1B /* Whisky */,
 				6E70A4972A9A2197007799E9 /* WhiskyCmd */,
 				6EDF9AA82A9A6CA9006CAA7E /* WhiskyKit */,
+				6E4353D92AACD7A600E40689 /* WhiskyThumbnail */,
 			);
 		};
 /* End PBXProject section */
@@ -529,6 +606,13 @@
 				6E355E4F29D74DE0002D83BE /* Localizable.strings in Resources */,
 				6E40495D29CCA19C006E3F1B /* Preview Assets.xcassets in Resources */,
 				6E40495A29CCA19C006E3F1B /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6E4353D82AACD7A600E40689 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -598,8 +682,17 @@
 				6E355E6029D7D8BD002D83BE /* Program.swift in Sources */,
 				6E6C0CF22A419A6800356232 /* WelcomeView.swift in Sources */,
 				6E40498129CCA8B0006E3F1B /* BottleView.swift in Sources */,
+				6E4353EC2AACD82800E40689 /* ThumbnailProvider.swift in Sources */,
 				6E26058629D9267B00DDD788 /* ShellLink.swift in Sources */,
 				6E355E5E29D7D85D002D83BE /* ProgramView.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6E4353D62AACD7A600E40689 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6E4353E12AACD7A700E40689 /* ThumbnailProvider.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -625,6 +718,11 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		6E4353E52AACD7A700E40689 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 6E4353D92AACD7A600E40689 /* WhiskyThumbnail */;
+			targetProxy = 6E4353E42AACD7A700E40689 /* PBXContainerItemProxy */;
+		};
 		6EDF9AAE2A9A6CA9006CAA7E /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 6EDF9AA82A9A6CA9006CAA7E /* WhiskyKit */;
@@ -861,6 +959,69 @@
 			};
 			name = Release;
 		};
+		6E4353E92AACD7A700E40689 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CODE_SIGN_ENTITLEMENTS = WhiskyThumbnail/WhiskyThumbnail.entitlements;
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 92S3SG4PTH;
+				ENABLE_HARDENED_RUNTIME = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = WhiskyThumbnail/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = WhiskyThumbnail;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@executable_path/../../../../Frameworks",
+				);
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.isaacmarovitz.Whisky.WhiskyThumbnail;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		6E4353EA2AACD7A700E40689 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CODE_SIGN_ENTITLEMENTS = WhiskyThumbnail/WhiskyThumbnail.entitlements;
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 92S3SG4PTH;
+				ENABLE_HARDENED_RUNTIME = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = WhiskyThumbnail/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = WhiskyThumbnail;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@executable_path/../../../../Frameworks",
+				);
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.isaacmarovitz.Whisky.WhiskyThumbnail;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
 		6E70A49C2A9A2197007799E9 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -1013,6 +1174,15 @@
 			buildConfigurations = (
 				6E40497829CCA19D006E3F1B /* Debug */,
 				6E40497929CCA19D006E3F1B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		6E4353E82AACD7A700E40689 /* Build configuration list for PBXNativeTarget "WhiskyThumbnail" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				6E4353E92AACD7A700E40689 /* Debug */,
+				6E4353EA2AACD7A700E40689 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
