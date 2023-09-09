@@ -16,13 +16,18 @@ class ThumbnailProvider: QLThumbnailProvider {
         let thumbnailSize = CGSize(width: request.maximumSize.width,
                                    height: request.maximumSize.height)
 
-        let iconScaleFactor = 0.8
+        // % of thumbnail occupied by icon
+        let iconScaleFactor = 0.9
         let whiskyIconScaleFactor = 0.4
 
+        // AppKit coordinate system origin is in the bottom-left
+        // Icon is centered
         let iconFrame = CGRect(x: (request.maximumSize.width - request.maximumSize.width * iconScaleFactor) / 2.0,
                                y: (request.maximumSize.height - request.maximumSize.height * iconScaleFactor) / 2.0,
                                width: request.maximumSize.width * iconScaleFactor,
                                height: request.maximumSize.height * iconScaleFactor)
+
+        // Whisky icon is aligned bottom-right
         let whiskyIconFrame = CGRect(x: request.maximumSize.width - request.maximumSize.width * whiskyIconScaleFactor,
                                      y: 0,
                                      width: request.maximumSize.width * whiskyIconScaleFactor,
