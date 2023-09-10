@@ -97,8 +97,8 @@
 "setup.welcome" = "Whisky에 오신 것을 환영합니다";
 "setup.welcome.subtitle" = "설정하는 것을 도와드리겠습니다. 얼마 걸리지 않을 거예요.";
 
-"setup.title" = "Dependencies Setup";
-"setup.subtitle" = "Manage Whisky's required dependencies.";
+"setup.title" = "의존성 설정";
+"setup.subtitle" = "Whisky의 필수 의존성 관리하기.";
 
 "setup.install.checking" = "%@ 설치를 확인하는 중입니다...";
 "setup.install.installed" = "%@ 설치됨";
