@@ -80,8 +80,12 @@ struct BitmapInfoHeader: Hashable {
                     // Ditto .indexed1
                     break
                 case .indexed8:
-                    let index = data.extract(UInt8.self, offset: offset) ?? 0
-                    pixelRow.append(colorTable[Int(index)])
+                    let index = Int(data.extract(UInt8.self, offset: offset) ?? 0)
+                    if index >= colorTable.count {
+                        pixelRow.append(ColorQuad(red: 0, green: 0, blue: 0, alpha: 0))
+                    } else {
+                        pixelRow.append(colorTable[Int(index)])
+                    }
                     offset += 1
                 case .sampled16:
                     let sample = data.extract(UInt16.self, offset: offset) ?? 0
