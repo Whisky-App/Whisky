@@ -310,9 +310,6 @@
 				6E5197D129D7202100CF655E /* BottleSettings.swift */,
 				6EA2D48429DF130F00C84668 /* ProgramSettings.swift */,
 				6E26058529D9267B00DDD788 /* ShellLink.swift */,
-				6E8A3B3D2A3613F400D19632 /* PortableExecutable.swift */,
-				6E8A3B3F2A36140300D19632 /* ResourceSection.swift */,
-				6EFDF6432AAD65F500EF622F /* BitmapInfo.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -359,6 +356,7 @@
 		6EDF9AAA2A9A6CA9006CAA7E /* WhiskyKit */ = {
 			isa = PBXGroup;
 			children = (
+				6EFDF6452AAE29FC00EF622F /* PE */,
 				6EDF9AC42A9A6FB5006CAA7E /* GPTK */,
 				6EDF9AB52A9A6D8C006CAA7E /* BottleData.swift */,
 				6E0822852A39D73800195094 /* Tar.swift */,
@@ -373,6 +371,16 @@
 				6E0822862A39D73800195094 /* GPTKInstaller.swift */,
 			);
 			path = GPTK;
+			sourceTree = "<group>";
+		};
+		6EFDF6452AAE29FC00EF622F /* PE */ = {
+			isa = PBXGroup;
+			children = (
+				6E8A3B3D2A3613F400D19632 /* PortableExecutable.swift */,
+				6E8A3B3F2A36140300D19632 /* ResourceSection.swift */,
+				6EFDF6432AAD65F500EF622F /* BitmapInfo.swift */,
+			);
+			path = PE;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

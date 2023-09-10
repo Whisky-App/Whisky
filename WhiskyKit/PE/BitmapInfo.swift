@@ -8,21 +8,21 @@
 import Foundation
 import AppKit
 
-struct BitmapInfoHeader: Hashable {
-    var size: UInt32
-    var width: Int32
-    var height: Int32
-    var planes: UInt16
-    var bitCount: UInt16
-    var compression: BitmapCompression
-    var sizeImage: UInt32
-    var xPelsPerMeter: Int32
-    var yPelsPerMeter: Int32
-    var clrUsed: UInt32
-    var clrImportant: UInt32
+public struct BitmapInfoHeader: Hashable {
+    public let size: UInt32
+    public let width: Int32
+    public let height: Int32
+    public let planes: UInt16
+    public let bitCount: UInt16
+    public let compression: BitmapCompression
+    public let sizeImage: UInt32
+    public let xPelsPerMeter: Int32
+    public let yPelsPerMeter: Int32
+    public let clrUsed: UInt32
+    public let clrImportant: UInt32
 
-    var originDirection: BitmapOriginDirection
-    var colorFormat: ColorFormat
+    public let originDirection: BitmapOriginDirection
+    public let colorFormat: ColorFormat
 
     init(data: Data, offset: Int) {
         var offset = offset
@@ -185,14 +185,14 @@ struct BitmapInfoHeader: Hashable {
     }
 }
 
-struct ColorQuad {
+public struct ColorQuad {
     var red: UInt8
     var green: UInt8
     var blue: UInt8
     var alpha: UInt8
 }
 
-enum BitmapCompression: UInt32 {
+public enum BitmapCompression: UInt32 {
     case rgb = 0x0000
     case rle8 = 0x0001
     case rle4 = 0x0002
@@ -205,12 +205,12 @@ enum BitmapCompression: UInt32 {
     case cmykRle4 = 0x000D
 }
 
-enum BitmapOriginDirection {
+public enum BitmapOriginDirection {
     case bottomLeft
     case upperLeft
 }
 
-enum ColorFormat: UInt16 {
+public enum ColorFormat: UInt16 {
     case unknown = 0
     case indexed1 = 1
     case indexed2 = 2

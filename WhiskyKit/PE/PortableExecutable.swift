@@ -7,24 +7,24 @@
 
 import Foundation
 
-struct PEError: Error {
-    var message: String
+public struct PEError: Error {
+    public let message: String
 
     static let invalidPEFile = PEError(message: "Invalid PE file")
 }
 
-struct PESection: Hashable {
-    var name: String
-    var virtualSize: UInt32
-    var virtualAddress: UInt32
-    var sizeOfRawData: UInt32
-    var pointerToRawData: UInt32
-    var pointerToRelocations: UInt32
-    var pointerToLineNumbers: UInt32
-    var numberOfRelocations: UInt16
-    var numberOfLineNumbers: UInt16
-    var characteristics: UInt32
-    var data: Data?
+public struct PESection: Hashable {
+    public let name: String
+    public let virtualSize: UInt32
+    public let virtualAddress: UInt32
+    public let sizeOfRawData: UInt32
+    public let pointerToRawData: UInt32
+    public let pointerToRelocations: UInt32
+    public let pointerToLineNumbers: UInt32
+    public let numberOfRelocations: UInt16
+    public let numberOfLineNumbers: UInt16
+    public let characteristics: UInt32
+    public let data: Data?
 
     init(data: Data, offset: Int) {
         var offset = offset
@@ -51,12 +51,14 @@ struct PESection: Hashable {
         if sizeOfRawData > 0 {
             let dataOffset = Int(pointerToRawData)
             self.data = data.subdata(in: dataOffset..<dataOffset+Int(sizeOfRawData))
+        } else {
+            self.data = nil
         }
     }
 }
 
-struct SectionTable: Hashable {
-    var sections: [PESection]
+public struct SectionTable: Hashable {
+    public let sections: [PESection]
 
     init(data: Data, offset: Int, numberOfSections: Int) {
         var sections = [PESection]()
@@ -70,16 +72,16 @@ struct SectionTable: Hashable {
     }
 }
 
-struct COFFFileHeader: Hashable {
-    var machine: UInt16
-    var numberOfSections: UInt16
-    var timeDateStamp: UInt32
-    var pointerToSymbolTable: UInt32
-    var numberOfSymbols: UInt32
-    var sizeOfOptionalHeader: UInt16
-    var characteristics: UInt16
-    var sectionTable: SectionTable
-    var optionalHeader: OptionalHeader
+public struct COFFFileHeader: Hashable {
+    public let machine: UInt16
+    public let numberOfSections: UInt16
+    public let timeDateStamp: UInt32
+    public let pointerToSymbolTable: UInt32
+    public let numberOfSymbols: UInt32
+    public let sizeOfOptionalHeader: UInt16
+    public let characteristics: UInt16
+    public let sectionTable: SectionTable
+    public let optionalHeader: OptionalHeader
 
     init(data: Data) throws {
         var offset = 0x3C
@@ -123,37 +125,37 @@ struct COFFFileHeader: Hashable {
     }
 }
 
-struct OptionalHeader: Hashable {
-    var magic: UInt16
-    var majorLinkerVersion: UInt8
-    var minorLinkerVersion: UInt8
-    var sizeOfCode: UInt32
-    var sizeOfInitializedData: UInt32
-    var sizeOfUninitializedData: UInt32
-    var addressOfEntryPoint: UInt32
-    var baseOfCode: UInt32
-    var baseOfData: UInt32
-    var imageBase: UInt32
-    var sectionAlignment: UInt32
-    var fileAlignment: UInt32
-    var majorOperatingSystemVersion: UInt16
-    var minorOperatingSystemVersion: UInt16
-    var majorImageVersion: UInt16
-    var minorImageVersion: UInt16
-    var majorSubsystemVersion: UInt16
-    var minorSubsystemVersion: UInt16
-    var win32VersionValue: UInt32
-    var sizeOfImage: UInt32
-    var sizeOfHeaders: UInt32
-    var checkSum: UInt32
-    var subsystem: UInt16
-    var dllCharacteristics: UInt16
-    var sizeOfStackReserve: UInt32
-    var sizeOfStackCommit: UInt32
-    var sizeOfHeapReserve: UInt32
-    var sizeOfHeapCommit: UInt32
-    var loaderFlags: UInt32
-    var numberOfRvaAndSizes: UInt32
+public struct OptionalHeader: Hashable {
+    public let magic: UInt16
+    public let majorLinkerVersion: UInt8
+    public let minorLinkerVersion: UInt8
+    public let sizeOfCode: UInt32
+    public let sizeOfInitializedData: UInt32
+    public let sizeOfUninitializedData: UInt32
+    public let addressOfEntryPoint: UInt32
+    public let baseOfCode: UInt32
+    public let baseOfData: UInt32
+    public let imageBase: UInt32
+    public let sectionAlignment: UInt32
+    public let fileAlignment: UInt32
+    public let majorOperatingSystemVersion: UInt16
+    public let minorOperatingSystemVersion: UInt16
+    public let majorImageVersion: UInt16
+    public let minorImageVersion: UInt16
+    public let majorSubsystemVersion: UInt16
+    public let minorSubsystemVersion: UInt16
+    public let win32VersionValue: UInt32
+    public let sizeOfImage: UInt32
+    public let sizeOfHeaders: UInt32
+    public let checkSum: UInt32
+    public let subsystem: UInt16
+    public let dllCharacteristics: UInt16
+    public let sizeOfStackReserve: UInt32
+    public let sizeOfStackCommit: UInt32
+    public let sizeOfHeapReserve: UInt32
+    public let sizeOfHeapCommit: UInt32
+    public let loaderFlags: UInt32
+    public let numberOfRvaAndSizes: UInt32
 
     // swiftlint:disable:next function_body_length
     init(data: Data, offset: Int) {
@@ -220,9 +222,9 @@ struct OptionalHeader: Hashable {
     }
 }
 
-struct PEFile: Hashable {
-    var coffFileHeader: COFFFileHeader
-    var resourceSection: ResourceSection?
+public struct PEFile: Hashable {
+    public let coffFileHeader: COFFFileHeader
+    public let resourceSection: ResourceSection?
 
     init(data: Data) throws {
         // Verify it is a PE file by checking for the PE header
