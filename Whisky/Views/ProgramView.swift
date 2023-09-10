@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import WhiskyKit
 
 struct ProgramView: View {
     @Binding var program: Program
@@ -86,19 +87,7 @@ struct ProgramView: View {
         .onAppear {
             do {
                 let peFile = try PEFile(data: Data(contentsOf: program.url))
-                var icons: [NSImage] = []
-                if let resourceSection = peFile.resourceSection {
-                    for entries in resourceSection.allEntries where entries.icon.isValid {
-                        icons.append(entries.icon)
-                    }
-                } else {
-                    print("No resource section")
-                    return
-                }
-
-                if icons.count > 0 {
-                    image = icons.max(by: { $0.size.height < $1.size.height })
-                }
+                image = peFile.bestIcon()
             } catch {
                 print(error)
             }

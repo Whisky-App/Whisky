@@ -1,6 +1,6 @@
 //
 //  ResourceSection.swift
-//  Whisky
+//  WhiskyKit
 //
 
 import Foundation

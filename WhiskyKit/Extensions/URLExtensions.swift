@@ -1,6 +1,6 @@
 //
 //  URLExtensions.swift
-//  Whisky
+//  WhiskyKit
 //
 //  Created by Isaac Marovitz on 13/06/2023.
 //
@@ -8,7 +8,7 @@
 import Foundation
 
 extension String {
-    var esc: String {
+    public var esc: String {
         let esc = ["\\", "\"", "'", " ", "(", ")", "[", "]", "{", "}", "&", "|",
                    ";", "<", ">", "`", "$", "!", "*", "?", "#", "~", "="]
         var str = self
@@ -20,11 +20,11 @@ extension String {
 }
 
 extension URL {
-    var esc: String {
+    public var esc: String {
         path.esc
     }
 
-    func prettyPath() -> String {
+    public func prettyPath() -> String {
         var prettyPath = path
         prettyPath = prettyPath
             .replacingOccurrences(of: Bundle.main.bundleIdentifier ?? "com.isaacmarovitz.Whisky", with: "Whisky")

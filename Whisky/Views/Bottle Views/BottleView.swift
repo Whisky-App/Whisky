@@ -8,6 +8,7 @@
 import SwiftUI
 import UniformTypeIdentifiers
 import QuickLookThumbnailing
+import WhiskyKit
 
 struct BottleView: View {
     @Binding var bottle: Bottle
@@ -275,19 +276,7 @@ struct ShellLinkView: View {
             if let linkInfo = link.linkInfo, let program = linkInfo.program {
                 do {
                     let peFile = try PEFile(data: Data(contentsOf: program.url))
-                    var icons: [NSImage] = []
-                    if let resourceSection = peFile.resourceSection {
-                        for entries in resourceSection.allEntries where entries.icon.isValid {
-                            icons.append(entries.icon)
-                        }
-                    } else {
-                        print("No resource section")
-                        return
-                    }
-
-                    if icons.count > 0 {
-                        image = icons.max(by: { $0.size.height < $1.size.height })
-                    }
+                    image = peFile.bestIcon()
                 } catch {
                     print(error)
                 }
@@ -334,19 +323,7 @@ struct ShortcutView: View {
                                   bottle: bottle)
             do {
                 let peFile = try PEFile(data: Data(contentsOf: program.url))
-                var icons: [NSImage] = []
-                if let resourceSection = peFile.resourceSection {
-                    for entries in resourceSection.allEntries where entries.icon.isValid {
-                        icons.append(entries.icon)
-                    }
-                } else {
-                    print("No resource section")
-                    return
-                }
-
-                if icons.count > 0 {
-                    image = icons.max(by: { $0.size.height < $1.size.height })
-                }
+                image = peFile.bestIcon()
             } catch {
                 print(error)
             }

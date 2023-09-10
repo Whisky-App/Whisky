@@ -1,6 +1,6 @@
 //
 //  GPTKInstaller.swift
-//  Whisky
+//  WhiskyKit
 //
 //  Created by Isaac Marovitz on 14/06/2023.
 //

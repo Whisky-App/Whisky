@@ -1,6 +1,6 @@
 //
 //  BitmapInfo.swift
-//  Whisky
+//  WhiskyKit
 //
 //  Created by Isaac Marovitz on 09/09/2023.
 //

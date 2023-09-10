@@ -1,11 +1,12 @@
 //
 //  PortableExecutable.swift
-//  Whisky
+//  WhiskyKit
 //
 //  Created by Isaac Marovitz on 03/04/2023.
 //
 
 import Foundation
+import AppKit
 
 public struct PEError: Error {
     public let message: String
@@ -226,7 +227,7 @@ public struct PEFile: Hashable {
     public let coffFileHeader: COFFFileHeader
     public let resourceSection: ResourceSection?
 
-    init(data: Data) throws {
+    public init(data: Data) throws {
         // Verify it is a PE file by checking for the PE header
         let offsetToPEHeader = data.extract(UInt32.self, offset: 0x3C) ?? 0
         let peHeader = data.extract(UInt32.self, offset: Int(offsetToPEHeader))
@@ -237,5 +238,22 @@ public struct PEFile: Hashable {
         resourceSection = try ResourceSection(data: data,
                                               sectionTable: coffFileHeader.sectionTable,
                                               imageBase: coffFileHeader.optionalHeader.imageBase)
+    }
+
+    public func bestIcon() -> NSImage? {
+        var icons: [NSImage] = []
+        if let resourceSection = resourceSection {
+            for entries in resourceSection.allEntries where entries.icon.isValid {
+                icons.append(entries.icon)
+            }
+        } else {
+            print("No resource section")
+        }
+
+        if icons.count > 0 {
+            return icons.max(by: { $0.size.height < $1.size.height })
+        }
+
+        return NSImage()
     }
 }
