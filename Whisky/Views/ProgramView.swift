@@ -97,7 +97,7 @@ struct ProgramView: View {
                 }
 
                 if icons.count > 0 {
-                    image = icons[0]
+                    image = icons.max(by: { $0.size.height < $1.size.height })
                 }
             } catch {
                 print(error)

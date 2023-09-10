@@ -53,6 +53,7 @@
 		6EDF9ABF2A9A6F3D006CAA7E /* GPTKInstaller.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E0822862A39D73800195094 /* GPTKInstaller.swift */; };
 		6EDF9AC32A9A6F46006CAA7E /* Tar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E0822852A39D73800195094 /* Tar.swift */; };
 		6EF557982A410599001A4F09 /* SetupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EF557972A410599001A4F09 /* SetupView.swift */; };
+		6EFDF6442AAD65F500EF622F /* BitmapInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EFDF6432AAD65F500EF622F /* BitmapInfo.swift */; };
 		AB66A8642A4195B10006D238 /* Rosetta2.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB66A8632A4195B10006D238 /* Rosetta2.swift */; };
 		EB58FB552A499896002DC184 /* SemanticVersion in Frameworks */ = {isa = PBXBuildFile; productRef = EB58FB542A499896002DC184 /* SemanticVersion */; };
 		EBFF512A2A43C6A300CF9B56 /* ConvertFormat.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBFF51292A43C6A300CF9B56 /* ConvertFormat.swift */; };
@@ -166,6 +167,7 @@
 		6EDF9AB52A9A6D8C006CAA7E /* BottleData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottleData.swift; sourceTree = "<group>"; };
 		6EF557952A40B8D1001A4F09 /* GPTKDownloader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GPTKDownloader.swift; sourceTree = "<group>"; };
 		6EF557972A410599001A4F09 /* SetupView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetupView.swift; sourceTree = "<group>"; };
+		6EFDF6432AAD65F500EF622F /* BitmapInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BitmapInfo.swift; sourceTree = "<group>"; };
 		AB66A8632A4195B10006D238 /* Rosetta2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Rosetta2.swift; sourceTree = "<group>"; };
 		AB8570C22A34FA4000BFBBE0 /* vi */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = vi; path = vi.lproj/Localizable.strings; sourceTree = "<group>"; };
 		B584FD842A3376E0009B00F4 /* zh-Hant */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hant"; path = "zh-Hant.lproj/Localizable.strings"; sourceTree = "<group>"; };
@@ -310,6 +312,7 @@
 				6E26058529D9267B00DDD788 /* ShellLink.swift */,
 				6E8A3B3D2A3613F400D19632 /* PortableExecutable.swift */,
 				6E8A3B3F2A36140300D19632 /* ResourceSection.swift */,
+				6EFDF6432AAD65F500EF622F /* BitmapInfo.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -568,6 +571,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6EFDF6442AAD65F500EF622F /* BitmapInfo.swift in Sources */,
 				EEA5A2462A31DD65008274AE /* AppDelegate.swift in Sources */,
 				6E70A4A12A9A280C007799E9 /* WhiskyCmd.swift in Sources */,
 				6E40495829CCA19C006E3F1B /* ContentView.swift in Sources */,

@@ -44,10 +44,19 @@ struct ResourceDataEntry: Hashable {
         offset += 4
 
         if let offsetToData = resolveRVA(data: data, rva: dataRVA, sectionTable: sectionTable) {
-            let iconData = data.subdata(in: Int(offsetToData)..<Int(offsetToData + size))
-            if let rep = NSBitmapImageRep(data: iconData) {
-                icon = NSImage(size: rep.size)
-                icon.addRepresentation(rep)
+            let bitmapInfo = BitmapInfoHeader(data: data, offset: Int(offsetToData))
+            var infoSize = bitmapInfo.size
+            if bitmapInfo.size != 40 {
+                let iconData = data.subdata(in: Int(offsetToData)..<Int(offsetToData + size))
+                if let rep = NSBitmapImageRep(data: iconData) {
+                    icon = NSImage(size: rep.size)
+                    icon.addRepresentation(rep)
+                }
+            } else {
+                if bitmapInfo.colorFormat != .unknown {
+                    icon = bitmapInfo.renderBitmap(data: data,
+                                                   offset: Int(offsetToData + bitmapInfo.size))
+                }
             }
         } else {
             print("Failed to resolve RVA")
