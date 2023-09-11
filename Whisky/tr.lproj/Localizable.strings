@@ -127,3 +127,6 @@
 
 "winetricks.title" = "Winetricks komutlarını çalıştırın";
 "button.winetricks" = "Winetricks...";
+
+"run.title" = "Run \"%@\"";
+"run.bottle" = "Bottle:";
