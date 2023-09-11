@@ -11,6 +11,7 @@
 
 "button.cDrive" = "C ドライブを開く";
 "button.showInFinder" = "Finder で表示";
+"button.createShortcut" = "Create Shortcut";
 "button.run" = "実行...";
 "button.ok" = "OK";
 "button.renameBottle" = "名前の変更";
@@ -126,3 +127,6 @@
 
 "winetricks.title" = "Winetricks コマンドを実行";
 "button.winetricks" = "Winetricks...";
+
+"run.title" = "Run \"%@\"";
+"run.bottle" = "Bottle:";

@@ -10,7 +10,8 @@
 "main.createFirst" = "첫 번째 Bottle을 만들어 시작하기";
 
 "button.cDrive" = "C 드라이브 열기";
-"button.showInFinder" = "Finder에서 열기";
+"button.showInFinder" = "Finder에서 보기";
+"button.createShortcut" = "바로 가기 만들기";
 "button.run" = "실행...";
 "button.ok" = "확인";
 "button.renameBottle" = "이름 변경";
@@ -97,8 +98,8 @@
 "setup.welcome" = "Whisky에 오신 것을 환영합니다";
 "setup.welcome.subtitle" = "설정하는 것을 도와드리겠습니다. 얼마 걸리지 않을 거예요.";
 
-"setup.title" = "Dependencies Setup";
-"setup.subtitle" = "Manage Whisky's required dependencies.";
+"setup.title" = "의존성 설정";
+"setup.subtitle" = "Whisky의 필수 의존성 관리하기.";
 
 "setup.install.checking" = "%@ 설치를 확인하는 중입니다...";
 "setup.install.installed" = "%@ 설치됨";
@@ -116,9 +117,9 @@
 "setup.gptk.install" = "GPTK 설치 중";
 "setup.gptk.install.subtitle" = "거의 다 왔어요. 아직 끄지 마세요.";
 
-"setup.quit" = "Quit";
-"setup.done" = "Done";
-"setup.next" = "Next";
+"setup.quit" = "종료";
+"setup.done" = "완료";
+"setup.next" = "다음";
 
 "update.gptk.title" = "새로운 버전의 GPTK를 사용할 수 있습니다";
 "update.gptk.description" = "GPTK %@ 버전을 사용 중이지만 %@ 버전을 사용할 수 있습니다. 업데이트하시겠습니까?";
@@ -126,3 +127,6 @@
 
 "winetricks.title" = "Winetricks 명령어 실행";
 "button.winetricks" = "Winetricks...";
+
+"run.title" = "Run \"%@\"";
+"run.bottle" = "Bottle:";

@@ -11,6 +11,7 @@
 
 "button.cDrive" = "Abrir disco C";
 "button.showInFinder" = "Abrir no Finder";
+"button.createShortcut" = "Create Shortcut";
 "button.run" = "Executar...";
 "button.ok" = "OK";
 "button.renameBottle" = "Renomear";
@@ -126,3 +127,6 @@
 
 "winetricks.title" = "Executar comando Winetricks";
 "button.winetricks" = "Winetricks...";
+
+"run.title" = "Run \"%@\"";
+"run.bottle" = "Bottle:";

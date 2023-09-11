@@ -11,6 +11,7 @@
 
 "button.cDrive" = "Apri Disco C";
 "button.showInFinder" = "Mostra in Finder";
+"button.createShortcut" = "Create Shortcut";
 "button.run" = "Avvia...";
 "button.ok" = "OK";
 "button.renameBottle" = "Rinomina";
@@ -97,8 +98,8 @@
 "setup.welcome" = "Benvenuto su Whisky";
 "setup.welcome.subtitle" = "Creiamo la tua configurazione. Ci vorrà menu di un minuto.";
 
-"setup.title" = "Dependencies Setup";
-"setup.subtitle" = "Manage Whisky's required dependencies.";
+"setup.title" = "Configurazione Dipendenze";
+"setup.subtitle" = "Gestisci le dipendenze richieste di Whisky.";
 
 "setup.install.checking" = "Controllo installazione %@...";
 "setup.install.installed" = "%@ installato";
@@ -126,3 +127,6 @@
 
 "winetricks.title" = "Esegui comando Winetricks";
 "button.winetricks" = "Winetricks...";
+
+"run.title" = "Run \"%@\"";
+"run.bottle" = "Bottle:";

@@ -11,6 +11,7 @@
 
 "button.cDrive" = "C Sürücüsünü Aç";
 "button.showInFinder" = "Finder'da Göster";
+"button.createShortcut" = "Create Shortcut";
 "button.run" = "Çalıştır...";
 "button.ok" = "Tamam";
 "button.renameBottle" = "Bottle'ı Yeniden Adlandır";
@@ -126,3 +127,6 @@
 
 "winetricks.title" = "Winetricks komutlarını çalıştırın";
 "button.winetricks" = "Winetricks...";
+
+"run.title" = "Run \"%@\"";
+"run.bottle" = "Bottle:";
