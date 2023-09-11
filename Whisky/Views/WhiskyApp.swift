@@ -43,6 +43,7 @@ struct WhiskyApp: App {
                 }
                 */
             }
+            CommandGroup(replacing: .newItem) {}
             CommandGroup(after: .newItem) {
                 Button("open.bottle") {
                     let panel = NSOpenPanel()

@@ -25,6 +25,10 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         WhiskyApp.killBottles()
     }
 
+    func applicationShouldTerminateAfterLastWindowClosed(_ sender: NSApplication) -> Bool {
+        return true
+    }
+
     private static var appUrl: URL? {
         Bundle.main.resourceURL?.deletingLastPathComponent().deletingLastPathComponent()
     }
