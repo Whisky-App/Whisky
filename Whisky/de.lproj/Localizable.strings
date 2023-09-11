@@ -11,7 +11,7 @@
 
 "button.cDrive" = "C Laufwerk öffnen";
 "button.showInFinder" = "Im Finder anzeigen";
-"button.createShortcut" = "Create Shortcut";
+"button.createShortcut" = "Verknüpfung erstellen";
 "button.run" = "Starten...";
 "button.ok" = "OK";
 "button.renameBottle" = "Umbenennen";
