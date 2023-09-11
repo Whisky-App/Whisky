@@ -11,6 +11,7 @@
 
 "button.cDrive" = "開啟C槽";
 "button.showInFinder" = "在 Finder 中顯示";
+"button.createShortcut" = "Create Shortcut";
 "button.run" = "執行...";
 "button.ok" = "確定";
 "button.renameBottle" = "重新命名";
