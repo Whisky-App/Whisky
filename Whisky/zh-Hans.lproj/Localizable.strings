@@ -11,6 +11,7 @@
 
 "button.cDrive" = "打开 C 盘";
 "button.showInFinder" = "在访达中显示";
+"button.createShortcut" = "Create Shortcut";
 "button.run" = "运行...";
 "button.ok" = "确定";
 "button.renameBottle" = "重命名";
