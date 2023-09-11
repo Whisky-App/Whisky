@@ -11,6 +11,7 @@
 
 "button.cDrive" = "Avaa C levy";
 "button.showInFinder" = "Näytä Finderissa";
+"button.createShortcut" = "Create Shortcut";
 "button.run" = "Käynnistä...";
 "button.ok" = "OK";
 "button.renameBottle" = "Nimeä uudelleen";
