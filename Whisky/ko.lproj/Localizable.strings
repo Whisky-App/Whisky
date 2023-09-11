@@ -11,7 +11,7 @@
 
 "button.cDrive" = "C 드라이브 열기";
 "button.showInFinder" = "Finder에서 보기";
-"button.createShortcut" = "Create Shortcut";
+"button.createShortcut" = "바로 가기 만들기";
 "button.run" = "실행...";
 "button.ok" = "확인";
 "button.renameBottle" = "이름 변경";
