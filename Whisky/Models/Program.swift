@@ -57,7 +57,7 @@ public class Program: Hashable {
         }
     }
 
-    func runInTerminal() async {
+    func generateTerminalCommand() -> String {
         var wineCmd = "\(Wine.wineBinary.esc) start /unix \(url.esc) \(settings.arguments)"
 
         let env = Wine.constructEnvironment(bottle: bottle,
@@ -66,7 +66,11 @@ public class Program: Hashable {
             wineCmd = "\(environment.key)=\(environment.value) " + wineCmd
         }
 
-        wineCmd = wineCmd.replacingOccurrences(of: "\\", with: "\\\\")
+        return wineCmd
+    }
+
+    func runInTerminal() async {
+        let wineCmd = generateTerminalCommand().replacingOccurrences(of: "\\", with: "\\\\")
 
         let script = """
         tell application "Terminal"

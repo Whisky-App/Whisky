@@ -50,6 +50,11 @@ struct ProgramView: View {
                 Button("button.showInFinder") {
                     NSWorkspace.shared.activateFileViewerSelecting([program.url])
                 }
+                Button("button.createShortcut") {
+                    Task(priority: .userInitiated) {
+                        await ProgramShortcut.createShortcut(program)
+                    }
+                }
                 Button("button.run") {
                     programLoading = true
                     Task(priority: .userInitiated) {
