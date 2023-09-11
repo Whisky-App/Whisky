@@ -34,7 +34,7 @@ class ProgramShortcut {
 
             // Make shell script runable
             try FileManager.default.setAttributes([.posixPermissions: 0o777],
-                                                  ofItemAtPath: scriptUrl.path())
+                                                  ofItemAtPath: scriptUrl.path(percentEncoded: false))
 
             // Create Info.plist (set category for Game mode)
             let info = """
@@ -67,7 +67,7 @@ class ProgramShortcut {
                                                        representationTypes: .thumbnail)
             let thumbnail = try await QLThumbnailGenerator.shared.generateBestRepresentation(for: request)
             NSWorkspace.shared.setIcon(thumbnail.nsImage,
-                                       forFile: app.path(),
+                                       forFile: app.path(percentEncoded: false),
                                        options: NSWorkspace.IconCreationOptions())
             NSWorkspace.shared.activateFileViewerSelecting([app])
         } catch {
