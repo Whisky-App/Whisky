@@ -11,6 +11,7 @@
 
 "button.cDrive" = "Apri Disco C";
 "button.showInFinder" = "Mostra in Finder";
+"button.createShortcut" = "Create Shortcut";
 "button.run" = "Avvia...";
 "button.ok" = "OK";
 "button.renameBottle" = "Rinomina";
