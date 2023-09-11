@@ -11,6 +11,7 @@
 
 "button.cDrive" = "Mở ổ C:";
 "button.showInFinder" = "Mở trong Finder";
+"button.createShortcut" = "Create Shortcut";
 "button.run" = "Chạy...";
 "button.ok" = "OK";
 "button.renameBottle" = "Đổi tên";
