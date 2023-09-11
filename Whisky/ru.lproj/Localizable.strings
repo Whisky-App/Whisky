@@ -11,7 +11,7 @@
 
 "button.cDrive" = "Открыть диск C";
 "button.showInFinder" = "Показать в Finder";
-"button.createShortcut" = "Create Shortcut";
+"button.createShortcut" = "Создать ярлык";
 "button.run" = "Выполнить...";
 "button.ok" = "ОК";
 "button.renameBottle" = "Переименовать";
