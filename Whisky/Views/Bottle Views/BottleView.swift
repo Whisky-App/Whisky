@@ -144,12 +144,9 @@ struct BottleView: View {
                         Task(priority: .userInitiated) {
                             if result == .OK {
                                 if let url = panel.urls.first {
-                                    do {
-                                        let name = url.lastPathComponent
-                                        try await Wine.addShortcut(name: name, url: url, bottle: bottle)
-                                    } catch {
-                                        print("Failed to add external program shortcut: \(error)")
-                                    }
+                                    let name = url.lastPathComponent
+                                    let shortcut = Shortcut(name: name, link: url)
+                                    bottle.settings.shortcuts.append(shortcut)
                                     programLoading = false
                                 }
                             } else {
@@ -212,7 +209,17 @@ struct BottleView: View {
 
     func updateStartMenu() {
         startMenuPrograms = bottle.updateStartMenuPrograms()
+        bottle.settings.shortcuts.removeAll(where: { shortcutExists(shortcut: $0) })
         shortcuts = bottle.settings.shortcuts
+    }
+
+    func shortcutExists(shortcut: Shortcut) -> Bool {
+        let path = shortcut.link.path
+        if FileManager().fileExists(atPath: path) {
+            return true
+        } else {
+            return false
+        }
     }
 }
 
