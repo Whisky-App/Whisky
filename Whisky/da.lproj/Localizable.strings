@@ -11,6 +11,7 @@
 
 "button.cDrive" = "Åben C drev";
 "button.showInFinder" = "Vis i Finder";
+"button.createShortcut" = "Create Shortcut";
 "button.run" = "Kør program...";
 "button.ok" = "OK";
 "button.renameBottle" = "Omdøb";
