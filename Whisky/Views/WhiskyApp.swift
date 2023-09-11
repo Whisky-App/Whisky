@@ -28,6 +28,8 @@ struct WhiskyApp: App {
                     NSWindow.allowsAutomaticWindowTabbing = false
                 }
         }
+        // Don't ask me how this works, it just does
+        .handlesExternalEvents(matching: ["{same path of URL?}"])
         .commands {
             CommandGroup(after: .appInfo) {
                 SparkleView(updater: updaterController.updater)

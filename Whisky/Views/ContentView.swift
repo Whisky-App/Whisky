@@ -16,7 +16,9 @@ struct ContentView: View {
     @State var selected: URL?
     @State var showBottleCreation: Bool = false
     @State var bottlesLoaded: Bool = false
+    @State var showBottleSelection: Bool = false
     @State var newlyCreatedBottleURL: URL?
+    @State var openedFileURL: URL?
 
     var body: some View {
         NavigationSplitView {
@@ -99,6 +101,15 @@ struct ContentView: View {
         }
         .sheet(isPresented: $showSetup) {
             SetupView(showSetup: $showSetup, firstTime: false)
+        }
+        .sheet(item: $openedFileURL) { url in
+            FileOpenView(fileURL: url,
+                         currentBottle: selected,
+                         bottles: bottleVM.bottles)
+        }
+        .handlesExternalEvents(preferring: [], allowing: ["*"])
+        .onOpenURL { url in
+            openedFileURL = url
         }
         .onAppear {
             bottleVM.loadBottles()

@@ -32,3 +32,7 @@ extension URL {
         return prettyPath
     }
 }
+
+extension URL: Identifiable {
+    public var id: URL { self }
+}
