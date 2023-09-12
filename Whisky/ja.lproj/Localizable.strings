@@ -20,7 +20,7 @@
 "button.removeAlert" = "削除...";
 "button.createBottle" = "Bottle を作成";
 "button.removeAlert.msg" = "%@ を削除しますか？";
-"button.removeAlert.info" = "Are you sure you want to remove this bottle? This action is permanent.";
+"button.removeAlert.info" = "この Bottle を削除してもよろしいですか？ この操作は取り消せません。";
 "button.removeAlert.checkbox" = "ディスクからも削除";
 "button.removeAlert.delete" = "削除";
 "button.removeAlert.cancel" = "キャンセル";
@@ -128,5 +128,5 @@
 "winetricks.title" = "Winetricks コマンドを実行";
 "button.winetricks" = "Winetricks...";
 
-"run.title" = "Run \"%@\"";
+"run.title" = "\"%@\" を実行";
 "run.bottle" = "Bottle:";
