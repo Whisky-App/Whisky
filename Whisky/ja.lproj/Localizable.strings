@@ -11,19 +11,19 @@
 
 "button.cDrive" = "C ドライブを開く";
 "button.showInFinder" = "Finder で表示";
-"button.createShortcut" = "Create Shortcut";
+"button.createShortcut" = "ショートカットを作成";
 "button.run" = "実行...";
 "button.ok" = "OK";
 "button.renameBottle" = "名前の変更";
 "button.moveBottle" = "移動";
 "button.exportBottle" = "アーカイブとしてエクスポート";
-"button.removeAlert" = "Remove...";
+"button.removeAlert" = "削除...";
 "button.createBottle" = "Bottle を作成";
-"button.removeAlert.msg" = "Remove %@?";
+"button.removeAlert.msg" = "%@ を削除しますか？";
 "button.removeAlert.info" = "Are you sure you want to remove this bottle? This action is permanent.";
-"button.removeAlert.checkbox" = "Delete files from disk";
-"button.removeAlert.delete" = "Remove";
-"button.removeAlert.cancel" = "Cancel";
+"button.removeAlert.checkbox" = "ディスクからも削除";
+"button.removeAlert.delete" = "削除";
+"button.removeAlert.cancel" = "キャンセル";
 
 "config.winVersion" = "Windows のバージョン";
 "config.buildVersion" = "ビルド番号";
@@ -87,7 +87,7 @@
 "open.logs" = "ログフォルダを開く";
 "open.bottle" = "Bottle をインポート";
 "open.setup" = "セットアップ...";
-"install.cli" = "Install Whisky CLI...";
+"install.cli" = "Whisky CLI をインストール...";
 "wine.clearShaderCaches" = "シェーダーのキャッシュを消去";
 
 "showAlertOnFirstLaunch.messageText" = "Whisky を「アプリケーション」フォルダに移動しますか？";
@@ -98,8 +98,8 @@
 "setup.welcome" = "Whisky へようこそ";
 "setup.welcome.subtitle" = "セットアップをしましょう。1分以内に終わります。";
 
-"setup.title" = "Dependencies Setup";
-"setup.subtitle" = "Manage Whisky's required dependencies.";
+"setup.title" = "依存関係のセットアップ";
+"setup.subtitle" = "Whisky に必要な依存関係を管理します。";
 
 "setup.install.checking" = "%@ のインストールを確認しています...";
 "setup.install.installed" = "%@ がインストールされました";
@@ -117,13 +117,13 @@
 "setup.gptk.install" = "GPTK をインストール中";
 "setup.gptk.install.subtitle" = "あと少しです。そのままお待ち下さい。";
 
-"setup.quit" = "Quit";
-"setup.done" = "Done";
-"setup.next" = "Next";
+"setup.quit" = "終了";
+"setup.done" = "完了";
+"setup.next" = "次へ";
 
-"update.gptk.title" = "New Version of GPTK Available";
-"update.gptk.description" = "You are running GPTK %@, but %@ is available. Would you like to update?";
-"update.gptk.update" = "Update";
+"update.gptk.title" = "GPTK の新しいバージョンがあります";
+"update.gptk.description" = "現在 GPTK %@ を実行していますが、 %@ を利用可能です。アップデートしますか？";
+"update.gptk.update" = "アップデート";
 
 "winetricks.title" = "Winetricks コマンドを実行";
 "button.winetricks" = "Winetricks...";
