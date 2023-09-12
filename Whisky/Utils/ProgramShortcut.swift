@@ -10,13 +10,7 @@ import AppKit
 import QuickLookThumbnailing
 
 class ProgramShortcut {
-    // swiftlint:disable:next function_body_length
-    public static func createShortcut(_ program: Program) async {
-        let name = program.name.replacingOccurrences(of: ".exe", with: "")
-        // Should check if Whisky is installed for all uesers and adapt domain mask
-        let applicationDir = FileManager.default.urls(for: .applicationDirectory, in: .localDomainMask)[0]
-        let app = applicationDir.appending(path: name)
-                                .appendingPathExtension("app")
+    public static func createShortcut(_ program: Program, app: URL, name: String) async {
         let contents = app.appending(path: "Contents")
         let macos = contents.appending(path: "MacOS")
         do {
