@@ -201,7 +201,8 @@ struct BottleListEntry: View {
     }
 
     func showRemoveAlert(bottle: Bottle) {
-        let checkbox = NSButton(checkboxWithTitle: "button.removeAlert.checkbox", target: self, action: nil)
+        let checkbox = NSButton(checkboxWithTitle: String(localized: "button.removeAlert.checkbox"),
+                                target: self, action: nil)
         let alert = NSAlert()
         alert.messageText = String(format: String(localized: "button.removeAlert.msg"),
                                    bottle.settings.name)
