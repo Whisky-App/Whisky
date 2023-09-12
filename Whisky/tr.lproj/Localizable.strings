@@ -11,19 +11,19 @@
 
 "button.cDrive" = "C Sürücüsünü Aç";
 "button.showInFinder" = "Finder'da Göster";
-"button.createShortcut" = "Create Shortcut";
+"button.createShortcut" = "Kısayol Oluştur";
 "button.run" = "Çalıştır...";
 "button.ok" = "Tamam";
 "button.renameBottle" = "Bottle'ı Yeniden Adlandır";
 "button.moveBottle" = "Taşı";
 "button.exportBottle" = "Arşiv olarak dışarı aktar";
-"button.removeAlert" = "Remove...";
+"button.removeAlert" = "Kaldır...";
 "button.createBottle" = "Bottle Oluştur";
-"button.removeAlert.msg" = "Remove %@?";
-"button.removeAlert.info" = "Are you sure you want to remove this bottle? This action is permanent.";
-"button.removeAlert.checkbox" = "Delete files from disk";
-"button.removeAlert.delete" = "Remove";
-"button.removeAlert.cancel" = "Cancel";
+"button.removeAlert.msg" = "%@ öğesini kaldır?";
+"button.removeAlert.info" = "Bu Bottle'ı kaldırmak istediğinize emin misiniz? Bu hareket kalıcıdır.";
+"button.removeAlert.checkbox" = "Dosyaları diskten sil";
+"button.removeAlert.delete" = "Kaldır";
+"button.removeAlert.cancel" = "İptal";
 
 "config.winVersion" = "Windows Sürümü";
 "config.buildVersion" = "Yapı Sürümü";
@@ -87,7 +87,7 @@
 "open.logs" = "Log Klasörünü Aç";
 "open.bottle" = "Bottle'ı İçeri Aktarın";
 "open.setup" = "Kur...";
-"install.cli" = "Install Whisky CLI...";
+"install.cli" = "Whisky CLI'i Yükle...";
 "wine.clearShaderCaches" = "Shader Cache'lerini Temizle";
 
 "showAlertOnFirstLaunch.messageText" = "Whisky'yi Applications klasörüne taşımak ister misiniz?";
@@ -98,8 +98,8 @@
 "setup.welcome" = "Whisky'ye Hoşgeldiniz";
 "setup.welcome.subtitle" = "Hadi seni hazırlayalım. Bu çok da uzun sürmeyecek.";
 
-"setup.title" = "Dependencies Setup";
-"setup.subtitle" = "Manage Whisky's required dependencies.";
+"setup.title" = "İhtiyaç Kurulumu";
+"setup.subtitle" = "Whisky'nin gerekli ihtiyaçlarını düzenle.";
 
 "setup.install.checking" = "%@ kontrol ediliyor...";
 "setup.install.installed" = "%@ yüklendi";
@@ -117,16 +117,16 @@
 "setup.gptk.install" = "Wine Yükleniyor";
 "setup.gptk.install.subtitle" = "Bitmek üzere. Lütfen Kapatmayınız.";
 
-"setup.quit" = "Quit";
-"setup.done" = "Done";
-"setup.next" = "Next";
+"setup.quit" = "Çık";
+"setup.done" = "Bitti";
+"setup.next" = "Sonraki";
 
-"update.gptk.title" = "New Version of GPTK Available";
-"update.gptk.description" = "You are running GPTK %@, but %@ is available. Would you like to update?";
-"update.gptk.update" = "Update";
+"update.gptk.title" = "GPTK'nin yeni versiyonu mevcut";
+"update.gptk.description" = "GPTK %@ versiyonu kullanıyorsunuz ama %@ versiyonu mevcut. Güncellemek ister misiniz?";
+"update.gptk.update" = "Güncelle";
 
 "winetricks.title" = "Winetricks komutlarını çalıştırın";
 "button.winetricks" = "Winetricks...";
 
-"run.title" = "Run \"%@\"";
+"run.title" = "\"%@\" Çalıştır";
 "run.bottle" = "Bottle:";
