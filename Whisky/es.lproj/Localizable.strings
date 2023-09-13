@@ -6,8 +6,8 @@
 "tab.navTitle.programs" = "Programas de %@";
 "tab.navTitle.info" = "Información de %@";
 
-"main.noneSelected" = "Selecciona un Contenedor";
-"main.createFirst" = "Crea tu primer contenedor para comenzar";
+"main.noneSelected" = "Selecciona una Botella";
+"main.createFirst" = "Crea tu primera botella para comenzar";
 
 "button.cDrive" = "Abrir \"Unidad C\"";
 "button.showInFinder" = "Mostrar en Finder";
@@ -70,22 +70,22 @@
 "alert.message" = "¡Error al abrir el programa!";
 "alert.info" = "No se pudo abrir";
 
-"create.title" = "Crear un nuevo Contenedor";
-"create.name" = "Nombre del Contenedor:";
+"create.title" = "Crear una botella nueva";
+"create.name" = "Nombre de la botella:";
 "create.win" = "Versión de Windows:";
-"create.path" = "Ubicación del Contenedor:";
+"create.path" = "Ubicación de la botella:";
 "create.browse" = "Explorar";
 "create.cancel" = "Cancelar";
 "create.create" = "Crear";
 
-"rename.title" = "Renombrar contenedor";
+"rename.title" = "Renombrar botella";
 "rename.name" = "Nuevo nombre:";
 "rename.rename" = "Renombrar";
 
 "check.updates" = "Buscar actualizaciones...";
 "kill.bottles" = "Detener todas las Botellas";
 "open.logs" = "Abrir carpeta de registros";
-"open.bottle" = "Importar Contenedor";
+"open.bottle" = "Importar Botella";
 "open.setup" = "Instalar...";
 "install.cli" = "Instalar Whisky CLI...";
 "wine.clearShaderCaches" = "Limpiar Caché de Shaders";
@@ -96,7 +96,7 @@
 "showAlertOnFirstLaunch.button.dontMove" = "No Mover";
 
 "setup.welcome" = "Bienvenido a Whisky";
-"setup.welcome.subtitle" = "Vamos a configurar. Sólo tomará un minuto.";
+"setup.welcome.subtitle" = "Vamos a configurar. Solo tomará un minuto.";
 
 "setup.title" = "Configuración de dependencias";
 "setup.subtitle" = "Administre las dependencias requeridas de Whisky.";
