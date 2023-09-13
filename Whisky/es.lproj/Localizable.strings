@@ -11,7 +11,7 @@
 
 "button.cDrive" = "Abrir \"Unidad C\"";
 "button.showInFinder" = "Mostrar en Finder";
-"button.createShortcut" = "Create Shortcut";
+"button.createShortcut" = "Crear atajo";
 "button.run" = "Ejecutar...";
 "button.ok" = "OK";
 "button.renameBottle" = "Renombrar";
@@ -98,8 +98,8 @@
 "setup.welcome" = "Bienvenido a Whisky";
 "setup.welcome.subtitle" = "Vamos a configurar. Sólo tomará un minuto.";
 
-"setup.title" = "Dependencies Setup";
-"setup.subtitle" = "Manage Whisky's required dependencies.";
+"setup.title" = "Configuración de dependencias";
+"setup.subtitle" = "Administre las dependencias requeridas de Whisky.";
 
 "setup.install.checking" = "Comprobando la instalación %@...";
 "setup.install.installed" = "%@ instalado";
@@ -117,9 +117,9 @@
 "setup.gptk.install" = "Instalando GPTK";
 "setup.gptk.install.subtitle" = "Un momento, ya casi está.";
 
-"setup.quit" = "Quit";
-"setup.done" = "Done";
-"setup.next" = "Next";
+"setup.quit" = "Salir";
+"setup.done" = "Completado";
+"setup.next" = "Continuar";
 
 "update.gptk.title" = "Nueva versión de GPTK disponible";
 "update.gptk.description" = "Estás ejecutando GPTK %@, pero %@ está disponible. ¿Quieres actualizar?";
@@ -128,5 +128,5 @@
 "winetricks.title" = "Ejecutar comando de Winetricks";
 "button.winetricks" = "Winetricks...";
 
-"run.title" = "Run \"%@\"";
-"run.bottle" = "Bottle:";
+"run.title" = "Ejecutar \"%@\"";
+"run.bottle" = "Botella:";
