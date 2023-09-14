@@ -52,21 +52,6 @@ class BottleVM: ObservableObject {
     }
 
     func loadBottle(bottleURL: URL) -> BottleSettings? {
-        // Try loading as legacy bottle
-        do {
-            let files = try FileManager.default.contentsOfDirectory(at: bottleURL, includingPropertiesForKeys: nil)
-            for file in files where file.pathExtension == "plist" {
-                if let bottlePath = convertFormat(plistPath: file) {
-                    return BottleSettings(bottleURL: bottlePath)
-                } else {
-                    print("Failed to load as legacy bottle")
-                }
-            }
-        } catch {
-            print("Failed to load as legacy bottle")
-        }
-
-        // Try loading as a normal bottle
         let bottleMetadata = bottleURL
             .appending(path: "Metadata")
             .appendingPathExtension("plist")
