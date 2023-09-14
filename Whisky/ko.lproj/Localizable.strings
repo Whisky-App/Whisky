@@ -128,5 +128,5 @@
 "winetricks.title" = "Winetricks 명령어 실행";
 "button.winetricks" = "Winetricks...";
 
-"run.title" = "Run \"%@\"";
+"run.title" = "\"%@\" 실행";
 "run.bottle" = "Bottle:";

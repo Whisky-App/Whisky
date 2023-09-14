@@ -11,7 +11,7 @@
 
 "button.cDrive" = "Відкрити диск C";
 "button.showInFinder" = "Показати у Finder";
-"button.createShortcut" = "Create Shortcut";
+"button.createShortcut" = "Створити ярлик";
 "button.run" = "Запустити...";
 "button.ok" = "Гаразд";
 "button.renameBottle" = "Перейменувати";
@@ -128,5 +128,5 @@
 "winetricks.title" = "Запустити команду Winetricks";
 "button.winetricks" = "Winetricks...";
 
-"run.title" = "Run \"%@\"";
-"run.bottle" = "Bottle:";
+"run.title" = "Запустити \"%@\"";
+"run.bottle" = "Пляшка:";
