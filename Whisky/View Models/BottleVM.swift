@@ -36,9 +36,7 @@ class BottleVM: ObservableObject {
             .path(percentEncoded: false)
 
         if FileManager.default.fileExists(atPath: bottleMetadata) {
-            let bottle = BottleSettings(bottleURL: bottleURL)
-            bottle.encode()
-            return bottle
+            return BottleSettings(bottleURL: bottleURL)
         }
 
         return .none
@@ -65,7 +63,6 @@ class BottleVM: ObservableObject {
                 bottle.settings.wineVersion = SemanticVersion(wineVer) ?? SemanticVersion(0, 0, 0)
                 // Add record
                 self.bottlesList.paths.append(newBottleDir)
-                self.bottlesList.encode()
                 self.loadBottles()
             } catch {
                 print("Failed to create new bottle: \(error)")

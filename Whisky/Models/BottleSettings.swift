@@ -161,6 +161,7 @@ class BottleSettings {
             if settings.wineConfig.wineVersion != BottleWineConfig().wineVersion {
                 print("Bottle has a different wine version!")
                 settings.wineConfig.wineVersion = BottleWineConfig().wineVersion
+                encode()
             }
             return true
         } catch {

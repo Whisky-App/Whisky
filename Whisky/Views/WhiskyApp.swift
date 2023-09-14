@@ -57,7 +57,6 @@ struct WhiskyApp: App {
                         if result == .OK {
                             if let url = panel.urls.first {
                                 BottleVM.shared.bottlesList.paths.append(url)
-                                BottleVM.shared.bottlesList.encode()
                                 BottleVM.shared.loadBottles()
                             }
                         }

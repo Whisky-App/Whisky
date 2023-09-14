@@ -24,8 +24,11 @@ public struct BottleData: Codable {
     static let currentVersion = SemanticVersion(1, 0, 0)
 
     private var fileVersion: SemanticVersion
-    // Users of BottleData paths are responsible for encoding new data
-    public var paths: [URL] = []
+    public var paths: [URL] = [] {
+        didSet {
+            encode()
+        }
+    }
 
     public init() {
         fileVersion = Self.currentVersion
@@ -52,7 +55,7 @@ public struct BottleData: Codable {
     }
 
     @discardableResult
-    public func encode() -> Bool {
+    private func encode() -> Bool {
         let encoder = PropertyListEncoder()
         encoder.outputFormat = .xml
 
