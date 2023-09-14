@@ -44,6 +44,7 @@
 "config.dxvkHud.partial" = "일부";
 "config.dxvkHud.fps" = "FPS";
 "config.dxvkHud.off" = "끄기";
+"config.dxvk.async" = "DXVK Async";
 "config.dpi" = "DPI 스케일링";
 "config.inspect" = "구성...";
 
