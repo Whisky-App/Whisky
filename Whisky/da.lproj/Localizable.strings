@@ -44,6 +44,7 @@
 "config.dxvkHud.partial" = "Delvis";
 "config.dxvkHud.fps" = "FPS";
 "config.dxvkHud.off" = "Fra";
+"config.dxvk.async" = "DXVK Async";
 "config.dpi" = "DPI Skalering";
 "config.inspect" = "Konfigurer...";
 
