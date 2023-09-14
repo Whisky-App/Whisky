@@ -65,7 +65,7 @@ class ProgramSettings {
     }
 
     @discardableResult
-    public func decode() -> Bool {
+    private func decode() -> Bool {
         do {
             let data = try Data(contentsOf: settingsUrl)
             settings = try PropertyListDecoder().decode(ProgramSettingsData.self, from: data)
@@ -76,7 +76,7 @@ class ProgramSettings {
     }
 
     @discardableResult
-    public func encode() -> Bool {
+    private func encode() -> Bool {
         let encoder = PropertyListEncoder()
         encoder.outputFormat = .xml
 

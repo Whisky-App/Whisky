@@ -148,7 +148,7 @@ class BottleSettings {
     }
 
     @discardableResult
-    public func decode() -> Bool {
+    private func decode() -> Bool {
         let decoder = PropertyListDecoder()
 
         do {
@@ -170,7 +170,7 @@ class BottleSettings {
     }
 
     @discardableResult
-    public func encode() -> Bool {
+    private func encode() -> Bool {
         let encoder = PropertyListEncoder()
         encoder.outputFormat = .xml
 
