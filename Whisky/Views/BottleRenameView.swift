@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import WhiskyKit
 
 struct BottleRenameView: View {
     let bottle: Bottle

@@ -9,24 +9,7 @@ import Foundation
 import AppKit
 import WhiskyKit
 
-public class Bottle: Hashable, Identifiable {
-    public static func == (lhs: Bottle, rhs: Bottle) -> Bool {
-        return lhs.url == rhs.url
-    }
-
-    public func hash(into hasher: inout Hasher) {
-        return hasher.combine(url)
-    }
-    public var id: URL {
-        self.url
-    }
-
-    var url: URL = URL.homeDirectory.appending(component: ".wine")
-    var settings: BottleSettings
-    var programs: [Program] = []
-    var startMenuPrograms: [ShellLinkHeader] = []
-    var inFlight: Bool = false
-
+extension Bottle {
     func openCDrive() {
         NSWorkspace.shared.open(url.appending(path: "drive_c"))
     }
@@ -166,21 +149,5 @@ public class Bottle: Hashable, Identifiable {
     @MainActor
     func rename(newName: String) {
         settings.name = newName
-    }
-
-    init(inFlight: Bool = false) {
-        self.settings = BottleSettings(bottleURL: url)
-        self.inFlight = inFlight
-    }
-    init(bottleUrl: URL, inFlight: Bool = false) {
-        self.settings = BottleSettings(bottleURL: bottleUrl)
-        self.url = bottleUrl
-        self.inFlight = inFlight
-    }
-}
-
-extension Array where Element == Bottle {
-    mutating func sortByName() {
-        self.sort { $0.settings.name.lowercased() < $1.settings.name.lowercased() }
     }
 }

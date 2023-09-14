@@ -1,25 +1,25 @@
 //
 //  ProgramSettings.swift
-//  Whisky
+//  WhiskyKit
 //
 //  Created by Isaac Marovitz on 06/04/2023.
 //
 
 import Foundation
 
-struct ProgramSettingsData: Codable {
+public struct ProgramSettingsData: Codable {
     var environment: [String: String] = [:]
     var arguments: String = ""
 }
 
-class ProgramSettings {
-    var settings: ProgramSettingsData {
+public class ProgramSettings {
+    public var settings: ProgramSettingsData {
         didSet {
             encode()
         }
     }
 
-    var environment: [String: String] {
+    public var environment: [String: String] {
         get {
             return settings.environment
         }
@@ -28,7 +28,7 @@ class ProgramSettings {
         }
     }
 
-    var arguments: String {
+    public var arguments: String {
         get {
             return settings.arguments
         }

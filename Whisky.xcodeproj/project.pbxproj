@@ -9,8 +9,11 @@
 /* Begin PBXBuildFile section */
 		6E064B1229DD32A200D9A2D2 /* Sparkle in Frameworks */ = {isa = PBXBuildFile; productRef = 6E064B1129DD32A200D9A2D2 /* Sparkle */; };
 		6E064B1429DD331F00D9A2D2 /* SparkleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E064B1329DD331F00D9A2D2 /* SparkleView.swift */; };
-		6E26058629D9267B00DDD788 /* ShellLink.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E26058529D9267B00DDD788 /* ShellLink.swift */; };
 		6E309A1E2AB3A12300D0167E /* BottleSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E5197D129D7202100CF655E /* BottleSettings.swift */; };
+		6E309A202AB3A6A100D0167E /* Bottle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E309A1F2AB3A6A100D0167E /* Bottle.swift */; };
+		6E309A222AB3A79300D0167E /* Program.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E309A212AB3A79300D0167E /* Program.swift */; };
+		6E309A232AB3A80400D0167E /* ProgramSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EA2D48429DF130F00C84668 /* ProgramSettings.swift */; };
+		6E309A242AB3A83D00D0167E /* ShellLink.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E26058529D9267B00DDD788 /* ShellLink.swift */; };
 		6E355E4F29D74DE0002D83BE /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 6E355E5129D74DE0002D83BE /* Localizable.strings */; };
 		6E355E5829D78249002D83BE /* ConfigView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E355E5729D78249002D83BE /* ConfigView.swift */; };
 		6E355E5A29D782B2002D83BE /* ProgramsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E355E5929D782B2002D83BE /* ProgramsView.swift */; };
@@ -40,7 +43,6 @@
 		6E7C07BE2AAE7B0100F6E66B /* ProgramShortcut.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E7C07BD2AAE7B0100F6E66B /* ProgramShortcut.swift */; };
 		6E7C07C02AAF570100F6E66B /* FileOpenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E7C07BF2AAF570100F6E66B /* FileOpenView.swift */; };
 		6EA2D47E29DDAE5E00C84668 /* BottleRenameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EA2D47D29DDAE5E00C84668 /* BottleRenameView.swift */; };
-		6EA2D48529DF130F00C84668 /* ProgramSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EA2D48429DF130F00C84668 /* ProgramSettings.swift */; };
 		6EDF9AAF2A9A6CA9006CAA7E /* WhiskyKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6EDF9AA92A9A6CA9006CAA7E /* WhiskyKit.framework */; };
 		6EDF9AB02A9A6CA9006CAA7E /* WhiskyKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 6EDF9AA92A9A6CA9006CAA7E /* WhiskyKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		6EDF9AB62A9A6D8C006CAA7E /* BottleData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EDF9AB52A9A6D8C006CAA7E /* BottleData.swift */; };
@@ -154,6 +156,8 @@
 		6E08228B2A39F83900195094 /* da */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = da; path = da.lproj/Localizable.strings; sourceTree = "<group>"; };
 		6E26058529D9267B00DDD788 /* ShellLink.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShellLink.swift; sourceTree = "<group>"; };
 		6E26058929D9282000DDD788 /* DataExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataExtensions.swift; sourceTree = "<group>"; };
+		6E309A1F2AB3A6A100D0167E /* Bottle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bottle.swift; sourceTree = "<group>"; };
+		6E309A212AB3A79300D0167E /* Program.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Program.swift; sourceTree = "<group>"; };
 		6E355E5029D74DE0002D83BE /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		6E355E5529D7642B002D83BE /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/Localizable.strings; sourceTree = "<group>"; };
 		6E355E5729D78249002D83BE /* ConfigView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfigView.swift; sourceTree = "<group>"; };
@@ -273,7 +277,10 @@
 		6E309A1D2AB3A10E00D0167E /* Whisky */ = {
 			isa = PBXGroup;
 			children = (
+				6E309A1F2AB3A6A100D0167E /* Bottle.swift */,
+				6E309A212AB3A79300D0167E /* Program.swift */,
 				6E5197D129D7202100CF655E /* BottleSettings.swift */,
+				6EA2D48429DF130F00C84668 /* ProgramSettings.swift */,
 				6EDF9AB52A9A6D8C006CAA7E /* BottleData.swift */,
 			);
 			path = Whisky;
@@ -368,8 +375,6 @@
 			children = (
 				6E40498229CCA91B006E3F1B /* Bottle.swift */,
 				6E355E5F29D7D8BD002D83BE /* Program.swift */,
-				6EA2D48429DF130F00C84668 /* ProgramSettings.swift */,
-				6E26058529D9267B00DDD788 /* ShellLink.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -442,6 +447,7 @@
 				6E8A3B3D2A3613F400D19632 /* PortableExecutable.swift */,
 				6E8A3B3F2A36140300D19632 /* ResourceSection.swift */,
 				6EFDF6432AAD65F500EF622F /* BitmapInfo.swift */,
+				6E26058529D9267B00DDD788 /* ShellLink.swift */,
 			);
 			path = PE;
 			sourceTree = "<group>";
@@ -697,7 +703,6 @@
 				6E355E5829D78249002D83BE /* ConfigView.swift in Sources */,
 				6EA2D47E29DDAE5E00C84668 /* BottleRenameView.swift in Sources */,
 				6E6C0CF62A419A8300356232 /* GPTKDownloadView.swift in Sources */,
-				6EA2D48529DF130F00C84668 /* ProgramSettings.swift in Sources */,
 				6E50D98529CDF25B008C39F6 /* BottleCreationView.swift in Sources */,
 				6E6C0CF42A419A7600356232 /* RosettaView.swift in Sources */,
 				6E6C0CF82A419A8C00356232 /* GPTKInstallView.swift in Sources */,
@@ -711,7 +716,6 @@
 				6E355E6029D7D8BD002D83BE /* Program.swift in Sources */,
 				6E6C0CF22A419A6800356232 /* WelcomeView.swift in Sources */,
 				6E40498129CCA8B0006E3F1B /* BottleView.swift in Sources */,
-				6E26058629D9267B00DDD788 /* ShellLink.swift in Sources */,
 				6E355E5E29D7D85D002D83BE /* ProgramView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -732,11 +736,15 @@
 				6EDF9ABE2A9A6F3D006CAA7E /* GPTKDownloader.swift in Sources */,
 				6EFDF6632AAE2E1700EF622F /* DataExtensions.swift in Sources */,
 				6EDF9ABF2A9A6F3D006CAA7E /* GPTKInstaller.swift in Sources */,
+				6E309A232AB3A80400D0167E /* ProgramSettings.swift in Sources */,
+				6E309A202AB3A6A100D0167E /* Bottle.swift in Sources */,
 				6EFDF6602AAE2DED00EF622F /* PortableExecutable.swift in Sources */,
 				6EFDF6642AAE2E1B00EF622F /* URLExtensions.swift in Sources */,
 				6EDF9AC32A9A6F46006CAA7E /* Tar.swift in Sources */,
+				6E309A222AB3A79300D0167E /* Program.swift in Sources */,
 				6EFDF6622AAE2DF300EF622F /* BitmapInfo.swift in Sources */,
 				6EDF9AB62A9A6D8C006CAA7E /* BottleData.swift in Sources */,
+				6E309A242AB3A83D00D0167E /* ShellLink.swift in Sources */,
 				6EFDF6612AAE2DF000EF622F /* ResourceSection.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

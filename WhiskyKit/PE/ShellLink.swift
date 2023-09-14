@@ -8,17 +8,17 @@
 import Foundation
 import AppKit
 
-struct ShellLinkHeader: Hashable {
-    static func == (lhs: ShellLinkHeader, rhs: ShellLinkHeader) -> Bool {
+public struct ShellLinkHeader: Hashable {
+    public static func == (lhs: ShellLinkHeader, rhs: ShellLinkHeader) -> Bool {
         lhs.url == rhs.url
     }
 
-    var url: URL
-    var linkFlags: LinkFlags
-    var linkInfo: LinkInfo?
-    var stringData: StringData?
+    public var url: URL
+    public var linkFlags: LinkFlags
+    public var linkInfo: LinkInfo?
+    public var stringData: StringData?
 
-    init(url: URL, data: Data, bottle: Bottle) {
+    public init(url: URL, data: Data, bottle: Bottle) {
         self.url = url
         var offset: Int = 0
         let headerSize = data.extract(UInt32.self) ?? 0
@@ -47,19 +47,23 @@ struct ShellLinkHeader: Hashable {
     }
 }
 
-struct LinkFlags: OptionSet, Hashable {
-    let rawValue: UInt32
+public struct LinkFlags: OptionSet, Hashable {
+    public let rawValue: UInt32
+
+    public init(rawValue: UInt32) {
+        self.rawValue = rawValue
+    }
 
     static let hasLinkTargetIDList = LinkFlags(rawValue: 1 << 0)
     static let hasLinkInfo = LinkFlags(rawValue: 1 << 1)
     static let hasIconLocation = LinkFlags(rawValue: 1 << 6)
 }
 
-struct LinkInfo: Hashable {
-    var linkInfoFlags: LinkInfoFlags
-    var program: Program?
+public struct LinkInfo: Hashable {
+    public var linkInfoFlags: LinkInfoFlags
+    public var program: Program?
 
-    init(data: Data, bottle: Bottle, offset: inout Int) {
+    public init(data: Data, bottle: Bottle, offset: inout Int) {
         let startOfSection = offset
 
         let linkInfoSize = data.extract(UInt32.self, offset: offset) ?? 0
@@ -113,22 +117,26 @@ struct LinkInfo: Hashable {
     }
 }
 
-struct LinkInfoFlags: OptionSet, Hashable {
-    let rawValue: UInt32
+public struct LinkInfoFlags: OptionSet, Hashable {
+    public let rawValue: UInt32
+
+    public init(rawValue: UInt32) {
+        self.rawValue = rawValue
+    }
 
     static let volumeIDAndLocalBasePath = LinkInfoFlags(rawValue: 1 << 0)
     static let commonNetworkRelativeLinkAndPathSuffix = LinkInfoFlags(rawValue: 1 << 1)
 }
 
-struct StringData: Hashable {
-    var icon: NSImage?
+public struct StringData: Hashable {
+    public var icon: NSImage?
 
     // This is a naïve implementation to save my sanity.
     // A real version of this would have to check the LinkFlags to determine
     // which strings exist in this section, and then properly iterate
     // and fine the icon location string. Luckily for us, icon location
     // is the last string that can be in this section so we can be lazy
-    init(data: Data, bottle: Bottle, offset: inout Int) {
+    public init(data: Data, bottle: Bottle, offset: inout Int) {
         let stringData = data[offset...]
         var strings = stringData.nullTerminatedStrings(using: .windowsCP1254)
         strings = strings.joined().components(separatedBy: "\u{01}")

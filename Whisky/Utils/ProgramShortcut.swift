@@ -8,6 +8,7 @@
 import Foundation
 import AppKit
 import QuickLookThumbnailing
+import WhiskyKit
 
 class ProgramShortcut {
     public static func createShortcut(_ program: Program, app: URL, name: String) async {
