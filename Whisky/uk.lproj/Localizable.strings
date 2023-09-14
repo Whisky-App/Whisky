@@ -44,6 +44,7 @@
 "config.dxvkHud.partial" = "Частковий";
 "config.dxvkHud.fps" = "Кадр/с";
 "config.dxvkHud.off" = "Вимкнено";
+"config.dxvk.async" = "DXVK Async";
 "config.dpi" = "Масштабування DPI";
 "config.inspect" = "Налаштувати...";
 
