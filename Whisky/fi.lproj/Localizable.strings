@@ -44,6 +44,7 @@
 "config.dxvkHud.partial" = "Osittainen";
 "config.dxvkHud.fps" = "FPS";
 "config.dxvkHud.off" = "Pois";
+"config.dxvk.async" = "DXVK Async";
 "config.dpi" = "DPI skaalaus";
 "config.inspect" = "Konfiguroi...";
 
