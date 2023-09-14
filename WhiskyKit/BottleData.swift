@@ -8,58 +8,41 @@
 import Foundation
 import SemanticVersion
 
-struct BottleEntries: Codable {
-    var fileVersion: SemanticVersion = SemanticVersion(1, 0, 0)
-    var paths: [URL] = []
-}
-
-public class BottleVMEntries {
-    static let containerDir = FileManager.default.homeDirectoryForCurrentUser
+public struct BottleData: Codable {
+    public static let containerDir = FileManager.default.homeDirectoryForCurrentUser
         .appending(path: "Library")
         .appending(path: "Containers")
         .appending(path: Bundle.main.bundleIdentifier ?? "com.isaacmarovitz.Whisky")
 
-    static let bottleEntriesDir = containerDir
+    public static let bottleEntriesDir = containerDir
         .appending(path: "BottleVM")
         .appendingPathExtension("plist")
 
-    private var file: BottleEntries {
-        didSet {
-            encode()
-        }
-    }
+    public static let defaultBottleDir = containerDir
+        .appending(path: "Bottles")
 
-    public var paths: [URL] {
-        get {
-            file.paths
-        }
-        set {
-            file.paths = newValue
-        }
-    }
+    static let currentVersion = SemanticVersion(1, 0, 0)
 
-    public static func exists() -> Bool {
-        return FileManager.default.fileExists(atPath: Self.bottleEntriesDir.path())
-    }
+    private var fileVersion: SemanticVersion
+    // Users of BottleData paths are responsible for encoding new data
+    public var paths: [URL] = []
 
     public init() {
-        file = .init()
-        if !Self.exists() {
-            return
-        }
+        fileVersion = Self.currentVersion
+
         if !decode() {
             encode()
         }
     }
 
     @discardableResult
-    func decode() -> Bool {
+    private mutating func decode() -> Bool {
         let decoder = PropertyListDecoder()
         do {
             let data = try Data(contentsOf: Self.bottleEntriesDir)
-            file = try decoder.decode(BottleEntries.self, from: data)
-            if file.fileVersion != BottleEntries().fileVersion {
-                print("Invalid file version \(file.fileVersion)")
+            self = try decoder.decode(BottleData.self, from: data)
+            if self.fileVersion != Self.currentVersion {
+                print("Invalid file version \(self.fileVersion)")
                 return false
             }
             return true
@@ -74,7 +57,7 @@ public class BottleVMEntries {
         encoder.outputFormat = .xml
 
         do {
-            let data = try encoder.encode(file)
+            let data = try encoder.encode(self)
             try data.write(to: Self.bottleEntriesDir)
             return true
         } catch {

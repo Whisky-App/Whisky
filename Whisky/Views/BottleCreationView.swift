@@ -6,11 +6,12 @@
 //
 
 import SwiftUI
+import WhiskyKit
 
 struct BottleCreationView: View {
     @State var newBottleName: String = ""
     @State var newBottleVersion: WinVersion = .win10
-    @State var newBottleURL: URL = BottleVM.bottleDir
+    @State var newBottleURL: URL = BottleData.defaultBottleDir
     @State var bottlePath: String = ""
     @State var nameValid: Bool = false
     @Binding var newlyCreatedBottleURL: URL?
@@ -55,7 +56,7 @@ struct BottleCreationView: View {
                     panel.canChooseDirectories = true
                     panel.allowsMultipleSelection = false
                     panel.canCreateDirectories = true
-                    panel.directoryURL = BottleVM.containerDir
+                    panel.directoryURL = BottleData.containerDir
                     panel.begin { result in
                         if result == .OK {
                             if let url = panel.urls.first {

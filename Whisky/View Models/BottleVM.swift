@@ -12,15 +12,7 @@ import WhiskyKit
 class BottleVM: ObservableObject {
     static let shared = BottleVM()
 
-    static let containerDir = FileManager.default.homeDirectoryForCurrentUser
-        .appending(path: "Library")
-        .appending(path: "Containers")
-        .appending(path: Bundle.main.bundleIdentifier ?? "com.isaacmarovitz.Whisky")
-
-    static let bottleDir = containerDir
-        .appending(path: "Bottles")
-    let bottlesList = BottleVMEntries()
-
+    var bottlesList = BottleData()
     @Published var bottles: [Bottle] = []
 
     @MainActor
@@ -31,20 +23,6 @@ class BottleVM: ObservableObject {
             bottlesList.paths.remove(at: index)
         }
 
-        // Update if needed
-        if !BottleVMEntries.exists() {
-            do {
-                let files = try FileManager.default.contentsOfDirectory(at: BottleVM.bottleDir,
-                                                                    includingPropertiesForKeys: nil,
-                                                                    options: .skipsHiddenFiles)
-                for file in files where loadBottle(bottleURL: file) != nil {
-                    bottlesList.paths.append(file)
-                }
-            } catch {
-                print("Failed to list files")
-            }
-            bottlesList.encode()
-        }
         bottles = bottlesList.paths.map({
             Bottle(bottleUrl: $0)
         })
@@ -72,12 +50,6 @@ class BottleVM: ObservableObject {
         Task.detached { @MainActor in
             var bottleId: Bottle? = .none
             do {
-                let bottleDirPath = BottleVM.bottleDir.path(percentEncoded: false)
-                if !FileManager.default.fileExists(atPath: bottleDirPath) {
-                    try FileManager.default.createDirectory(atPath: bottleDirPath,
-                                                            withIntermediateDirectories: true)
-                }
-
                 try FileManager.default.createDirectory(atPath: newBottleDir.path(percentEncoded: false),
                                                         withIntermediateDirectories: true)
                 let bottle = Bottle(bottleUrl: newBottleDir, inFlight: true)
@@ -93,6 +65,7 @@ class BottleVM: ObservableObject {
                 bottle.settings.wineVersion = SemanticVersion(wineVer) ?? SemanticVersion(0, 0, 0)
                 // Add record
                 self.bottlesList.paths.append(newBottleDir)
+                self.bottlesList.encode()
                 self.loadBottles()
             } catch {
                 print("Failed to create new bottle: \(error)")
