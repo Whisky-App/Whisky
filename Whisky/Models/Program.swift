@@ -7,6 +7,7 @@
 
 import Foundation
 import AppKit
+import WhiskyKit
 
 public class Program: Hashable {
     public static func == (lhs: Program, rhs: Program) -> Bool {

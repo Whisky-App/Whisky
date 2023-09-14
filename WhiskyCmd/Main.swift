@@ -7,6 +7,7 @@
 
 import Foundation
 import ArgumentParser
+import WhiskyKit
 
 @main
 struct Whisky: ParsableCommand {
@@ -27,7 +28,18 @@ extension Whisky {
         static var configuration = CommandConfiguration(abstract: "List existing bottles.")
 
         mutating func run() throws {
-            print("Create a bottle")
+            let bottlesList = BottleData()
+            var bottles: [BottleSettings] = []
+
+            bottles = bottlesList.paths.map({
+                BottleSettings(bottleURL: $0)
+            })
+
+            // Columns should be even and automatic
+            print("| Name | Windows Version |")
+            for bottle in bottles {
+                print("| \(bottle.name) | \(bottle.windowsVersion.pretty()) |")
+            }
         }
     }
 
@@ -42,8 +54,15 @@ extension Whisky {
     struct Add: ParsableCommand {
         static var configuration = CommandConfiguration(abstract: "Add an existing bottle.")
 
+        @Argument var path: String
+
         mutating func run() throws {
-            print("Create a bottle")
+            // Should be sanitised
+            let bottle = URL(filePath: path)
+            let settings = BottleSettings(bottleURL: bottle)
+            var bottlesList = BottleData()
+            bottlesList.paths.append(bottle)
+            print("Bottle \"\(settings.name)\" added.")
         }
     }
 
@@ -67,8 +86,22 @@ extension Whisky {
         static var configuration = CommandConfiguration(abstract: "Remove an existing bottle from Whisky.",
                                                         discussion: "This will not remove the bottle from disk.")
 
+        @Argument var name: String
+
         mutating func run() throws {
-            print("Remove a bottle")
+            let bottlesList = BottleData()
+            var bottles: [BottleSettings] = []
+
+            bottles = bottlesList.paths.map({
+                BottleSettings(bottleURL: $0)
+            })
+
+            let bottleToRemove = bottles.first(where: { $0.name == name })
+            if let bottleToRemove = bottleToRemove {
+                // bottlesList.paths.remove(at: 0)
+            } else {
+                print("No bottle called \"\(name)\" found.")
+            }
         }
     }
 
@@ -76,7 +109,6 @@ extension Whisky {
         static var configuration = CommandConfiguration(abstract: "Install Whisky dependencies.")
 
         @Flag(name: [.long, .short], help: "Download & Install Wine") var wine = false
-        @Option(name: [.long, .short], help: "Install GPTK from .dmg") var gptk: String?
 
         mutating func run() throws {
             print("Install deps")
@@ -88,7 +120,6 @@ extension Whisky {
                                                         discussion: "Uninstalling Wine implicitly uninstalls GPTK.")
 
         @Flag(name: [.long, .short], help: "Uninstall Wine") var wine = false
-        @Flag(name: [.long, .short], help: "Uninstall GPTK") var gptk = false
 
         mutating func run() throws {
             print("Uninstall deps")

@@ -19,7 +19,7 @@ public enum WinVersion: String, CaseIterable, Codable {
     case win81 = "win81"
     case win10 = "win10"
 
-    func pretty() -> String {
+    public func pretty() -> String {
         switch self {
         case .winXP:
             return "Windows XP"
@@ -36,8 +36,13 @@ public enum WinVersion: String, CaseIterable, Codable {
 }
 
 public struct Shortcut: Codable {
-    var name: String
-    var link: URL
+    public var name: String
+    public var link: URL
+
+    public init(name: String, link: URL) {
+        self.name = name
+        self.link = link
+    }
 }
 
 public struct BottleInfo: Codable {
@@ -206,7 +211,7 @@ public class BottleSettings {
         }
     }
 
-    func environmentVariables(environment: inout [String: String]) {
+    public func environmentVariables(environment: inout [String: String]) {
         if dxvk {
             environment.updateValue("dxgi,d3d9,d3d10core,d3d11=n,b", forKey: "WINEDLLOVERRIDES")
             switch dxvkHud {

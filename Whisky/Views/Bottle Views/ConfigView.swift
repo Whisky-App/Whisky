@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import WhiskyKit
 
 enum LoadingState {
     case loading
