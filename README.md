@@ -44,7 +44,6 @@ Whisky is on homebrew! Install with
 
 ### Do I need to follow the steps in the toolkit's README?
 
-
 No, you don't, in fact you shouldn't follow them.
 
 ### My game isn't working
