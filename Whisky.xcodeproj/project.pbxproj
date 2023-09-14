@@ -10,6 +10,7 @@
 		6E064B1229DD32A200D9A2D2 /* Sparkle in Frameworks */ = {isa = PBXBuildFile; productRef = 6E064B1129DD32A200D9A2D2 /* Sparkle */; };
 		6E064B1429DD331F00D9A2D2 /* SparkleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E064B1329DD331F00D9A2D2 /* SparkleView.swift */; };
 		6E26058629D9267B00DDD788 /* ShellLink.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E26058529D9267B00DDD788 /* ShellLink.swift */; };
+		6E309A1E2AB3A12300D0167E /* BottleSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E5197D129D7202100CF655E /* BottleSettings.swift */; };
 		6E355E4F29D74DE0002D83BE /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 6E355E5129D74DE0002D83BE /* Localizable.strings */; };
 		6E355E5829D78249002D83BE /* ConfigView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E355E5729D78249002D83BE /* ConfigView.swift */; };
 		6E355E5A29D782B2002D83BE /* ProgramsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E355E5929D782B2002D83BE /* ProgramsView.swift */; };
@@ -27,7 +28,6 @@
 		6E50D98029CD0850008C39F6 /* Wine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E50D97F29CD0850008C39F6 /* Wine.swift */; };
 		6E50D98329CD6066008C39F6 /* BottleVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E50D98229CD6066008C39F6 /* BottleVM.swift */; };
 		6E50D98529CDF25B008C39F6 /* BottleCreationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E50D98429CDF25B008C39F6 /* BottleCreationView.swift */; };
-		6E5197D229D7202100CF655E /* BottleSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E5197D129D7202100CF655E /* BottleSettings.swift */; };
 		6E59676B2A9A424900D64F70 /* ArgumentParser in Frameworks */ = {isa = PBXBuildFile; productRef = 6E59676A2A9A424900D64F70 /* ArgumentParser */; };
 		6E621CEF2A5F631300C9AAB3 /* Winetricks.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E621CEE2A5F631200C9AAB3 /* Winetricks.swift */; };
 		6E6915452A3265BB0085BBB7 /* Logger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E6915442A3265BB0085BBB7 /* Logger.swift */; };
@@ -270,6 +270,15 @@
 			path = Extensions;
 			sourceTree = "<group>";
 		};
+		6E309A1D2AB3A10E00D0167E /* Whisky */ = {
+			isa = PBXGroup;
+			children = (
+				6E5197D129D7202100CF655E /* BottleSettings.swift */,
+				6EDF9AB52A9A6D8C006CAA7E /* BottleData.swift */,
+			);
+			path = Whisky;
+			sourceTree = "<group>";
+		};
 		6E355E5629D78202002D83BE /* Bottle Views */ = {
 			isa = PBXGroup;
 			children = (
@@ -359,7 +368,6 @@
 			children = (
 				6E40498229CCA91B006E3F1B /* Bottle.swift */,
 				6E355E5F29D7D8BD002D83BE /* Program.swift */,
-				6E5197D129D7202100CF655E /* BottleSettings.swift */,
 				6EA2D48429DF130F00C84668 /* ProgramSettings.swift */,
 				6E26058529D9267B00DDD788 /* ShellLink.swift */,
 			);
@@ -413,7 +421,7 @@
 				6E26058729D927F900DDD788 /* Extensions */,
 				6EFDF6452AAE29FC00EF622F /* PE */,
 				6EDF9AC42A9A6FB5006CAA7E /* GPTK */,
-				6EDF9AB52A9A6D8C006CAA7E /* BottleData.swift */,
+				6E309A1D2AB3A10E00D0167E /* Whisky */,
 				6E0822852A39D73800195094 /* Tar.swift */,
 			);
 			path = WhiskyKit;
@@ -684,7 +692,6 @@
 				6EF557982A410599001A4F09 /* SetupView.swift in Sources */,
 				6E50D98029CD0850008C39F6 /* Wine.swift in Sources */,
 				AB66A8642A4195B10006D238 /* Rosetta2.swift in Sources */,
-				6E5197D229D7202100CF655E /* BottleSettings.swift in Sources */,
 				6E355E5A29D782B2002D83BE /* ProgramsView.swift in Sources */,
 				6E7C07BE2AAE7B0100F6E66B /* ProgramShortcut.swift in Sources */,
 				6E355E5829D78249002D83BE /* ConfigView.swift in Sources */,
@@ -721,6 +728,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6E309A1E2AB3A12300D0167E /* BottleSettings.swift in Sources */,
 				6EDF9ABE2A9A6F3D006CAA7E /* GPTKDownloader.swift in Sources */,
 				6EFDF6632AAE2E1700EF622F /* DataExtensions.swift in Sources */,
 				6EDF9ABF2A9A6F3D006CAA7E /* GPTKInstaller.swift in Sources */,

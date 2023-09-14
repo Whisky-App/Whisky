@@ -184,26 +184,3 @@ extension Array where Element == Bottle {
         self.sort { $0.settings.name.lowercased() < $1.settings.name.lowercased() }
     }
 }
-
-public enum WinVersion: String, CaseIterable, Codable {
-    case winXP = "winxp64"
-    case win7 = "win7"
-    case win8 = "win8"
-    case win81 = "win81"
-    case win10 = "win10"
-
-    func pretty() -> String {
-        switch self {
-        case .winXP:
-            return "Windows XP"
-        case .win7:
-            return "Windows 7"
-        case .win8:
-            return "Windows 8"
-        case .win81:
-            return "Windows 8.1"
-        case .win10:
-            return "Windows 10"
-        }
-    }
-}
