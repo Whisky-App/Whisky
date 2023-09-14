@@ -45,6 +45,7 @@
 "config.dxvkHud.partial" = "部份";
 "config.dxvkHud.fps" = "幀數";
 "config.dxvkHud.off" = "關閉";
+"config.dxvk.async" = "DXVK Async";
 "config.dpi" = "DPI 縮放";
 "config.inspect" = "設定...";
 
