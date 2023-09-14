@@ -44,6 +44,7 @@
 "config.dxvkHud.partial" = "Partiel";
 "config.dxvkHud.fps" = "IPS";
 "config.dxvkHud.off" = "Désactivé";
+"config.dxvk.async" = "DXVK Async";
 "config.dpi" = "Mise à l'échelle du PPP";
 "config.inspect" = "Configurer...";
 
