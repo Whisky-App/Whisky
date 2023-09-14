@@ -44,6 +44,7 @@
 "config.dxvkHud.partial" = "Kısmi";
 "config.dxvkHud.fps" = "FPS";
 "config.dxvkHud.off" = "Kapalı";
+"config.dxvk.async" = "DXVK Async";
 "config.dpi" = "DPI Ölçeklendirme";
 "config.inspect" = "Konfigüre et...";
 
