@@ -332,9 +332,3 @@ struct SettingItemView<V: View>: View {
         }
     }
 }
-
-struct ConfigView_Previews: PreviewProvider {
-    static var previews: some View {
-        ConfigView(bottle: .constant(Bottle()))
-    }
-}

@@ -61,9 +61,3 @@ struct InfoItem: View {
         }
     }
 }
-
-struct InfoView_Previews: PreviewProvider {
-    static var previews: some View {
-        InfoView(bottle: Bottle())
-    }
-}

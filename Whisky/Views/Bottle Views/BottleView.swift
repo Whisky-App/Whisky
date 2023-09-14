@@ -224,13 +224,6 @@ struct WinetricksView: View {
     }
 }
 
-struct BottleView_Previews: PreviewProvider {
-    static var previews: some View {
-        BottleView(bottle: .constant(Bottle()))
-            .frame(width: 500, height: 300)
-    }
-}
-
 struct ShellLinkView: View {
     @State var link: ShellLinkHeader
     @State var image: NSImage?

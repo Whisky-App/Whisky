@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import WhiskyKit
 
 struct ProgramsView: View {
     let bottle: Bottle
@@ -99,12 +100,5 @@ struct ProgramItemView: View {
         .onAppear {
             isFavourited = program.favourited
         }
-    }
-}
-
-struct ProgramsView_Previews: PreviewProvider {
-    @State private static var reloadStartMenu: Bool = false
-    static var previews: some View {
-        ProgramsView(bottle: Bottle(), reloadStartMenu: $reloadStartMenu)
     }
 }

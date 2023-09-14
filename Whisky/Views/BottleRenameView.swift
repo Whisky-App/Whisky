@@ -52,9 +52,3 @@ struct BottleRenameView: View {
         }
     }
 }
-
-struct BottleRenameView_Previews: PreviewProvider {
-    static var previews: some View {
-        BottleRenameView(bottle: Bottle())
-    }
-}

@@ -221,13 +221,3 @@ struct KeyItem: View {
         }
     }
 }
-
-// swiftlint:disable line_length
-struct ProgramView_Previews: PreviewProvider {
-    static var previews: some View {
-        ProgramView(program: .constant(Program(name: "MinecraftLauncher.exe",
-                                               url: URL(filePath: "/Users/isaacmarovitz/Library/Containers/com.isaacmarovitz.Whisky/Bottles/Windows 10/drive_c/Program Files (x86)/Minecraft Launcher/MinecraftLauncher.exe"),
-                                               bottle: Bottle())))
-    }
-}
-// swiftlint:enable line_length
