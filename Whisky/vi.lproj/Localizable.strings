@@ -44,6 +44,7 @@
 "config.dxvkHud.partial" = "Một phần";
 "config.dxvkHud.fps" = "FPS";
 "config.dxvkHud.off" = "Tắt";
+"config.dxvk.async" = "DXVK Async";
 "config.dpi" = "DPI";
 "config.inspect" = "Cấu hình...";
 
