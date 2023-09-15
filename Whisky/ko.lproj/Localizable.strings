@@ -9,7 +9,7 @@
 "main.noneSelected" = "Bottle을 선택하세요";
 "main.createFirst" = "첫 번째 Bottle을 만들어 시작하기";
 
-"button.cDrive" = "C 드라이브 열기";
+"button.cDrive" = "Open C: Drive";
 "button.showInFinder" = "Finder에서 보기";
 "button.createShortcut" = "바로 가기 만들기";
 "button.run" = "실행...";
