@@ -42,12 +42,12 @@
 		6E70A4A12A9A280C007799E9 /* WhiskyCmd.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E70A4A02A9A280C007799E9 /* WhiskyCmd.swift */; };
 		6E7C07BE2AAE7B0100F6E66B /* ProgramShortcut.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E7C07BD2AAE7B0100F6E66B /* ProgramShortcut.swift */; };
 		6E7C07C02AAF570100F6E66B /* FileOpenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E7C07BF2AAF570100F6E66B /* FileOpenView.swift */; };
+		6E95F66D2AB3EF3A00D585D1 /* WhiskyCmd in Embed WhiskyCmd */ = {isa = PBXBuildFile; fileRef = 6E70A4982A9A2197007799E9 /* WhiskyCmd */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
 		6EA2D47E29DDAE5E00C84668 /* BottleRenameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EA2D47D29DDAE5E00C84668 /* BottleRenameView.swift */; };
 		6EDF9AAF2A9A6CA9006CAA7E /* WhiskyKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6EDF9AA92A9A6CA9006CAA7E /* WhiskyKit.framework */; };
 		6EDF9AB02A9A6CA9006CAA7E /* WhiskyKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 6EDF9AA92A9A6CA9006CAA7E /* WhiskyKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		6EDF9AB62A9A6D8C006CAA7E /* BottleData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EDF9AB52A9A6D8C006CAA7E /* BottleData.swift */; };
 		6EDF9AB72A9A6E50006CAA7E /* WhiskyKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6EDF9AA92A9A6CA9006CAA7E /* WhiskyKit.framework */; };
-		6EDF9AB82A9A6E50006CAA7E /* WhiskyKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 6EDF9AA92A9A6CA9006CAA7E /* WhiskyKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		6EDF9ABD2A9A6E83006CAA7E /* SemanticVersion in Frameworks */ = {isa = PBXBuildFile; productRef = 6EDF9ABC2A9A6E83006CAA7E /* SemanticVersion */; };
 		6EDF9ABE2A9A6F3D006CAA7E /* GPTKDownloader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EF557952A40B8D1001A4F09 /* GPTKDownloader.swift */; };
 		6EDF9ABF2A9A6F3D006CAA7E /* GPTKInstaller.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E0822862A39D73800195094 /* GPTKInstaller.swift */; };
@@ -110,6 +110,17 @@
 			);
 			runOnlyForDeploymentPostprocessing = 1;
 		};
+		6E95F66C2AB3EF2F00D585D1 /* Embed WhiskyCmd */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 7;
+			files = (
+				6E95F66D2AB3EF3A00D585D1 /* WhiskyCmd in Embed WhiskyCmd */,
+			);
+			name = "Embed WhiskyCmd";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		6EDF9AB42A9A6CA9006CAA7E /* Embed Frameworks */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
@@ -117,17 +128,6 @@
 			dstSubfolderSpec = 10;
 			files = (
 				6EDF9AB02A9A6CA9006CAA7E /* WhiskyKit.framework in Embed Frameworks */,
-			);
-			name = "Embed Frameworks";
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		6EDF9ABB2A9A6E51006CAA7E /* Embed Frameworks */ = {
-			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
-			dstPath = "";
-			dstSubfolderSpec = 10;
-			files = (
-				6EDF9AB82A9A6E50006CAA7E /* WhiskyKit.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -485,6 +485,7 @@
 				6E40495029CCA19C006E3F1B /* Resources */,
 				6E50D98129CD0EAF008C39F6 /* SwiftLint */,
 				6EDF9AB42A9A6CA9006CAA7E /* Embed Frameworks */,
+				6E95F66C2AB3EF2F00D585D1 /* Embed WhiskyCmd */,
 				6EFDF65A2AAE2DA800EF622F /* Embed Foundation Extensions */,
 			);
 			buildRules = (
@@ -511,7 +512,6 @@
 				6E70A4942A9A2197007799E9 /* Sources */,
 				6E70A4952A9A2197007799E9 /* Frameworks */,
 				6E70A4962A9A2197007799E9 /* CopyFiles */,
-				6EDF9ABB2A9A6E51006CAA7E /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -1019,6 +1019,7 @@
 				ENABLE_USER_SCRIPT_SANDBOXING = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu17;
 				GENERATE_PKGINFO_FILE = NO;
+				LD_RUNPATH_SEARCH_PATHS = "@loader_path/../Frameworks";
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
 				MACOSX_DEPLOYMENT_TARGET = 14.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.isaacmarovitz.WhiskyCmd;
@@ -1042,6 +1043,7 @@
 				ENABLE_USER_SCRIPT_SANDBOXING = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu17;
 				GENERATE_PKGINFO_FILE = NO;
+				LD_RUNPATH_SEARCH_PATHS = "@loader_path/../Frameworks";
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
 				MACOSX_DEPLOYMENT_TARGET = 14.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.isaacmarovitz.WhiskyCmd;

@@ -17,29 +17,7 @@ class BottleVM: ObservableObject {
 
     @MainActor
     func loadBottles() {
-        bottles.removeAll()
-
-        for (index, path) in bottlesList.paths.enumerated().reversed() where loadBottle(bottleURL: path) == nil {
-            bottlesList.paths.remove(at: index)
-        }
-
-        bottles = bottlesList.paths.map({
-            Bottle(bottleUrl: $0)
-        })
-        bottles.sortByName()
-    }
-
-    func loadBottle(bottleURL: URL) -> BottleSettings? {
-        let bottleMetadata = bottleURL
-            .appending(path: "Metadata")
-            .appendingPathExtension("plist")
-            .path(percentEncoded: false)
-
-        if FileManager.default.fileExists(atPath: bottleMetadata) {
-            return BottleSettings(bottleURL: bottleURL)
-        }
-
-        return .none
+        bottles = bottlesList.loadBottles()
     }
 
     func createNewBottle(bottleName: String, winVersion: WinVersion, bottleURL: URL) -> URL {

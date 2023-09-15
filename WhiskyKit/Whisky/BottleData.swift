@@ -38,6 +38,26 @@ public struct BottleData: Codable {
         }
     }
 
+    public mutating func loadBottles() -> [Bottle] {
+        var bottles: [Bottle] = []
+
+        for path in paths {
+            let bottleMetadata = path
+                .appending(path: "Metadata")
+                .appendingPathExtension("plist")
+                .path(percentEncoded: false)
+
+            if FileManager.default.fileExists(atPath: bottleMetadata) {
+                bottles.append(Bottle(bottleUrl: path))
+            } else {
+                paths.removeAll(where: { $0 == path })
+            }
+        }
+
+        bottles.sortByName()
+        return bottles
+    }
+
     @discardableResult
     private mutating func decode() -> Bool {
         let decoder = PropertyListDecoder()

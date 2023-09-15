@@ -28,23 +28,22 @@ extension Whisky {
         static var configuration = CommandConfiguration(abstract: "List existing bottles.")
 
         mutating func run() throws {
-            let bottlesList = BottleData()
-            var bottles: [BottleSettings] = []
-
-            bottles = bottlesList.paths.map({
-                BottleSettings(bottleURL: $0)
-            })
+            var bottlesList = BottleData()
+            var bottles = bottlesList.loadBottles()
 
             // Columns should be even and automatic
             print("| Name | Windows Version |")
             for bottle in bottles {
-                print("| \(bottle.name) | \(bottle.windowsVersion.pretty()) |")
+                print("| \(bottle.settings.name) | \(bottle.settings.windowsVersion.pretty()) |")
             }
         }
     }
 
     struct Create: ParsableCommand {
         static var configuration = CommandConfiguration(abstract: "Create a new bottle.")
+
+        @Argument var name: String
+        @Argument var path: String?
 
         mutating func run() throws {
             print("Create a bottle")
@@ -77,8 +76,25 @@ extension Whisky {
     struct Delete: ParsableCommand {
         static var configuration = CommandConfiguration(abstract: "Delete a an existing bottle from disk.")
 
+        @Argument var name: String
+
         mutating func run() throws {
-            print("Delete a bottle")
+            var bottlesList = BottleData()
+            var bottles = bottlesList.loadBottles()
+
+            // Should ask for confirmation
+            let bottleToRemove = bottles.first(where: { $0.settings.name == name })
+            if let bottleToRemove = bottleToRemove {
+                bottlesList.paths.removeAll(where: { $0 == bottleToRemove.url })
+                do {
+                    try FileManager.default.removeItem(at: bottleToRemove.url)
+                    print("Deleted \"\(name)\".")
+                } catch {
+                    print(error)
+                }
+            } else {
+                print("No bottle called \"\(name)\" found.")
+            }
         }
     }
 
@@ -89,16 +105,13 @@ extension Whisky {
         @Argument var name: String
 
         mutating func run() throws {
-            let bottlesList = BottleData()
-            var bottles: [BottleSettings] = []
+            var bottlesList = BottleData()
+            var bottles = bottlesList.loadBottles()
 
-            bottles = bottlesList.paths.map({
-                BottleSettings(bottleURL: $0)
-            })
-
-            let bottleToRemove = bottles.first(where: { $0.name == name })
+            let bottleToRemove = bottles.first(where: { $0.settings.name == name })
             if let bottleToRemove = bottleToRemove {
-                // bottlesList.paths.remove(at: 0)
+                bottlesList.paths.removeAll(where: { $0 == bottleToRemove.url })
+                print("Removed \"\(name)\".")
             } else {
                 print("No bottle called \"\(name)\" found.")
             }
