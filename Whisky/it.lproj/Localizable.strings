@@ -9,9 +9,9 @@
 "main.noneSelected" = "Seleziona una bottiglia";
 "main.createFirst" = "Crea la tua prima bottiglia per iniziare";
 
-"button.cDrive" = "Open C: Drive";
+"button.cDrive" = "Apri Disco C";
 "button.showInFinder" = "Mostra in Finder";
-"button.createShortcut" = "Create Shortcut";
+"button.createShortcut" = "Crea Scorciatoia";
 "button.run" = "Avvia...";
 "button.ok" = "OK";
 "button.renameBottle" = "Rinomina";
@@ -44,7 +44,7 @@
 "config.dxvkHud.partial" = "Parziale";
 "config.dxvkHud.fps" = "FPS";
 "config.dxvkHud.off" = "Off";
-"config.dxvk.async" = "DXVK Async";
+"config.dxvk.async" = "DXVK Asincrono";
 "config.dpi" = "DPI Scaling";
 "config.inspect" = "Configura...";
 
@@ -129,5 +129,5 @@
 "winetricks.title" = "Esegui comando Winetricks";
 "button.winetricks" = "Winetricks...";
 
-"run.title" = "Run \"%@\"";
-"run.bottle" = "Bottle:";
+"run.title" = "Esegui%@";
+"run.bottle" = "Bottiglia:";
