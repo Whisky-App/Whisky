@@ -9,7 +9,7 @@
 "main.noneSelected" = "Обрати пляшку";
 "main.createFirst" = "Створіть свою першу пляшку, щоб почати";
 
-"button.cDrive" = "Відкрити диск C";
+"button.cDrive" = "Open C: Drive";
 "button.showInFinder" = "Показати у Finder";
 "button.createShortcut" = "Створити ярлик";
 "button.run" = "Запустити...";
