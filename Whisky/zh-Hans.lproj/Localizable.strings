@@ -9,7 +9,7 @@
 "main.noneSelected" = "选择容器";
 "main.createFirst" = "从创建第一个容器开始";
 
-"button.cDrive" = "打开 C 盘";
+"button.cDrive" = "Open C: Drive";
 "button.showInFinder" = "在访达中显示";
 "button.createShortcut" = "Create Shortcut";
 "button.run" = "运行...";
