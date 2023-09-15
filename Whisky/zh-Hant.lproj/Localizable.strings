@@ -9,7 +9,7 @@
 "main.noneSelected" = "選擇容器";
 "main.createFirst" = "建立你的第一個容器以開始";
 
-"button.cDrive" = "Open C: Drive";
+"button.cDrive" = "開啟 C: 槽";
 "button.showInFinder" = "在 Finder 中顯示";
 "button.createShortcut" = "Create Shortcut";
 "button.run" = "執行...";
