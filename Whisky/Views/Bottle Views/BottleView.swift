@@ -101,17 +101,35 @@ struct BottleView: View {
                         NavigationLink {
                             ConfigView(bottle: $bottle)
                         } label: {
-                            Label("tab.config", systemImage: "gearshape.fill")
+                            HStack {
+                                Image(systemName: "gearshape")
+                                    .resizable()
+                                    .scaledToFit()
+                                    .frame(width: 14, height: 14, alignment: .center)
+                                Text("tab.config")
+                            }
                         }
                         NavigationLink {
                             ProgramsView(bottle: bottle, reloadStartMenu: $loadStartMenu)
                         } label: {
-                            Label("tab.programs", systemImage: "macwindow")
+                            HStack {
+                                Image(systemName: "list.bullet")
+                                    .resizable()
+                                    .scaledToFit()
+                                    .frame(width: 14, height: 14, alignment: .center)
+                                Text("tab.programs")
+                            }
                         }
                         NavigationLink {
                             InfoView(bottle: bottle)
                         } label: {
-                            Label("tab.info", systemImage: "info.circle.fill")
+                            HStack {
+                                Image(systemName: "info.circle")
+                                    .resizable()
+                                    .scaledToFit()
+                                    .frame(width: 14, height: 14, alignment: .center)
+                                Text("tab.info")
+                            }
                         }
                     }
                     .formStyle(.grouped)
