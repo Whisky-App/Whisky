@@ -9,7 +9,7 @@
 "main.noneSelected" = "Bottle Seçiniz";
 "main.createFirst" = "Başlamak için ilk Bottle'ınızı oluşturunuz";
 
-"button.cDrive" = "C Sürücüsünü Aç";
+"button.cDrive" = "Open C: Drive";
 "button.showInFinder" = "Finder'da Göster";
 "button.createShortcut" = "Kısayol Oluştur";
 "button.run" = "Çalıştır...";
