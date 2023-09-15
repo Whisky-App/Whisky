@@ -43,6 +43,7 @@
 		6E7C07BE2AAE7B0100F6E66B /* ProgramShortcut.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E7C07BD2AAE7B0100F6E66B /* ProgramShortcut.swift */; };
 		6E7C07C02AAF570100F6E66B /* FileOpenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E7C07BF2AAF570100F6E66B /* FileOpenView.swift */; };
 		6E95F66D2AB3EF3A00D585D1 /* WhiskyCmd in Embed WhiskyCmd */ = {isa = PBXBuildFile; fileRef = 6E70A4982A9A2197007799E9 /* WhiskyCmd */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
+		6E95F6702AB3F33C00D585D1 /* SwiftyTextTable in Frameworks */ = {isa = PBXBuildFile; productRef = 6E95F66F2AB3F33C00D585D1 /* SwiftyTextTable */; };
 		6EA2D47E29DDAE5E00C84668 /* BottleRenameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EA2D47D29DDAE5E00C84668 /* BottleRenameView.swift */; };
 		6EDF9AAF2A9A6CA9006CAA7E /* WhiskyKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6EDF9AA92A9A6CA9006CAA7E /* WhiskyKit.framework */; };
 		6EDF9AB02A9A6CA9006CAA7E /* WhiskyKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 6EDF9AA92A9A6CA9006CAA7E /* WhiskyKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
@@ -240,6 +241,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				6EDF9AB72A9A6E50006CAA7E /* WhiskyKit.framework in Frameworks */,
+				6E95F6702AB3F33C00D585D1 /* SwiftyTextTable in Frameworks */,
 				6E59676B2A9A424900D64F70 /* ArgumentParser in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -521,6 +523,7 @@
 			name = WhiskyCmd;
 			packageProductDependencies = (
 				6E59676A2A9A424900D64F70 /* ArgumentParser */,
+				6E95F66F2AB3F33C00D585D1 /* SwiftyTextTable */,
 			);
 			productName = WhiskyCmd;
 			productReference = 6E70A4982A9A2197007799E9 /* WhiskyCmd */;
@@ -623,6 +626,7 @@
 				6E3F750429ED9D650066D318 /* XCRemoteSwiftPackageReference "SwiftSoup" */,
 				EB58FB532A499896002DC184 /* XCRemoteSwiftPackageReference "SemanticVersion" */,
 				6E5967682A9A421800D64F70 /* XCRemoteSwiftPackageReference "swift-argument-parser" */,
+				6E95F66E2AB3F33C00D585D1 /* XCRemoteSwiftPackageReference "SwiftyTextTable" */,
 			);
 			productRefGroup = 6E40495329CCA19C006E3F1B /* Products */;
 			projectDirPath = "";
@@ -1293,6 +1297,14 @@
 				minimumVersion = 1.2.3;
 			};
 		};
+		6E95F66E2AB3F33C00D585D1 /* XCRemoteSwiftPackageReference "SwiftyTextTable" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/scottrhoyt/SwiftyTextTable";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.9.0;
+			};
+		};
 		EB58FB532A499896002DC184 /* XCRemoteSwiftPackageReference "SemanticVersion" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/SwiftPackageIndex/SemanticVersion";
@@ -1323,6 +1335,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 6E5967682A9A421800D64F70 /* XCRemoteSwiftPackageReference "swift-argument-parser" */;
 			productName = ArgumentParser;
+		};
+		6E95F66F2AB3F33C00D585D1 /* SwiftyTextTable */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 6E95F66E2AB3F33C00D585D1 /* XCRemoteSwiftPackageReference "SwiftyTextTable" */;
+			productName = SwiftyTextTable;
 		};
 		6EDF9ABC2A9A6E83006CAA7E /* SemanticVersion */ = {
 			isa = XCSwiftPackageProductDependency;

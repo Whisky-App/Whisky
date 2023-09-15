@@ -8,6 +8,7 @@
 import Foundation
 import ArgumentParser
 import WhiskyKit
+import SwiftyTextTable
 
 @main
 struct Whisky: ParsableCommand {
@@ -29,13 +30,20 @@ extension Whisky {
 
         mutating func run() throws {
             var bottlesList = BottleData()
-            var bottles = bottlesList.loadBottles()
+            let bottles = bottlesList.loadBottles()
 
-            // Columns should be even and automatic
-            print("| Name | Windows Version |")
+            let nameCol = TextTableColumn(header: "Name")
+            let winVerCol = TextTableColumn(header: "Windows Version")
+            let pathCol = TextTableColumn(header: "Path")
+
+            var table = TextTable(columns: [nameCol, winVerCol, pathCol])
             for bottle in bottles {
-                print("| \(bottle.settings.name) | \(bottle.settings.windowsVersion.pretty()) |")
+                table.addRow(values: [bottle.settings.name,
+                                      bottle.settings.windowsVersion.pretty(),
+                                      bottle.url.prettyPath()])
             }
+
+            print(table.render())
         }
     }
 
@@ -80,7 +88,7 @@ extension Whisky {
 
         mutating func run() throws {
             var bottlesList = BottleData()
-            var bottles = bottlesList.loadBottles()
+            let bottles = bottlesList.loadBottles()
 
             // Should ask for confirmation
             let bottleToRemove = bottles.first(where: { $0.settings.name == name })
@@ -106,7 +114,7 @@ extension Whisky {
 
         mutating func run() throws {
             var bottlesList = BottleData()
-            var bottles = bottlesList.loadBottles()
+            let bottles = bottlesList.loadBottles()
 
             let bottleToRemove = bottles.first(where: { $0.settings.name == name })
             if let bottleToRemove = bottleToRemove {
