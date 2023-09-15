@@ -9,6 +9,7 @@ import Foundation
 import ArgumentParser
 import WhiskyKit
 import SwiftyTextTable
+import Progress
 
 @main
 struct Whisky: ParsableCommand {
@@ -129,10 +130,32 @@ extension Whisky {
     struct Install: ParsableCommand {
         static var configuration = CommandConfiguration(abstract: "Install Whisky dependencies.")
 
-        @Flag(name: [.long, .short], help: "Download & Install Wine") var wine = false
+        @Flag(name: [.long, .short], help: "Download & Install GPTK") var gptk = false
 
         mutating func run() throws {
-            print("Install deps")
+            if gptk {
+                let semaphore = DispatchSemaphore(value: 0)
+
+                Task {
+                    if let info = await GPTKDownloader.getLatestGPTKURL(),
+                       let url = info.directURL {
+                        print("Downloading GPTK from \(url)")
+                        var progress = ProgressBar(count: info.totalByteCount)
+                        let downloadTask = URLSession.shared.downloadTask(with: url) { url, _, _ in
+                            if let url = url {
+                                // tarLocation = url
+                            }
+                            semaphore.signal()
+                        }
+                        var observation = downloadTask.observe(\.countOfBytesReceived) { task, _ in
+                            progress.setValue(Int(task.countOfBytesReceived))
+                        }
+                        downloadTask.resume()
+                    }
+                }
+
+                semaphore.wait()
+            }
         }
     }
 
@@ -140,10 +163,13 @@ extension Whisky {
         static var configuration = CommandConfiguration(abstract: "Uninstall Whisky dependencies.",
                                                         discussion: "Uninstalling Wine implicitly uninstalls GPTK.")
 
-        @Flag(name: [.long, .short], help: "Uninstall Wine") var wine = false
+        @Flag(name: [.long, .short], help: "Uninstall GPTK") var gptk = false
 
         mutating func run() throws {
-            print("Uninstall deps")
+            if gptk {
+                GPTKInstaller.uninstall()
+                print("GPTK uninstalled.")
+            }
         }
     }
 }
