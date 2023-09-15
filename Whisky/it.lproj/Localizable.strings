@@ -9,7 +9,7 @@
 "main.noneSelected" = "Seleziona una bottiglia";
 "main.createFirst" = "Crea la tua prima bottiglia per iniziare";
 
-"button.cDrive" = "Apri Disco C";
+"button.cDrive" = "Open C: Drive";
 "button.showInFinder" = "Mostra in Finder";
 "button.createShortcut" = "Create Shortcut";
 "button.run" = "Avvia...";
