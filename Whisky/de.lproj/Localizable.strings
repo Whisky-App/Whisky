@@ -9,7 +9,7 @@
 "main.noneSelected" = "Flasche auswählen";
 "main.createFirst" = "Erstellen Sie Ihre erste Flasche, um loszulegen";
 
-"button.cDrive" = "Open C: Drive";
+"button.cDrive" = "C: Laufwerk öffnen";
 "button.showInFinder" = "Im Finder anzeigen";
 "button.createShortcut" = "Verknüpfung erstellen";
 "button.run" = "Starten...";
