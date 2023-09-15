@@ -9,7 +9,7 @@
 "main.noneSelected" = "Valitse pullo";
 "main.createFirst" = "Luo ensimmäinen pullo, jotta voit aloittaa";
 
-"button.cDrive" = "Avaa C levy";
+"button.cDrive" = "Open C: Drive";
 "button.showInFinder" = "Näytä Finderissa";
 "button.createShortcut" = "Luo pikakomento";
 "button.run" = "Käynnistä...";
