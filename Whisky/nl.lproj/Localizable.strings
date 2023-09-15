@@ -9,7 +9,7 @@
 "main.noneSelected" = "Selecteer Fles";
 "main.createFirst" = "Maak je eerste fles om te beginnen";
 
-"button.cDrive" = "C-schijf openen";
+"button.cDrive" = "Open C: Drive";
 "button.showInFinder" = "Toon in Finder";
 "button.createShortcut" = "Create Shortcut";
 "button.run" = "Starten...";
