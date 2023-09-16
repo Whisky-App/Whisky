@@ -6,7 +6,6 @@
 "tab.navTitle.programs" = "%@ Programme";
 "tab.navTitle.info" = "%@ Info";
 
-"main.noneSelected" = "Flasche auswählen";
 "main.createFirst" = "Erstellen Sie Ihre erste Flasche, um loszulegen";
 
 "button.cDrive" = "C: Laufwerk öffnen";
