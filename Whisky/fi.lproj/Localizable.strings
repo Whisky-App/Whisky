@@ -6,7 +6,6 @@
 "tab.navTitle.programs" = "%@ Ohjelmat";
 "tab.navTitle.info" = "%@ Tiedot";
 
-"main.noneSelected" = "Valitse pullo";
 "main.createFirst" = "Luo ensimmäinen pullo, jotta voit aloittaa";
 
 "button.cDrive" = "Avaa C: Levy";
