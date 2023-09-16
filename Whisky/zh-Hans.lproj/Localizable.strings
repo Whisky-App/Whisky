@@ -6,7 +6,6 @@
 "tab.navTitle.programs" = "%@ 软件";
 "tab.navTitle.info" = "%@ 信息";
 
-"main.noneSelected" = "选择容器";
 "main.createFirst" = "从创建第一个容器开始";
 
 "button.cDrive" = "Open C: Drive";
