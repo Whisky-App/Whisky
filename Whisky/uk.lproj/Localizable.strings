@@ -8,7 +8,7 @@
 
 "main.createFirst" = "Створіть свою першу пляшку, щоб почати";
 
-"button.cDrive" = "Open C: Drive";
+"button.cDrive" = "Відкрити диск C:";
 "button.showInFinder" = "Показати у Finder";
 "button.createShortcut" = "Створити ярлик";
 "button.run" = "Запустити...";
