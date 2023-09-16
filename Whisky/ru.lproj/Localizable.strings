@@ -8,7 +8,7 @@
 
 "main.createFirst" = "Создайте первую бутылку, чтобы начать";
 
-"button.cDrive" = "Open C: Drive";
+"button.cDrive" = "Открыть C: Диск";
 "button.showInFinder" = "Показать в Finder";
 "button.createShortcut" = "Создать ярлык";
 "button.run" = "Выполнить...";
@@ -43,7 +43,7 @@
 "config.dxvkHud.partial" = "Частичный";
 "config.dxvkHud.fps" = "Только FPS";
 "config.dxvkHud.off" = "Выключен";
-"config.dxvk.async" = "DXVK Async";
+"config.dxvk.async" = "Асинхронный DXVK";
 "config.dpi" = "Масштабирование DPI";
 "config.inspect" = "Настроить...";
 
