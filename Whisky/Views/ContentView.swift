@@ -11,6 +11,7 @@ import WhiskyKit
 import SemanticVersion
 
 struct ContentView: View {
+    @AppStorage("selectedBottleURL") private var selectedBottleURL: URL?
     @EnvironmentObject var bottleVM: BottleVM
     @Binding var showSetup: Bool
     @State var selected: URL?
@@ -78,11 +79,6 @@ struct ContentView: View {
                         .buttonStyle(.borderedProminent)
                         .tint(.accentColor)
                     }
-                } else {
-                    Text("main.noneSelected")
-                        .font(.largeTitle)
-                        .fontWeight(.semibold)
-                        .opacity(0.5)
                 }
             }
         }
@@ -107,6 +103,9 @@ struct ContentView: View {
                          currentBottle: selected,
                          bottles: bottleVM.bottles)
         }
+        .onChange(of: selected) {
+            selectedBottleURL = selected
+        }
         .handlesExternalEvents(preferring: [], allowing: ["*"])
         .onOpenURL { url in
             openedFileURL = url
@@ -114,6 +113,15 @@ struct ContentView: View {
         .onAppear {
             bottleVM.loadBottles()
             bottlesLoaded = true
+
+            if !bottleVM.bottles.isEmpty {
+                if let bottle = bottleVM.bottles.first(where: { $0.url == selectedBottleURL }) {
+                    selected = bottle.url
+                } else {
+                    selected = bottleVM.bottles[0].url
+                }
+            }
+
             if !GPTKInstaller.isGPTKInstalled() {
                 showSetup = true
             }
