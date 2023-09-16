@@ -6,10 +6,9 @@
 "tab.navTitle.programs" = "%@ のプログラム";
 "tab.navTitle.info" = "%@ の情報";
 
-"main.noneSelected" = "Bottle を選んで下さい";
 "main.createFirst" = "最初の Bottle を作って、使い始めましょう";
 
-"button.cDrive" = "Open C: Drive";
+"button.cDrive" = "C: ドライブを開く";
 "button.showInFinder" = "Finder で表示";
 "button.createShortcut" = "ショートカットを作成";
 "button.run" = "実行...";
