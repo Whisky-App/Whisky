@@ -6,7 +6,6 @@
 "tab.navTitle.programs" = "%@ - програми";
 "tab.navTitle.info" = "%@ - інформація";
 
-"main.noneSelected" = "Обрати пляшку";
 "main.createFirst" = "Створіть свою першу пляшку, щоб почати";
 
 "button.cDrive" = "Open C: Drive";
