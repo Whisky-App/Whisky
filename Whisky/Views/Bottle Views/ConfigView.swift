@@ -101,6 +101,7 @@ struct ConfigView: View {
                     Toggle(isOn: $bottle.settings.dxvk) {
                         Text("config.dxvk.async")
                     }
+                    .disabled(!bottle.settings.dxvk)
                     Picker("config.dxvkHud", selection: $bottle.settings.dxvkHud) {
                         Text("config.dxvkHud.full").tag(DXVKHUD.full)
                         Text("config.dxvkHud.partial").tag(DXVKHUD.partial)
