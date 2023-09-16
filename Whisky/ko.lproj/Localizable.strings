@@ -6,7 +6,6 @@
 "tab.navTitle.programs" = "%@ 프로그램";
 "tab.navTitle.info" = "%@ 정보";
 
-"main.noneSelected" = "Bottle을 선택하세요";
 "main.createFirst" = "첫 번째 Bottle을 만들어 시작하기";
 
 "button.cDrive" = "Open C: Drive";
