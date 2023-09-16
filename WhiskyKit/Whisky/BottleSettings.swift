@@ -35,7 +35,7 @@ public enum WinVersion: String, CaseIterable, Codable {
     }
 }
 
-public struct Shortcut: Codable {
+public struct Shortcut: Codable, Hashable {
     public var name: String
     public var link: URL
 

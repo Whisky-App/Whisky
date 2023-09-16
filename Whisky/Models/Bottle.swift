@@ -15,7 +15,7 @@ extension Bottle {
     }
 
     @discardableResult
-    func updateStartMenuPrograms() -> [ShellLinkHeader] {
+    func getStartMenuPrograms() -> [ShellLinkHeader] {
         let globalStartMenu = url
             .appending(path: "drive_c")
             .appending(path: "ProgramData")
@@ -32,8 +32,8 @@ extension Bottle {
             .appending(path: "Microsoft")
             .appending(path: "Windows")
             .appending(path: "Start Menu")
-        startMenuPrograms.removeAll()
 
+        var startMenuPrograms: [ShellLinkHeader] = []
         var startMenuProgramsURLs: [URL] = []
         let globalEnumerator = FileManager.default.enumerator(at: globalStartMenu,
                                                               includingPropertiesForKeys: [.isRegularFileKey],

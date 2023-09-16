@@ -22,7 +22,6 @@ public class Bottle: Hashable, Identifiable {
     public var url: URL
     public var settings: BottleSettings
     public var programs: [Program] = []
-    public var startMenuPrograms: [ShellLinkHeader] = []
     public var inFlight: Bool = false
 
     public init(bottleUrl: URL, inFlight: Bool = false) {

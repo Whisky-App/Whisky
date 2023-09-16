@@ -13,7 +13,6 @@ import WhiskyKit
 struct BottleView: View {
     @Binding var bottle: Bottle
     @State var programLoading: Bool = false
-    @State var startMenuPrograms: [ShellLinkHeader] = []
     @State var shortcuts: [Shortcut] = []
     // We don't actually care about the value
     // This just provides a way to trigger a refresh
@@ -25,39 +24,9 @@ struct BottleView: View {
     var body: some View {
         VStack {
             ScrollView {
-                if startMenuPrograms.count > 0  || shortcuts.count > 0 {
+                if shortcuts.count > 0 {
                     NavigationStack {
                         LazyVGrid(columns: gridLayout, alignment: .center) {
-                            ForEach(startMenuPrograms, id: \.self) { link in
-                                NavigationLink {
-                                    if let link = link.linkInfo, let program = link.program {
-                                        ProgramView(program: .constant(program))
-                                    }
-                                } label: {
-                                    ShellLinkView(link: link, loadStartMenu: $loadStartMenu)
-                                }
-                                .buttonStyle(.plain)
-                                .overlay {
-                                    HStack {
-                                        Spacer()
-                                        Button {
-                                            if let link = link.linkInfo, let program = link.program {
-                                                Task {
-                                                    await program.run()
-                                                }
-                                            }
-                                        } label: {
-                                            Image(systemName: "play.fill")
-                                                .resizable()
-                                                .foregroundColor(.green)
-                                                .frame(width: 16, height: 16)
-                                        }
-                                        .buttonStyle(.plain)
-                                    }
-                                    .frame(width: 45, height: 45) // Same size as ShellLinkView's icon
-                                    .padding(EdgeInsets(top: 0, leading: 0, bottom: 12, trailing: 0))
-                                }
-                            }
                             ForEach(shortcuts, id: \.link) { shortcut in
                                 NavigationLink {
                                     let program = Program(name: shortcut.name,
@@ -199,8 +168,23 @@ struct BottleView: View {
     }
 
     func updateStartMenu() {
-        startMenuPrograms = bottle.updateStartMenuPrograms()
         shortcuts = bottle.settings.shortcuts
+
+        let links = bottle.getStartMenuPrograms()
+        for link in links {
+            if let linkInfo = link.linkInfo, let program = linkInfo.program {
+                shortcuts.append(Shortcut(name: program.name,
+                                          link: program.url))
+            }
+        }
+        shortcuts = shortcuts.uniqued()
+    }
+}
+
+public extension Array where Element: Hashable {
+    func uniqued() -> [Element] {
+        var seen = Set<Element>()
+        return filter { seen.insert($0).inserted }
     }
 }
 
