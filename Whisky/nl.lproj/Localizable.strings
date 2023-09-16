@@ -6,7 +6,6 @@
 "tab.navTitle.programs" = "%@ Programma";
 "tab.navTitle.info" = "%@ Informatie";
 
-"main.noneSelected" = "Selecteer Fles";
 "main.createFirst" = "Maak je eerste fles om te beginnen";
 
 "button.cDrive" = "Open C: Drive";
