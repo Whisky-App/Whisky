@@ -6,7 +6,6 @@
 "tab.navTitle.programs" = "%@ Programs";
 "tab.navTitle.info" = "%@ Info";
 
-"main.noneSelected" = "Select a bottle";
 "main.createFirst" = "Create your first bottle to get started";
 
 "button.cDrive" = "Open C: Drive";
