@@ -6,7 +6,6 @@
 "tab.navTitle.programs" = "%@ Programlar";
 "tab.navTitle.info" = "%@ Bilgi";
 
-"main.noneSelected" = "Bottle Seçiniz";
 "main.createFirst" = "Başlamak için ilk Bottle'ınızı oluşturunuz";
 
 "button.cDrive" = "Open C: Drive";
