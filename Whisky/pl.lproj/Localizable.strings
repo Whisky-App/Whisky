@@ -6,7 +6,6 @@
 "tab.navTitle.programs" = "%@ Programy";
 "tab.navTitle.info" = "%@ Informacje";
 
-"main.noneSelected" = "Wybierz butelkę";
 "main.createFirst" = "Stwórz swoją pierwszą butelkę, aby rozpocząć";
 
 "button.cDrive" = "Otwórz dysk C:";
