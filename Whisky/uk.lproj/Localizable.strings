@@ -24,6 +24,7 @@
 "button.removeAlert.delete" = "Видалити";
 "button.removeAlert.cancel" = "Скасувати";
 
+"config.title.wine" = "Wine";
 "config.winVersion" = "Версія Windows";
 "config.buildVersion" = "Версія складання";
 "config.title.metal" = "Metal";
