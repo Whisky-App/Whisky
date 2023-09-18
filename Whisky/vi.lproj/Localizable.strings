@@ -24,6 +24,7 @@
 "button.removeAlert.delete" = "Remove";
 "button.removeAlert.cancel" = "Cancel";
 
+"config.title.wine" = "Wine";
 "config.winVersion" = "Phiên bản Windows";
 "config.buildVersion" = "Bản dựng";
 "config.title.metal" = "Metal";
