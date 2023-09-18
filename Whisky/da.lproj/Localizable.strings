@@ -1,10 +1,6 @@
-"tab.config" = "Konfiguration";
-"tab.programs" = "Programmer";
+"tab.config" = "Bottle Configuration";
+"tab.programs" = "Installed Programs";
 "tab.info" = "Info";
-
-"tab.navTitle.config" = "%@ Konfiguration";
-"tab.navTitle.programs" = "%@ Programmer";
-"tab.navTitle.info" = "%@ Info";
 
 "main.createFirst" = "Opret din første bottle for at komme igang";
 
@@ -53,7 +49,7 @@
 "configDpi.previewText" = "Quizdeltagerne spiste jordbær med fløde, mens cirkusklovnen Walther spillede på xylofon.";
 "configDpi.dpi" = "DPI";
 
-"program.title" = "Installerede programmer";
+"program.title" = "All Programs";
 "program.env" = "Miljøvariabler";
 "program.args" = "Argumenter";
 "program.config" = "Konfiguration";
