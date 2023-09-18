@@ -1,10 +1,6 @@
-"tab.config" = "Configurazione";
-"tab.programs" = "Programmi";
+"tab.config" = "Bottle Configuration";
+"tab.programs" = "Installed Programs";
 "tab.info" = "Informazioni";
-
-"tab.navTitle.config" = "%@ Configurazione";
-"tab.navTitle.programs" = "%@ Programmi";
-"tab.navTitle.info" = "Informazioni %@";
 
 "main.createFirst" = "Crea la tua prima bottiglia per iniziare";
 
@@ -53,7 +49,7 @@
 "configDpi.previewText" = "Ma la volpe, col suo balzo, ha raggiunto il quieto Fido.";
 "configDpi.dpi" = "DPI";
 
-"program.title" = "Programmi Installati";
+"program.title" = "All Programs";
 "program.env" = "Variabili d'Ambiente";
 "program.args" = "Parametri";
 "program.config" = "Configurazione";
