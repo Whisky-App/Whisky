@@ -12,6 +12,7 @@ struct BottleRenameView: View {
     let bottle: Bottle
     @State var newBottleName: String = ""
     @State var nameValid: Bool = false
+    @Binding var name: String
     @Environment(\.dismiss) var dismiss
 
     var body: some View {
@@ -39,6 +40,7 @@ struct BottleRenameView: View {
                 }
                 .keyboardShortcut(.cancelAction)
                 Button("rename.rename") {
+                    name = newBottleName
                     bottle.rename(newName: newBottleName)
                     dismiss()
                 }

@@ -155,12 +155,16 @@ struct ContentView: View {
 struct BottleListEntry: View {
     let bottle: Bottle
     @State var showBottleRename: Bool = false
+    @State var name: String = ""
     @Binding var selected: URL?
 
     var body: some View {
-        Text(bottle.settings.name)
+        Text(name)
+            .onAppear {
+                name = bottle.settings.name
+            }
             .sheet(isPresented: $showBottleRename) {
-                BottleRenameView(bottle: bottle)
+                BottleRenameView(bottle: bottle, name: $name)
             }
             .contextMenu {
                 Button("button.renameBottle") {
