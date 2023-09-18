@@ -1,10 +1,6 @@
-"tab.config" = "Konfiguration";
-"tab.programs" = "Programme";
+"tab.config" = "Bottle Configuration";
+"tab.programs" = "Installed Programs";
 "tab.info" = "Info";
-
-"tab.navTitle.config" = "%@ Konfiguration";
-"tab.navTitle.programs" = "%@ Programme";
-"tab.navTitle.info" = "%@ Info";
 
 "main.createFirst" = "Erstellen Sie Ihre erste Flasche, um loszulegen";
 
@@ -53,7 +49,7 @@
 "configDpi.previewText" = "Victor jagt zwölf Boxkämpfer quer über den großen Sylter Deich.";
 "configDpi.dpi" = "DPI";
 
-"program.title" = "Installierte Programme";
+"program.title" = "All Programs";
 "program.env" = "Umgebungsvariablen";
 "program.args" = "Argumente";
 "program.config" = "Konfiguration";
