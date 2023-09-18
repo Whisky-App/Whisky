@@ -1,10 +1,6 @@
-"tab.config" = "Configuración";
-"tab.programs" = "Programas";
+"tab.config" = "Bottle Configuration";
+"tab.programs" = "Installed Programs";
 "tab.info" = "Información";
-
-"tab.navTitle.config" = "Configuración de %@";
-"tab.navTitle.programs" = "Programas de %@";
-"tab.navTitle.info" = "Información de %@";
 
 "main.createFirst" = "Crea tu primera botella para comenzar";
 
@@ -53,7 +49,7 @@
 "configDpi.previewText" = "El zorro rápido y marrón saltó sobre el perro perezoso.";
 "configDpi.dpi" = "DPI";
 
-"program.title" = "Programas Instalados";
+"program.title" = "All Programs";
 "program.env" = "Variables de Entorno";
 "program.args" = "Argumentos";
 "program.config" = "Configuración";
