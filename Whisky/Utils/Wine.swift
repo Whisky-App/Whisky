@@ -65,7 +65,7 @@ class Wine {
             }
 
             process.environment = constructEnvironment(bottle: bottle,
-                                                       environment: environment)
+                                                       programEnv: environment)
         }
 
         try process.run()
