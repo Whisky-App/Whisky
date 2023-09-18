@@ -268,13 +268,10 @@ struct ShellLinkView: View {
             }
         }
         .onAppear {
-            if let linkInfo = link.linkInfo, let program = linkInfo.program {
-                do {
-                    let peFile = try PEFile(data: Data(contentsOf: program.url))
-                    image = peFile.bestIcon()
-                } catch {
-                    print(error)
-                }
+            if let linkInfo = link.linkInfo,
+                let program = linkInfo.program,
+                let peFile = program.peFile {
+                image = peFile.bestIcon()
             }
         }
     }
@@ -316,11 +313,8 @@ struct ShortcutView: View {
             let program = Program(name: shortcut.name,
                                   url: shortcut.link,
                                   bottle: bottle)
-            do {
-                let peFile = try PEFile(data: Data(contentsOf: program.url))
+            if let peFile = program.peFile {
                 image = peFile.bestIcon()
-            } catch {
-                print(error)
             }
         }
     }

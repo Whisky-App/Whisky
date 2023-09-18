@@ -14,12 +14,13 @@ struct ProgramsView: View {
     // We don't actually care about the value
     // This just provides a way to trigger a refresh
     @State var resortPrograms: Bool = false
+    @State var isExpanded: Bool = true
     @Binding var reloadStartMenu: Bool
 
     var body: some View {
         NavigationStack {
             Form {
-                Section("program.title") {
+                Section("program.title", isExpanded: $isExpanded) {
                     List($programs, id: \.self) { $program in
                         NavigationLink {
                             ProgramView(program: $program)
@@ -69,11 +70,21 @@ struct ProgramItemView: View {
                 Image(systemName: isFavourited ? "star.fill" : "star")
             }
             .buttonStyle(.plain)
-            .foregroundColor(isFavourited ? .yellow : .primary)
+            .foregroundColor(isFavourited ? .accentColor : .secondary)
             .opacity(isFavourited ? 1 : showButtons ? 1 : 0)
             Text(program.name)
             Spacer()
             if showButtons {
+                if let peFile = program.peFile,
+                   let archString = peFile.architecture.toString() {
+                    Text(archString)
+                        .foregroundStyle(.secondary)
+                        .padding(.horizontal, 5)
+                        .overlay(
+                            RoundedRectangle(cornerRadius: 5)
+                                .stroke(.secondary)
+                        )
+                }
                 Button {
                     Task(priority: .userInitiated) {
                         do {
@@ -88,9 +99,10 @@ struct ProgramItemView: View {
                         }
                     }
                 } label: {
-                    Image(systemName: "play.circle.fill")
+                    Image(systemName: "gearshape")
                 }
                 .buttonStyle(.plain)
+                .foregroundStyle(.secondary)
             }
         }
         .padding(4)

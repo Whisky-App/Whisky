@@ -8,6 +8,7 @@
 import Foundation
 
 enum Locales: String, Codable {
+    case none = ""
     case german = "de_DE.UTF-8"
     case english = "en_US"
     case spanish = "es_ES.UTF-8"

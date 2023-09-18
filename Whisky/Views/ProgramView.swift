@@ -107,11 +107,8 @@ struct ProgramView: View {
             }
         }
         .onAppear {
-            do {
-                let peFile = try PEFile(data: Data(contentsOf: program.url))
+            if let peFile = program.peFile {
                 image = peFile.bestIcon()
-            } catch {
-                print(error)
             }
 
             environment = program.settings.environment

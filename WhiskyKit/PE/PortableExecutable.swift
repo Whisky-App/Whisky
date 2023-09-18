@@ -223,11 +223,41 @@ public struct OptionalHeader: Hashable {
     }
 }
 
+public enum Architecture: UInt16, Hashable {
+    case x32 = 0x010b
+    case x64 = 0x020b
+    case unknown
+
+    public func toString() -> String? {
+        switch self {
+        case .x32:
+            return "32-bit"
+        case .x64:
+            return "64-bit"
+        default:
+            return nil
+        }
+    }
+}
+
 public struct PEFile: Hashable {
     public let coffFileHeader: COFFFileHeader
-    public let resourceSection: ResourceSection?
+    public var resourceSection: ResourceSection? {
+        do {
+            return try ResourceSection(data: data,
+                                       sectionTable: coffFileHeader.sectionTable,
+                                       imageBase: coffFileHeader.optionalHeader.imageBase)
+        } catch {
+            return nil
+        }
+    }
+    public var architecture: Architecture {
+        Architecture(rawValue: coffFileHeader.optionalHeader.magic) ?? .unknown
+    }
+    private let data: Data
 
     public init(data: Data) throws {
+        self.data = data
         // Verify it is a PE file by checking for the PE header
         let offsetToPEHeader = data.extract(UInt32.self, offset: 0x3C) ?? 0
         let peHeader = data.extract(UInt32.self, offset: Int(offsetToPEHeader))
@@ -235,9 +265,6 @@ public struct PEFile: Hashable {
             throw PEError.invalidPEFile
         }
         coffFileHeader = try COFFFileHeader(data: data)
-        resourceSection = try ResourceSection(data: data,
-                                              sectionTable: coffFileHeader.sectionTable,
-                                              imageBase: coffFileHeader.optionalHeader.imageBase)
     }
 
     public func bestIcon() -> NSImage? {
