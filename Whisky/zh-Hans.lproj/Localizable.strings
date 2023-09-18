@@ -1,10 +1,6 @@
-"tab.config" = "配置";
-"tab.programs" = "软件";
+"tab.config" = "Bottle Configuration";
+"tab.programs" = "Installed Programs";
 "tab.info" = "简介";
-
-"tab.navTitle.config" = "%@ 配置";
-"tab.navTitle.programs" = "%@ 软件";
-"tab.navTitle.info" = "%@ 信息";
 
 "main.createFirst" = "从创建第一个容器开始";
 
@@ -53,7 +49,7 @@
 "configDpi.previewText" = "敏捷的棕色狐狸跳过懒狗。";
 "configDpi.dpi" = "DPI";
 
-"program.title" = "已安装的程序";
+"program.title" = "All Programs";
 "program.env" = "环境变量";
 "program.args" = "参数";
 "program.config" = "配置";
