@@ -80,15 +80,15 @@ extension Program {
         }
     }
 
-    func toggleFavourited() -> Bool {
-        if favourited {
+    func togglePinned() -> Bool {
+        if pinned {
             bottle.settings.shortcuts.removeAll(where: { $0.link == url })
-            favourited = false
+            pinned = false
         } else {
             bottle.settings.shortcuts.append(Shortcut(name: name, link: url))
-            favourited = true
+            pinned = true
         }
 
-        return favourited
+        return pinned
     }
 }

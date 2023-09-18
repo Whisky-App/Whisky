@@ -41,8 +41,8 @@ struct ProgramsView: View {
     }
 
     func sortPrograms() {
-        var favourites = programs.filter { $0.favourited }
-        var nonFavourites = programs.filter { !$0.favourited }
+        var favourites = programs.filter { $0.pinned }
+        var nonFavourites = programs.filter { !$0.pinned }
         favourites = favourites.sorted { $0.name < $1.name }
         nonFavourites = nonFavourites.sorted { $0.name < $1.name }
         programs.removeAll()
@@ -54,21 +54,25 @@ struct ProgramsView: View {
 struct ProgramItemView: View {
     let program: Program
     @State var showButtons: Bool = false
-    @State var isFavourited: Bool = false
+    @State var isPinned: Bool = false
+    @State var pinHovered: Bool = false
     @Binding var resortPrograms: Bool
     @Binding var path: NavigationPath
 
     var body: some View {
         HStack {
             Button {
-                isFavourited = program.toggleFavourited()
+                isPinned = program.togglePinned()
                 resortPrograms.toggle()
             } label: {
-                Image(systemName: isFavourited ? "star.fill" : "star")
+                Image(systemName: isPinned ? pinHovered ? "pin.slash.fill" : "pin.fill" : "pin")
+                    .onHover { hover in
+                        pinHovered = hover
+                    }
             }
             .buttonStyle(.plain)
-            .foregroundColor(isFavourited ? .accentColor : .secondary)
-            .opacity(isFavourited ? 1 : showButtons ? 1 : 0)
+            .foregroundColor(isPinned ? .accentColor : .secondary)
+            .opacity(isPinned ? 1 : showButtons ? 1 : 0)
             Text(program.name)
             Spacer()
             if showButtons {
@@ -96,7 +100,7 @@ struct ProgramItemView: View {
             showButtons = hover
         }
         .onAppear {
-            isFavourited = program.favourited
+            isPinned = program.pinned
         }
     }
 }

@@ -20,7 +20,7 @@ public class Program: Hashable {
     public var url: URL
     public var settings: ProgramSettings
     public var bottle: Bottle
-    public var favourited: Bool
+    public var pinned: Bool
     public var peFile: PEFile?
 
     public init(name: String, url: URL, bottle: Bottle) {
@@ -28,7 +28,7 @@ public class Program: Hashable {
         self.url = url
         self.bottle = bottle
         self.settings = ProgramSettings(bottleUrl: bottle.url, name: name)
-        self.favourited = bottle.settings.shortcuts.contains(where: { $0.link == url })
+        self.pinned = bottle.settings.shortcuts.contains(where: { $0.link == url })
         do {
             self.peFile = try PEFile(data: Data(contentsOf: url))
         } catch {
