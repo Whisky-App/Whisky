@@ -27,6 +27,9 @@ struct ConfigView: View {
     @State var retinaModeLoadingState: LoadingState = .loading
     @State var dpiConfigLoadingState: LoadingState = .loading
     @State var dpiSheetPresented: Bool = false
+    @AppStorage("wineSectionExpanded") var wineSectionExpanded: Bool = true
+    @AppStorage("dxvkSectionExpanded") var dxvkSectionExpanded: Bool = true
+    @AppStorage("metalSectionExpanded") var metalSectionExpanded: Bool = true
 
     init(bottle: Binding<Bottle>) {
         self._bottle = bottle
@@ -36,7 +39,7 @@ struct ConfigView: View {
     var body: some View {
         VStack {
             Form {
-                Section {
+                Section("config.title.wine", isExpanded: $wineSectionExpanded) {
                     SettingItemView(title: "config.winVersion", loadingState: $winVersionLoadingState) {
                         Picker("config.winVersion", selection: $windowsVersion) {
                             ForEach(WinVersion.allCases.reversed(), id: \.self) {
@@ -77,6 +80,9 @@ struct ConfigView: View {
                             }
                         }
                     }
+                    Toggle(isOn: $bottle.settings.esync) {
+                        Text("config.esync")
+                    }
                     SettingItemView(title: "config.dpi", loadingState: $dpiConfigLoadingState) {
                         HStack {
                             Text("config.dpi")
@@ -94,7 +100,7 @@ struct ConfigView: View {
                         }
                     }
                 }
-                Section("config.title.dxvk") {
+                Section("config.title.dxvk", isExpanded: $dxvkSectionExpanded) {
                     Toggle(isOn: $bottle.settings.dxvk) {
                         Text("config.dxvk")
                     }
@@ -110,18 +116,13 @@ struct ConfigView: View {
                     }
                     .disabled(!bottle.settings.dxvk)
                 }
-                Section("config.title.metal") {
+                Section("config.title.metal", isExpanded: $metalSectionExpanded) {
                     Toggle(isOn: $bottle.settings.metalHud) {
                         Text("config.metalHud")
                     }
                     Toggle(isOn: $bottle.settings.metalTrace) {
                         Text("config.metalTrace")
                         Text("config.metalTrace.info")
-                    }
-                }
-                Section {
-                    Toggle(isOn: $bottle.settings.esync) {
-                        Text("config.esync")
                     }
                 }
             }

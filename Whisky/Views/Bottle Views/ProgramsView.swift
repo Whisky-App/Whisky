@@ -79,7 +79,7 @@ struct ProgramItemView: View {
                         .foregroundStyle(.secondary)
                         .padding(.horizontal, 5)
                         .overlay(
-                            RoundedRectangle(cornerRadius: 5)
+                            RoundedRectangle(cornerRadius: 4)
                                 .stroke(.secondary)
                         )
                 }
