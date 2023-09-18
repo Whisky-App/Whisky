@@ -1,10 +1,6 @@
-"tab.config" = "Konfiguracja";
-"tab.programs" = "Programy";
+"tab.config" = "Bottle Configuration";
+"tab.programs" = "Installed Programs";
 "tab.info" = "Informacje";
-
-"tab.navTitle.config" = "Konfiguracja %@";
-"tab.navTitle.programs" = "%@ Programy";
-"tab.navTitle.info" = "%@ Informacje";
 
 "main.createFirst" = "Stwórz swoją pierwszą butelkę, aby rozpocząć";
 
@@ -53,7 +49,7 @@
 "configDpi.previewText" = "Szybki brązowy lis przeskorzył przez leniwego psa.";
 "configDpi.dpi" = "DPI";
 
-"program.title" = "Zainstalowane programy";
+"program.title" = "All Programs";
 "program.env" = "Zmienne środowiskowe";
 "program.args" = "Parametry";
 "program.config" = "Konfiguracja";
