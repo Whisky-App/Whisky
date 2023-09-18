@@ -259,19 +259,18 @@ class Wine {
         return try runWineserver(["-k"], bottle: bottle)
     }
 
-    static func constructEnvironment(bottle: Bottle, environment: [String: String]?) -> [String: String] {
+    static func constructEnvironment(bottle: Bottle, programEnv: [String: String]?) -> [String: String] {
         var env: [String: String]
         env = ["WINEPREFIX": bottle.url.path,
                "WINEDEBUG": "fixme-all",
                "WINEBOOT_HIDE_DIALOG": "1"]
 
         bottle.settings
-              .environmentVariables(environment: &env)
+              .environmentVariables(wineEnv: &env)
 
-        if let environment = environment {
-            for variable in environment.keys {
-                env[variable] = environment[variable]
-            }
+        if let programEnv = programEnv {
+            // Merge Program values, prefering new over old values
+            env.merge(programEnv, uniquingKeysWith: { (_, new) in new })
         }
 
         return env

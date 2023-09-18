@@ -220,35 +220,35 @@ public class BottleSettings {
         }
     }
 
-    public func environmentVariables(environment: inout [String: String]) {
+    public func environmentVariables(wineEnv: inout [String: String]) {
         if dxvk {
-            environment.updateValue("dxgi,d3d9,d3d10core,d3d11=n,b", forKey: "WINEDLLOVERRIDES")
+            wineEnv.updateValue("dxgi,d3d9,d3d10core,d3d11=n,b", forKey: "WINEDLLOVERRIDES")
             switch dxvkHud {
             case .full:
-                environment.updateValue("full", forKey: "DXVK_HUD")
+                wineEnv.updateValue("full", forKey: "DXVK_HUD")
             case .partial:
-                environment.updateValue("devinfo,fps,frametimes", forKey: "DXVK_HUD")
+                wineEnv.updateValue("devinfo,fps,frametimes", forKey: "DXVK_HUD")
             case .fps:
-                environment.updateValue("fps", forKey: "DXVK_HUD")
+                wineEnv.updateValue("fps", forKey: "DXVK_HUD")
             case .off:
                 break
             }
         }
 
         if dxvkAsync {
-            environment.updateValue("1", forKey: "DXVK_ASYNC")
+            wineEnv.updateValue("1", forKey: "DXVK_ASYNC")
         }
 
         if esync {
-            environment.updateValue("1", forKey: "WINEESYNC")
+            wineEnv.updateValue("1", forKey: "WINEESYNC")
         }
 
         if metalHud {
-            environment.updateValue("1", forKey: "MTL_HUD_ENABLED")
+            wineEnv.updateValue("1", forKey: "MTL_HUD_ENABLED")
         }
 
         if metalTrace {
-            environment.updateValue("1", forKey: "METAL_CAPTURE_ENABLED")
+            wineEnv.updateValue("1", forKey: "METAL_CAPTURE_ENABLED")
         }
     }
 }
