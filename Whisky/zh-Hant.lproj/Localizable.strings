@@ -1,10 +1,6 @@
-"tab.config" = "設定";
-"tab.programs" = "程式";
+"tab.config" = "Bottle Configuration";
+"tab.programs" = "Installed Programs";
 "tab.info" = "資訊";
-
-"tab.navTitle.config" = "%@ 設定";
-"tab.navTitle.programs" = "%@ 上的程式";
-"tab.navTitle.info" = "%@ 的資訊";
 
 "main.createFirst" = "建立你的第一個容器以開始";
 
@@ -54,7 +50,7 @@
 "configDpi.previewText" = "敏捷的棕色狐狸跳過了懶狗。";
 "configDpi.dpi" = "DPI";
 
-"program.title" = "已安裝的程式";
+"program.title" = "All Programs";
 "program.env" = "環境變數";
 "program.args" = "命令列引數";
 "program.config" = "設定";
