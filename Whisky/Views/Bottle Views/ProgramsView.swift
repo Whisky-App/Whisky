@@ -29,8 +29,7 @@ struct ProgramsView: View {
             }
         }
         .formStyle(.grouped)
-        .navigationTitle(String(format: String(localized: "tab.navTitle.programs"),
-                                bottle.settings.name))
+        .navigationTitle("tab.programs")
         .onAppear {
             programs = bottle.updateInstalledPrograms()
             sortPrograms()

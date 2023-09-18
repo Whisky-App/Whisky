@@ -64,15 +64,6 @@ struct BottleView: View {
                         .padding()
                     }
                     Form {
-                        NavigationLink(value: BottleStage.config) {
-                            HStack {
-                                Image(systemName: "gearshape")
-                                    .resizable()
-                                    .scaledToFit()
-                                    .frame(width: 14, height: 14, alignment: .center)
-                                Text("tab.config")
-                            }
-                        }
                         NavigationLink(value: BottleStage.programs) {
                             HStack {
                                 Image(systemName: "list.bullet")
@@ -80,6 +71,15 @@ struct BottleView: View {
                                     .scaledToFit()
                                     .frame(width: 14, height: 14, alignment: .center)
                                 Text("tab.programs")
+                            }
+                        }
+                        NavigationLink(value: BottleStage.config) {
+                            HStack {
+                                Image(systemName: "gearshape")
+                                    .resizable()
+                                    .scaledToFit()
+                                    .frame(width: 14, height: 14, alignment: .center)
+                                Text("tab.config")
                             }
                         }
                         NavigationLink(value: BottleStage.info) {
