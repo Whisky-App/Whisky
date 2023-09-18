@@ -7,6 +7,21 @@
 
 import Foundation
 
+enum Locales: String, Codable {
+    case german = "de_DE.UTF-8"
+    case english = "en_US"
+    case spanish = "es_ES.UTF-8"
+    case french = "fr_FR.UTF-8"
+    case italian = "it_IT.UTF-8"
+    case japanese = "ja_JP.UTF-8"
+    case korean = "ko_KR.UTF-8"
+    case russian = "ru_RU.UTF-8"
+    case ukranian = "uk_UA.UTF-8"
+    case thai = "th_TH.UTF-8"
+    case chineseSimplified = "zh_CN.UTF-8"
+    case chineseTraditional = "zh_TW.UTF-8"
+}
+
 public struct ProgramSettingsData: Codable {
     var environment: [String: String] = [:]
     var arguments: String = ""
