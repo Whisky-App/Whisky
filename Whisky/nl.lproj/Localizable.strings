@@ -1,10 +1,6 @@
-"tab.config" = "Configuratie";
-"tab.programs" = "Programma";
+"tab.config" = "Bottle Configuration";
+"tab.programs" = "Installed Programs";
 "tab.info" = "Informatie";
-
-"tab.navTitle.config" = "%@ Configuratie";
-"tab.navTitle.programs" = "%@ Programma";
-"tab.navTitle.info" = "%@ Informatie";
 
 "main.createFirst" = "Maak je eerste fles om te beginnen";
 
@@ -53,7 +49,7 @@
 "configDpi.previewText" = "Pa’s wijze lynx bezag vroom het fikse aquaduct.";
 "configDpi.dpi" = "DPI";
 
-"program.title" = "Geïnstalleerde programma's";
+"program.title" = "All Programs";
 "program.env" = "Omgevingsvariabelen";
 "program.args" = "Argumenten";
 "program.config" = "Configuratie";
