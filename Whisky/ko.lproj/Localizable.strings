@@ -24,6 +24,7 @@
 "button.removeAlert.delete" = "삭제";
 "button.removeAlert.cancel" = "취소";
 
+"config.title.wine" = "Wine";
 "config.winVersion" = "Windows 버전";
 "config.buildVersion" = "빌드 버전";
 "config.title.metal" = "Metal";
