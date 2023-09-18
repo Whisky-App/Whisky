@@ -6,10 +6,9 @@
 "tab.navTitle.programs" = "%@ Programme";
 "tab.navTitle.info" = "%@ Info";
 
-"main.noneSelected" = "Flasche auswählen";
 "main.createFirst" = "Erstellen Sie Ihre erste Flasche, um loszulegen";
 
-"button.cDrive" = "C Laufwerk öffnen";
+"button.cDrive" = "C: Laufwerk öffnen";
 "button.showInFinder" = "Im Finder anzeigen";
 "button.createShortcut" = "Verknüpfung erstellen";
 "button.run" = "Starten...";
@@ -44,6 +43,7 @@
 "config.dxvkHud.partial" = "Teilweise";
 "config.dxvkHud.fps" = "FPS";
 "config.dxvkHud.off" = "Aus";
+"config.dxvk.async" = "DXVK";
 "config.dpi" = "DPI-Skalierung";
 "config.inspect" = "Konfigurieren...";
 

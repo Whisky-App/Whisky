@@ -6,10 +6,9 @@
 "tab.navTitle.programs" = "%@ Ohjelmat";
 "tab.navTitle.info" = "%@ Tiedot";
 
-"main.noneSelected" = "Valitse pullo";
 "main.createFirst" = "Luo ensimmäinen pullo, jotta voit aloittaa";
 
-"button.cDrive" = "Avaa C levy";
+"button.cDrive" = "Avaa C: Levy";
 "button.showInFinder" = "Näytä Finderissa";
 "button.createShortcut" = "Luo pikakomento";
 "button.run" = "Käynnistä...";
@@ -44,6 +43,7 @@
 "config.dxvkHud.partial" = "Osittainen";
 "config.dxvkHud.fps" = "FPS";
 "config.dxvkHud.off" = "Pois";
+"config.dxvk.async" = "DXVK Async";
 "config.dpi" = "DPI skaalaus";
 "config.inspect" = "Konfiguroi...";
 

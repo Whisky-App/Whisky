@@ -6,10 +6,9 @@
 "tab.navTitle.programs" = "Chương trình trong %@";
 "tab.navTitle.info" = "Thông tin về %@";
 
-"main.noneSelected" = "Chọn một bottle";
 "main.createFirst" = "Tạo bottle đầu tiên để bắt đầu";
 
-"button.cDrive" = "Mở ổ C:";
+"button.cDrive" = "Open C: Drive";
 "button.showInFinder" = "Mở trong Finder";
 "button.createShortcut" = "Create Shortcut";
 "button.run" = "Chạy...";
@@ -44,6 +43,7 @@
 "config.dxvkHud.partial" = "Một phần";
 "config.dxvkHud.fps" = "FPS";
 "config.dxvkHud.off" = "Tắt";
+"config.dxvk.async" = "DXVK Async";
 "config.dpi" = "DPI";
 "config.inspect" = "Cấu hình...";
 

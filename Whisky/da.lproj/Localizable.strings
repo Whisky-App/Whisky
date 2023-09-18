@@ -6,10 +6,9 @@
 "tab.navTitle.programs" = "%@ Programmer";
 "tab.navTitle.info" = "%@ Info";
 
-"main.noneSelected" = "Vælg en bottle";
 "main.createFirst" = "Opret din første bottle for at komme igang";
 
-"button.cDrive" = "Åben C drev";
+"button.cDrive" = "Open C: Drive";
 "button.showInFinder" = "Vis i Finder";
 "button.createShortcut" = "Create Shortcut";
 "button.run" = "Kør program...";
@@ -44,6 +43,7 @@
 "config.dxvkHud.partial" = "Delvis";
 "config.dxvkHud.fps" = "FPS";
 "config.dxvkHud.off" = "Fra";
+"config.dxvk.async" = "DXVK Async";
 "config.dpi" = "DPI Skalering";
 "config.inspect" = "Konfigurer...";
 

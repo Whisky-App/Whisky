@@ -6,10 +6,9 @@
 "tab.navTitle.programs" = "%@ Programma";
 "tab.navTitle.info" = "%@ Informatie";
 
-"main.noneSelected" = "Selecteer Fles";
 "main.createFirst" = "Maak je eerste fles om te beginnen";
 
-"button.cDrive" = "C-schijf openen";
+"button.cDrive" = "Open C: Drive";
 "button.showInFinder" = "Toon in Finder";
 "button.createShortcut" = "Create Shortcut";
 "button.run" = "Starten...";
@@ -44,6 +43,7 @@
 "config.dxvkHud.partial" = "Gedeeltelijk";
 "config.dxvkHud.fps" = "FPS";
 "config.dxvkHud.off" = "Uit";
+"config.dxvk.async" = "DXVK Async";
 "config.dpi" = "DPI Schalen";
 "config.inspect" = "Configureer...";
 
