@@ -10,8 +10,15 @@ import UniformTypeIdentifiers
 import QuickLookThumbnailing
 import WhiskyKit
 
+enum BottleStage {
+    case config
+    case programs
+    case info
+}
+
 struct BottleView: View {
     @Binding var bottle: Bottle
+    @State private var path = NavigationPath()
     @State var programLoading: Bool = false
     @State var shortcuts: [Shortcut] = []
     // We don't actually care about the value
@@ -22,23 +29,15 @@ struct BottleView: View {
     private let gridLayout = [GridItem(.adaptive(minimum: 100, maximum: .infinity))]
 
     var body: some View {
-        VStack {
-            ScrollView {
-                if shortcuts.count > 0 {
-                    NavigationStack {
+        NavigationStack(path: $path) {
+            VStack {
+                ScrollView {
+                    if shortcuts.count > 0 {
                         LazyVGrid(columns: gridLayout, alignment: .center) {
                             ForEach(shortcuts, id: \.link) { shortcut in
-                                NavigationLink {
-                                    let program = Program(name: shortcut.name,
-                                                          url: shortcut.link,
-                                                          bottle: bottle)
-                                    ProgramView(program: .constant(program))
-                                } label: {
-                                    ShortcutView(bottle: bottle,
-                                                 shortcut: shortcut,
-                                                 loadStartMenu: $loadStartMenu)
-                                }
-                                .buttonStyle(.plain)
+                                ShortcutView(bottle: bottle,
+                                             shortcut: shortcut,
+                                             loadStartMenu: $loadStartMenu)
                                 .overlay {
                                     HStack {
                                         Spacer()
@@ -64,12 +63,8 @@ struct BottleView: View {
                         }
                         .padding()
                     }
-                }
-                NavigationStack {
                     Form {
-                        NavigationLink {
-                            ConfigView(bottle: $bottle)
-                        } label: {
+                        NavigationLink(value: BottleStage.config) {
                             HStack {
                                 Image(systemName: "gearshape")
                                     .resizable()
@@ -78,9 +73,7 @@ struct BottleView: View {
                                 Text("tab.config")
                             }
                         }
-                        NavigationLink {
-                            ProgramsView(bottle: bottle, reloadStartMenu: $loadStartMenu)
-                        } label: {
+                        NavigationLink(value: BottleStage.programs) {
                             HStack {
                                 Image(systemName: "list.bullet")
                                     .resizable()
@@ -89,9 +82,7 @@ struct BottleView: View {
                                 Text("tab.programs")
                             }
                         }
-                        NavigationLink {
-                            InfoView(bottle: bottle)
-                        } label: {
+                        NavigationLink(value: BottleStage.info) {
                             HStack {
                                 Image(systemName: "info.circle")
                                     .resizable()
@@ -109,61 +100,83 @@ struct BottleView: View {
                         updateStartMenu()
                     }
                 }
-            }
-            Spacer()
-            HStack {
                 Spacer()
-                Button("button.winetricks") {
-                    showWinetricksSheet.toggle()
-                }
-                Button("button.cDrive") {
-                    bottle.openCDrive()
-                }
-                Button("button.run") {
-                    let panel = NSOpenPanel()
-                    panel.allowsMultipleSelection = false
-                    panel.canChooseDirectories = false
-                    panel.canChooseFiles = true
-                    panel.allowedContentTypes = [UTType.exe,
-                                                 UTType(exportedAs: "com.microsoft.msi-installer"),
-                                                 UTType(exportedAs: "com.microsoft.bat")]
-                    panel.directoryURL = bottle.url.appending(path: "drive_c")
-                    panel.begin { result in
-                        programLoading = true
-                        Task(priority: .userInitiated) {
-                            if result == .OK {
-                                if let url = panel.urls.first {
-                                    do {
-                                        if url.pathExtension == "bat" {
-                                            try await Wine.runBatchFile(url: url, bottle: bottle)
-                                        } else {
-                                            try await Wine.runExternalProgram(url: url, bottle: bottle)
+                HStack {
+                    Spacer()
+                    Button("button.winetricks") {
+                        showWinetricksSheet.toggle()
+                    }
+                    Button("button.cDrive") {
+                        bottle.openCDrive()
+                    }
+                    Button("button.run") {
+                        let panel = NSOpenPanel()
+                        panel.allowsMultipleSelection = false
+                        panel.canChooseDirectories = false
+                        panel.canChooseFiles = true
+                        panel.allowedContentTypes = [UTType.exe,
+                                                     UTType(exportedAs: "com.microsoft.msi-installer"),
+                                                     UTType(exportedAs: "com.microsoft.bat")]
+                        panel.directoryURL = bottle.url.appending(path: "drive_c")
+                        panel.begin { result in
+                            programLoading = true
+                            Task(priority: .userInitiated) {
+                                if result == .OK {
+                                    if let url = panel.urls.first {
+                                        do {
+                                            if url.pathExtension == "bat" {
+                                                try await Wine.runBatchFile(url: url, bottle: bottle)
+                                            } else {
+                                                try await Wine.runExternalProgram(url: url, bottle: bottle)
+                                            }
+                                        } catch {
+                                            print("Failed to run external program: \(error)")
                                         }
-                                    } catch {
-                                        print("Failed to run external program: \(error)")
+                                        programLoading = false
                                     }
+                                } else {
                                     programLoading = false
                                 }
-                            } else {
-                                programLoading = false
+                                updateStartMenu()
                             }
-                            updateStartMenu()
                         }
                     }
+                    .disabled(programLoading)
+                    if programLoading {
+                        Spacer()
+                            .frame(width: 10)
+                        ProgressView()
+                            .controlSize(.small)
+                    }
                 }
-                .disabled(programLoading)
-                if programLoading {
-                    Spacer()
-                        .frame(width: 10)
-                    ProgressView()
-                        .controlSize(.small)
+                .padding()
+            }
+            .navigationTitle(bottle.settings.name)
+            .sheet(isPresented: $showWinetricksSheet) {
+                WinetricksView(bottle: bottle)
+            }
+            .navigationDestination(for: BottleStage.self) { stage in
+                switch stage {
+                case .config:
+                    ConfigView(bottle: $bottle)
+                case .programs:
+                    ProgramsView(bottle: bottle,
+                                 reloadStartMenu: $loadStartMenu,
+                                 path: $path)
+                case .info:
+                    InfoView(bottle: bottle)
                 }
             }
-            .padding()
-        }
-        .navigationTitle(bottle.settings.name)
-        .sheet(isPresented: $showWinetricksSheet) {
-            WinetricksView(bottle: bottle)
+            .navigationDestination(for: Program.self) { program in
+                ProgramView(program: Binding(get: {
+                    // swiftlint:disable:next force_unwrapping
+                    bottle.programs[bottle.programs.firstIndex(of: program)!]
+                }, set: { newValue in
+                    if let index = bottle.programs.firstIndex(of: program) {
+                        bottle.programs[index] = newValue
+                    }
+                }))
+            }
         }
     }
 

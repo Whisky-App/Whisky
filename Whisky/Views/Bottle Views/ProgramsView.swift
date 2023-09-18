@@ -16,31 +16,28 @@ struct ProgramsView: View {
     @State var resortPrograms: Bool = false
     @State var isExpanded: Bool = true
     @Binding var reloadStartMenu: Bool
+    @Binding var path: NavigationPath
 
     var body: some View {
-        NavigationStack {
-            Form {
-                Section("program.title", isExpanded: $isExpanded) {
-                    List($programs, id: \.self) { $program in
-                        NavigationLink {
-                            ProgramView(program: $program)
-                        } label: {
-                            ProgramItemView(program: program, resortPrograms: $resortPrograms)
-                        }
-                    }
+        Form {
+            Section("program.title", isExpanded: $isExpanded) {
+                List($programs, id: \.self) { $program in
+                    ProgramItemView(program: program,
+                                    resortPrograms: $resortPrograms,
+                                    path: $path)
                 }
             }
-            .formStyle(.grouped)
-            .navigationTitle(String(format: String(localized: "tab.navTitle.programs"),
-                                    bottle.settings.name))
-            .onAppear {
-                programs = bottle.updateInstalledPrograms()
-                sortPrograms()
-            }
-            .onChange(of: resortPrograms) {
-                reloadStartMenu.toggle()
-                sortPrograms()
-            }
+        }
+        .formStyle(.grouped)
+        .navigationTitle(String(format: String(localized: "tab.navTitle.programs"),
+                                bottle.settings.name))
+        .onAppear {
+            programs = bottle.updateInstalledPrograms()
+            sortPrograms()
+        }
+        .onChange(of: resortPrograms) {
+            reloadStartMenu.toggle()
+            sortPrograms()
         }
     }
 
@@ -60,6 +57,7 @@ struct ProgramItemView: View {
     @State var showButtons: Bool = false
     @State var isFavourited: Bool = false
     @Binding var resortPrograms: Bool
+    @Binding var path: NavigationPath
 
     var body: some View {
         HStack {
@@ -86,18 +84,7 @@ struct ProgramItemView: View {
                         )
                 }
                 Button {
-                    Task(priority: .userInitiated) {
-                        do {
-                            try await Wine.runProgram(program: program)
-                        } catch {
-                            let alert = NSAlert()
-                            alert.messageText = String(localized: "alert.message")
-                            alert.informativeText = String(localized: "alert.info") + " \(program.name)"
-                            alert.alertStyle = .critical
-                            alert.addButton(withTitle: String(localized: "button.ok"))
-                            alert.runModal()
-                        }
-                    }
+                    path.append(program)
                 } label: {
                     Image(systemName: "gearshape")
                 }
