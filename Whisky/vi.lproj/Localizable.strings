@@ -1,10 +1,6 @@
-"tab.config" = "Cấu hình";
-"tab.programs" = "Chương trình";
+"tab.config" = "Bottle Configuration";
+"tab.programs" = "Installed Programs";
 "tab.info" = "Thông thin";
-
-"tab.navTitle.config" = "Cấu hình %@";
-"tab.navTitle.programs" = "Chương trình trong %@";
-"tab.navTitle.info" = "Thông tin về %@";
 
 "main.createFirst" = "Tạo bottle đầu tiên để bắt đầu";
 
@@ -53,7 +49,7 @@
 "configDpi.previewText" = "The quick brown fox jumps over the lazy dog.";
 "configDpi.dpi" = "DPI";
 
-"program.title" = "Chương trình đã cài";
+"program.title" = "All Programs";
 "program.env" = "Biến môi trường";
 "program.args" = "Thông số";
 "program.config" = "Cấu hình";
