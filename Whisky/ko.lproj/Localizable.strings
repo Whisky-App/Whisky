@@ -1,10 +1,6 @@
-"tab.config" = "설정";
-"tab.programs" = "프로그램";
+"tab.config" = "Bottle Configuration";
+"tab.programs" = "Installed Programs";
 "tab.info" = "정보";
-
-"tab.navTitle.config" = "%@ 설정";
-"tab.navTitle.programs" = "%@ 프로그램";
-"tab.navTitle.info" = "%@ 정보";
 
 "main.createFirst" = "첫 번째 Bottle을 만들어 시작하기";
 
@@ -53,7 +49,7 @@
 "configDpi.previewText" = "다람쥐 헌 쳇바퀴에 타고파.";
 "configDpi.dpi" = "DPI";
 
-"program.title" = "설치된 프로그램";
+"program.title" = "All Programs";
 "program.env" = "환경 변수";
 "program.args" = "인자";
 "program.config" = "설정";
