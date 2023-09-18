@@ -24,6 +24,7 @@
 "button.removeAlert.delete" = "Usuń";
 "button.removeAlert.cancel" = "Anuluj";
 
+"config.title.wine" = "Wine";
 "config.winVersion" = "Wersja Windows";
 "config.buildVersion" = "Obecna wersja: ";
 "config.title.metal" = "Metal";
