@@ -1,10 +1,6 @@
-"tab.config" = "Configuração";
-"tab.programs" = "Programas";
+"tab.config" = "Bottle Configuration";
+"tab.programs" = "Installed Programs";
 "tab.info" = "Informações";
-
-"tab.navTitle.config" = "%@ Configuração";
-"tab.navTitle.programs" = "%@ Programas";
-"tab.navTitle.info" = "%@ Informações";
 
 "main.createFirst" = "Crie a sua primeira bottle para começar";
 
@@ -53,7 +49,7 @@
 "configDpi.previewText" = "The quick brown fox jumps over the lazy dog.";
 "configDpi.dpi" = "DPI";
 
-"program.title" = "Programas Instalados";
+"program.title" = "All Programs";
 "program.env" = "Variáveis de Ambiente";
 "program.args" = "Argumentos";
 "program.config" = "Configuração";
