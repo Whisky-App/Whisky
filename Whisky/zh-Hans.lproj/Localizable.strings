@@ -24,6 +24,7 @@
 "button.removeAlert.delete" = "删除";
 "button.removeAlert.cancel" = "取消";
 
+"config.title.wine" = "Wine";
 "config.winVersion" = "Windows 版本";
 "config.buildVersion" = "构建版本";
 "config.title.metal" = "Metal";
