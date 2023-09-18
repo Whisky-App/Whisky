@@ -35,19 +35,19 @@ public enum WinVersion: String, CaseIterable, Codable {
     }
 }
 
-public struct Shortcut: Codable, Hashable {
+public struct PinnedProgram: Codable, Hashable {
     public var name: String
-    public var link: URL
+    public var url: URL
 
-    public init(name: String, link: URL) {
+    public init(name: String, url: URL) {
         self.name = name
-        self.link = link
+        self.url = url
     }
 }
 
 public struct BottleInfo: Codable {
     var name: String = "Whisky"
-    var shortcuts: [Shortcut] = []
+    var pins: [PinnedProgram] = []
 }
 
 public struct BottleWineConfig: Codable {
@@ -164,12 +164,12 @@ public class BottleSettings {
         }
     }
 
-    public var shortcuts: [Shortcut] {
+    public var pins: [PinnedProgram] {
         get {
-            return settings.info.shortcuts
+            return settings.info.pins
         }
         set {
-            settings.info.shortcuts = newValue
+            settings.info.pins = newValue
         }
     }
 

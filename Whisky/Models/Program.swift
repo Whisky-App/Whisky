@@ -82,10 +82,10 @@ extension Program {
 
     func togglePinned() -> Bool {
         if pinned {
-            bottle.settings.shortcuts.removeAll(where: { $0.link == url })
+            bottle.settings.pins.removeAll(where: { $0.url == url })
             pinned = false
         } else {
-            bottle.settings.shortcuts.append(Shortcut(name: name, link: url))
+            bottle.settings.pins.append(PinnedProgram(name: name, url: url))
             pinned = true
         }
 

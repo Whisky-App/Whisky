@@ -15,6 +15,7 @@ extension Bottle {
     }
 
     @discardableResult
+    // swiftlint:disable:next function_body_length
     func getStartMenuPrograms() -> [ShellLinkHeader] {
         let globalStartMenu = url
             .appending(path: "drive_c")
@@ -41,6 +42,11 @@ extension Bottle {
         while let url = globalEnumerator?.nextObject() as? URL {
             if url.pathExtension == "lnk" {
                 startMenuProgramsURLs.append(url)
+                do {
+                    try FileManager.default.removeItem(at: url)
+                } catch {
+                    print(error)
+                }
             }
         }
 
@@ -50,6 +56,11 @@ extension Bottle {
         while let url = userEnumerator?.nextObject() as? URL {
             if url.pathExtension == "lnk" {
                 startMenuProgramsURLs.append(url)
+                do {
+                    try FileManager.default.removeItem(at: url)
+                } catch {
+                    print(error)
+                }
             }
         }
 

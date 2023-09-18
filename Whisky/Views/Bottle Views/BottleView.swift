@@ -20,7 +20,7 @@ struct BottleView: View {
     @Binding var bottle: Bottle
     @State private var path = NavigationPath()
     @State var programLoading: Bool = false
-    @State var shortcuts: [Shortcut] = []
+    @State var pins: [PinnedProgram] = []
     // We don't actually care about the value
     // This just provides a way to trigger a refresh
     @State var loadStartMenu: Bool = false
@@ -32,18 +32,18 @@ struct BottleView: View {
         NavigationStack(path: $path) {
             VStack {
                 ScrollView {
-                    if shortcuts.count > 0 {
+                    if pins.count > 0 {
                         LazyVGrid(columns: gridLayout, alignment: .center) {
-                            ForEach(shortcuts, id: \.link) { shortcut in
-                                ShortcutView(bottle: bottle,
-                                             shortcut: shortcut,
-                                             loadStartMenu: $loadStartMenu)
+                            ForEach(pins, id: \.url) { pin in
+                                PinnedProgramView(bottle: bottle,
+                                                  pin: pin,
+                                                  loadStartMenu: $loadStartMenu)
                                 .overlay {
                                     HStack {
                                         Spacer()
                                         Button {
-                                            let program = Program(name: shortcut.name,
-                                                                  url: shortcut.link,
+                                            let program = Program(name: pin.name,
+                                                                  url: pin.url,
                                                                   bottle: bottle)
                                             Task {
                                                 await program.run()
@@ -181,23 +181,20 @@ struct BottleView: View {
     }
 
     func updateStartMenu() {
-        shortcuts = bottle.settings.shortcuts
+        pins = bottle.settings.pins
 
         let links = bottle.getStartMenuPrograms()
         for link in links {
-            if let linkInfo = link.linkInfo, let program = linkInfo.program {
-                shortcuts.append(Shortcut(name: program.name,
-                                          link: program.url))
+            if let linkInfo = link.linkInfo, let linkProgram = linkInfo.program {
+                if !bottle.settings.pins.contains(where: { $0.url == linkProgram.url }) {
+                    bottle.settings.pins.append(PinnedProgram(name: linkProgram.name,
+                                                              url: linkProgram.url))
+                    for program in bottle.programs where program.url == linkProgram.url {
+                        program.pinned = true
+                    }
+                }
             }
         }
-        shortcuts = shortcuts.uniqued()
-    }
-}
-
-public extension Array where Element: Hashable {
-    func uniqued() -> [Element] {
-        var seen = Set<Element>()
-        return filter { seen.insert($0).inserted }
     }
 }
 
@@ -290,9 +287,9 @@ struct ShellLinkView: View {
     }
 }
 
-struct ShortcutView: View {
+struct PinnedProgramView: View {
     var bottle: Bottle
-    @State var shortcut: Shortcut
+    @State var pin: PinnedProgram
     @State var image: NSImage?
     @Binding var loadStartMenu: Bool
 
@@ -308,7 +305,7 @@ struct ShortcutView: View {
                     .frame(width: 45, height: 45)
             }
             Spacer()
-            Text(shortcut.link
+            Text(pin.url
                 .deletingPathExtension()
                 .lastPathComponent + "\n")
                 .multilineTextAlignment(.center)
@@ -317,14 +314,17 @@ struct ShortcutView: View {
         .frame(width: 90, height: 90)
         .padding(10)
         .contextMenu {
-            Button("Delete Shortcut") {
-                bottle.settings.shortcuts.removeAll(where: { $0.link == shortcut.link })
+            Button("pin.unpin") {
+                bottle.settings.pins.removeAll(where: { $0.url == pin.url })
+                for program in bottle.programs where program.url == pin.url {
+                    program.pinned = false
+                }
                 loadStartMenu.toggle()
             }
         }
         .onAppear {
-            let program = Program(name: shortcut.name,
-                                  url: shortcut.link,
+            let program = Program(name: pin.name,
+                                  url: pin.url,
                                   bottle: bottle)
             if let peFile = program.peFile {
                 image = peFile.bestIcon()
