@@ -1,10 +1,6 @@
-"tab.config" = "Konfiguraatio";
-"tab.programs" = "Ohjelmat";
+"tab.config" = "Bottle Configuration";
+"tab.programs" = "Installed Programs";
 "tab.info" = "Tiedot";
-
-"tab.navTitle.config" = "%@ Konfiguraatio";
-"tab.navTitle.programs" = "%@ Ohjelmat";
-"tab.navTitle.info" = "%@ Tiedot";
 
 "main.createFirst" = "Luo ensimmäinen pullo, jotta voit aloittaa";
 
@@ -53,7 +49,7 @@
 "configDpi.previewText" = "Albert osti fagotin ja töräytti puhkuvan melodian.";
 "configDpi.dpi" = "DPI";
 
-"program.title" = "Asennetut ohjelmat";
+"program.title" = "All Programs";
 "program.env" = "Ympäristön muuttujat";
 "program.args" = "Argumentit";
 "program.config" = "Konfiguraatio";
