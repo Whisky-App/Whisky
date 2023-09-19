@@ -9,9 +9,9 @@
 "button.createShortcut" = "ショートカットを作成";
 "button.run" = "実行...";
 "button.ok" = "OK";
-"button.rename" = "Rename...";
-"button.moveBottle" = "Move...";
-"button.exportBottle" = "Export as Archive...";
+"button.rename" = "名前の変更...";
+"button.moveBottle" = "移動...";
+"button.exportBottle" = "アーカイブとしてエクスポート...";
 "button.removeAlert" = "削除...";
 "button.createBottle" = "Bottle を作成";
 "button.removeAlert.msg" = "%@ を削除しますか？";
@@ -20,7 +20,7 @@
 "button.removeAlert.delete" = "削除";
 "button.removeAlert.cancel" = "キャンセル";
 
-"pin.unpin" = "Unpin Program";
+"pin.unpin" = "ピン留めを解除";
 
 "config.title.wine" = "Wine";
 "config.winVersion" = "Windows のバージョン";
@@ -77,8 +77,8 @@
 "create.cancel" = "キャンセル";
 "create.create" = "作成";
 
-"rename.bottle.title" = "Rename bottle";
-"rename.pin.title" = "Rename pin";
+"rename.bottle.title" = "Bottle の名前を変更";
+"rename.pin.title" = "ピン留めの名前を変更";
 "rename.name" = "新しい名前:";
 "rename.rename" = "変更";
 
