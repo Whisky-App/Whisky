@@ -9,9 +9,9 @@
 "button.createShortcut" = "Create Shortcut";
 "button.run" = "运行...";
 "button.ok" = "确定";
-"button.renameBottle" = "重命名";
-"button.moveBottle" = "移动";
-"button.exportBottle" = "导出为存档";
+"button.rename" = "Rename...";
+"button.moveBottle" = "Move...";
+"button.exportBottle" = "Export as Archive...";
 "button.removeAlert" = "删除...";
 "button.createBottle" = "创建容器";
 "button.removeAlert.msg" = "删除 %@？";
@@ -77,7 +77,8 @@
 "create.cancel" = "取消";
 "create.create" = "创建";
 
-"rename.title" = "重命名容器";
+"rename.bottle.title" = "Rename bottle";
+"rename.pin.title" = "Rename pin";
 "rename.name" = "新名称：";
 "rename.rename" = "重命名";
 
