@@ -20,6 +20,8 @@
 "button.removeAlert.delete" = "Poista";
 "button.removeAlert.cancel" = "Peru";
 
+"pin.unpin" = "Unpin Program";
+
 "config.title.wine" = "Wine";
 "config.winVersion" = "Windows versio";
 "config.buildVersion" = "Ohjelmistoversio";
