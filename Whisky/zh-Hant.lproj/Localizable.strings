@@ -20,6 +20,8 @@
 "button.removeAlert.delete" = "Remove";
 "button.removeAlert.cancel" = "Cancel";
 
+"pin.unpin" = "Unpin Program";
+
 "config.title.wine" = "Wine";
 "config.winVersion" = "Windows 版本";
 "config.buildVersion" = "（由洋甘菊翻譯提供翻譯）
