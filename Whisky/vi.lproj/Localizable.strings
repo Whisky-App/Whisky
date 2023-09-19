@@ -9,9 +9,9 @@
 "button.createShortcut" = "Create Shortcut";
 "button.run" = "Chạy...";
 "button.ok" = "OK";
-"button.renameBottle" = "Đổi tên";
-"button.moveBottle" = "Di chuyển bottle";
-"button.exportBottle" = "Lưu bottle ra file";
+"button.rename" = "Rename...";
+"button.moveBottle" = "Move...";
+"button.exportBottle" = "Export as Archive...";
 "button.removeAlert" = "Remove...";
 "button.createBottle" = "Tạo Bottle";
 "button.removeAlert.msg" = "Remove %@?";
@@ -77,7 +77,8 @@
 "create.cancel" = "Huỷ";
 "create.create" = "Tạo";
 
-"rename.title" = "Đổi tên bottle";
+"rename.bottle.title" = "Rename bottle";
+"rename.pin.title" = "Rename pin";
 "rename.name" = "Tên mới:";
 "rename.rename" = "Đổi tên";
 
