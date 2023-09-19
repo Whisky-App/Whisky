@@ -9,9 +9,9 @@
 "button.createShortcut" = "Crea Scorciatoia";
 "button.run" = "Avvia...";
 "button.ok" = "OK";
-"button.renameBottle" = "Rinomina";
-"button.moveBottle" = "Sposta";
-"button.exportBottle" = "Esporta come Archivio";
+"button.rename" = "Rename...";
+"button.moveBottle" = "Move...";
+"button.exportBottle" = "Export as Archive...";
 "button.removeAlert" = "Rimuovi...";
 "button.createBottle" = "Crea Bottiglia";
 "button.removeAlert.msg" = "Vuoi rimuovere %@?";
@@ -77,7 +77,8 @@
 "create.cancel" = "Annulla";
 "create.create" = "Crea";
 
-"rename.title" = "Rinomina bottiglia";
+"rename.bottle.title" = "Rename bottle";
+"rename.pin.title" = "Rename pin";
 "rename.name" = "Nuovo nome:";
 "rename.rename" = "Rinomina";
 
