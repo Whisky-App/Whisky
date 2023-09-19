@@ -9,9 +9,9 @@
 "button.createShortcut" = "바로 가기 만들기";
 "button.run" = "실행...";
 "button.ok" = "확인";
-"button.rename" = "Rename...";
-"button.moveBottle" = "Move...";
-"button.exportBottle" = "Export as Archive...";
+"button.rename" = "이름 변경...";
+"button.moveBottle" = "이동...";
+"button.exportBottle" = "아카이브로 내보내기...";
 "button.removeAlert" = "삭제...";
 "button.createBottle" = "Bottle 생성";
 "button.removeAlert.msg" = "%@을(를) 삭제하시겠습니까?";
@@ -77,7 +77,7 @@
 "create.cancel" = "취소";
 "create.create" = "생성";
 
-"rename.bottle.title" = "Rename bottle";
+"rename.bottle.title" = "Bottle 이름 변경";
 "rename.pin.title" = "Rename pin";
 "rename.name" = "새 이름:";
 "rename.rename" = "이름 변경";
