@@ -15,8 +15,7 @@ extension Bottle {
     }
 
     @discardableResult
-    // swiftlint:disable:next function_body_length
-    func getStartMenuPrograms() -> [ShellLinkHeader] {
+    func getStartMenuPrograms() -> [Program] {
         let globalStartMenu = url
             .appending(path: "drive_c")
             .appending(path: "ProgramData")
@@ -34,19 +33,14 @@ extension Bottle {
             .appending(path: "Windows")
             .appending(path: "Start Menu")
 
-        var startMenuPrograms: [ShellLinkHeader] = []
-        var startMenuProgramsURLs: [URL] = []
+        var startMenuPrograms: [Program] = []
+        var linkURLs: [URL] = []
         let globalEnumerator = FileManager.default.enumerator(at: globalStartMenu,
                                                               includingPropertiesForKeys: [.isRegularFileKey],
                                                               options: [.skipsHiddenFiles])
         while let url = globalEnumerator?.nextObject() as? URL {
             if url.pathExtension == "lnk" {
-                startMenuProgramsURLs.append(url)
-                do {
-                    try FileManager.default.removeItem(at: url)
-                } catch {
-                    print(error)
-                }
+                linkURLs.append(url)
             }
         }
 
@@ -55,23 +49,19 @@ extension Bottle {
                                                               options: [.skipsHiddenFiles])
         while let url = userEnumerator?.nextObject() as? URL {
             if url.pathExtension == "lnk" {
-                startMenuProgramsURLs.append(url)
-                do {
-                    try FileManager.default.removeItem(at: url)
-                } catch {
-                    print(error)
-                }
+                linkURLs.append(url)
             }
         }
 
-        startMenuProgramsURLs.sort(by: { $0.lastPathComponent.lowercased() < $1.lastPathComponent.lowercased() })
+        linkURLs.sort(by: { $0.lastPathComponent.lowercased() < $1.lastPathComponent.lowercased() })
 
-        for program in startMenuProgramsURLs {
+        for link in linkURLs {
             do {
-                if !startMenuPrograms.contains(where: { $0.url == program }) {
-                    try startMenuPrograms.append(ShellLinkHeader(url: program,
-                                                                 data: Data(contentsOf: program),
-                                                                 bottle: self))
+                if let program = ShellLinkHeader.getProgram(url: link, data: try Data(contentsOf: link), bottle: self) {
+                    if !startMenuPrograms.contains(where: { $0.url == program.url }) {
+                        startMenuPrograms.append(program)
+                        try FileManager.default.removeItem(at: link)
+                    }
                 }
             } catch {
                 print(error)

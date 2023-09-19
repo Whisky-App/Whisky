@@ -56,7 +56,7 @@ struct BottleView: View {
                                         }
                                         .buttonStyle(.plain)
                                     }
-                                    .frame(width: 45, height: 45) // Same size as ShellLinkView's icon
+                                    .frame(width: 45, height: 45)
                                     .padding(EdgeInsets(top: 0, leading: 0, bottom: 12, trailing: 0))
                                 }
                             }
@@ -181,20 +181,18 @@ struct BottleView: View {
     }
 
     func updateStartMenu() {
-        pins = bottle.settings.pins
-
-        let links = bottle.getStartMenuPrograms()
-        for link in links {
-            if let linkInfo = link.linkInfo, let linkProgram = linkInfo.program {
-                if !bottle.settings.pins.contains(where: { $0.url == linkProgram.url }) {
-                    bottle.settings.pins.append(PinnedProgram(name: linkProgram.name,
-                                                              url: linkProgram.url))
-                    for program in bottle.programs where program.url == linkProgram.url {
-                        program.pinned = true
-                    }
-                }
+        bottle.programs = bottle.updateInstalledPrograms()
+        let startMenuPrograms = bottle.getStartMenuPrograms()
+        for startMenuProgram in startMenuPrograms where
+            !bottle.settings.pins.contains(where: { $0.url == startMenuProgram.url }) {
+            for program in bottle.programs where program == startMenuProgram {
+                program.pinned = true
+                bottle.settings.pins.append(PinnedProgram(name: program.name,
+                                                          url: program.url))
             }
         }
+
+        pins = bottle.settings.pins
     }
 }
 
@@ -233,57 +231,6 @@ struct WinetricksView: View {
         }
         .padding()
         .frame(width: 350, height: 140)
-    }
-}
-
-struct ShellLinkView: View {
-    @State var link: ShellLinkHeader
-    @State var image: NSImage?
-    @Binding var loadStartMenu: Bool
-
-    var body: some View {
-        VStack {
-            if let stringData = link.stringData, let icon = stringData.icon {
-                Image(nsImage: icon)
-                    .resizable()
-                    .frame(width: 45, height: 45)
-            } else {
-                if let image = image {
-                    Image(nsImage: image)
-                        .resizable()
-                        .frame(width: 45, height: 45)
-                } else {
-                    Image(systemName: "app.dashed")
-                        .resizable()
-                        .frame(width: 45, height: 45)
-                }
-            }
-            Spacer()
-            Text(link.url
-                .deletingPathExtension()
-                .lastPathComponent + "\n")
-                .multilineTextAlignment(.center)
-                .lineLimit(2)
-        }
-        .frame(width: 90, height: 90)
-        .padding(10)
-        .contextMenu {
-            Button("Delete Shortcut") {
-                do {
-                    try FileManager.default.removeItem(at: link.url)
-                    loadStartMenu.toggle()
-                } catch {
-                    print("Failed to delete shortcut: \(error)")
-                }
-            }
-        }
-        .onAppear {
-            if let linkInfo = link.linkInfo,
-                let program = linkInfo.program,
-                let peFile = program.peFile {
-                image = peFile.bestIcon()
-            }
-        }
     }
 }
 
