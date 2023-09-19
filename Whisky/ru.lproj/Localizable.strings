@@ -20,7 +20,7 @@
 "button.removeAlert.delete" = "Удалить";
 "button.removeAlert.cancel" = "Отмена";
 
-"pin.unpin" = "Unpin Program";
+"pin.unpin" = "Открепить ярлык программы";
 
 "config.title.wine" = "Wine";
 "config.winVersion" = "Версия Windows";
@@ -78,7 +78,7 @@
 "create.create" = "Создать";
 
 "rename.bottle.title" = "Переименовать бутылку";
-"rename.pin.title" = "Rename pin";
+"rename.pin.title" = "Переименовать ярлык";
 "rename.name" = "Новое имя:";
 "rename.rename" = "Переименовать";
 
