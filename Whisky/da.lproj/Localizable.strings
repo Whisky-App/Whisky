@@ -20,6 +20,8 @@
 "button.removeAlert.delete" = "Fjern";
 "button.removeAlert.cancel" = "Annuller";
 
+"pin.unpin" = "Unpin Program";
+
 "config.title.wine" = "Wine";
 "config.winVersion" = "Windows Version";
 "config.buildVersion" = "Build Version";
