@@ -1,10 +1,10 @@
-"tab.config" = "Bottle Configuration";
-"tab.programs" = "Installed Programs";
+"tab.config" = "Bottle 설정";
+"tab.programs" = "설치된 프로그램";
 "tab.info" = "정보";
 
 "main.createFirst" = "첫 번째 Bottle을 만들어 시작하기";
 
-"button.cDrive" = "Open C: Drive";
+"button.cDrive" = "C: 드라이브 열기";
 "button.showInFinder" = "Finder에서 보기";
 "button.createShortcut" = "바로 가기 만들기";
 "button.run" = "실행...";
@@ -19,6 +19,8 @@
 "button.removeAlert.checkbox" = "디스크에서 파일 삭제";
 "button.removeAlert.delete" = "삭제";
 "button.removeAlert.cancel" = "취소";
+
+"pin.unpin" = "프로그램 고정 해제";
 
 "config.title.wine" = "Wine";
 "config.winVersion" = "Windows 버전";
@@ -49,7 +51,7 @@
 "configDpi.previewText" = "다람쥐 헌 쳇바퀴에 타고파.";
 "configDpi.dpi" = "DPI";
 
-"program.title" = "All Programs";
+"program.title" = "모든 프로그램";
 "program.env" = "환경 변수";
 "program.args" = "인자";
 "program.config" = "설정";
