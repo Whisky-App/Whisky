@@ -183,12 +183,15 @@ struct BottleView: View {
     func updateStartMenu() {
         bottle.programs = bottle.updateInstalledPrograms()
         let startMenuPrograms = bottle.getStartMenuPrograms()
-        for startMenuProgram in startMenuPrograms where
-            !bottle.settings.pins.contains(where: { $0.url == startMenuProgram.url }) {
-            for program in bottle.programs where program == startMenuProgram {
+        for startMenuProgram in startMenuPrograms {
+            for program in bottle.programs where
+            // For some godforsaken reason "foo/bar" != "foo/Bar" so...
+            program.url.path().caseInsensitiveCompare(startMenuProgram.url.path()) == .orderedSame {
                 program.pinned = true
-                bottle.settings.pins.append(PinnedProgram(name: program.name,
-                                                          url: program.url))
+                if !bottle.settings.pins.contains(where: { $0.url == program.url }) {
+                    bottle.settings.pins.append(PinnedProgram(name: program.name,
+                                                              url: program.url))
+                }
             }
         }
 
