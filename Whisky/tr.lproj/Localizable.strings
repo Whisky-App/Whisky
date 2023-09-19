@@ -20,6 +20,8 @@
 "button.removeAlert.delete" = "Kaldır";
 "button.removeAlert.cancel" = "İptal";
 
+"pin.unpin" = "Unpin Program";
+
 "config.title.wine" = "Wine";
 "config.winVersion" = "Windows Sürümü";
 "config.buildVersion" = "Yapı Sürümü";
