@@ -78,7 +78,7 @@
 "create.create" = "생성";
 
 "rename.bottle.title" = "Bottle 이름 변경";
-"rename.pin.title" = "Rename pin";
+"rename.pin.title" = "핀 이름 변경";
 "rename.name" = "새 이름:";
 "rename.rename" = "이름 변경";
 
