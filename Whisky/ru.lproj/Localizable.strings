@@ -4,7 +4,7 @@
 
 "main.createFirst" = "Создайте первую бутылку, чтобы начать";
 
-"button.cDrive" = "Открыть C: Диск";
+"button.cDrive" = "Открыть Диск C";
 "button.showInFinder" = "Показать в Finder";
 "button.createShortcut" = "Создать ярлык";
 "button.run" = "Выполнить...";
@@ -64,7 +64,7 @@
 "info.gptk" = "Версия GPTK";
 
 "gptkalert.init" = "Перетащите DMG образ Game Porting Toolkit";
-"gptkalert.message" = "Случилась ошибка в GPTK!";
+"gptkalert.message" = "Произошла ошибка в GPTK!";
 
 "alert.message" = "Не удалось запустить программу!";
 "alert.info" = "Не удалось открыть";
