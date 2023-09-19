@@ -9,9 +9,9 @@
 "button.createShortcut" = "Verknüpfung erstellen";
 "button.run" = "Starten...";
 "button.ok" = "OK";
-"button.renameBottle" = "Umbenennen";
-"button.moveBottle" = "Verschieben";
-"button.exportBottle" = "Als Archiv exportieren";
+"button.rename" = "Rename...";
+"button.moveBottle" = "Move...";
+"button.exportBottle" = "Export as Archive...";
 "button.removeAlert" = "Löschen...";
 "button.createBottle" = "Bottle erstellen";
 "button.removeAlert.msg" = "%@ löschen?";
@@ -77,7 +77,8 @@
 "create.cancel" = "Abbrechen";
 "create.create" = "Erstellen";
 
-"rename.title" = "Bottle umbenennen";
+"rename.bottle.title" = "Rename bottle";
+"rename.pin.title" = "Rename pin";
 "rename.name" = "Neuer Name:";
 "rename.rename" = "Umbenennen";
 
