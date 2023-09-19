@@ -1,10 +1,6 @@
-"tab.config" = "Config";
-"tab.programs" = "Programs";
+"tab.config" = "Bottle Configuration";
+"tab.programs" = "Installed Programs";
 "tab.info" = "Info";
-
-"tab.navTitle.config" = "%@ Config";
-"tab.navTitle.programs" = "%@ Programs";
-"tab.navTitle.info" = "%@ Info";
 
 "main.createFirst" = "Create your first bottle to get started";
 
@@ -23,6 +19,8 @@
 "button.removeAlert.checkbox" = "Delete files from disk";
 "button.removeAlert.delete" = "Remove";
 "button.removeAlert.cancel" = "Cancel";
+
+"pin.unpin" = "Unpin Program";
 
 "config.title.wine" = "Wine";
 "config.winVersion" = "Windows Version";
@@ -53,7 +51,7 @@
 "configDpi.previewText" = "The quick brown fox jumps over the lazy dog.";
 "configDpi.dpi" = "DPI";
 
-"program.title" = "Installed Programs";
+"program.title" = "All Programs";
 "program.env" = "Environment Variables";
 "program.args" = "Arguments";
 "program.config" = "Config";
