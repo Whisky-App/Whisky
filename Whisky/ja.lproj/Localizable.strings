@@ -20,6 +20,8 @@
 "button.removeAlert.delete" = "削除";
 "button.removeAlert.cancel" = "キャンセル";
 
+"pin.unpin" = "Unpin Program";
+
 "config.title.wine" = "Wine";
 "config.winVersion" = "Windows のバージョン";
 "config.buildVersion" = "ビルド番号";
