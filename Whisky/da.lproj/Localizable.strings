@@ -9,9 +9,9 @@
 "button.createShortcut" = "Create Shortcut";
 "button.run" = "Kør program...";
 "button.ok" = "OK";
-"button.renameBottle" = "Omdøb";
-"button.moveBottle" = "Flyt";
-"button.exportBottle" = "Eksporter som arkiv";
+"button.rename" = "Rename...";
+"button.moveBottle" = "Move...";
+"button.exportBottle" = "Export as Archive...";
 "button.removeAlert" = "Fjern...";
 "button.createBottle" = "Opret Bottle";
 "button.removeAlert.msg" = "Fjern %@?";
@@ -77,7 +77,8 @@
 "create.cancel" = "Annuller";
 "create.create" = "Opret";
 
-"rename.title" = "Omdøb bottle";
+"rename.bottle.title" = "Rename bottle";
+"rename.pin.title" = "Rename pin";
 "rename.name" = "Nyt navn:";
 "rename.rename" = "Omdøb";
 
