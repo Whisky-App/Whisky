@@ -9,9 +9,9 @@
 "button.createShortcut" = "Kısayol Oluştur";
 "button.run" = "Çalıştır...";
 "button.ok" = "Tamam";
-"button.renameBottle" = "Bottle'ı Yeniden Adlandır";
-"button.moveBottle" = "Taşı";
-"button.exportBottle" = "Arşiv olarak dışarı aktar";
+"button.rename" = "Rename...";
+"button.moveBottle" = "Move...";
+"button.exportBottle" = "Export as Archive...";
 "button.removeAlert" = "Kaldır...";
 "button.createBottle" = "Bottle Oluştur";
 "button.removeAlert.msg" = "%@ öğesini kaldır?";
@@ -77,7 +77,8 @@
 "create.cancel" = "İptal";
 "create.create" = "Oluştur";
 
-"rename.title" = "Bottle'ı Yeniden Adlandır";
+"rename.bottle.title" = "Rename bottle";
+"rename.pin.title" = "Rename pin";
 "rename.name" = "Yeni ad:";
 "rename.rename" = "Yeniden Adlandır";
 
