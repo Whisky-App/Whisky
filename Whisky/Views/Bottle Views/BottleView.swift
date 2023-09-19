@@ -7,7 +7,6 @@
 
 import SwiftUI
 import UniformTypeIdentifiers
-import QuickLookThumbnailing
 import WhiskyKit
 
 enum BottleStage {
