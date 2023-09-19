@@ -1,5 +1,5 @@
-"tab.config" = "Bottle Configuration";
-"tab.programs" = "Installed Programs";
+"tab.config" = "Конфигурация бутылки";
+"tab.programs" = "Установленные программы";
 "tab.info" = "Сведения";
 
 "main.createFirst" = "Создайте первую бутылку, чтобы начать";
@@ -9,9 +9,9 @@
 "button.createShortcut" = "Создать ярлык";
 "button.run" = "Выполнить...";
 "button.ok" = "ОК";
-"button.rename" = "Rename...";
-"button.moveBottle" = "Move...";
-"button.exportBottle" = "Export as Archive...";
+"button.rename" = "Переименовать...";
+"button.moveBottle" = "Переместить...";
+"button.exportBottle" = "Экспортировать как архив...";
 "button.removeAlert" = "Удалить...";
 "button.createBottle" = "Создать Бутылку";
 "button.removeAlert.msg" = "Удалить %@?";
@@ -51,7 +51,7 @@
 "configDpi.previewText" = "Съешь же ещё этих мягких французских булок да выпей чаю.";
 "configDpi.dpi" = "DPI";
 
-"program.title" = "All Programs";
+"program.title" = "Все программы";
 "program.env" = "Переменные окружения";
 "program.args" = "Аргументы";
 "program.config" = "Настройки";
@@ -72,12 +72,12 @@
 "create.title" = "Создать новую бутылку";
 "create.name" = "Название бутылки:";
 "create.win" = "Версия Windows:";
-"create.path" = "Путь бутылки:";
+"create.path" = "Путь к бутылке:";
 "create.browse" = "Обзор";
 "create.cancel" = "Отмена";
 "create.create" = "Создать";
 
-"rename.bottle.title" = "Rename bottle";
+"rename.bottle.title" = "Переименовать бутылку";
 "rename.pin.title" = "Rename pin";
 "rename.name" = "Новое имя:";
 "rename.rename" = "Переименовать";
