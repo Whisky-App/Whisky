@@ -9,9 +9,9 @@
 "button.createShortcut" = "Luo pikakomento";
 "button.run" = "Käynnistä...";
 "button.ok" = "OK";
-"button.renameBottle" = "Nimeä uudelleen";
-"button.moveBottle" = "Siirrä";
-"button.exportBottle" = "Vie arkistona";
+"button.rename" = "Rename...";
+"button.moveBottle" = "Move...";
+"button.exportBottle" = "Export as Archive...";
 "button.removeAlert" = "Poista...";
 "button.createBottle" = "Luo pullo";
 "button.removeAlert.msg" = "Poista %@?";
@@ -77,7 +77,8 @@
 "create.cancel" = "Peru";
 "create.create" = "Luo";
 
-"rename.title" = "Uudelleen nimeä pullo";
+"rename.bottle.title" = "Rename bottle";
+"rename.pin.title" = "Rename pin";
 "rename.name" = "Uusi nimi:";
 "rename.rename" = "Uudelleen nimeä";
 
