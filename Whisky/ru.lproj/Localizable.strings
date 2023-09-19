@@ -9,9 +9,9 @@
 "button.createShortcut" = "Создать ярлык";
 "button.run" = "Выполнить...";
 "button.ok" = "ОК";
-"button.renameBottle" = "Переименовать";
-"button.moveBottle" = "Переместить";
-"button.exportBottle" = "Экспортировать как архив";
+"button.rename" = "Rename...";
+"button.moveBottle" = "Move...";
+"button.exportBottle" = "Export as Archive...";
 "button.removeAlert" = "Удалить...";
 "button.createBottle" = "Создать Бутылку";
 "button.removeAlert.msg" = "Удалить %@?";
@@ -77,7 +77,8 @@
 "create.cancel" = "Отмена";
 "create.create" = "Создать";
 
-"rename.title" = "Переименовать бутылку";
+"rename.bottle.title" = "Rename bottle";
+"rename.pin.title" = "Rename pin";
 "rename.name" = "Новое имя:";
 "rename.rename" = "Переименовать";
 
