@@ -1,5 +1,5 @@
-"tab.config" = "Bottle Configuration";
-"tab.programs" = "Installed Programs";
+"tab.config" = "ボトルの設定";
+"tab.programs" = "インストール済みのプログラム";
 "tab.info" = "情報";
 
 "main.createFirst" = "最初の Bottle を作って、使い始めましょう";
@@ -51,7 +51,7 @@
 "configDpi.previewText" = "色は匂へど　散りぬるを　我が世誰ぞ　常ならむ　有為の奥山　今日越えて　浅き夢見じ　酔ひもせず。";
 "configDpi.dpi" = "DPI";
 
-"program.title" = "All Programs";
+"program.title" = "すべてのプログラム";
 "program.env" = "環境変数";
 "program.args" = "引数";
 "program.config" = "設定";
