@@ -9,9 +9,9 @@
 "button.createShortcut" = "Criar atalho";
 "button.run" = "Executar...";
 "button.ok" = "OK";
-"button.renameBottle" = "Renomear";
-"button.moveBottle" = "Mover";
-"button.exportBottle" = "Exportar como arquivo";
+"button.rename" = "Rename...";
+"button.moveBottle" = "Move...";
+"button.exportBottle" = "Export as Archive...";
 "button.removeAlert" = "Remover...";
 "button.createBottle" = "Criar uma Bottle";
 "button.removeAlert.msg" = "Remover %@?";
@@ -77,7 +77,8 @@
 "create.cancel" = "Cancelar";
 "create.create" = "Criar";
 
-"rename.title" = "Renomear Bottle";
+"rename.bottle.title" = "Rename bottle";
+"rename.pin.title" = "Rename pin";
 "rename.name" = "Novo nome:";
 "rename.rename" = "Renomear";
 
