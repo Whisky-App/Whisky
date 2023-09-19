@@ -167,7 +167,7 @@ struct BottleListEntry: View {
                 BottleRenameView(bottle: bottle, name: $name)
             }
             .contextMenu {
-                Button("button.renameBottle") {
+                Button("button.rename") {
                     showBottleRename.toggle()
                 }
                 Divider()

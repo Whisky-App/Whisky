@@ -189,7 +189,8 @@ struct BottleView: View {
             program.url.path().caseInsensitiveCompare(startMenuProgram.url.path()) == .orderedSame {
                 program.pinned = true
                 if !bottle.settings.pins.contains(where: { $0.url == program.url }) {
-                    bottle.settings.pins.append(PinnedProgram(name: program.name,
+                    bottle.settings.pins.append(PinnedProgram(name: program.name
+                                                                    .replacingOccurrences(of: ".exe", with: ""),
                                                               url: program.url))
                 }
             }
@@ -241,6 +242,8 @@ struct PinnedProgramView: View {
     var bottle: Bottle
     @State var pin: PinnedProgram
     @State var image: NSImage?
+    @State var showRenameSheet = false
+    @State var name: String = ""
     @Binding var loadStartMenu: Bool
 
     var body: some View {
@@ -255,15 +258,16 @@ struct PinnedProgramView: View {
                     .frame(width: 45, height: 45)
             }
             Spacer()
-            Text(pin.url
-                .deletingPathExtension()
-                .lastPathComponent + "\n")
+            Text(name + "\n")
                 .multilineTextAlignment(.center)
                 .lineLimit(2)
         }
         .frame(width: 90, height: 90)
         .padding(10)
         .contextMenu {
+            Button("button.rename") {
+                showRenameSheet.toggle()
+            }
             Button("pin.unpin") {
                 bottle.settings.pins.removeAll(where: { $0.url == pin.url })
                 for program in bottle.programs where program.url == pin.url {
@@ -272,12 +276,21 @@ struct PinnedProgramView: View {
                 loadStartMenu.toggle()
             }
         }
+        .sheet(isPresented: $showRenameSheet) {
+            PinRenameView(name: $name)
+        }
         .onAppear {
             let program = Program(name: pin.name,
                                   url: pin.url,
                                   bottle: bottle)
             if let peFile = program.peFile {
                 image = peFile.bestIcon()
+            }
+            name = pin.name
+        }
+        .onChange(of: name) {
+            if let index = bottle.settings.pins.firstIndex(where: { $0.url == pin.url }) {
+                bottle.settings.pins[index].name = name
             }
         }
     }

@@ -85,7 +85,9 @@ extension Program {
             bottle.settings.pins.removeAll(where: { $0.url == url })
             pinned = false
         } else {
-            bottle.settings.pins.append(PinnedProgram(name: name, url: url))
+            bottle.settings.pins.append(PinnedProgram(name: name
+                                                            .replacingOccurrences(of: ".exe", with: ""),
+                                                      url: url))
             pinned = true
         }
 
