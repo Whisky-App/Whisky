@@ -9,9 +9,9 @@
 "button.createShortcut" = "Create Shortcut";
 "button.run" = "Starten...";
 "button.ok" = "OK";
-"button.renameBottle" = "Hernoemen";
-"button.moveBottle" = "Verplaats";
-"button.exportBottle" = "Exporteer als archief";
+"button.rename" = "Rename...";
+"button.moveBottle" = "Move...";
+"button.exportBottle" = "Export as Archive...";
 "button.removeAlert" = "Remove...";
 "button.createBottle" = "Fles maken";
 "button.removeAlert.msg" = "Remove %@?";
@@ -77,7 +77,8 @@
 "create.cancel" = "Annuleren";
 "create.create" = "Aanmaken";
 
-"rename.title" = "Hernoem fles";
+"rename.bottle.title" = "Rename bottle";
+"rename.pin.title" = "Rename pin";
 "rename.name" = "Nieuwe naam:";
 "rename.rename" = "Hernoem";
 
