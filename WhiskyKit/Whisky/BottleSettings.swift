@@ -46,8 +46,9 @@ public struct PinnedProgram: Codable, Hashable {
 }
 
 public struct BottleInfo: Codable {
-    var name: String = "Whisky"
+    var name: String = "Bottle"
     var pins: [PinnedProgram] = []
+    var blocklist: [URL] = []
 }
 
 public struct BottleWineConfig: Codable {
@@ -170,6 +171,15 @@ public class BottleSettings {
         }
         set {
             settings.info.pins = newValue
+        }
+    }
+
+    public var blocklist: [URL] {
+        get {
+            return settings.info.blocklist
+        }
+        set {
+            settings.info.blocklist = newValue
         }
     }
 

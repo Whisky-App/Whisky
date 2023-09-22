@@ -11,10 +11,12 @@ import WhiskyKit
 struct ProgramsView: View {
     let bottle: Bottle
     @State var programs: [Program] = []
+    @State var blocklist: [URL] = []
     // We don't actually care about the value
     // This just provides a way to trigger a refresh
     @State var resortPrograms: Bool = false
     @State var isExpanded: Bool = true
+    @State var isBlocklistExpanded: Bool = false
     @Binding var reloadStartMenu: Bool
     @Binding var path: NavigationPath
 
@@ -27,15 +29,25 @@ struct ProgramsView: View {
                                     path: $path)
                 }
             }
+            Section("program.blocklist", isExpanded: $isBlocklistExpanded) {
+                List($blocklist, id: \.self) { $blockedUrl in
+                    BlocklistItemView(blockedUrl: blockedUrl,
+                                      bottle: bottle,
+                                      resortPrograms: $resortPrograms)
+                }
+            }
         }
         .formStyle(.grouped)
         .navigationTitle("tab.programs")
         .onAppear {
             programs = bottle.updateInstalledPrograms()
+            blocklist = bottle.settings.blocklist
             sortPrograms()
         }
         .onChange(of: resortPrograms) {
             reloadStartMenu.toggle()
+            programs = bottle.updateInstalledPrograms()
+            blocklist = bottle.settings.blocklist
             sortPrograms()
         }
     }
@@ -101,6 +113,40 @@ struct ProgramItemView: View {
         }
         .onAppear {
             isPinned = program.pinned
+        }
+        .contextMenu {
+            Button("program.add.blocklist") {
+                program.bottle.settings.blocklist.append(program.url)
+                resortPrograms.toggle()
+            }
+        }
+    }
+}
+
+struct BlocklistItemView: View {
+    let blockedUrl: URL
+    let bottle: Bottle
+    @State var showButtons: Bool = false
+    @Binding var resortPrograms: Bool
+
+    var body: some View {
+        HStack {
+            Text(blockedUrl.prettyPath(bottle))
+            Spacer()
+            if showButtons {
+                Button {
+                    bottle.settings.blocklist.removeAll { $0 == blockedUrl }
+                    resortPrograms.toggle()
+                } label: {
+                    Image(systemName: "xmark.circle")
+                }
+                .buttonStyle(.plain)
+                .foregroundColor(.secondary)
+            }
+        }
+        .padding(4)
+        .onHover { hover in
+            showButtons = hover
         }
     }
 }

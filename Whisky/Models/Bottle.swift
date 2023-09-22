@@ -99,7 +99,10 @@ extension Bottle {
             }
         }
 
-        programs.sort(by: { $0.name.lowercased() < $1.name.lowercased() })
+        // Apply blocklist
+        programs = programs.filter { !settings.blocklist.contains($0.url) }
+
+        programs.sort { $0.name.lowercased() < $1.name.lowercased() }
         return programs
     }
 

@@ -25,10 +25,20 @@ extension URL {
     }
 
     public func prettyPath() -> String {
-        var prettyPath = path
+        var prettyPath = path(percentEncoded: false)
         prettyPath = prettyPath
             .replacingOccurrences(of: Bundle.main.bundleIdentifier ?? "com.isaacmarovitz.Whisky", with: "Whisky")
             .replacingOccurrences(of: "/Users/\(NSUserName())", with: "~")
+        return prettyPath
+    }
+
+    // NOT to be used for logic only as UI decoration
+    public func prettyPath(_ bottle: Bottle) -> String {
+        var prettyPath = path(percentEncoded: false)
+        prettyPath = prettyPath
+            .replacingOccurrences(of: bottle.url.path(percentEncoded: false), with: "")
+            .replacingOccurrences(of: "/drive_c/", with: "C:\\")
+            .replacingOccurrences(of: "/", with: "\\")
         return prettyPath
     }
 }
