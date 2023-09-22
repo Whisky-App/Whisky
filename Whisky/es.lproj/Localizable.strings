@@ -52,9 +52,11 @@
 "configDpi.dpi" = "DPI";
 
 "program.title" = "All Programs";
+"program.blocklist" = "Blocklist";
 "program.env" = "Variables de Entorno";
 "program.args" = "Argumentos";
 "program.config" = "Configuración";
+"program.add.blocklist" = "Add to Blocklist";
 
 "info.title" = "Información";
 "info.path" = "Ruta";
