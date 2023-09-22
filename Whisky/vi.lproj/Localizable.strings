@@ -52,9 +52,11 @@
 "configDpi.dpi" = "DPI";
 
 "program.title" = "All Programs";
+"program.blocklist" = "Blocklist";
 "program.env" = "Biến môi trường";
 "program.args" = "Thông số";
 "program.config" = "Cấu hình";
+"program.add.blocklist" = "Add to Blocklist";
 
 "info.title" = "Thông tin";
 "info.path" = "Đường dẫn";
