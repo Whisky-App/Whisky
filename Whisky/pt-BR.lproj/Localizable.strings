@@ -1,6 +1,5 @@
 "tab.config" = "Bottle Configuration";
 "tab.programs" = "Installed Programs";
-"tab.info" = "Informações";
 
 "main.createFirst" = "Crie sua primeira Bottle para começar";
 
@@ -57,16 +56,6 @@
 "program.args" = "Argumentos";
 "program.config" = "Configuração";
 "program.add.blocklist" = "Add to Blocklist";
-
-"info.title" = "Informações";
-"info.path" = "Caminho";
-"info.path.copy" = "Copiar Caminho";
-"info.wine" = "Versão do Wine";
-"info.win" = "Versão do Windows";
-"info.gptk" = "Versão do GPTK";
-
-"gptkalert.init" = "Arraste e solte o arquivo DMG do Game Porting Toolkit";
-"gptkalert.message" = "O GPTK encontrou um erro!";
 
 "alert.message" = "Falha ao abrir o programa!";
 "alert.info" = "Falha ao abrir";
