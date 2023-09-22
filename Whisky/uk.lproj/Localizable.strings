@@ -1,6 +1,5 @@
 "tab.config" = "Bottle Configuration";
 "tab.programs" = "Installed Programs";
-"tab.info" = "Інформація";
 
 "main.createFirst" = "Створіть свою першу пляшку, щоб почати";
 
@@ -57,16 +56,6 @@
 "program.args" = "Аргументи";
 "program.config" = "Налаштування";
 "program.add.blocklist" = "Add to Blocklist";
-
-"info.title" = "Інформація";
-"info.path" = "Шлях";
-"info.path.copy" = "Скопіювати шлях";
-"info.wine" = "Версія Wine";
-"info.win" = "Версія Windows";
-"info.gptk" = "Версія GPTK";
-
-"gptkalert.init" = "Перетягніть сюди DMG образ Game Porting Toolkit";
-"gptkalert.message" = "GPTK зіткнувся з помилкою!";
 
 "alert.message" = "Не вдалося відкрити програму!";
 "alert.info" = "Не вдалося відкрити";
