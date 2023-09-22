@@ -279,13 +279,15 @@ struct PinnedProgramView: View {
             PinRenameView(name: $name)
         }
         .onAppear {
-            let program = Program(name: pin.name,
-                                  url: pin.url,
-                                  bottle: bottle)
-            if let peFile = program.peFile {
-                image = peFile.bestIcon()
-            }
             name = pin.name
+            Task.detached {
+                let program = Program(name: pin.name,
+                                      url: pin.url,
+                                      bottle: bottle)
+                if let peFile = program.peFile {
+                    image = peFile.bestIcon()
+                }
+            }
         }
         .onChange(of: name) {
             if let index = bottle.settings.pins.firstIndex(where: { $0.url == pin.url }) {
