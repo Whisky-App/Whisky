@@ -102,11 +102,11 @@ struct BottleView: View {
                 Spacer()
                 HStack {
                     Spacer()
-                    Button("button.winetricks") {
-                        showWinetricksSheet.toggle()
-                    }
                     Button("button.cDrive") {
                         bottle.openCDrive()
+                    }
+                    Button("button.winetricks") {
+                        showWinetricksSheet.toggle()
                     }
                     Button("button.run") {
                         let panel = NSOpenPanel()
