@@ -53,9 +53,11 @@
 "configDpi.dpi" = "DPI";
 
 "program.title" = "All Programs";
+"program.blocklist" = "Blocklist";
 "program.env" = "環境變數";
 "program.args" = "命令列引數";
 "program.config" = "設定";
+"program.add.blocklist" = "Add to Blocklist";
 
 "info.title" = "資訊";
 "info.path" = "路徑";
