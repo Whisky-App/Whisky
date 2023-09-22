@@ -52,9 +52,11 @@
 "configDpi.dpi" = "DPI";
 
 "program.title" = "Все программы";
+"program.blocklist" = "Blocklist";
 "program.env" = "Переменные окружения";
 "program.args" = "Аргументы";
 "program.config" = "Настройки";
+"program.add.blocklist" = "Add to Blocklist";
 
 "info.title" = "Сведения";
 "info.path" = "Путь:";
