@@ -52,9 +52,11 @@
 "configDpi.dpi" = "DPI";
 
 "program.title" = "すべてのプログラム";
+"program.blocklist" = "Blocklist";
 "program.env" = "環境変数";
 "program.args" = "引数";
 "program.config" = "設定";
+"program.add.blocklist" = "Add to Blocklist";
 
 "info.title" = "情報";
 "info.path" = "パス";
