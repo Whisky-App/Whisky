@@ -1,6 +1,5 @@
 "tab.config" = "Bottle Configuration";
 "tab.programs" = "Installed Programs";
-"tab.info" = "简介";
 
 "main.createFirst" = "从创建第一个容器开始";
 
@@ -57,16 +56,6 @@
 "program.args" = "参数";
 "program.config" = "配置";
 "program.add.blocklist" = "Add to Blocklist";
-
-"info.title" = "关于";
-"info.path" = "路径";
-"info.path.copy" = "复制路径";
-"info.wine" = "Wine 版本";
-"info.win" = "Windows 版本";
-"info.gptk" = "GPTK 版本";
-
-"gptkalert.init" = "将 Game Porting Toolkit 的 DMG 文件拖到这里";
-"gptkalert.message" = "GPTK 遇到了一个错误！";
 
 "alert.message" = "打开软件失败！";
 "alert.info" = "打开失败";
