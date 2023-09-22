@@ -1,6 +1,5 @@
 "tab.config" = "Bottle Configuration";
 "tab.programs" = "Installed Programs";
-"tab.info" = "Info";
 
 "main.createFirst" = "Créez votre première bouteille pour commencer";
 
@@ -57,16 +56,6 @@
 "program.args" = "Paramètres";
 "program.config" = "Config";
 "program.add.blocklist" = "Add to Blocklist";
-
-"info.title" = "Info";
-"info.path" = "Chemin";
-"info.path.copy" = "Copier le chemin";
-"info.wine" = "Version de Wine";
-"info.win" = "Version de Windows";
-"info.gptk" = "Version du GPTK";
-
-"gptkalert.init" = "Glissez et déposez le fichier DMG Game Porting Toolkit";
-"gptkalert.message" = "GPTK a rencontré une erreur !";
 
 "alert.message" = "Impossible d'ouvrir le programme !";
 "alert.info" = "Échec de l'ouverture";
