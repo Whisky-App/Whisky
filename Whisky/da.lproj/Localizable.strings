@@ -52,9 +52,11 @@
 "configDpi.dpi" = "DPI";
 
 "program.title" = "All Programs";
+"program.blocklist" = "Blocklist";
 "program.env" = "Miljøvariabler";
 "program.args" = "Argumenter";
 "program.config" = "Konfiguration";
+"program.add.blocklist" = "Add to Blocklist";
 
 "info.title" = "Info";
 "info.path" = "Sti";
