@@ -52,9 +52,11 @@
 "configDpi.dpi" = "DPI";
 
 "program.title" = "All Programs";
+"program.blocklist" = "Blocklist";
 "program.env" = "Змінні середовища";
 "program.args" = "Аргументи";
 "program.config" = "Налаштування";
+"program.add.blocklist" = "Add to Blocklist";
 
 "info.title" = "Інформація";
 "info.path" = "Шлях";
