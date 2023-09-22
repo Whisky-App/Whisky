@@ -52,9 +52,11 @@
 "configDpi.dpi" = "PPP";
 
 "program.title" = "All Programs";
+"program.blocklist" = "Blocklist";
 "program.env" = "Variables d'environnement";
 "program.args" = "Paramètres";
 "program.config" = "Config";
+"program.add.blocklist" = "Add to Blocklist";
 
 "info.title" = "Info";
 "info.path" = "Chemin";
