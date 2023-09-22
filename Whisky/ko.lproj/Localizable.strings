@@ -52,9 +52,11 @@
 "configDpi.dpi" = "DPI";
 
 "program.title" = "모든 프로그램";
+"program.blocklist" = "Blocklist";
 "program.env" = "환경 변수";
 "program.args" = "인자";
 "program.config" = "설정";
+"program.add.blocklist" = "Add to Blocklist";
 
 "info.title" = "정보";
 "info.path" = "경로";
