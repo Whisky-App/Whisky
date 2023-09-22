@@ -1,10 +1,6 @@
-"tab.config" = "Cấu hình";
-"tab.programs" = "Chương trình";
+"tab.config" = "Bottle Configuration";
+"tab.programs" = "Installed Programs";
 "tab.info" = "Thông thin";
-
-"tab.navTitle.config" = "Cấu hình %@";
-"tab.navTitle.programs" = "Chương trình trong %@";
-"tab.navTitle.info" = "Thông tin về %@";
 
 "main.createFirst" = "Tạo bottle đầu tiên để bắt đầu";
 
@@ -13,9 +9,9 @@
 "button.createShortcut" = "Create Shortcut";
 "button.run" = "Chạy...";
 "button.ok" = "OK";
-"button.renameBottle" = "Đổi tên";
-"button.moveBottle" = "Di chuyển bottle";
-"button.exportBottle" = "Lưu bottle ra file";
+"button.rename" = "Rename...";
+"button.moveBottle" = "Move...";
+"button.exportBottle" = "Export as Archive...";
 "button.removeAlert" = "Remove...";
 "button.createBottle" = "Tạo Bottle";
 "button.removeAlert.msg" = "Remove %@?";
@@ -24,6 +20,9 @@
 "button.removeAlert.delete" = "Remove";
 "button.removeAlert.cancel" = "Cancel";
 
+"pin.unpin" = "Unpin Program";
+
+"config.title.wine" = "Wine";
 "config.winVersion" = "Phiên bản Windows";
 "config.buildVersion" = "Bản dựng";
 "config.title.metal" = "Metal";
@@ -52,7 +51,7 @@
 "configDpi.previewText" = "The quick brown fox jumps over the lazy dog.";
 "configDpi.dpi" = "DPI";
 
-"program.title" = "Chương trình đã cài";
+"program.title" = "All Programs";
 "program.env" = "Biến môi trường";
 "program.args" = "Thông số";
 "program.config" = "Cấu hình";
@@ -78,7 +77,8 @@
 "create.cancel" = "Huỷ";
 "create.create" = "Tạo";
 
-"rename.title" = "Đổi tên bottle";
+"rename.bottle.title" = "Rename bottle";
+"rename.pin.title" = "Rename pin";
 "rename.name" = "Tên mới:";
 "rename.rename" = "Đổi tên";
 

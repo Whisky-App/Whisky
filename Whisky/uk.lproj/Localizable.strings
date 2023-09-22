@@ -1,10 +1,6 @@
-"tab.config" = "Налаштування";
-"tab.programs" = "Програми";
+"tab.config" = "Bottle Configuration";
+"tab.programs" = "Installed Programs";
 "tab.info" = "Інформація";
-
-"tab.navTitle.config" = "Параметри %@";
-"tab.navTitle.programs" = "%@ - програми";
-"tab.navTitle.info" = "%@ - інформація";
 
 "main.createFirst" = "Створіть свою першу пляшку, щоб почати";
 
@@ -13,9 +9,9 @@
 "button.createShortcut" = "Створити ярлик";
 "button.run" = "Запустити...";
 "button.ok" = "Гаразд";
-"button.renameBottle" = "Перейменувати";
-"button.moveBottle" = "Перемістити";
-"button.exportBottle" = "Експортувати як архів";
+"button.rename" = "Rename...";
+"button.moveBottle" = "Move...";
+"button.exportBottle" = "Export as Archive...";
 "button.removeAlert" = "Видалити...";
 "button.createBottle" = "Створити пляшку";
 "button.removeAlert.msg" = "Видалити %@?";
@@ -24,6 +20,9 @@
 "button.removeAlert.delete" = "Видалити";
 "button.removeAlert.cancel" = "Скасувати";
 
+"pin.unpin" = "Unpin Program";
+
+"config.title.wine" = "Wine";
 "config.winVersion" = "Версія Windows";
 "config.buildVersion" = "Версія складання";
 "config.title.metal" = "Metal";
@@ -52,7 +51,7 @@
 "configDpi.previewText" = "Жебракують філософи при ґанку церкви в Гадячі, ще й шатро їхнє п’яне знаємо.";
 "configDpi.dpi" = "DPI";
 
-"program.title" = "Встановлені програми";
+"program.title" = "All Programs";
 "program.env" = "Змінні середовища";
 "program.args" = "Аргументи";
 "program.config" = "Налаштування";
@@ -78,7 +77,8 @@
 "create.cancel" = "Скасувати";
 "create.create" = "Створити";
 
-"rename.title" = "Перейменувати пляшку";
+"rename.bottle.title" = "Rename bottle";
+"rename.pin.title" = "Rename pin";
 "rename.name" = "Нова назва:";
 "rename.rename" = "Перейменувати";
 

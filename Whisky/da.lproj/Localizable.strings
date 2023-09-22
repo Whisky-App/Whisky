@@ -1,10 +1,6 @@
-"tab.config" = "Konfiguration";
-"tab.programs" = "Programmer";
+"tab.config" = "Bottle Configuration";
+"tab.programs" = "Installed Programs";
 "tab.info" = "Info";
-
-"tab.navTitle.config" = "%@ Konfiguration";
-"tab.navTitle.programs" = "%@ Programmer";
-"tab.navTitle.info" = "%@ Info";
 
 "main.createFirst" = "Opret din første bottle for at komme igang";
 
@@ -13,9 +9,9 @@
 "button.createShortcut" = "Create Shortcut";
 "button.run" = "Kør program...";
 "button.ok" = "OK";
-"button.renameBottle" = "Omdøb";
-"button.moveBottle" = "Flyt";
-"button.exportBottle" = "Eksporter som arkiv";
+"button.rename" = "Rename...";
+"button.moveBottle" = "Move...";
+"button.exportBottle" = "Export as Archive...";
 "button.removeAlert" = "Fjern...";
 "button.createBottle" = "Opret Bottle";
 "button.removeAlert.msg" = "Fjern %@?";
@@ -24,6 +20,9 @@
 "button.removeAlert.delete" = "Fjern";
 "button.removeAlert.cancel" = "Annuller";
 
+"pin.unpin" = "Unpin Program";
+
+"config.title.wine" = "Wine";
 "config.winVersion" = "Windows Version";
 "config.buildVersion" = "Build Version";
 "config.title.metal" = "Metal";
@@ -52,7 +51,7 @@
 "configDpi.previewText" = "Quizdeltagerne spiste jordbær med fløde, mens cirkusklovnen Walther spillede på xylofon.";
 "configDpi.dpi" = "DPI";
 
-"program.title" = "Installerede programmer";
+"program.title" = "All Programs";
 "program.env" = "Miljøvariabler";
 "program.args" = "Argumenter";
 "program.config" = "Konfiguration";
@@ -78,7 +77,8 @@
 "create.cancel" = "Annuller";
 "create.create" = "Opret";
 
-"rename.title" = "Omdøb bottle";
+"rename.bottle.title" = "Rename bottle";
+"rename.pin.title" = "Rename pin";
 "rename.name" = "Nyt navn:";
 "rename.rename" = "Omdøb";
 

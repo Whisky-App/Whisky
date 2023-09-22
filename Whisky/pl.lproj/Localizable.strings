@@ -1,10 +1,6 @@
-"tab.config" = "Konfiguracja";
-"tab.programs" = "Programy";
+"tab.config" = "Konfiguracja butelki";
+"tab.programs" = "Zainstalowane programy";
 "tab.info" = "Informacje";
-
-"tab.navTitle.config" = "Konfiguracja %@";
-"tab.navTitle.programs" = "%@ Programy";
-"tab.navTitle.info" = "%@ Informacje";
 
 "main.createFirst" = "Stwórz swoją pierwszą butelkę, aby rozpocząć";
 
@@ -13,9 +9,9 @@
 "button.createShortcut" = "Utwórz skrót";
 "button.run" = "Uruchom...";
 "button.ok" = "OK";
-"button.renameBottle" = "Zmień nazwę";
-"button.moveBottle" = "Przenieś";
-"button.exportBottle" = "Eksportuj jako archiwum";
+"button.rename" = "Zmień nazwę...";
+"button.moveBottle" = "Przenieś...";
+"button.exportBottle" = "Eksportuj jako archiwum...";
 "button.removeAlert" = "Usuń...";
 "button.createBottle" = "Utwórz butelkę";
 "button.removeAlert.msg" = "Usunąć %@?";
@@ -24,6 +20,9 @@
 "button.removeAlert.delete" = "Usuń";
 "button.removeAlert.cancel" = "Anuluj";
 
+"pin.unpin" = "Odepnij program";
+
+"config.title.wine" = "Wine";
 "config.winVersion" = "Wersja Windows";
 "config.buildVersion" = "Obecna wersja: ";
 "config.title.metal" = "Metal";
@@ -52,7 +51,7 @@
 "configDpi.previewText" = "Szybki brązowy lis przeskorzył przez leniwego psa.";
 "configDpi.dpi" = "DPI";
 
-"program.title" = "Zainstalowane programy";
+"program.title" = "Wszystkie programy";
 "program.env" = "Zmienne środowiskowe";
 "program.args" = "Parametry";
 "program.config" = "Konfiguracja";
@@ -78,7 +77,8 @@
 "create.cancel" = "Anuluj";
 "create.create" = "Utwórz";
 
-"rename.title" = "Zmień nazwę butelki";
+"rename.bottle.title" = "Zmień nazwę butelki";
+"rename.pin.title" = "Zmień nazwę przypięcia";
 "rename.name" = "Nowa nazwa:";
 "rename.rename" = "Zmień nazwę";
 

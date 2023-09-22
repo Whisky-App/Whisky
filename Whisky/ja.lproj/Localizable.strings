@@ -1,10 +1,6 @@
-"tab.config" = "設定";
-"tab.programs" = "プログラム";
+"tab.config" = "ボトルの設定";
+"tab.programs" = "インストール済みのプログラム";
 "tab.info" = "情報";
-
-"tab.navTitle.config" = "%@ の設定";
-"tab.navTitle.programs" = "%@ のプログラム";
-"tab.navTitle.info" = "%@ の情報";
 
 "main.createFirst" = "最初の Bottle を作って、使い始めましょう";
 
@@ -13,9 +9,9 @@
 "button.createShortcut" = "ショートカットを作成";
 "button.run" = "実行...";
 "button.ok" = "OK";
-"button.renameBottle" = "名前の変更";
-"button.moveBottle" = "移動";
-"button.exportBottle" = "アーカイブとしてエクスポート";
+"button.rename" = "名前の変更...";
+"button.moveBottle" = "移動...";
+"button.exportBottle" = "アーカイブとしてエクスポート...";
 "button.removeAlert" = "削除...";
 "button.createBottle" = "Bottle を作成";
 "button.removeAlert.msg" = "%@ を削除しますか？";
@@ -24,6 +20,9 @@
 "button.removeAlert.delete" = "削除";
 "button.removeAlert.cancel" = "キャンセル";
 
+"pin.unpin" = "ピン留めを解除";
+
+"config.title.wine" = "Wine";
 "config.winVersion" = "Windows のバージョン";
 "config.buildVersion" = "ビルド番号";
 "config.title.metal" = "Metal";
@@ -52,7 +51,7 @@
 "configDpi.previewText" = "色は匂へど　散りぬるを　我が世誰ぞ　常ならむ　有為の奥山　今日越えて　浅き夢見じ　酔ひもせず。";
 "configDpi.dpi" = "DPI";
 
-"program.title" = "インストール済みプログラム";
+"program.title" = "すべてのプログラム";
 "program.env" = "環境変数";
 "program.args" = "引数";
 "program.config" = "設定";
@@ -78,7 +77,8 @@
 "create.cancel" = "キャンセル";
 "create.create" = "作成";
 
-"rename.title" = "Bottle の名前を変更";
+"rename.bottle.title" = "Bottle の名前を変更";
+"rename.pin.title" = "ピン留めの名前を変更";
 "rename.name" = "新しい名前:";
 "rename.rename" = "変更";
 

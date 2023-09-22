@@ -1,10 +1,6 @@
-"tab.config" = "Configuratie";
-"tab.programs" = "Programma";
+"tab.config" = "Bottle Configuration";
+"tab.programs" = "Installed Programs";
 "tab.info" = "Informatie";
-
-"tab.navTitle.config" = "%@ Configuratie";
-"tab.navTitle.programs" = "%@ Programma";
-"tab.navTitle.info" = "%@ Informatie";
 
 "main.createFirst" = "Maak je eerste fles om te beginnen";
 
@@ -13,9 +9,9 @@
 "button.createShortcut" = "Create Shortcut";
 "button.run" = "Starten...";
 "button.ok" = "OK";
-"button.renameBottle" = "Hernoemen";
-"button.moveBottle" = "Verplaats";
-"button.exportBottle" = "Exporteer als archief";
+"button.rename" = "Rename...";
+"button.moveBottle" = "Move...";
+"button.exportBottle" = "Export as Archive...";
 "button.removeAlert" = "Remove...";
 "button.createBottle" = "Fles maken";
 "button.removeAlert.msg" = "Remove %@?";
@@ -24,6 +20,9 @@
 "button.removeAlert.delete" = "Remove";
 "button.removeAlert.cancel" = "Cancel";
 
+"pin.unpin" = "Unpin Program";
+
+"config.title.wine" = "Wine";
 "config.winVersion" = "Windows-versie";
 "config.buildVersion" = "Build-versie";
 "config.title.metal" = "Metal";
@@ -52,7 +51,7 @@
 "configDpi.previewText" = "Pa’s wijze lynx bezag vroom het fikse aquaduct.";
 "configDpi.dpi" = "DPI";
 
-"program.title" = "Geïnstalleerde programma's";
+"program.title" = "All Programs";
 "program.env" = "Omgevingsvariabelen";
 "program.args" = "Argumenten";
 "program.config" = "Configuratie";
@@ -78,7 +77,8 @@
 "create.cancel" = "Annuleren";
 "create.create" = "Aanmaken";
 
-"rename.title" = "Hernoem fles";
+"rename.bottle.title" = "Rename bottle";
+"rename.pin.title" = "Rename pin";
 "rename.name" = "Nieuwe naam:";
 "rename.rename" = "Hernoem";
 

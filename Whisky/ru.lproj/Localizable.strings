@@ -1,21 +1,17 @@
-"tab.config" = "Конфигурация";
-"tab.programs" = "Программы";
+"tab.config" = "Конфигурация бутылки";
+"tab.programs" = "Установленные программы";
 "tab.info" = "Сведения";
-
-"tab.navTitle.config" = "Конфигурация %@";
-"tab.navTitle.programs" = "Программы %@";
-"tab.navTitle.info" = "Информация %@";
 
 "main.createFirst" = "Создайте первую бутылку, чтобы начать";
 
-"button.cDrive" = "Открыть C: Диск";
+"button.cDrive" = "Открыть Диск C";
 "button.showInFinder" = "Показать в Finder";
 "button.createShortcut" = "Создать ярлык";
 "button.run" = "Выполнить...";
 "button.ok" = "ОК";
-"button.renameBottle" = "Переименовать";
-"button.moveBottle" = "Переместить";
-"button.exportBottle" = "Экспортировать как архив";
+"button.rename" = "Переименовать...";
+"button.moveBottle" = "Переместить...";
+"button.exportBottle" = "Экспортировать как архив...";
 "button.removeAlert" = "Удалить...";
 "button.createBottle" = "Создать Бутылку";
 "button.removeAlert.msg" = "Удалить %@?";
@@ -24,6 +20,9 @@
 "button.removeAlert.delete" = "Удалить";
 "button.removeAlert.cancel" = "Отмена";
 
+"pin.unpin" = "Открепить ярлык программы";
+
+"config.title.wine" = "Wine";
 "config.winVersion" = "Версия Windows";
 "config.buildVersion" = "Версия сборки";
 "config.title.metal" = "Metal";
@@ -52,7 +51,7 @@
 "configDpi.previewText" = "Съешь же ещё этих мягких французских булок да выпей чаю.";
 "configDpi.dpi" = "DPI";
 
-"program.title" = "Установленные программы";
+"program.title" = "Все программы";
 "program.env" = "Переменные окружения";
 "program.args" = "Аргументы";
 "program.config" = "Настройки";
@@ -65,7 +64,7 @@
 "info.gptk" = "Версия GPTK";
 
 "gptkalert.init" = "Перетащите DMG образ Game Porting Toolkit";
-"gptkalert.message" = "Случилась ошибка в GPTK!";
+"gptkalert.message" = "Произошла ошибка в GPTK!";
 
 "alert.message" = "Не удалось запустить программу!";
 "alert.info" = "Не удалось открыть";
@@ -73,12 +72,13 @@
 "create.title" = "Создать новую бутылку";
 "create.name" = "Название бутылки:";
 "create.win" = "Версия Windows:";
-"create.path" = "Путь бутылки:";
+"create.path" = "Путь к бутылке:";
 "create.browse" = "Обзор";
 "create.cancel" = "Отмена";
 "create.create" = "Создать";
 
-"rename.title" = "Переименовать бутылку";
+"rename.bottle.title" = "Переименовать бутылку";
+"rename.pin.title" = "Переименовать ярлык";
 "rename.name" = "Новое имя:";
 "rename.rename" = "Переименовать";
 

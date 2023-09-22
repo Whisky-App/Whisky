@@ -1,10 +1,6 @@
-"tab.config" = "Ayarlar";
-"tab.programs" = "Programlar";
+"tab.config" = "Bottle Configuration";
+"tab.programs" = "Installed Programs";
 "tab.info" = "Bilgi";
-
-"tab.navTitle.config" = "%@ Ayarlar";
-"tab.navTitle.programs" = "%@ Programlar";
-"tab.navTitle.info" = "%@ Bilgi";
 
 "main.createFirst" = "Başlamak için ilk Bottle'ınızı oluşturunuz";
 
@@ -13,9 +9,9 @@
 "button.createShortcut" = "Kısayol Oluştur";
 "button.run" = "Çalıştır...";
 "button.ok" = "Tamam";
-"button.renameBottle" = "Bottle'ı Yeniden Adlandır";
-"button.moveBottle" = "Taşı";
-"button.exportBottle" = "Arşiv olarak dışarı aktar";
+"button.rename" = "Rename...";
+"button.moveBottle" = "Move...";
+"button.exportBottle" = "Export as Archive...";
 "button.removeAlert" = "Kaldır...";
 "button.createBottle" = "Bottle Oluştur";
 "button.removeAlert.msg" = "%@ öğesini kaldır?";
@@ -24,6 +20,9 @@
 "button.removeAlert.delete" = "Kaldır";
 "button.removeAlert.cancel" = "İptal";
 
+"pin.unpin" = "Unpin Program";
+
+"config.title.wine" = "Wine";
 "config.winVersion" = "Windows Sürümü";
 "config.buildVersion" = "Yapı Sürümü";
 "config.title.metal" = "Metal";
@@ -52,7 +51,7 @@
 "configDpi.previewText" = "Pijamalı hasta yağız şoföre çabucak güvendi.";
 "configDpi.dpi" = "DPI";
 
-"program.title" = "Yüklenmiş Programlar";
+"program.title" = "All Programs";
 "program.env" = "Ortam Değişkenleri";
 "program.args" = "Argümanlar";
 "program.config" = "Ayarlar";
@@ -78,7 +77,8 @@
 "create.cancel" = "İptal";
 "create.create" = "Oluştur";
 
-"rename.title" = "Bottle'ı Yeniden Adlandır";
+"rename.bottle.title" = "Rename bottle";
+"rename.pin.title" = "Rename pin";
 "rename.name" = "Yeni ad:";
 "rename.rename" = "Yeniden Adlandır";
 

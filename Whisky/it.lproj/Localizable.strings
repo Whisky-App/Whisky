@@ -1,10 +1,6 @@
-"tab.config" = "Configurazione";
-"tab.programs" = "Programmi";
+"tab.config" = "Bottle Configuration";
+"tab.programs" = "Installed Programs";
 "tab.info" = "Informazioni";
-
-"tab.navTitle.config" = "%@ Configurazione";
-"tab.navTitle.programs" = "%@ Programmi";
-"tab.navTitle.info" = "Informazioni %@";
 
 "main.createFirst" = "Crea la tua prima bottiglia per iniziare";
 
@@ -13,9 +9,9 @@
 "button.createShortcut" = "Crea Scorciatoia";
 "button.run" = "Avvia...";
 "button.ok" = "OK";
-"button.renameBottle" = "Rinomina";
-"button.moveBottle" = "Sposta";
-"button.exportBottle" = "Esporta come Archivio";
+"button.rename" = "Rename...";
+"button.moveBottle" = "Move...";
+"button.exportBottle" = "Export as Archive...";
 "button.removeAlert" = "Rimuovi...";
 "button.createBottle" = "Crea Bottiglia";
 "button.removeAlert.msg" = "Vuoi rimuovere %@?";
@@ -24,6 +20,9 @@
 "button.removeAlert.delete" = "Rimuovi";
 "button.removeAlert.cancel" = "Annulla";
 
+"pin.unpin" = "Unpin Program";
+
+"config.title.wine" = "Wine";
 "config.winVersion" = "Versione di Windows";
 "config.buildVersion" = "Versione build";
 "config.title.metal" = "Metal";
@@ -52,7 +51,7 @@
 "configDpi.previewText" = "Ma la volpe, col suo balzo, ha raggiunto il quieto Fido.";
 "configDpi.dpi" = "DPI";
 
-"program.title" = "Programmi Installati";
+"program.title" = "All Programs";
 "program.env" = "Variabili d'Ambiente";
 "program.args" = "Parametri";
 "program.config" = "Configurazione";
@@ -78,7 +77,8 @@
 "create.cancel" = "Annulla";
 "create.create" = "Crea";
 
-"rename.title" = "Rinomina bottiglia";
+"rename.bottle.title" = "Rename bottle";
+"rename.pin.title" = "Rename pin";
 "rename.name" = "Nuovo nome:";
 "rename.rename" = "Rinomina";
 

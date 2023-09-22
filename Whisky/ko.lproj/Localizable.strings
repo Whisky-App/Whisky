@@ -1,21 +1,17 @@
-"tab.config" = "설정";
-"tab.programs" = "프로그램";
+"tab.config" = "Bottle 설정";
+"tab.programs" = "설치된 프로그램";
 "tab.info" = "정보";
-
-"tab.navTitle.config" = "%@ 설정";
-"tab.navTitle.programs" = "%@ 프로그램";
-"tab.navTitle.info" = "%@ 정보";
 
 "main.createFirst" = "첫 번째 Bottle을 만들어 시작하기";
 
-"button.cDrive" = "Open C: Drive";
+"button.cDrive" = "C: 드라이브 열기";
 "button.showInFinder" = "Finder에서 보기";
 "button.createShortcut" = "바로 가기 만들기";
 "button.run" = "실행...";
 "button.ok" = "확인";
-"button.renameBottle" = "이름 변경";
-"button.moveBottle" = "이동";
-"button.exportBottle" = "아카이브로 내보내기";
+"button.rename" = "이름 변경...";
+"button.moveBottle" = "이동...";
+"button.exportBottle" = "아카이브로 내보내기...";
 "button.removeAlert" = "삭제...";
 "button.createBottle" = "Bottle 생성";
 "button.removeAlert.msg" = "%@을(를) 삭제하시겠습니까?";
@@ -24,6 +20,9 @@
 "button.removeAlert.delete" = "삭제";
 "button.removeAlert.cancel" = "취소";
 
+"pin.unpin" = "프로그램 고정 해제";
+
+"config.title.wine" = "Wine";
 "config.winVersion" = "Windows 버전";
 "config.buildVersion" = "빌드 버전";
 "config.title.metal" = "Metal";
@@ -52,7 +51,7 @@
 "configDpi.previewText" = "다람쥐 헌 쳇바퀴에 타고파.";
 "configDpi.dpi" = "DPI";
 
-"program.title" = "설치된 프로그램";
+"program.title" = "모든 프로그램";
 "program.env" = "환경 변수";
 "program.args" = "인자";
 "program.config" = "설정";
@@ -78,7 +77,8 @@
 "create.cancel" = "취소";
 "create.create" = "생성";
 
-"rename.title" = "Bottle 이름 변경";
+"rename.bottle.title" = "Bottle 이름 변경";
+"rename.pin.title" = "핀 이름 변경";
 "rename.name" = "새 이름:";
 "rename.rename" = "이름 변경";
 

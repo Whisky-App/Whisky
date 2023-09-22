@@ -1,10 +1,6 @@
-"tab.config" = "配置";
-"tab.programs" = "软件";
+"tab.config" = "Bottle Configuration";
+"tab.programs" = "Installed Programs";
 "tab.info" = "简介";
-
-"tab.navTitle.config" = "%@ 配置";
-"tab.navTitle.programs" = "%@ 软件";
-"tab.navTitle.info" = "%@ 信息";
 
 "main.createFirst" = "从创建第一个容器开始";
 
@@ -13,9 +9,9 @@
 "button.createShortcut" = "Create Shortcut";
 "button.run" = "运行...";
 "button.ok" = "确定";
-"button.renameBottle" = "重命名";
-"button.moveBottle" = "移动";
-"button.exportBottle" = "导出为存档";
+"button.rename" = "Rename...";
+"button.moveBottle" = "Move...";
+"button.exportBottle" = "Export as Archive...";
 "button.removeAlert" = "删除...";
 "button.createBottle" = "创建容器";
 "button.removeAlert.msg" = "删除 %@？";
@@ -24,6 +20,9 @@
 "button.removeAlert.delete" = "删除";
 "button.removeAlert.cancel" = "取消";
 
+"pin.unpin" = "Unpin Program";
+
+"config.title.wine" = "Wine";
 "config.winVersion" = "Windows 版本";
 "config.buildVersion" = "构建版本";
 "config.title.metal" = "Metal";
@@ -52,7 +51,7 @@
 "configDpi.previewText" = "敏捷的棕色狐狸跳过懒狗。";
 "configDpi.dpi" = "DPI";
 
-"program.title" = "已安装的程序";
+"program.title" = "All Programs";
 "program.env" = "环境变量";
 "program.args" = "参数";
 "program.config" = "配置";
@@ -78,7 +77,8 @@
 "create.cancel" = "取消";
 "create.create" = "创建";
 
-"rename.title" = "重命名容器";
+"rename.bottle.title" = "Rename bottle";
+"rename.pin.title" = "Rename pin";
 "rename.name" = "新名称：";
 "rename.rename" = "重命名";
 

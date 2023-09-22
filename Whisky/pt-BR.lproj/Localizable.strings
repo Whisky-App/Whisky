@@ -1,10 +1,6 @@
-"tab.config" = "Configuração";
-"tab.programs" = "Programas";
+"tab.config" = "Bottle Configuration";
+"tab.programs" = "Installed Programs";
 "tab.info" = "Informações";
-
-"tab.navTitle.config" = "%@ Configuração";
-"tab.navTitle.programs" = "%@ Programas";
-"tab.navTitle.info" = "%@ Informações";
 
 "main.createFirst" = "Crie sua primeira Bottle para começar";
 
@@ -13,9 +9,9 @@
 "button.createShortcut" = "Criar atalho";
 "button.run" = "Executar...";
 "button.ok" = "OK";
-"button.renameBottle" = "Renomear";
-"button.moveBottle" = "Mover";
-"button.exportBottle" = "Exportar como arquivo";
+"button.rename" = "Rename...";
+"button.moveBottle" = "Move...";
+"button.exportBottle" = "Export as Archive...";
 "button.removeAlert" = "Remover...";
 "button.createBottle" = "Criar uma Bottle";
 "button.removeAlert.msg" = "Remover %@?";
@@ -24,6 +20,9 @@
 "button.removeAlert.delete" = "Remover";
 "button.removeAlert.cancel" = "Cancelar";
 
+"pin.unpin" = "Unpin Program";
+
+"config.title.wine" = "Wine";
 "config.winVersion" = "Versão do Windows";
 "config.buildVersion" = "Versão da Compilação";
 "config.title.metal" = "Metal";
@@ -52,7 +51,7 @@
 "configDpi.previewText" = "A rápida raposa marrom pula sobre o cachorro preguiçoso.";
 "configDpi.dpi" = "DPI";
 
-"program.title" = "Programas Instalados";
+"program.title" = "All Programs";
 "program.env" = "Variáveis de Ambiente";
 "program.args" = "Argumentos";
 "program.config" = "Configuração";
@@ -78,7 +77,8 @@
 "create.cancel" = "Cancelar";
 "create.create" = "Criar";
 
-"rename.title" = "Renomear Bottle";
+"rename.bottle.title" = "Rename bottle";
+"rename.pin.title" = "Rename pin";
 "rename.name" = "Novo nome:";
 "rename.rename" = "Renomear";
 

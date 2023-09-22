@@ -1,10 +1,6 @@
-"tab.config" = "Konfiguration";
-"tab.programs" = "Programme";
+"tab.config" = "Bottle Konfiguration";
+"tab.programs" = "Installierte Programme";
 "tab.info" = "Info";
-
-"tab.navTitle.config" = "%@ Konfiguration";
-"tab.navTitle.programs" = "%@ Programme";
-"tab.navTitle.info" = "%@ Info";
 
 "main.createFirst" = "Erstellen Sie Ihre erste Flasche, um loszulegen";
 
@@ -13,9 +9,9 @@
 "button.createShortcut" = "Verknüpfung erstellen";
 "button.run" = "Starten...";
 "button.ok" = "OK";
-"button.renameBottle" = "Umbenennen";
-"button.moveBottle" = "Verschieben";
-"button.exportBottle" = "Als Archiv exportieren";
+"button.rename" = "Umbenennen...";
+"button.moveBottle" = "Verschieben...";
+"button.exportBottle" = "Als Archiv exportieren...";
 "button.removeAlert" = "Löschen...";
 "button.createBottle" = "Bottle erstellen";
 "button.removeAlert.msg" = "%@ löschen?";
@@ -24,6 +20,9 @@
 "button.removeAlert.delete" = "Löschen";
 "button.removeAlert.cancel" = "Abbrechen";
 
+"pin.unpin" = "Programm lösen";
+
+"config.title.wine" = "Wine";
 "config.winVersion" = "Windows Version";
 "config.buildVersion" = "Build-Version";
 "config.title.metal" = "Metal";
@@ -52,7 +51,7 @@
 "configDpi.previewText" = "Victor jagt zwölf Boxkämpfer quer über den großen Sylter Deich.";
 "configDpi.dpi" = "DPI";
 
-"program.title" = "Installierte Programme";
+"program.title" = "Alle Programme";
 "program.env" = "Umgebungsvariablen";
 "program.args" = "Argumente";
 "program.config" = "Konfiguration";
@@ -78,7 +77,8 @@
 "create.cancel" = "Abbrechen";
 "create.create" = "Erstellen";
 
-"rename.title" = "Bottle umbenennen";
+"rename.bottle.title" = "Bottle umbenennen";
+"rename.pin.title" = "Pin umbenennen";
 "rename.name" = "Neuer Name:";
 "rename.rename" = "Umbenennen";
 
