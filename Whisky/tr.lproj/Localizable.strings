@@ -1,6 +1,5 @@
 "tab.config" = "Bottle Configuration";
 "tab.programs" = "Installed Programs";
-"tab.info" = "Bilgi";
 
 "main.createFirst" = "Başlamak için ilk Bottle'ınızı oluşturunuz";
 
@@ -57,16 +56,6 @@
 "program.args" = "Argümanlar";
 "program.config" = "Ayarlar";
 "program.add.blocklist" = "Add to Blocklist";
-
-"info.title" = "Bilgi";
-"info.path" = "Yol";
-"info.path.copy" = "Yolu Kopyala";
-"info.wine" = "Wine Sürümü";
-"info.win" = "Windows Sürümü";
-"info.gptk" = "GPTK Versiyonu";
-
-"gptkalert.init" = "Game Porting Toolkit DMG dosyasını sürükleyip bırakın";
-"gptkalert.message" = "GPTK bir hatayla karşılaştı!";
 
 "alert.message" = "Program açılamadı!";
 "alert.info" = "Açma başarısız";
