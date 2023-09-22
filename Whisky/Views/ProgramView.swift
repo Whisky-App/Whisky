@@ -18,18 +18,6 @@ struct ProgramView: View {
     var body: some View {
         VStack {
             Form {
-                Section("info.title") {
-                    HStack {
-                        InfoItem(label: String(localized: "info.path"), value: program.url.prettyPath())
-                        .contextMenu {
-                            Button("info.path.copy") {
-                                let pasteboard = NSPasteboard.general
-                                pasteboard.clearContents()
-                                pasteboard.setString(program.url.path, forType: .string)
-                            }
-                        }
-                    }
-                }
                 Section("program.config") {
                     VStack {
                         HStack {

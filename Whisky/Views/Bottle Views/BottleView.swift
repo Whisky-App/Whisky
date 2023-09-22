@@ -12,7 +12,6 @@ import WhiskyKit
 enum BottleStage {
     case config
     case programs
-    case info
 }
 
 struct BottleView: View {
@@ -79,15 +78,6 @@ struct BottleView: View {
                                     .scaledToFit()
                                     .frame(width: 14, height: 14, alignment: .center)
                                 Text("tab.config")
-                            }
-                        }
-                        NavigationLink(value: BottleStage.info) {
-                            HStack {
-                                Image(systemName: "info.circle")
-                                    .resizable()
-                                    .scaledToFit()
-                                    .frame(width: 14, height: 14, alignment: .center)
-                                Text("tab.info")
                             }
                         }
                     }
@@ -162,8 +152,6 @@ struct BottleView: View {
                     ProgramsView(bottle: bottle,
                                  reloadStartMenu: $loadStartMenu,
                                  path: $path)
-                case .info:
-                    InfoView(bottle: bottle)
                 }
             }
             .navigationDestination(for: Program.self) { program in
