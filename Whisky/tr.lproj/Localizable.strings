@@ -52,9 +52,11 @@
 "configDpi.dpi" = "DPI";
 
 "program.title" = "All Programs";
+"program.blocklist" = "Blocklist";
 "program.env" = "Ortam Değişkenleri";
 "program.args" = "Argümanlar";
 "program.config" = "Ayarlar";
+"program.add.blocklist" = "Add to Blocklist";
 
 "info.title" = "Bilgi";
 "info.path" = "Yol";
