@@ -108,6 +108,12 @@ extension Bottle {
         do {
             if let bottle = BottleVM.shared.bottles.first(where: { $0.url == url }) {
                 bottle.inFlight = true
+                for index in 0..<bottle.settings.pins.count {
+                    let originalPath = bottle.settings.pins[index].url.path(percentEncoded: false)
+                    let newPath = originalPath.replacingOccurrences(of: url.path(percentEncoded: false),
+                                                                    with: destination.path(percentEncoded: false) + "/")
+                    bottle.settings.pins[index].url = URL(filePath: newPath)
+                }
             }
             try FileManager.default.moveItem(at: url, to: destination)
             if let path = BottleVM.shared.bottlesList.paths.firstIndex(of: url) {
