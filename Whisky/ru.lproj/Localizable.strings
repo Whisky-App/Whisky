@@ -1,6 +1,5 @@
 "tab.config" = "Конфигурация бутылки";
 "tab.programs" = "Установленные программы";
-"tab.info" = "Сведения";
 
 "main.createFirst" = "Создайте первую бутылку, чтобы начать";
 
@@ -57,16 +56,6 @@
 "program.args" = "Аргументы";
 "program.config" = "Настройки";
 "program.add.blocklist" = "Add to Blocklist";
-
-"info.title" = "Сведения";
-"info.path" = "Путь:";
-"info.path.copy" = "Скопировать путь";
-"info.wine" = "Версия Wine:";
-"info.win" = "Версия Windows:";
-"info.gptk" = "Версия GPTK";
-
-"gptkalert.init" = "Перетащите DMG образ Game Porting Toolkit";
-"gptkalert.message" = "Произошла ошибка в GPTK!";
 
 "alert.message" = "Не удалось запустить программу!";
 "alert.info" = "Не удалось открыть";
