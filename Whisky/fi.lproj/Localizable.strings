@@ -52,9 +52,11 @@
 "configDpi.dpi" = "DPI";
 
 "program.title" = "Kaikki ohjelmat";
+"program.blocklist" = "Blocklist";
 "program.env" = "Ympäristön muuttujat";
 "program.args" = "Argumentit";
 "program.config" = "Konfiguraatio";
+"program.add.blocklist" = "Add to Blocklist";
 
 "info.title" = "Tiedot";
 "info.path" = "Polku";
