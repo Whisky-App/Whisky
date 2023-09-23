@@ -43,6 +43,7 @@ struct GPTKDownloadView: View {
                             Spacer()
                         }
                         .font(.subheadline)
+                        .monospacedDigit()
                     }
                 }
                 .padding(.horizontal)
