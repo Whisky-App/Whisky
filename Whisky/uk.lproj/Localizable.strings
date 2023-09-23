@@ -51,12 +51,12 @@
 "configDpi.dpi" = "DPI";
 
 "program.title" = "Всі програми";
-"program.blocklist" = "Blocklist";
+"program.blocklist" = "Список блокування";
 "program.env" = "Змінні середовища";
 "program.args" = "Аргументи";
 "program.config" = "Налаштування";
-"program.add.blocklist" = "Add to Blocklist";
-"program.remove.blocklist" = "Remove from Blocklist";
+"program.add.blocklist" = "Додати до списку блокування";
+"program.remove.blocklist" = "Видалити із списку блокування";
 
 "alert.message" = "Не вдалося відкрити програму!";
 "alert.info" = "Не вдалося відкрити";
@@ -70,7 +70,7 @@
 "create.create" = "Створити";
 
 "rename.bottle.title" = "Перейменувати пляшку";
-"rename.pin.title" = "Rename pin";
+"rename.pin.title" = "Перейменувати шпильку";
 "rename.name" = "Нова назва:";
 "rename.rename" = "Перейменувати";
 
