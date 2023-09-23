@@ -184,6 +184,7 @@ struct BottleListEntry: View {
                                     .appending(path: bottle.url.lastPathComponent)
 
                                 bottle.move(destination: newBottePath)
+                                selected = newBottePath
                             }
                         }
                     }
@@ -204,6 +205,10 @@ struct BottleListEntry: View {
                             }
                         }
                     }
+                }
+                Divider()
+                Button("button.showInFinder") {
+                    NSWorkspace.shared.activateFileViewerSelecting([bottle.url])
                 }
                 Divider()
                 Button("button.removeAlert") {

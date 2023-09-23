@@ -12,7 +12,6 @@ import WhiskyKit
 enum BottleStage {
     case config
     case programs
-    case info
 }
 
 struct BottleView: View {
@@ -81,15 +80,6 @@ struct BottleView: View {
                                 Text("tab.config")
                             }
                         }
-                        NavigationLink(value: BottleStage.info) {
-                            HStack {
-                                Image(systemName: "info.circle")
-                                    .resizable()
-                                    .scaledToFit()
-                                    .frame(width: 14, height: 14, alignment: .center)
-                                Text("tab.info")
-                            }
-                        }
                     }
                     .formStyle(.grouped)
                     .onAppear {
@@ -102,11 +92,11 @@ struct BottleView: View {
                 Spacer()
                 HStack {
                     Spacer()
-                    Button("button.winetricks") {
-                        showWinetricksSheet.toggle()
-                    }
                     Button("button.cDrive") {
                         bottle.openCDrive()
+                    }
+                    Button("button.winetricks") {
+                        showWinetricksSheet.toggle()
                     }
                     Button("button.run") {
                         let panel = NSOpenPanel()
@@ -162,8 +152,6 @@ struct BottleView: View {
                     ProgramsView(bottle: bottle,
                                  reloadStartMenu: $loadStartMenu,
                                  path: $path)
-                case .info:
-                    InfoView(bottle: bottle)
                 }
             }
             .navigationDestination(for: Program.self) { program in
@@ -279,13 +267,15 @@ struct PinnedProgramView: View {
             PinRenameView(name: $name)
         }
         .onAppear {
-            let program = Program(name: pin.name,
-                                  url: pin.url,
-                                  bottle: bottle)
-            if let peFile = program.peFile {
-                image = peFile.bestIcon()
-            }
             name = pin.name
+            Task.detached {
+                let program = Program(name: pin.name,
+                                      url: pin.url,
+                                      bottle: bottle)
+                if let peFile = program.peFile {
+                    image = peFile.bestIcon()
+                }
+            }
         }
         .onChange(of: name) {
             if let index = bottle.settings.pins.firstIndex(where: { $0.url == pin.url }) {
