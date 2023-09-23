@@ -56,6 +56,7 @@
 "program.args" = "Thông số";
 "program.config" = "Cấu hình";
 "program.add.blocklist" = "Add to Blocklist";
+"program.remove.blocklist" = "Remove from Blocklist";
 
 "alert.message" = "Không thể mở chương trình này!";
 "alert.info" = "Không thể mỏ";
