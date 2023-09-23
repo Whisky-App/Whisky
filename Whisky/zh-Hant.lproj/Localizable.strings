@@ -57,6 +57,7 @@
 "program.args" = "命令列引數";
 "program.config" = "設定";
 "program.add.blocklist" = "Add to Blocklist";
+"program.remove.blocklist" = "Remove from Blocklist";
 
 "alert.message" = "無法開啟程式！";
 "alert.info" = "開啟失敗";
