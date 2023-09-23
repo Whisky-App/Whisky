@@ -1,6 +1,5 @@
 "tab.config" = "ボトルの設定";
 "tab.programs" = "インストール済みのプログラム";
-"tab.info" = "情報";
 
 "main.createFirst" = "最初の Bottle を作って、使い始めましょう";
 
@@ -52,19 +51,12 @@
 "configDpi.dpi" = "DPI";
 
 "program.title" = "すべてのプログラム";
+"program.blocklist" = "Blocklist";
 "program.env" = "環境変数";
 "program.args" = "引数";
 "program.config" = "設定";
-
-"info.title" = "情報";
-"info.path" = "パス";
-"info.path.copy" = "パスのコピー";
-"info.wine" = "Wine のバージョン";
-"info.win" = "Windows のバージョン";
-"info.gptk" = "GPTK のバージョン";
-
-"gptkalert.init" = "Game Porting Toolkit の DMG ファイルをドロップしてください。";
-"gptkalert.message" = "GPTK でエラーが発生しました！";
+"program.add.blocklist" = "Add to Blocklist";
+"program.remove.blocklist" = "Remove from Blocklist";
 
 "alert.message" = "プログラムの起動に失敗しました！";
 "alert.info" = "起動に失敗しました";

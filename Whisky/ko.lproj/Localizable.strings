@@ -1,6 +1,5 @@
 "tab.config" = "Bottle 설정";
 "tab.programs" = "설치된 프로그램";
-"tab.info" = "정보";
 
 "main.createFirst" = "첫 번째 Bottle을 만들어 시작하기";
 
@@ -52,19 +51,12 @@
 "configDpi.dpi" = "DPI";
 
 "program.title" = "모든 프로그램";
+"program.blocklist" = "Blocklist";
 "program.env" = "환경 변수";
 "program.args" = "인자";
 "program.config" = "설정";
-
-"info.title" = "정보";
-"info.path" = "경로";
-"info.path.copy" = "경로 복사";
-"info.wine" = "Wine 버전";
-"info.win" = "Windows 버전";
-"info.gptk" = "GPTK 버전";
-
-"gptkalert.init" = "Game Porting Toolkit DMG를 끌어다 놓으세요";
-"gptkalert.message" = "GPTK에서 오류가 발생했습니다!";
+"program.add.blocklist" = "Add to Blocklist";
+"program.remove.blocklist" = "Remove from Blocklist";
 
 "alert.message" = "프로그램을 여는 데 실패했습니다!";
 "alert.info" = "열기 실패";

@@ -1,6 +1,5 @@
 "tab.config" = "Konfiguracja butelki";
 "tab.programs" = "Zainstalowane programy";
-"tab.info" = "Informacje";
 
 "main.createFirst" = "Stwórz swoją pierwszą butelkę, aby rozpocząć";
 
@@ -52,19 +51,12 @@
 "configDpi.dpi" = "DPI";
 
 "program.title" = "Wszystkie programy";
+"program.blocklist" = "Czarna lista";
 "program.env" = "Zmienne środowiskowe";
 "program.args" = "Parametry";
 "program.config" = "Konfiguracja";
-
-"info.title" = "Informacje";
-"info.path" = "Ścieżka:";
-"info.path.copy" = "Skopiuj ścieżkę";
-"info.wine" = "Wersja Wine:";
-"info.win" = "Wersja systemu Windows:";
-"info.gptk" = "Wersja GPTK";
-
-"gptkalert.init" = "Przeciągnij i upuść plik Game Porting Toolkit.dmg";
-"gptkalert.message" = "GPTK napotkał błąd!";
+"program.add.blocklist" = "Dodaj do czarnej listy";
+"program.remove.blocklist" = "Remove from Blocklist";
 
 "alert.message" = "Nie udało się otworzyć programu!";
 "alert.info" = "Nie można otworzyć";

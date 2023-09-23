@@ -1,6 +1,5 @@
 "tab.config" = "Pullon konfiguraatio";
 "tab.programs" = "Asennetut ohjelmat";
-"tab.info" = "Tiedot";
 
 "main.createFirst" = "Luo ensimmäinen pullo, jotta voit aloittaa";
 
@@ -52,19 +51,12 @@
 "configDpi.dpi" = "DPI";
 
 "program.title" = "Kaikki ohjelmat";
+"program.blocklist" = "Blocklist";
 "program.env" = "Ympäristön muuttujat";
 "program.args" = "Argumentit";
 "program.config" = "Konfiguraatio";
-
-"info.title" = "Tiedot";
-"info.path" = "Polku";
-"info.path.copy" = "Kopio polku";
-"info.wine" = "Wine versio";
-"info.win" = "Windows versio";
-"info.gptk" = "GPTK versio";
-
-"gptkalert.init" = "Vedä ja pudota Game Porting Toolkit DMG";
-"gptkalert.message" = "GPTK ajautui virheeseen!";
+"program.add.blocklist" = "Add to Blocklist";
+"program.remove.blocklist" = "Remove from Blocklist";
 
 "alert.message" = "Ohjelman käynnistäminen epäonnistui!";
 "alert.info" = "Avaaminen epäonnistui";

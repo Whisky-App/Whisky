@@ -1,6 +1,5 @@
 "tab.config" = "Bottle Configuration";
 "tab.programs" = "Installed Programs";
-"tab.info" = "Informatie";
 
 "main.createFirst" = "Maak je eerste fles om te beginnen";
 
@@ -52,19 +51,12 @@
 "configDpi.dpi" = "DPI";
 
 "program.title" = "All Programs";
+"program.blocklist" = "Blocklist";
 "program.env" = "Omgevingsvariabelen";
 "program.args" = "Argumenten";
 "program.config" = "Configuratie";
-
-"info.title" = "Informatie";
-"info.path" = "Pad";
-"info.path.copy" = "Pad kopiëren";
-"info.wine" = "Wine Versie";
-"info.win" = "Windows Versie";
-"info.gptk" = "GPTK versie";
-
-"gptkalert.init" = "Sleep de Game Porting Toolkit DMG";
-"gptkalert.message" = "Er is een fout opgetreden bij de GPTK!";
+"program.add.blocklist" = "Add to Blocklist";
+"program.remove.blocklist" = "Remove from Blocklist";
 
 "alert.message" = "Kan het programma niet openen!";
 "alert.info" = "Niet geslaagd te openen";

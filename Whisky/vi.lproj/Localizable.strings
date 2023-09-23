@@ -1,6 +1,5 @@
 "tab.config" = "Bottle Configuration";
 "tab.programs" = "Installed Programs";
-"tab.info" = "Thông thin";
 
 "main.createFirst" = "Tạo bottle đầu tiên để bắt đầu";
 
@@ -52,19 +51,12 @@
 "configDpi.dpi" = "DPI";
 
 "program.title" = "All Programs";
+"program.blocklist" = "Blocklist";
 "program.env" = "Biến môi trường";
 "program.args" = "Thông số";
 "program.config" = "Cấu hình";
-
-"info.title" = "Thông tin";
-"info.path" = "Đường dẫn";
-"info.path.copy" = "Chép đường dẫn";
-"info.wine" = "Phiên bản Wine";
-"info.win" = "Phiên bản Windows";
-"info.gptk" = "Phiên bản GPTK";
-
-"gptkalert.init" = "Kéo thả file DMG của Game Porting Toolkit";
-"gptkalert.message" = "Lỗi file GPTK!";
+"program.add.blocklist" = "Add to Blocklist";
+"program.remove.blocklist" = "Remove from Blocklist";
 
 "alert.message" = "Không thể mở chương trình này!";
 "alert.info" = "Không thể mỏ";

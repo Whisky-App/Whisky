@@ -1,17 +1,16 @@
-"tab.config" = "Bottle Configuration";
-"tab.programs" = "Installed Programs";
-"tab.info" = "Bilgi";
+"tab.config" = "Bottle Konfigürasyon'u";
+"tab.programs" = "İndirilmiş Programlar";
 
 "main.createFirst" = "Başlamak için ilk Bottle'ınızı oluşturunuz";
 
-"button.cDrive" = "Open C: Drive";
+"button.cDrive" = "C: Drive'ını Açın";
 "button.showInFinder" = "Finder'da Göster";
 "button.createShortcut" = "Kısayol Oluştur";
 "button.run" = "Çalıştır...";
 "button.ok" = "Tamam";
-"button.rename" = "Rename...";
-"button.moveBottle" = "Move...";
-"button.exportBottle" = "Export as Archive...";
+"button.rename" = "Yeniden Adlandr...";
+"button.moveBottle" = "Taşı...";
+"button.exportBottle" = "Arşiv olarak dışa aktarın...";
 "button.removeAlert" = "Kaldır...";
 "button.createBottle" = "Bottle Oluştur";
 "button.removeAlert.msg" = "%@ öğesini kaldır?";
@@ -20,7 +19,7 @@
 "button.removeAlert.delete" = "Kaldır";
 "button.removeAlert.cancel" = "İptal";
 
-"pin.unpin" = "Unpin Program";
+"pin.unpin" = "Sabitlenmiş Programı Kaldır";
 
 "config.title.wine" = "Wine";
 "config.winVersion" = "Windows Sürümü";
@@ -51,20 +50,13 @@
 "configDpi.previewText" = "Pijamalı hasta yağız şoföre çabucak güvendi.";
 "configDpi.dpi" = "DPI";
 
-"program.title" = "All Programs";
+"program.title" = "Bütün Programlar";
+"program.blocklist" = "Karaliste";
 "program.env" = "Ortam Değişkenleri";
 "program.args" = "Argümanlar";
 "program.config" = "Ayarlar";
-
-"info.title" = "Bilgi";
-"info.path" = "Yol";
-"info.path.copy" = "Yolu Kopyala";
-"info.wine" = "Wine Sürümü";
-"info.win" = "Windows Sürümü";
-"info.gptk" = "GPTK Versiyonu";
-
-"gptkalert.init" = "Game Porting Toolkit DMG dosyasını sürükleyip bırakın";
-"gptkalert.message" = "GPTK bir hatayla karşılaştı!";
+"program.add.blocklist" = "Karalisteye Ekle";
+"program.remove.blocklist" = "Remove from Blocklist";
 
 "alert.message" = "Program açılamadı!";
 "alert.info" = "Açma başarısız";
@@ -77,8 +69,8 @@
 "create.cancel" = "İptal";
 "create.create" = "Oluştur";
 
-"rename.bottle.title" = "Rename bottle";
-"rename.pin.title" = "Rename pin";
+"rename.bottle.title" = "Bottle'ı Yeniden Adlandır";
+"rename.pin.title" = "Sabitlenmiş Programı Adlandır";
 "rename.name" = "Yeni ad:";
 "rename.rename" = "Yeniden Adlandır";
 

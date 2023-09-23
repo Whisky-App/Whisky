@@ -1,6 +1,5 @@
 "tab.config" = "Bottle Configuration";
 "tab.programs" = "Installed Programs";
-"tab.info" = "Info";
 
 "main.createFirst" = "Opret din første bottle for at komme igang";
 
@@ -52,19 +51,12 @@
 "configDpi.dpi" = "DPI";
 
 "program.title" = "All Programs";
+"program.blocklist" = "Blocklist";
 "program.env" = "Miljøvariabler";
 "program.args" = "Argumenter";
 "program.config" = "Konfiguration";
-
-"info.title" = "Info";
-"info.path" = "Sti";
-"info.path.copy" = "Kopier sti";
-"info.wine" = "Wine Version";
-"info.win" = "Windows Version";
-"info.gptk" = "GPTK Version";
-
-"gptkalert.init" = "Træk og slip Game Porting Toolkit DMG";
-"gptkalert.message" = "GPTK stødte på en fejl!";
+"program.add.blocklist" = "Add to Blocklist";
+"program.remove.blocklist" = "Remove from Blocklist";
 
 "alert.message" = "Programmet kunne ikke åbnes!";
 "alert.info" = "Kunne ikke åbne";
