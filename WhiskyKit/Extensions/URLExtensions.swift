@@ -41,6 +41,25 @@ extension URL {
             .replacingOccurrences(of: "/", with: "\\")
         return prettyPath
     }
+
+    // There is probably a better way to do this
+    public func updateParentBottle(old: URL, new: URL) -> URL {
+        let originalPath = path(percentEncoded: false)
+
+        var oldBottlePath = old.path(percentEncoded: false)
+        if oldBottlePath.last != "/" {
+            oldBottlePath += "/"
+        }
+
+        var newBottlePath = new.path(percentEncoded: false)
+        if newBottlePath.last != "/" {
+            newBottlePath += "/"
+        }
+
+        let newPath = originalPath.replacingOccurrences(of: oldBottlePath,
+                                                        with: newBottlePath)
+        return URL(filePath: newPath)
+    }
 }
 
 extension URL: Identifiable {
