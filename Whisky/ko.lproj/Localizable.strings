@@ -51,12 +51,12 @@
 "configDpi.dpi" = "DPI";
 
 "program.title" = "모든 프로그램";
-"program.blocklist" = "Blocklist";
+"program.blocklist" = "차단 목록";
 "program.env" = "환경 변수";
 "program.args" = "인자";
 "program.config" = "설정";
-"program.add.blocklist" = "Add to Blocklist";
-"program.remove.blocklist" = "Remove from Blocklist";
+"program.add.blocklist" = "차단 목록에 추가";
+"program.remove.blocklist" = "차단 목록에서 삭제";
 
 "alert.message" = "프로그램을 여는 데 실패했습니다!";
 "alert.info" = "열기 실패";
