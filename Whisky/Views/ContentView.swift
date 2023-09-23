@@ -207,6 +207,10 @@ struct BottleListEntry: View {
                     }
                 }
                 Divider()
+                Button("button.showInFinder") {
+                    NSWorkspace.shared.activateFileViewerSelecting([bottle.url])
+                }
+                Divider()
                 Button("button.removeAlert") {
                     showRemoveAlert(bottle: bottle)
                 }
