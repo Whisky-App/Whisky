@@ -1,21 +1,21 @@
-"tab.config" = "Bottle Configuration";
-"tab.programs" = "Installed Programs";
+"tab.config" = "Configuração da Bottle";
+"tab.programs" = "Programas Instalados";
 
 "main.createFirst" = "Crie sua primeira Bottle para começar";
 
-"button.cDrive" = "Open C: Drive";
+"button.cDrive" = "Abrir disco C:";
 "button.showInFinder" = "Abrir no Finder";
 "button.createShortcut" = "Criar atalho";
 "button.run" = "Executar...";
 "button.ok" = "OK";
-"button.rename" = "Rename...";
-"button.moveBottle" = "Move...";
-"button.exportBottle" = "Export as Archive...";
+"button.rename" = "Renomear...";
+"button.moveBottle" = "Mover...";
+"button.exportBottle" = "Exportar como arquivo...";
 "button.removeAlert" = "Remover...";
 "button.createBottle" = "Criar uma Bottle";
 "button.removeAlert.msg" = "Remover %@?";
 "button.removeAlert.info" = "Tem a certeza de que pretende remover esta garrafa? Esta ação é permanente.";
-"button.removeAlert.checkbox" = "Eliminar ficheiros do disco";
+"button.removeAlert.checkbox" = "Apagar arquivos do disco";
 "button.removeAlert.delete" = "Remover";
 "button.removeAlert.cancel" = "Cancelar";
 
@@ -50,7 +50,7 @@
 "configDpi.previewText" = "A rápida raposa marrom pula sobre o cachorro preguiçoso.";
 "configDpi.dpi" = "DPI";
 
-"program.title" = "All Programs";
+"program.title" = "Todos os Programas";
 "program.blocklist" = "Blocklist";
 "program.env" = "Variáveis de Ambiente";
 "program.args" = "Argumentos";
