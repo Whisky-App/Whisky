@@ -184,6 +184,7 @@ struct BottleListEntry: View {
                                     .appending(path: bottle.url.lastPathComponent)
 
                                 bottle.move(destination: newBottePath)
+                                selected = newBottePath
                             }
                         }
                     }
