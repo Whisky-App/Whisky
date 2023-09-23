@@ -56,6 +56,7 @@
 "program.args" = "参数";
 "program.config" = "配置";
 "program.add.blocklist" = "Add to Blocklist";
+"program.remove.blocklist" = "Remove from Blocklist";
 
 "alert.message" = "打开软件失败！";
 "alert.info" = "打开失败";
