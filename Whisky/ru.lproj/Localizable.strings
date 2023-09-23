@@ -51,12 +51,12 @@
 "configDpi.dpi" = "DPI";
 
 "program.title" = "Все программы";
-"program.blocklist" = "Blocklist";
+"program.blocklist" = "Черный список";
 "program.env" = "Переменные окружения";
 "program.args" = "Аргументы";
 "program.config" = "Настройки";
-"program.add.blocklist" = "Add to Blocklist";
-"program.remove.blocklist" = "Remove from Blocklist";
+"program.add.blocklist" = "Добавить в Черный список";
+"program.remove.blocklist" = "Удалить из Черного списка";
 
 "alert.message" = "Не удалось запустить программу!";
 "alert.info" = "Не удалось открыть";
