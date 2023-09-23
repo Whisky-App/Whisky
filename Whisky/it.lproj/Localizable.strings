@@ -56,6 +56,7 @@
 "program.args" = "Parametri";
 "program.config" = "Configurazione";
 "program.add.blocklist" = "Add to Blocklist";
+"program.remove.blocklist" = "Remove from Blocklist";
 
 "alert.message" = "Impossibile aprire il programma!";
 "alert.info" = "Impossibile aprire";
