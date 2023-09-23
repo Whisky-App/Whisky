@@ -18,11 +18,11 @@ struct Whisky: ParsableCommand {
         subcommands: [List.self,
                       Create.self,
                       Add.self,
-                      Export.self,
+//                      Export.self,
                       Delete.self,
-                      Remove.self,
-                      Install.self,
-                      Uninstall.self])
+                      Remove.self
+                      /*Install.self,
+                      Uninstall.self*/])
 }
 
 extension Whisky {
@@ -78,7 +78,7 @@ extension Whisky {
         static var configuration = CommandConfiguration(abstract: "Export an existing bottle.")
 
         mutating func run() throws {
-            print("Create a bottle")
+//            print("Create a bottle")
         }
     }
 
@@ -133,29 +133,29 @@ extension Whisky {
         @Flag(name: [.long, .short], help: "Download & Install GPTK") var gptk = false
 
         mutating func run() throws {
-            if gptk {
-                let semaphore = DispatchSemaphore(value: 0)
-
-                Task {
-                    if let info = await GPTKDownloader.getLatestGPTKURL(),
-                       let url = info.directURL {
-                        print("Downloading GPTK from \(url)")
-                        var progress = ProgressBar(count: info.totalByteCount)
-                        let downloadTask = URLSession.shared.downloadTask(with: url) { url, _, _ in
-                            if let url = url {
-                                // tarLocation = url
-                            }
-                            semaphore.signal()
-                        }
-                        var observation = downloadTask.observe(\.countOfBytesReceived) { task, _ in
-                            progress.setValue(Int(task.countOfBytesReceived))
-                        }
-                        downloadTask.resume()
-                    }
-                }
-
-                semaphore.wait()
-            }
+//            if gptk {
+//                let semaphore = DispatchSemaphore(value: 0)
+//
+//                Task {
+//                    if let info = await GPTKDownloader.getLatestGPTKURL(),
+//                       let url = info.directURL {
+//                        print("Downloading GPTK from \(url)")
+//                        var progress = ProgressBar(count: info.totalByteCount)
+//                        let downloadTask = URLSession.shared.downloadTask(with: url) { url, _, _ in
+//                            if let url = url {
+//                                // tarLocation = url
+//                            }
+//                            semaphore.signal()
+//                        }
+//                        var observation = downloadTask.observe(\.countOfBytesReceived) { task, _ in
+//                            progress.setValue(Int(task.countOfBytesReceived))
+//                        }
+//                        downloadTask.resume()
+//                    }
+//                }
+//
+//                semaphore.wait()
+//            }
         }
     }
 
@@ -166,10 +166,10 @@ extension Whisky {
         @Flag(name: [.long, .short], help: "Uninstall GPTK") var gptk = false
 
         mutating func run() throws {
-            if gptk {
-                GPTKInstaller.uninstall()
-                print("GPTK uninstalled.")
-            }
+//            if gptk {
+//                GPTKInstaller.uninstall()
+//                print("GPTK uninstalled.")
+//            }
         }
     }
 }
