@@ -56,6 +56,7 @@
 "program.args" = "인자";
 "program.config" = "설정";
 "program.add.blocklist" = "Add to Blocklist";
+"program.remove.blocklist" = "Remove from Blocklist";
 
 "alert.message" = "프로그램을 여는 데 실패했습니다!";
 "alert.info" = "열기 실패";
