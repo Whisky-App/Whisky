@@ -35,7 +35,8 @@ struct BottleView: View {
                             ForEach(pins, id: \.url) { pin in
                                 PinnedProgramView(bottle: bottle,
                                                   pin: pin,
-                                                  loadStartMenu: $loadStartMenu)
+                                                  loadStartMenu: $loadStartMenu,
+                                                  path: $path)
                             }
                         }
                         .padding()
@@ -212,6 +213,7 @@ struct PinnedProgramView: View {
     @State var name: String = ""
     @State var opening: Bool = false
     @Binding var loadStartMenu: Bool
+    @Binding var path: NavigationPath
 
     var body: some View {
         VStack {
@@ -248,6 +250,13 @@ struct PinnedProgramView: View {
         .contextMenu {
             Button("button.run") {
                 runProgram()
+            }
+            Divider()
+            Button("program.config") {
+                let program = Program(name: pin.name,
+                                      url: pin.url,
+                                      bottle: bottle)
+                path.append(program)
             }
             Divider()
             Button("button.rename") {
