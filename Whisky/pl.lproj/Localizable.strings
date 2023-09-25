@@ -122,3 +122,6 @@
 
 "run.title" = "Uruchom \"%@\"";
 "run.bottle" = "Butelka:";
+
+"locale.title" = "Ustawienie regionalne";
+"locale.auto" = "Automatyczne";
