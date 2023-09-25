@@ -51,12 +51,12 @@
 "configDpi.dpi" = "DPI";
 
 "program.title" = "Alle Programme";
-"program.blocklist" = "Blacklist";
+"program.blocklist" = "Blockliste";
 "program.env" = "Umgebungsvariablen";
 "program.args" = "Argumente";
 "program.config" = "Konfiguration";
-"program.add.blocklist" = "Zur Blacklist hinzufügen";
-"program.remove.blocklist" = "Von der Blacklist entfernen";
+"program.add.blocklist" = "Zur Blockliste hinzufügen";
+"program.remove.blocklist" = "Von der Blockliste entfernen";
 
 "alert.message" = "Das öffnen des Programms ist fehlgeschlagen.";
 "alert.info" = "Öffnen fehlgeschlagen";
