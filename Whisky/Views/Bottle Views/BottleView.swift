@@ -36,27 +36,6 @@ struct BottleView: View {
                                 PinnedProgramView(bottle: bottle,
                                                   pin: pin,
                                                   loadStartMenu: $loadStartMenu)
-                                .overlay {
-                                    HStack {
-                                        Spacer()
-                                        Button {
-                                            let program = Program(name: pin.name,
-                                                                  url: pin.url,
-                                                                  bottle: bottle)
-                                            Task {
-                                                await program.run()
-                                            }
-                                        } label: {
-                                            Image(systemName: "play.fill")
-                                                .resizable()
-                                                .foregroundColor(.green)
-                                                .frame(width: 16, height: 16)
-                                        }
-                                        .buttonStyle(.plain)
-                                    }
-                                    .frame(width: 45, height: 45)
-                                    .padding(EdgeInsets(top: 0, leading: 0, bottom: 12, trailing: 0))
-                                }
                             }
                         }
                         .padding()
@@ -231,19 +210,23 @@ struct PinnedProgramView: View {
     @State var image: NSImage?
     @State var showRenameSheet = false
     @State var name: String = ""
+    @State var opening: Bool = false
     @Binding var loadStartMenu: Bool
 
     var body: some View {
         VStack {
-            if let image = image {
-                Image(nsImage: image)
-                    .resizable()
-                    .frame(width: 45, height: 45)
-            } else {
-                Image(systemName: "app.dashed")
-                    .resizable()
-                    .frame(width: 45, height: 45)
+            Group {
+                if let image = image {
+                    Image(nsImage: image)
+                        .resizable()
+                } else {
+                    Image(systemName: "app.dashed")
+                        .resizable()
+                }
             }
+            .frame(width: 45, height: 45)
+            .scaleEffect(opening ? 2 : 1)
+            .opacity(opening ? 0 : 1)
             Spacer()
             Text(name + "\n")
                 .multilineTextAlignment(.center)
@@ -251,7 +234,22 @@ struct PinnedProgramView: View {
         }
         .frame(width: 90, height: 90)
         .padding(10)
+        .overlay {
+            HStack {
+                Spacer()
+                Image(systemName: "play.fill")
+                    .resizable()
+                    .foregroundColor(.green)
+                    .frame(width: 16, height: 16)
+            }
+            .frame(width: 45, height: 45)
+            .padding(EdgeInsets(top: 0, leading: 0, bottom: 12, trailing: 0))
+        }
         .contextMenu {
+            Button("button.run") {
+                runProgram()
+            }
+            Divider()
             Button("button.rename") {
                 showRenameSheet.toggle()
             }
@@ -262,6 +260,9 @@ struct PinnedProgramView: View {
                 }
                 loadStartMenu.toggle()
             }
+        }
+        .onTapGesture(count: 2) {
+            runProgram()
         }
         .sheet(isPresented: $showRenameSheet) {
             PinRenameView(name: $name)
@@ -281,6 +282,22 @@ struct PinnedProgramView: View {
             if let index = bottle.settings.pins.firstIndex(where: { $0.url == pin.url }) {
                 bottle.settings.pins[index].name = name
             }
+        }
+    }
+
+    func runProgram() {
+        withAnimation(.easeIn(duration: 0.25)) {
+            opening = true
+        } completion: {
+            withAnimation(.easeOut(duration: 0.1)) {
+                opening = false
+            }
+        }
+        let program = Program(name: pin.name,
+                              url: pin.url,
+                              bottle: bottle)
+        Task {
+            await program.run()
         }
     }
 }
