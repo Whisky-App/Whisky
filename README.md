@@ -46,4 +46,18 @@ Whisky is on homebrew! Install with
 
 Check the [wiki](https://github.com/IsaacMarovitz/Whisky/wiki/Game-Support).
 
-*Whisky doesn't exist without CrossOver. This project is not meant to out-compete it or surpass it in any way. Please continue to support the fantastic work of CodeWeavers.*
+---
+
+<table>
+  <tr>
+    <td>
+        <picture>
+          <source media="(prefers-color-scheme: dark)" srcset="./images/cw-dark.png">
+          <img src="./images/cw-light.png" width="500">
+        </picture>
+    </td>
+    <td>
+        Whisky doesn't exist without CrossOver. Support the work of CodeWeavers using our <a href="https://www.codeweavers.com/store?ad=1010">affiliate link</a>.
+    </td>
+  </tr>
+</table>
