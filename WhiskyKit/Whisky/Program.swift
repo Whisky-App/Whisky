@@ -35,4 +35,12 @@ public class Program: Hashable {
             self.peFile = nil
         }
     }
+
+    public func generateEnvironment() -> [String: String] {
+        var environment = settings.environment
+        if settings.locale != .auto {
+            environment.updateValue(settings.locale.rawValue, forKey: "LC_ALL")
+        }
+        return environment
+    }
 }

@@ -14,11 +14,17 @@ struct ProgramView: View {
     @State var image: NSImage?
     @State var environment: [String: String] = [:]
     @State var programLoading: Bool = false
+    @State var locale: Locales = .auto
 
     var body: some View {
         VStack {
             Form {
                 Section("program.config") {
+                    Picker("locale.title", selection: $locale) {
+                        ForEach(Locales.allCases, id: \.self) {
+                            Text($0.pretty())
+                        }
+                    }
                     VStack {
                         HStack {
                             Text("program.args")
@@ -100,9 +106,13 @@ struct ProgramView: View {
             }
 
             environment = program.settings.environment
+            locale = program.settings.locale
         }
         .onChange(of: environment) { _, newValue in
             program.settings.environment = newValue
+        }
+        .onChange(of: locale) { _, newValue in
+            program.settings.locale = newValue
         }
     }
 }

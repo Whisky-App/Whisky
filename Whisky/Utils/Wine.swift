@@ -240,7 +240,7 @@ class Wine {
         let arguments = program.settings.arguments.split { $0.isWhitespace }.map(String.init)
         return try await run(["start", "/unix", program.url.path(percentEncoded: false)] + arguments,
                              bottle: program.bottle,
-                             environment: program.settings.environment)
+                             environment: program.generateEnvironment())
     }
 
     @discardableResult

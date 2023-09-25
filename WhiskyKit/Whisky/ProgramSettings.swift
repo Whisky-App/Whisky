@@ -7,8 +7,8 @@
 
 import Foundation
 
-enum Locales: String, Codable {
-    case none = ""
+public enum Locales: String, Codable, CaseIterable {
+    case auto = ""
     case german = "de_DE.UTF-8"
     case english = "en_US"
     case spanish = "es_ES.UTF-8"
@@ -21,9 +21,42 @@ enum Locales: String, Codable {
     case thai = "th_TH.UTF-8"
     case chineseSimplified = "zh_CN.UTF-8"
     case chineseTraditional = "zh_TW.UTF-8"
+
+    // swiftlint:disable:next cyclomatic_complexity
+    public func pretty() -> String {
+        switch self {
+        case .auto:
+            return String(localized: "locale.auto")
+        case .german:
+            return "Deutsch"
+        case .english:
+            return "English"
+        case .spanish:
+            return "Español"
+        case .french:
+            return "Français"
+        case .italian:
+            return "Italiano"
+        case .japanese:
+            return "日本語"
+        case .korean:
+            return "한국어"
+        case .russian:
+            return "Русский"
+        case .ukranian:
+            return "Українська"
+        case .thai:
+            return "ไทย"
+        case .chineseSimplified:
+            return "简体中文"
+        case .chineseTraditional:
+            return "繁體中文"
+        }
+    }
 }
 
 public struct ProgramSettingsData: Codable {
+    var locale: Locales = .auto
     var environment: [String: String] = [:]
     var arguments: String = ""
 }
@@ -32,6 +65,15 @@ public class ProgramSettings {
     public var settings: ProgramSettingsData {
         didSet {
             encode()
+        }
+    }
+
+    public var locale: Locales {
+        get {
+            return settings.locale
+        }
+        set {
+            settings.locale = newValue
         }
     }
 

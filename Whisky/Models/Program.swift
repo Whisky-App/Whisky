@@ -40,7 +40,7 @@ extension Program {
         var wineCmd = "\(Wine.wineBinary.esc) start /unix \(url.esc) \(settings.arguments)"
 
         let env = Wine.constructEnvironment(bottle: bottle,
-                                            programEnv: settings.environment)
+                                            programEnv: generateEnvironment())
         for environment in env {
             wineCmd = "\(environment.key)=\(environment.value) " + wineCmd
         }
