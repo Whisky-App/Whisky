@@ -122,3 +122,6 @@
 
 "run.title" = "Suorita \"%@\"";
 "run.bottle" = "Pullo:";
+
+"locale.title" = "Locale";
+"locale.auto" = "Automatic";
