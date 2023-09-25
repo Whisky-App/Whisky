@@ -122,3 +122,6 @@
 
 "run.title" = "\"%@\" を実行";
 "run.bottle" = "Bottle:";
+
+"locale.title" = "Locale";
+"locale.auto" = "Automatic";
