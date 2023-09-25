@@ -122,3 +122,6 @@
 
 "run.title" = "Запустить \"%@\"";
 "run.bottle" = "Бутылка:";
+
+"locale.title" = "Locale";
+"locale.auto" = "Automatic";
