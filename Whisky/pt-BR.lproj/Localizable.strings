@@ -122,3 +122,6 @@
 
 "run.title" = "Executar \"%@\"";
 "run.bottle" = "Bottle:";
+
+"locale.title" = "Locale";
+"locale.auto" = "Automatic";
