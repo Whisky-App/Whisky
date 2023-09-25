@@ -122,3 +122,6 @@
 
 "run.title" = "Esegui%@";
 "run.bottle" = "Bottiglia:";
+
+"locale.title" = "Locale";
+"locale.auto" = "Automatic";

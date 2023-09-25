@@ -122,3 +122,6 @@
 
 "run.title" = "运行 \"%@\"";
 "run.bottle" = "瓶子：";
+
+"locale.title" = "Locale";
+"locale.auto" = "Automatic";

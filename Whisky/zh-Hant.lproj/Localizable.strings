@@ -123,3 +123,6 @@
 
 "run.title" = "執行「%@」";
 "run.bottle" = "容器：";
+
+"locale.title" = "Locale";
+"locale.auto" = "Automatic";

@@ -51,12 +51,12 @@
 "configDpi.dpi" = "DPI";
 
 "program.title" = "Kaikki ohjelmat";
-"program.blocklist" = "Blocklist";
+"program.blocklist" = "Estolista";
 "program.env" = "Ympäristön muuttujat";
 "program.args" = "Argumentit";
 "program.config" = "Konfiguraatio";
-"program.add.blocklist" = "Add to Blocklist";
-"program.remove.blocklist" = "Remove from Blocklist";
+"program.add.blocklist" = "Lisää estolistaan";
+"program.remove.blocklist" = "Poista estolistalta";
 
 "alert.message" = "Ohjelman käynnistäminen epäonnistui!";
 "alert.info" = "Avaaminen epäonnistui";
@@ -122,3 +122,6 @@
 
 "run.title" = "Suorita \"%@\"";
 "run.bottle" = "Pullo:";
+
+"locale.title" = "Locale";
+"locale.auto" = "Automatic";

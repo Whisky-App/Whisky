@@ -56,7 +56,7 @@
 "program.args" = "Parametry";
 "program.config" = "Konfiguracja";
 "program.add.blocklist" = "Dodaj do czarnej listy";
-"program.remove.blocklist" = "Remove from Blocklist";
+"program.remove.blocklist" = "Usuń z czarnej listy";
 
 "alert.message" = "Nie udało się otworzyć programu!";
 "alert.info" = "Nie można otworzyć";
@@ -122,3 +122,6 @@
 
 "run.title" = "Uruchom \"%@\"";
 "run.bottle" = "Butelka:";
+
+"locale.title" = "Ustawienie regionalne";
+"locale.auto" = "Automatyczne";

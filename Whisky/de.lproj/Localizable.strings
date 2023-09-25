@@ -51,12 +51,12 @@
 "configDpi.dpi" = "DPI";
 
 "program.title" = "Alle Programme";
-"program.blocklist" = "Blocklist";
+"program.blocklist" = "Blockliste";
 "program.env" = "Umgebungsvariablen";
 "program.args" = "Argumente";
 "program.config" = "Konfiguration";
-"program.add.blocklist" = "Add to Blocklist";
-"program.remove.blocklist" = "Remove from Blocklist";
+"program.add.blocklist" = "Zur Blockliste hinzufügen";
+"program.remove.blocklist" = "Von der Blockliste entfernen";
 
 "alert.message" = "Das öffnen des Programms ist fehlgeschlagen.";
 "alert.info" = "Öffnen fehlgeschlagen";
@@ -122,3 +122,6 @@
 
 "run.title" = "Starte \"%@\"";
 "run.bottle" = "Bottle:";
+
+"locale.title" = "Sprache";
+"locale.auto" = "Automatisch";
