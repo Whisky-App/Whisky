@@ -119,6 +119,17 @@ struct ProgramItemView: View {
                 }
                 .buttonStyle(.plain)
                 .foregroundStyle(.secondary)
+                .help("program.config")
+                Button {
+                    Task {
+                        await program.run()
+                    }
+                } label: {
+                    Image(systemName: "play")
+                }
+                .buttonStyle(.plain)
+                .foregroundStyle(.secondary)
+                .help("button.run")
             }
         }
         .padding(4)
