@@ -122,3 +122,6 @@
 
 "run.title" = "Starte \"%@\"";
 "run.bottle" = "Bottle:";
+
+"locale.title" = "Sprache";
+"locale.auto" = "Automatisch";
