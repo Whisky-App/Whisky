@@ -1,4 +1,4 @@
-"tab.config" = "ボトルの設定";
+"tab.config" = "Bottle の設定";
 "tab.programs" = "インストール済みのプログラム";
 
 "main.createFirst" = "最初の Bottle を作って、使い始めましょう";
@@ -51,12 +51,12 @@
 "configDpi.dpi" = "DPI";
 
 "program.title" = "すべてのプログラム";
-"program.blocklist" = "Blocklist";
+"program.blocklist" = "ブロックリスト";
 "program.env" = "環境変数";
 "program.args" = "引数";
 "program.config" = "設定";
-"program.add.blocklist" = "Add to Blocklist";
-"program.remove.blocklist" = "Remove from Blocklist";
+"program.add.blocklist" = "ブロックリストに追加";
+"program.remove.blocklist" = "ブロックリストから削除";
 
 "alert.message" = "プログラムの起動に失敗しました！";
 "alert.info" = "起動に失敗しました";
@@ -124,4 +124,4 @@
 "run.bottle" = "Bottle:";
 
 "locale.title" = "Locale";
-"locale.auto" = "Automatic";
+"locale.auto" = "自動";
