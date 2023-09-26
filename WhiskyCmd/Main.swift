@@ -10,6 +10,7 @@ import ArgumentParser
 import WhiskyKit
 import SwiftyTextTable
 import Progress
+import SemanticVersion
 
 @main
 struct Whisky: ParsableCommand {
@@ -52,10 +53,27 @@ extension Whisky {
         static var configuration = CommandConfiguration(abstract: "Create a new bottle.")
 
         @Argument var name: String
-        @Argument var path: String?
 
         mutating func run() throws {
-            print("Create a bottle")
+            let bottleURL = BottleData.defaultBottleDir.appending(path: UUID().uuidString)
+
+            do {
+                try FileManager.default.createDirectory(atPath: bottleURL.path(percentEncoded: false),
+                                                        withIntermediateDirectories: true)
+                let bottle = Bottle(bottleUrl: bottleURL, inFlight: true)
+                // Should allow customisation
+                bottle.settings.windowsVersion = .win10
+                bottle.settings.name = name
+//                try await Wine.changeWinVersion(bottle: bottle, win: winVersion)
+//                let wineVer = try await Wine.wineVersion()
+                bottle.settings.wineVersion = SemanticVersion(0, 0, 0)
+
+                var bottlesList = BottleData()
+                bottlesList.paths.append(bottleURL)
+                print("Created new bottle \"\(name)\".")
+            } catch {
+                print(error)
+            }
         }
     }
 

@@ -31,6 +31,7 @@
 		6E50D98329CD6066008C39F6 /* BottleVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E50D98229CD6066008C39F6 /* BottleVM.swift */; };
 		6E50D98529CDF25B008C39F6 /* BottleCreationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E50D98429CDF25B008C39F6 /* BottleCreationView.swift */; };
 		6E59676B2A9A424900D64F70 /* ArgumentParser in Frameworks */ = {isa = PBXBuildFile; productRef = 6E59676A2A9A424900D64F70 /* ArgumentParser */; };
+		6E5B61B62AC34E6D007B1913 /* SemanticVersion in Frameworks */ = {isa = PBXBuildFile; productRef = 6E5B61B52AC34E6D007B1913 /* SemanticVersion */; };
 		6E621CEF2A5F631300C9AAB3 /* Winetricks.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E621CEE2A5F631200C9AAB3 /* Winetricks.swift */; };
 		6E6915452A3265BB0085BBB7 /* Logger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E6915442A3265BB0085BBB7 /* Logger.swift */; };
 		6E6C0CF22A419A6800356232 /* WelcomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E6C0CF12A419A6800356232 /* WelcomeView.swift */; };
@@ -241,6 +242,7 @@
 			files = (
 				6EDF9AB72A9A6E50006CAA7E /* WhiskyKit.framework in Frameworks */,
 				6E95F6732AB3F67200D585D1 /* Progress in Frameworks */,
+				6E5B61B62AC34E6D007B1913 /* SemanticVersion in Frameworks */,
 				6E95F6702AB3F33C00D585D1 /* SwiftyTextTable in Frameworks */,
 				6E59676B2A9A424900D64F70 /* ArgumentParser in Frameworks */,
 			);
@@ -524,6 +526,7 @@
 				6E59676A2A9A424900D64F70 /* ArgumentParser */,
 				6E95F66F2AB3F33C00D585D1 /* SwiftyTextTable */,
 				6E95F6722AB3F67200D585D1 /* Progress */,
+				6E5B61B52AC34E6D007B1913 /* SemanticVersion */,
 			);
 			productName = WhiskyCmd;
 			productReference = 6E70A4982A9A2197007799E9 /* WhiskyCmd */;
@@ -1343,6 +1346,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 6E5967682A9A421800D64F70 /* XCRemoteSwiftPackageReference "swift-argument-parser" */;
 			productName = ArgumentParser;
+		};
+		6E5B61B52AC34E6D007B1913 /* SemanticVersion */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = EB58FB532A499896002DC184 /* XCRemoteSwiftPackageReference "SemanticVersion" */;
+			productName = SemanticVersion;
 		};
 		6E95F66F2AB3F33C00D585D1 /* SwiftyTextTable */ = {
 			isa = XCSwiftPackageProductDependency;
