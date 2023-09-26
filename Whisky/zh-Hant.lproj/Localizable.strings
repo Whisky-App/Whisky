@@ -124,5 +124,5 @@
 "run.title" = "執行「%@」";
 "run.bottle" = "容器：";
 
-"locale.title" = "Locale";
-"locale.auto" = "Automatic";
+"locale.title" = "語言地區";
+"locale.auto" = "自動";
