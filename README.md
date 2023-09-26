@@ -32,8 +32,27 @@ Translated on [Crowdin](https://crowdin.com/project/whisky).
 ---
 
 # System Requirements
-- CPU: Apple Silicon (M1/M2 and its variants)
-- OS: macOS Sonoma 14.0 or later
+
+<table>
+  <tr>
+    <th>
+      Apple Silicon
+    </th>
+    <th>
+      Intel
+    </th>
+  </tr>
+  <tr>
+    <td>
+      - Any version of Whisky <br>
+      - Any version of GPTK
+    </td>
+    <td>
+      - Whisky 1.1.1 or older <br>
+      - GPTK beta 1 or GPTK beta 2
+    </td>
+  </tr>
+</table>
 
 # Homebrew
 
