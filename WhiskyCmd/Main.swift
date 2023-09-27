@@ -112,7 +112,7 @@ extension Whisky {
     }
 
     struct Delete: ParsableCommand {
-        static var configuration = CommandConfiguration(abstract: "Delete a an existing bottle from disk.")
+        static var configuration = CommandConfiguration(abstract: "Delete an existing bottle from disk.")
 
         @Argument var name: String
 
