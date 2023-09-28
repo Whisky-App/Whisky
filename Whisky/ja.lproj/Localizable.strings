@@ -13,6 +13,7 @@
 "button.exportBottle" = "アーカイブとしてエクスポート...";
 "button.removeAlert" = "削除...";
 "button.createBottle" = "Bottle を作成";
+"button.refresh" = "リフレッシュ";
 "button.removeAlert.msg" = "%@ を削除しますか？";
 "button.removeAlert.info" = "この Bottle を削除してもよろしいですか？ この操作は取り消せません。";
 "button.removeAlert.checkbox" = "ディスクからも削除";

@@ -131,6 +131,7 @@ struct BottleView: View {
                 }
                 .padding()
             }
+            .disabled(!bottle.isActive)
             .navigationTitle(bottle.settings.name)
             .sheet(isPresented: $showWinetricksSheet) {
                 WinetricksView(bottle: bottle)

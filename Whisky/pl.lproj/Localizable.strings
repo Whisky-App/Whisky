@@ -13,6 +13,7 @@
 "button.exportBottle" = "Eksportuj jako archiwum...";
 "button.removeAlert" = "Usuń...";
 "button.createBottle" = "Utwórz butelkę";
+"button.refresh" = "Odśwież";
 "button.removeAlert.msg" = "Usunąć %@?";
 "button.removeAlert.info" = "Czy na pewno chcesz usunąć tę butelkę? Ta akcja jest nieodwracalna.";
 "button.removeAlert.checkbox" = "Usuń pliki z dysku";

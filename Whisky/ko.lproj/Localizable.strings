@@ -13,6 +13,7 @@
 "button.exportBottle" = "아카이브로 내보내기...";
 "button.removeAlert" = "삭제...";
 "button.createBottle" = "Bottle 생성";
+"button.refresh" = "새로 고침";
 "button.removeAlert.msg" = "%@을(를) 삭제하시겠습니까?";
 "button.removeAlert.info" = "정말로 이 Bottle을 삭제하시겠습니까? 이 행동은 되돌릴 수 없습니다.";
 "button.removeAlert.checkbox" = "디스크에서 파일 삭제";

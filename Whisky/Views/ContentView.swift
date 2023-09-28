@@ -31,6 +31,7 @@ struct ContentView: View {
     @State var showBottleSelection: Bool = false
     @State var newlyCreatedBottleURL: URL?
     @State var openedFileURL: URL?
+    @State var refresh: Bool = false
 
     var body: some View {
         NavigationSplitView {
@@ -46,7 +47,7 @@ struct ContentView: View {
                             .opacity(0.5)
                             .id(bottle.url)
                         } else {
-                            BottleListEntry(bottle: bottle, selected: $selected)
+                            BottleListEntry(bottle: bottle, selected: $selected, refresh: $refresh)
                                 .id(bottle.url)
                                 .selectionDisabled(!bottle.isActive)
                         }
@@ -101,6 +102,15 @@ struct ContentView: View {
                 } label: {
                     Image(systemName: "plus")
                         .help("button.createBottle")
+                }
+            }
+            ToolbarItem(placement: .primaryAction) {
+                Button {
+                    bottleVM.loadBottles()
+                    refresh.toggle()
+                } label: {
+                    Image(systemName: "arrow.triangle.2.circlepath")
+                        .help("button.refresh")
                 }
             }
         }
@@ -169,11 +179,15 @@ struct BottleListEntry: View {
     @State var showBottleRename: Bool = false
     @State var name: String = ""
     @Binding var selected: URL?
+    @Binding var refresh: Bool
 
     var body: some View {
         Text(name)
             .opacity(bottle.isActive ? 1.0 : 0.5)
             .onAppear {
+                name = bottle.settings.name
+            }
+            .onChange(of: refresh) {
                 name = bottle.settings.name
             }
             .sheet(isPresented: $showBottleRename) {

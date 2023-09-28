@@ -13,6 +13,7 @@
 "button.exportBottle" = "Експортувати як архів...";
 "button.removeAlert" = "Видалити...";
 "button.createBottle" = "Створити пляшку";
+"button.refresh" = "Оновити";
 "button.removeAlert.msg" = "Видалити %@?";
 "button.removeAlert.info" = "Ви впевнені, що хочете видалити цю пляшку? Цю дію не можна скасувати.";
 "button.removeAlert.checkbox" = "Видалити файли з диска";
