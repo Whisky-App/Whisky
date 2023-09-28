@@ -151,7 +151,7 @@ public class BottleSettings {
         }
     }
 
-    var dxvkAsync: Bool {
+    public var dxvkAsync: Bool {
         get {
             return settings.dxvkConfig.dxvkAsync
         } set {

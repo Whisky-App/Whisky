@@ -115,7 +115,7 @@ struct ConfigView: View {
                     Toggle(isOn: $bottle.settings.dxvk) {
                         Text("config.dxvk")
                     }
-                    Toggle(isOn: $bottle.settings.dxvk) {
+                    Toggle(isOn: $bottle.settings.dxvkAsync) {
                         Text("config.dxvk.async")
                     }
                     .disabled(!bottle.settings.dxvk)
