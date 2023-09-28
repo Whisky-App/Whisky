@@ -48,6 +48,7 @@ struct ContentView: View {
                         } else {
                             BottleListEntry(bottle: bottle, selected: $selected)
                                 .id(bottle.url)
+                                .selectionDisabled(!bottle.isActive)
                         }
                     }
                 }
@@ -75,7 +76,7 @@ struct ContentView: View {
                     .id(bottle.url)
                 }
             } else {
-                if bottleVM.bottles.isEmpty && bottlesLoaded {
+                if (bottleVM.bottles.isEmpty || bottleVM.countActive() == 0) && bottlesLoaded {
                     VStack {
                         Text("main.createFirst")
                         Button {
@@ -125,8 +126,8 @@ struct ContentView: View {
             bottleVM.loadBottles()
             bottlesLoaded = true
 
-            if !bottleVM.bottles.isEmpty {
-                if let bottle = bottleVM.bottles.first(where: { $0.url == selectedBottleURL }) {
+            if !bottleVM.bottles.isEmpty || bottleVM.countActive() != 0 {
+                if let bottle = bottleVM.bottles.first(where: { $0.url == selectedBottleURL && $0.isActive }) {
                     selected = bottle.url
                 } else {
                     selected = bottleVM.bottles[0].url
@@ -171,6 +172,7 @@ struct BottleListEntry: View {
 
     var body: some View {
         Text(name)
+            .opacity(bottle.isActive ? 1.0 : 0.5)
             .onAppear {
                 name = bottle.settings.name
             }
@@ -181,6 +183,7 @@ struct BottleListEntry: View {
                 Button("button.rename") {
                     showBottleRename.toggle()
                 }
+                .disabled(!bottle.isActive)
                 Divider()
                 Button("button.moveBottle") {
                     let panel = NSOpenPanel()
@@ -200,6 +203,7 @@ struct BottleListEntry: View {
                         }
                     }
                 }
+                .disabled(!bottle.isActive)
                 Button("button.exportBottle") {
                     let panel = NSSavePanel()
                     panel.canCreateDirectories = true
@@ -217,10 +221,12 @@ struct BottleListEntry: View {
                         }
                     }
                 }
+                .disabled(!bottle.isActive)
                 Divider()
                 Button("button.showInFinder") {
                     NSWorkspace.shared.activateFileViewerSelecting([bottle.url])
                 }
+                .disabled(!bottle.isActive)
                 Divider()
                 Button("button.removeAlert") {
                     showRemoveAlert(bottle: bottle)
@@ -239,7 +245,9 @@ struct BottleListEntry: View {
         let delete = alert.addButton(withTitle: String(localized: "button.removeAlert.delete"))
         delete.hasDestructiveAction = true
         alert.addButton(withTitle: String(localized: "button.removeAlert.cancel"))
-        alert.accessoryView = checkbox
+        if bottle.isActive {
+            alert.accessoryView = checkbox
+        }
 
         let response = alert.runModal()
 

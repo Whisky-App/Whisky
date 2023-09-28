@@ -34,16 +34,21 @@ public class Bottle: Hashable, Identifiable {
     public var settings: BottleSettings
     public var programs: [Program] = []
     public var inFlight: Bool = false
+    public var isActive: Bool = false
 
-    public init(bottleUrl: URL, inFlight: Bool = false) {
+    public init(bottleUrl: URL, inFlight: Bool = false, isActive: Bool = false) {
         self.settings = BottleSettings(bottleURL: bottleUrl)
         self.url = bottleUrl
         self.inFlight = inFlight
+        self.isActive = isActive
     }
 }
 
 extension Array where Element == Bottle {
     public mutating func sortByName() {
         self.sort { $0.settings.name.lowercased() < $1.settings.name.lowercased() }
+    }
+    public mutating func sortByActive() {
+        self.sort { $0.isActive && !$1.isActive }
     }
 }

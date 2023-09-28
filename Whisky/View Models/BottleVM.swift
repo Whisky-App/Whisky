@@ -31,6 +31,10 @@ class BottleVM: ObservableObject {
         bottles = bottlesList.loadBottles()
     }
 
+    func countActive() -> Int {
+        return bottles.filter { $0.isActive == true}.count
+    }
+
     func createNewBottle(bottleName: String, winVersion: WinVersion, bottleURL: URL) -> URL {
         let newBottleDir = bottleURL.appending(path: UUID().uuidString)
 
