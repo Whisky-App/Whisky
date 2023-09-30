@@ -13,6 +13,7 @@
 "button.exportBottle" = "Экспортировать как архив...";
 "button.removeAlert" = "Удалить...";
 "button.createBottle" = "Создать Бутылку";
+"button.refresh" = "Обновить";
 "button.removeAlert.msg" = "Удалить %@?";
 "button.removeAlert.info" = "Вы уверены, что хотите удалить эту бутылку? Это действие необратимо.";
 "button.removeAlert.checkbox" = "Удалить файлы с диска";
