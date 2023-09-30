@@ -13,6 +13,7 @@
 "button.exportBottle" = "Arşiv olarak dışa aktarın...";
 "button.removeAlert" = "Kaldır...";
 "button.createBottle" = "Bottle Oluştur";
+"button.refresh" = "Yenile";
 "button.removeAlert.msg" = "%@ öğesini kaldır?";
 "button.removeAlert.info" = "Bu Bottle'ı kaldırmak istediğinize emin misiniz? Bu hareket kalıcıdır.";
 "button.removeAlert.checkbox" = "Dosyaları diskten sil";
