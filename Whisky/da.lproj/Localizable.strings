@@ -13,6 +13,7 @@
 "button.exportBottle" = "Export as Archive...";
 "button.removeAlert" = "Fjern...";
 "button.createBottle" = "Opret Bottle";
+"button.refresh" = "Opfrisk";
 "button.removeAlert.msg" = "Fjern %@?";
 "button.removeAlert.info" = "Er du sikker på, at du vil fjerne denne flaske? Denne handling er permanent.";
 "button.removeAlert.checkbox" = "Slet filer fra disk";
