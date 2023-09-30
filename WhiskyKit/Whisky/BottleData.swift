@@ -92,6 +92,7 @@ public struct BottleData: Codable {
         encoder.outputFormat = .xml
 
         do {
+            try FileManager.default.createDirectory(at: Self.containerDir, withIntermediateDirectories: true)
             let data = try encoder.encode(self)
             try data.write(to: Self.bottleEntriesDir)
             return true
