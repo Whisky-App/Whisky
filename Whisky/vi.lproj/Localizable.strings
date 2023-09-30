@@ -13,6 +13,7 @@
 "button.exportBottle" = "Export as Archive...";
 "button.removeAlert" = "Remove...";
 "button.createBottle" = "Tạo Bottle";
+"button.refresh" = "Làm cho khỏe lại";
 "button.removeAlert.msg" = "Remove %@?";
 "button.removeAlert.info" = "Are you sure you want to remove this bottle? This action is permanent.";
 "button.removeAlert.checkbox" = "Delete files from disk";
