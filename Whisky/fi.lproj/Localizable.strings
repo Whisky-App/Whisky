@@ -124,5 +124,5 @@
 "run.title" = "Suorita \"%@\"";
 "run.bottle" = "Pullo:";
 
-"locale.title" = "Locale";
-"locale.auto" = "Automatic";
+"locale.title" = "Kieli";
+"locale.auto" = "Automaattinen";

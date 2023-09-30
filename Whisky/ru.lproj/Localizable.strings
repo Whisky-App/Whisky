@@ -48,7 +48,7 @@
 
 "configDpi.title" = "Настройки DPI";
 "configDpi.preview" = "Текст будет выглядеть так:";
-"configDpi.previewText" = "Съешь же ещё этих мягких французских булок да выпей чаю.";
+"configDpi.previewText" = "Съешь же ещё этих мягких французских булок, да выпей чаю.";
 "configDpi.dpi" = "DPI";
 
 "program.title" = "Все программы";
@@ -124,5 +124,5 @@
 "run.title" = "Запустить \"%@\"";
 "run.bottle" = "Бутылка:";
 
-"locale.title" = "Locale";
-"locale.auto" = "Automatic";
+"locale.title" = "Языковой стандарт";
+"locale.auto" = "Автоматический выбор";

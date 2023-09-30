@@ -124,5 +124,5 @@
 "run.title" = "Ejecutar \"%@\"";
 "run.bottle" = "Botella:";
 
-"locale.title" = "Locale";
-"locale.auto" = "Automatic";
+"locale.title" = "Localización";
+"locale.auto" = "Automático";

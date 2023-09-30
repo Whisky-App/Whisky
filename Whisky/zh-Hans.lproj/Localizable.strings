@@ -1,16 +1,16 @@
 "tab.config" = "Bottle Configuration";
-"tab.programs" = "Installed Programs";
+"tab.programs" = "已安装的程序";
 
 "main.createFirst" = "从创建第一个容器开始";
 
 "button.cDrive" = "Open C: Drive";
 "button.showInFinder" = "在访达中显示";
-"button.createShortcut" = "Create Shortcut";
+"button.createShortcut" = "创建快捷方式";
 "button.run" = "运行...";
 "button.ok" = "确定";
-"button.rename" = "Rename...";
-"button.moveBottle" = "Move...";
-"button.exportBottle" = "Export as Archive...";
+"button.rename" = "重新命名...";
+"button.moveBottle" = "移动...";
+"button.exportBottle" = "导出为存档...";
 "button.removeAlert" = "删除...";
 "button.createBottle" = "创建容器";
 "button.refresh" = "刷新";
@@ -51,13 +51,13 @@
 "configDpi.previewText" = "敏捷的棕色狐狸跳过懒狗。";
 "configDpi.dpi" = "DPI";
 
-"program.title" = "All Programs";
-"program.blocklist" = "Blocklist";
+"program.title" = "所有程序";
+"program.blocklist" = "阻止列表";
 "program.env" = "环境变量";
 "program.args" = "参数";
 "program.config" = "配置";
-"program.add.blocklist" = "Add to Blocklist";
-"program.remove.blocklist" = "Remove from Blocklist";
+"program.add.blocklist" = "添加到阻止列表";
+"program.remove.blocklist" = "从阻止列表中移除";
 
 "alert.message" = "打开软件失败！";
 "alert.info" = "打开失败";
@@ -70,7 +70,7 @@
 "create.cancel" = "取消";
 "create.create" = "创建";
 
-"rename.bottle.title" = "Rename bottle";
+"rename.bottle.title" = "重新命名容器";
 "rename.pin.title" = "Rename pin";
 "rename.name" = "新名称：";
 "rename.rename" = "重命名";
@@ -92,7 +92,7 @@
 "setup.welcome.subtitle" = "让我们帮您安装好，这不会用很长时间。";
 
 "setup.title" = "Dependencies Setup";
-"setup.subtitle" = "Manage Whisky's required dependencies.";
+"setup.subtitle" = "管理 Whisky 所需依赖";
 
 "setup.install.checking" = "正在检查 %@ 是否安装...";
 "setup.install.installed" = "%@ 已安装";
@@ -125,4 +125,4 @@
 "run.bottle" = "瓶子：";
 
 "locale.title" = "Locale";
-"locale.auto" = "Automatic";
+"locale.auto" = "自动";

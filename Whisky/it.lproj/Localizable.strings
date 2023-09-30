@@ -1,5 +1,5 @@
-"tab.config" = "Bottle Configuration";
-"tab.programs" = "Installed Programs";
+"tab.config" = "Configurazione Bottiglia";
+"tab.programs" = "Programmi Installati";
 
 "main.createFirst" = "Crea la tua prima bottiglia per iniziare";
 
@@ -8,9 +8,9 @@
 "button.createShortcut" = "Crea Scorciatoia";
 "button.run" = "Avvia...";
 "button.ok" = "OK";
-"button.rename" = "Rename...";
-"button.moveBottle" = "Move...";
-"button.exportBottle" = "Export as Archive...";
+"button.rename" = "Rinomina...";
+"button.moveBottle" = "Muovi...";
+"button.exportBottle" = "Esporta come Archivio...";
 "button.removeAlert" = "Rimuovi...";
 "button.createBottle" = "Crea Bottiglia";
 "button.refresh" = "Aggiornare";
@@ -20,7 +20,7 @@
 "button.removeAlert.delete" = "Rimuovi";
 "button.removeAlert.cancel" = "Annulla";
 
-"pin.unpin" = "Unpin Program";
+"pin.unpin" = "Sblocca Programma";
 
 "config.title.wine" = "Wine";
 "config.winVersion" = "Versione di Windows";
@@ -51,13 +51,13 @@
 "configDpi.previewText" = "Ma la volpe, col suo balzo, ha raggiunto il quieto Fido.";
 "configDpi.dpi" = "DPI";
 
-"program.title" = "All Programs";
+"program.title" = "Tutti i Programmi";
 "program.blocklist" = "Blocklist";
 "program.env" = "Variabili d'Ambiente";
 "program.args" = "Parametri";
 "program.config" = "Configurazione";
-"program.add.blocklist" = "Add to Blocklist";
-"program.remove.blocklist" = "Remove from Blocklist";
+"program.add.blocklist" = "Aggiungi a Blocklist";
+"program.remove.blocklist" = "Rimuovi dalla Blocklist";
 
 "alert.message" = "Impossibile aprire il programma!";
 "alert.info" = "Impossibile aprire";
@@ -70,8 +70,8 @@
 "create.cancel" = "Annulla";
 "create.create" = "Crea";
 
-"rename.bottle.title" = "Rename bottle";
-"rename.pin.title" = "Rename pin";
+"rename.bottle.title" = "Rinomina Bottiglia";
+"rename.pin.title" = "Rinomina programma fissato";
 "rename.name" = "Nuovo nome:";
 "rename.rename" = "Rinomina";
 
@@ -124,5 +124,5 @@
 "run.title" = "Esegui%@";
 "run.bottle" = "Bottiglia:";
 
-"locale.title" = "Locale";
-"locale.auto" = "Automatic";
+"locale.title" = "Lingua";
+"locale.auto" = "Automatico";

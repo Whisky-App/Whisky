@@ -1,16 +1,16 @@
 "tab.config" = "Bottle Configuration";
-"tab.programs" = "Installed Programs";
+"tab.programs" = "Programmes Installés";
 
 "main.createFirst" = "Créez votre première bouteille pour commencer";
 
-"button.cDrive" = "Open C: Drive";
+"button.cDrive" = "Ouvrir C: Lecteur";
 "button.showInFinder" = "Afficher dans Finder";
 "button.createShortcut" = "Create Shortcut";
 "button.run" = "Exécuter...";
 "button.ok" = "OK";
-"button.rename" = "Rename...";
-"button.moveBottle" = "Move...";
-"button.exportBottle" = "Export as Archive...";
+"button.rename" = "Renommer...";
+"button.moveBottle" = "Transférer...";
+"button.exportBottle" = "Exporter Archive...";
 "button.removeAlert" = "Supprimer...";
 "button.createBottle" = "Créer une bouteille";
 "button.refresh" = "Rafraîchir";
@@ -70,7 +70,7 @@
 "create.cancel" = "Annuler";
 "create.create" = "Créer";
 
-"rename.bottle.title" = "Rename bottle";
+"rename.bottle.title" = "Renommer la bouteille";
 "rename.pin.title" = "Rename pin";
 "rename.name" = "Nouveau nom :";
 "rename.rename" = "Renommer";
@@ -121,8 +121,8 @@
 "winetricks.title" = "Exécuter une commande Winetricks";
 "button.winetricks" = "Winetricks...";
 
-"run.title" = "Run \"%@\"";
-"run.bottle" = "Bottle:";
+"run.title" = "Exécuter «%@»";
+"run.bottle" = "Bouteille:";
 
-"locale.title" = "Locale";
-"locale.auto" = "Automatic";
+"locale.title" = "Langue";
+"locale.auto" = "Automatique";
