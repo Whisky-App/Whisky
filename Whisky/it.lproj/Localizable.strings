@@ -13,6 +13,7 @@
 "button.exportBottle" = "Esporta come Archivio...";
 "button.removeAlert" = "Rimuovi...";
 "button.createBottle" = "Crea Bottiglia";
+"button.refresh" = "Aggiornare";
 "button.removeAlert.msg" = "Vuoi rimuovere %@?";
 "button.removeAlert.info" = "Sei sicuro di voler eliminare questa bottle? L'azione è permanente.";
 "button.removeAlert.checkbox" = "Elimina i file dal disco";
