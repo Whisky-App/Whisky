@@ -13,6 +13,7 @@
 "button.exportBottle" = "Vie arkistona...";
 "button.removeAlert" = "Poista...";
 "button.createBottle" = "Luo pullo";
+"button.refresh" = "Päivitä";
 "button.removeAlert.msg" = "Poista %@?";
 "button.removeAlert.info" = "Oletko varma, että haluat poistaa tämän pullon? Tämä toiminto on pysyvä.";
 "button.removeAlert.checkbox" = "Poista tiedostoja levyltä";
