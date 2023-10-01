@@ -124,5 +124,5 @@
 "run.title" = "\"%@\" 실행";
 "run.bottle" = "Bottle:";
 
-"locale.title" = "Locale";
-"locale.auto" = "Automatic";
+"locale.title" = "언어";
+"locale.auto" = "자동";
