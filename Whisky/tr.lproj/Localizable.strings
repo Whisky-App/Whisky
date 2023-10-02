@@ -57,7 +57,7 @@
 "program.args" = "Argümanlar";
 "program.config" = "Ayarlar";
 "program.add.blocklist" = "Karalisteye Ekle";
-"program.remove.blocklist" = "Remove from Blocklist";
+"program.remove.blocklist" = "Karalisteden Kaldır";
 
 "alert.message" = "Program açılamadı!";
 "alert.info" = "Açma başarısız";
@@ -124,5 +124,5 @@
 "run.title" = "\"%@\" Çalıştır";
 "run.bottle" = "Bottle:";
 
-"locale.title" = "Locale";
-"locale.auto" = "Automatic";
+"locale.title" = "Yerel";
+"locale.auto" = "Otomatik";
