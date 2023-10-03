@@ -32,7 +32,8 @@ struct Whisky: ParsableCommand {
                       Add.self,
 //                      Export.self,
                       Delete.self,
-                      Remove.self
+                      Remove.self,
+                      Run.self
                       /*Install.self,
                       Uninstall.self*/])
 }
@@ -200,5 +201,48 @@ extension Whisky {
 //                print("GPTK uninstalled.")
 //            }
         }
+    }
+
+    struct Run: ParsableCommand {
+        static var configuration = CommandConfiguration(abstract: "Run a program with whisky")
+
+        var hasFinished: Bool = false
+
+        @Argument var bottleName: String
+        @Argument var path: String
+        @Argument var args: [String] = []
+        mutating func run() {
+
+            var bottlesList = BottleData()
+            let bottles = bottlesList.loadBottles()
+
+            let url = URL(fileURLWithPath: path)
+            let name = "test.exe"
+            guard let bottle = bottles.first(where: { $0.settings.name == bottleName }) else {
+                print("A bottle with that name doesn't exist.")
+                return
+            }
+
+            let program = Program(name: name, url: url, bottle: bottle)
+
+            let wineCmd = program.generateTerminalCommand().replacingOccurrences(of: "\\", with: "\\\\")
+
+            let script = """
+            tell application "Terminal"
+                activate
+                do script "\(wineCmd)"
+            end tell
+            """
+
+            var error: NSDictionary?
+            if let appleScript = NSAppleScript(source: script) {
+                appleScript.executeAndReturnError(&error)
+
+                if let error = error {
+                    print(error)
+                }
+            }
+        }
+
     }
 }
