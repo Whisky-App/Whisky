@@ -1,31 +1,30 @@
-"tab.config" = "Bottle Configuration";
-"tab.programs" = "Installed Programs";
+"tab.config" = "容器設定";
+"tab.programs" = "已安裝的程式";
 
 "main.createFirst" = "建立你的第一個容器以開始";
 
 "button.cDrive" = "開啟 C: 槽";
 "button.showInFinder" = "在 Finder 中顯示";
-"button.createShortcut" = "Create Shortcut";
+"button.createShortcut" = "建立捷徑";
 "button.run" = "執行...";
 "button.ok" = "確定";
 "button.rename" = "重新命名...";
 "button.moveBottle" = "移動...";
 "button.exportBottle" = "匯出為封存...";
-"button.removeAlert" = "Remove...";
+"button.removeAlert" = "移除...";
 "button.createBottle" = "建立容器";
-"button.refresh" = "刷新";
-"button.removeAlert.msg" = "Remove %@?";
-"button.removeAlert.info" = "Are you sure you want to remove this bottle? This action is permanent.";
-"button.removeAlert.checkbox" = "Delete files from disk";
-"button.removeAlert.delete" = "Remove";
-"button.removeAlert.cancel" = "Cancel";
+"button.refresh" = "重新整理";
+"button.removeAlert.msg" = "移除 %@?";
+"button.removeAlert.info" = "你確定要移除此容器嗎？此動作將不可還原。";
+"button.removeAlert.checkbox" = "從硬碟上刪除檔案";
+"button.removeAlert.delete" = "移除";
+"button.removeAlert.cancel" = "取消";
 
-"pin.unpin" = "Unpin Program";
+"pin.unpin" = "取消程式釘選";
 
 "config.title.wine" = "Wine";
 "config.winVersion" = "Windows 版本";
-"config.buildVersion" = "（由洋甘菊翻譯提供翻譯）
-組建版本";
+"config.buildVersion" = "組建版本";
 "config.title.metal" = "Metal";
 "config.metalHud" = "Metal 抬頭顯示";
 "config.metalTrace" = "Metal 追蹤";
@@ -43,7 +42,7 @@
 "config.dxvkHud.partial" = "部份";
 "config.dxvkHud.fps" = "幀數";
 "config.dxvkHud.off" = "關閉";
-"config.dxvk.async" = "DXVK Async";
+"config.dxvk.async" = "非同步 DXVK";
 "config.dpi" = "DPI 縮放";
 "config.inspect" = "設定...";
 
@@ -52,13 +51,13 @@
 "configDpi.previewText" = "敏捷的棕色狐狸跳過了懶狗。";
 "configDpi.dpi" = "DPI";
 
-"program.title" = "All Programs";
-"program.blocklist" = "Blocklist";
+"program.title" = "所有程式";
+"program.blocklist" = "黑名單";
 "program.env" = "環境變數";
 "program.args" = "命令列引數";
 "program.config" = "設定";
-"program.add.blocklist" = "Add to Blocklist";
-"program.remove.blocklist" = "Remove from Blocklist";
+"program.add.blocklist" = "新增至黑名單";
+"program.remove.blocklist" = "從黑名單中移除";
 
 "alert.message" = "無法開啟程式！";
 "alert.info" = "開啟失敗";
@@ -81,8 +80,8 @@
 "open.logs" = "開啟日誌資料夾";
 "open.bottle" = "导入容器";
 "open.setup" = "設置...";
-"install.cli" = "Install Whisky CLI...";
-"wine.clearShaderCaches" = "Clear Shader Caches";
+"install.cli" = "安裝Whisky CLI...";
+"wine.clearShaderCaches" = "清除著色器快取";
 
 "showAlertOnFirstLaunch.messageText" = "你希望將 Whisky 移動到你的應用程式資料夾嗎？";
 "showAlertOnFirstLaunch.informativeText" = "在某些情況下，Whisky 可能無法在不同的資料夾中正常運作";
@@ -104,22 +103,22 @@
 "setup.rosetta.subtitle" = "Rosetta 允許 x86 代碼（如 Wine）在 Mac 上運行。";
 
 "setup.gptk.download" = "正在下載 GPTK";
-"setup.gptk.download.subtitle" = "速度會因你的互聯網連接而有所不同。";
+"setup.gptk.download.subtitle" = "速度會因你的網路頻寬而有所不同。";
 "setup.gptk.progress" = "%2$@ 中的 %1$@";
 "setup.gptk.eta" = "- 剩餘%@";
 
 "setup.gptk.install" = "正在安裝 GPTK";
 "setup.gptk.install.subtitle" = "快完成了。請不要退出。";
 
-"setup.quit" = "Quit";
-"setup.done" = "Done";
-"setup.next" = "Next";
+"setup.quit" = "離開";
+"setup.done" = "完成";
+"setup.next" = "下一步";
 
-"update.gptk.title" = "New Version of GPTK Available";
-"update.gptk.description" = "You are running GPTK %@, but %@ is available. Would you like to update?";
-"update.gptk.update" = "Update";
+"update.gptk.title" = "有新的GPTK版本可供安裝";
+"update.gptk.description" = "您正在使用GPTK %@, %@已可更新 請問是否要更新?";
+"update.gptk.update" = "更新";
 
-"winetricks.title" = "Run Winetricks command";
+"winetricks.title" = "執行Winetricks指令";
 "button.winetricks" = "Winetricks...";
 
 "run.title" = "執行「%@」";
