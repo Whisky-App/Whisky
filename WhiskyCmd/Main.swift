@@ -217,7 +217,7 @@ extension Whisky {
             let bottles = bottlesList.loadBottles()
 
             let url = URL(fileURLWithPath: path)
-            let name = "test.exe"
+            let name = url.lastPathComponent
             guard let bottle = bottles.first(where: { $0.settings.name == bottleName }) else {
                 print("A bottle with that name doesn't exist.")
                 return
