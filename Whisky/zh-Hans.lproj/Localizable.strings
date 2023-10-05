@@ -3,7 +3,7 @@
 
 "main.createFirst" = "从创建第一个容器开始";
 
-"button.cDrive" = "Open C: Drive";
+"button.cDrive" = "打开 C: 盘";
 "button.showInFinder" = "在访达中显示";
 "button.createShortcut" = "创建快捷方式";
 "button.run" = "运行...";
