@@ -91,8 +91,8 @@
 "setup.welcome" = "歡迎使用 Whisky";
 "setup.welcome.subtitle" = "讓我們為你完成設置。此步驟不會花上一分鐘時間。";
 
-"setup.title" = "Dependencies Setup";
-"setup.subtitle" = "Manage Whisky's required dependencies.";
+"setup.title" = "相依性管理";
+"setup.subtitle" = "管理Whisky需要的相依性套件";
 
 "setup.install.checking" = "正在檢查  %@ 安裝…";
 "setup.install.installed" = "%@ 已安裝";
