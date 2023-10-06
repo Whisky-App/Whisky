@@ -12,15 +12,15 @@
 "button.moveBottle" = "Mover...";
 "button.exportBottle" = "Exportar como arquivo...";
 "button.removeAlert" = "Remover...";
-"button.createBottle" = "Criar uma Bottle";
+"button.createBottle" = "Criar Bottle";
 "button.refresh" = "Atualizar";
 "button.removeAlert.msg" = "Remover %@?";
-"button.removeAlert.info" = "Tem a certeza de que pretende remover esta garrafa? Esta ação é permanente.";
+"button.removeAlert.info" = "Remover esta bottle? Esta ação é permanente.";
 "button.removeAlert.checkbox" = "Apagar arquivos do disco";
 "button.removeAlert.delete" = "Remover";
 "button.removeAlert.cancel" = "Cancelar";
 
-"pin.unpin" = "Unpin Program";
+"pin.unpin" = "Desafixar programa";
 
 "config.title.wine" = "Wine";
 "config.winVersion" = "Versão do Windows";
@@ -52,12 +52,12 @@
 "configDpi.dpi" = "DPI";
 
 "program.title" = "Todos os Programas";
-"program.blocklist" = "Blocklist";
+"program.blocklist" = "Lista de bloqueio";
 "program.env" = "Variáveis de Ambiente";
 "program.args" = "Argumentos";
 "program.config" = "Configuração";
-"program.add.blocklist" = "Add to Blocklist";
-"program.remove.blocklist" = "Remove from Blocklist";
+"program.add.blocklist" = "Adicionar à lista de bloqueio";
+"program.remove.blocklist" = "Remover da lista de bloqueio";
 
 "alert.message" = "Falha ao abrir o programa!";
 "alert.info" = "Falha ao abrir";
@@ -70,7 +70,7 @@
 "create.cancel" = "Cancelar";
 "create.create" = "Criar";
 
-"rename.bottle.title" = "Rename bottle";
+"rename.bottle.title" = "Renomear Bottle";
 "rename.pin.title" = "Rename pin";
 "rename.name" = "Novo nome:";
 "rename.rename" = "Renomear";
@@ -115,8 +115,8 @@
 "setup.next" = "Seguinte";
 
 "update.gptk.title" = "Nova versão do GPTK disponível";
-"update.gptk.description" = "Está a executar o GPTK %@, mas %@ está disponível. Gostaria de atualizar?";
-"update.gptk.update" = "Atualização";
+"update.gptk.description" = "GPTK %@ está sendo usada, mas %@ está disponível. Atualizar?";
+"update.gptk.update" = "Atualizar";
 
 "winetricks.title" = "Executar comando Winetricks";
 "button.winetricks" = "Winetricks...";
@@ -125,4 +125,4 @@
 "run.bottle" = "Bottle:";
 
 "locale.title" = "Locale";
-"locale.auto" = "Automatic";
+"locale.auto" = "Automático";

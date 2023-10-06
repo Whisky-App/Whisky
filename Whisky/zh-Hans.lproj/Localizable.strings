@@ -1,9 +1,9 @@
-"tab.config" = "Bottle Configuration";
+"tab.config" = "容器配置";
 "tab.programs" = "已安装的程序";
 
 "main.createFirst" = "从创建第一个容器开始";
 
-"button.cDrive" = "Open C: Drive";
+"button.cDrive" = "打开 C: 盘";
 "button.showInFinder" = "在访达中显示";
 "button.createShortcut" = "创建快捷方式";
 "button.run" = "运行...";
@@ -20,7 +20,7 @@
 "button.removeAlert.delete" = "删除";
 "button.removeAlert.cancel" = "取消";
 
-"pin.unpin" = "Unpin Program";
+"pin.unpin" = "取消固定此应用";
 
 "config.title.wine" = "Wine";
 "config.winVersion" = "Windows 版本";
@@ -71,7 +71,7 @@
 "create.create" = "创建";
 
 "rename.bottle.title" = "重新命名容器";
-"rename.pin.title" = "Rename pin";
+"rename.pin.title" = "重命名固定快捷名称";
 "rename.name" = "新名称：";
 "rename.rename" = "重命名";
 
@@ -124,5 +124,5 @@
 "run.title" = "运行 \"%@\"";
 "run.bottle" = "瓶子：";
 
-"locale.title" = "Locale";
+"locale.title" = "本地化语言";
 "locale.auto" = "自动";
