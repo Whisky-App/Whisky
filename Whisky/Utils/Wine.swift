@@ -274,8 +274,7 @@ class Wine {
     static func constructEnvironment(bottle: Bottle, programEnv: [String: String]?) -> [String: String] {
         var env: [String: String]
         env = ["WINEPREFIX": bottle.url.path,
-               "WINEDEBUG": "fixme-all",
-               "WINEBOOT_HIDE_DIALOG": "1"]
+               "WINEDEBUG": "fixme-all"]
 
         bottle.settings
               .environmentVariables(wineEnv: &env)
