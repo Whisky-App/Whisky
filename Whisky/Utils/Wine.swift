@@ -151,7 +151,8 @@ class Wine {
         let output = try await queryRegistyKey(bottle: bottle,
                                         key: #"HKCU\Software\Wine\Mac Driver"#,
                                         name: "RetinaMode",
-                                        type: .string)
+                                        type: .string,
+                                        defaultValue: "n")
         if output == "" {
             try await changeRetinaMode(bottle: bottle, retinaMode: false)
         }
