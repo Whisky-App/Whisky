@@ -1,26 +1,26 @@
-"tab.config" = "Bottle Configuration";
-"tab.programs" = "Installed Programs";
+"tab.config" = "Bottle configuratie";
+"tab.programs" = "Geïnstalleerde programma's";
 
-"main.createFirst" = "Maak je eerste fles om te beginnen";
+"main.createFirst" = "Maak je eerste bottle om te beginnen";
 
-"button.cDrive" = "Open C: Drive";
+"button.cDrive" = "Open C: schijf";
 "button.showInFinder" = "Toon in Finder";
-"button.createShortcut" = "Create Shortcut";
-"button.run" = "Starten...";
+"button.createShortcut" = "Snelkoppeling maken";
+"button.run" = "Start...";
 "button.ok" = "OK";
-"button.rename" = "Rename...";
-"button.moveBottle" = "Move...";
-"button.exportBottle" = "Export as Archive...";
-"button.removeAlert" = "Remove...";
-"button.createBottle" = "Fles maken";
+"button.rename" = "Hernoem...";
+"button.moveBottle" = "Verplaats...";
+"button.exportBottle" = "Exporteer als archief...";
+"button.removeAlert" = "Verwijder...";
+"button.createBottle" = "Maak Bottle";
 "button.refresh" = "Vernieuw";
-"button.removeAlert.msg" = "Remove %@?";
-"button.removeAlert.info" = "Are you sure you want to remove this bottle? This action is permanent.";
-"button.removeAlert.checkbox" = "Delete files from disk";
-"button.removeAlert.delete" = "Remove";
-"button.removeAlert.cancel" = "Cancel";
+"button.removeAlert.msg" = "Verwijder %@?";
+"button.removeAlert.info" = "Weet u zeker dat u deze Bottle wilt verwijderen? Deze actie is permanent.";
+"button.removeAlert.checkbox" = "Verwijder bestanden van harde schijf";
+"button.removeAlert.delete" = "Verwijderen";
+"button.removeAlert.cancel" = "Annuleren";
 
-"pin.unpin" = "Unpin Program";
+"pin.unpin" = "Pin verwijderen";
 
 "config.title.wine" = "Wine";
 "config.winVersion" = "Windows-versie";
@@ -29,9 +29,9 @@
 "config.metalHud" = "Metal HUD";
 "config.metalTrace" = "Metal Trace";
 "config.retinaMode" = "Retina Modus";
-"config.metalTrace.info" = "Hiermee kunt u GPU-workload vastleggen in Xcode";
+"config.metalTrace.info" = "Maakt GPU werklast captures mogelijk";
 "config.esync" = "ESync";
-"config.controlPanel" = "Open controlepaneel";
+"config.controlPanel" = "Open configuratiescherm";
 "config.regedit" = "Open Register Editor";
 "config.winecfg" = "Open Wine Configuratie";
 "config.notAvailable" = "N/A";
@@ -51,13 +51,13 @@
 "configDpi.previewText" = "Pa’s wijze lynx bezag vroom het fikse aquaduct.";
 "configDpi.dpi" = "DPI";
 
-"program.title" = "All Programs";
-"program.blocklist" = "Blocklist";
+"program.title" = "Alle programma's";
+"program.blocklist" = "Blokkeerlijst";
 "program.env" = "Omgevingsvariabelen";
 "program.args" = "Argumenten";
 "program.config" = "Configuratie";
-"program.add.blocklist" = "Add to Blocklist";
-"program.remove.blocklist" = "Remove from Blocklist";
+"program.add.blocklist" = "Voeg toe aan blokkeerlijst";
+"program.remove.blocklist" = "Verwijder van blokkeerlijst";
 
 "alert.message" = "Kan het programma niet openen!";
 "alert.info" = "Niet geslaagd te openen";
@@ -70,8 +70,8 @@
 "create.cancel" = "Annuleren";
 "create.create" = "Aanmaken";
 
-"rename.bottle.title" = "Rename bottle";
-"rename.pin.title" = "Rename pin";
+"rename.bottle.title" = "Bottle hernoemen";
+"rename.pin.title" = "Pin hernoemen";
 "rename.name" = "Nieuwe naam:";
 "rename.rename" = "Hernoem";
 
@@ -80,7 +80,7 @@
 "open.logs" = "Open Logs map";
 "open.bottle" = "Importeer Fles";
 "open.setup" = "Installatie...";
-"install.cli" = "Install Whisky CLI...";
+"install.cli" = "Installeer de Whisky CLI...";
 "wine.clearShaderCaches" = "Verwijder shader caches";
 
 "showAlertOnFirstLaunch.messageText" = "Wilt u Whiskey verplaatsen naar uw map Toepassingen?";
@@ -91,8 +91,8 @@
 "setup.welcome" = "Welkom bij Whisky";
 "setup.welcome.subtitle" = "Laten we ervoor zorgen dat alles klaarstaat. Dit duurt een ogenblik.";
 
-"setup.title" = "Dependencies Setup";
-"setup.subtitle" = "Manage Whisky's required dependencies.";
+"setup.title" = "Beheer dependencies";
+"setup.subtitle" = "Beheer Whisky's vereiste dependencies.";
 
 "setup.install.checking" = "De %@ installatie controleren...";
 "setup.install.installed" = "%@ geïnstalleerd";
@@ -110,19 +110,19 @@
 "setup.gptk.install" = "Wine installeren";
 "setup.gptk.install.subtitle" = "Bijna daar. Nog niet weg gaan.";
 
-"setup.quit" = "Quit";
-"setup.done" = "Done";
-"setup.next" = "Next";
+"setup.quit" = "Afsluiten";
+"setup.done" = "Voltooid";
+"setup.next" = "Volgende";
 
-"update.gptk.title" = "New Version of GPTK Available";
-"update.gptk.description" = "You are running GPTK %@, but %@ is available. Would you like to update?";
+"update.gptk.title" = "Nieuwe GPTK versie is beschikbaar";
+"update.gptk.description" = "U gebruikt GPTK %@, maar %@ is beschikbaar. Wilt u updaten?";
 "update.gptk.update" = "Update";
 
 "winetricks.title" = "Voer Winetricks commando uit";
 "button.winetricks" = "Winetricks...";
 
-"run.title" = "Run \"%@\"";
+"run.title" = "Start \"%@\"";
 "run.bottle" = "Bottle:";
 
-"locale.title" = "Locale";
-"locale.auto" = "Automatic";
+"locale.title" = "Taal";
+"locale.auto" = "Automatisch";
