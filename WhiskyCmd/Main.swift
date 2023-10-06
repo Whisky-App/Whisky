@@ -204,7 +204,7 @@ extension Whisky {
     }
 
     struct Run: ParsableCommand {
-        static var configuration = CommandConfiguration(abstract: "Run a program with whisky")
+        static var configuration = CommandConfiguration(abstract: "Run a program with Whisky.")
 
         var hasFinished: Bool = false
 
