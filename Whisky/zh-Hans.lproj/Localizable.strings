@@ -42,7 +42,7 @@
 "config.dxvkHud.partial" = "部分";
 "config.dxvkHud.fps" = "FPS";
 "config.dxvkHud.off" = "关闭";
-"config.dxvk.async" = "DXVK Async";
+"config.dxvk.async" = "异步 DXVK";
 "config.dpi" = "DPI 缩放";
 "config.inspect" = "配置...";
 
@@ -59,7 +59,7 @@
 "program.add.blocklist" = "添加到阻止列表";
 "program.remove.blocklist" = "从阻止列表中移除";
 
-"alert.message" = "打开软件失败！";
+"alert.message" = "无法打开程序！";
 "alert.info" = "打开失败";
 
 "create.title" = "创建新的容器";
@@ -91,7 +91,7 @@
 "setup.welcome" = "欢迎使用 Whisky";
 "setup.welcome.subtitle" = "让我们帮您安装好，这不会用很长时间。";
 
-"setup.title" = "Dependencies Setup";
+"setup.title" = "依赖项设置";
 "setup.subtitle" = "管理 Whisky 所需依赖";
 
 "setup.install.checking" = "正在检查 %@ 是否安装...";
@@ -108,7 +108,7 @@
 "setup.gptk.eta" = "- 剩余 %@";
 
 "setup.gptk.install" = "正在安装 GPTK";
-"setup.gptk.install.subtitle" = "就快完成了，请不要离开。";
+"setup.gptk.install.subtitle" = "就快完成了，请不要退出。";
 
 "setup.quit" = "退出";
 "setup.done" = "完成";
@@ -122,7 +122,7 @@
 "button.winetricks" = "Winetrick...";
 
 "run.title" = "运行 \"%@\"";
-"run.bottle" = "瓶子：";
+"run.bottle" = "容器：";
 
 "locale.title" = "本地化语言";
 "locale.auto" = "自动";
