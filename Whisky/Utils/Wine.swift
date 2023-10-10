@@ -230,9 +230,7 @@ class Wine {
             }
         } catch let error as WineCrashError {
             if let output = error.output {
-                if output.contains("Unable to find the specified registry key") {
-                    return defaultValue ?? ""
-                }
+                return defaultValue ?? ""
             }
             throw error
         }
