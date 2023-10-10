@@ -220,6 +220,7 @@ struct WinetricksView: View {
 struct PinnedProgramView: View {
     var bottle: Bottle
     @State var pin: PinnedProgram
+    @State var program: Program?
     @State var image: NSImage?
     @State var showRenameSheet = false
     @State var name: String = ""
@@ -265,10 +266,9 @@ struct PinnedProgramView: View {
             }
             Divider()
             Button("program.config") {
-                let program = Program(name: pin.name,
-                                      url: pin.url,
-                                      bottle: bottle)
-                path.append(program)
+                if let program {
+                    path.append(program)
+                }
             }
             Divider()
             Button("button.rename") {
@@ -291,11 +291,11 @@ struct PinnedProgramView: View {
         .onAppear {
             name = pin.name
             Task.detached {
-                let program = Program(name: pin.name,
-                                      url: pin.url,
-                                      bottle: bottle)
-                if let peFile = program.peFile {
-                    image = peFile.bestIcon()
+                program = bottle.programs.first(where: { $0.url == pin.url })
+                if let program {
+                    if let peFile = program.peFile {
+                        image = peFile.bestIcon()
+                    }
                 }
             }
         }
@@ -314,11 +314,11 @@ struct PinnedProgramView: View {
                 opening = false
             }
         }
-        let program = Program(name: pin.name,
-                              url: pin.url,
-                              bottle: bottle)
-        Task {
-            await program.run()
+
+        if let program {
+            Task {
+                await program.run()
+            }
         }
     }
 }
