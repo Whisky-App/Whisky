@@ -57,7 +57,7 @@ public struct ResourceDataEntry: Hashable {
         self.reserved = data.extract(UInt32.self, offset: offset) ?? 0
         offset += 4
 
-        if let offsetToData = ResourceDataEntry.resolveRVA(data: data, rva: dataRVA, sectionTable: sectionTable) {
+        if let offsetToData = ResourceDataEntry.resolveRVA(rva: dataRVA, sectionTable: sectionTable) {
             let bitmapInfo = BitmapInfoHeader(data: data, offset: Int(offsetToData))
             if bitmapInfo.size != 40 {
                 let iconData = data.subdata(in: Int(offsetToData)..<Int(offsetToData + size))
@@ -78,7 +78,7 @@ public struct ResourceDataEntry: Hashable {
         self.icon = icon
     }
 
-    static func resolveRVA (data: Data, rva: UInt32, sectionTable: SectionTable) -> UInt32? {
+    static func resolveRVA (rva: UInt32, sectionTable: SectionTable) -> UInt32? {
         for section in sectionTable.sections {
             if section.virtualAddress <= rva && rva < (section.virtualAddress + section.virtualSize) {
                 let virtualAddress = section.pointerToRawData + (rva - section.virtualAddress)
