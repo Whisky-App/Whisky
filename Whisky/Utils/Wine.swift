@@ -29,7 +29,6 @@ struct WineCrashError: Error, CustomStringConvertible {
     }
 }
 
-// swiftlint:disable:next type_body_length
 class Wine {
     static let binFolder: URL = GPTKInstaller.libraryFolder
         .appending(path: "Wine")
@@ -228,11 +227,8 @@ class Wine {
                     return String(value)
                 }
             }
-        } catch let error as WineCrashError {
-            if let output = error.output {
-                return defaultValue ?? ""
-            }
-            throw error
+        } catch {
+            return defaultValue ?? ""
         }
 
         throw WineInterfaceError.invalidResponce
