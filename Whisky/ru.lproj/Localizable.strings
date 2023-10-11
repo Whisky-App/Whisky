@@ -3,7 +3,7 @@
 
 "main.createFirst" = "Создайте первую бутылку, чтобы начать";
 
-"button.cDrive" = "Открыть Диск C";
+"button.cDrive" = "Открыть Диск C:";
 "button.showInFinder" = "Показать в Finder";
 "button.createShortcut" = "Создать ярлык";
 "button.run" = "Выполнить...";
@@ -20,7 +20,7 @@
 "button.removeAlert.delete" = "Удалить";
 "button.removeAlert.cancel" = "Отмена";
 
-"pin.unpin" = "Открепить ярлык программы";
+"pin.unpin" = "Открепить программу";
 
 "config.title.wine" = "Wine";
 "config.winVersion" = "Версия Windows";
