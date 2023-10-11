@@ -30,7 +30,7 @@
 "config.metalTrace" = "Metal İzleme";
 "config.retinaMode" = "Retina Modu";
 "config.metalTrace.info" = "Xcode'da GPU iş yükünü yakalamak için kullanılır";
-"config.esync" = "ESync";
+"config.msync" = "MSync";
 "config.controlPanel" = "Kontrol Panelini Aç";
 "config.regedit" = "Kayıt Düzenleyicisi'ni Aç";
 "config.winecfg" = "Wine Yapılandırmasını Aç";
