@@ -30,7 +30,7 @@
 "config.metalTrace" = "Metal Trace";
 "config.retinaMode" = "Retina Modus";
 "config.metalTrace.info" = "Maakt GPU werklast captures mogelijk";
-"config.esync" = "ESync";
+"config.msync" = "MSync";
 "config.controlPanel" = "Open configuratiescherm";
 "config.regedit" = "Open Register Editor";
 "config.winecfg" = "Open Wine Configuratie";
