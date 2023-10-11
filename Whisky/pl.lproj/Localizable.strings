@@ -30,7 +30,7 @@
 "config.metalTrace" = "Śledź Metal";
 "config.retinaMode" = "Tryb Retina";
 "config.metalTrace.info" = "Umożliwia przechwytywanie obciążenia GPU w Xcode";
-"config.esync" = "ESync";
+"config.msync" = "MSync";
 "config.controlPanel" = "Otwórz Panel Sterowania";
 "config.regedit" = "Otwórz edytor rejestru";
 "config.winecfg" = "Otwórz konfigurację Wine";
