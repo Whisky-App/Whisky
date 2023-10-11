@@ -30,7 +30,7 @@
 "config.metalTrace" = "Metal 追蹤";
 "config.retinaMode" = "Retina 模式";
 "config.metalTrace.info" = "允許你在 Xcode 中獲取 GPU 工作負載";
-"config.esync" = "增強同步 (ESync)";
+"config.msync" = "增強同步 (MSync)";
 "config.controlPanel" = "開啟控制台";
 "config.regedit" = "開啟註冊表編輯器";
 "config.winecfg" = "開啟Wine設定";
