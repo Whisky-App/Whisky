@@ -65,7 +65,7 @@ public struct BottleInfo: Codable {
 public struct BottleWineConfig: Codable {
     var wineVersion: SemanticVersion = SemanticVersion(7, 7, 0)
     var windowsVersion: WinVersion = .win10
-    var esync: Bool = false
+    var msync: Bool = true
 }
 
 public struct BottleMetalConfig: Codable {
@@ -115,12 +115,12 @@ public class BottleSettings {
         }
     }
 
-    public var esync: Bool {
+    public var msync: Bool {
         get {
-            return settings.wineConfig.esync
+            return settings.wineConfig.msync
         }
         set {
-            settings.wineConfig.esync = newValue
+            settings.wineConfig.msync = newValue
         }
     }
 
@@ -260,8 +260,8 @@ public class BottleSettings {
             wineEnv.updateValue("1", forKey: "DXVK_ASYNC")
         }
 
-        if esync {
-            wineEnv.updateValue("1", forKey: "WINEESYNC")
+        if msync {
+            wineEnv.updateValue("1", forKey: "WINEMSYNC")
         }
 
         if metalHud {

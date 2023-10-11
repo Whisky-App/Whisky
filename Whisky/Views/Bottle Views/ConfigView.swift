@@ -91,8 +91,8 @@ struct ConfigView: View {
                             }
                         }
                     }
-                    Toggle(isOn: $bottle.settings.esync) {
-                        Text("config.esync")
+                    Toggle(isOn: $bottle.settings.msync) {
+                        Text("config.msync")
                     }
                     SettingItemView(title: "config.dpi", loadingState: $dpiConfigLoadingState) {
                         HStack {
