@@ -30,7 +30,7 @@
 "config.metalTrace" = "Metal トレース";
 "config.retinaMode" = "Retina モード";
 "config.metalTrace.info" = "Xcode で GPU ワークロードをキャプチャできるようにします";
-"config.esync" = "ESync";
+"config.msync" = "MSync";
 "config.controlPanel" = "コントロール パネルを開く";
 "config.regedit" = "レジストリ エディターを開く";
 "config.winecfg" = "Wine 設定を開く";
