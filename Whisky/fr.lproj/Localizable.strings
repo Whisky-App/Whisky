@@ -30,7 +30,7 @@
 "config.metalTrace" = "Trace de Metal";
 "config.retinaMode" = "Mode Retina";
 "config.metalTrace.info" = "Permet de capturer la charge de travail GPU dans Xcode";
-"config.esync" = "ESync";
+"config.msync" = "MSync";
 "config.controlPanel" = "Ouvrir le Panneau de Configuration";
 "config.regedit" = "Ouvrir l'Éditeur de Registre";
 "config.winecfg" = "Ouvrir la configuration de Wine";
