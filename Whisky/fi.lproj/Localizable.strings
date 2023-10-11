@@ -30,7 +30,7 @@
 "config.metalTrace" = "Metal Jäljitin";
 "config.retinaMode" = "Retina-tila";
 "config.metalTrace.info" = "Mahdollistaa GPU työn nappaamisen Xcodessa";
-"config.esync" = "ESync";
+"config.msync" = "MSync";
 "config.controlPanel" = "Avaa ohjauspaneeli";
 "config.regedit" = "Avaa rekisterin muokkain";
 "config.winecfg" = "Avaa Wine konfiguraatio";
