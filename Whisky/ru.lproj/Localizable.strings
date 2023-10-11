@@ -30,7 +30,7 @@
 "config.metalTrace" = "Трассировка Metal";
 "config.retinaMode" = "Режим Retina";
 "config.metalTrace.info" = "Позволяет отслеживать рабочую нагрузку видеокарты через Xcode";
-"config.esync" = "ESync";
+"config.msync" = "MSync";
 "config.controlPanel" = "Открыть Панель управления";
 "config.regedit" = "Открыть Редактор реестра";
 "config.winecfg" = "Открыть конфигурацию Wine";
