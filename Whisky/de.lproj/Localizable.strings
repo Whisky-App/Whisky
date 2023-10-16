@@ -42,7 +42,7 @@
 "config.dxvkHud.partial" = "Teilweise";
 "config.dxvkHud.fps" = "FPS";
 "config.dxvkHud.off" = "Aus";
-"config.dxvk.async" = "DXVK";
+"config.dxvk.async" = "DXVK Async";
 "config.dpi" = "DPI-Skalierung";
 "config.inspect" = "Konfigurieren...";
 
