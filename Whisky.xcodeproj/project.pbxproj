@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		63FFDE862ADF0C7700178665 /* BottomBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63FFDE852ADF0C7700178665 /* BottomBar.swift */; };
 		6E064B1229DD32A200D9A2D2 /* Sparkle in Frameworks */ = {isa = PBXBuildFile; productRef = 6E064B1129DD32A200D9A2D2 /* Sparkle */; };
 		6E064B1429DD331F00D9A2D2 /* SparkleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E064B1329DD331F00D9A2D2 /* SparkleView.swift */; };
 		6E309A1E2AB3A12300D0167E /* BottleSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E5197D129D7202100CF655E /* BottleSettings.swift */; };
@@ -152,6 +153,7 @@
 		48BBC6452A33926D003D3C00 /* uk */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = uk; path = uk.lproj/Localizable.strings; sourceTree = "<group>"; };
 		515D3F8E2A3446EF00F29E92 /* fi */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fi; path = fi.lproj/Localizable.strings; sourceTree = "<group>"; };
 		624D7CCB2A335A9A00995C9A /* ko */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ko; path = ko.lproj/Localizable.strings; sourceTree = "<group>"; };
+		63FFDE852ADF0C7700178665 /* BottomBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BottomBar.swift; sourceTree = "<group>"; };
 		6E064B1329DD331F00D9A2D2 /* SparkleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SparkleView.swift; sourceTree = "<group>"; };
 		6E0822852A39D73800195094 /* Tar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Tar.swift; sourceTree = "<group>"; };
 		6E0822862A39D73800195094 /* GPTKInstaller.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GPTKInstaller.swift; sourceTree = "<group>"; };
@@ -269,6 +271,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		63FFDE822ADEFADF00178665 /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				63FFDE852ADF0C7700178665 /* BottomBar.swift */,
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
 		6E26058729D927F900DDD788 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
@@ -351,6 +361,7 @@
 		6E5197CD29D71FCD00CF655E /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				63FFDE822ADEFADF00178665 /* Common */,
 				6E40495529CCA19C006E3F1B /* WhiskyApp.swift */,
 				6E40495729CCA19C006E3F1B /* ContentView.swift */,
 				6E064B1329DD331F00D9A2D2 /* SparkleView.swift */,
@@ -709,6 +720,7 @@
 				6E7C07BE2AAE7B0100F6E66B /* ProgramShortcut.swift in Sources */,
 				6E355E5829D78249002D83BE /* ConfigView.swift in Sources */,
 				6EA2D47E29DDAE5E00C84668 /* BottleRenameView.swift in Sources */,
+				63FFDE862ADF0C7700178665 /* BottomBar.swift in Sources */,
 				6E6C0CF62A419A8300356232 /* GPTKDownloadView.swift in Sources */,
 				6E50D98529CDF25B008C39F6 /* BottleCreationView.swift in Sources */,
 				6E6C0CF42A419A7600356232 /* RosettaView.swift in Sources */,
