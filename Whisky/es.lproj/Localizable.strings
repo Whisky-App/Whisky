@@ -8,7 +8,7 @@
 "button.createShortcut" = "Crear atajo";
 "button.run" = "Ejecutar...";
 "button.ok" = "OK";
-"button.rename" = "Rename...";
+"button.rename" = "Renombrar...";
 "button.moveBottle" = "Move...";
 "button.exportBottle" = "Export as Archive...";
 "button.removeAlert" = "Borrar...";
