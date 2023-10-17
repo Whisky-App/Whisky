@@ -48,37 +48,37 @@ struct ConfigView: View {
     }
 
     var body: some View {
-        VStack {
-            Form {
-                Section("config.title.wine", isExpanded: $wineSectionExpanded) {
-                    SettingItemView(title: "config.winVersion", loadingState: $winVersionLoadingState) {
-                        Picker("config.winVersion", selection: $windowsVersion) {
-                            ForEach(WinVersion.allCases.reversed(), id: \.self) {
-                                Text($0.pretty())
-                            }
+        Form {
+            Section("config.title.wine", isExpanded: $wineSectionExpanded) {
+                SettingItemView(title: "config.winVersion", loadingState: $winVersionLoadingState) {
+                    Picker("config.winVersion", selection: $windowsVersion) {
+                        ForEach(WinVersion.allCases.reversed(), id: \.self) {
+                            Text($0.pretty())
                         }
                     }
-                    SettingItemView(title: "config.buildVersion", loadingState: $buildVersionLoadingState) {
-                        TextField("config.buildVersion", text: $displayBuildVersion)
-                            .textFieldStyle(PlainTextFieldStyle())
-                            .onSubmit {
-                                buildVersionLoadingState = .modifying
-                                Task(priority: .userInitiated) {
-                                    if let version = Int(displayBuildVersion) {
-                                        do {
-                                            try await Wine.changeBuildVersion(bottle: bottle, version: version)
-                                        } catch {
-                                            print("Failed to change build version")
-                                        }
-                                    } else {
-                                        displayBuildVersion = buildVersion
+                }
+                SettingItemView(title: "config.buildVersion", loadingState: $buildVersionLoadingState) {
+                    TextField("config.buildVersion", text: $displayBuildVersion)
+                        .multilineTextAlignment(.trailing)
+                        .textFieldStyle(PlainTextFieldStyle())
+                        .onSubmit {
+                            buildVersionLoadingState = .modifying
+                            Task(priority: .userInitiated) {
+                                if let version = Int(displayBuildVersion) {
+                                    do {
+                                        try await Wine.changeBuildVersion(bottle: bottle, version: version)
+                                    } catch {
+                                        print("Failed to change build version")
                                     }
-                                    buildVersionLoadingState = .success
+                                } else {
+                                    displayBuildVersion = buildVersion
                                 }
+                                buildVersionLoadingState = .success
                             }
-                    }
-                    SettingItemView(title: "config.retinaMode", loadingState: $retinaModeLoadingState) {
-                        Toggle("config.retinaMode", isOn: $retinaMode)
+                        }
+                }
+                SettingItemView(title: "config.retinaMode", loadingState: $retinaModeLoadingState) {
+                    Toggle("config.retinaMode", isOn: $retinaMode)
                         .onChange(of: retinaMode) {
                             Task(priority: .userInitiated) {
                                 retinaModeLoadingState = .modifying
@@ -90,54 +90,54 @@ struct ConfigView: View {
                                 retinaModeLoadingState = .success
                             }
                         }
-                    }
-                    Toggle(isOn: $bottle.settings.msync) {
-                        Text("config.msync")
-                    }
-                    SettingItemView(title: "config.dpi", loadingState: $dpiConfigLoadingState) {
-                        HStack {
-                            Text("config.dpi")
-                            Spacer()
-                            Button("config.inspect") {
-                                dpiSheetPresented = true
-                            }
-                            .sheet(isPresented: $dpiSheetPresented) {
-                                DPIConfigSheetView(
-                                    dpiConfig: $dpiConfig,
-                                    isRetinaMode: $retinaMode,
-                                    presented: $dpiSheetPresented
-                                )
-                            }
-                        }
-                    }
                 }
-                Section("config.title.dxvk", isExpanded: $dxvkSectionExpanded) {
-                    Toggle(isOn: $bottle.settings.dxvk) {
-                        Text("config.dxvk")
-                    }
-                    Toggle(isOn: $bottle.settings.dxvkAsync) {
-                        Text("config.dxvk.async")
-                    }
-                    .disabled(!bottle.settings.dxvk)
-                    Picker("config.dxvkHud", selection: $bottle.settings.dxvkHud) {
-                        Text("config.dxvkHud.full").tag(DXVKHUD.full)
-                        Text("config.dxvkHud.partial").tag(DXVKHUD.partial)
-                        Text("config.dxvkHud.fps").tag(DXVKHUD.fps)
-                        Text("config.dxvkHud.off").tag(DXVKHUD.off)
-                    }
-                    .disabled(!bottle.settings.dxvk)
+                Toggle(isOn: $bottle.settings.msync) {
+                    Text("config.msync")
                 }
-                Section("config.title.metal", isExpanded: $metalSectionExpanded) {
-                    Toggle(isOn: $bottle.settings.metalHud) {
-                        Text("config.metalHud")
+                SettingItemView(title: "config.dpi", loadingState: $dpiConfigLoadingState) {
+                    Button("config.inspect") {
+                        dpiSheetPresented = true
                     }
-                    Toggle(isOn: $bottle.settings.metalTrace) {
-                        Text("config.metalTrace")
-                        Text("config.metalTrace.info")
+                    .sheet(isPresented: $dpiSheetPresented) {
+                        DPIConfigSheetView(
+                            dpiConfig: $dpiConfig,
+                            isRetinaMode: $retinaMode,
+                            presented: $dpiSheetPresented
+                        )
                     }
                 }
             }
-            .formStyle(.grouped)
+            Section("config.title.dxvk", isExpanded: $dxvkSectionExpanded) {
+                Toggle(isOn: $bottle.settings.dxvk) {
+                    Text("config.dxvk")
+                }
+                Toggle(isOn: $bottle.settings.dxvkAsync) {
+                    Text("config.dxvk.async")
+                }
+                .disabled(!bottle.settings.dxvk)
+                Picker("config.dxvkHud", selection: $bottle.settings.dxvkHud) {
+                    Text("config.dxvkHud.full").tag(DXVKHUD.full)
+                    Text("config.dxvkHud.partial").tag(DXVKHUD.partial)
+                    Text("config.dxvkHud.fps").tag(DXVKHUD.fps)
+                    Text("config.dxvkHud.off").tag(DXVKHUD.off)
+                }
+                .disabled(!bottle.settings.dxvk)
+            }
+            Section("config.title.metal", isExpanded: $metalSectionExpanded) {
+                Toggle(isOn: $bottle.settings.metalHud) {
+                    Text("config.metalHud")
+                }
+                Toggle(isOn: $bottle.settings.metalTrace) {
+                    Text("config.metalTrace")
+                    Text("config.metalTrace.info")
+                }
+            }
+        }
+        .formStyle(.grouped)
+        .animation(.default, value: wineSectionExpanded)
+        .animation(.default, value: dxvkSectionExpanded)
+        .animation(.default, value: metalSectionExpanded)
+        .bottomBar {
             HStack {
                 Spacer()
                 Button("config.controlPanel") {
@@ -319,31 +319,42 @@ struct SettingItemView<V: View>: View {
     @Binding var loadingState: LoadingState
     @ViewBuilder var content: () -> V
 
+    @Namespace private var viewId
+    @Namespace private var progressViewId
+
     var body: some View {
-        if loadingState == .failed {
-            HStack {
-                Text(String(localized: title))
-                Spacer()
-                Text("config.notAvailable").opacity(0.5)
-            }
-        } else if loadingState == .loading {
-            HStack {
-                Text(String(localized: title))
-                Spacer()
-                ProgressView()
-                    .progressViewStyle(.circular)
-                    .controlSize(.small)
-            }
-        } else {
-            HStack(spacing: 16) {
-                content()
-                    .disabled(loadingState == .modifying)
-                if loadingState == .modifying {
+        ZStack {
+            if loadingState == .failed {
+                HStack {
+                    Text(String(localized: title))
+                    Spacer()
+                    Text("config.notAvailable").opacity(0.5)
+                }
+            } else if loadingState == .loading {
+                HStack {
+                    Text(String(localized: title))
+                    Spacer()
                     ProgressView()
                         .progressViewStyle(.circular)
                         .controlSize(.small)
+                        .matchedGeometryEffect(id: progressViewId, in: viewId)
+                }
+            } else {
+                HStack(spacing: 16) {
+                    Text(String(localized: title))
+                    Spacer()
+                    if loadingState == .modifying {
+                        ProgressView()
+                            .progressViewStyle(.circular)
+                            .controlSize(.small)
+                            .matchedGeometryEffect(id: progressViewId, in: viewId)
+                    }
+                    content()
+                        .labelsHidden()
+                        .disabled(loadingState == .modifying)
                 }
             }
         }
+        .animation(.default, value: loadingState)
     }
 }

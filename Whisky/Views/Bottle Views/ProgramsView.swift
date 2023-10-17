@@ -63,6 +63,9 @@ struct ProgramsView: View {
             }
         }
         .formStyle(.grouped)
+        .animation(.default, value: programs)
+        .animation(.default, value: isExpanded)
+        .animation(.default, value: isBlocklistExpanded)
         .navigationTitle("tab.programs")
         .onAppear {
             programs = bottle.updateInstalledPrograms()
