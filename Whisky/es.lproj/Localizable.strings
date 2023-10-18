@@ -1,16 +1,16 @@
-"tab.config" = "Bottle Configuration";
-"tab.programs" = "Installed Programs";
+"tab.config" = "Configuración de la botella";
+"tab.programs" = "Programas Instalados";
 
 "main.createFirst" = "Crea tu primera botella para comenzar";
 
-"button.cDrive" = "Open C: Drive";
+"button.cDrive" = "Abrir Unidad C:";
 "button.showInFinder" = "Mostrar en Finder";
 "button.createShortcut" = "Crear atajo";
 "button.run" = "Ejecutar...";
 "button.ok" = "OK";
 "button.rename" = "Renombrar...";
-"button.moveBottle" = "Move...";
-"button.exportBottle" = "Export as Archive...";
+"button.moveBottle" = "Mover...";
+"button.exportBottle" = "Exportar como archivo...";
 "button.removeAlert" = "Borrar...";
 "button.createBottle" = "Crear Botella";
 "button.refresh" = "Actualizar";
@@ -51,13 +51,13 @@
 "configDpi.previewText" = "El zorro rápido y marrón saltó sobre el perro perezoso.";
 "configDpi.dpi" = "DPI";
 
-"program.title" = "All Programs";
-"program.blocklist" = "Blocklist";
+"program.title" = "Todos los programas";
+"program.blocklist" = "Lista de bloqueo";
 "program.env" = "Variables de Entorno";
 "program.args" = "Argumentos";
 "program.config" = "Configuración";
-"program.add.blocklist" = "Add to Blocklist";
-"program.remove.blocklist" = "Remove from Blocklist";
+"program.add.blocklist" = "Añadir a la lista de bloqueo";
+"program.remove.blocklist" = "Eliminar de la lista de bloqueo";
 
 "alert.message" = "¡Error al abrir el programa!";
 "alert.info" = "No se pudo abrir";
@@ -70,7 +70,7 @@
 "create.cancel" = "Cancelar";
 "create.create" = "Crear";
 
-"rename.bottle.title" = "Rename bottle";
+"rename.bottle.title" = "Renombrar botella";
 "rename.pin.title" = "Rename pin";
 "rename.name" = "Nuevo nombre:";
 "rename.rename" = "Renombrar";
