@@ -113,6 +113,14 @@ extension Bottle {
         // Apply blocklist
         programs = programs.filter { !settings.blocklist.contains($0.url) }
 
+        // Apply pinned list as programs, if not already included
+        settings.pins.forEach { pin in
+            let program = Program(name: pin.name, url: pin.url, bottle: self)
+            if !programs.contains(program) {
+                programs.append(program)
+            }
+        }
+
         programs.sort { $0.name.lowercased() < $1.name.lowercased() }
         return programs
     }

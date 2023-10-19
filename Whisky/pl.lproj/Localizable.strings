@@ -21,6 +21,15 @@
 "button.removeAlert.cancel" = "Anuluj";
 
 "pin.unpin" = "Odepnij program";
+"pin.toolbar" = "Pin Program";
+"pin.createFirst" = "Pin your first program to get started";
+"pin.create.title" = "Pin Program";
+"pin.create.name" = "Pin name:";
+"pin.create.path" = "Program path:";
+"pin.create" = "Pin";
+"pin.error.title" = "Error Pinning Program";
+"pin.error.duplicate" = "This program is already pinned!";
+"pin.error.create" = "This program could not be pinned.";
 
 "config.title.wine" = "Wine";
 "config.winVersion" = "Wersja Windows";

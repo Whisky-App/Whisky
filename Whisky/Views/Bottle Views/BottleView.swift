@@ -34,6 +34,7 @@ struct BottleView: View {
     // This just provides a way to trigger a refresh
     @State var loadStartMenu: Bool = false
     @State var showWinetricksSheet: Bool = false
+    @State var showPinCreation: Bool = false
 
     private let gridLayout = [GridItem(.adaptive(minimum: 100, maximum: .infinity))]
 
@@ -49,6 +50,22 @@ struct BottleView: View {
                                                   loadStartMenu: $loadStartMenu,
                                                   path: $path)
                             }
+                        }
+                        .padding()
+                    } else {
+                        VStack {
+                            Text("pin.createFirst")
+                            Button {
+                                showPinCreation.toggle()
+                            } label: {
+                                HStack {
+                                    Image(systemName: "pin")
+                                    Text("pin.toolbar")
+                                }
+                                .padding(6)
+                            }
+                            .buttonStyle(.borderedProminent)
+                            .tint(.accentColor)
                         }
                         .padding()
                     }
@@ -133,6 +150,20 @@ struct BottleView: View {
             }
             .disabled(!bottle.isActive)
             .navigationTitle(bottle.settings.name)
+            .toolbar {
+                ToolbarItem(placement: .primaryAction) {
+                    Button {
+                        showPinCreation.toggle()
+                    } label: {
+                        Image(systemName: "pin")
+                            .help("pin.toolbar")
+                    }
+                }
+            }
+            .sheet(isPresented: $showPinCreation) {
+                PinCreationView(bottle: bottle,
+                                loadStartMenu: $loadStartMenu)
+            }
             .sheet(isPresented: $showWinetricksSheet) {
                 WinetricksView(bottle: bottle)
             }
@@ -320,5 +351,120 @@ struct PinnedProgramView: View {
                 await program.run()
             }
         }
+    }
+}
+
+struct PinCreationView: View {
+    var bottle: Bottle
+    @State var newPinName: String = ""
+    @State var newPinURL: URL = BottleData.defaultBottleDir
+    @State var pinPath: String = ""
+    @State var nameValid: Bool = false
+    @State var didError: Bool = false
+    @State var errorMessage: String = ""
+    @Binding var loadStartMenu: Bool
+    @Environment(\.dismiss) var dismiss
+
+    var body: some View {
+        VStack {
+            HStack {
+                Text("pin.create.title")
+                    .bold()
+                Spacer()
+            }
+            Divider()
+            HStack(alignment: .top) {
+                Text("pin.create.name")
+                Spacer()
+                TextField(String(), text: $newPinName)
+                    .frame(width: 180)
+                    .textFieldStyle(.roundedBorder)
+                    .onChange(of: newPinName) { _, name in
+                        nameValid = !name.isEmpty
+                    }
+            }
+            HStack {
+                Text("pin.create.path")
+                Spacer()
+                Button("create.browse") {
+                    let panel = NSOpenPanel()
+                    panel.canChooseFiles = true
+                    panel.allowedContentTypes = [UTType.exe,
+                                                 UTType(exportedAs: "com.microsoft.msi-installer"),
+                                                 UTType(exportedAs: "com.microsoft.bat")]
+                    panel.directoryURL = bottle.url.appending(path: "drive_c")
+                    panel.canChooseDirectories = false
+                    panel.allowsMultipleSelection = false
+                    panel.canCreateDirectories = false
+                    panel.begin { result in
+                        if result == .OK {
+                            if let url = panel.urls.first {
+                                newPinURL = url
+                            }
+                        }
+                    }
+                }
+            }
+            HStack {
+                Text(pinPath)
+                    .truncationMode(.middle)
+                    .lineLimit(2)
+                    .help(pinPath)
+            }
+            Spacer()
+            HStack {
+                Spacer()
+                Button("create.cancel") {
+                    dismiss()
+                }
+                .keyboardShortcut(.cancelAction)
+                Button("pin.create") {
+                    let newlyCreatedPin = Program(name: newPinName, url: newPinURL, bottle: bottle)
+                    let existingProgram = bottle.programs.first(where: { program in
+                        program.url == newlyCreatedPin.url
+                    })
+                    // Ensure this URL isn't already pinned
+                    errorMessage = String(localized: "pin.error.duplicate")
+                    didError = existingProgram != nil && existingProgram?.pinned ?? false
+                    if !didError {
+                        // Only continue if a pinned duplicate doesn't exist
+                        errorMessage = String(localized: "pin.error.create")
+                        // If this is a new program, add it to the array
+                        if existingProgram != nil {
+                            bottle.programs.append(newlyCreatedPin)
+                        }
+                        didError = !newlyCreatedPin.togglePinned()
+                        if !didError {
+                            loadStartMenu.toggle()
+                            dismiss()
+                        }
+                    }
+                }
+                .keyboardShortcut(.defaultAction)
+                .disabled(!nameValid)
+                .alert(String(localized: "pin.error.title"),
+                    isPresented: $didError
+                ) {
+                    Button("button.ok") {
+                    }
+                } message: {
+                    Text(errorMessage)
+                }
+            }
+        }
+        .padding()
+        .onChange(of: newPinURL) {
+            pinPath = newPinURL.prettyPath()
+            if newPinName.isEmpty {
+                newPinName = newPinURL.lastPathComponent
+                                        .replacingOccurrences(of: ".exe", with: "")
+            }
+        }
+        .onAppear {
+            pinPath = bottle.url
+                .appending(path: "drive_c")
+                .prettyPath()
+        }
+        .frame(width: 400, height: 180)
     }
 }
