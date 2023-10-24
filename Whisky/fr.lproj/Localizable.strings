@@ -3,14 +3,14 @@
 
 "main.createFirst" = "Créez votre première bouteille pour commencer";
 
-"button.cDrive" = "Ouvrir C: Lecteur";
+"button.cDrive" = "Ouvrir le Lecteur C:";
 "button.showInFinder" = "Afficher dans Finder";
 "button.createShortcut" = "Create Shortcut";
 "button.run" = "Exécuter...";
 "button.ok" = "OK";
 "button.rename" = "Renommer...";
-"button.moveBottle" = "Transférer...";
-"button.exportBottle" = "Exporter Archive...";
+"button.moveBottle" = "Déplacer...";
+"button.exportBottle" = "Exporter en tant qu'Archive...";
 "button.removeAlert" = "Supprimer...";
 "button.createBottle" = "Créer une bouteille";
 "button.refresh" = "Rafraîchir";
@@ -55,7 +55,7 @@
 "program.blocklist" = "Blocklist";
 "program.env" = "Variables d'environnement";
 "program.args" = "Paramètres";
-"program.config" = "Config";
+"program.config" = "Configuration";
 "program.add.blocklist" = "Add to Blocklist";
 "program.remove.blocklist" = "Remove from Blocklist";
 
@@ -79,7 +79,7 @@
 "kill.bottles" = "Fermer Touts les Bouteilles";
 "open.logs" = "Ouvrir le Dossier des Logs";
 "open.bottle" = "Importer une Bouteille";
-"open.setup" = "Configure...";
+"open.setup" = "Configurer...";
 "install.cli" = "Installer Whisky CLI...";
 "wine.clearShaderCaches" = "Vider les Caches du Shader";
 
@@ -88,7 +88,7 @@
 "showAlertOnFirstLaunch.button.moveToApplications" = "Déplacer vers Applications";
 "showAlertOnFirstLaunch.button.dontMove" = "Ne pas déplacer";
 
-"setup.welcome" = "Bienvenue à Whisky";
+"setup.welcome" = "Bienvenue sur Whisky";
 "setup.welcome.subtitle" = "Mettons-nous en place. Cela ne prendra pas une minute.";
 
 "setup.title" = "Configuration des Dépendances";
@@ -103,12 +103,12 @@
 "setup.rosetta.subtitle" = "Rosetta permet au code x86, comme Wine, de s'exécuter sur votre Mac.";
 
 "setup.gptk.download" = "Téléchargement de GPTK";
-"setup.gptk.download.subtitle" = "La vitesse du téléchargement varie selon votre connexion Internet.";
+"setup.gptk.download.subtitle" = "La vitesse de téléchargement peut varier selon votre connexion Internet.";
 "setup.gptk.progress" = "%@ sur %@";
 "setup.gptk.eta" = "- %@ restantes";
 
 "setup.gptk.install" = "Installation de GPTK";
-"setup.gptk.install.subtitle" = "Presque là. Veuillez patienter s'il vous plaît.";
+"setup.gptk.install.subtitle" = "Vous y êtes presque. Veuillez patienter s'il vous plaît.";
 
 "setup.quit" = "Quitter";
 "setup.done" = "Terminé";
