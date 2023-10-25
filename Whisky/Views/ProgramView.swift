@@ -28,29 +28,28 @@ struct ProgramView: View {
     @State var locale: Locales = .auto
 
     var body: some View {
-        VStack {
-            Form {
-                Section("program.config") {
-                    Picker("locale.title", selection: $locale) {
-                        ForEach(Locales.allCases, id: \.self) {
-                            Text($0.pretty())
-                        }
+        Form {
+            Section("program.config") {
+                Picker("locale.title", selection: $locale) {
+                    ForEach(Locales.allCases, id: \.self) {
+                        Text($0.pretty())
                     }
-                    VStack {
-                        HStack {
-                            Text("program.args")
-                            Spacer()
-                        }
-                        TextField(String(), text: $program.settings.arguments)
-                            .textFieldStyle(.roundedBorder)
-                            .font(.system(.body, design: .monospaced))
-                            .labelsHidden()
-                    }
-                    EnvironmentVarEditor(environment: $environment)
                 }
+                VStack {
+                    HStack {
+                        Text("program.args")
+                        Spacer()
+                    }
+                    TextField(String(), text: $program.settings.arguments)
+                        .textFieldStyle(.roundedBorder)
+                        .font(.system(.body, design: .monospaced))
+                        .labelsHidden()
+                }
+                EnvironmentVarEditor(environment: $environment)
             }
-            .formStyle(.grouped)
-            Spacer()
+        }
+        .formStyle(.grouped)
+        .bottomBar {
             HStack {
                 Spacer()
                 Button("button.showInFinder") {

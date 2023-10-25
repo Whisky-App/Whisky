@@ -39,48 +39,47 @@ struct BottleView: View {
 
     var body: some View {
         NavigationStack(path: $path) {
-            VStack {
-                ScrollView {
-                    if pins.count > 0 {
-                        LazyVGrid(columns: gridLayout, alignment: .center) {
-                            ForEach(pins, id: \.url) { pin in
-                                PinnedProgramView(bottle: bottle,
-                                                  pin: pin,
-                                                  loadStartMenu: $loadStartMenu,
-                                                  path: $path)
-                            }
-                        }
-                        .padding()
-                    }
-                    Form {
-                        NavigationLink(value: BottleStage.programs) {
-                            HStack {
-                                Image(systemName: "list.bullet")
-                                    .resizable()
-                                    .scaledToFit()
-                                    .frame(width: 14, height: 14, alignment: .center)
-                                Text("tab.programs")
-                            }
-                        }
-                        NavigationLink(value: BottleStage.config) {
-                            HStack {
-                                Image(systemName: "gearshape")
-                                    .resizable()
-                                    .scaledToFit()
-                                    .frame(width: 14, height: 14, alignment: .center)
-                                Text("tab.config")
-                            }
+            ScrollView {
+                if pins.count > 0 {
+                    LazyVGrid(columns: gridLayout, alignment: .center) {
+                        ForEach(pins, id: \.url) { pin in
+                            PinnedProgramView(bottle: bottle,
+                                              pin: pin,
+                                              loadStartMenu: $loadStartMenu,
+                                              path: $path)
                         }
                     }
-                    .formStyle(.grouped)
-                    .onAppear {
-                        updateStartMenu()
+                    .padding()
+                }
+                Form {
+                    NavigationLink(value: BottleStage.programs) {
+                        HStack {
+                            Image(systemName: "list.bullet")
+                                .resizable()
+                                .scaledToFit()
+                                .frame(width: 14, height: 14, alignment: .center)
+                            Text("tab.programs")
+                        }
                     }
-                    .onChange(of: loadStartMenu) {
-                        updateStartMenu()
+                    NavigationLink(value: BottleStage.config) {
+                        HStack {
+                            Image(systemName: "gearshape")
+                                .resizable()
+                                .scaledToFit()
+                                .frame(width: 14, height: 14, alignment: .center)
+                            Text("tab.config")
+                        }
                     }
                 }
-                Spacer()
+                .formStyle(.grouped)
+                .onAppear {
+                    updateStartMenu()
+                }
+                .onChange(of: loadStartMenu) {
+                    updateStartMenu()
+                }
+            }
+            .bottomBar {
                 HStack {
                     Spacer()
                     Button("button.cDrive") {

@@ -32,6 +32,7 @@ struct ContentView: View {
     @State var newlyCreatedBottleURL: URL?
     @State var openedFileURL: URL?
     @State var refresh: Bool = false
+    @State private var refreshAnimation: Angle = .degrees(0)
 
     var body: some View {
         NavigationSplitView {
@@ -108,9 +109,15 @@ struct ContentView: View {
                 Button {
                     bottleVM.loadBottles()
                     refresh.toggle()
+                    withAnimation(.default) {
+                        refreshAnimation = .degrees(360)
+                    } completion: {
+                        refreshAnimation = .degrees(0)
+                    }
                 } label: {
                     Image(systemName: "arrow.triangle.2.circlepath")
                         .help("button.refresh")
+                        .rotationEffect(refreshAnimation)
                 }
             }
         }
