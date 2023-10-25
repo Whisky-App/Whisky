@@ -65,8 +65,7 @@ struct GPTKDownloadView: View {
         .frame(width: 400, height: 200)
         .onAppear {
             Task {
-                if let downloadInfo = await GPTKDownloader.getLatestGPTKURL(),
-                   let url = downloadInfo.directURL {
+                if let url: URL = URL(string: "https://data.getwhisky.app/Libraries.zip") {
                     downloadTask = URLSession.shared.downloadTask(with: url) { url, _, _ in
                         if let url = url {
                             tarLocation = url
@@ -81,16 +80,14 @@ struct GPTKDownloadView: View {
                                 if completedBytes > 0 {
                                     downloadSpeed = Double(completedBytes) / elapsedTime
                                 }
-                                fractionProgress = Double(task.countOfBytesReceived) / Double(totalBytes)
+                                totalBytes = task.countOfBytesExpectedToReceive
                                 completedBytes = task.countOfBytesReceived
+                                fractionProgress = Double(completedBytes) / Double(totalBytes)
                             }
                         }
                     }
                     startTime = Date()
                     downloadTask?.resume()
-                    await MainActor.run {
-                        totalBytes = Int64(downloadInfo.totalByteCount)
-                    }
                 }
             }
         }

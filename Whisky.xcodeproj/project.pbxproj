@@ -49,7 +49,6 @@
 		6EDF9AB62A9A6D8C006CAA7E /* BottleData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EDF9AB52A9A6D8C006CAA7E /* BottleData.swift */; };
 		6EDF9AB72A9A6E50006CAA7E /* WhiskyKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6EDF9AA92A9A6CA9006CAA7E /* WhiskyKit.framework */; };
 		6EDF9ABD2A9A6E83006CAA7E /* SemanticVersion in Frameworks */ = {isa = PBXBuildFile; productRef = 6EDF9ABC2A9A6E83006CAA7E /* SemanticVersion */; };
-		6EDF9ABE2A9A6F3D006CAA7E /* GPTKDownloader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EF557952A40B8D1001A4F09 /* GPTKDownloader.swift */; };
 		6EDF9ABF2A9A6F3D006CAA7E /* GPTKInstaller.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E0822862A39D73800195094 /* GPTKInstaller.swift */; };
 		6EDF9AC32A9A6F46006CAA7E /* Tar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E0822852A39D73800195094 /* Tar.swift */; };
 		6EF557982A410599001A4F09 /* SetupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EF557972A410599001A4F09 /* SetupView.swift */; };
@@ -202,7 +201,6 @@
 		6EA2D48429DF130F00C84668 /* ProgramSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgramSettings.swift; sourceTree = "<group>"; };
 		6EDF9AA92A9A6CA9006CAA7E /* WhiskyKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = WhiskyKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		6EDF9AB52A9A6D8C006CAA7E /* BottleData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottleData.swift; sourceTree = "<group>"; };
-		6EF557952A40B8D1001A4F09 /* GPTKDownloader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GPTKDownloader.swift; sourceTree = "<group>"; };
 		6EF557972A410599001A4F09 /* SetupView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetupView.swift; sourceTree = "<group>"; };
 		6EFDF6432AAD65F500EF622F /* BitmapInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BitmapInfo.swift; sourceTree = "<group>"; };
 		6EFDF64A2AAE2DA800EF622F /* WhiskyThumbnail.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = WhiskyThumbnail.appex; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -434,7 +432,6 @@
 		6EDF9AC42A9A6FB5006CAA7E /* GPTK */ = {
 			isa = PBXGroup;
 			children = (
-				6EF557952A40B8D1001A4F09 /* GPTKDownloader.swift */,
 				6E0822862A39D73800195094 /* GPTKInstaller.swift */,
 			);
 			path = GPTK;
@@ -732,7 +729,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				6E309A1E2AB3A12300D0167E /* BottleSettings.swift in Sources */,
-				6EDF9ABE2A9A6F3D006CAA7E /* GPTKDownloader.swift in Sources */,
 				6EFDF6632AAE2E1700EF622F /* DataExtensions.swift in Sources */,
 				6EDF9ABF2A9A6F3D006CAA7E /* GPTKInstaller.swift in Sources */,
 				6E309A232AB3A80400D0167E /* ProgramSettings.swift in Sources */,
