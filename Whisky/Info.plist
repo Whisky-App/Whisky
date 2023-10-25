@@ -54,7 +54,7 @@
 		</dict>
 	</array>
 	<key>SUFeedURL</key>
-	<string>https://raw.githubusercontent.com/IsaacMarovitz/Whisky/sparkle/appcast.xml</string>
+	<string>https://data.getwhisky.app/appcast.xml</string>
 	<key>SUPublicEDKey</key>
 	<string>tnZFAvPUfCpM7Tr7Sx5gKRm6BUQQ6htJQeOMP44evms=</string>
 	<key>UTExportedTypeDeclarations</key>
