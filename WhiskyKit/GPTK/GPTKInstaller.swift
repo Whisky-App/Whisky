@@ -71,9 +71,9 @@ public class GPTKInstaller {
 
     public static func shouldUpdateGPTK() async -> (Bool, SemanticVersion) {
         if let localVersion = gptkVersion() {
-            let githubURL = "https://raw.githubusercontent.com/Whisky-App/WhiskyBuilder/main/GPTKVersion.plist"
+            let versionPlistURL = "https://data.getwhisky.app/GPTKVersion.plist"
 
-            if let remoteUrl = URL(string: githubURL) {
+            if let remoteUrl = URL(string: versionPlistURL) {
                 return await withCheckedContinuation { continuation in
                     URLSession.shared.dataTask(with: URLRequest(url: remoteUrl)) { data, _, error in
                         do {
