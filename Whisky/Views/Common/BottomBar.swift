@@ -44,7 +44,7 @@ private struct BottomBarViewModifier<BarContent>: ViewModifier where BarContent:
 struct BottomBar_Previews: PreviewProvider {
     static var previews: some View {
         Form {
-            Text("Hello World")
+            Text(String("Hello World"))
         }
         .formStyle(.grouped)
         .bottomBar {
@@ -52,11 +52,11 @@ struct BottomBar_Previews: PreviewProvider {
                 Spacer()
                 Button {
                 } label: {
-                    Text("Button 1")
+                    Text(String("Button 1"))
                 }
                 Button {
                 } label: {
-                    Text("Button 2")
+                    Text(String("Button 2"))
                 }
             }
             .padding()

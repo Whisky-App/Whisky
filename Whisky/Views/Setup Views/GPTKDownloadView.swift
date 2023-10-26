@@ -46,7 +46,7 @@ struct GPTKDownloadView: View {
                             Text(String(format: String(localized: "setup.gptk.progress"),
                                         formatBytes(bytes: completedBytes),
                                         formatBytes(bytes: totalBytes)))
-                            + Text(" ")
+                            + Text(String(" "))
                             + (shouldShowEstimate() ?
                                Text(String(format: String(localized: "setup.gptk.eta"),
                                            formatRemainingTime(remainingBytes: totalBytes - completedBytes)))
