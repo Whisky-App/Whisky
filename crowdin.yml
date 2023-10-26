@@ -1,3 +1,2 @@
 files:
-  - source: /Whisky/en.lproj/Localizable.strings
-    translation: /Whisky/%osx_code%/Localizable.strings
+  - source: /Whisky/Localizable.xcstrings
