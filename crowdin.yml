@@ -1,2 +1,4 @@
 files:
   - source: /Whisky/Localizable.xcstrings
+bundles:
+  - 2
