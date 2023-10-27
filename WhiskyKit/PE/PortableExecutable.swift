@@ -277,8 +277,8 @@ public struct PEFile: Hashable {
     }
     private let handle: FileHandle
 
-    public init(handle: FileHandle) throws {
-        self.handle = handle
+    public init(url: URL) throws {
+        self.handle = try FileHandle(forReadingFrom: url)
         // Verify it is a PE file by checking for the PE header
         let offsetToPEHeader = handle.extract(UInt32.self, offset: 0x3C) ?? 0
         let peHeader = handle.extract(UInt32.self, offset: Int(offsetToPEHeader))
