@@ -25,12 +25,12 @@ public struct ResourceDirectoryEntry: Hashable {
     public let offsetToSubdirectory: UInt32
     public let dataIsDirectory: Bool
 
-    init(data: Data, offset: Int) {
+    init(handle: FileHandle, offset: Int) {
         var offset = offset
         // Can be name or ID
-        self.id = data.extract(UInt32.self, offset: offset) ?? 0
+        self.id = handle.extract(UInt32.self, offset: offset) ?? 0
         offset += 4
-        self.offsetToData = data.extract(UInt32.self, offset: offset) ?? 0
+        self.offsetToData = handle.extract(UInt32.self, offset: offset) ?? 0
         offset += 4
 
         self.dataIsDirectory = (offsetToData & 0x80000000) != 0
@@ -45,29 +45,35 @@ public struct ResourceDataEntry: Hashable {
     public let reserved: UInt32
     public let icon: NSImage
 
-    init(data: Data, offset: Int, sectionTable: SectionTable) {
+    init(handle: FileHandle, offset: Int, sectionTable: SectionTable) {
         var offset = offset
         var icon = NSImage()
-        self.dataRVA = data.extract(UInt32.self, offset: offset) ?? 0
+        self.dataRVA = handle.extract(UInt32.self, offset: offset) ?? 0
         offset += 4
-        self.size = data.extract(UInt32.self, offset: offset) ?? 0
+        self.size = handle.extract(UInt32.self, offset: offset) ?? 0
         offset += 4
-        self.codePage = data.extract(UInt32.self, offset: offset) ?? 0
+        self.codePage = handle.extract(UInt32.self, offset: offset) ?? 0
         offset += 4
-        self.reserved = data.extract(UInt32.self, offset: offset) ?? 0
+        self.reserved = handle.extract(UInt32.self, offset: offset) ?? 0
         offset += 4
 
         if let offsetToData = ResourceDataEntry.resolveRVA(rva: dataRVA, sectionTable: sectionTable) {
-            let bitmapInfo = BitmapInfoHeader(data: data, offset: Int(offsetToData))
+            let bitmapInfo = BitmapInfoHeader(handle: handle, offset: Int(offsetToData))
             if bitmapInfo.size != 40 {
-                let iconData = data.subdata(in: Int(offsetToData)..<Int(offsetToData + size))
-                if let rep = NSBitmapImageRep(data: iconData) {
-                    icon = NSImage(size: rep.size)
-                    icon.addRepresentation(rep)
+                do {
+                    try handle.seek(toOffset: UInt64(offsetToData))
+                    if let iconData = try handle.read(upToCount: Int(size)) {
+                        if let rep = NSBitmapImageRep(data: iconData) {
+                            icon = NSImage(size: rep.size)
+                            icon.addRepresentation(rep)
+                        }
+                    }
+                } catch {
+                    print("Failed to get icon")
                 }
             } else {
                 if bitmapInfo.colorFormat != .unknown {
-                    icon = bitmapInfo.renderBitmap(data: data,
+                    icon = bitmapInfo.renderBitmap(handle: handle,
                                                    offset: Int(offsetToData + bitmapInfo.size))
                 }
             }
@@ -101,24 +107,24 @@ public struct ResourceDirectoryTable: Hashable {
     public let subtables: [ResourceDirectoryTable]
     public let entries: [ResourceDataEntry]
 
-    init(data: Data,
+    init(handle: FileHandle,
          address: Int,
          offset: Int,
          sectionTable: SectionTable,
          entries: inout [ResourceDataEntry],
          depth: Int = 0) {
         var offset = offset
-        self.characteristics = data.extract(UInt32.self, offset: offset) ?? 0
+        self.characteristics = handle.extract(UInt32.self, offset: offset) ?? 0
         offset += 4
-        self.timeDateStamp = data.extract(UInt32.self, offset: offset) ?? 0
+        self.timeDateStamp = handle.extract(UInt32.self, offset: offset) ?? 0
         offset += 4
-        self.majorVersion = data.extract(UInt16.self, offset: offset) ?? 0
+        self.majorVersion = handle.extract(UInt16.self, offset: offset) ?? 0
         offset += 2
-        self.minorVersion = data.extract(UInt16.self, offset: offset) ?? 0
+        self.minorVersion = handle.extract(UInt16.self, offset: offset) ?? 0
         offset += 2
-        self.numberOfNamedEntries = data.extract(UInt16.self, offset: offset) ?? 0
+        self.numberOfNamedEntries = handle.extract(UInt16.self, offset: offset) ?? 0
         offset += 2
-        self.numberOfIdEntries = data.extract(UInt16.self, offset: offset) ?? 0
+        self.numberOfIdEntries = handle.extract(UInt16.self, offset: offset) ?? 0
         offset += 2
 
         var subtables: [ResourceDirectoryTable] = []
@@ -133,13 +139,13 @@ public struct ResourceDirectoryTable: Hashable {
                 continue
             }
 
-            let entry = ResourceDirectoryEntry(data: data, offset: offset)
+            let entry = ResourceDirectoryEntry(handle: handle, offset: offset)
             offset += 8
             if entry.dataIsDirectory {
                 // In the root directory, we only want to append entries of type icon
                 if depth == 0 {
                     if ResourceTypes(rawValue: entry.id) == .icon {
-                        subtables.append(ResourceDirectoryTable(data: data,
+                        subtables.append(ResourceDirectoryTable(handle: handle,
                                                                      address: address,
                                                                      offset: Int(entry.offsetToSubdirectory) + address,
                                                                      sectionTable: sectionTable,
@@ -147,7 +153,7 @@ public struct ResourceDirectoryTable: Hashable {
                                                                      depth: depth + 1))
                     }
                 } else {
-                    subtables.append(ResourceDirectoryTable(data: data,
+                    subtables.append(ResourceDirectoryTable(handle: handle,
                                                                  address: address,
                                                                  offset: Int(entry.offsetToSubdirectory) + address,
                                                                  sectionTable: sectionTable,
@@ -155,7 +161,7 @@ public struct ResourceDirectoryTable: Hashable {
                                                                  depth: depth + 1))
                 }
             } else {
-                let entry = ResourceDataEntry(data: data,
+                let entry = ResourceDataEntry(handle: handle,
                                               offset: Int(entry.offsetToData) + address,
                                               sectionTable: sectionTable)
                 entries.append(entry)
@@ -180,12 +186,12 @@ public struct ResourceSection: Hashable {
     public let rootDirectoryTable: ResourceDirectoryTable
     public let allEntries: [ResourceDataEntry]
 
-    init(data: Data, sectionTable: SectionTable, imageBase: UInt32) throws {
+    init(handle: FileHandle, sectionTable: SectionTable, imageBase: UInt32) throws {
         guard let resourceSection = sectionTable.sections.first(where: { $0.name.starts(with: ".rsrc") }) else {
             throw ResourceError.noResourceSection
         }
         var entries: [ResourceDataEntry] = []
-        self.rootDirectoryTable = ResourceDirectoryTable(data: data,
+        self.rootDirectoryTable = ResourceDirectoryTable(handle: handle,
                                                          address: Int(resourceSection.pointerToRawData),
                                                          offset: Int(resourceSection.pointerToRawData),
                                                          sectionTable: sectionTable,

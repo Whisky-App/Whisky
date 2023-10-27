@@ -68,7 +68,9 @@ extension Bottle {
 
         for link in linkURLs {
             do {
-                if let program = ShellLinkHeader.getProgram(url: link, data: try Data(contentsOf: link), bottle: self) {
+                if let program = ShellLinkHeader.getProgram(url: link,
+                                                            handle: try FileHandle(forReadingFrom: link),
+                                                            bottle: self) {
                     if !startMenuPrograms.contains(where: { $0.url == program.url }) {
                         startMenuPrograms.append(program)
                         try FileManager.default.removeItem(at: link)

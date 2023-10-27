@@ -20,22 +20,22 @@ import Foundation
 import AppKit
 
 public struct ShellLinkHeader {
-    public static func getProgram(url: URL, data: Data, bottle: Bottle) -> Program? {
+    public static func getProgram(url: URL, handle: FileHandle, bottle: Bottle) -> Program? {
         var offset: Int = 0
-        let headerSize = data.extract(UInt32.self) ?? 0
+        let headerSize = handle.extract(UInt32.self) ?? 0
         // Move past headerSize and linkCLSID
         offset += 4 + 16
-        let rawLinkFlags = data.extract(UInt32.self, offset: offset) ?? 0
+        let rawLinkFlags = handle.extract(UInt32.self, offset: offset) ?? 0
         let linkFlags = LinkFlags(rawValue: rawLinkFlags)
 
         offset = Int(headerSize)
         if linkFlags.contains(.hasLinkTargetIDList) {
             // We don't need this section so just get the size, and skip ahead
-            offset += Int(data.extract(UInt16.self, offset: offset) ?? 0) + 2
+            offset += Int(handle.extract(UInt16.self, offset: offset) ?? 0) + 2
         }
 
         if linkFlags.contains(.hasLinkInfo) {
-            let linkInfo = LinkInfo(data: data,
+            let linkInfo = LinkInfo(handle: handle,
                                     bottle: bottle,
                                     offset: &offset)
             return linkInfo.program
@@ -61,34 +61,34 @@ public struct LinkInfo: Hashable {
     public var linkInfoFlags: LinkInfoFlags
     public var program: Program?
 
-    public init(data: Data, bottle: Bottle, offset: inout Int) {
+    public init(handle: FileHandle, bottle: Bottle, offset: inout Int) {
         let startOfSection = offset
 
-        let linkInfoSize = data.extract(UInt32.self, offset: offset) ?? 0
+        let linkInfoSize = handle.extract(UInt32.self, offset: offset) ?? 0
 
         offset += 4
-        let linkInfoHeaderSize = data.extract(UInt32.self, offset: offset) ?? 0
+        let linkInfoHeaderSize = handle.extract(UInt32.self, offset: offset) ?? 0
 
         offset += 4
-        let rawLinkInfoFlags = data.extract(UInt32.self, offset: offset) ?? 0
+        let rawLinkInfoFlags = handle.extract(UInt32.self, offset: offset) ?? 0
         linkInfoFlags = LinkInfoFlags(rawValue: rawLinkInfoFlags)
 
         if linkInfoFlags.contains(.volumeIDAndLocalBasePath) {
             if linkInfoHeaderSize >= 0x00000024 {
                 offset += 20
-                let localBasePathOffsetUnicode = data.extract(UInt32.self, offset: offset) ?? 0
+                let localBasePathOffsetUnicode = handle.extract(UInt32.self, offset: offset) ?? 0
                 let localPathOffset = startOfSection + Int(localBasePathOffsetUnicode)
 
-                program = getProgram(data: data,
+                program = getProgram(handle: handle,
                                      offset: localPathOffset,
                                      bottle: bottle,
                                      unicode: true)
             } else {
                 offset += 8
-                let localBasePathOffset = data.extract(UInt32.self, offset: offset) ?? 0
+                let localBasePathOffset = handle.extract(UInt32.self, offset: offset) ?? 0
                 let localPathOffset = startOfSection + Int(localBasePathOffset)
 
-                program = getProgram(data: data,
+                program = getProgram(handle: handle,
                                      offset: localPathOffset,
                                      bottle: bottle,
                                      unicode: false)
@@ -98,17 +98,23 @@ public struct LinkInfo: Hashable {
         offset = startOfSection + Int(linkInfoSize)
     }
 
-    func getProgram(data: Data, offset: Int, bottle: Bottle, unicode: Bool) -> Program? {
-        let pathData = data[offset...]
-        if let nullRange = pathData.firstIndex(of: 0) {
-            let encoding: String.Encoding = unicode ? .utf16 : .windowsCP1254
-            if var string = String(data: pathData[..<nullRange], encoding: encoding) {
-                // UNIX-ify the path
-                string.replace("\\", with: "/")
-                string.replace("C:", with: "\(bottle.url.path)/drive_c")
-                let url = URL(filePath: string)
-                return Program(name: url.lastPathComponent, url: url, bottle: bottle)
+    func getProgram(handle: FileHandle, offset: Int, bottle: Bottle, unicode: Bool) -> Program? {
+        do {
+            try handle.seek(toOffset: UInt64(offset))
+            if let pathData = try handle.readToEnd() {
+                if let nullRange = pathData.firstIndex(of: 0) {
+                    let encoding: String.Encoding = unicode ? .utf16 : .windowsCP1254
+                    if var string = String(data: pathData[..<nullRange], encoding: encoding) {
+                        // UNIX-ify the path
+                        string.replace("\\", with: "/")
+                        string.replace("C:", with: "\(bottle.url.path)/drive_c")
+                        let url = URL(filePath: string)
+                        return Program(name: url.lastPathComponent, url: url, bottle: bottle)
+                    }
+                }
             }
+        } catch {
+            return nil
         }
 
         return nil

@@ -36,48 +36,58 @@ public struct PESection: Hashable {
     public let numberOfRelocations: UInt16
     public let numberOfLineNumbers: UInt16
     public let characteristics: UInt32
-    public let data: Data?
+    // public let data: Data?
 
-    init(data: Data, offset: Int) {
+    init?(handle: FileHandle, offset: Int) throws {
         var offset = offset
-        self.name = String(data: data[offset..<offset + 8], encoding: .utf8) ?? ""
-        offset += 8
-        self.virtualSize = data.extract(UInt32.self, offset: offset) ?? 0
-        offset += 4
-        self.virtualAddress = data.extract(UInt32.self, offset: offset) ?? 0
-        offset += 4
-        self.sizeOfRawData = data.extract(UInt32.self, offset: offset) ?? 0
-        offset += 4
-        self.pointerToRawData = data.extract(UInt32.self, offset: offset) ?? 0
-        offset += 4
-        self.pointerToRelocations = data.extract(UInt32.self, offset: offset) ?? 0
-        offset += 4
-        self.pointerToLineNumbers = data.extract(UInt32.self, offset: offset) ?? 0
-        offset += 4
-        self.numberOfRelocations = data.extract(UInt16.self, offset: offset) ?? 0
-        offset += 2
-        self.numberOfLineNumbers = data.extract(UInt16.self, offset: offset) ?? 0
-        offset += 2
-        self.characteristics = data.extract(UInt32.self, offset: offset) ?? 0
-        offset += 4
-        if sizeOfRawData > 0 {
-            let dataOffset = Int(pointerToRawData)
-            self.data = data.subdata(in: dataOffset..<dataOffset+Int(sizeOfRawData))
+        try handle.seek(toOffset: UInt64(offset))
+        if let nameData = try handle.read(upToCount: 8) {
+            self.name = String(data: nameData, encoding: .utf8) ?? ""
         } else {
-            self.data = nil
+            self.name = ""
         }
+        offset += 8
+        self.virtualSize = handle.extract(UInt32.self, offset: offset) ?? 0
+        offset += 4
+        self.virtualAddress = handle.extract(UInt32.self, offset: offset) ?? 0
+        offset += 4
+        self.sizeOfRawData = handle.extract(UInt32.self, offset: offset) ?? 0
+        offset += 4
+        self.pointerToRawData = handle.extract(UInt32.self, offset: offset) ?? 0
+        offset += 4
+        self.pointerToRelocations = handle.extract(UInt32.self, offset: offset) ?? 0
+        offset += 4
+        self.pointerToLineNumbers = handle.extract(UInt32.self, offset: offset) ?? 0
+        offset += 4
+        self.numberOfRelocations = handle.extract(UInt16.self, offset: offset) ?? 0
+        offset += 2
+        self.numberOfLineNumbers = handle.extract(UInt16.self, offset: offset) ?? 0
+        offset += 2
+        self.characteristics = handle.extract(UInt32.self, offset: offset) ?? 0
+        offset += 4
+//        if sizeOfRawData > 0 {
+//            let dataOffset = Int(pointerToRawData)
+//            self.data = data.subdata(in: dataOffset..<dataOffset+Int(sizeOfRawData))
+//        } else {
+//            self.data = nil
+//        }
     }
 }
 
 public struct SectionTable: Hashable {
     public let sections: [PESection]
 
-    init(data: Data, offset: Int, numberOfSections: Int) {
+    init(handle: FileHandle, offset: Int, numberOfSections: Int) {
         var sections = [PESection]()
         var offset = offset
         for _ in 0..<numberOfSections {
-            let section = PESection(data: data, offset: offset)
-            sections.append(section)
+            do {
+                if let section = try PESection(handle: handle, offset: offset) {
+                    sections.append(section)
+                }
+            } catch {
+                print("Failed to get section name!")
+            }
             offset += 40
         }
         self.sections = sections
@@ -95,31 +105,31 @@ public struct COFFFileHeader: Hashable {
     public let sectionTable: SectionTable
     public let optionalHeader: OptionalHeader
 
-    init(data: Data) throws {
+    init(handle: FileHandle) throws {
         var offset = 0x3C
-        let peOffset = data.extract(UInt32.self, offset: offset) ?? 0
+        let peOffset = handle.extract(UInt32.self, offset: offset) ?? 0
         offset = Int(peOffset)
 
         offset += 4
-        let machine = data.extract(UInt16.self, offset: offset) ?? 0
+        let machine = handle.extract(UInt16.self, offset: offset) ?? 0
         offset += 2
 
-        let numberOfSections = data.extract(UInt16.self, offset: offset) ?? 0
+        let numberOfSections = handle.extract(UInt16.self, offset: offset) ?? 0
         offset += 2
 
-        let timeDateStamp = data.extract(UInt32.self, offset: offset) ?? 0
+        let timeDateStamp = handle.extract(UInt32.self, offset: offset) ?? 0
         offset += 4
 
-        let pointerToSymbolTable = data.extract(UInt32.self, offset: offset) ?? 0
+        let pointerToSymbolTable = handle.extract(UInt32.self, offset: offset) ?? 0
         offset += 4
 
-        let numberOfSymbols = data.extract(UInt32.self, offset: offset) ?? 0
+        let numberOfSymbols = handle.extract(UInt32.self, offset: offset) ?? 0
         offset += 4
 
-        let sizeOfOptionalHeader = data.extract(UInt16.self, offset: offset) ?? 0
+        let sizeOfOptionalHeader = handle.extract(UInt16.self, offset: offset) ?? 0
         offset += 2
 
-        let characteristics = data.extract(UInt16.self, offset: offset) ?? 0
+        let characteristics = handle.extract(UInt16.self, offset: offset) ?? 0
         offset += 2
 
         self.machine = machine
@@ -130,10 +140,10 @@ public struct COFFFileHeader: Hashable {
         self.sizeOfOptionalHeader = sizeOfOptionalHeader
         self.characteristics = characteristics
 
-        self.optionalHeader = OptionalHeader(data: data, offset: offset)
+        self.optionalHeader = OptionalHeader(handle: handle, offset: offset)
         offset += Int(sizeOfOptionalHeader)
 
-        self.sectionTable = SectionTable(data: data, offset: offset, numberOfSections: Int(numberOfSections))
+        self.sectionTable = SectionTable(handle: handle, offset: offset, numberOfSections: Int(numberOfSections))
     }
 }
 
@@ -170,67 +180,67 @@ public struct OptionalHeader: Hashable {
     public let numberOfRvaAndSizes: UInt32
 
     // swiftlint:disable:next function_body_length
-    init(data: Data, offset: Int) {
+    init(handle: FileHandle, offset: Int) {
         var offset = offset
-        self.magic = data.extract(UInt16.self, offset: offset) ?? 0
+        self.magic = handle.extract(UInt16.self, offset: offset) ?? 0
         offset += 2
-        self.majorLinkerVersion = data.extract(UInt8.self, offset: offset) ?? 0
+        self.majorLinkerVersion = handle.extract(UInt8.self, offset: offset) ?? 0
         offset += 1
-        self.minorLinkerVersion = data.extract(UInt8.self, offset: offset) ?? 0
+        self.minorLinkerVersion = handle.extract(UInt8.self, offset: offset) ?? 0
         offset += 1
-        self.sizeOfCode = data.extract(UInt32.self, offset: offset) ?? 0
+        self.sizeOfCode = handle.extract(UInt32.self, offset: offset) ?? 0
         offset += 4
-        self.sizeOfInitializedData = data.extract(UInt32.self, offset: offset) ?? 0
+        self.sizeOfInitializedData = handle.extract(UInt32.self, offset: offset) ?? 0
         offset += 4
-        self.sizeOfUninitializedData = data.extract(UInt32.self, offset: offset) ?? 0
+        self.sizeOfUninitializedData = handle.extract(UInt32.self, offset: offset) ?? 0
         offset += 4
-        self.addressOfEntryPoint = data.extract(UInt32.self, offset: offset) ?? 0
+        self.addressOfEntryPoint = handle.extract(UInt32.self, offset: offset) ?? 0
         offset += 4
-        self.baseOfCode = data.extract(UInt32.self, offset: offset) ?? 0
+        self.baseOfCode = handle.extract(UInt32.self, offset: offset) ?? 0
         offset += 4
-        self.baseOfData = data.extract(UInt32.self, offset: offset) ?? 0
+        self.baseOfData = handle.extract(UInt32.self, offset: offset) ?? 0
         offset += 4
-        self.imageBase = data.extract(UInt32.self, offset: offset) ?? 0
+        self.imageBase = handle.extract(UInt32.self, offset: offset) ?? 0
         offset += 4
-        self.sectionAlignment = data.extract(UInt32.self, offset: offset) ?? 0
+        self.sectionAlignment = handle.extract(UInt32.self, offset: offset) ?? 0
         offset += 4
-        self.fileAlignment = data.extract(UInt32.self, offset: offset) ?? 0
+        self.fileAlignment = handle.extract(UInt32.self, offset: offset) ?? 0
         offset += 4
-        self.majorOperatingSystemVersion = data.extract(UInt16.self, offset: offset) ?? 0
+        self.majorOperatingSystemVersion = handle.extract(UInt16.self, offset: offset) ?? 0
         offset += 2
-        self.minorOperatingSystemVersion = data.extract(UInt16.self, offset: offset) ?? 0
+        self.minorOperatingSystemVersion = handle.extract(UInt16.self, offset: offset) ?? 0
         offset += 2
-        self.majorImageVersion = data.extract(UInt16.self, offset: offset) ?? 0
+        self.majorImageVersion = handle.extract(UInt16.self, offset: offset) ?? 0
         offset += 2
-        self.minorImageVersion = data.extract(UInt16.self, offset: offset) ?? 0
+        self.minorImageVersion = handle.extract(UInt16.self, offset: offset) ?? 0
         offset += 2
-        self.majorSubsystemVersion = data.extract(UInt16.self, offset: offset) ?? 0
+        self.majorSubsystemVersion = handle.extract(UInt16.self, offset: offset) ?? 0
         offset += 2
-        self.minorSubsystemVersion = data.extract(UInt16.self, offset: offset) ?? 0
+        self.minorSubsystemVersion = handle.extract(UInt16.self, offset: offset) ?? 0
         offset += 2
-        self.win32VersionValue = data.extract(UInt32.self, offset: offset) ?? 0
+        self.win32VersionValue = handle.extract(UInt32.self, offset: offset) ?? 0
         offset += 4
-        self.sizeOfImage = data.extract(UInt32.self, offset: offset) ?? 0
+        self.sizeOfImage = handle.extract(UInt32.self, offset: offset) ?? 0
         offset += 4
-        self.sizeOfHeaders = data.extract(UInt32.self, offset: offset) ?? 0
+        self.sizeOfHeaders = handle.extract(UInt32.self, offset: offset) ?? 0
         offset += 4
-        self.checkSum = data.extract(UInt32.self, offset: offset) ?? 0
+        self.checkSum = handle.extract(UInt32.self, offset: offset) ?? 0
         offset += 4
-        self.subsystem = data.extract(UInt16.self, offset: offset) ?? 0
+        self.subsystem = handle.extract(UInt16.self, offset: offset) ?? 0
         offset += 2
-        self.dllCharacteristics = data.extract(UInt16.self, offset: offset) ?? 0
+        self.dllCharacteristics = handle.extract(UInt16.self, offset: offset) ?? 0
         offset += 2
-        self.sizeOfStackReserve = data.extract(UInt32.self, offset: offset) ?? 0
+        self.sizeOfStackReserve = handle.extract(UInt32.self, offset: offset) ?? 0
         offset += 4
-        self.sizeOfStackCommit = data.extract(UInt32.self, offset: offset) ?? 0
+        self.sizeOfStackCommit = handle.extract(UInt32.self, offset: offset) ?? 0
         offset += 4
-        self.sizeOfHeapReserve = data.extract(UInt32.self, offset: offset) ?? 0
+        self.sizeOfHeapReserve = handle.extract(UInt32.self, offset: offset) ?? 0
         offset += 4
-        self.sizeOfHeapCommit = data.extract(UInt32.self, offset: offset) ?? 0
+        self.sizeOfHeapCommit = handle.extract(UInt32.self, offset: offset) ?? 0
         offset += 4
-        self.loaderFlags = data.extract(UInt32.self, offset: offset) ?? 0
+        self.loaderFlags = handle.extract(UInt32.self, offset: offset) ?? 0
         offset += 4
-        self.numberOfRvaAndSizes = data.extract(UInt32.self, offset: offset) ?? 0
+        self.numberOfRvaAndSizes = handle.extract(UInt32.self, offset: offset) ?? 0
     }
 }
 
@@ -255,7 +265,7 @@ public struct PEFile: Hashable {
     public let coffFileHeader: COFFFileHeader
     public var resourceSection: ResourceSection? {
         do {
-            return try ResourceSection(data: data,
+            return try ResourceSection(handle: handle,
                                        sectionTable: coffFileHeader.sectionTable,
                                        imageBase: coffFileHeader.optionalHeader.imageBase)
         } catch {
@@ -265,17 +275,17 @@ public struct PEFile: Hashable {
     public var architecture: Architecture {
         Architecture(rawValue: coffFileHeader.optionalHeader.magic) ?? .unknown
     }
-    private let data: Data
+    private let handle: FileHandle
 
-    public init(data: Data) throws {
-        self.data = data
+    public init(handle: FileHandle) throws {
+        self.handle = handle
         // Verify it is a PE file by checking for the PE header
-        let offsetToPEHeader = data.extract(UInt32.self, offset: 0x3C) ?? 0
-        let peHeader = data.extract(UInt32.self, offset: Int(offsetToPEHeader))
+        let offsetToPEHeader = handle.extract(UInt32.self, offset: 0x3C) ?? 0
+        let peHeader = handle.extract(UInt32.self, offset: Int(offsetToPEHeader))
         guard peHeader == 0x4550 else {
             throw PEError.invalidPEFile
         }
-        coffFileHeader = try COFFFileHeader(data: data)
+        coffFileHeader = try COFFFileHeader(handle: handle)
     }
 
     public func bestIcon() -> NSImage? {

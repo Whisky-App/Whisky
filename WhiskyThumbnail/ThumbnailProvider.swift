@@ -46,7 +46,7 @@ class ThumbnailProvider: QLThumbnailProvider {
         do {
             var image: NSImage?
 
-            let peFile = try PEFile(data: Data(contentsOf: request.fileURL))
+            let peFile = try PEFile(handle: try FileHandle(forReadingFrom: request.fileURL))
             image = peFile.bestIcon()
 
             let reply: QLThumbnailReply = QLThumbnailReply.init(contextSize: thumbnailSize) { () -> Bool in

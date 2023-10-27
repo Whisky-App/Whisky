@@ -35,29 +35,29 @@ public struct BitmapInfoHeader: Hashable {
     public let originDirection: BitmapOriginDirection
     public let colorFormat: ColorFormat
 
-    init(data: Data, offset: Int) {
+    init(handle: FileHandle, offset: Int) {
         var offset = offset
-        self.size = data.extract(UInt32.self, offset: offset) ?? 0
+        self.size = handle.extract(UInt32.self, offset: offset) ?? 0
         offset += 4
-        self.width = data.extract(Int32.self, offset: offset) ?? 0
+        self.width = handle.extract(Int32.self, offset: offset) ?? 0
         offset += 4
-        self.height = data.extract(Int32.self, offset: offset) ?? 0
+        self.height = handle.extract(Int32.self, offset: offset) ?? 0
         offset += 4
-        self.planes = data.extract(UInt16.self, offset: offset) ?? 0
+        self.planes = handle.extract(UInt16.self, offset: offset) ?? 0
         offset += 2
-        self.bitCount = data.extract(UInt16.self, offset: offset) ?? 0
+        self.bitCount = handle.extract(UInt16.self, offset: offset) ?? 0
         offset += 2
-        self.compression = BitmapCompression(rawValue: data.extract(UInt32.self, offset: offset) ?? 0) ?? .rgb
+        self.compression = BitmapCompression(rawValue: handle.extract(UInt32.self, offset: offset) ?? 0) ?? .rgb
         offset += 4
-        self.sizeImage = data.extract(UInt32.self, offset: offset) ?? 0
+        self.sizeImage = handle.extract(UInt32.self, offset: offset) ?? 0
         offset += 4
-        self.xPelsPerMeter = data.extract(Int32.self, offset: offset) ?? 0
+        self.xPelsPerMeter = handle.extract(Int32.self, offset: offset) ?? 0
         offset += 4
-        self.yPelsPerMeter = data.extract(Int32.self, offset: offset) ?? 0
+        self.yPelsPerMeter = handle.extract(Int32.self, offset: offset) ?? 0
         offset += 4
-        self.clrUsed = data.extract(UInt32.self, offset: offset) ?? 0
+        self.clrUsed = handle.extract(UInt32.self, offset: offset) ?? 0
         offset += 4
-        self.clrImportant = data.extract(UInt32.self, offset: offset) ?? 0
+        self.clrImportant = handle.extract(UInt32.self, offset: offset) ?? 0
         offset += 4
 
         self.originDirection = self.height < 0 ? .upperLeft : .bottomLeft
@@ -65,9 +65,9 @@ public struct BitmapInfoHeader: Hashable {
     }
 
     // swiftlint:disable:next cyclomatic_complexity function_body_length
-    func renderBitmap(data: Data, offset: Int) -> NSImage {
+    func renderBitmap(handle: FileHandle, offset: Int) -> NSImage {
         var offset = offset
-        let colorTable = buildColorTable(offset: &offset, data: data)
+        let colorTable = buildColorTable(offset: &offset, handle: handle)
 
         var pixels: [ColorQuad] = []
 
@@ -91,7 +91,7 @@ public struct BitmapInfoHeader: Hashable {
                     // Ditto .indexed1
                     break
                 case .indexed8:
-                    let index = Int(data.extract(UInt8.self, offset: offset) ?? 0)
+                    let index = Int(handle.extract(UInt8.self, offset: offset) ?? 0)
                     if index >= colorTable.count {
                         pixelRow.append(ColorQuad(red: 0, green: 0, blue: 0, alpha: 0))
                     } else {
@@ -99,7 +99,7 @@ public struct BitmapInfoHeader: Hashable {
                     }
                     offset += 1
                 case .sampled16:
-                    let sample = data.extract(UInt16.self, offset: offset) ?? 0
+                    let sample = handle.extract(UInt16.self, offset: offset) ?? 0
                     let red = sample & 0x001F
                     let green = (sample & 0x03E0) >> 5
                     let blue = (sample & 0x7C00) >> 10
@@ -109,24 +109,24 @@ public struct BitmapInfoHeader: Hashable {
                                             alpha: 1))
                     offset += 2
                 case .sampled24:
-                    let blue = data.extract(UInt8.self, offset: offset) ?? 0
+                    let blue = handle.extract(UInt8.self, offset: offset) ?? 0
                     offset += 1
-                    let green = data.extract(UInt8.self, offset: offset) ?? 0
+                    let green = handle.extract(UInt8.self, offset: offset) ?? 0
                     offset += 1
-                    let red = data.extract(UInt8.self, offset: offset) ?? 0
+                    let red = handle.extract(UInt8.self, offset: offset) ?? 0
                     offset += 1
                     pixelRow.append(ColorQuad(red: red,
                                               green: green,
                                               blue: blue,
                                               alpha: 1))
                 case .sampled32:
-                    let blue = data.extract(UInt8.self, offset: offset) ?? 0
+                    let blue = handle.extract(UInt8.self, offset: offset) ?? 0
                     offset += 1
-                    let green = data.extract(UInt8.self, offset: offset) ?? 0
+                    let green = handle.extract(UInt8.self, offset: offset) ?? 0
                     offset += 1
-                    let red = data.extract(UInt8.self, offset: offset) ?? 0
+                    let red = handle.extract(UInt8.self, offset: offset) ?? 0
                     offset += 1
-                    let alpha = data.extract(UInt8.self, offset: offset) ?? 0
+                    let alpha = handle.extract(UInt8.self, offset: offset) ?? 0
                     offset += 1
                     pixelRow.append(ColorQuad(red: red,
                                               green: green,
@@ -147,15 +147,15 @@ public struct BitmapInfoHeader: Hashable {
         return constructImage(pixels: pixels)
     }
 
-    func buildColorTable(offset: inout Int, data: Data) -> [ColorQuad] {
+    func buildColorTable(offset: inout Int, handle: FileHandle) -> [ColorQuad] {
         var colorTable: [ColorQuad] = []
 
         for _ in 0..<clrUsed {
-            let blue = data.extract(UInt8.self, offset: offset) ?? 0
+            let blue = handle.extract(UInt8.self, offset: offset) ?? 0
             offset += 1
-            let green = data.extract(UInt8.self, offset: offset) ?? 0
+            let green = handle.extract(UInt8.self, offset: offset) ?? 0
             offset += 1
-            let red = data.extract(UInt8.self, offset: offset) ?? 0
+            let red = handle.extract(UInt8.self, offset: offset) ?? 0
             offset += 2
 
             colorTable.append(ColorQuad(red: red,

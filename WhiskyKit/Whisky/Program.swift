@@ -41,7 +41,7 @@ public class Program: Hashable {
         self.settings = ProgramSettings(bottleUrl: bottle.url, name: name)
         self.pinned = bottle.settings.pins.contains(where: { $0.url == url })
         do {
-            self.peFile = try PEFile(data: Data(contentsOf: url))
+            self.peFile = try PEFile(handle: FileHandle(forReadingFrom: url))
         } catch {
             self.peFile = nil
         }
