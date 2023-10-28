@@ -751,6 +751,12 @@
     },
     "button.ok": {
       "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Ok"
+          }
+        },
         "en": {
           "stringUnit": {
             "state": "translated",
@@ -1887,6 +1893,12 @@
     },
     "button.winetricks": {
       "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Winetricks..."
+          }
+        },
         "en": {
           "stringUnit": {
             "state": "translated",
@@ -2363,6 +2375,12 @@
     },
     "config.dxvk": {
       "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "DXVK"
+          }
+        },
         "en": {
           "stringUnit": {
             "state": "translated",
@@ -2379,6 +2397,12 @@
     },
     "config.dxvk.async": {
       "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "DXVK Async"
+          }
+        },
         "en": {
           "stringUnit": {
             "state": "translated",
@@ -2431,6 +2455,12 @@
     },
     "config.dxvkHud": {
       "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "DXVK HUD"
+          }
+        },
         "en": {
           "stringUnit": {
             "state": "translated",
@@ -2477,6 +2507,12 @@
     },
     "config.dxvkHud.fps": {
       "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "FPS"
+          }
+        },
         "en": {
           "stringUnit": {
             "state": "translated",
@@ -2995,6 +3031,12 @@
     },
     "config.metalHud": {
       "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Metal HUD"
+          }
+        },
         "en": {
           "stringUnit": {
             "state": "translated",
@@ -3029,6 +3071,12 @@
     },
     "config.metalTrace": {
       "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Metal Trace"
+          }
+        },
         "en": {
           "stringUnit": {
             "state": "translated",
@@ -3223,6 +3271,12 @@
     },
     "config.msync": {
       "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "MSync"
+          }
+        },
         "en": {
           "stringUnit": {
             "state": "translated",
@@ -3569,6 +3623,12 @@
     },
     "config.title.dxvk": {
       "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "DXVK"
+          }
+        },
         "en": {
           "stringUnit": {
             "state": "translated",
@@ -3579,6 +3639,12 @@
     },
     "config.title.metal": {
       "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Metal"
+          }
+        },
         "en": {
           "stringUnit": {
             "state": "translated",
@@ -3589,6 +3655,12 @@
     },
     "config.title.wine": {
       "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Wine"
+          }
+        },
         "en": {
           "stringUnit": {
             "state": "translated",
@@ -3717,6 +3789,12 @@
     },
     "config.winVersion": {
       "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Windows Version"
+          }
+        },
         "en": {
           "stringUnit": {
             "state": "translated",
@@ -3823,6 +3901,12 @@
     },
     "configDpi.dpi": {
       "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "DPI"
+          }
+        },
         "en": {
           "stringUnit": {
             "state": "translated",
@@ -5001,6 +5085,12 @@
     },
     "help.discord": {
       "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Discord"
+          }
+        },
         "en": {
           "stringUnit": {
             "state": "translated",
@@ -5011,6 +5101,12 @@
     },
     "help.github": {
       "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "GitHub"
+          }
+        },
         "en": {
           "stringUnit": {
             "state": "translated",
@@ -5021,6 +5117,12 @@
     },
     "help.website": {
       "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Webseite"
+          }
+        },
         "en": {
           "stringUnit": {
             "state": "translated",
@@ -7146,6 +7248,12 @@
     },
     "run.bottle": {
       "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Bottle:"
+          }
+        },
         "en": {
           "stringUnit": {
             "state": "translated",
@@ -7310,6 +7418,12 @@
     },
     "settings.general": {
       "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Allgemein"
+          }
+        },
         "en": {
           "stringUnit": {
             "state": "translated",
@@ -7320,6 +7434,12 @@
     },
     "settings.toggle.gptk.updates": {
       "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Automatisch nach Updates für GPTK suchen"
+          }
+        },
         "en": {
           "stringUnit": {
             "state": "translated",
@@ -7330,6 +7450,12 @@
     },
     "settings.toggle.kill.on.terminate": {
       "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Wine-Prozesse beenden, wenn Whisky geschlossen wird"
+          }
+        },
         "en": {
           "stringUnit": {
             "state": "translated",
@@ -7340,6 +7466,12 @@
     },
     "settings.toggle.whisky.updates": {
       "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Automatisch nach Updates für Whisky suchen"
+          }
+        },
         "en": {
           "stringUnit": {
             "state": "translated",
@@ -7350,6 +7482,12 @@
     },
     "settings.updates": {
       "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Updates"
+          }
+        },
         "en": {
           "stringUnit": {
             "state": "translated",
