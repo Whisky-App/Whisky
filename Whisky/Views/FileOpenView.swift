@@ -55,22 +55,7 @@ struct FileOpenView: View {
                 }
                 .keyboardShortcut(.cancelAction)
                 Button("button.run") {
-                    if let bottle = bottles.first(where: { $0.url == selection}) {
-                        Task.detached(priority: .userInitiated) {
-                            do {
-                                if fileURL.pathExtension == "bat" {
-                                    try await Wine.runBatchFile(url: fileURL,
-                                                                bottle: bottle)
-                                } else {
-                                    try await Wine.runExternalProgram(url: fileURL,
-                                                                      bottle: bottle)
-                                }
-                            } catch {
-                                print(error)
-                            }
-                        }
-                        dismiss()
-                    }
+                    run()
                 }
                 .keyboardShortcut(.defaultAction)
             }
@@ -79,6 +64,31 @@ struct FileOpenView: View {
         .frame(width: 400, height: 180)
         .onAppear {
             selection = bottles.first(where: {$0.url == currentBottle})?.url ?? bottles[0].url
+
+            if bottles.count <= 1 {
+                // If the user only has one bottle
+                // there's nothing for them to select
+                run()
+            }
+        }
+    }
+
+    func run() {
+        if let bottle = bottles.first(where: { $0.url == selection }) {
+            Task.detached(priority: .userInitiated) {
+                do {
+                    if fileURL.pathExtension == "bat" {
+                        try await Wine.runBatchFile(url: fileURL,
+                                                    bottle: bottle)
+                    } else {
+                        try await Wine.runExternalProgram(url: fileURL,
+                                                          bottle: bottle)
+                    }
+                } catch {
+                    print(error)
+                }
+            }
+            dismiss()
         }
     }
 }
