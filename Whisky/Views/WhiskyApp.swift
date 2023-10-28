@@ -23,6 +23,7 @@ import Sparkle
 struct WhiskyApp: App {
     @State var showSetup: Bool = false
     @NSApplicationDelegateAdaptor(AppDelegate.self) var appDelegate
+    @Environment(\.openURL) var openURL
     private let updaterController: SPUStandardUpdaterController
 
     init() {
@@ -45,6 +46,8 @@ struct WhiskyApp: App {
         .commands {
             CommandGroup(after: .appInfo) {
                 SparkleView(updater: updaterController.updater)
+            }
+            CommandGroup(before: .systemServices) {
                 Divider()
                 Button("open.setup") {
                     showSetup = true
@@ -86,6 +89,23 @@ struct WhiskyApp: App {
                 Button("wine.clearShaderCaches") {
                     WhiskyApp.killBottles() // Better not make things more complicated for ourselves
                     WhiskyApp.wipeShaderCaches()
+                }
+            }
+            CommandGroup(replacing: .help) {
+                Button("help.website") {
+                    if let url = URL(string: "https://getwhisky.app/") {
+                        openURL(url)
+                    }
+                }
+                Button("help.github") {
+                    if let url = URL(string: "https://github.com/Whisky-App/Whisky") {
+                        openURL(url)
+                    }
+                }
+                Button("help.discord") {
+                    if let url = URL(string: "https://discord.gg/CsqAfs9CnM") {
+                        openURL(url)
+                    }
                 }
             }
         }
