@@ -33,7 +33,9 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     }
 
     func applicationWillTerminate(_ notification: Notification) {
-        WhiskyApp.killBottles()
+        if UserDefaults.standard.bool(forKey: "killOnTerminate") {
+            WhiskyApp.killBottles()
+        }
     }
 
     func applicationShouldTerminateAfterLastWindowClosed(_ sender: NSApplication) -> Bool {

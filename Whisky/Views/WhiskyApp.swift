@@ -109,6 +109,9 @@ struct WhiskyApp: App {
                 }
             }
         }
+        Settings {
+            SettingsView()
+        }
     }
 
     static func killBottles() {

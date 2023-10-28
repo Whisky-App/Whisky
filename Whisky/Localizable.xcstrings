@@ -9000,6 +9000,56 @@
         }
       }
     },
+    "settings.general" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "General"
+          }
+        }
+      }
+    },
+    "settings.toggle.gptk.updates" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Automatically check for GPTK updates"
+          }
+        }
+      }
+    },
+    "settings.toggle.kill.on.terminate" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Terminate Wine processes when Whisky closes"
+          }
+        }
+      }
+    },
+    "settings.toggle.whisky.updates" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Automatically check for Whisky updates"
+          }
+        }
+      }
+    },
+    "settings.updates" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Updates"
+          }
+        }
+      }
+    },
     "setup.done" : {
       "localizations" : {
         "da" : {
