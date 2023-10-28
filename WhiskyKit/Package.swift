@@ -37,10 +37,6 @@ let package = Package(
         .target(
             name: "WhiskyKit",
             dependencies: ["SemanticVersion"]
-        ),
-        .testTarget(
-            name: "WhiskyKitTests",
-            dependencies: ["WhiskyKit"]
         )
     ]
 )
