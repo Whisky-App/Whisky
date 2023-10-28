@@ -1,0 +1,14 @@
+{
+  "pins" : [
+    {
+      "identity" : "semanticversion",
+      "kind" : "remoteSourceControl",
+      "location" : "git@github.com:SwiftPackageIndex/SemanticVersion.git",
+      "state" : {
+        "revision" : "45e2ec89fee3b76cd6dde3f9a507e4348f194b79",
+        "version" : "0.3.7"
+      }
+    }
+  ],
+  "version" : 2
+}
