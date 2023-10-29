@@ -41,17 +41,31 @@ struct BottleView: View {
     var body: some View {
         NavigationStack(path: $path) {
             ScrollView {
-                if pins.count > 0 {
-                    LazyVGrid(columns: gridLayout, alignment: .center) {
-                        ForEach(pins, id: \.url) { pin in
-                            PinnedProgramView(bottle: bottle,
-                                              pin: pin,
-                                              loadStartMenu: $loadStartMenu,
-                                              path: $path)
+                ZStack {
+                    if pins.count > 0 {
+                        LazyVGrid(columns: gridLayout, alignment: .center) {
+                            ForEach(pins, id: \.url) { pin in
+                                PinnedProgramView(bottle: bottle,
+                                                  pin: pin,
+                                                  loadStartMenu: $loadStartMenu,
+                                                  path: $path)
+                            }
+                        }
+                        .padding()
+                    }
+
+                    if isLoadingInstalledPrograms {
+                        HStack {
+                            Spacer()
+                            ProgressView()
+                                .padding()
+                                .background(Material.regular)
+                                .clipShape(RoundedRectangle(cornerSize: .init(width: 16, height: 16)))
+                            Spacer()
                         }
                     }
-                    .padding()
                 }
+
                 Form {
                     NavigationLink(value: BottleStage.programs) {
                         HStack {
