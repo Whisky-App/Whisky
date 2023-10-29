@@ -1905,6 +1905,12 @@
             "value": "Winetricks..."
           }
         },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Winetricks..."
+          }
+        },
         "zh-Hans": {
           "stringUnit": {
             "state": "translated",
@@ -2392,6 +2398,12 @@
             "state": "translated",
             "value": "DXVK を使用する"
           }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "DXVK"
+          }
         }
       }
     },
@@ -2489,6 +2501,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "HUD DXVK"
+          }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "DXVK HUD"
           }
         },
         "tr": {
@@ -3061,6 +3079,12 @@
             "value": "Hud Metal"
           }
         },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Metal HUD"
+          }
+        },
         "zh-Hant": {
           "stringUnit": {
             "state": "translated",
@@ -3278,6 +3302,12 @@
           }
         },
         "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "MSync"
+          }
+        },
+        "ru": {
           "stringUnit": {
             "state": "translated",
             "value": "MSync"
@@ -3634,6 +3664,12 @@
             "state": "translated",
             "value": "DXVK"
           }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "DXVK"
+          }
         }
       }
     },
@@ -3650,6 +3686,12 @@
             "state": "translated",
             "value": "Metal"
           }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Metal"
+          }
         }
       }
     },
@@ -3662,6 +3704,12 @@
           }
         },
         "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Wine"
+          }
+        },
+        "ru": {
           "stringUnit": {
             "state": "translated",
             "value": "Wine"
@@ -3917,6 +3965,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "PPP"
+          }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "DPI"
           }
         }
       }
@@ -5096,6 +5150,12 @@
             "state": "translated",
             "value": "Discord"
           }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Discord"
+          }
         }
       }
     },
@@ -5108,6 +5168,12 @@
           }
         },
         "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "GitHub"
+          }
+        },
+        "ru": {
           "stringUnit": {
             "state": "translated",
             "value": "GitHub"
@@ -5127,6 +5193,18 @@
           "stringUnit": {
             "state": "translated",
             "value": "Website"
+          }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Сайт"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "网站"
           }
         }
       }
@@ -7429,6 +7507,18 @@
             "state": "translated",
             "value": "General"
           }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Основные"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "常规"
+          }
         }
       }
     },
@@ -7444,6 +7534,18 @@
           "stringUnit": {
             "state": "translated",
             "value": "Automatically check for GPTK updates"
+          }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Автоматически проверка обновлений GPTK"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "自动检查 GPTK 更新"
           }
         }
       }
@@ -7461,6 +7563,12 @@
             "state": "translated",
             "value": "Terminate Wine processes when Whisky closes"
           }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Завершать процессы Wine при закрытии Whisky"
+          }
         }
       }
     },
@@ -7477,6 +7585,18 @@
             "state": "translated",
             "value": "Automatically check for Whisky updates"
           }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Автоматическая проверка обновлений Whisky"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "自动检查 Whisky 更新"
+          }
         }
       }
     },
@@ -7492,6 +7612,18 @@
           "stringUnit": {
             "state": "translated",
             "value": "Updates"
+          }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Обновления"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "更新"
           }
         }
       }
