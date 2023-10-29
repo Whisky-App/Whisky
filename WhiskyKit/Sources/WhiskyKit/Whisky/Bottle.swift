@@ -42,6 +42,8 @@ public class Bottle: Hashable, Identifiable {
         self.inFlight = inFlight
         self.isActive = isActive
     }
+
+    public let lock = NSLock()
 }
 
 extension Array where Element == Bottle {
