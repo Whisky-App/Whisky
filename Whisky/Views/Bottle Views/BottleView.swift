@@ -34,6 +34,7 @@ struct BottleView: View {
     // This just provides a way to trigger a refresh
     @State var loadStartMenu: Bool = false
     @State var showWinetricksSheet: Bool = false
+    @State private var isLoadingInstalledPrograms: Bool = false
 
     private let gridLayout = [GridItem(.adaptive(minimum: 100, maximum: .infinity))]
 
@@ -121,6 +122,7 @@ struct BottleView: View {
                         }
                     }
                     .disabled(programLoading)
+
                     if programLoading {
                         Spacer()
                             .frame(width: 10)
@@ -140,7 +142,7 @@ struct BottleView: View {
                 case .config:
                     ConfigView(bottle: $bottle)
                 case .programs:
-                    ProgramsView(bottle: bottle,
+                    ProgramsView(bottle: $bottle,
                                  reloadStartMenu: $loadStartMenu,
                                  path: $path)
                 }
@@ -159,22 +161,32 @@ struct BottleView: View {
     }
 
     func updateStartMenu() {
-        bottle.programs = bottle.updateInstalledPrograms()
-        let startMenuPrograms = bottle.getStartMenuPrograms()
-        for startMenuProgram in startMenuPrograms {
-            for program in bottle.programs where
-            // For some godforsaken reason "foo/bar" != "foo/Bar" so...
-            program.url.path().caseInsensitiveCompare(startMenuProgram.url.path()) == .orderedSame {
-                program.pinned = true
-                if !bottle.settings.pins.contains(where: { $0.url == program.url }) {
-                    bottle.settings.pins.append(PinnedProgram(name: program.name
-                                                                    .replacingOccurrences(of: ".exe", with: ""),
-                                                              url: program.url))
+        guard !isLoadingInstalledPrograms else { return }
+
+        isLoadingInstalledPrograms = true
+
+        DispatchQueue(label: "whisky.lock.queue").async {
+            if bottle.programs.isEmpty {
+                bottle.updateInstalledPrograms()
+            }
+
+            let startMenuPrograms = bottle.getStartMenuPrograms()
+            for startMenuProgram in startMenuPrograms {
+                for program in bottle.programs where
+                // For some godforsaken reason "foo/bar" != "foo/Bar" so...
+                program.url.path().caseInsensitiveCompare(startMenuProgram.url.path()) == .orderedSame {
+                    program.pinned = true
+                    if !bottle.settings.pins.contains(where: { $0.url == program.url }) {
+                        bottle.settings.pins.append(PinnedProgram(name: program.name
+                            .replacingOccurrences(of: ".exe", with: ""),
+                                                                  url: program.url))
+                    }
                 }
             }
-        }
 
-        pins = bottle.settings.pins
+            pins = bottle.settings.pins
+            isLoadingInstalledPrograms = false
+        }
     }
 }
 
@@ -289,7 +301,7 @@ struct PinnedProgramView: View {
         }
         .onAppear {
             name = pin.name
-            Task.detached {
+            DispatchQueue(label: "whisky.lock.queue").async {
                 program = bottle.programs.first(where: { $0.url == pin.url })
                 if let program {
                     if let peFile = program.peFile {

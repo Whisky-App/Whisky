@@ -20,7 +20,7 @@ import SwiftUI
 import WhiskyKit
 
 struct ProgramsView: View {
-    let bottle: Bottle
+    @Binding var bottle: Bottle
     @State var programs: [Program] = []
     @State var blocklist: [URL] = []
     @State private var selectedPrograms = Set<Program>()
