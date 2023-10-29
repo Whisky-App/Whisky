@@ -68,26 +68,43 @@ struct ProgramsView: View {
         .animation(.easeInOut(duration: 0.2), value: isBlocklistExpanded)
         .navigationTitle("tab.programs")
         .onAppear {
-            programs = bottle.updateInstalledPrograms()
-            blocklist = bottle.settings.blocklist
-            sortPrograms()
+            loadPrograms()
         }
         .onChange(of: resortPrograms) {
+            sortPrograms()
             reloadStartMenu.toggle()
+        }
+    }
+
+    func loadPrograms() {
+        if bottle.programs.isEmpty {
+            updatePrograms()
+            return
+        }
+
+        programs = bottle.programs
+        blocklist = bottle.settings.blocklist
+        sortPrograms()
+    }
+
+    private func updatePrograms() {
+        DispatchQueue(label: "whisky.lock.queue").async {
             programs = bottle.updateInstalledPrograms()
             blocklist = bottle.settings.blocklist
             sortPrograms()
         }
     }
 
-    func sortPrograms() {
-        var favourites = programs.filter { $0.pinned }
-        var nonFavourites = programs.filter { !$0.pinned }
-        favourites = favourites.sorted { $0.name < $1.name }
-        nonFavourites = nonFavourites.sorted { $0.name < $1.name }
-        programs.removeAll()
-        programs.append(contentsOf: favourites)
-        programs.append(contentsOf: nonFavourites)
+    private func sortPrograms() {
+        DispatchQueue(label: "whisky.lock.queue").async {
+            var favourites = programs.filter { $0.pinned }
+            var nonFavourites = programs.filter { !$0.pinned }
+            favourites = favourites.sorted { $0.name < $1.name }
+            nonFavourites = nonFavourites.sorted { $0.name < $1.name }
+            programs.removeAll()
+            programs.append(contentsOf: favourites)
+            programs.append(contentsOf: nonFavourites)
+        }
     }
 }
 
