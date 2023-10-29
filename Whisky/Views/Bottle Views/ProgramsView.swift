@@ -30,12 +30,13 @@ struct ProgramsView: View {
     @State var resortPrograms: Bool = false
     @State var isExpanded: Bool = true
     @State var isBlocklistExpanded: Bool = false
+    @State var isLoadingPrograms: Bool = false
     @Binding var reloadStartMenu: Bool
     @Binding var path: NavigationPath
 
     var body: some View {
         Form {
-            Section("program.title", isExpanded: $isExpanded) {
+            Section(isExpanded: $isExpanded) {
                 List($programs, id: \.self, selection: $selectedPrograms) { $program in
                     ProgramItemView(program: program,
                                     resortPrograms: $resortPrograms,
@@ -47,7 +48,18 @@ struct ProgramsView: View {
                         resortPrograms.toggle()
                     }
                 }
+            } header: {
+                HStack {
+                    Text("program.title")
+
+                    if isLoadingPrograms {
+                        ProgressView()
+                            .scaleEffect(0.5)
+                            .padding(.vertical, -16)
+                    }
+                }
             }
+
             Section("program.blocklist", isExpanded: $isBlocklistExpanded) {
                 List($blocklist, id: \.self, selection: $selectedBlockitems) { $blockedUrl in
                     BlocklistItemView(blockedUrl: blockedUrl,
@@ -88,10 +100,13 @@ struct ProgramsView: View {
     }
 
     private func updatePrograms() {
+        isLoadingPrograms = true
+
         DispatchQueue(label: "whisky.lock.queue").async {
             programs = bottle.updateInstalledPrograms()
             blocklist = bottle.settings.blocklist
             sortPrograms()
+            isLoadingPrograms = false
         }
     }
 
@@ -130,8 +145,11 @@ struct ProgramItemView: View {
             .buttonStyle(.plain)
             .foregroundColor(isPinned ? .accentColor : .secondary)
             .opacity(isPinned ? 1 : showButtons ? 1 : 0)
+
             Text(program.name)
+
             Spacer()
+
             if showButtons {
                 if let peFile = program.peFile,
                    let archString = peFile.architecture.toString() {
@@ -143,6 +161,7 @@ struct ProgramItemView: View {
                                 .stroke(.secondary)
                         )
                 }
+
                 Button {
                     path.append(program)
                 } label: {
@@ -151,6 +170,7 @@ struct ProgramItemView: View {
                 .buttonStyle(.plain)
                 .foregroundStyle(.secondary)
                 .help("program.config")
+
                 Button {
                     Task {
                         await program.run()
