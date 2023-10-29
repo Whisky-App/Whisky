@@ -6375,6 +6375,12 @@
     },
     "help.discord" : {
       "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Discord"
+          }
+        },
         "en" : {
           "stringUnit" : {
             "state" : "translated",
@@ -6385,6 +6391,12 @@
     },
     "help.github" : {
       "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Github"
+          }
+        },
         "en" : {
           "stringUnit" : {
             "state" : "translated",
@@ -6395,6 +6407,12 @@
     },
     "help.website" : {
       "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Webseite"
+          }
+        },
         "en" : {
           "stringUnit" : {
             "state" : "translated",
@@ -9002,6 +9020,12 @@
     },
     "settings.general" : {
       "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Allgemein"
+          }
+        },
         "en" : {
           "stringUnit" : {
             "state" : "translated",
@@ -9012,6 +9036,12 @@
     },
     "settings.toggle.gptk.updates" : {
       "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Automatisch nach Updates für GPTK suchen"
+          }
+        },
         "en" : {
           "stringUnit" : {
             "state" : "translated",
@@ -9022,6 +9052,12 @@
     },
     "settings.toggle.kill.on.terminate" : {
       "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Wine-Prozesse beim Schließen von Whisky beenden"
+          }
+        },
         "en" : {
           "stringUnit" : {
             "state" : "translated",
@@ -9032,6 +9068,12 @@
     },
     "settings.toggle.whisky.updates" : {
       "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Automatisch nach Updates für Whisky suchen"
+          }
+        },
         "en" : {
           "stringUnit" : {
             "state" : "translated",
@@ -9042,6 +9084,12 @@
     },
     "settings.updates" : {
       "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Updates"
+          }
+        },
         "en" : {
           "stringUnit" : {
             "state" : "translated",
