@@ -21,7 +21,17 @@ import WhiskyKit
 
 struct ProgramMenuView: View {
     @ObservedObject var program: Program
-    @Binding var path: NavigationPath
+    @Binding var path: NavigationPath?
+
+    init(program: Program, path: Binding<NavigationPath>) {
+        self.program = program
+        _path = .init(path)
+    }
+
+    init(program: Program) {
+        self.program = program
+        _path = .constant(nil)
+    }
 
     var body: some View {
         Button("button.run", systemImage: "play") {
@@ -31,10 +41,11 @@ struct ProgramMenuView: View {
         }
         .labelStyle(.titleAndIcon)
         Section("program.settings") {
-            Button("program.config", systemImage: "gearshape") {
-                path.append(program)
+            if path != nil {
+                Button("program.config", systemImage: "gearshape", action: {
+                    path?.append(program)
+                }).labelStyle(.titleAndIcon)
             }
-            .labelStyle(.titleAndIcon)
 
             let buttonName = program.pinned
             ? String(localized: "button.unpin")

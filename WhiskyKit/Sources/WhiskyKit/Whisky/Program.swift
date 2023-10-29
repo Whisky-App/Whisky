@@ -33,6 +33,9 @@ public class Program: Hashable, ObservableObject {
     public let url: URL
     public let settingsURL: URL
 
+    @MainActor @Published private var icon: Image?
+    @MainActor private var loadIconTask: Task<Image?, Never>?
+
     public var name: String {
         url.lastPathComponent
     }
@@ -106,5 +109,24 @@ public class Program: Hashable, ObservableObject {
         } catch {
             Logger.wineKit.error("Failed to save settings for `\(self.name)`: \(error)")
         }
+    }
+
+    @MainActor public func loadIcon() async -> Image? {
+        guard loadIconTask == nil else {
+            return await loadIconTask?.value
+        }
+
+        // Return the icon in-case we set it somewhere else
+        if let icon = self.icon { return icon }
+
+        loadIconTask = Task.detached { @MainActor in
+            guard let peFile = self.peFile else { return nil }
+            guard let image = peFile.bestIcon() else { return nil }
+            let icon = Image(nsImage: image)
+            self.icon = icon
+            return icon
+        }
+
+        return await loadIconTask?.value
     }
 }
