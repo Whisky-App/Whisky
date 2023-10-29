@@ -5200,6 +5200,12 @@
             "state": "translated",
             "value": "Сайт"
           }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "网站"
+          }
         }
       }
     },
@@ -7507,6 +7513,12 @@
             "state": "translated",
             "value": "Основные"
           }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "常规"
+          }
         }
       }
     },
@@ -7528,6 +7540,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Автоматически проверка обновлений GPTK"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "自动检查 GPTK 更新"
           }
         }
       }
@@ -7573,6 +7591,12 @@
             "state": "translated",
             "value": "Автоматическая проверка обновлений Whisky"
           }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "自动检查 Whisky 更新"
+          }
         }
       }
     },
@@ -7594,6 +7618,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Обновления"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "更新"
           }
         }
       }
