@@ -24,7 +24,7 @@ class Log {
     static let logsFolder = FileManager.default.urls(for: .libraryDirectory,
                                                     in: .userDomainMask)[0]
         .appending(path: "Logs")
-        .appending(path: Bundle.main.bundleIdentifier ?? "com.isaacmarovitz.Whisky")
+        .appending(path: Bundle.whiskyBundleIdentifier)
 
     let fileHandle: FileHandle
     let logger: Logger

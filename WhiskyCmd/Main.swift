@@ -95,10 +95,10 @@ extension Whisky {
 
         mutating func run() throws {
             // Should be sanitised
-            let bottle = URL(filePath: path)
-            let settings = BottleSettings(bottleURL: bottle)
+            let bottleURL = URL(filePath: path)
+            let settings = try BottleSettings.decode(from: bottleURL)
             var bottlesList = BottleData()
-            bottlesList.paths.append(bottle)
+            bottlesList.paths.append(bottleURL)
             print("Bottle \"\(settings.name)\" added.")
         }
     }

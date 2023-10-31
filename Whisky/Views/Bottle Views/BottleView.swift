@@ -146,14 +146,7 @@ struct BottleView: View {
                 }
             }
             .navigationDestination(for: Program.self) { program in
-                ProgramView(program: Binding(get: {
-                    // swiftlint:disable:next force_unwrapping
-                    bottle.programs[bottle.programs.firstIndex(of: program)!]
-                }, set: { newValue in
-                    if let index = bottle.programs.firstIndex(of: program) {
-                        bottle.programs[index] = newValue
-                    }
-                }))
+                ProgramView(program: program)
             }
         }
     }

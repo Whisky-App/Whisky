@@ -17,8 +17,10 @@
 //
 
 import Foundation
+import SwiftUI
+import os.log
 
-public class Program: Hashable {
+public class Program: Hashable, ObservableObject {
     public static func == (lhs: Program, rhs: Program) -> Bool {
         lhs.url == rhs.url
     }
@@ -28,30 +30,66 @@ public class Program: Hashable {
     }
 
     public var name: String
-    public var url: URL
-    public var settings: ProgramSettings
-    public var bottle: Bottle
-    public var pinned: Bool
+    public let bottle: Bottle
+    public let url: URL
+    public let settingsURL: URL
+
+    @Published public var settings: ProgramSettings {
+        didSet { saveSettings() }
+    }
+
+    @Published public var pinned: Bool
     public var peFile: PEFile?
 
     public init(name: String, url: URL, bottle: Bottle) {
         self.name = name
-        self.url = url
         self.bottle = bottle
-        self.settings = ProgramSettings(bottleUrl: bottle.url, name: name)
+        self.url = url
         self.pinned = bottle.settings.pins.contains(where: { $0.url == url })
+
+        // Warning: This will break if two programs share the same name such as "Launch.exe"
+        // Best to add some sort of UUID in the path or file
+        let settingsFolder = bottle.url.appending(path: "Program Settings")
+        let settingsUrl = settingsFolder.appending(path: name).appendingPathExtension("plist")
+        self.settingsURL = settingsUrl
+
+        do {
+            if !FileManager.default.fileExists(atPath: settingsFolder.path(percentEncoded: false)) {
+                try FileManager.default.createDirectory(at: settingsFolder, withIntermediateDirectories: true)
+            }
+
+            self.settings = try ProgramSettings.decode(from: settingsUrl)
+        } catch {
+            Logger.wineKit.error("Failed to load settings for `\(name)`: \(error)")
+            self.settings = ProgramSettings()
+        }
+
         do {
             self.peFile = try PEFile(url: url)
         } catch {
             self.peFile = nil
+        }
+
+        // Dirty 'fix' for Steam with DXVK
+        if name.contains("steam") {
+            settings.environment["WINEDLLOVERRIDES"] = "dxgi,d3d9,d3d10core,d3d11=b"
         }
     }
 
     public func generateEnvironment() -> [String: String] {
         var environment = settings.environment
         if settings.locale != .auto {
-            environment.updateValue(settings.locale.rawValue, forKey: "LC_ALL")
+            environment["LC_ALL"] = settings.locale.rawValue
         }
         return environment
+    }
+
+    /// Save the settings to file
+    private func saveSettings() {
+        do {
+            try settings.encode(to: settingsURL)
+        } catch {
+            Logger.wineKit.error("Failed to save settings for `\(self.name)`: \(error)")
+        }
     }
 }

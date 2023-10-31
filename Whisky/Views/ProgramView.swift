@@ -21,18 +21,20 @@ import WhiskyKit
 import UniformTypeIdentifiers
 
 struct ProgramView: View {
-    @Binding var program: Program
+    @ObservedObject var program: Program
     @State var image: NSImage?
-    @State var environment: [String: String] = [:]
     @State var programLoading: Bool = false
-    @State var locale: Locales = .auto
+
+    private var environmentKeys: [String] {
+        return program.settings.environment.keys.sorted(by: <)
+    }
 
     var body: some View {
         Form {
             Section("program.config") {
-                Picker("locale.title", selection: $locale) {
-                    ForEach(Locales.allCases, id: \.self) {
-                        Text($0.pretty())
+                Picker("locale.title", selection: $program.settings.locale) {
+                    ForEach(Locales.allCases, id: \.self) { locale in
+                        Text(locale.pretty()).id(locale)
                     }
                 }
                 VStack {
@@ -40,12 +42,27 @@ struct ProgramView: View {
                         Text("program.args")
                         Spacer()
                     }
-                    TextField(String(), text: $program.settings.arguments)
+                    TextField("program.args", text: $program.settings.arguments)
                         .textFieldStyle(.roundedBorder)
                         .font(.system(.body, design: .monospaced))
                         .labelsHidden()
                 }
-                EnvironmentVarEditor(environment: $environment)
+            }
+
+            Section {
+                ForEach(environmentKeys, id: \.self) { key in
+                    KeyItem(key: key, program: program)
+                }
+            } header: {
+                HStack {
+                    Text("program.env").frame(maxWidth: .infinity, alignment: .leading)
+                        .multilineTextAlignment(.leading)
+                    Button("environment.add", systemImage: "plus", action: {
+                        program.settings.environment["VAR_\(program.settings.environment.count + 1)"] = ""
+                    })
+                    .buttonStyle(.plain)
+                    .labelStyle(.titleAndIcon)
+                }
             }
         }
         .formStyle(.grouped)
@@ -114,115 +131,72 @@ struct ProgramView: View {
             if let peFile = program.peFile {
                 image = peFile.bestIcon()
             }
-
-            environment = program.settings.environment
-            locale = program.settings.locale
         }
-        .onChange(of: environment) { _, newValue in
-            program.settings.environment = newValue
-        }
-        .onChange(of: locale) { _, newValue in
-            program.settings.locale = newValue
-        }
-    }
-}
-
-struct EnvironmentVarEditor: View {
-    @Binding var environment: [String: String]
-    @State var selection = Set<String>()
-
-    var body: some View {
-        VStack {
-            HStack {
-                Text("program.env")
-                Spacer()
-            }
-            List(environment.keys.sorted(by: <), id: \.self, selection: $selection) { key in
-                if let value = environment[key] {
-                    KeyItem(key: key,
-                            value: value,
-                            environment: $environment)
-                }
-            }
-            .listStyle(.inset(alternatesRowBackgrounds: true))
-            .cornerRadius(5)
-            HStack {
-                Spacer()
-                Button {
-                    // Need to set this in a better way cause this can break
-                    environment["VAR_\(environment.count + 1)"] = ""
-                } label: {
-                    Image(systemName: "plus")
-                }
-                .buttonStyle(ArgumentEditorButton())
-                Divider()
-                    .frame(height: 20)
-                Button {
-                    for key in selection {
-                        environment.removeValue(forKey: key)
-                    }
-                    selection.removeAll()
-                } label: {
-                    Image(systemName: "minus")
-                }
-                .buttonStyle(ArgumentEditorButton())
-            }
-        }
-    }
-}
-
-struct ArgumentEditorButton: ButtonStyle {
-    func makeBody(configuration: Configuration) -> some View {
-        configuration.label
-            .frame(width: 15, height: 15)
-            .padding(4)
-            // Without this the selectable area is reduced to just
-            // the icons which isn't great
-            .background(Color(nsColor: NSColor.windowBackgroundColor)
-                .opacity(0.001))
-            .clipShape(RoundedRectangle(cornerRadius: 5))
     }
 }
 
 struct KeyItem: View {
-    @Binding var environment: [String: String]
-    let key: String
-    @State var newKey: String
-    @State var value: String
-    @FocusState private var isKeyFieldFocused: Bool
-    @FocusState private var isValueFieldFocused: Bool
+    enum FocusedField: Hashable {
+        case key, value
+    }
 
-    init(key: String, value: String, environment: Binding<[String: String]>) {
-        self._environment = environment
+    @ObservedObject private var program: Program
+    @State private var key: String
+    @State private var newKey: String
+    @State private var value: String
+    @FocusState private var focus: FocusedField?
+
+    init(key: String, program: Program) {
+        self.program = program
         self.key = key
         self.newKey = key
-        self.value = value
+        self.value = program.settings.environment[key] ?? ""
     }
 
     var body: some View {
         HStack {
             TextField(String(), text: $newKey)
-            .textFieldStyle(.roundedBorder)
-            .onChange(of: newKey) {
-                newKey = String(newKey.filter { !$0.isWhitespace })
-            }
-            .focused($isKeyFieldFocused)
-            .onChange(of: isKeyFieldFocused) { _, focus in
-                if !focus {
-                    if let entry = environment.removeValue(forKey: key) {
-                        environment[newKey] = entry
-                    }
+                .textFieldStyle(.roundedBorder)
+                .labelsHidden()
+                .frame(maxHeight: .infinity)
+                .focused($focus, equals: FocusedField.key)
+                .onChange(of: newKey) {
+                    newKey = newKey.trimmingCharacters(in: .whitespacesAndNewlines)
                 }
-            }
-            Spacer()
+                .onSubmit {
+                    updateKey(from: newKey)
+                }
             TextField(String(), text: $value)
-            .textFieldStyle(.roundedBorder)
-            .focused($isValueFieldFocused)
-            .onChange(of: isValueFieldFocused) { _, focus in
-                if !focus {
-                    environment[newKey] = value
+                .textFieldStyle(.roundedBorder)
+                .labelsHidden()
+                .frame(maxHeight: .infinity)
+                .focused($focus, equals: FocusedField.value)
+                .onSubmit {
+                    program.settings.environment[key] = value
                 }
+
+            Button("environment.remove", systemImage: "trash") {
+                program.settings.environment.removeValue(forKey: key)
+            }.buttonStyle(.plain).labelStyle(.iconOnly)
+        }.onChange(of: focus) { oldValue, _ in
+            switch oldValue {
+            case .key:
+                updateKey(from: newKey)
+            case .value:
+                program.settings.environment[key] = value
+            case nil:
+                break
             }
         }
+    }
+
+    /// Update the key on the environment
+    private func updateKey(from newKey: String) {
+        let newKey = newKey.trimmingCharacters(in: .whitespacesAndNewlines)
+        guard key != newKey else { return }
+        program.settings.environment.removeValue(forKey: key)
+        guard !newKey.isEmpty else { return }
+        program.settings.environment[newKey] = value
+        self.key = newKey
     }
 }

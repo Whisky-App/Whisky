@@ -210,7 +210,9 @@
 				6E40495329CCA19C006E3F1B /* Products */,
 				6E5967692A9A424900D64F70 /* Frameworks */,
 			);
+			indentWidth = 4;
 			sourceTree = "<group>";
+			tabWidth = 4;
 		};
 		6E40495329CCA19C006E3F1B /* Products */ = {
 			isa = PBXGroup;

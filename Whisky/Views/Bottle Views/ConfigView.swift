@@ -28,68 +28,59 @@ enum LoadingState {
 
 struct ConfigView: View {
     @Binding var bottle: Bottle
-    @State var windowsVersion: WinVersion
-    @State var displayBuildVersion: String = ""
-    @State var buildVersion: String = ""
-    @State var retinaMode: Bool = false
-    @State var dpiConfig: Int = 96
-    @State var winVersionLoadingState: LoadingState = .loading
-    @State var buildVersionLoadingState: LoadingState = .loading
-    @State var retinaModeLoadingState: LoadingState = .loading
-    @State var dpiConfigLoadingState: LoadingState = .loading
-    @State var dpiSheetPresented: Bool = false
-    @AppStorage("wineSectionExpanded") var wineSectionExpanded: Bool = true
-    @AppStorage("dxvkSectionExpanded") var dxvkSectionExpanded: Bool = true
-    @AppStorage("metalSectionExpanded") var metalSectionExpanded: Bool = true
-
-    init(bottle: Binding<Bottle>) {
-        self._bottle = bottle
-        self.windowsVersion = bottle.settings.windowsVersion.wrappedValue
-    }
+    @State private var buildVersion: Int = 0
+    @State private var retinaMode: Bool = false
+    @State private var dpiConfig: Int = 96
+    @State private var winVersionLoadingState: LoadingState = .loading
+    @State private var buildVersionLoadingState: LoadingState = .loading
+    @State private var retinaModeLoadingState: LoadingState = .loading
+    @State private var dpiConfigLoadingState: LoadingState = .loading
+    @State private var dpiSheetPresented: Bool = false
+    @AppStorage("wineSectionExpanded") private var wineSectionExpanded: Bool = true
+    @AppStorage("dxvkSectionExpanded") private var dxvkSectionExpanded: Bool = true
+    @AppStorage("metalSectionExpanded") private var metalSectionExpanded: Bool = true
 
     var body: some View {
         Form {
             Section("config.title.wine", isExpanded: $wineSectionExpanded) {
                 SettingItemView(title: "config.winVersion", loadingState: $winVersionLoadingState) {
-                    Picker("config.winVersion", selection: $windowsVersion) {
+                    Picker("config.winVersion", selection: $bottle.settings.windowsVersion) {
                         ForEach(WinVersion.allCases.reversed(), id: \.self) {
                             Text($0.pretty())
                         }
                     }
                 }
                 SettingItemView(title: "config.buildVersion", loadingState: $buildVersionLoadingState) {
-                    TextField("config.buildVersion", text: $displayBuildVersion)
+                    TextField("config.buildVersion", value: $buildVersion, formatter: NumberFormatter())
                         .multilineTextAlignment(.trailing)
                         .textFieldStyle(PlainTextFieldStyle())
                         .onSubmit {
                             buildVersionLoadingState = .modifying
                             Task(priority: .userInitiated) {
-                                if let version = Int(displayBuildVersion) {
-                                    do {
-                                        try await Wine.changeBuildVersion(bottle: bottle, version: version)
-                                    } catch {
-                                        print("Failed to change build version")
-                                    }
-                                } else {
-                                    displayBuildVersion = buildVersion
+                                do {
+                                    try await Wine.changeBuildVersion(bottle: bottle, version: buildVersion)
+                                    buildVersionLoadingState = .success
+                                } catch {
+                                    print("Failed to change build version")
+                                    buildVersionLoadingState = .failed
                                 }
-                                buildVersionLoadingState = .success
                             }
                         }
                 }
                 SettingItemView(title: "config.retinaMode", loadingState: $retinaModeLoadingState) {
                     Toggle("config.retinaMode", isOn: $retinaMode)
-                        .onChange(of: retinaMode) {
+                        .onChange(of: retinaMode, { _, newValue in
                             Task(priority: .userInitiated) {
                                 retinaModeLoadingState = .modifying
                                 do {
-                                    try await Wine.changeRetinaMode(bottle: bottle, retinaMode: retinaMode)
+                                    try await Wine.changeRetinaMode(bottle: bottle, retinaMode: newValue)
+                                    retinaModeLoadingState = .success
                                 } catch {
                                     print("Failed to change build version")
+                                    retinaModeLoadingState = .failed
                                 }
-                                retinaModeLoadingState = .success
                             }
-                        }
+                        })
                 }
                 Toggle(isOn: $bottle.settings.msync) {
                     Text("config.msync")
@@ -172,7 +163,6 @@ struct ConfigView: View {
         }
         .navigationTitle("tab.config")
         .onAppear {
-            windowsVersion = bottle.settings.windowsVersion
             winVersionLoadingState = .success
 
             loadBuildName()
@@ -197,7 +187,7 @@ struct ConfigView: View {
                 }
             }
         }
-        .onChange(of: windowsVersion) { _, newValue in
+        .onChange(of: bottle.settings.windowsVersion) { _, newValue in
             if winVersionLoadingState == .success {
                 winVersionLoadingState = .loading
                 buildVersionLoadingState = .loading
@@ -210,14 +200,9 @@ struct ConfigView: View {
                     } catch {
                         print(error)
                         winVersionLoadingState = .failed
-                        windowsVersion = bottle.settings.windowsVersion
                     }
                 }
             }
-        }
-        .onChange(of: buildVersion) {
-            // Remove anything that isn't a number
-            buildVersion = buildVersion.filter("0123456789".contains)
         }
         .onChange(of: dpiConfig) {
             if dpiConfigLoadingState == .success {
@@ -238,8 +223,8 @@ struct ConfigView: View {
     func loadBuildName() {
         Task(priority: .userInitiated) {
             do {
-                buildVersion = try await Wine.buildVersion(bottle: bottle)
-                displayBuildVersion = buildVersion
+                let buildVersionString = try await Wine.buildVersion(bottle: bottle)
+                buildVersion = Int(buildVersionString) ?? 0
                 buildVersionLoadingState = .success
             } catch {
                 print(error)
