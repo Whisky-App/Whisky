@@ -481,6 +481,12 @@
             "value": "Luo pikakomento"
           }
         },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Créer un raccourci"
+          }
+        },
         "it": {
           "stringUnit": {
             "state": "translated",
@@ -752,6 +758,12 @@
     "button.ok": {
       "localizations": {
         "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "OK"
+          }
+        },
+        "fr": {
           "stringUnit": {
             "state": "translated",
             "value": "OK"
@@ -1893,6 +1905,12 @@
             "value": "Winetricks..."
           }
         },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Winetricks..."
+          }
+        },
         "zh-Hans": {
           "stringUnit": {
             "state": "translated",
@@ -2369,6 +2387,12 @@
             "value": "DXVK"
           }
         },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "DXVK"
+          }
+        },
         "ja": {
           "stringUnit": {
             "state": "translated",
@@ -2389,6 +2413,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "DXVK Asíncrono"
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "DXVK Async"
           }
         },
         "it": {
@@ -3229,6 +3259,12 @@
             "value": "MSync"
           }
         },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "MSync"
+          }
+        },
         "zh-Hant": {
           "stringUnit": {
             "state": "translated",
@@ -3267,6 +3303,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Ei saatavilla"
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "N\/A"
           }
         },
         "ko": {
@@ -3574,6 +3616,12 @@
             "state": "translated",
             "value": "DXVK"
           }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "DXVK"
+          }
         }
       }
     },
@@ -3584,12 +3632,24 @@
             "state": "translated",
             "value": "Metal"
           }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Metal"
+          }
         }
       }
     },
     "config.title.wine": {
       "localizations": {
         "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Wine"
+          }
+        },
+        "fr": {
           "stringUnit": {
             "state": "translated",
             "value": "Wine"
@@ -5006,6 +5066,12 @@
             "state": "translated",
             "value": "Discord"
           }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Discord"
+          }
         }
       }
     },
@@ -5018,6 +5084,12 @@
           }
         },
         "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "GitHub"
+          }
+        },
+        "fr": {
           "stringUnit": {
             "state": "translated",
             "value": "GitHub"
@@ -5037,6 +5109,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Website"
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Site Web"
           }
         }
       }
@@ -5944,6 +6022,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "Poista ohjelman kiinnitys"
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Désépingler le programme"
           }
         },
         "it": {
