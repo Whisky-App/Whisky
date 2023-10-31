@@ -30,7 +30,7 @@ Translated on [Crowdin](https://crowdin.com/project/whisky).
 ---
 
 ## System Requirements
-- CPU: Apple Silicon (M1/M2 and its variants)
+- CPU: Apple Silicon (M-series chips)
 - OS: macOS Sonoma 14.0 or later
 
 ## Homebrew
