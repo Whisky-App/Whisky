@@ -20,7 +20,7 @@ import SwiftUI
 import WhiskyKit
 
 struct ProgramsView: View {
-    let bottle: Bottle
+    @Binding var bottle: Bottle
     @State var programs: [Program] = []
     @State var blocklist: [URL] = []
     @State private var selectedPrograms = Set<Program>()
@@ -30,12 +30,13 @@ struct ProgramsView: View {
     @State var resortPrograms: Bool = false
     @State var isExpanded: Bool = true
     @State var isBlocklistExpanded: Bool = false
+    @State var isLoadingPrograms: Bool = false
     @Binding var reloadStartMenu: Bool
     @Binding var path: NavigationPath
 
     var body: some View {
         Form {
-            Section("program.title", isExpanded: $isExpanded) {
+            Section(isExpanded: $isExpanded) {
                 List($programs, id: \.self, selection: $selectedPrograms) { $program in
                     ProgramItemView(program: program,
                                     resortPrograms: $resortPrograms,
@@ -47,7 +48,18 @@ struct ProgramsView: View {
                         resortPrograms.toggle()
                     }
                 }
+            } header: {
+                HStack {
+                    Text("program.title")
+
+                    if isLoadingPrograms {
+                        ProgressView()
+                            .scaleEffect(0.5)
+                            .padding(.vertical, -16)
+                    }
+                }
             }
+
             Section("program.blocklist", isExpanded: $isBlocklistExpanded) {
                 List($blocklist, id: \.self, selection: $selectedBlockitems) { $blockedUrl in
                     BlocklistItemView(blockedUrl: blockedUrl,
@@ -68,26 +80,46 @@ struct ProgramsView: View {
         .animation(.easeInOut(duration: 0.2), value: isBlocklistExpanded)
         .navigationTitle("tab.programs")
         .onAppear {
-            programs = bottle.updateInstalledPrograms()
-            blocklist = bottle.settings.blocklist
-            sortPrograms()
+            loadPrograms()
         }
         .onChange(of: resortPrograms) {
-            reloadStartMenu.toggle()
-            programs = bottle.updateInstalledPrograms()
-            blocklist = bottle.settings.blocklist
             sortPrograms()
+            reloadStartMenu.toggle()
         }
     }
 
-    func sortPrograms() {
-        var favourites = programs.filter { $0.pinned }
-        var nonFavourites = programs.filter { !$0.pinned }
-        favourites = favourites.sorted { $0.name < $1.name }
-        nonFavourites = nonFavourites.sorted { $0.name < $1.name }
-        programs.removeAll()
-        programs.append(contentsOf: favourites)
-        programs.append(contentsOf: nonFavourites)
+    func loadPrograms() {
+        if bottle.programs.isEmpty {
+            updatePrograms()
+            return
+        }
+
+        programs = bottle.programs
+        blocklist = bottle.settings.blocklist
+        sortPrograms()
+    }
+
+    private func updatePrograms() {
+        isLoadingPrograms = true
+
+        DispatchQueue(label: "whisky.lock.queue").async {
+            programs = bottle.updateInstalledPrograms()
+            blocklist = bottle.settings.blocklist
+            sortPrograms()
+            isLoadingPrograms = false
+        }
+    }
+
+    private func sortPrograms() {
+        DispatchQueue(label: "whisky.lock.queue").async {
+            var favourites = programs.filter { $0.pinned }
+            var nonFavourites = programs.filter { !$0.pinned }
+            favourites = favourites.sorted { $0.name < $1.name }
+            nonFavourites = nonFavourites.sorted { $0.name < $1.name }
+            programs.removeAll()
+            programs.append(contentsOf: favourites)
+            programs.append(contentsOf: nonFavourites)
+        }
     }
 }
 
@@ -113,8 +145,11 @@ struct ProgramItemView: View {
             .buttonStyle(.plain)
             .foregroundColor(isPinned ? .accentColor : .secondary)
             .opacity(isPinned ? 1 : showButtons ? 1 : 0)
+
             Text(program.name)
+
             Spacer()
+
             if showButtons {
                 if let peFile = program.peFile,
                    let archString = peFile.architecture.toString() {
@@ -126,6 +161,7 @@ struct ProgramItemView: View {
                                 .stroke(.secondary)
                         )
                 }
+
                 Button {
                     path.append(program)
                 } label: {
@@ -134,6 +170,7 @@ struct ProgramItemView: View {
                 .buttonStyle(.plain)
                 .foregroundStyle(.secondary)
                 .help("program.config")
+
                 Button {
                     Task {
                         await program.run()

@@ -92,14 +92,19 @@ extension Bottle {
         let programFilesx86 = url
             .appending(path: "drive_c")
             .appending(path: "Program Files (x86)")
-        programs.removeAll()
+
+        lock.withLock {
+            programs.removeAll()
+        }
 
         let enumerator64 = FileManager.default.enumerator(at: programFiles,
                                                           includingPropertiesForKeys: [.isExecutableKey],
                                                           options: [.skipsHiddenFiles])
         while let url = enumerator64?.nextObject() as? URL {
             if !url.hasDirectoryPath && url.pathExtension == "exe" {
-                programs.append(Program(name: url.lastPathComponent, url: url, bottle: self))
+                lock.withLock {
+                    programs.append(Program(name: url.lastPathComponent, url: url, bottle: self))
+                }
             }
         }
 
@@ -108,14 +113,20 @@ extension Bottle {
                                                           options: [.skipsHiddenFiles])
         while let url = enumerator32?.nextObject() as? URL {
             if !url.hasDirectoryPath && url.pathExtension == "exe" {
-                programs.append(Program(name: url.lastPathComponent, url: url, bottle: self))
+                lock.withLock {
+                    programs.append(Program(name: url.lastPathComponent, url: url, bottle: self))
+                }
             }
         }
 
         // Apply blocklist
-        programs = programs.filter { !settings.blocklist.contains($0.url) }
+        lock.withLock {
+            programs = programs.filter {
+                !settings.blocklist.contains($0.url)
+            }
+            programs.sort { $0.name.lowercased() < $1.name.lowercased() }
+        }
 
-        programs.sort { $0.name.lowercased() < $1.name.lowercased() }
         return programs
     }
 

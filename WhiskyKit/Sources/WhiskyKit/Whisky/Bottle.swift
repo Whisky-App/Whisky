@@ -68,6 +68,8 @@ public class Bottle: Hashable, Identifiable, ObservableObject {
             )
         }
     }
+
+    public let lock = NSLock()
 }
 
 extension Array where Element == Bottle {
