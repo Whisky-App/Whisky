@@ -54,9 +54,16 @@ struct EnvironmentArgView: View {
                 ForEach(environmentKeys, id: \.id) { key in
                     KeyItem(environmentKeys: $environmentKeys, key: key, focus: _focus)
                 }
-            }.onAppear {
+            }
+            .onAppear {
                 environmentKeys = program.settings.environment.map { (key: String, value: String) in
                     return Key(key: key, value: value)
+                }
+            }
+            .onDisappear {
+                program.settings.environment.removeAll()
+                for key in environmentKeys {
+                    program.settings.environment[key.key] = key.value
                 }
             }
         } header: {
@@ -69,7 +76,8 @@ struct EnvironmentArgView: View {
                 .buttonStyle(.plain)
                 .labelStyle(.titleAndIcon)
             }
-        }.onChange(of: focus) { oldValue, newValue in
+        }
+        .onChange(of: focus) { oldValue, newValue in
             switch oldValue {
             case .row(let id, _):
                 if let key = environmentKeys.first(where: { $0.id == id }) {
@@ -137,7 +145,9 @@ struct KeyItem: View {
 
             Button("environment.remove", systemImage: "trash") {
                 environmentKeys.removeAll(where: { $0.id == key.id })
-            }.buttonStyle(.plain).labelStyle(.iconOnly)
+            }
+            .buttonStyle(.plain)
+            .labelStyle(.iconOnly)
         }
     }
 }
