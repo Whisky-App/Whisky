@@ -51,9 +51,10 @@ struct EnvironmentArgView: View {
     var body: some View {
         Section {
             VStack {
-                ForEach(environmentKeys, id: \.id) { key in
-                    KeyItem(environmentKeys: $environmentKeys, key: key, focus: _focus)
+                List(environmentKeys, id: \.id) { key in
+                    KeyItem(focus: _focus, environmentKeys: $environmentKeys, key: key)
                 }
+                .alternatingRowBackgrounds(.enabled)
             }
             .onAppear {
                 let keys = program.settings.environment.map { (key: String, value: String) in
@@ -120,9 +121,10 @@ struct EnvironmentArgView: View {
 }
 
 struct KeyItem: View {
+    @FocusState var focus: Focusable?
     @Binding var environmentKeys: [Key]
     @State var key: Key
-    @FocusState var focus: Focusable?
+    @State var hovered: Bool = false
 
     var body: some View {
         HStack {
@@ -143,12 +145,19 @@ struct KeyItem: View {
                 .labelsHidden()
                 .frame(maxHeight: .infinity)
                 .focused($focus, equals: .row(id: key.id, section: .value))
-
-            Button("environment.remove", systemImage: "trash") {
+            Button {
                 environmentKeys.removeAll(where: { $0.id == key.id })
+            } label: {
+                Image(systemName: "xmark.circle.fill")
+                    .help("environment.remove")
             }
             .buttonStyle(.plain)
-            .labelStyle(.iconOnly)
+            .foregroundStyle(.secondary)
+            .opacity(hovered ? 1 : 0)
+        }
+        .padding(.vertical, 4)
+        .onHover { hover in
+            hovered = hover
         }
     }
 }
