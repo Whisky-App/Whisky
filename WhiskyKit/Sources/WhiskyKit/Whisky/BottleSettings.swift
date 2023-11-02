@@ -20,33 +20,6 @@ import Foundation
 import SemanticVersion
 import os.log
 
-public enum DXVKHUD: Codable {
-    case full, partial, fps, off
-}
-
-public enum WinVersion: String, CaseIterable, Codable {
-    case winXP = "winxp64"
-    case win7 = "win7"
-    case win8 = "win8"
-    case win81 = "win81"
-    case win10 = "win10"
-
-    public func pretty() -> String {
-        switch self {
-        case .winXP:
-            return "Windows XP"
-        case .win7:
-            return "Windows 7"
-        case .win8:
-            return "Windows 8"
-        case .win81:
-            return "Windows 8.1"
-        case .win10:
-            return "Windows 10"
-        }
-    }
-}
-
 public struct PinnedProgram: Codable, Hashable {
     public var name: String
     public var url: URL?
@@ -78,11 +51,38 @@ public struct BottleInfo: Codable {
     }
 }
 
+public enum WinVersion: String, CaseIterable, Codable {
+    case winXP = "winxp64"
+    case win7 = "win7"
+    case win8 = "win8"
+    case win81 = "win81"
+    case win10 = "win10"
+
+    public func pretty() -> String {
+        switch self {
+        case .winXP:
+            return "Windows XP"
+        case .win7:
+            return "Windows 7"
+        case .win8:
+            return "Windows 8"
+        case .win81:
+            return "Windows 8.1"
+        case .win10:
+            return "Windows 10"
+        }
+    }
+}
+
+public enum EnhancedSync: Codable {
+    case none, esync, msync
+}
+
 public struct BottleWineConfig: Codable {
     static let defaultWineVersion = SemanticVersion(7, 7, 0)
     var wineVersion: SemanticVersion = Self.defaultWineVersion
     var windowsVersion: WinVersion = .win10
-    var msync: Bool = true
+    var enhancedSync: EnhancedSync = .msync
 
     public init() {}
 
@@ -91,7 +91,7 @@ public struct BottleWineConfig: Codable {
         let container = try decoder.container(keyedBy: CodingKeys.self)
         self.wineVersion = try container.decodeIfPresent(SemanticVersion.self, forKey: .wineVersion) ?? Self.defaultWineVersion
         self.windowsVersion = try container.decodeIfPresent(WinVersion.self, forKey: .windowsVersion) ?? .win10
-        self.msync = try container.decodeIfPresent(Bool.self, forKey: .msync) ?? true
+        self.enhancedSync = try container.decodeIfPresent(EnhancedSync.self, forKey: .enhancedSync) ?? .msync
     }
     // swiftlint:enable line_length
 }
@@ -107,6 +107,10 @@ public struct BottleMetalConfig: Codable {
         self.metalHud = try container.decodeIfPresent(Bool.self, forKey: .metalHud) ?? false
         self.metalTrace = try container.decodeIfPresent(Bool.self, forKey: .metalTrace) ?? false
     }
+}
+
+public enum DXVKHUD: Codable {
+    case full, partial, fps, off
 }
 
 public struct BottleDXVKConfig: Codable {
@@ -181,9 +185,9 @@ public struct BottleSettings: Codable {
         set { info.blocklist = newValue }
     }
 
-    public var msync: Bool {
-        get { return wineConfig.msync }
-        set { wineConfig.msync = newValue }
+    public var enhancedSync: EnhancedSync {
+        get { return wineConfig.enhancedSync }
+        set { wineConfig.enhancedSync = newValue }
     }
 
     public var metalHud: Bool {
@@ -248,6 +252,7 @@ public struct BottleSettings: Codable {
         try data.write(to: metadataUrl)
     }
 
+    // swiftlint:disable:next cyclomatic_complexity
     public func environmentVariables(wineEnv: inout [String: String]) {
         if dxvk {
             wineEnv.updateValue("dxgi,d3d9,d3d10core,d3d11=n,b", forKey: "WINEDLLOVERRIDES")
@@ -267,7 +272,12 @@ public struct BottleSettings: Codable {
             wineEnv.updateValue("1", forKey: "DXVK_ASYNC")
         }
 
-        if msync {
+        switch enhancedSync {
+        case .none:
+            break
+        case .esync:
+            wineEnv.updateValue("1", forKey: "WINEMSYNC")
+        case .msync:
             wineEnv.updateValue("1", forKey: "WINEMSYNC")
         }
 
