@@ -18,6 +18,7 @@
 
 import Foundation
 import SemanticVersion
+import os.log
 
 public enum DXVKHUD: Codable {
     case full, partial, fps, off
@@ -63,7 +64,8 @@ public struct BottleInfo: Codable {
 }
 
 public struct BottleWineConfig: Codable {
-    var wineVersion: SemanticVersion = SemanticVersion(7, 7, 0)
+    static let defaultWineVersion = SemanticVersion(7, 7, 0)
+    var wineVersion: SemanticVersion = Self.defaultWineVersion
     var windowsVersion: WinVersion = .win10
     var msync: Bool = true
 }
@@ -79,166 +81,111 @@ public struct BottleDXVKConfig: Codable {
     var dxvkHud: DXVKHUD = .off
 }
 
-public struct BottleMetadata: Codable {
-    var fileVersion: SemanticVersion = SemanticVersion(1, 0, 0)
-    var info: BottleInfo = .init()
-    var wineConfig: BottleWineConfig = .init()
-    var metalConfig: BottleMetalConfig = .init()
-    var dxvkConfig: BottleDXVKConfig = .init()
-}
+public struct BottleSettings: Codable {
+    static let defaultFileVersion = SemanticVersion(1, 0, 0)
 
-public class BottleSettings {
-    private let bottleUrl: URL
-    private let metadataUrl: URL
+    var fileVersion: SemanticVersion = Self.defaultFileVersion
+    private var info: BottleInfo = .init()
+    private var wineConfig: BottleWineConfig = .init()
+    private var metalConfig: BottleMetalConfig = .init()
+    private var dxvkConfig: BottleDXVKConfig = .init()
 
-    public var settings: BottleMetadata {
-        didSet {
-            encode()
-        }
+    public init() { }
+
+    /// The name of this bottle
+    public var name: String {
+        get { return info.name }
+        set { info.name = newValue }
     }
 
+    /// The version of wine used by this bottle
     public var wineVersion: SemanticVersion {
-        get {
-            return settings.wineConfig.wineVersion
-        }
-        set {
-            settings.wineConfig.wineVersion = newValue
-        }
+        get { return wineConfig.wineVersion }
+        set { wineConfig.wineVersion = newValue }
     }
 
+    /// The version of windows used by this bottle
     public var windowsVersion: WinVersion {
-        get {
-            return settings.wineConfig.windowsVersion
-        }
-        set {
-            settings.wineConfig.windowsVersion = newValue
-        }
+        get { return wineConfig.windowsVersion }
+        set { wineConfig.windowsVersion = newValue }
+    }
+
+    /// The pinned programs on this bottle
+    public var pins: [PinnedProgram] {
+        get { return info.pins }
+        set { info.pins = newValue }
+    }
+
+    /// The blocked applicaitons on this bottle
+    public var blocklist: [URL] {
+        get { return info.blocklist }
+        set { info.blocklist = newValue }
     }
 
     public var msync: Bool {
-        get {
-            return settings.wineConfig.msync
-        }
-        set {
-            settings.wineConfig.msync = newValue
-        }
+        get { return wineConfig.msync }
+        set { wineConfig.msync = newValue }
     }
 
     public var metalHud: Bool {
-        get {
-            return settings.metalConfig.metalHud
-        }
-        set {
-            settings.metalConfig.metalHud = newValue
-        }
+        get { return metalConfig.metalHud }
+        set { metalConfig.metalHud = newValue }
     }
 
     public var metalTrace: Bool {
-        get {
-            return settings.metalConfig.metalTrace
-        }
-        set {
-            settings.metalConfig.metalTrace = newValue
-        }
+        get { return metalConfig.metalTrace }
+        set { metalConfig.metalTrace = newValue }
     }
 
     public var dxvk: Bool {
-        get {
-            return settings.dxvkConfig.dxvk
-        }
-        set {
-            settings.dxvkConfig.dxvk = newValue
-        }
+        get { return dxvkConfig.dxvk }
+        set { dxvkConfig.dxvk = newValue }
     }
 
     public var dxvkAsync: Bool {
-        get {
-            return settings.dxvkConfig.dxvkAsync
-        } set {
-            settings.dxvkConfig.dxvkAsync = newValue
-        }
+        get { return dxvkConfig.dxvkAsync }
+        set { dxvkConfig.dxvkAsync = newValue }
     }
 
     public var dxvkHud: DXVKHUD {
-        get {
-            return settings.dxvkConfig.dxvkHud
-        }
-        set {
-            settings.dxvkConfig.dxvkHud = newValue
-        }
-    }
-
-    public var name: String {
-        get {
-            return settings.info.name
-        } set {
-            settings.info.name = newValue
-        }
-    }
-
-    public var pins: [PinnedProgram] {
-        get {
-            return settings.info.pins
-        }
-        set {
-            settings.info.pins = newValue
-        }
-    }
-
-    public var blocklist: [URL] {
-        get {
-            return settings.info.blocklist
-        }
-        set {
-            settings.info.blocklist = newValue
-        }
-    }
-
-    public init(bottleURL: URL) {
-        bottleUrl = bottleURL
-        metadataUrl = bottleURL
-            .appending(path: "Metadata")
-            .appendingPathExtension("plist")
-        settings = .init()
-        if !decode() {
-            encode()
-        }
+        get {  return dxvkConfig.dxvkHud }
+        set { dxvkConfig.dxvkHud = newValue }
     }
 
     @discardableResult
-    private func decode() -> Bool {
+    public static func decode(from metadataURL: URL) throws -> BottleSettings {
+        guard FileManager.default.fileExists(atPath: metadataURL.path(percentEncoded: false)) else {
+            let settings = BottleSettings()
+            try settings.encode(to: metadataURL)
+            return settings
+        }
+
         let decoder = PropertyListDecoder()
+        let data = try Data(contentsOf: metadataURL)
+        var settings = try decoder.decode(BottleSettings.self, from: data)
 
-        do {
-            let data = try Data(contentsOf: self.metadataUrl)
-            settings = try decoder.decode(BottleMetadata.self, from: data)
-            if settings.fileVersion != BottleMetadata().fileVersion {
-                print("Invalid file version \(settings.fileVersion)")
-                return false
-            }
-            if settings.wineConfig.wineVersion != BottleWineConfig().wineVersion {
-                print("Bottle has a different wine version!")
-                settings.wineConfig.wineVersion = BottleWineConfig().wineVersion
-                encode()
-            }
-            return true
-        } catch {
-            return false
+        guard settings.fileVersion == BottleSettings.defaultFileVersion else {
+            Logger.wineKit.warning("Invalid file version `\(settings.fileVersion)`")
+            settings = BottleSettings()
+            try settings.encode(to: metadataURL)
+            return settings
         }
+
+        if settings.wineConfig.wineVersion != BottleWineConfig().wineVersion {
+            Logger.wineKit.warning("Bottle has a different wine version `\(settings.wineConfig.wineVersion)`")
+            settings.wineConfig.wineVersion = BottleWineConfig().wineVersion
+            try settings.encode(to: metadataURL)
+            return settings
+        }
+
+        return settings
     }
 
-    @discardableResult
-    private func encode() -> Bool {
+    func encode(to metadataUrl: URL) throws {
         let encoder = PropertyListEncoder()
         encoder.outputFormat = .xml
-
-        do {
-            let data = try encoder.encode(settings)
-            try data.write(to: metadataUrl)
-            return true
-        } catch {
-            return false
-        }
+        let data = try encoder.encode(self)
+        try data.write(to: metadataUrl)
     }
 
     public func environmentVariables(wineEnv: inout [String: String]) {

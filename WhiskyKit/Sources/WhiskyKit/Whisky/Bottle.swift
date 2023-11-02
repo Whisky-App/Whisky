@@ -17,8 +17,10 @@
 //
 
 import Foundation
+import SwiftUI
+import os.log
 
-public class Bottle: Hashable, Identifiable {
+public class Bottle: Hashable, Identifiable, ObservableObject {
     public static func == (lhs: Bottle, rhs: Bottle) -> Bool {
         return lhs.url == rhs.url
     }
@@ -30,17 +32,41 @@ public class Bottle: Hashable, Identifiable {
         self.url
     }
 
-    public var url: URL
-    public var settings: BottleSettings
-    public var programs: [Program] = []
+    public let url: URL
+    private let metadataURL: URL
+    @Published public var settings: BottleSettings {
+        didSet { saveSettings() }
+    }
+    @Published public var programs: [Program] = []
     public var inFlight: Bool = false
     public var isActive: Bool = false
 
     public init(bottleUrl: URL, inFlight: Bool = false, isActive: Bool = false) {
-        self.settings = BottleSettings(bottleURL: bottleUrl)
+        let metadataURL = bottleUrl.appending(path: "Metadata").appendingPathExtension("plist")
         self.url = bottleUrl
         self.inFlight = inFlight
         self.isActive = isActive
+        self.metadataURL = metadataURL
+
+        do {
+            self.settings = try BottleSettings.decode(from: metadataURL)
+        } catch {
+            Logger.wineKit.error(
+              "Failed to load settings for bottle `\(metadataURL.path(percentEncoded: false))`: \(error)"
+            )
+            self.settings = BottleSettings()
+        }
+    }
+
+    /// Encode and save the bottle settings
+    private func saveSettings() {
+        do {
+            try settings.encode(to: self.metadataURL)
+        } catch {
+            Logger.wineKit.error(
+                "Failed to encode settings for bottle `\(self.metadataURL.path(percentEncoded: false))`: \(error)"
+            )
+        }
     }
 }
 

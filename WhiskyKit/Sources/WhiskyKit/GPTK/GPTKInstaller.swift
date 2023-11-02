@@ -22,7 +22,7 @@ import SemanticVersion
 public class GPTKInstaller {
     public static let libraryFolder = FileManager.default.urls(for: .applicationSupportDirectory,
                                                                in: .userDomainMask)[0]
-        .appending(path: Bundle.main.bundleIdentifier ?? "com.isaacmarovitz.Whisky")
+        .appending(path: Bundle.whiskyBundleIdentifier)
         .appending(path: "Libraries")
 
     public static func isGPTKInstalled() -> Bool {
@@ -33,7 +33,7 @@ public class GPTKInstaller {
         do {
             let whiskySupportFolder = FileManager.default.urls(for: .applicationSupportDirectory,
                                                                in: .userDomainMask)[0]
-                .appending(path: Bundle.main.bundleIdentifier ?? "com.isaacmarovitz.Whisky")
+                .appending(path: Bundle.whiskyBundleIdentifier)
 
             if !FileManager.default.fileExists(atPath: whiskySupportFolder.path) {
                 try FileManager.default.createDirectory(at: whiskySupportFolder, withIntermediateDirectories: true)
@@ -59,7 +59,7 @@ public class GPTKInstaller {
     public static func uninstall() {
         let libraryFolder = FileManager.default.urls(for: .applicationSupportDirectory,
                                                            in: .userDomainMask)[0]
-            .appending(path: Bundle.main.bundleIdentifier ?? "com.isaacmarovitz.Whisky")
+            .appending(path: Bundle.whiskyBundleIdentifier)
             .appending(path: "Libraries")
 
         do {
