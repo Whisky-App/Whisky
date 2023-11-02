@@ -126,8 +126,10 @@ extension Bottle {
                 bottle.inFlight = true
                 for index in 0..<bottle.settings.pins.count {
                     let pin = bottle.settings.pins[index]
-                    bottle.settings.pins[index].url = pin.url.updateParentBottle(old: url,
+                    if let url = pin.url {
+                        bottle.settings.pins[index].url = url.updateParentBottle(old: url,
                                                                                  new: destination)
+                    }
                 }
 
                 for index in 0..<bottle.settings.blocklist.count {

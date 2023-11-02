@@ -49,11 +49,17 @@ public enum WinVersion: String, CaseIterable, Codable {
 
 public struct PinnedProgram: Codable, Hashable {
     public var name: String
-    public var url: URL
+    public var url: URL?
 
     public init(name: String, url: URL) {
         self.name = name
         self.url = url
+    }
+
+    public init(from decoder: Decoder) throws {
+        let container = try decoder.container(keyedBy: CodingKeys.self)
+        self.name = try container.decodeIfPresent(String.self, forKey: .name) ?? ""
+        self.url = try container.decodeIfPresent(URL.self, forKey: .url)
     }
 }
 
@@ -61,6 +67,15 @@ public struct BottleInfo: Codable {
     var name: String = "Bottle"
     var pins: [PinnedProgram] = []
     var blocklist: [URL] = []
+
+    public init() {}
+
+    public init(from decoder: Decoder) throws {
+        let container = try decoder.container(keyedBy: CodingKeys.self)
+        self.name = try container.decodeIfPresent(String.self, forKey: .name) ?? "Bottle"
+        self.pins = try container.decodeIfPresent([PinnedProgram].self, forKey: .pins) ?? []
+        self.blocklist = try container.decodeIfPresent([URL].self, forKey: .blocklist) ?? []
+    }
 }
 
 public struct BottleWineConfig: Codable {
@@ -68,29 +83,73 @@ public struct BottleWineConfig: Codable {
     var wineVersion: SemanticVersion = Self.defaultWineVersion
     var windowsVersion: WinVersion = .win10
     var msync: Bool = true
+
+    public init() {}
+
+    // swiftlint:disable line_length
+    public init(from decoder: Decoder) throws {
+        let container = try decoder.container(keyedBy: CodingKeys.self)
+        self.wineVersion = try container.decodeIfPresent(SemanticVersion.self, forKey: .wineVersion) ?? Self.defaultWineVersion
+        self.windowsVersion = try container.decodeIfPresent(WinVersion.self, forKey: .windowsVersion) ?? .win10
+        self.msync = try container.decodeIfPresent(Bool.self, forKey: .msync) ?? true
+    }
+    // swiftlint:enable line_length
 }
 
 public struct BottleMetalConfig: Codable {
     var metalHud: Bool = false
     var metalTrace: Bool = false
+
+    public init() {}
+
+    public init(from decoder: Decoder) throws {
+        let container = try decoder.container(keyedBy: CodingKeys.self)
+        self.metalHud = try container.decodeIfPresent(Bool.self, forKey: .metalHud) ?? false
+        self.metalTrace = try container.decodeIfPresent(Bool.self, forKey: .metalTrace) ?? false
+    }
 }
 
 public struct BottleDXVKConfig: Codable {
     var dxvk: Bool = false
     var dxvkAsync: Bool = true
     var dxvkHud: DXVKHUD = .off
+
+    public init() {}
+
+    public init(from decoder: Decoder) throws {
+        let container = try decoder.container(keyedBy: CodingKeys.self)
+        self.dxvk = try container.decodeIfPresent(Bool.self, forKey: .dxvk) ?? false
+        self.dxvkAsync = try container.decodeIfPresent(Bool.self, forKey: .dxvkAsync) ?? true
+        self.dxvkHud = try container.decodeIfPresent(DXVKHUD.self, forKey: .dxvkHud) ?? .off
+    }
 }
 
 public struct BottleSettings: Codable {
     static let defaultFileVersion = SemanticVersion(1, 0, 0)
 
     var fileVersion: SemanticVersion = Self.defaultFileVersion
-    private var info: BottleInfo = .init()
-    private var wineConfig: BottleWineConfig = .init()
-    private var metalConfig: BottleMetalConfig = .init()
-    private var dxvkConfig: BottleDXVKConfig = .init()
+    private var info: BottleInfo
+    private var wineConfig: BottleWineConfig
+    private var metalConfig: BottleMetalConfig
+    private var dxvkConfig: BottleDXVKConfig
 
-    public init() { }
+    public init() {
+        self.info = BottleInfo()
+        self.wineConfig = BottleWineConfig()
+        self.metalConfig = BottleMetalConfig()
+        self.dxvkConfig = BottleDXVKConfig()
+    }
+
+    // swiftlint:disable line_length
+    public init(from decoder: Decoder) throws {
+        let container = try decoder.container(keyedBy: CodingKeys.self)
+        self.fileVersion = try container.decodeIfPresent(SemanticVersion.self, forKey: .fileVersion) ?? Self.defaultFileVersion
+        self.info = try container.decodeIfPresent(BottleInfo.self, forKey: .info) ?? BottleInfo()
+        self.wineConfig = try container.decodeIfPresent(BottleWineConfig.self, forKey: .wineConfig) ?? BottleWineConfig()
+        self.metalConfig = try container.decodeIfPresent(BottleMetalConfig.self, forKey: .metalConfig) ?? BottleMetalConfig()
+        self.dxvkConfig = try container.decodeIfPresent(BottleDXVKConfig.self, forKey: .dxvkConfig) ?? BottleDXVKConfig()
+    }
+    // swiftlint:enable line_length
 
     /// The name of this bottle
     public var name: String {
@@ -155,7 +214,8 @@ public struct BottleSettings: Codable {
     @discardableResult
     public static func decode(from metadataURL: URL) throws -> BottleSettings {
         guard FileManager.default.fileExists(atPath: metadataURL.path(percentEncoded: false)) else {
-            let settings = BottleSettings()
+            let decoder = PropertyListDecoder()
+            let settings = try decoder.decode(BottleSettings.self, from: Data(contentsOf: metadataURL))
             try settings.encode(to: metadataURL)
             return settings
         }
