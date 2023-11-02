@@ -37,7 +37,19 @@ private struct BottomBarViewModifier<BarContent>: ViewModifier where BarContent:
                     barContent
                 }
                 .background(.regularMaterial)
+                .buttonStyle(BottomBarButtonStyle())
             }
+    }
+}
+
+struct BottomBarButtonStyle: PrimitiveButtonStyle {
+    func makeBody(configuration: Configuration) -> some View {
+        Button(action: {
+            configuration.trigger()
+        }, label: {
+            configuration.label
+                .foregroundStyle(.foreground)
+        })
     }
 }
 
