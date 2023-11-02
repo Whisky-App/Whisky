@@ -10,6 +10,8 @@
 		63FFDE862ADF0C7700178665 /* BottomBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63FFDE852ADF0C7700178665 /* BottomBar.swift */; };
 		6E064B1229DD32A200D9A2D2 /* Sparkle in Frameworks */ = {isa = PBXBuildFile; productRef = 6E064B1129DD32A200D9A2D2 /* Sparkle */; };
 		6E064B1429DD331F00D9A2D2 /* SparkleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E064B1329DD331F00D9A2D2 /* SparkleView.swift */; };
+		6E17B6442AF3FD9600831173 /* PinRenameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E17B6432AF3FD9600831173 /* PinRenameView.swift */; };
+		6E17B6462AF3FDC100831173 /* PinsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E17B6452AF3FDC100831173 /* PinsView.swift */; };
 		6E355E5829D78249002D83BE /* ConfigView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E355E5729D78249002D83BE /* ConfigView.swift */; };
 		6E355E5A29D782B2002D83BE /* ProgramsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E355E5929D782B2002D83BE /* ProgramsView.swift */; };
 		6E355E5E29D7D85D002D83BE /* ProgramView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E355E5D29D7D85D002D83BE /* ProgramView.swift */; };
@@ -103,6 +105,8 @@
 /* Begin PBXFileReference section */
 		63FFDE852ADF0C7700178665 /* BottomBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BottomBar.swift; sourceTree = "<group>"; };
 		6E064B1329DD331F00D9A2D2 /* SparkleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SparkleView.swift; sourceTree = "<group>"; };
+		6E17B6432AF3FD9600831173 /* PinRenameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PinRenameView.swift; sourceTree = "<group>"; };
+		6E17B6452AF3FDC100831173 /* PinsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PinsView.swift; sourceTree = "<group>"; };
 		6E355E5729D78249002D83BE /* ConfigView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfigView.swift; sourceTree = "<group>"; };
 		6E355E5929D782B2002D83BE /* ProgramsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgramsView.swift; sourceTree = "<group>"; };
 		6E355E5D29D7D85D002D83BE /* ProgramView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgramView.swift; sourceTree = "<group>"; };
@@ -190,14 +194,34 @@
 			path = Common;
 			sourceTree = "<group>";
 		};
-		6E355E5629D78202002D83BE /* Bottle Views */ = {
+		6E17B6422AF3FD6E00831173 /* Pins */ = {
 			isa = PBXGroup;
 			children = (
-				6E40498029CCA8B0006E3F1B /* BottleView.swift */,
-				6E355E5729D78249002D83BE /* ConfigView.swift */,
+				6E17B6432AF3FD9600831173 /* PinRenameView.swift */,
+				6E17B6452AF3FDC100831173 /* PinsView.swift */,
+			);
+			path = Pins;
+			sourceTree = "<group>";
+		};
+		6E17B6472AF3FE2E00831173 /* Programs */ = {
+			isa = PBXGroup;
+			children = (
+				6E355E5D29D7D85D002D83BE /* ProgramView.swift */,
 				6E355E5929D782B2002D83BE /* ProgramsView.swift */,
 			);
-			path = "Bottle Views";
+			path = Programs;
+			sourceTree = "<group>";
+		};
+		6E355E5629D78202002D83BE /* Bottle */ = {
+			isa = PBXGroup;
+			children = (
+				6E17B6422AF3FD6E00831173 /* Pins */,
+				6E50D98429CDF25B008C39F6 /* BottleCreationView.swift */,
+				6EA2D47D29DDAE5E00C84668 /* BottleRenameView.swift */,
+				6E40498029CCA8B0006E3F1B /* BottleView.swift */,
+				6E355E5729D78249002D83BE /* ConfigView.swift */,
+			);
+			path = Bottle;
 			sourceTree = "<group>";
 		};
 		6E40494929CCA19C006E3F1B = {
@@ -260,18 +284,15 @@
 		6E5197CD29D71FCD00CF655E /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				6E49E01F2AECB7D000009CAC /* Settings */,
 				63FFDE822ADEFADF00178665 /* Common */,
+				6E49E01F2AECB7D000009CAC /* Settings */,
+				6E6C0CF02A419A5800356232 /* Setup */,
+				6E17B6472AF3FE2E00831173 /* Programs */,
+				6E355E5629D78202002D83BE /* Bottle */,
 				6E40495529CCA19C006E3F1B /* WhiskyApp.swift */,
 				6E40495729CCA19C006E3F1B /* ContentView.swift */,
 				6E064B1329DD331F00D9A2D2 /* SparkleView.swift */,
-				6EF557972A410599001A4F09 /* SetupView.swift */,
-				6E50D98429CDF25B008C39F6 /* BottleCreationView.swift */,
-				6EA2D47D29DDAE5E00C84668 /* BottleRenameView.swift */,
 				6E7C07BF2AAF570100F6E66B /* FileOpenView.swift */,
-				6E355E5D29D7D85D002D83BE /* ProgramView.swift */,
-				6E6C0CF02A419A5800356232 /* Setup Views */,
-				6E355E5629D78202002D83BE /* Bottle Views */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -315,15 +336,16 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		6E6C0CF02A419A5800356232 /* Setup Views */ = {
+		6E6C0CF02A419A5800356232 /* Setup */ = {
 			isa = PBXGroup;
 			children = (
+				6EF557972A410599001A4F09 /* SetupView.swift */,
 				6E6C0CF12A419A6800356232 /* WelcomeView.swift */,
 				6E6C0CF32A419A7600356232 /* RosettaView.swift */,
 				6E6C0CF52A419A8300356232 /* GPTKDownloadView.swift */,
 				6E6C0CF72A419A8C00356232 /* GPTKInstallView.swift */,
 			);
-			path = "Setup Views";
+			path = Setup;
 			sourceTree = "<group>";
 		};
 		6E70A4992A9A2197007799E9 /* WhiskyCmd */ = {
@@ -551,6 +573,7 @@
 				6E6C0CF82A419A8C00356232 /* GPTKInstallView.swift in Sources */,
 				6E40498329CCA91B006E3F1B /* Bottle.swift in Sources */,
 				6E621CEF2A5F631300C9AAB3 /* Winetricks.swift in Sources */,
+				6E17B6462AF3FDC100831173 /* PinsView.swift in Sources */,
 				6E064B1429DD331F00D9A2D2 /* SparkleView.swift in Sources */,
 				6E40495629CCA19C006E3F1B /* WhiskyApp.swift in Sources */,
 				6E50D98329CD6066008C39F6 /* BottleVM.swift in Sources */,
@@ -558,6 +581,7 @@
 				6E49E0212AECB7DB00009CAC /* SettingsView.swift in Sources */,
 				6E7C07C02AAF570100F6E66B /* FileOpenView.swift in Sources */,
 				6E355E6029D7D8BD002D83BE /* Program.swift in Sources */,
+				6E17B6442AF3FD9600831173 /* PinRenameView.swift in Sources */,
 				6E6C0CF22A419A6800356232 /* WelcomeView.swift in Sources */,
 				6E40498129CCA8B0006E3F1B /* BottleView.swift in Sources */,
 				6E355E5E29D7D85D002D83BE /* ProgramView.swift in Sources */,
