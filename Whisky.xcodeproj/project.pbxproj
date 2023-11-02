@@ -12,6 +12,7 @@
 		6E064B1429DD331F00D9A2D2 /* SparkleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E064B1329DD331F00D9A2D2 /* SparkleView.swift */; };
 		6E17B6442AF3FD9600831173 /* PinRenameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E17B6432AF3FD9600831173 /* PinRenameView.swift */; };
 		6E17B6462AF3FDC100831173 /* PinsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E17B6452AF3FDC100831173 /* PinsView.swift */; };
+		6E17B6492AF4118F00831173 /* EnvironmentArgView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E17B6482AF4118F00831173 /* EnvironmentArgView.swift */; };
 		6E355E5829D78249002D83BE /* ConfigView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E355E5729D78249002D83BE /* ConfigView.swift */; };
 		6E355E5A29D782B2002D83BE /* ProgramsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E355E5929D782B2002D83BE /* ProgramsView.swift */; };
 		6E355E5E29D7D85D002D83BE /* ProgramView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E355E5D29D7D85D002D83BE /* ProgramView.swift */; };
@@ -107,6 +108,7 @@
 		6E064B1329DD331F00D9A2D2 /* SparkleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SparkleView.swift; sourceTree = "<group>"; };
 		6E17B6432AF3FD9600831173 /* PinRenameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PinRenameView.swift; sourceTree = "<group>"; };
 		6E17B6452AF3FDC100831173 /* PinsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PinsView.swift; sourceTree = "<group>"; };
+		6E17B6482AF4118F00831173 /* EnvironmentArgView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnvironmentArgView.swift; sourceTree = "<group>"; };
 		6E355E5729D78249002D83BE /* ConfigView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfigView.swift; sourceTree = "<group>"; };
 		6E355E5929D782B2002D83BE /* ProgramsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgramsView.swift; sourceTree = "<group>"; };
 		6E355E5D29D7D85D002D83BE /* ProgramView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgramView.swift; sourceTree = "<group>"; };
@@ -206,8 +208,9 @@
 		6E17B6472AF3FE2E00831173 /* Programs */ = {
 			isa = PBXGroup;
 			children = (
-				6E355E5D29D7D85D002D83BE /* ProgramView.swift */,
 				6E355E5929D782B2002D83BE /* ProgramsView.swift */,
+				6E355E5D29D7D85D002D83BE /* ProgramView.swift */,
+				6E17B6482AF4118F00831173 /* EnvironmentArgView.swift */,
 			);
 			path = Programs;
 			sourceTree = "<group>";
@@ -569,6 +572,7 @@
 				63FFDE862ADF0C7700178665 /* BottomBar.swift in Sources */,
 				6E6C0CF62A419A8300356232 /* GPTKDownloadView.swift in Sources */,
 				6E50D98529CDF25B008C39F6 /* BottleCreationView.swift in Sources */,
+				6E17B6492AF4118F00831173 /* EnvironmentArgView.swift in Sources */,
 				6E6C0CF42A419A7600356232 /* RosettaView.swift in Sources */,
 				6E6C0CF82A419A8C00356232 /* GPTKInstallView.swift in Sources */,
 				6E40498329CCA91B006E3F1B /* Bottle.swift in Sources */,
