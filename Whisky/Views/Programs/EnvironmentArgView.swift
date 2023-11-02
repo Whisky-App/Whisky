@@ -56,13 +56,14 @@ struct EnvironmentArgView: View {
                 }
             }
             .onAppear {
-                environmentKeys = program.settings.environment.map { (key: String, value: String) in
+                let keys = program.settings.environment.map { (key: String, value: String) in
                     return Key(key: key, value: value)
                 }
+                environmentKeys = keys.sorted(by: { $0.key < $1.key })
             }
             .onDisappear {
                 program.settings.environment.removeAll()
-                for key in environmentKeys {
+                for key in environmentKeys where !key.key.isEmpty {
                     program.settings.environment[key.key] = key.value
                 }
             }
