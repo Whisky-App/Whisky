@@ -52,7 +52,9 @@ struct EnvironmentArgView: View {
         Section {
             VStack {
                 List(environmentKeys, id: \.id) { key in
-                    KeyItem(focus: _focus, environmentKeys: $environmentKeys, key: key)
+                    KeyItem(focus: _focus,
+                            environmentKeys: $environmentKeys,
+                            key: key)
                 }
                 .alternatingRowBackgrounds(.enabled)
             }
@@ -81,7 +83,7 @@ struct EnvironmentArgView: View {
         }
         .onChange(of: focus) { oldValue, newValue in
             switch oldValue {
-            case .row(let id, _):
+            case .row(let id, let section):
                 if let key = environmentKeys.first(where: { $0.id == id }) {
                     switch newValue {
                     case .row(let newId, _):
@@ -102,6 +104,19 @@ struct EnvironmentArgView: View {
                     }
 
                     movedToIllegalKey = false
+
+                    if newValue == nil && section == .value {
+                        // Value has been submitted, move ot next row
+                        if var index = environmentKeys.firstIndex(where: { $0.id == id }) {
+                            index += 1
+                            if index >= environmentKeys.endIndex {
+                                index = 0
+                            }
+
+                            let nextKey = environmentKeys[index]
+                            focus = .row(id: nextKey.id, section: .key)
+                        }
+                    }
                 }
             case .none: break
             }
