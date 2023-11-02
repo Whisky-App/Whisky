@@ -27,10 +27,19 @@ enum Focusable: Hashable {
     case row(id: UUID, section: KeySection)
 }
 
-struct Key: Identifiable, Hashable {
+class Key: Identifiable {
+    static func == (lhs: Key, rhs: Key) -> Bool {
+        return lhs.id == rhs.id
+    }
+
     var id: UUID = UUID()
-    var key: String
-    var value: String
+    @Published var key: String
+    @Published var value: String
+
+    init(key: String, value: String) {
+        self.key = key
+        self.value = value
+    }
 }
 
 struct EnvironmentArgView: View {
@@ -42,7 +51,7 @@ struct EnvironmentArgView: View {
     var body: some View {
         Section {
             VStack {
-                ForEach($environmentKeys, id: \.self) { key in
+                ForEach(environmentKeys, id: \.id) { key in
                     KeyItem(environmentKeys: $environmentKeys, key: key, focus: _focus)
                 }
             }.onAppear {
@@ -98,7 +107,7 @@ struct EnvironmentArgView: View {
 
 struct KeyItem: View {
     @Binding var environmentKeys: [Key]
-    @Binding var key: Key
+    @State var key: Key
     @FocusState var focus: Focusable?
 
     var body: some View {
