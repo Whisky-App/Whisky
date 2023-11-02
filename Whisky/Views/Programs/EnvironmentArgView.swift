@@ -47,9 +47,10 @@ struct EnvironmentArgView: View {
     @FocusState var focus: Focusable?
     @State var environmentKeys: [Key] = []
     @State var movedToIllegalKey = false
+    @AppStorage("envArgsSectionExpanded") private var envArgsSectionExpanded: Bool = true
 
     var body: some View {
-        Section {
+        Section(isExpanded: $envArgsSectionExpanded) {
             VStack {
                 List(environmentKeys, id: \.id) { key in
                     KeyItem(focus: _focus,
@@ -79,6 +80,7 @@ struct EnvironmentArgView: View {
                 }
                 .buttonStyle(.plain)
                 .labelStyle(.titleAndIcon)
+                .opacity(envArgsSectionExpanded ? 1 : 0)
             }
         }
         .onChange(of: focus) { oldValue, newValue in

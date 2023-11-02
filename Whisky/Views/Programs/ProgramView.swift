@@ -24,10 +24,11 @@ struct ProgramView: View {
     @ObservedObject var program: Program
     @State var image: NSImage?
     @State var programLoading: Bool = false
+    @AppStorage("configSectionExapnded") private var configSectionExpanded: Bool = true
 
     var body: some View {
         Form {
-            Section("program.config") {
+            Section("program.config", isExpanded: $configSectionExpanded) {
                 Picker("locale.title", selection: $program.settings.locale) {
                     ForEach(Locales.allCases, id: \.self) { locale in
                         Text(locale.pretty()).id(locale)
