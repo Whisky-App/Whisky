@@ -99,6 +99,11 @@ struct EnvironmentArgView: View {
     }
 
     func createNewKey() {
+        if let key = environmentKeys.first(where: { $0.key.isEmpty }) {
+            focus = .row(id: key.id, section: .key)
+            return
+        }
+
         let key = Key(key: "", value: "")
         environmentKeys.append(key)
         focus = .row(id: key.id, section: .key)
