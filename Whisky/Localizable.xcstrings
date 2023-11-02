@@ -3784,6 +3784,12 @@
             "state" : "translated",
             "value" : "Enhanced Sync"
           }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Sync Avancé"
+          }
         }
       }
     },
@@ -3793,6 +3799,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "None"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Aucun"
           }
         }
       }
@@ -6518,6 +6530,12 @@
             "state" : "translated",
             "value" : "Add"
           }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ajouter"
+          }
         }
       }
     },
@@ -6527,6 +6545,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Remove"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Supprimer"
           }
         }
       }
@@ -6779,6 +6803,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Website"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Site Web"
           }
         }
       }
@@ -9393,6 +9423,12 @@
             "state" : "translated",
             "value" : "General"
           }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Général"
+          }
         }
       }
     },
@@ -9408,6 +9444,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Automatically check for GPTK updates"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Chercher automatiquement les mises à jour de GPTK"
           }
         }
       }
@@ -9425,6 +9467,12 @@
             "state" : "translated",
             "value" : "Terminate Wine processes when Whisky closes"
           }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Terminer les processus de Wine à la fermeture du Whisky"
+          }
         }
       }
     },
@@ -9441,6 +9489,12 @@
             "state" : "translated",
             "value" : "Automatically check for Whisky updates"
           }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Chercher automatiquement les mises à jour de Whisky"
+          }
         }
       }
     },
@@ -9456,6 +9510,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Updates"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Mises à Jour"
           }
         }
       }
