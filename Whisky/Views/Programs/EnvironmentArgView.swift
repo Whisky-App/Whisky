@@ -35,14 +35,15 @@ struct Key: Identifiable, Hashable {
 
 struct EnvironmentArgView: View {
     @ObservedObject var program: Program
-    @FocusState var focusedKey: Focusable?
+    @FocusState var focus: Focusable?
     @State var environmentKeys: [Key] = []
+    @State var movedToIllegalKey = false
 
     var body: some View {
         Section {
             VStack {
-                ForEach(environmentKeys, id: \.self) { key in
-                    KeyItem(environmentKeys: $environmentKeys, key: key, focus: _focusedKey)
+                ForEach($environmentKeys, id: \.self) { key in
+                    KeyItem(environmentKeys: $environmentKeys, key: key, focus: _focus)
                 }
             }.onAppear {
                 environmentKeys = program.settings.environment.map { (key: String, value: String) in
@@ -59,19 +60,45 @@ struct EnvironmentArgView: View {
                 .buttonStyle(.plain)
                 .labelStyle(.titleAndIcon)
             }
+        }.onChange(of: focus) { oldValue, newValue in
+            switch oldValue {
+            case .row(let id, _):
+                if let key = environmentKeys.first(where: { $0.id == id }) {
+                    switch newValue {
+                    case .row(let newId, _):
+                        // Remove empty keys
+                        if key.key.isEmpty && newId != id {
+                            environmentKeys.removeAll(where: { $0.id == key.id })
+                            focus = nil
+                            return
+                        }
+                    case .none: break
+                    }
+
+                    // A key with this value already exists, so its invalid
+                    if environmentKeys.contains(where: { $0.key == key.key && $0.id != key.id }) && !movedToIllegalKey {
+                        movedToIllegalKey = true
+                        focus = .row(id: key.id, section: .key)
+                        return
+                    }
+
+                    movedToIllegalKey = false
+                }
+            case .none: break
+            }
         }
     }
 
     func createNewKey() {
         let key = Key(key: "", value: "")
         environmentKeys.append(key)
-        focusedKey = .row(id: key.id, section: .key)
+        focus = .row(id: key.id, section: .key)
     }
 }
 
 struct KeyItem: View {
     @Binding var environmentKeys: [Key]
-    @State var key: Key
+    @Binding var key: Key
     @FocusState var focus: Focusable?
 
     var body: some View {
@@ -85,7 +112,8 @@ struct KeyItem: View {
                     key.key = key.key.trimmingCharacters(in: .whitespacesAndNewlines)
                 }
                 .onSubmit {
-                    validateKey()
+                    // Try to move on to value
+                    focus = .row(id: key.id, section: .value)
                 }
             TextField(String(), text: $key.value)
                 .textFieldStyle(.roundedBorder)
@@ -96,38 +124,6 @@ struct KeyItem: View {
             Button("environment.remove", systemImage: "trash") {
                 environmentKeys.removeAll(where: { $0.id == key.id })
             }.buttonStyle(.plain).labelStyle(.iconOnly)
-        }.onChange(of: focus) { oldValue, _ in
-            switch oldValue {
-            case .row(let id, let section):
-                if id == key.id {
-                    switch section {
-                    case .key:
-                        validateKey()
-                    case .value:
-                        break
-                    }
-                }
-            case .none:
-                break
-            }
-        }
-    }
-
-    /// Check of the key is valid, if it isn't, don't let the user deselect.
-    private func validateKey() {
-        var isValid = false
-        key.key = key.key.trimmingCharacters(in: .whitespacesAndNewlines)
-
-        if !key.key.isEmpty {
-            if !environmentKeys.contains(where: { $0.key == key.key && $0.id != key.id }) {
-                isValid = true
-            }
-        }
-
-        if isValid {
-            focus = .row(id: key.id, section: .value)
-        } else {
-            focus = .row(id: key.id, section: .key)
         }
     }
 }
