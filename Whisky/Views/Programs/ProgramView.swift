@@ -25,10 +25,6 @@ struct ProgramView: View {
     @State var image: NSImage?
     @State var programLoading: Bool = false
 
-    private var environmentKeys: [String] {
-        return program.settings.environment.keys.sorted(by: <)
-    }
-
     var body: some View {
         Form {
             Section("program.config") {
@@ -48,22 +44,7 @@ struct ProgramView: View {
                         .labelsHidden()
                 }
             }
-
-            Section {
-                ForEach(environmentKeys, id: \.self) { key in
-                    KeyItem(key: key, program: program)
-                }
-            } header: {
-                HStack {
-                    Text("program.env").frame(maxWidth: .infinity, alignment: .leading)
-                        .multilineTextAlignment(.leading)
-                    Button("environment.add", systemImage: "plus", action: {
-                        program.settings.environment["VAR_\(program.settings.environment.count + 1)"] = ""
-                    })
-                    .buttonStyle(.plain)
-                    .labelStyle(.titleAndIcon)
-                }
-            }
+            EnvironmentArgView(program: program)
         }
         .formStyle(.grouped)
         .bottomBar {
@@ -132,71 +113,5 @@ struct ProgramView: View {
                 image = peFile.bestIcon()
             }
         }
-    }
-}
-
-struct KeyItem: View {
-    enum FocusedField: Hashable {
-        case key, value
-    }
-
-    @ObservedObject private var program: Program
-    @State private var key: String
-    @State private var newKey: String
-    @State private var value: String
-    @FocusState private var focus: FocusedField?
-
-    init(key: String, program: Program) {
-        self.program = program
-        self.key = key
-        self.newKey = key
-        self.value = program.settings.environment[key] ?? ""
-    }
-
-    var body: some View {
-        HStack {
-            TextField(String(), text: $newKey)
-                .textFieldStyle(.roundedBorder)
-                .labelsHidden()
-                .frame(maxHeight: .infinity)
-                .focused($focus, equals: FocusedField.key)
-                .onChange(of: newKey) {
-                    newKey = newKey.trimmingCharacters(in: .whitespacesAndNewlines)
-                }
-                .onSubmit {
-                    updateKey(from: newKey)
-                }
-            TextField(String(), text: $value)
-                .textFieldStyle(.roundedBorder)
-                .labelsHidden()
-                .frame(maxHeight: .infinity)
-                .focused($focus, equals: FocusedField.value)
-                .onSubmit {
-                    program.settings.environment[key] = value
-                }
-
-            Button("environment.remove", systemImage: "trash") {
-                program.settings.environment.removeValue(forKey: key)
-            }.buttonStyle(.plain).labelStyle(.iconOnly)
-        }.onChange(of: focus) { oldValue, _ in
-            switch oldValue {
-            case .key:
-                updateKey(from: newKey)
-            case .value:
-                program.settings.environment[key] = value
-            case nil:
-                break
-            }
-        }
-    }
-
-    /// Update the key on the environment
-    private func updateKey(from newKey: String) {
-        let newKey = newKey.trimmingCharacters(in: .whitespacesAndNewlines)
-        guard key != newKey else { return }
-        program.settings.environment.removeValue(forKey: key)
-        guard !newKey.isEmpty else { return }
-        program.settings.environment[newKey] = value
-        self.key = newKey
     }
 }
