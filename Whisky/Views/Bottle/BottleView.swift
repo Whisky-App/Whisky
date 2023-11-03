@@ -26,13 +26,9 @@ enum BottleStage {
 }
 
 struct BottleView: View {
-    @Binding var bottle: Bottle
+    @ObservedObject var bottle: Bottle
     @State private var path = NavigationPath()
     @State var programLoading: Bool = false
-    @State var pins: [PinnedProgram] = []
-    // We don't actually care about the value
-    // This just provides a way to trigger a refresh
-    @State var loadStartMenu: Bool = false
     @State var showWinetricksSheet: Bool = false
 
     private let gridLayout = [GridItem(.adaptive(minimum: 100, maximum: .infinity))]
@@ -40,13 +36,13 @@ struct BottleView: View {
     var body: some View {
         NavigationStack(path: $path) {
             ScrollView {
-                if pins.count > 0 {
+                let pinnedPrograms = bottle.programs.pinned
+                if pinnedPrograms.count > 0 {
                     LazyVGrid(columns: gridLayout, alignment: .center) {
-                        ForEach(pins, id: \.url) { pin in
-                            PinsView(bottle: bottle,
-                                     pin: pin,
-                                     loadStartMenu: $loadStartMenu,
-                                     path: $path)
+                        ForEach(bottle.settings.pins, id: \.url) { pin in
+                            PinsView(
+                                bottle: bottle, pin: pin, path: $path
+                            )
                         }
                     }
                     .padding()
@@ -72,12 +68,6 @@ struct BottleView: View {
                     }
                 }
                 .formStyle(.grouped)
-                .onAppear {
-                    updateStartMenu()
-                }
-                .onChange(of: loadStartMenu) {
-                    updateStartMenu()
-                }
             }
             .bottomBar {
                 HStack {
@@ -130,19 +120,27 @@ struct BottleView: View {
                 }
                 .padding()
             }
+            .onAppear {
+                updateStartMenu()
+            }
             .disabled(!bottle.isActive)
             .navigationTitle(bottle.settings.name)
             .sheet(isPresented: $showWinetricksSheet) {
                 WinetricksView(bottle: bottle)
             }
+            .onChange(of: bottle.settings, { oldValue, newValue in
+                guard oldValue != newValue else { return }
+                // Trigger a reload
+                BottleVM.shared.bottles = BottleVM.shared.bottles
+            })
             .navigationDestination(for: BottleStage.self) { stage in
                 switch stage {
                 case .config:
-                    ConfigView(bottle: $bottle)
+                    ConfigView(bottle: bottle)
                 case .programs:
-                    ProgramsView(bottle: bottle,
-                                 reloadStartMenu: $loadStartMenu,
-                                 path: $path)
+                    ProgramsView(
+                        bottle: bottle, path: $path
+                    )
                 }
             }
             .navigationDestination(for: Program.self) { program in
@@ -151,7 +149,7 @@ struct BottleView: View {
         }
     }
 
-    func updateStartMenu() {
+    private func updateStartMenu() {
         bottle.programs = bottle.updateInstalledPrograms()
         let startMenuPrograms = bottle.getStartMenuPrograms()
         for startMenuProgram in startMenuPrograms {
@@ -166,8 +164,6 @@ struct BottleView: View {
                 }
             }
         }
-
-        pins = bottle.settings.pins
     }
 }
 

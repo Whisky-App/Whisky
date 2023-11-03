@@ -78,3 +78,15 @@ extension Array where Element == Bottle {
         self.sort { $0.isActive && !$1.isActive }
     }
 }
+
+public extension Sequence where Iterator.Element == Program {
+    /// Filter all pinned programs
+    var pinned: [Program] {
+        return self.filter({ $0.pinned })
+    }
+
+    /// Filter all unpinned programs
+    var unpinned: [Program] {
+        return self.filter({ !$0.pinned })
+    }
+}

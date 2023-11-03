@@ -29,7 +29,7 @@ public class Program: Hashable, ObservableObject {
         return hasher.combine(url)
     }
 
-    public var name: String
+    public let name: String
     public let bottle: Bottle
     public let url: URL
     public let settingsURL: URL
@@ -38,7 +38,19 @@ public class Program: Hashable, ObservableObject {
         didSet { saveSettings() }
     }
 
-    @Published public var pinned: Bool
+    @Published public var pinned: Bool {
+      didSet {
+        if pinned {
+            bottle.settings.pins.append(PinnedProgram(
+                name: name.replacingOccurrences(of: ".exe", with: ""),
+                url: url
+            ))
+        } else {
+            bottle.settings.pins.removeAll(where: { $0.url == url })
+        }
+      }
+    }
+
     public var peFile: PEFile?
 
     public init(name: String, url: URL, bottle: Bottle) {

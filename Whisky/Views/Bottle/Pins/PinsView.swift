@@ -20,15 +20,15 @@ import SwiftUI
 import WhiskyKit
 
 struct PinsView: View {
-    var bottle: Bottle
+    @ObservedObject var bottle: Bottle
     @State var pin: PinnedProgram
-    @State var program: Program?
-    @State var image: NSImage?
-    @State var showRenameSheet = false
-    @State var name: String = ""
-    @State var opening: Bool = false
-    @Binding var loadStartMenu: Bool
     @Binding var path: NavigationPath
+
+    @State private var program: Program?
+    @State private var image: NSImage?
+    @State private var showRenameSheet = false
+    @State private var name: String = ""
+    @State private var opening: Bool = false
 
     var body: some View {
         VStack {
@@ -63,25 +63,12 @@ struct PinsView: View {
             .padding(EdgeInsets(top: 0, leading: 0, bottom: 12, trailing: 0))
         }
         .contextMenu {
-            Button("button.run") {
-                runProgram()
-            }
-            Divider()
-            Button("program.config") {
-                if let program {
-                    path.append(program)
-                }
-            }
-            Divider()
-            Button("button.rename") {
-                showRenameSheet.toggle()
-            }
-            Button("pin.unpin") {
-                bottle.settings.pins.removeAll(where: { $0.url == pin.url })
-                for program in bottle.programs where program.url == pin.url {
-                    program.pinned = false
-                }
-                loadStartMenu.toggle()
+            if let program = program {
+                ProgramMenuView(program: program, path: $path)
+
+                Button("button.rename", systemImage: "pencil.line") {
+                    showRenameSheet.toggle()
+                }.labelStyle(.titleAndIcon)
             }
         }
         .onTapGesture(count: 2) {
@@ -92,7 +79,7 @@ struct PinsView: View {
         }
         .onAppear {
             name = pin.name
-            Task.detached {
+            Task.detached { @MainActor in
                 program = bottle.programs.first(where: { $0.url == pin.url })
                 if let program {
                     if let peFile = program.peFile {
