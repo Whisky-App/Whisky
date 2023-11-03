@@ -276,7 +276,7 @@ public struct BottleSettings: Codable {
         case .none:
             break
         case .esync:
-            wineEnv.updateValue("1", forKey: "WINEMSYNC")
+            wineEnv.updateValue("1", forKey: "WINEESYNC")
         case .msync:
             wineEnv.updateValue("1", forKey: "WINEMSYNC")
         }
