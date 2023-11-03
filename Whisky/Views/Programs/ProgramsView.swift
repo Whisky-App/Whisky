@@ -158,18 +158,18 @@ struct ProgramItemView: View {
                         )
                 }
 
-                Button("program.config", systemImage: "gearshape", action: {
+                Button("program.config", systemImage: "gearshape") {
                     path.append(program)
-                })
+                }
                 .labelStyle(.iconOnly)
                 .buttonStyle(.plain)
                 .foregroundStyle(.secondary)
                 .help("program.config")
-                Button("button.run", systemImage: "play", action: {
+                Button("button.run", systemImage: "play") {
                     Task {
                         await program.run()
                     }
-                })
+                }
                 .labelStyle(.iconOnly)
                 .buttonStyle(.plain)
                 .foregroundStyle(.secondary)
@@ -193,9 +193,9 @@ struct BlocklistItemView: View {
             Text(blockedUrl.prettyPath(bottle))
             Spacer()
             if showButtons {
-                Button("program.remove.blocklist", systemImage: "xmark.circle.fill", action: {
+                Button("program.remove.blocklist", systemImage: "xmark.circle.fill") {
                     bottle.settings.blocklist.removeAll { $0 == blockedUrl }
-                })
+                }
                 .labelStyle(.iconOnly)
                 .buttonStyle(.plain)
                 .foregroundColor(.secondary)

@@ -194,12 +194,17 @@ struct BottleListEntry: View {
                 BottleRenameView(bottle: bottle, name: $name)
             }
             .contextMenu {
-                Button("button.rename") {
+                Button("button.rename", systemImage: "pencil.line") {
                     showBottleRename.toggle()
                 }
                 .disabled(!bottle.isActive)
+                .labelStyle(.titleAndIcon)
+                Button("button.removeAlert", systemImage: "trash") {
+                    showRemoveAlert(bottle: bottle)
+                }
+                .labelStyle(.titleAndIcon)
                 Divider()
-                Button("button.moveBottle") {
+                Button("button.moveBottle", systemImage: "shippingbox.and.arrow.backward") {
                     let panel = NSOpenPanel()
                     panel.canChooseFiles = false
                     panel.canChooseDirectories = true
@@ -218,7 +223,8 @@ struct BottleListEntry: View {
                     }
                 }
                 .disabled(!bottle.isActive)
-                Button("button.exportBottle") {
+                .labelStyle(.titleAndIcon)
+                Button("button.exportBottle", systemImage: "arrowshape.turn.up.right") {
                     let panel = NSSavePanel()
                     panel.canCreateDirectories = true
                     panel.allowedContentTypes = [UTType.gzip]
@@ -236,15 +242,13 @@ struct BottleListEntry: View {
                     }
                 }
                 .disabled(!bottle.isActive)
+                .labelStyle(.titleAndIcon)
                 Divider()
-                Button("button.showInFinder") {
+                Button("button.showInFinder", systemImage: "folder") {
                     NSWorkspace.shared.activateFileViewerSelecting([bottle.url])
                 }
                 .disabled(!bottle.isActive)
-                Divider()
-                Button("button.removeAlert") {
-                    showRemoveAlert(bottle: bottle)
-                }
+                .labelStyle(.titleAndIcon)
             }
     }
 

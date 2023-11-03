@@ -24,25 +24,27 @@ struct ProgramMenuView: View {
     @Binding var path: NavigationPath
 
     var body: some View {
-        Button("button.run", systemImage: "play", action: {
+        Button("button.run", systemImage: "play") {
             Task {
                 await program.run()
             }
-        }).labelStyle(.titleAndIcon)
-
+        }
+        .labelStyle(.titleAndIcon)
         Section("program.settings") {
-            Button("program.config", systemImage: "gearshape", action: {
+            Button("program.config", systemImage: "gearshape") {
                 path.append(program)
-            }).labelStyle(.titleAndIcon)
+            }
+            .labelStyle(.titleAndIcon)
 
             let buttonName = program.pinned
             ? String(localized: "button.unpin")
             : String(localized: "button.pin")
 
             let iconName = program.pinned ? "pin.slash" : "pin"
-            Button(buttonName, systemImage: iconName, action: {
+            Button(buttonName, systemImage: iconName) {
                 program.pinned.toggle()
-            }).labelStyle(.titleAndIcon)
+            }
+            .labelStyle(.titleAndIcon)
         }
     }
 }

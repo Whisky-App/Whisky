@@ -44,12 +44,12 @@ private struct BottomBarViewModifier<BarContent>: ViewModifier where BarContent:
 
 struct BottomBarButtonStyle: PrimitiveButtonStyle {
     func makeBody(configuration: Configuration) -> some View {
-        Button(action: {
+        Button {
             configuration.trigger()
-        }, label: {
+        } label: {
             configuration.label
                 .foregroundStyle(.foreground)
-        })
+        }
     }
 }
 
