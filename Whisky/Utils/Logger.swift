@@ -57,17 +57,30 @@ class Log {
         }
     }
 
+    // swiftlint:disable line_length
     static func constructHeader(_ bottle: Bottle?, _ args: [String], _ environment: [String: String]?) -> String {
         var header = String()
+        let macOSVersion = ProcessInfo.processInfo.operatingSystemVersion
 
         header += "Whisky Version: \(Bundle.main.infoDictionary?["CFBundleShortVersionString"] ?? "")\n"
-        header += "Date: \(Date.now.formatted(date: .numeric, time: .standard))\n"
-        header += "macOS Version: \(ProcessInfo.processInfo.operatingSystemVersionString)\n"
+        header += "Date: \(ISO8601DateFormatter().string(from: Date.now))\n"
+        header += "macOS Version: \(macOSVersion.majorVersion).\(macOSVersion.minorVersion).\(macOSVersion.patchVersion)\n\n"
         if let bottle = bottle {
             header += "Bottle Name: \(bottle.settings.name)\n"
+            header += "Bottle URL: \(bottle.url.path)\n\n"
+
             header += "Wine Version: \(bottle.settings.wineVersion)\n"
             header += "Windows Version: \(bottle.settings.windowsVersion)\n"
-            header += "Bottle URL: \(bottle.url.path)\n\n"
+            header += "Enhanced Sync: \(bottle.settings.enhancedSync)\n\n"
+
+            header += "Metal HUD: \(bottle.settings.metalHud)\n"
+            header += "Metal Trace: \(bottle.settings.metalTrace)\n\n"
+
+            if bottle.settings.dxvk {
+                header += "DXVK: \(bottle.settings.dxvk)\n"
+                header += "DXVK Async: \(bottle.settings.dxvkAsync)\n"
+                header += "DXVK HUD: \(bottle.settings.dxvkHud)\n\n"
+            }
         }
 
         header += "Arguments: "
@@ -85,6 +98,7 @@ class Log {
 
         return header
     }
+    // swiftlint:enable line_length
 
     func write(line: String, printLine: Bool = true) {
         if printLine {
