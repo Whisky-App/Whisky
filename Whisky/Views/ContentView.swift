@@ -66,14 +66,7 @@ struct ContentView: View {
         } detail: {
             if let bottle = selected {
                 if let bottle = bottleVM.bottles.first(where: { $0.url == bottle }) {
-                    BottleView(bottle: Binding(get: {
-                        // swiftlint:disable:next force_unwrapping
-                        bottleVM.bottles[bottleVM.bottles.firstIndex(of: bottle)!]
-                    }, set: { newValue in
-                        if let index = bottleVM.bottles.firstIndex(of: bottle) {
-                            bottleVM.bottles[index] = newValue
-                        }
-                    }))
+                    BottleView(bottle: bottle)
                     .disabled(bottle.inFlight)
                     .id(bottle.url)
                 }

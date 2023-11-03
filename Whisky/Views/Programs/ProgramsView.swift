@@ -20,101 +20,132 @@ import SwiftUI
 import WhiskyKit
 
 struct ProgramsView: View {
-    let bottle: Bottle
-    @State var programs: [Program] = []
-    @State var blocklist: [URL] = []
+    @ObservedObject var bottle: Bottle
+    @State private var blocklist: [URL] = []
     @State private var selectedPrograms = Set<Program>()
     @State private var selectedBlockitems = Set<URL>()
-    // We don't actually care about the value
-    // This just provides a way to trigger a refresh
-    @State var resortPrograms: Bool = false
-    @State var isExpanded: Bool = true
-    @State var isBlocklistExpanded: Bool = false
-    @Binding var reloadStartMenu: Bool
     @Binding var path: NavigationPath
+    @State private var sortedPrograms: [Program] = []
+    @State private var resortPrograms = false
+    @State private var searchText = ""
+
+    @AppStorage("areProgramsExpanded") private var areProgramsExpanded = true
+    @AppStorage("isBlocklistExpanded") private var isBlocklistExpanded = false
+
+    private var searchResults: [Program] {
+        guard !searchText.isEmpty else { return sortedPrograms }
+        return sortedPrograms.filter({ $0.name.localizedCaseInsensitiveContains(searchText) })
+    }
+
+    private var searchedBlocklists: [URL] {
+        guard !searchText.isEmpty else { return blocklist }
+        return blocklist.filter({ $0.absoluteString.localizedCaseInsensitiveContains(searchText) })
+    }
+
+    private var selectedSearchedPrograms: [Program] {
+        searchResults.filter({ selectedPrograms.contains($0) })
+    }
 
     var body: some View {
         Form {
-            Section("program.title", isExpanded: $isExpanded) {
-                List($programs, id: \.self, selection: $selectedPrograms) { $program in
-                    ProgramItemView(program: program,
-                                    resortPrograms: $resortPrograms,
-                                    path: $path)
-                }
-                .contextMenu {
-                    Button("program.add.blocklist") {
-                        bottle.settings.blocklist.append(contentsOf: selectedPrograms.map { $0.url })
-                        resortPrograms.toggle()
+            Section("program.title", isExpanded: $areProgramsExpanded) {
+                List(searchResults, id: \.self, selection: $selectedPrograms) { program in
+                    ProgramItemView(
+                        bottle: bottle, program: program, path: $path
+                    )
+                    .contextMenu {
+                        let selectedPrograms = selectedSearchedPrograms
+                        if selectedPrograms.contains(program) && selectedPrograms.count > 1 {
+                            Button("program.add.selected.blocklist", systemImage: "hand.raised") {
+                                bottle.settings.blocklist.append(contentsOf: selectedPrograms.map { $0.url })
+                                blocklist = bottle.settings.blocklist
+                            }.labelStyle(.titleAndIcon)
+                        } else {
+                            ProgramMenuView(program: program, path: $path)
+
+                            Section {
+                                Button("program.add.blocklist", systemImage: "hand.raised") {
+                                    bottle.settings.blocklist.append(program.url)
+                                    blocklist = bottle.settings.blocklist
+                                }.labelStyle(.titleAndIcon)
+                            }
+                        }
                     }
                 }
-            }
+            }.animation(.easeInOut(duration: 0.2), value: sortedPrograms)
+
             Section("program.blocklist", isExpanded: $isBlocklistExpanded) {
-                List($blocklist, id: \.self, selection: $selectedBlockitems) { $blockedUrl in
-                    BlocklistItemView(blockedUrl: blockedUrl,
-                                      bottle: bottle,
-                                      resortPrograms: $resortPrograms)
-                }
-                .contextMenu {
-                    Button("program.remove.blocklist") {
-                        bottle.settings.blocklist.removeAll(where: { selectedBlockitems.contains($0) })
-                        resortPrograms.toggle()
+                List(searchedBlocklists, id: \.self, selection: $selectedBlockitems) { blockedUrl in
+                    BlocklistItemView(
+                        blockedUrl: blockedUrl, bottle: bottle
+                    )
+                    .contextMenu {
+                        if selectedBlockitems.contains(blockedUrl) {
+                            Button("program.remove.selected.blocklist", systemImage: "hand.raised.slash") {
+                                bottle.settings.blocklist.removeAll(where: { selectedBlockitems.contains($0) })
+                                blocklist = bottle.settings.blocklist
+                            }.labelStyle(.titleAndIcon)
+                        } else {
+                            Button("program.remove.blocklist", systemImage: "hand.raised.slash") {
+                                bottle.settings.blocklist.removeAll(where: { $0 == blockedUrl })
+                                blocklist = bottle.settings.blocklist
+                            }.labelStyle(.titleAndIcon)
+                        }
                     }
                 }
             }
         }
         .formStyle(.grouped)
-        .animation(.easeInOut(duration: 0.2), value: programs)
-        .animation(.easeInOut(duration: 0.2), value: isExpanded)
+        .animation(.easeInOut(duration: 0.2), value: areProgramsExpanded)
         .animation(.easeInOut(duration: 0.2), value: isBlocklistExpanded)
         .navigationTitle("tab.programs")
+        .searchable(text: $searchText)
         .onAppear {
-            programs = bottle.updateInstalledPrograms()
-            blocklist = bottle.settings.blocklist
-            sortPrograms()
+            loadData()
         }
         .onChange(of: resortPrograms) {
-            reloadStartMenu.toggle()
-            programs = bottle.updateInstalledPrograms()
-            blocklist = bottle.settings.blocklist
-            sortPrograms()
+            loadPrograms()
+        }
+        .onChange(of: bottle.settings) {
+            loadData()
         }
     }
 
-    func sortPrograms() {
-        var favourites = programs.filter { $0.pinned }
-        var nonFavourites = programs.filter { !$0.pinned }
-        favourites = favourites.sorted { $0.name < $1.name }
-        nonFavourites = nonFavourites.sorted { $0.name < $1.name }
-        programs.removeAll()
-        programs.append(contentsOf: favourites)
-        programs.append(contentsOf: nonFavourites)
+    private func loadData() {
+        loadPrograms()
+        blocklist = bottle.settings.blocklist
+    }
+
+    private func loadPrograms() {
+        sortedPrograms = [
+            bottle.programs.pinned.sorted { $0.name < $1.name },
+            bottle.programs.unpinned.sorted { $0.name < $1.name }
+        ].flatMap { $0 }
     }
 }
 
 struct ProgramItemView: View {
-    let program: Program
-    @State var showButtons: Bool = false
-    @State var isPinned: Bool = false
-    @State var pinHovered: Bool = false
-    @Binding var resortPrograms: Bool
+    @ObservedObject var bottle: Bottle
+    @ObservedObject var program: Program
     @Binding var path: NavigationPath
+    @State private var showButtons = false
+    @State private var pinHovered = false
 
     var body: some View {
         HStack {
             Button {
-                isPinned = program.togglePinned()
-                resortPrograms.toggle()
+                program.pinned.toggle()
             } label: {
-                Image(systemName: isPinned ? pinHovered ? "pin.slash.fill" : "pin.fill" : "pin")
+                Image(systemName: program.pinned ? pinHovered ? "pin.slash.fill" : "pin.fill" : "pin")
                     .onHover { hover in
                         pinHovered = hover
                     }
             }
             .buttonStyle(.plain)
-            .foregroundColor(isPinned ? .accentColor : .secondary)
-            .opacity(isPinned ? 1 : showButtons ? 1 : 0)
+            .foregroundColor(program.pinned ? .accentColor : .secondary)
+            .opacity(program.pinned ? 1 : showButtons ? 1 : 0)
             Text(program.name)
-            Spacer()
+                .frame(maxWidth: .infinity, alignment: .leading)
             if showButtons {
                 if let peFile = program.peFile,
                    let archString = peFile.architecture.toString() {
@@ -126,21 +157,20 @@ struct ProgramItemView: View {
                                 .stroke(.secondary)
                         )
                 }
-                Button {
+
+                Button("program.config", systemImage: "gearshape", action: {
                     path.append(program)
-                } label: {
-                    Image(systemName: "gearshape")
-                }
+                })
+                .labelStyle(.iconOnly)
                 .buttonStyle(.plain)
                 .foregroundStyle(.secondary)
                 .help("program.config")
-                Button {
+                Button("button.run", systemImage: "play", action: {
                     Task {
                         await program.run()
                     }
-                } label: {
-                    Image(systemName: "play")
-                }
+                })
+                .labelStyle(.iconOnly)
                 .buttonStyle(.plain)
                 .foregroundStyle(.secondary)
                 .help("button.run")
@@ -150,29 +180,23 @@ struct ProgramItemView: View {
         .onHover { hover in
             showButtons = hover
         }
-        .onAppear {
-            isPinned = program.pinned
-        }
     }
 }
 
 struct BlocklistItemView: View {
     let blockedUrl: URL
-    let bottle: Bottle
-    @State var showButtons: Bool = false
-    @Binding var resortPrograms: Bool
+    @ObservedObject var bottle: Bottle
+    @State private var showButtons: Bool = false
 
     var body: some View {
         HStack {
             Text(blockedUrl.prettyPath(bottle))
             Spacer()
             if showButtons {
-                Button {
+                Button("program.remove.blocklist", systemImage: "xmark.circle.fill", action: {
                     bottle.settings.blocklist.removeAll { $0 == blockedUrl }
-                    resortPrograms.toggle()
-                } label: {
-                    Image(systemName: "xmark.circle")
-                }
+                })
+                .labelStyle(.iconOnly)
                 .buttonStyle(.plain)
                 .foregroundColor(.secondary)
                 .help("program.remove.blocklist")

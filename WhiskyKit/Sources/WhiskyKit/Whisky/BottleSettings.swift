@@ -20,7 +20,7 @@ import Foundation
 import SemanticVersion
 import os.log
 
-public struct PinnedProgram: Codable, Hashable {
+public struct PinnedProgram: Codable, Hashable, Equatable {
     public var name: String
     public var url: URL?
 
@@ -36,7 +36,7 @@ public struct PinnedProgram: Codable, Hashable {
     }
 }
 
-public struct BottleInfo: Codable {
+public struct BottleInfo: Codable, Equatable {
     var name: String = "Bottle"
     var pins: [PinnedProgram] = []
     var blocklist: [URL] = []
@@ -74,11 +74,11 @@ public enum WinVersion: String, CaseIterable, Codable {
     }
 }
 
-public enum EnhancedSync: Codable {
+public enum EnhancedSync: Codable, Equatable {
     case none, esync, msync
 }
 
-public struct BottleWineConfig: Codable {
+public struct BottleWineConfig: Codable, Equatable {
     static let defaultWineVersion = SemanticVersion(7, 7, 0)
     var wineVersion: SemanticVersion = Self.defaultWineVersion
     var windowsVersion: WinVersion = .win10
@@ -96,7 +96,7 @@ public struct BottleWineConfig: Codable {
     // swiftlint:enable line_length
 }
 
-public struct BottleMetalConfig: Codable {
+public struct BottleMetalConfig: Codable, Equatable {
     var metalHud: Bool = false
     var metalTrace: Bool = false
 
@@ -109,11 +109,11 @@ public struct BottleMetalConfig: Codable {
     }
 }
 
-public enum DXVKHUD: Codable {
+public enum DXVKHUD: Codable, Equatable {
     case full, partial, fps, off
 }
 
-public struct BottleDXVKConfig: Codable {
+public struct BottleDXVKConfig: Codable, Equatable {
     var dxvk: Bool = false
     var dxvkAsync: Bool = true
     var dxvkHud: DXVKHUD = .off
@@ -128,7 +128,7 @@ public struct BottleDXVKConfig: Codable {
     }
 }
 
-public struct BottleSettings: Codable {
+public struct BottleSettings: Codable, Equatable {
     static let defaultFileVersion = SemanticVersion(1, 0, 0)
 
     var fileVersion: SemanticVersion = Self.defaultFileVersion

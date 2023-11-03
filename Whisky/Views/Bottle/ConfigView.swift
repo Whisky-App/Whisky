@@ -27,7 +27,7 @@ enum LoadingState {
 }
 
 struct ConfigView: View {
-    @Binding var bottle: Bottle
+    @ObservedObject var bottle: Bottle
     @State private var buildVersion: Int = 0
     @State private var retinaMode: Bool = false
     @State private var dpiConfig: Int = 96
@@ -43,14 +43,14 @@ struct ConfigView: View {
     var body: some View {
         Form {
             Section("config.title.wine", isExpanded: $wineSectionExpanded) {
-                SettingItemView(title: "config.winVersion", loadingState: $winVersionLoadingState) {
+                SettingItemView(title: "config.winVersion", loadingState: winVersionLoadingState) {
                     Picker("config.winVersion", selection: $bottle.settings.windowsVersion) {
                         ForEach(WinVersion.allCases.reversed(), id: \.self) {
                             Text($0.pretty())
                         }
                     }
                 }
-                SettingItemView(title: "config.buildVersion", loadingState: $buildVersionLoadingState) {
+                SettingItemView(title: "config.buildVersion", loadingState: buildVersionLoadingState) {
                     TextField("config.buildVersion", value: $buildVersion, formatter: NumberFormatter())
                         .multilineTextAlignment(.trailing)
                         .textFieldStyle(PlainTextFieldStyle())
@@ -67,7 +67,7 @@ struct ConfigView: View {
                             }
                         }
                 }
-                SettingItemView(title: "config.retinaMode", loadingState: $retinaModeLoadingState) {
+                SettingItemView(title: "config.retinaMode", loadingState: retinaModeLoadingState) {
                     Toggle("config.retinaMode", isOn: $retinaMode)
                         .onChange(of: retinaMode, { _, newValue in
                             Task(priority: .userInitiated) {
@@ -87,7 +87,7 @@ struct ConfigView: View {
                     Text("config.enhacnedSync.esync").tag(EnhancedSync.esync)
                     Text("config.enhacnedSync.msync").tag(EnhancedSync.msync)
                 }
-                SettingItemView(title: "config.dpi", loadingState: $dpiConfigLoadingState) {
+                SettingItemView(title: "config.dpi", loadingState: dpiConfigLoadingState) {
                     Button("config.inspect") {
                         dpiSheetPresented = true
                     }
@@ -301,47 +301,37 @@ struct DPIConfigSheetView: View {
     }
 }
 
-struct SettingItemView<V: View>: View {
-    var title: String.LocalizationValue
-    @Binding var loadingState: LoadingState
-    @ViewBuilder var content: () -> V
+struct SettingItemView<Content: View>: View {
+    let title: String.LocalizationValue
+    let loadingState: LoadingState
+    @ViewBuilder var content: () -> Content
 
     @Namespace private var viewId
     @Namespace private var progressViewId
 
     var body: some View {
-        ZStack {
-            if loadingState == .failed {
-                HStack {
-                    Text(String(localized: title))
-                    Spacer()
-                    Text("config.notAvailable").opacity(0.5)
-                }
-            } else if loadingState == .loading {
-                HStack {
-                    Text(String(localized: title))
-                    Spacer()
+        HStack {
+            Text(String(localized: title))
+                .multilineTextAlignment(.leading)
+                .frame(maxWidth: .infinity, alignment: .leading)
+
+            HStack {
+                switch loadingState {
+                case .loading, .modifying:
                     ProgressView()
                         .progressViewStyle(.circular)
                         .controlSize(.small)
                         .matchedGeometryEffect(id: progressViewId, in: viewId)
-                }
-            } else {
-                HStack(spacing: 16) {
-                    Text(String(localized: title))
-                    Spacer()
-                    if loadingState == .modifying {
-                        ProgressView()
-                            .progressViewStyle(.circular)
-                            .controlSize(.small)
-                            .matchedGeometryEffect(id: progressViewId, in: viewId)
-                    }
+                case .success:
                     content()
                         .labelsHidden()
-                        .disabled(loadingState == .modifying)
+                        .disabled(loadingState != .success)
+                case .failed:
+                    Text("config.notAvailable")
+                        .font(.caption).foregroundStyle(.red)
+                        .multilineTextAlignment(.trailing)
                 }
-            }
+            }.animation(.default, value: loadingState)
         }
-        .animation(.default, value: loadingState)
     }
 }

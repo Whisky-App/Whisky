@@ -52,6 +52,7 @@
 		6EFDF6662AAE303300EF622F /* Icons.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6EFDF6652AAE303300EF622F /* Icons.xcassets */; };
 		8C2AEFC82AED79B700CB568F /* WhiskyKit in Frameworks */ = {isa = PBXBuildFile; productRef = 8C2AEFC72AED79B700CB568F /* WhiskyKit */; };
 		8C2AEFCA2AED79CD00CB568F /* WhiskyKit in Frameworks */ = {isa = PBXBuildFile; productRef = 8C2AEFC92AED79CD00CB568F /* WhiskyKit */; };
+		8C73E1342AF472FC00B6FB45 /* ProgramMenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C73E1332AF472FC00B6FB45 /* ProgramMenuView.swift */; };
 		8CB681E52AED7C6F0018D319 /* WhiskyKit in Resources */ = {isa = PBXBuildFile; fileRef = 8CB681E42AED7C6F0018D319 /* WhiskyKit */; };
 		8CB681E72AED7CD00018D319 /* WhiskyKit in Frameworks */ = {isa = PBXBuildFile; productRef = 8CB681E62AED7CD00018D319 /* WhiskyKit */; };
 		AB66A8642A4195B10006D238 /* Rosetta2.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB66A8632A4195B10006D238 /* Rosetta2.swift */; };
@@ -147,6 +148,7 @@
 		6EFDF6522AAE2DA800EF622F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		6EFDF6532AAE2DA800EF622F /* WhiskyThumbnail.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = WhiskyThumbnail.entitlements; sourceTree = "<group>"; };
 		6EFDF6652AAE303300EF622F /* Icons.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Icons.xcassets; sourceTree = "<group>"; };
+		8C73E1332AF472FC00B6FB45 /* ProgramMenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgramMenuView.swift; sourceTree = "<group>"; };
 		8CB681E42AED7C6F0018D319 /* WhiskyKit */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = WhiskyKit; sourceTree = "<group>"; };
 		AB66A8632A4195B10006D238 /* Rosetta2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Rosetta2.swift; sourceTree = "<group>"; };
 		EEA5A2452A31DD65008274AE /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -211,6 +213,7 @@
 				6E355E5929D782B2002D83BE /* ProgramsView.swift */,
 				6E355E5D29D7D85D002D83BE /* ProgramView.swift */,
 				6E17B6482AF4118F00831173 /* EnvironmentArgView.swift */,
+				8C73E1332AF472FC00B6FB45 /* ProgramMenuView.swift */,
 			);
 			path = Programs;
 			sourceTree = "<group>";
@@ -580,6 +583,7 @@
 				6E17B6462AF3FDC100831173 /* PinsView.swift in Sources */,
 				6E064B1429DD331F00D9A2D2 /* SparkleView.swift in Sources */,
 				6E40495629CCA19C006E3F1B /* WhiskyApp.swift in Sources */,
+				8C73E1342AF472FC00B6FB45 /* ProgramMenuView.swift in Sources */,
 				6E50D98329CD6066008C39F6 /* BottleVM.swift in Sources */,
 				6E6915452A3265BB0085BBB7 /* Logger.swift in Sources */,
 				6E49E0212AECB7DB00009CAC /* SettingsView.swift in Sources */,
