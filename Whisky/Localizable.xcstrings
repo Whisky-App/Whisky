@@ -997,8 +997,8 @@
         },
         "ko" : {
           "stringUnit" : {
-            "state" : "needs_review",
-            "value" : "Pin"
+            "state" : "translated",
+            "value" : "고정"
           }
         },
         "nl" : {
@@ -2295,8 +2295,8 @@
         },
         "ko" : {
           "stringUnit" : {
-            "state" : "needs_review",
-            "value" : "Unpin"
+            "state" : "translated",
+            "value" : "고정 해제"
           }
         },
         "nl" : {
@@ -4065,8 +4065,8 @@
         },
         "ko" : {
           "stringUnit" : {
-            "state" : "needs_review",
-            "value" : "Enhanced Sync"
+            "state" : "translated",
+            "value" : "향상된 동기 처리"
           }
         },
         "nl" : {
@@ -4183,8 +4183,8 @@
         },
         "ko" : {
           "stringUnit" : {
-            "state" : "needs_review",
-            "value" : "None"
+            "state" : "translated",
+            "value" : "끄기"
           }
         },
         "nl" : {
@@ -7015,8 +7015,8 @@
         },
         "ko" : {
           "stringUnit" : {
-            "state" : "needs_review",
-            "value" : "Add"
+            "state" : "translated",
+            "value" : "추가"
           }
         },
         "nl" : {
@@ -7133,8 +7133,8 @@
         },
         "ko" : {
           "stringUnit" : {
-            "state" : "needs_review",
-            "value" : "Remove"
+            "state" : "translated",
+            "value" : "제거"
           }
         },
         "nl" : {
@@ -7487,8 +7487,8 @@
         },
         "ko" : {
           "stringUnit" : {
-            "state" : "needs_review",
-            "value" : "Website"
+            "state" : "translated",
+            "value" : "웹 사이트"
           }
         },
         "nl" : {
@@ -8668,8 +8668,8 @@
         },
         "ko" : {
           "stringUnit" : {
-            "state" : "needs_review",
-            "value" : "Add Selected to Blocklist"
+            "state" : "translated",
+            "value" : "선택한 항목을 블랙리스트에 추가"
           }
         },
         "nl" : {
@@ -9376,8 +9376,8 @@
         },
         "ko" : {
           "stringUnit" : {
-            "state" : "needs_review",
-            "value" : "Remove Selected from Blocklist"
+            "state" : "translated",
+            "value" : "선택한 항목을 블랙리스트에서 제거"
           }
         },
         "nl" : {
@@ -9494,8 +9494,8 @@
         },
         "ko" : {
           "stringUnit" : {
-            "state" : "needs_review",
-            "value" : "Settings"
+            "state" : "translated",
+            "value" : "설정"
           }
         },
         "nl" : {
@@ -10438,8 +10438,8 @@
         },
         "ko" : {
           "stringUnit" : {
-            "state" : "needs_review",
-            "value" : "General"
+            "state" : "translated",
+            "value" : "일반"
           }
         },
         "nl" : {
@@ -10556,8 +10556,8 @@
         },
         "ko" : {
           "stringUnit" : {
-            "state" : "needs_review",
-            "value" : "Automatically check for GPTK updates"
+            "state" : "translated",
+            "value" : "GPTK 업데이트를 자동으로 확인"
           }
         },
         "nl" : {
@@ -10674,8 +10674,8 @@
         },
         "ko" : {
           "stringUnit" : {
-            "state" : "needs_review",
-            "value" : "Terminate Wine processes when Whisky closes"
+            "state" : "translated",
+            "value" : "Whisky를 종료할 때 Wine 프로세스도 종료"
           }
         },
         "nl" : {
@@ -10792,8 +10792,8 @@
         },
         "ko" : {
           "stringUnit" : {
-            "state" : "needs_review",
-            "value" : "Automatically check for Whisky updates"
+            "state" : "translated",
+            "value" : "Whisky 업데이트를 자동으로 확인"
           }
         },
         "nl" : {
@@ -10910,8 +10910,8 @@
         },
         "ko" : {
           "stringUnit" : {
-            "state" : "needs_review",
-            "value" : "Updates"
+            "state" : "translated",
+            "value" : "업데이트"
           }
         },
         "nl" : {
