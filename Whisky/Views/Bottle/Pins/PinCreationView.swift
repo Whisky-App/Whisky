@@ -28,19 +28,18 @@ struct PinCreationView: View {
     @State var nameValid: Bool = false
     @State var didError: Bool = false
     @State var errorMessage: String = ""
-    @Binding var loadStartMenu: Bool
     @Environment(\.dismiss) var dismiss
 
     var body: some View {
         VStack {
             HStack {
-                Text("pin.create.title")
+                Text("pin.title")
                     .bold()
                 Spacer()
             }
             Divider()
             HStack(alignment: .top) {
-                Text("pin.create.name")
+                Text("pin.name")
                 Spacer()
                 TextField(String(), text: $newPinName)
                     .frame(width: 180)
@@ -50,7 +49,7 @@ struct PinCreationView: View {
                     }
             }
             HStack {
-                Text("pin.create.path")
+                Text("pin.path")
                 Spacer()
                 Button("create.browse") {
                     let panel = NSOpenPanel()
@@ -90,20 +89,19 @@ struct PinCreationView: View {
                         program.url == newlyCreatedPin.url
                     })
                     // Ensure this URL isn't already pinned
-                    errorMessage = String(localized: "pin.error.duplicate")
+                    errorMessage = String(format: String(localized: "pin.error.duplicate"),
+                                          newPinURL.lastPathComponent)
                     didError = existingProgram != nil && existingProgram?.pinned ?? false
                     if !didError {
-                        // Only continue if a pinned duplicate doesn't exist
-                        errorMessage = String(localized: "pin.error.create")
                         // If this is a new program, add it to the array
                         if existingProgram != nil {
                             bottle.programs.append(newlyCreatedPin)
                         }
-                        didError = !newlyCreatedPin.togglePinned()
-                        if !didError {
-                            loadStartMenu.toggle()
-                            dismiss()
-                        }
+                        newlyCreatedPin.pinned = true
+                        // Trigger a reload
+                        bottle.settings.pins = bottle.settings.pins
+                        bottle.updateInstalledPrograms()
+                        dismiss()
                     }
                 }
                 .keyboardShortcut(.defaultAction)

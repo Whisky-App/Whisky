@@ -55,7 +55,7 @@ struct BottleView: View {
                         } label: {
                             HStack {
                                 Image(systemName: "pin")
-                                Text("pin.toolbar")
+                                Text("pin.help")
                             }
                             .padding(6)
                         }
@@ -148,13 +148,12 @@ struct BottleView: View {
                         showPinCreation.toggle()
                     } label: {
                         Image(systemName: "pin")
-                            .help("pin.toolbar")
+                            .help("pin.help")
                     }
                 }
             }
             .sheet(isPresented: $showPinCreation) {
-                PinCreationView(bottle: bottle,
-                                loadStartMenu: $loadStartMenu)
+                PinCreationView(bottle: bottle)
             }
             .sheet(isPresented: $showWinetricksSheet) {
                 WinetricksView(bottle: bottle)

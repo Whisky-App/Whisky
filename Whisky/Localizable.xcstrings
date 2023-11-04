@@ -8498,6 +8498,86 @@
         }
       }
     },
+    "pin.create" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Pin"
+          }
+        }
+      }
+    },
+    "pin.createFirst" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Pin your first program to get started"
+          }
+        }
+      }
+    },
+    "pin.error.duplicate" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "\"%@\" is already pinned!"
+          }
+        }
+      }
+    },
+    "pin.error.title" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Error Pinning Program"
+          }
+        }
+      }
+    },
+    "pin.help" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Pin Program"
+          }
+        }
+      }
+    },
+    "pin.name" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Pin name:"
+          }
+        }
+      }
+    },
+    "pin.path" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Program path:"
+          }
+        }
+      }
+    },
+    "pin.title" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Pin Program"
+          }
+        }
+      }
+    },
     "program.add.blocklist" : {
       "localizations" : {
         "da" : {
