@@ -26,67 +26,61 @@ enum BottleStage {
 }
 
 struct BottleView: View {
-    @ObservedObject var bottle: Bottle
+    @Binding var bottle: Bottle
     @State private var path = NavigationPath()
     @State var programLoading: Bool = false
+    @State var pins: [PinnedProgram] = []
+    // We don't actually care about the value
+    // This just provides a way to trigger a refresh
+    @State var loadStartMenu: Bool = false
     @State var showWinetricksSheet: Bool = false
-    @State var showPinCreation: Bool = false
 
     private let gridLayout = [GridItem(.adaptive(minimum: 100, maximum: .infinity))]
 
     var body: some View {
         NavigationStack(path: $path) {
-            ScrollView {
-                let pinnedPrograms = bottle.programs.pinned
-                if pinnedPrograms.count > 0 {
-                    LazyVGrid(columns: gridLayout, alignment: .center) {
-                        ForEach(bottle.settings.pins, id: \.url) { pin in
-                            PinsView(
-                                bottle: bottle, pin: pin, path: $path
-                            )
-                        }
-                    }
-                    .padding()
-                } else {
-                    VStack {
-                        Text("pin.createFirst")
-                        Button {
-                            showPinCreation.toggle()
-                        } label: {
-                            HStack {
-                                Image(systemName: "pin")
-                                Text("pin.help")
+            VStack {
+                ScrollView {
+                    if pins.count > 0 {
+                        LazyVGrid(columns: gridLayout, alignment: .center) {
+                            ForEach(pins, id: \.url) { pin in
+                                PinnedProgramView(bottle: bottle,
+                                                  pin: pin,
+                                                  loadStartMenu: $loadStartMenu,
+                                                  path: $path)
                             }
-                            .padding(6)
                         }
-                        .buttonStyle(.borderedProminent)
-                        .tint(.accentColor)
+                        .padding()
                     }
-                    .padding()
+                    Form {
+                        NavigationLink(value: BottleStage.programs) {
+                            HStack {
+                                Image(systemName: "list.bullet")
+                                    .resizable()
+                                    .scaledToFit()
+                                    .frame(width: 14, height: 14, alignment: .center)
+                                Text("tab.programs")
+                            }
+                        }
+                        NavigationLink(value: BottleStage.config) {
+                            HStack {
+                                Image(systemName: "gearshape")
+                                    .resizable()
+                                    .scaledToFit()
+                                    .frame(width: 14, height: 14, alignment: .center)
+                                Text("tab.config")
+                            }
+                        }
+                    }
+                    .formStyle(.grouped)
+                    .onAppear {
+                        updateStartMenu()
+                    }
+                    .onChange(of: loadStartMenu) {
+                        updateStartMenu()
+                    }
                 }
-                Form {
-                    NavigationLink(value: BottleStage.programs) {
-                        HStack {
-                            Image(systemName: "list.bullet")
-                                .resizable()
-                                .scaledToFit()
-                                .frame(width: 14, height: 14, alignment: .center)
-                            Text("tab.programs")
-                        }
-                    }
-                    NavigationLink(value: BottleStage.config) {
-                        HStack {
-                            Image(systemName: "gearshape")
-                                .resizable()
-                                .scaledToFit()
-                                .frame(width: 14, height: 14, alignment: .center)
-                            Text("tab.config")
-                        }
-                    }
-                }
-                .formStyle(.grouped)
-            }
-            .bottomBar {
+                Spacer()
                 HStack {
                     Spacer()
                     Button("button.cDrive") {
@@ -137,49 +131,35 @@ struct BottleView: View {
                 }
                 .padding()
             }
-            .onAppear {
-                updateStartMenu()
-            }
             .disabled(!bottle.isActive)
             .navigationTitle(bottle.settings.name)
-            .toolbar {
-                ToolbarItem(placement: .primaryAction) {
-                    Button {
-                        showPinCreation.toggle()
-                    } label: {
-                        Image(systemName: "pin")
-                            .help("pin.help")
-                    }
-                }
-            }
-            .sheet(isPresented: $showPinCreation) {
-                PinCreationView(bottle: bottle)
-            }
             .sheet(isPresented: $showWinetricksSheet) {
                 WinetricksView(bottle: bottle)
             }
-            .onChange(of: bottle.settings, { oldValue, newValue in
-                guard oldValue != newValue else { return }
-                // Trigger a reload
-                BottleVM.shared.bottles = BottleVM.shared.bottles
-            })
             .navigationDestination(for: BottleStage.self) { stage in
                 switch stage {
                 case .config:
-                    ConfigView(bottle: bottle)
+                    ConfigView(bottle: $bottle)
                 case .programs:
-                    ProgramsView(
-                        bottle: bottle, path: $path
-                    )
+                    ProgramsView(bottle: bottle,
+                                 reloadStartMenu: $loadStartMenu,
+                                 path: $path)
                 }
             }
             .navigationDestination(for: Program.self) { program in
-                ProgramView(program: program)
+                ProgramView(program: Binding(get: {
+                    // swiftlint:disable:next force_unwrapping
+                    bottle.programs[bottle.programs.firstIndex(of: program)!]
+                }, set: { newValue in
+                    if let index = bottle.programs.firstIndex(of: program) {
+                        bottle.programs[index] = newValue
+                    }
+                }))
             }
         }
     }
 
-    private func updateStartMenu() {
+    func updateStartMenu() {
         bottle.programs = bottle.updateInstalledPrograms()
         let startMenuPrograms = bottle.getStartMenuPrograms()
         for startMenuProgram in startMenuPrograms {
@@ -194,6 +174,8 @@ struct BottleView: View {
                 }
             }
         }
+
+        pins = bottle.settings.pins
     }
 }
 
@@ -232,5 +214,111 @@ struct WinetricksView: View {
         }
         .padding()
         .frame(width: 350, height: 140)
+    }
+}
+
+struct PinnedProgramView: View {
+    var bottle: Bottle
+    @State var pin: PinnedProgram
+    @State var program: Program?
+    @State var image: NSImage?
+    @State var showRenameSheet = false
+    @State var name: String = ""
+    @State var opening: Bool = false
+    @Binding var loadStartMenu: Bool
+    @Binding var path: NavigationPath
+
+    var body: some View {
+        VStack {
+            Group {
+                if let image = image {
+                    Image(nsImage: image)
+                        .resizable()
+                } else {
+                    Image(systemName: "app.dashed")
+                        .resizable()
+                }
+            }
+            .frame(width: 45, height: 45)
+            .scaleEffect(opening ? 2 : 1)
+            .opacity(opening ? 0 : 1)
+            Spacer()
+            Text(name + "\n")
+                .multilineTextAlignment(.center)
+                .lineLimit(2)
+        }
+        .frame(width: 90, height: 90)
+        .padding(10)
+        .overlay {
+            HStack {
+                Spacer()
+                Image(systemName: "play.fill")
+                    .resizable()
+                    .foregroundColor(.green)
+                    .frame(width: 16, height: 16)
+            }
+            .frame(width: 45, height: 45)
+            .padding(EdgeInsets(top: 0, leading: 0, bottom: 12, trailing: 0))
+        }
+        .contextMenu {
+            Button("button.run") {
+                runProgram()
+            }
+            Divider()
+            Button("program.config") {
+                if let program {
+                    path.append(program)
+                }
+            }
+            Divider()
+            Button("button.rename") {
+                showRenameSheet.toggle()
+            }
+            Button("pin.unpin") {
+                bottle.settings.pins.removeAll(where: { $0.url == pin.url })
+                for program in bottle.programs where program.url == pin.url {
+                    program.pinned = false
+                }
+                loadStartMenu.toggle()
+            }
+        }
+        .onTapGesture(count: 2) {
+            runProgram()
+        }
+        .sheet(isPresented: $showRenameSheet) {
+            PinRenameView(name: $name)
+        }
+        .onAppear {
+            name = pin.name
+            Task.detached {
+                program = bottle.programs.first(where: { $0.url == pin.url })
+                if let program {
+                    if let peFile = program.peFile {
+                        image = peFile.bestIcon()
+                    }
+                }
+            }
+        }
+        .onChange(of: name) {
+            if let index = bottle.settings.pins.firstIndex(where: { $0.url == pin.url }) {
+                bottle.settings.pins[index].name = name
+            }
+        }
+    }
+
+    func runProgram() {
+        withAnimation(.easeIn(duration: 0.25)) {
+            opening = true
+        } completion: {
+            withAnimation(.easeOut(duration: 0.1)) {
+                opening = false
+            }
+        }
+
+        if let program {
+            Task {
+                await program.run()
+            }
+        }
     }
 }

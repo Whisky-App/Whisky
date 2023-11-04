@@ -57,6 +57,7 @@
 		8CB681E72AED7CD00018D319 /* WhiskyKit in Frameworks */ = {isa = PBXBuildFile; productRef = 8CB681E62AED7CD00018D319 /* WhiskyKit */; };
 		AB66A8642A4195B10006D238 /* Rosetta2.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB66A8632A4195B10006D238 /* Rosetta2.swift */; };
 		DBB174902AE0E6D900CF6214 /* PinCreationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBB1748F2AE0E6D900CF6214 /* PinCreationView.swift */; };
+		DBB174902AE0E6D900CF6214 /* PinCreationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBB1748F2AE0E6D900CF6214 /* PinCreationView.swift */; };
 		EB58FB552A499896002DC184 /* SemanticVersion in Frameworks */ = {isa = PBXBuildFile; productRef = EB58FB542A499896002DC184 /* SemanticVersion */; };
 		EEA5A2462A31DD65008274AE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEA5A2452A31DD65008274AE /* AppDelegate.swift */; };
 /* End PBXBuildFile section */
