@@ -508,7 +508,7 @@
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Create Shortcut"
+            "value" : "Créer raccourci"
           }
         },
         "it" : {
@@ -979,8 +979,8 @@
         },
         "fr" : {
           "stringUnit" : {
-            "state" : "needs_review",
-            "value" : "Pin"
+            "state" : "translated",
+            "value" : "Épingler"
           }
         },
         "it" : {
@@ -2277,8 +2277,8 @@
         },
         "fr" : {
           "stringUnit" : {
-            "state" : "needs_review",
-            "value" : "Unpin"
+            "state" : "translated",
+            "value" : "Désépingler"
           }
         },
         "it" : {
@@ -8532,8 +8532,8 @@
         },
         "fr" : {
           "stringUnit" : {
-            "state" : "needs_review",
-            "value" : "Add to Blocklist"
+            "state" : "translated",
+            "value" : "Ajouter a la Blocklist"
           }
         },
         "it" : {
@@ -8650,8 +8650,8 @@
         },
         "fr" : {
           "stringUnit" : {
-            "state" : "needs_review",
-            "value" : "Add Selected to Blocklist"
+            "state" : "translated",
+            "value" : "Ajouter sélectionner à la Blocklist"
           }
         },
         "it" : {
@@ -8769,7 +8769,7 @@
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Paramètres"
+            "value" : "Arguments"
           }
         },
         "it" : {
@@ -9240,8 +9240,8 @@
         },
         "fr" : {
           "stringUnit" : {
-            "state" : "needs_review",
-            "value" : "Remove from Blocklist"
+            "state" : "translated",
+            "value" : "Enlever de la Blocklist"
           }
         },
         "it" : {
@@ -9358,8 +9358,8 @@
         },
         "fr" : {
           "stringUnit" : {
-            "state" : "needs_review",
-            "value" : "Remove Selected from Blocklist"
+            "state" : "translated",
+            "value" : "Enlever sélectionner de la Blocklist"
           }
         },
         "it" : {
@@ -9476,8 +9476,8 @@
         },
         "fr" : {
           "stringUnit" : {
-            "state" : "needs_review",
-            "value" : "Settings"
+            "state" : "translated",
+            "value" : "Paramètres"
           }
         },
         "it" : {
@@ -9595,7 +9595,7 @@
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "All Programs"
+            "value" : "Tout les programmes"
           }
         },
         "it" : {
@@ -9949,7 +9949,7 @@
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Rename pin"
+            "value" : "Renommer l'épingle"
           }
         },
         "it" : {
@@ -13725,7 +13725,7 @@
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Bottle Configuration"
+            "value" : "Configuration de bouteille"
           }
         },
         "it" : {
