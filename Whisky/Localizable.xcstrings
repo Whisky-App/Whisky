@@ -4072,7 +4072,7 @@
         "nl" : {
           "stringUnit" : {
             "state" : "needs_review",
-            "value" : "Enhanced Sync"
+            "value" : "Rodzaj synchronizacji" 
           }
         },
         "pl" : {
@@ -10451,7 +10451,7 @@
         "pl" : {
           "stringUnit" : {
             "state" : "needs_review",
-            "value" : "General"
+            "value" : "Ogólne"
           }
         },
         "pt-BR" : {
@@ -10569,7 +10569,7 @@
         "pl" : {
           "stringUnit" : {
             "state" : "needs_review",
-            "value" : "Automatically check for GPTK updates"
+            "value" : "Automatycznie sprawdzaj dostępność aktualizacji GPTK"
           }
         },
         "pt-BR" : {
@@ -10687,7 +10687,7 @@
         "pl" : {
           "stringUnit" : {
             "state" : "needs_review",
-            "value" : "Terminate Wine processes when Whisky closes"
+            "value" : "Zakończ proces Wine, gdy Whisky zostanie zamknięte"
           }
         },
         "pt-BR" : {
@@ -10805,7 +10805,7 @@
         "pl" : {
           "stringUnit" : {
             "state" : "needs_review",
-            "value" : "Automatically check for Whisky updates"
+            "value" : "Automatycznie sprawdzaj aktualizacje Whisky"
           }
         },
         "pt-BR" : {
@@ -10923,7 +10923,7 @@
         "pl" : {
           "stringUnit" : {
             "state" : "needs_review",
-            "value" : "Updates"
+            "value" : "Aktualizacje"
           }
         },
         "pt-BR" : {
