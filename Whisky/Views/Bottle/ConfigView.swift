@@ -180,7 +180,7 @@ struct ConfigView: View {
             }
             Task(priority: .userInitiated) {
                 do {
-                    dpiConfig = try await Wine.dpiResolution(bottle: bottle)
+                    dpiConfig = try await Wine.dpiResolution(bottle: bottle) ?? 0
                     dpiConfigLoadingState = .success
                 } catch {
                     print(error)
@@ -225,8 +225,12 @@ struct ConfigView: View {
     func loadBuildName() {
         Task(priority: .userInitiated) {
             do {
-                let buildVersionString = try await Wine.buildVersion(bottle: bottle)
-                buildVersion = Int(buildVersionString) ?? 0
+                if let buildVersionString = try await Wine.buildVersion(bottle: bottle) {
+                    buildVersion = Int(buildVersionString) ?? 0
+                } else {
+                    buildVersion = 0
+                }
+
                 buildVersionLoadingState = .success
             } catch {
                 print(error)

@@ -99,8 +99,6 @@ struct PinView: View {
             }
         }
 
-        Task {
-            await program.run()
-        }
+        program.run()
     }
 }

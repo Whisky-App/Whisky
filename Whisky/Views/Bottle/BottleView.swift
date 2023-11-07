@@ -28,8 +28,8 @@ enum BottleStage {
 struct BottleView: View {
     @ObservedObject var bottle: Bottle
     @State private var path = NavigationPath()
-    @State var programLoading: Bool = false
-    @State var showWinetricksSheet: Bool = false
+    @State private var programLoading: Bool = false
+    @State private var showWinetricksSheet: Bool = false
 
     private let gridLayout = [GridItem(.adaptive(minimum: 100, maximum: .infinity))]
 
@@ -94,7 +94,7 @@ struct BottleView: View {
                                             if url.pathExtension == "bat" {
                                                 try await Wine.runBatchFile(url: url, bottle: bottle)
                                             } else {
-                                                try await Wine.runExternalProgram(url: url, bottle: bottle)
+                                                try await Wine.runProgram(at: url, bottle: bottle)
                                             }
                                         } catch {
                                             print("Failed to run external program: \(error)")

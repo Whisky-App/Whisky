@@ -47,7 +47,7 @@ class Winetricks {
 
     static func runCommand(command: String, bottle: Bottle) async {
         // swiftlint:disable:next line_length
-        let winetricksCmd = #"PATH=\"\#(Wine.binFolder.path):$PATH\" WINE=wine64 WINEPREFIX=\"\#(bottle.url.path)\" \"\#(winetricksURL.path(percentEncoded: false))\" \#(command)"#
+        let winetricksCmd = #"PATH=\"\#(GPTKInstaller.binFolder.path):$PATH\" WINE=wine64 WINEPREFIX=\"\#(bottle.url.path)\" \"\#(winetricksURL.path(percentEncoded: false))\" \#(command)"#
 
         let script = """
         tell application "Terminal"

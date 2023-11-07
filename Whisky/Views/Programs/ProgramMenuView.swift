@@ -25,9 +25,7 @@ struct ProgramMenuView: View {
 
     var body: some View {
         Button("button.run", systemImage: "play") {
-            Task {
-                await program.run()
-            }
+            program.run()
         }
         .labelStyle(.titleAndIcon)
         Section("program.settings") {
