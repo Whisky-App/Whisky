@@ -21,78 +21,77 @@ import UniformTypeIdentifiers
 import WhiskyKit
 
 struct PinCreationView: View {
-    var bottle: Bottle
-    @State var newPinName: String = ""
-    @State var newPinURL: URL = BottleData.defaultBottleDir
-    @State var pinPath: String = ""
-    @State var nameValid: Bool = false
-    @State var didError: Bool = false
-    @State var errorMessage: String = ""
-    @Environment(\.dismiss) var dismiss
+    let bottle: Bottle
+    @State private var newPinName: String = ""
+    @State private var newPinURL: URL = BottleData.defaultBottleDir
+    @State private var isValid: Bool = false
+    @State private var isDuplicate: Bool = false
+    @Environment(\.dismiss) private var dismiss
 
     var body: some View {
-        VStack {
-            HStack {
-                Text("pin.title")
-                    .bold()
-                Spacer()
-            }
+        VStack(alignment: .leading) {
+            Text("pin.title")
+                .bold()
             Divider()
-            HStack(alignment: .top) {
+            HStack {
                 Text("pin.name")
-                Spacer()
+                    .frame(maxWidth: /*@START_MENU_TOKEN@*/.infinity/*@END_MENU_TOKEN@*/, alignment: .leading)
                 TextField(String(), text: $newPinName)
                     .frame(width: 180)
                     .textFieldStyle(.roundedBorder)
-                    .onChange(of: newPinName) { _, name in
-                        nameValid = !name.isEmpty
-                    }
             }
             HStack {
                 Text("pin.path")
-                Spacer()
+                    .frame(maxWidth: /*@START_MENU_TOKEN@*/.infinity/*@END_MENU_TOKEN@*/, alignment: .leading)
                 Button("create.browse") {
                     let panel = NSOpenPanel()
                     panel.canChooseFiles = true
                     panel.allowedContentTypes = [UTType.exe,
                                                  UTType(exportedAs: "com.microsoft.msi-installer"),
                                                  UTType(exportedAs: "com.microsoft.bat")]
-                    panel.directoryURL = bottle.url.appending(path: "drive_c")
+                    panel.directoryURL = newPinURL
                     panel.canChooseDirectories = false
                     panel.allowsMultipleSelection = false
                     panel.canCreateDirectories = false
                     panel.begin { result in
                         if result == .OK {
                             if let url = panel.urls.first {
+                                let oldUrl = newPinURL.lastPathComponent
+                                                      .replacingOccurrences(of: ".exe", with: "")
+                                                      .replacingOccurrences(of: ".msi", with: "")
+                                                      .replacingOccurrences(of: ".bat", with: "")
                                 newPinURL = url
+                                // Only reset newPinName if the textbox hasn't been modified
+                                if newPinName.isEmpty || newPinName == oldUrl {
+                                    newPinName = url.lastPathComponent
+                                                    .replacingOccurrences(of: ".exe", with: "")
+                                                    .replacingOccurrences(of: ".msi", with: "")
+                                                    .replacingOccurrences(of: ".bat", with: "")
+                                }
                             }
                         }
                     }
                 }
             }
+            let pinPath = newPinURL.prettyPath()
+            Text(pinPath)
+                .truncationMode(.middle)
+                .lineLimit(2, reservesSpace: true)
+                .help(pinPath)
             HStack {
-                Text(pinPath)
-                    .truncationMode(.middle)
-                    .lineLimit(2)
-                    .help(pinPath)
-            }
-            Spacer()
-            HStack {
-                Spacer()
                 Button("create.cancel") {
                     dismiss()
                 }
                 .keyboardShortcut(.cancelAction)
+                .frame(maxWidth: .infinity, alignment: .trailing)
                 Button("pin.create") {
                     let newlyCreatedPin = Program(name: newPinName, url: newPinURL, bottle: bottle)
                     let existingProgram = bottle.programs.first(where: { program in
                         program.url == newlyCreatedPin.url
                     })
                     // Ensure this URL isn't already pinned
-                    errorMessage = String(format: String(localized: "pin.error.duplicate"),
-                                          newPinURL.lastPathComponent)
-                    didError = existingProgram != nil && existingProgram?.pinned ?? false
-                    if !didError {
+                    isDuplicate = existingProgram != nil && existingProgram?.pinned ?? false
+                    if !isDuplicate {
                         // If this is a new program, add it to the array
                         if existingProgram != nil {
                             bottle.programs.append(newlyCreatedPin)
@@ -105,30 +104,21 @@ struct PinCreationView: View {
                     }
                 }
                 .keyboardShortcut(.defaultAction)
-                .disabled(!nameValid)
+                .disabled(newPinName.isEmpty || newPinURL == bottle.url.appending(path: "drive_c"))
                 .alert(String(localized: "pin.error.title"),
-                    isPresented: $didError
-                ) {
-                    Button("button.ok") {
-                    }
-                } message: {
-                    Text(errorMessage)
+                    isPresented: $isDuplicate
+                ) {}
+                message: {
+                    Text(String(format: String(localized: "pin.error.duplicate"),
+                                newPinURL.lastPathComponent))
                 }
             }
         }
         .padding()
-        .onChange(of: newPinURL) {
-            pinPath = newPinURL.prettyPath()
-            if newPinName.isEmpty {
-                newPinName = newPinURL.lastPathComponent
-                                        .replacingOccurrences(of: ".exe", with: "")
-            }
-        }
         .onAppear {
-            pinPath = bottle.url
-                .appending(path: "drive_c")
-                .prettyPath()
+            // Ensure newPinURL is initialized to a valid URL
+            newPinURL = bottle.url.appending(path: "drive_c")
         }
-        .frame(width: 400, height: 180)
+        .frame(width: 400)
     }
 }
