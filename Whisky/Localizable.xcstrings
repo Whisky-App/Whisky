@@ -8518,7 +8518,8 @@
         }
       }
     },
-    "pin.error.duplicate" : {
+    "pin.error.duplicate.%@" : {
+      "extractionState" : "manual",
       "localizations" : {
         "en" : {
           "stringUnit" : {

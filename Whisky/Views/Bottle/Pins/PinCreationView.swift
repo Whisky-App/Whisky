@@ -23,7 +23,7 @@ import WhiskyKit
 struct PinCreationView: View {
     let bottle: Bottle
     @State private var newPinName: String = ""
-    @State private var newPinURL: URL = BottleData.defaultBottleDir
+    @State private var newPinURL: URL?
     @State private var isValid: Bool = false
     @State private var isDuplicate: Bool = false
     @Environment(\.dismiss) private var dismiss
@@ -35,49 +35,44 @@ struct PinCreationView: View {
             Divider()
             HStack {
                 Text("pin.name")
-                    .frame(maxWidth: /*@START_MENU_TOKEN@*/.infinity/*@END_MENU_TOKEN@*/, alignment: .leading)
+                    .frame(maxWidth: .infinity, alignment: .leading)
                 TextField(String(), text: $newPinName)
                     .frame(width: 180)
                     .textFieldStyle(.roundedBorder)
             }
             HStack {
                 Text("pin.path")
-                    .frame(maxWidth: /*@START_MENU_TOKEN@*/.infinity/*@END_MENU_TOKEN@*/, alignment: .leading)
+                    .frame(maxWidth: .infinity, alignment: .leading)
                 Button("create.browse") {
                     let panel = NSOpenPanel()
                     panel.canChooseFiles = true
                     panel.allowedContentTypes = [UTType.exe,
                                                  UTType(exportedAs: "com.microsoft.msi-installer"),
                                                  UTType(exportedAs: "com.microsoft.bat")]
-                    panel.directoryURL = newPinURL
+                    panel.directoryURL = newPinURL ?? bottle.url.appending(path: "drive_c")
                     panel.canChooseDirectories = false
                     panel.allowsMultipleSelection = false
                     panel.canCreateDirectories = false
                     panel.begin { result in
-                        if result == .OK {
-                            if let url = panel.urls.first {
-                                let oldUrl = newPinURL.lastPathComponent
-                                                      .replacingOccurrences(of: ".exe", with: "")
-                                                      .replacingOccurrences(of: ".msi", with: "")
-                                                      .replacingOccurrences(of: ".bat", with: "")
-                                newPinURL = url
-                                // Only reset newPinName if the textbox hasn't been modified
-                                if newPinName.isEmpty || newPinName == oldUrl {
-                                    newPinName = url.lastPathComponent
-                                                    .replacingOccurrences(of: ".exe", with: "")
-                                                    .replacingOccurrences(of: ".msi", with: "")
-                                                    .replacingOccurrences(of: ".bat", with: "")
-                                }
-                            }
+                        guard result == .OK, let url = panel.urls.first else { return }
+                        let pattern = "\\.(exe|msi|bat)$"
+                        let oldDefaultName = (newPinURL ?? url).lastPathComponent
+                            .replacingOccurrences(of: pattern, with: "", options: .regularExpression)
+                        newPinURL = url
+                        // Only reset newPinName if the textbox hasn't been modified
+                        if newPinName.isEmpty || newPinName == oldDefaultName {
+                            newPinName = url.lastPathComponent
+                                .replacingOccurrences(of: pattern, with: "", options: .regularExpression)
                         }
                     }
                 }
             }
-            let pinPath = newPinURL.prettyPath()
-            Text(pinPath)
-                .truncationMode(.middle)
-                .lineLimit(2, reservesSpace: true)
-                .help(pinPath)
+            if let newPinURL {
+                Text(newPinURL.prettyPath())
+                    .truncationMode(.middle)
+                    .lineLimit(2, reservesSpace: true)
+                    .help(newPinURL.prettyPath())
+            }
             HStack {
                 Button("create.cancel") {
                     dismiss()
@@ -85,6 +80,8 @@ struct PinCreationView: View {
                 .keyboardShortcut(.cancelAction)
                 .frame(maxWidth: .infinity, alignment: .trailing)
                 Button("pin.create") {
+                    guard let newPinURL else { return }
+
                     let newlyCreatedPin = Program(name: newPinName, url: newPinURL, bottle: bottle)
                     let existingProgram = bottle.programs.first(where: { program in
                         program.url == newlyCreatedPin.url
@@ -105,20 +102,15 @@ struct PinCreationView: View {
                 }
                 .keyboardShortcut(.defaultAction)
                 .disabled(newPinName.isEmpty || newPinURL == bottle.url.appending(path: "drive_c"))
-                .alert(String(localized: "pin.error.title"),
+                .alert("pin.error.title",
                     isPresented: $isDuplicate
                 ) {}
                 message: {
-                    Text(String(format: String(localized: "pin.error.duplicate"),
-                                newPinURL.lastPathComponent))
+                    Text("pin.error.duplicate.\(newPinURL?.lastPathComponent ?? "unknown")")
                 }
             }
         }
         .padding()
-        .onAppear {
-            // Ensure newPinURL is initialized to a valid URL
-            newPinURL = bottle.url.appending(path: "drive_c")
-        }
         .frame(width: 400)
     }
 }
