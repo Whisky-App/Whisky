@@ -21,10 +21,10 @@ import WhiskyKit
 
 struct PinsView: View {
     @ObservedObject var bottle: Bottle
+    @ObservedObject var program: Program
     @State var pin: PinnedProgram
     @Binding var path: NavigationPath
 
-    @State private var program: Program?
     @State private var image: NSImage?
     @State private var showRenameSheet = false
     @State private var name: String = ""
@@ -63,13 +63,11 @@ struct PinsView: View {
             .padding(EdgeInsets(top: 0, leading: 0, bottom: 12, trailing: 0))
         }
         .contextMenu {
-            if let program = program {
-                ProgramMenuView(program: program, path: $path)
+            ProgramMenuView(program: program, path: $path)
 
-                Button("button.rename", systemImage: "pencil.line") {
-                    showRenameSheet.toggle()
-                }.labelStyle(.titleAndIcon)
-            }
+            Button("button.rename", systemImage: "pencil.line") {
+                showRenameSheet.toggle()
+            }.labelStyle(.titleAndIcon)
         }
         .onTapGesture(count: 2) {
             runProgram()
@@ -80,11 +78,8 @@ struct PinsView: View {
         .onAppear {
             name = pin.name
             Task.detached { @MainActor in
-                program = bottle.programs.first(where: { $0.url == pin.url })
-                if let program {
-                    if let peFile = program.peFile {
-                        image = peFile.bestIcon()
-                    }
+                if let peFile = program.peFile {
+                    image = peFile.bestIcon()
                 }
             }
         }
@@ -104,10 +99,8 @@ struct PinsView: View {
             }
         }
 
-        if let program {
-            Task {
-                await program.run()
-            }
+        Task {
+            await program.run()
         }
     }
 }
