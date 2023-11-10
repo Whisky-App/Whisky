@@ -84,39 +84,33 @@ extension Bottle {
         return startMenuPrograms
     }
 
-    @discardableResult
-    func updateInstalledPrograms() -> [Program] {
-        let programFiles = url
-            .appending(path: "drive_c")
-            .appending(path: "Program Files")
-        let programFilesx86 = url
-            .appending(path: "drive_c")
-            .appending(path: "Program Files (x86)")
-        programs.removeAll()
+    func updateInstalledPrograms() {
+        let driveC = url.appending(path: "drive_c")
+        var programs: [Program] = []
+        var foundURLS: Set<URL> = []
 
-        let enumerator64 = FileManager.default.enumerator(at: programFiles,
-                                                          includingPropertiesForKeys: [.isExecutableKey],
-                                                          options: [.skipsHiddenFiles])
-        while let url = enumerator64?.nextObject() as? URL {
-            if !url.hasDirectoryPath && url.pathExtension == "exe" {
-                programs.append(Program(name: url.lastPathComponent, url: url, bottle: self))
+        for folderName in ["Program Files", "Program Files (x86)"] {
+            let folderURL = driveC.appending(path: folderName)
+            let enumerator = FileManager.default.enumerator(
+                at: folderURL, includingPropertiesForKeys: [.isExecutableKey], options: [.skipsHiddenFiles]
+            )
+
+            while let url = enumerator?.nextObject() as? URL {
+                guard !url.hasDirectoryPath && url.pathExtension == "exe" else { continue }
+                guard !settings.blocklist.contains(url) else { continue }
+                foundURLS.insert(url)
+                programs.append(Program(url: url, bottle: self))
             }
         }
 
-        let enumerator32 = FileManager.default.enumerator(at: programFilesx86,
-                                                          includingPropertiesForKeys: [.isExecutableKey],
-                                                          options: [.skipsHiddenFiles])
-        while let url = enumerator32?.nextObject() as? URL {
-            if !url.hasDirectoryPath && url.pathExtension == "exe" {
-                programs.append(Program(name: url.lastPathComponent, url: url, bottle: self))
-            }
+        // Add missing programs from pins
+        for pin in settings.pins {
+            guard let url = pin.url else { continue }
+            guard !foundURLS.contains(url) else { continue }
+            programs.append(Program(url: url, bottle: self))
         }
 
-        // Apply blocklist
-        programs = programs.filter { !settings.blocklist.contains($0.url) }
-
-        programs.sort { $0.name.lowercased() < $1.name.lowercased() }
-        return programs
+        self.programs = programs.sorted { $0.name.lowercased() < $1.name.lowercased() }
     }
 
     @MainActor

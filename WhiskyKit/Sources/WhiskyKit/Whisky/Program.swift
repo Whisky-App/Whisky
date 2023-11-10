@@ -29,10 +29,13 @@ public class Program: Hashable, ObservableObject {
         return hasher.combine(url)
     }
 
-    public let name: String
     public let bottle: Bottle
     public let url: URL
     public let settingsURL: URL
+
+    public var name: String {
+        url.lastPathComponent
+    }
 
     @Published public var settings: ProgramSettings {
         didSet { saveSettings() }
@@ -53,8 +56,8 @@ public class Program: Hashable, ObservableObject {
 
     public var peFile: PEFile?
 
-    public init(name: String, url: URL, bottle: Bottle) {
-        self.name = name
+    public init(url: URL, bottle: Bottle) {
+        let name = url.lastPathComponent
         self.bottle = bottle
         self.url = url
         self.pinned = bottle.settings.pins.contains(where: { $0.url == url })
