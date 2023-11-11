@@ -55,14 +55,13 @@ struct PinCreationView: View {
                     panel.canCreateDirectories = false
                     panel.begin { result in
                         guard result == .OK, let url = panel.urls.first else { return }
-                        let pattern = "\\.(exe|msi|bat)$"
-                        let oldDefaultName = (newPinURL ?? url).lastPathComponent
-                            .replacingOccurrences(of: pattern, with: "", options: .regularExpression)
+                        let oldDefaultName = (newPinURL ?? url).deletingPathExtension()
+                            .lastPathComponent
                         newPinURL = url
                         // Only reset newPinName if the textbox hasn't been modified
                         if newPinName.isEmpty || newPinName == oldDefaultName {
-                            newPinName = url.lastPathComponent
-                                .replacingOccurrences(of: pattern, with: "", options: .regularExpression)
+                            newPinName = url.deletingPathExtension()
+                                .lastPathComponent
                         }
                     }
                 }
@@ -87,7 +86,7 @@ struct PinCreationView: View {
                         program.url == newlyCreatedPin.url
                     })
                     // Ensure this URL isn't already pinned
-                    isDuplicate = existingProgram != nil && existingProgram?.pinned ?? false
+                    isDuplicate = existingProgram?.pinned ?? false
                     if !isDuplicate {
                         // If this is a new program, add it to the array
                         if existingProgram != nil {
@@ -101,7 +100,7 @@ struct PinCreationView: View {
                     }
                 }
                 .keyboardShortcut(.defaultAction)
-                .disabled(newPinName.isEmpty || newPinURL == bottle.url.appending(path: "drive_c"))
+                .disabled(newPinName.isEmpty || newPinURL == nil)
                 .alert("pin.error.title",
                     isPresented: $isDuplicate
                 ) {}

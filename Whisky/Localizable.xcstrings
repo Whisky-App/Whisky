@@ -8508,16 +8508,6 @@
         }
       }
     },
-    "pin.createFirst" : {
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Pin your first program to get started"
-          }
-        }
-      }
-    },
     "pin.error.duplicate.%@" : {
       "extractionState" : "manual",
       "localizations" : {

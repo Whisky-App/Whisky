@@ -37,33 +37,35 @@ struct BottleView: View {
     var body: some View {
         NavigationStack(path: $path) {
             ScrollView {
-                let pinnedPrograms = bottle.programs.pinned
-                if pinnedPrograms.count > 0 {
-                    LazyVGrid(columns: gridLayout, alignment: .center) {
-                        ForEach(bottle.settings.pins, id: \.url) { pin in
-                            PinsView(
-                                bottle: bottle, pin: pin, path: $path
-                            )
-                        }
+                LazyVGrid(columns: gridLayout, alignment: .center) {
+                    ForEach(bottle.settings.pins, id: \.url) { pin in
+                        PinsView(
+                            bottle: bottle, pin: pin, path: $path
+                        )
                     }
-                    .padding()
-                } else {
                     VStack {
-                        Text("pin.createFirst")
-                        Button {
-                            showPinCreation.toggle()
-                        } label: {
-                            HStack {
-                                Image(systemName: "pin")
-                                Text("pin.help")
-                            }
-                            .padding(6)
+                        Group {
+                            Image(systemName: "app.dashed")
+                                  .resizable()
+                                  .overlay {
+                                      Image(systemName: "plus")
+                                          .resizable()
+                                          .frame(width: 16, height: 16)
+                                  }
                         }
-                        .buttonStyle(.borderedProminent)
-                        .tint(.accentColor)
+                        .frame(width: 45, height: 45)
+                        Spacer()
+                        Text("pin.help")
+                            .multilineTextAlignment(.center)
+                            .lineLimit(2, reservesSpace: true)
                     }
-                    .padding()
+                    .frame(width: 90, height: 90)
+                    .padding(10)
+                    .onTapGesture(count: 1) {
+                        showPinCreation.toggle()
+                    }
                 }
+                .padding()
                 Form {
                     NavigationLink(value: BottleStage.programs) {
                         HStack {
@@ -142,16 +144,6 @@ struct BottleView: View {
             }
             .disabled(!bottle.isActive)
             .navigationTitle(bottle.settings.name)
-            .toolbar {
-                ToolbarItem(placement: .primaryAction) {
-                    Button {
-                        showPinCreation.toggle()
-                    } label: {
-                        Image(systemName: "pin")
-                            .help("pin.help")
-                    }
-                }
-            }
             .sheet(isPresented: $showPinCreation) {
                 PinCreationView(bottle: bottle)
             }
