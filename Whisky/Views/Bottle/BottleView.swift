@@ -172,18 +172,19 @@ struct BottleView: View {
     }
 
     private func updateStartMenu() {
-        bottle.programs = bottle.updateInstalledPrograms()
+        bottle.updateInstalledPrograms()
+
         let startMenuPrograms = bottle.getStartMenuPrograms()
         for startMenuProgram in startMenuPrograms {
             for program in bottle.programs where
             // For some godforsaken reason "foo/bar" != "foo/Bar" so...
             program.url.path().caseInsensitiveCompare(startMenuProgram.url.path()) == .orderedSame {
                 program.pinned = true
-                if !bottle.settings.pins.contains(where: { $0.url == program.url }) {
-                    bottle.settings.pins.append(PinnedProgram(name: program.name
-                                                                    .replacingOccurrences(of: ".exe", with: ""),
-                                                              url: program.url))
-                }
+                guard !bottle.settings.pins.contains(where: { $0.url == program.url }) else { return }
+                bottle.settings.pins.append(PinnedProgram(
+                    name: program.url.deletingPathExtension().lastPathComponent,
+                    url: program.url
+                ))
             }
         }
     }

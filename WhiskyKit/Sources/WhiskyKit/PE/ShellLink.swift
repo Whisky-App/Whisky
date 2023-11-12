@@ -109,7 +109,7 @@ public struct LinkInfo: Hashable {
                         string.replace("\\", with: "/")
                         string.replace("C:", with: "\(bottle.url.path)/drive_c")
                         let url = URL(filePath: string)
-                        return Program(name: url.lastPathComponent, url: url, bottle: bottle)
+                        return Program(url: url, bottle: bottle)
                     }
                 }
             }

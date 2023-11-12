@@ -41,6 +41,14 @@ public class Bottle: Hashable, Identifiable, ObservableObject {
     public var inFlight: Bool = false
     public var isActive: Bool = false
 
+    /// All pins with their associated programs
+    public var pinnedPrograms: [(pin: PinnedProgram, program: Program)] {
+        return settings.pins.compactMap { pin in
+            guard let program = programs.first(where: { $0.url == pin.url }) else { return nil }
+            return (pin, program)
+        }
+    }
+
     public init(bottleUrl: URL, inFlight: Bool = false, isActive: Bool = false) {
         let metadataURL = bottleUrl.appending(path: "Metadata").appendingPathExtension("plist")
         self.url = bottleUrl
@@ -56,6 +64,15 @@ public class Bottle: Hashable, Identifiable, ObservableObject {
             )
             self.settings = BottleSettings()
         }
+
+        // Get rid of duplicates and pins that reference removed files
+        var found: Set<URL> = []
+        self.settings.pins = self.settings.pins.filter({ pin in
+            guard let url = pin.url else { return false }
+            guard !found.contains(url) else { return false }
+            found.insert(url)
+            return FileManager.default.fileExists(atPath: url.path(percentEncoded: false))
+        })
     }
 
     /// Encode and save the bottle settings
