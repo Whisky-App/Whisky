@@ -81,7 +81,7 @@ struct PinCreationView: View {
                 Button("pin.create") {
                     guard let newPinURL else { return }
 
-                    let newlyCreatedPin = Program(name: newPinName, url: newPinURL, bottle: bottle)
+                    let newlyCreatedPin = Program(url: newPinURL, bottle: bottle)
                     let existingProgram = bottle.programs.first(where: { program in
                         program.url == newlyCreatedPin.url
                     })

@@ -113,7 +113,7 @@ extension Bottle {
         // Apply pinned list as programs, if not already included
         settings.pins.forEach { pin in
             if let pinnedUrl = pin.url {
-                let program = Program(name: pin.name, url: pinnedUrl, bottle: self)
+                let program = Program(url: pinnedUrl, bottle: self)
                 if !programs.contains(program) {
                     programs.append(program)
                 }

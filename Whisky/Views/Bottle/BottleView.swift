@@ -38,9 +38,9 @@ struct BottleView: View {
         NavigationStack(path: $path) {
             ScrollView {
                 LazyVGrid(columns: gridLayout, alignment: .center) {
-                    ForEach(bottle.settings.pins, id: \.url) { pin in
+                    ForEach(bottle.pinnedPrograms, id: \.program.url) { pinnedProgram in
                         PinsView(
-                            bottle: bottle, pin: pin, path: $path
+                            bottle: bottle, program: pinnedProgram.program, pin: pinnedProgram.pin, path: $path
                         )
                     }
                     VStack {
