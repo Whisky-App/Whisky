@@ -81,27 +81,16 @@ struct PinCreationView: View {
                 Button("pin.create") {
                     guard let newPinURL else { return }
 
-                    let newPin = PinnedProgram(name: newPinName, url: newPinURL)
-
                     // Ensure this pin doesn't already exist
-                    guard !bottle.settings.pins.contains(where: { pin in
-                        pin.url == newPin.url
-                    }) else {
+                    guard !bottle.settings.pins.contains(where: { $0.url == newPinURL })
+                    else {
                         isDuplicate = true
                         return
                     }
 
-                    bottle.settings.pins.append(newPin)
-
-                    // Add this program to the programs array if necessary
-                    if !bottle.programs.contains(where: { program in
-                        program.url == newPin.url
-                    }) {
-                        bottle.programs.append(Program(url: newPinURL, bottle: bottle))
-                    }
+                    bottle.settings.pins.append(PinnedProgram(name: newPinName, url: newPinURL))
 
                     // Trigger a reload
-                    bottle.settings.pins = bottle.settings.pins
                     bottle.updateInstalledPrograms()
                     dismiss()
                 }
