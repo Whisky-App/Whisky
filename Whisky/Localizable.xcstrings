@@ -626,7 +626,7 @@
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Exporter en tant qu'Archive..."
+            "value" : "Exporter en tant qu'archive..."
           }
         },
         "it" : {
@@ -1688,7 +1688,7 @@
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Êtes-vous sûr de vouloir supprimer cette bouteille ? Cette action est définitive."
+            "value" : "Êtes-vous sûr de vouloir supprimer cette bouteille ? Cette action est irréversible."
           }
         },
         "it" : {
@@ -1806,7 +1806,7 @@
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Supprimer %@?"
+            "value" : "Supprimer %@ ?"
           }
         },
         "it" : {
@@ -2514,7 +2514,7 @@
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Recherche de Mises à Jour..."
+            "value" : "Rechercher mises à jour..."
           }
         },
         "it" : {
@@ -4048,7 +4048,7 @@
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Sync Avancé"
+            "value" : "Sync Avancée"
           }
         },
         "it" : {
@@ -4520,7 +4520,7 @@
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Trace de Metal"
+            "value" : "Diagnostic de Metal"
           }
         },
         "it" : {
@@ -7706,7 +7706,7 @@
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Fermer Touts les Bouteilles"
+            "value" : "Fermer toutes les bouteilles"
           }
         },
         "it" : {
@@ -8179,7 +8179,7 @@
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Importer une Bouteille"
+            "value" : "Importer une bouteille"
           }
         },
         "it" : {
@@ -8297,7 +8297,7 @@
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Ouvrir le Dossier des Logs"
+            "value" : "Ouvrir le dossier des journaux"
           }
         },
         "it" : {
@@ -8533,7 +8533,7 @@
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Ajouter a la Blocklist"
+            "value" : "Ajouter à la Blocklist"
           }
         },
         "it" : {
@@ -8651,7 +8651,7 @@
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Ajouter sélectionner à la Blocklist"
+            "value" : "Ajouter sélectionnés à la Blocklist"
           }
         },
         "it" : {
@@ -9359,7 +9359,7 @@
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Enlever sélectionner de la Blocklist"
+            "value" : "Enlever sélectionnés de la Blocklist"
           }
         },
         "it" : {
@@ -9595,7 +9595,7 @@
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Tout les programmes"
+            "value" : "Tous les programmes"
           }
         },
         "it" : {
@@ -10185,7 +10185,7 @@
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Bouteille:"
+            "value" : "Bouteille :"
           }
         },
         "it" : {
@@ -10539,7 +10539,7 @@
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Chercher automatiquement les mises à jour de GPTK"
+            "value" : "Rechercher automatiquement les mises à jour de GPTK"
           }
         },
         "it" : {
@@ -10657,7 +10657,7 @@
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Terminer les processus de Wine à la fermeture du Whisky"
+            "value" : "Terminer les processus de Wine à la fermeture de Whisky"
           }
         },
         "it" : {
@@ -10775,7 +10775,7 @@
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Chercher automatiquement les mises à jour de Whisky"
+            "value" : "Rechercher automatiquement les mises à jour de Whisky"
           }
         },
         "it" : {
@@ -10893,7 +10893,7 @@
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Mises à Jour"
+            "value" : "Mises à jour"
           }
         },
         "it" : {
@@ -12781,7 +12781,7 @@
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Configuration des Dépendances"
+            "value" : "Configuration des dépendances"
           }
         },
         "it" : {
@@ -13135,7 +13135,7 @@
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Mettons-nous en place. Cela ne prendra pas une minute."
+            "value" : "Mettons-nous en place. Cela ne prendra qu'un instant."
           }
         },
         "it" : {
@@ -13725,7 +13725,7 @@
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Configuration de bouteille"
+            "value" : "Configuration de la bouteille"
           }
         },
         "it" : {
@@ -13843,7 +13843,7 @@
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Programmes Installés"
+            "value" : "Programmes installés"
           }
         },
         "it" : {
@@ -13961,7 +13961,7 @@
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Vous utilisez GPTK %@, mais %@ est disponible. Voulez-vous mettre à jour ?"
+            "value" : "Vous utilisez GPTK %@, mais %@ est disponible. Voulez-vous le mettre à jour ?"
           }
         },
         "it" : {
@@ -14315,7 +14315,7 @@
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Vider les Caches du Shader"
+            "value" : "Vider les caches du shader"
           }
         },
         "it" : {
