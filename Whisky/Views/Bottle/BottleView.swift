@@ -170,7 +170,7 @@ struct BottleView: View {
 
 struct WinetricksView: View {
     var bottle: Bottle
-    @State private var wineTricks: [Winetricks.WinetricksCategory]?
+    @State private var winetricks: [Winetricks.WinetricksCategory]?
     @State private var selectedTrick: Winetricks.WinetricksVerb.ID?
     @Environment(\.dismiss) var dismiss
 
@@ -183,15 +183,16 @@ struct WinetricksView: View {
             .padding(.bottom)
 
             // Tabbed view
-            if let wineTricks = wineTricks {
+            if let winetricks = winetricks {
                 TabView {
-                    ForEach(wineTricks, id: \.name) { category in
+                    ForEach(winetricks, id: \.category) { category in
                         Table(category.verbs, selection: $selectedTrick) {
                             TableColumn("winetricks.table.name", value: \.name)
                             TableColumn("winetricks.table.description", value: \.description)
                         }
                         .tabItem {
-                            Text(category.name)
+                            let key = "winetricks.category.\(category.category.rawValue)"
+                            Text(NSLocalizedString(key, comment: ""))
                         }
                     }
                 }
@@ -205,7 +206,7 @@ struct WinetricksView: View {
                             return
                         }
 
-                        let trick = wineTricks.flatMap { $0.verbs }.first(where: { $0.id == selectedTrick })
+                        let trick = winetricks.flatMap { $0.verbs }.first(where: { $0.id == selectedTrick })
                         if let trickName = trick?.name {
                             Task.detached {
                                 await Winetricks.runCommand(command: trickName, bottle: bottle)
@@ -225,7 +226,7 @@ struct WinetricksView: View {
         .padding()
         .onAppear {
             Task.detached {
-                wineTricks = await Winetricks.parseVerbs()
+                winetricks = await Winetricks.parseVerbs()
             }
         }
         .frame(minWidth: 600, minHeight: 400)

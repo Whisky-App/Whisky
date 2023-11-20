@@ -20,6 +20,15 @@ import Foundation
 import AppKit
 import WhiskyKit
 
+enum WinetricksCategories: String {
+    case apps
+    case benchmarks
+    case dlls
+    case fonts
+    case games
+    case settings
+}
+
 class Winetricks {
     struct WinetricksVerb: Identifiable {
         var id = UUID()
@@ -29,7 +38,7 @@ class Winetricks {
     }
 
     struct WinetricksCategory {
-        var name: String
+        var category: WinetricksCategories
         var verbs: [WinetricksVerb]
     }
 
@@ -71,7 +80,7 @@ class Winetricks {
 
     static func parseVerbs() async -> [WinetricksCategory] {
         var verbs: String?
-        // grab the verbs file
+        // Grab the verbs file
         let verbsURL = GPTKInstaller.libraryFolder.appending(path: "verbs.txt")
 
         do {
@@ -87,24 +96,29 @@ class Winetricks {
         var currentCategory: WinetricksCategory?
 
         for line in lines {
-            // categories are label as "===== <name> ====="
+            // Categories are label as "===== <name> ====="
             if line.starts(with: "=====") {
-                // if we have a current category, add it to the list
+                // If we have a current category, add it to the list
                 if let currentCategory = currentCategory {
                     categories.append(currentCategory)
                 }
 
-                // create a new category
-                // capitalize the first letter of the category name
+                // Create a new category
+                // Capitalize the first letter of the category name
                 let categoryName = line.replacingOccurrences(of: "=====", with: "").trimmingCharacters(in: .whitespaces)
-                currentCategory = WinetricksCategory(name: categoryName, verbs: [])
+                if let cateogry = WinetricksCategories(rawValue: categoryName) {
+                    currentCategory = WinetricksCategory(category: cateogry,
+                                                         verbs: [])
+                } else {
+                    currentCategory = nil
+                }
             } else {
                 guard currentCategory != nil else {
                     continue
                 }
 
-                // if we have a current category, add the verb to it
-                // verbs eg. "3m_library               3M Cloud Library (3M Company, 2015) [downloadable]"
+                // If we have a current category, add the verb to it
+                // Verbs eg. "3m_library               3M Cloud Library (3M Company, 2015) [downloadable]"
                 let verbName = line.components(separatedBy: " ")[0]
                 let verbDescription = line.replacingOccurrences(of: "\(verbName) ", with: "")
                     .trimmingCharacters(in: .whitespaces)
@@ -112,13 +126,10 @@ class Winetricks {
             }
         }
 
-        // add the last category
+        // Add the last category
         if let currentCategory = currentCategory {
             categories.append(currentCategory)
         }
-
-        // remove the "prefix" category
-        categories.removeAll(where: { $0.name == "prefix" })
 
         return categories
     }
