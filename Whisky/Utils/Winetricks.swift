@@ -29,19 +29,19 @@ enum WinetricksCategories: String {
     case settings
 }
 
+struct WinetricksVerb: Identifiable {
+    var id = UUID()
+
+    var name: String
+    var description: String
+}
+
+struct WinetricksCategory {
+    var category: WinetricksCategories
+    var verbs: [WinetricksVerb]
+}
+
 class Winetricks {
-    struct WinetricksVerb: Identifiable {
-        var id = UUID()
-
-        var name: String
-        var description: String
-    }
-
-    struct WinetricksCategory {
-        var category: WinetricksCategories
-        var verbs: [WinetricksVerb]
-    }
-
     static let winetricksURL: URL = GPTKInstaller.libraryFolder
         .appending(path: "winetricks")
 
