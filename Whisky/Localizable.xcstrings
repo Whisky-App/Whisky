@@ -14398,6 +14398,26 @@
         }
       }
     },
+    "winetricks.table.description" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Command description"
+          }
+        }
+      }
+    },
+    "winetricks.table.name" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Command"
+          }
+        }
+      }
+    },
     "winetricks.title" : {
       "localizations" : {
         "da" : {

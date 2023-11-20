@@ -170,38 +170,64 @@ struct BottleView: View {
 
 struct WinetricksView: View {
     var bottle: Bottle
-    @State var winetricksCommand: String = ""
+    @State private var wineTricks: [Winetricks.WinetricksCategory]?
+    @State private var selectedTrick: Winetricks.WinetricksVerb.ID?
     @Environment(\.dismiss) var dismiss
 
     var body: some View {
         VStack {
-            HStack {
+            VStack {
                 Text("winetricks.title")
-                    .bold()
-                Spacer()
+                    .font(.title)
             }
-            Divider()
-            TextField(String(), text: $winetricksCommand)
-                .textFieldStyle(.roundedBorder)
-                .font(.system(.body, design: .monospaced))
-                .labelsHidden()
-            Spacer()
-            HStack {
-                Spacer()
-                Button("create.cancel") {
-                    dismiss()
-                }
-                .keyboardShortcut(.cancelAction)
-                Button("button.run") {
-                    Task.detached(priority: .userInitiated) {
-                        await Winetricks.runCommand(command: winetricksCommand, bottle: bottle)
+            .padding(.bottom)
+
+            // Tabbed view
+            if let wineTricks = wineTricks {
+                TabView {
+                    ForEach(wineTricks, id: \.name) { category in
+                        Table(category.verbs, selection: $selectedTrick) {
+                            TableColumn("winetricks.table.name", value: \.name)
+                            TableColumn("winetricks.table.description", value: \.description)
+                        }
+                        .tabItem {
+                            Text(category.name)
+                        }
                     }
-                    dismiss()
                 }
-                .keyboardShortcut(.defaultAction)
+                HStack {
+                    Spacer()
+                    Button("create.cancel") {
+                        dismiss()
+                    }
+                    Button("button.run") {
+                        guard let selectedTrick = selectedTrick else {
+                            return
+                        }
+
+                        let trick = wineTricks.flatMap { $0.verbs }.first(where: { $0.id == selectedTrick })
+                        if let trickName = trick?.name {
+                            Task.detached {
+                                await Winetricks.runCommand(command: trickName, bottle: bottle)
+                            }
+                        }
+                    }
+                    .buttonStyle(.borderedProminent)
+                }
+            } else {
+                Spacer()
+                ProgressView()
+                    .progressViewStyle(.circular)
+                    .controlSize(.large)
+                Spacer()
             }
         }
         .padding()
-        .frame(width: 350, height: 140)
+        .onAppear {
+            Task.detached {
+                wineTricks = await Winetricks.parseVerbs()
+            }
+        }
+        .frame(minWidth: 600, minHeight: 400)
     }
 }
