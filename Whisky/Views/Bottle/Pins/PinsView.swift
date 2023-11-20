@@ -45,9 +45,9 @@ struct PinsView: View {
             .scaleEffect(opening ? 2 : 1)
             .opacity(opening ? 0 : 1)
             Spacer()
-            Text(name + "\n")
+            Text(name)
                 .multilineTextAlignment(.center)
-                .lineLimit(2)
+                .lineLimit(2, reservesSpace: true)
         }
         .frame(width: 90, height: 90)
         .padding(10)

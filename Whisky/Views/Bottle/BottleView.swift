@@ -36,17 +36,15 @@ struct BottleView: View {
     var body: some View {
         NavigationStack(path: $path) {
             ScrollView {
-                let pinnedPrograms = bottle.pinnedPrograms
-                if pinnedPrograms.count > 0 {
-                    LazyVGrid(columns: gridLayout, alignment: .center) {
-                        ForEach(pinnedPrograms, id: \.program.url) { pinnedProgram in
-                            PinsView(
-                                bottle: bottle, program: pinnedProgram.program, pin: pinnedProgram.pin, path: $path
-                            )
-                        }
+                LazyVGrid(columns: gridLayout, alignment: .center) {
+                    ForEach(bottle.pinnedPrograms, id: \.id) { pinnedProgram in
+                        PinsView(
+                            bottle: bottle, program: pinnedProgram.program, pin: pinnedProgram.pin, path: $path
+                        )
                     }
-                    .padding()
+                    PinButtonView(bottle: bottle)
                 }
+                .padding()
                 Form {
                     NavigationLink(value: BottleStage.programs) {
                         HStack {
