@@ -30,7 +30,6 @@ struct BottleView: View {
     @State private var path = NavigationPath()
     @State var programLoading: Bool = false
     @State var showWinetricksSheet: Bool = false
-    @State var showPinCreation: Bool = false
 
     private let gridLayout = [GridItem(.adaptive(minimum: 100, maximum: .infinity))]
 
@@ -43,27 +42,7 @@ struct BottleView: View {
                             bottle: bottle, program: pinnedProgram.program, pin: pinnedProgram.pin, path: $path
                         )
                     }
-                    VStack {
-                        Group {
-                            Image(systemName: "app.dashed")
-                                  .resizable()
-                                  .overlay {
-                                      Image(systemName: "plus")
-                                          .resizable()
-                                          .frame(width: 16, height: 16)
-                                  }
-                        }
-                        .frame(width: 45, height: 45)
-                        Spacer()
-                        Text("pin.help")
-                            .multilineTextAlignment(.center)
-                            .lineLimit(2, reservesSpace: true)
-                    }
-                    .frame(width: 90, height: 90)
-                    .padding(10)
-                    .onTapGesture(count: 1) {
-                        showPinCreation.toggle()
-                    }
+                    PinButtonView(bottle: bottle)
                 }
                 .padding()
                 Form {
@@ -144,9 +123,6 @@ struct BottleView: View {
             }
             .disabled(!bottle.isActive)
             .navigationTitle(bottle.settings.name)
-            .sheet(isPresented: $showPinCreation) {
-                PinCreationView(bottle: bottle)
-            }
             .sheet(isPresented: $showWinetricksSheet) {
                 WinetricksView(bottle: bottle)
             }
