@@ -4071,7 +4071,7 @@
         },
         "nl" : {
           "stringUnit" : {
-            "state" : "needs_review",
+            "state" : "translated",
             "value" : "Rodzaj synchronizacji"
           }
         },
@@ -8500,6 +8500,12 @@
     },
     "pin.create" : {
       "localizations" : {
+        "da" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "Pin"
+          }
+        },
         "de" : {
           "stringUnit" : {
             "state" : "needs_review",
@@ -8509,6 +8515,12 @@
         "en" : {
           "stringUnit" : {
             "state" : "translated",
+            "value" : "Pin"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "needs_review",
             "value" : "Pin"
           }
         },
@@ -8524,7 +8536,67 @@
             "value" : "Pin"
           }
         },
+        "it" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "Pin"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "Pin"
+          }
+        },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "Pin"
+          }
+        },
         "nl" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "Pin"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "Pin"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "Pin"
+          }
+        },
+        "pt-PT" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "Pin"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "Pin"
+          }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "Pin"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "Pin"
+          }
+        },
+        "vi" : {
           "stringUnit" : {
             "state" : "needs_review",
             "value" : "Pin"
@@ -8547,6 +8619,12 @@
     "pin.error.duplicate.%@" : {
       "extractionState" : "manual",
       "localizations" : {
+        "da" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "\"%@\" is already pinned!"
+          }
+        },
         "de" : {
           "stringUnit" : {
             "state" : "needs_review",
@@ -8556,6 +8634,12 @@
         "en" : {
           "stringUnit" : {
             "state" : "translated",
+            "value" : "\"%@\" is already pinned!"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "needs_review",
             "value" : "\"%@\" is already pinned!"
           }
         },
@@ -8571,7 +8655,67 @@
             "value" : "\"%@\" is already pinned!"
           }
         },
+        "it" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "\"%@\" is already pinned!"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "\"%@\" is already pinned!"
+          }
+        },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "\"%@\" is already pinned!"
+          }
+        },
         "nl" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "\"%@\" is already pinned!"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "\"%@\" is already pinned!"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "\"%@\" is already pinned!"
+          }
+        },
+        "pt-PT" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "\"%@\" is already pinned!"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "\"%@\" is already pinned!"
+          }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "\"%@\" is already pinned!"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "\"%@\" is already pinned!"
+          }
+        },
+        "vi" : {
           "stringUnit" : {
             "state" : "needs_review",
             "value" : "\"%@\" is already pinned!"
@@ -8593,6 +8737,12 @@
     },
     "pin.error.title" : {
       "localizations" : {
+        "da" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "Error Pinning Program"
+          }
+        },
         "de" : {
           "stringUnit" : {
             "state" : "needs_review",
@@ -8602,6 +8752,12 @@
         "en" : {
           "stringUnit" : {
             "state" : "translated",
+            "value" : "Error Pinning Program"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "needs_review",
             "value" : "Error Pinning Program"
           }
         },
@@ -8617,7 +8773,67 @@
             "value" : "Error Pinning Program"
           }
         },
+        "it" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "Error Pinning Program"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "Error Pinning Program"
+          }
+        },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "Error Pinning Program"
+          }
+        },
         "nl" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "Error Pinning Program"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "Error Pinning Program"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "Error Pinning Program"
+          }
+        },
+        "pt-PT" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "Error Pinning Program"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "Error Pinning Program"
+          }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "Error Pinning Program"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "Error Pinning Program"
+          }
+        },
+        "vi" : {
           "stringUnit" : {
             "state" : "needs_review",
             "value" : "Error Pinning Program"
@@ -8639,6 +8855,12 @@
     },
     "pin.help" : {
       "localizations" : {
+        "da" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "Pin Program"
+          }
+        },
         "de" : {
           "stringUnit" : {
             "state" : "needs_review",
@@ -8648,6 +8870,12 @@
         "en" : {
           "stringUnit" : {
             "state" : "translated",
+            "value" : "Pin Program"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "needs_review",
             "value" : "Pin Program"
           }
         },
@@ -8663,7 +8891,67 @@
             "value" : "Pin Program"
           }
         },
+        "it" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "Pin Program"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "Pin Program"
+          }
+        },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "Pin Program"
+          }
+        },
         "nl" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "Pin Program"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "Pin Program"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "Pin Program"
+          }
+        },
+        "pt-PT" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "Pin Program"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "Pin Program"
+          }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "Pin Program"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "Pin Program"
+          }
+        },
+        "vi" : {
           "stringUnit" : {
             "state" : "needs_review",
             "value" : "Pin Program"
@@ -8685,6 +8973,12 @@
     },
     "pin.name" : {
       "localizations" : {
+        "da" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "Pin name:"
+          }
+        },
         "de" : {
           "stringUnit" : {
             "state" : "needs_review",
@@ -8694,6 +8988,12 @@
         "en" : {
           "stringUnit" : {
             "state" : "translated",
+            "value" : "Pin name:"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "needs_review",
             "value" : "Pin name:"
           }
         },
@@ -8709,7 +9009,67 @@
             "value" : "Pin name:"
           }
         },
+        "it" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "Pin name:"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "Pin name:"
+          }
+        },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "Pin name:"
+          }
+        },
         "nl" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "Pin name:"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "Pin name:"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "Pin name:"
+          }
+        },
+        "pt-PT" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "Pin name:"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "Pin name:"
+          }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "Pin name:"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "Pin name:"
+          }
+        },
+        "vi" : {
           "stringUnit" : {
             "state" : "needs_review",
             "value" : "Pin name:"
@@ -8731,6 +9091,12 @@
     },
     "pin.path" : {
       "localizations" : {
+        "da" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "Program path:"
+          }
+        },
         "de" : {
           "stringUnit" : {
             "state" : "needs_review",
@@ -8740,6 +9106,12 @@
         "en" : {
           "stringUnit" : {
             "state" : "translated",
+            "value" : "Program path:"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "needs_review",
             "value" : "Program path:"
           }
         },
@@ -8755,7 +9127,67 @@
             "value" : "Program path:"
           }
         },
+        "it" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "Program path:"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "Program path:"
+          }
+        },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "Program path:"
+          }
+        },
         "nl" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "Program path:"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "Program path:"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "Program path:"
+          }
+        },
+        "pt-PT" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "Program path:"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "Program path:"
+          }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "Program path:"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "Program path:"
+          }
+        },
+        "vi" : {
           "stringUnit" : {
             "state" : "needs_review",
             "value" : "Program path:"
@@ -8777,6 +9209,12 @@
     },
     "pin.title" : {
       "localizations" : {
+        "da" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "Pin Program"
+          }
+        },
         "de" : {
           "stringUnit" : {
             "state" : "needs_review",
@@ -8786,6 +9224,12 @@
         "en" : {
           "stringUnit" : {
             "state" : "translated",
+            "value" : "Pin Program"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "needs_review",
             "value" : "Pin Program"
           }
         },
@@ -8801,7 +9245,67 @@
             "value" : "Pin Program"
           }
         },
+        "it" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "Pin Program"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "Pin Program"
+          }
+        },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "Pin Program"
+          }
+        },
         "nl" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "Pin Program"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "Pin Program"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "Pin Program"
+          }
+        },
+        "pt-PT" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "Pin Program"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "Pin Program"
+          }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "Pin Program"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "Pin Program"
+          }
+        },
+        "vi" : {
           "stringUnit" : {
             "state" : "needs_review",
             "value" : "Pin Program"
@@ -10773,7 +11277,7 @@
         },
         "pl" : {
           "stringUnit" : {
-            "state" : "needs_review",
+            "state" : "translated",
             "value" : "Ogólne"
           }
         },
@@ -10891,7 +11395,7 @@
         },
         "pl" : {
           "stringUnit" : {
-            "state" : "needs_review",
+            "state" : "translated",
             "value" : "Automatycznie sprawdzaj dostępność aktualizacji GPTK"
           }
         },
@@ -11009,7 +11513,7 @@
         },
         "pl" : {
           "stringUnit" : {
-            "state" : "needs_review",
+            "state" : "translated",
             "value" : "Zakończ proces Wine, gdy Whisky zostanie zamknięte"
           }
         },
@@ -11127,7 +11631,7 @@
         },
         "pl" : {
           "stringUnit" : {
-            "state" : "needs_review",
+            "state" : "translated",
             "value" : "Automatycznie sprawdzaj aktualizacje Whisky"
           }
         },
@@ -11245,7 +11749,7 @@
         },
         "pl" : {
           "stringUnit" : {
-            "state" : "needs_review",
+            "state" : "translated",
             "value" : "Aktualizacje"
           }
         },
@@ -12717,6 +13221,12 @@
     },
     "setup.retry" : {
       "localizations" : {
+        "da" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "Retry"
+          }
+        },
         "de" : {
           "stringUnit" : {
             "state" : "needs_review",
@@ -12726,6 +13236,12 @@
         "en" : {
           "stringUnit" : {
             "state" : "translated",
+            "value" : "Retry"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "needs_review",
             "value" : "Retry"
           }
         },
@@ -12741,7 +13257,67 @@
             "value" : "Retry"
           }
         },
+        "it" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "Retry"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "Retry"
+          }
+        },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "Retry"
+          }
+        },
         "nl" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "Retry"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "Retry"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "Retry"
+          }
+        },
+        "pt-PT" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "Retry"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "Retry"
+          }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "Retry"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "Retry"
+          }
+        },
+        "vi" : {
           "stringUnit" : {
             "state" : "needs_review",
             "value" : "Retry"
@@ -12881,6 +13457,12 @@
     },
     "setup.rosetta.fail" : {
       "localizations" : {
+        "da" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "Rosetta 2 installation failed. Please install it manually."
+          }
+        },
         "de" : {
           "stringUnit" : {
             "state" : "needs_review",
@@ -12890,6 +13472,12 @@
         "en" : {
           "stringUnit" : {
             "state" : "translated",
+            "value" : "Rosetta 2 installation failed. Please install it manually."
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "needs_review",
             "value" : "Rosetta 2 installation failed. Please install it manually."
           }
         },
@@ -12905,7 +13493,67 @@
             "value" : "Rosetta 2 installation failed. Please install it manually."
           }
         },
+        "it" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "Rosetta 2 installation failed. Please install it manually."
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "Rosetta 2 installation failed. Please install it manually."
+          }
+        },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "Rosetta 2 installation failed. Please install it manually."
+          }
+        },
         "nl" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "Rosetta 2 installation failed. Please install it manually."
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "Rosetta 2 installation failed. Please install it manually."
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "Rosetta 2 installation failed. Please install it manually."
+          }
+        },
+        "pt-PT" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "Rosetta 2 installation failed. Please install it manually."
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "Rosetta 2 installation failed. Please install it manually."
+          }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "Rosetta 2 installation failed. Please install it manually."
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "Rosetta 2 installation failed. Please install it manually."
+          }
+        },
+        "vi" : {
           "stringUnit" : {
             "state" : "needs_review",
             "value" : "Rosetta 2 installation failed. Please install it manually."
@@ -14816,6 +15464,12 @@
     "winetricks.category.apps" : {
       "extractionState" : "manual",
       "localizations" : {
+        "da" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "Apps"
+          }
+        },
         "de" : {
           "stringUnit" : {
             "state" : "needs_review",
@@ -14825,6 +15479,12 @@
         "en" : {
           "stringUnit" : {
             "state" : "translated",
+            "value" : "Apps"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "needs_review",
             "value" : "Apps"
           }
         },
@@ -14840,7 +15500,67 @@
             "value" : "Apps"
           }
         },
+        "it" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "Apps"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "Apps"
+          }
+        },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "Apps"
+          }
+        },
         "nl" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "Apps"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "Apps"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "Apps"
+          }
+        },
+        "pt-PT" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "Apps"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "Apps"
+          }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "Apps"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "Apps"
+          }
+        },
+        "vi" : {
           "stringUnit" : {
             "state" : "needs_review",
             "value" : "Apps"
@@ -14863,6 +15583,12 @@
     "winetricks.category.benchmarks" : {
       "extractionState" : "manual",
       "localizations" : {
+        "da" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "Benchmarks"
+          }
+        },
         "de" : {
           "stringUnit" : {
             "state" : "needs_review",
@@ -14872,6 +15598,12 @@
         "en" : {
           "stringUnit" : {
             "state" : "translated",
+            "value" : "Benchmarks"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "needs_review",
             "value" : "Benchmarks"
           }
         },
@@ -14887,7 +15619,67 @@
             "value" : "Benchmarks"
           }
         },
+        "it" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "Benchmarks"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "Benchmarks"
+          }
+        },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "Benchmarks"
+          }
+        },
         "nl" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "Benchmarks"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "Benchmarks"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "Benchmarks"
+          }
+        },
+        "pt-PT" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "Benchmarks"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "Benchmarks"
+          }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "Benchmarks"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "Benchmarks"
+          }
+        },
+        "vi" : {
           "stringUnit" : {
             "state" : "needs_review",
             "value" : "Benchmarks"
@@ -14910,6 +15702,12 @@
     "winetricks.category.dlls" : {
       "extractionState" : "manual",
       "localizations" : {
+        "da" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "DLLs"
+          }
+        },
         "de" : {
           "stringUnit" : {
             "state" : "needs_review",
@@ -14919,6 +15717,12 @@
         "en" : {
           "stringUnit" : {
             "state" : "translated",
+            "value" : "DLLs"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "needs_review",
             "value" : "DLLs"
           }
         },
@@ -14934,7 +15738,67 @@
             "value" : "DLLs"
           }
         },
+        "it" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "DLLs"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "DLLs"
+          }
+        },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "DLLs"
+          }
+        },
         "nl" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "DLLs"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "DLLs"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "DLLs"
+          }
+        },
+        "pt-PT" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "DLLs"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "DLLs"
+          }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "DLLs"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "DLLs"
+          }
+        },
+        "vi" : {
           "stringUnit" : {
             "state" : "needs_review",
             "value" : "DLLs"
@@ -14957,6 +15821,12 @@
     "winetricks.category.fonts" : {
       "extractionState" : "manual",
       "localizations" : {
+        "da" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "Fonts"
+          }
+        },
         "de" : {
           "stringUnit" : {
             "state" : "needs_review",
@@ -14966,6 +15836,12 @@
         "en" : {
           "stringUnit" : {
             "state" : "translated",
+            "value" : "Fonts"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "needs_review",
             "value" : "Fonts"
           }
         },
@@ -14981,7 +15857,67 @@
             "value" : "Fonts"
           }
         },
+        "it" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "Fonts"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "Fonts"
+          }
+        },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "Fonts"
+          }
+        },
         "nl" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "Fonts"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "Fonts"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "Fonts"
+          }
+        },
+        "pt-PT" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "Fonts"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "Fonts"
+          }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "Fonts"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "Fonts"
+          }
+        },
+        "vi" : {
           "stringUnit" : {
             "state" : "needs_review",
             "value" : "Fonts"
@@ -15004,6 +15940,12 @@
     "winetricks.category.games" : {
       "extractionState" : "manual",
       "localizations" : {
+        "da" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "Games"
+          }
+        },
         "de" : {
           "stringUnit" : {
             "state" : "needs_review",
@@ -15013,6 +15955,12 @@
         "en" : {
           "stringUnit" : {
             "state" : "translated",
+            "value" : "Games"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "needs_review",
             "value" : "Games"
           }
         },
@@ -15028,7 +15976,67 @@
             "value" : "Games"
           }
         },
+        "it" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "Games"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "Games"
+          }
+        },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "Games"
+          }
+        },
         "nl" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "Games"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "Games"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "Games"
+          }
+        },
+        "pt-PT" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "Games"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "Games"
+          }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "Games"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "Games"
+          }
+        },
+        "vi" : {
           "stringUnit" : {
             "state" : "needs_review",
             "value" : "Games"
@@ -15051,6 +16059,12 @@
     "winetricks.category.settings" : {
       "extractionState" : "manual",
       "localizations" : {
+        "da" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "Settings"
+          }
+        },
         "de" : {
           "stringUnit" : {
             "state" : "needs_review",
@@ -15060,6 +16074,12 @@
         "en" : {
           "stringUnit" : {
             "state" : "translated",
+            "value" : "Settings"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "needs_review",
             "value" : "Settings"
           }
         },
@@ -15075,7 +16095,67 @@
             "value" : "Settings"
           }
         },
+        "it" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "Settings"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "Settings"
+          }
+        },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "Settings"
+          }
+        },
         "nl" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "Settings"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "Settings"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "Settings"
+          }
+        },
+        "pt-PT" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "Settings"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "Settings"
+          }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "Settings"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "Settings"
+          }
+        },
+        "vi" : {
           "stringUnit" : {
             "state" : "needs_review",
             "value" : "Settings"
@@ -15097,6 +16177,12 @@
     },
     "winetricks.table.description" : {
       "localizations" : {
+        "da" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "Description"
+          }
+        },
         "de" : {
           "stringUnit" : {
             "state" : "needs_review",
@@ -15106,6 +16192,12 @@
         "en" : {
           "stringUnit" : {
             "state" : "translated",
+            "value" : "Description"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "needs_review",
             "value" : "Description"
           }
         },
@@ -15121,7 +16213,67 @@
             "value" : "Description"
           }
         },
+        "it" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "Description"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "Description"
+          }
+        },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "Description"
+          }
+        },
         "nl" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "Description"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "Description"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "Description"
+          }
+        },
+        "pt-PT" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "Description"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "Description"
+          }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "Description"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "Description"
+          }
+        },
+        "vi" : {
           "stringUnit" : {
             "state" : "needs_review",
             "value" : "Description"
@@ -15143,6 +16295,12 @@
     },
     "winetricks.table.name" : {
       "localizations" : {
+        "da" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "Command"
+          }
+        },
         "de" : {
           "stringUnit" : {
             "state" : "needs_review",
@@ -15152,6 +16310,12 @@
         "en" : {
           "stringUnit" : {
             "state" : "translated",
+            "value" : "Command"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "needs_review",
             "value" : "Command"
           }
         },
@@ -15167,7 +16331,67 @@
             "value" : "Command"
           }
         },
+        "it" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "Command"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "Command"
+          }
+        },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "Command"
+          }
+        },
         "nl" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "Command"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "Command"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "Command"
+          }
+        },
+        "pt-PT" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "Command"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "Command"
+          }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "Command"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "Command"
+          }
+        },
+        "vi" : {
           "stringUnit" : {
             "state" : "needs_review",
             "value" : "Command"
@@ -15191,7 +16415,7 @@
       "localizations" : {
         "da" : {
           "stringUnit" : {
-            "state" : "needs_review",
+            "state" : "translated",
             "value" : "Kør kommandoen Winetricks"
           }
         },
@@ -15209,13 +16433,13 @@
         },
         "es" : {
           "stringUnit" : {
-            "state" : "needs_review",
+            "state" : "translated",
             "value" : "Ejecutar comando de Winetricks"
           }
         },
         "fi" : {
           "stringUnit" : {
-            "state" : "needs_review",
+            "state" : "translated",
             "value" : "Suorita Winetricks komento"
           }
         },
@@ -15227,79 +16451,79 @@
         },
         "it" : {
           "stringUnit" : {
-            "state" : "needs_review",
+            "state" : "translated",
             "value" : "Esegui comando Winetricks"
           }
         },
         "ja" : {
           "stringUnit" : {
-            "state" : "needs_review",
+            "state" : "translated",
             "value" : "Winetricks コマンドを実行"
           }
         },
         "ko" : {
           "stringUnit" : {
-            "state" : "needs_review",
+            "state" : "translated",
             "value" : "Winetricks 명령어 실행"
           }
         },
         "nl" : {
           "stringUnit" : {
-            "state" : "needs_review",
+            "state" : "translated",
             "value" : "Voer Winetricks commando uit"
           }
         },
         "pl" : {
           "stringUnit" : {
-            "state" : "needs_review",
+            "state" : "translated",
             "value" : "Uruchom polecenie Winetricks"
           }
         },
         "pt-BR" : {
           "stringUnit" : {
-            "state" : "needs_review",
+            "state" : "translated",
             "value" : "Executar comando Winetricks"
           }
         },
         "pt-PT" : {
           "stringUnit" : {
-            "state" : "needs_review",
+            "state" : "translated",
             "value" : "Executar o comando Winetricks"
           }
         },
         "ru" : {
           "stringUnit" : {
-            "state" : "needs_review",
+            "state" : "translated",
             "value" : "Выполнить команду Winetricks"
           }
         },
         "tr" : {
           "stringUnit" : {
-            "state" : "needs_review",
+            "state" : "translated",
             "value" : "Winetricks komutlarını çalıştırın"
           }
         },
         "uk" : {
           "stringUnit" : {
-            "state" : "needs_review",
+            "state" : "translated",
             "value" : "Запустити команду Winetricks"
           }
         },
         "vi" : {
           "stringUnit" : {
-            "state" : "needs_review",
+            "state" : "translated",
             "value" : "Chạy lệnh Winetricks"
           }
         },
         "zh-Hans" : {
           "stringUnit" : {
-            "state" : "needs_review",
+            "state" : "translated",
             "value" : "运行 Winetricks 命令"
           }
         },
         "zh-Hant" : {
           "stringUnit" : {
-            "state" : "needs_review",
+            "state" : "translated",
             "value" : "執行Winetricks指令"
           }
         }
