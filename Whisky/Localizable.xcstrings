@@ -8532,8 +8532,8 @@
         },
         "fr" : {
           "stringUnit" : {
-            "state" : "needs_review",
-            "value" : "Pin"
+            "state" : "translated",
+            "value" : "Épingler"
           }
         },
         "it" : {
@@ -8651,8 +8651,8 @@
         },
         "fr" : {
           "stringUnit" : {
-            "state" : "needs_review",
-            "value" : "\"%@\" is already pinned!"
+            "state" : "translated",
+            "value" : "\"%@\" est déjà épingler!"
           }
         },
         "it" : {
@@ -8887,8 +8887,8 @@
         },
         "fr" : {
           "stringUnit" : {
-            "state" : "needs_review",
-            "value" : "Pin Program"
+            "state" : "translated",
+            "value" : "Épingler Programme"
           }
         },
         "it" : {
@@ -9005,8 +9005,8 @@
         },
         "fr" : {
           "stringUnit" : {
-            "state" : "needs_review",
-            "value" : "Pin name:"
+            "state" : "translated",
+            "value" : "Nom de l'épingle:"
           }
         },
         "it" : {
@@ -9123,8 +9123,8 @@
         },
         "fr" : {
           "stringUnit" : {
-            "state" : "needs_review",
-            "value" : "Program path:"
+            "state" : "translated",
+            "value" : "Emplacement du programme:"
           }
         },
         "it" : {
@@ -9241,8 +9241,8 @@
         },
         "fr" : {
           "stringUnit" : {
-            "state" : "needs_review",
-            "value" : "Pin Program"
+            "state" : "translated",
+            "value" : "Épingler Programme"
           }
         },
         "it" : {
@@ -13253,8 +13253,8 @@
         },
         "fr" : {
           "stringUnit" : {
-            "state" : "needs_review",
-            "value" : "Retry"
+            "state" : "translated,
+            "value" : "Réessayer"
           }
         },
         "it" : {
@@ -13489,8 +13489,8 @@
         },
         "fr" : {
           "stringUnit" : {
-            "state" : "needs_review",
-            "value" : "Rosetta 2 installation failed. Please install it manually."
+            "state" : "translated",
+            "value" : "Installation de Rosetta 2 a échoué. Veuillez l'installer manuellement."
           }
         },
         "it" : {
@@ -15496,7 +15496,7 @@
         },
         "fr" : {
           "stringUnit" : {
-            "state" : "needs_review",
+            "state" : "translated",
             "value" : "Apps"
           }
         },
@@ -15615,7 +15615,7 @@
         },
         "fr" : {
           "stringUnit" : {
-            "state" : "needs_review",
+            "state" : "translated",
             "value" : "Benchmarks"
           }
         },
@@ -15734,7 +15734,7 @@
         },
         "fr" : {
           "stringUnit" : {
-            "state" : "needs_review",
+            "state" : "translated",
             "value" : "DLLs"
           }
         },
@@ -15853,8 +15853,8 @@
         },
         "fr" : {
           "stringUnit" : {
-            "state" : "needs_review",
-            "value" : "Fonts"
+            "state" : "translated",
+            "value" : "Polices"
           }
         },
         "it" : {
@@ -15972,8 +15972,8 @@
         },
         "fr" : {
           "stringUnit" : {
-            "state" : "needs_review",
-            "value" : "Games"
+            "state" : "translated",
+            "value" : "Jeux"
           }
         },
         "it" : {
@@ -16091,8 +16091,8 @@
         },
         "fr" : {
           "stringUnit" : {
-            "state" : "needs_review",
-            "value" : "Settings"
+            "state" : "translated",
+            "value" : "Paramètres"
           }
         },
         "it" : {
@@ -16209,7 +16209,7 @@
         },
         "fr" : {
           "stringUnit" : {
-            "state" : "needs_review",
+            "state" : "translated",
             "value" : "Description"
           }
         },
@@ -16327,8 +16327,8 @@
         },
         "fr" : {
           "stringUnit" : {
-            "state" : "needs_review",
-            "value" : "Command"
+            "state" : "translated",
+            "value" : "Commande"
           }
         },
         "it" : {
