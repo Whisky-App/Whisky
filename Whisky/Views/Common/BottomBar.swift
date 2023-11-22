@@ -53,25 +53,23 @@ struct BottomBarButtonStyle: PrimitiveButtonStyle {
     }
 }
 
-struct BottomBar_Previews: PreviewProvider {
-    static var previews: some View {
-        Form {
-            Text(String("Hello World"))
-        }
-        .formStyle(.grouped)
-        .bottomBar {
-            HStack {
-                Spacer()
-                Button {
-                } label: {
-                    Text(String("Button 1"))
-                }
-                Button {
-                } label: {
-                    Text(String("Button 2"))
-                }
+#Preview {
+    Form {
+        Text(String("Hello World"))
+    }
+    .formStyle(.grouped)
+    .bottomBar {
+        HStack {
+            Spacer()
+            Button {
+            } label: {
+                Text(String("Button 1"))
             }
-            .padding()
+            Button {
+            } label: {
+                Text(String("Button 2"))
+            }
         }
+        .padding()
     }
 }

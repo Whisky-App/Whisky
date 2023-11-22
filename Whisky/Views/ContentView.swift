@@ -283,9 +283,7 @@ struct BottleListEntry: View {
     }
 }
 
-struct ContentView_Previews: PreviewProvider {
-    static var previews: some View {
-        ContentView(showSetup: .constant(false))
-            .environmentObject(BottleVM.shared)
-    }
+#Preview {
+    ContentView(showSetup: .constant(false))
+        .environmentObject(BottleVM.shared)
 }
