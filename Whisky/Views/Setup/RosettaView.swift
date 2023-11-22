@@ -21,58 +21,85 @@ import WhiskyKit
 
 struct RosettaView: View {
     @State var installing: Bool = true
+    @State var successful: Bool = true
     @Binding var path: [SetupStage]
     @Binding var showSetup: Bool
 
     var body: some View {
         VStack {
-            VStack {
-                Text("setup.rosetta")
-                    .font(.title)
-                    .fontWeight(.bold)
-                Text("setup.rosetta.subtitle")
-                    .font(.subheadline)
-                    .foregroundStyle(.secondary)
-                Spacer()
-                Group {
-                    if installing {
-                        ProgressView()
-                            .scaleEffect(2)
-                    } else {
+            Text("setup.rosetta")
+                .font(.title)
+                .fontWeight(.bold)
+            Text("setup.rosetta.subtitle")
+                .font(.subheadline)
+                .foregroundStyle(.secondary)
+            Spacer()
+            Group {
+                if installing {
+                    ProgressView()
+                        .scaleEffect(2)
+                } else {
+                    if successful {
                         Image(systemName: "checkmark.circle")
                             .resizable()
                             .foregroundStyle(.green)
+                            .frame(width: 80, height: 80)
+                    } else {
+                        VStack {
+                            Image(systemName: "xmark.circle")
+                                .resizable()
+                                .foregroundStyle(.red)
+                                .frame(width: 80, height: 80)
+                                .padding(.bottom, 20)
+                            Text("setup.rosetta.fail")
+                                .font(.subheadline)
+                        }
                     }
                 }
-                .frame(width: 80, height: 80)
-                Spacer()
             }
             Spacer()
+            HStack {
+                if !successful {
+                    Button("setup.quit") {
+                        exit(0)
+                    }
+                    .keyboardShortcut(.cancelAction)
+                    Spacer()
+                    Button("setup.retry") {
+                        installing = true
+                        successful = true
+
+                        Task.detached {
+                            await checkOrInstall()
+                        }
+                    }
+                    .keyboardShortcut(.defaultAction)
+                }
+            }
         }
         .frame(width: 400, height: 200)
         .onAppear {
-            Rosetta2.launchRosettaInstaller()
-            var runCount = 0
-            Timer.scheduledTimer(withTimeInterval: 1, repeats: true) { timer in
-                runCount += 1
+            Task.detached {
+                await checkOrInstall()
+            }
+        }
+    }
 
-                if Rosetta2.isRosettaInstalled {
-                    timer.invalidate()
-                    installing = false
-                    Task.detached {
-                        sleep(2)
-                        await proceed()
-                    }
-                }
-                if runCount >= 300 {
-                    // Timer has run for too long
-                    timer.invalidate()
-                    installing = false
-                    Task.detached {
-                        sleep(2)
-                        await proceed()
-                    }
-                }
+    func checkOrInstall() async {
+        if Rosetta2.isRosettaInstalled {
+            installing = false
+
+            sleep(2)
+            await proceed()
+        } else {
+            let result = await Rosetta2.installRosetta()
+
+            installing = false
+            successful = result
+
+            if result {
+                sleep(2)
+                await proceed()
             }
         }
     }
@@ -86,4 +113,8 @@ struct RosettaView: View {
 
         showSetup = false
     }
+}
+
+#Preview {
+    RosettaView(path: .constant([]), showSetup: .constant(true))
 }

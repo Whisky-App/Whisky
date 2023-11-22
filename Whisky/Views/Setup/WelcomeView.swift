@@ -93,7 +93,7 @@ struct WelcomeView: View {
                 }
             }
         }
-        .frame(width: 400, height: 250)
+        .frame(width: 400, height: 200)
     }
 
     func checkInstallStatus() {

@@ -12463,6 +12463,16 @@
         }
       }
     },
+    "setup.retry" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Retry"
+          }
+        }
+      }
+    },
     "setup.rosetta" : {
       "localizations" : {
         "da" : {
@@ -12577,6 +12587,16 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "正在安裝 Rosetta"
+          }
+        }
+      }
+    },
+    "setup.rosetta.fail" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Rosetta 2 installation failed. Please install it manually."
           }
         }
       }

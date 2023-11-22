@@ -23,7 +23,7 @@ struct WineCrashError: Error, CustomStringConvertible {
     let output: String?
     let description: String
 
-    init( description: String, output: String? = nil) {
+    init(description: String, output: String? = nil) {
         self.output = output
         self.description = description
     }

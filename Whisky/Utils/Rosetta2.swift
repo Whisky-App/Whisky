@@ -25,14 +25,47 @@ class Rosetta2 {
         return FileManager.default.fileExists(atPath: rosetta2RuntimeBin)
     }()
 
-    static func launchRosettaInstaller() {
-        let task = Process()
-        task.launchPath = "/usr/sbin/softwareupdate"
-        task.arguments = ["--install-rosetta"]
+    static func installRosetta() async -> Bool {
+        let process = Process()
+        let pipe = Pipe()
+        guard let log = Log(bottle: nil,
+                            args: [],
+                            environment: nil) else {
+            return false
+        }
+
+        process.launchPath = "/usr/sbin/softwareupdate"
+        process.arguments = ["--install-rosetta", "--agree-to-license"]
+        process.standardOutput = pipe
+        process.standardError = pipe
+
+        pipe.fileHandleForReading.readabilityHandler = { pipe in
+            let line = String(decoding: pipe.availableData, as: UTF8.self)
+            log.write(line: "\(line)", printLine: false)
+        }
+
         do {
-            try task.run()
+            try process.run()
+            var isRunning = true
+            log.write(line: "Launched Rosetta Install (\(process.processIdentifier))\n")
+
+            while isRunning {
+                process.waitUntilExit()
+                if pipe.fileHandleForReading.availableData.count == 0 {
+                    isRunning = false
+                }
+            }
+            log.write(line: "Process exited with code \(process.terminationStatus)")
+            _ = try pipe.fileHandleForReading.readToEnd()
+
+            if process.terminationStatus != 0 {
+                log.write(line: "Failed to install Rosetta 2: \(process.terminationStatus)")
+                return false
+            }
+
+            return true
         } catch {
-            NSLog("Failed to install Rosetta 2: \(error)")
+            return false
         }
     }
 }
