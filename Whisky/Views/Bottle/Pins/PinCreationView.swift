@@ -23,25 +23,32 @@ import WhiskyKit
 struct PinCreationView: View {
     let bottle: Bottle
     @State var newPinURL: URL?
+    @State var pinPath: String = ""
     @State private var newPinName: String = ""
     @State private var isDuplicate: Bool = false
     @Environment(\.dismiss) private var dismiss
 
     var body: some View {
-        VStack(alignment: .leading) {
-            Text("pin.title")
-                .bold()
-            Divider()
+        VStack {
             HStack {
+                Text("pin.title")
+                    .bold()
+                Spacer()
+            }
+            Divider()
+            HStack(alignment: .top) {
                 Text("pin.name")
-                    .frame(maxWidth: .infinity, alignment: .leading)
+                Spacer()
                 TextField(String(), text: $newPinName)
                     .frame(width: 180)
-                    .textFieldStyle(.roundedBorder)
             }
             HStack {
                 Text("pin.path")
-                    .frame(maxWidth: .infinity, alignment: .leading)
+                Spacer()
+                Text(pinPath)
+                    .truncationMode(.middle)
+                    .lineLimit(2)
+                    .help(pinPath)
                 Button("create.browse") {
                     let panel = NSOpenPanel()
                     panel.canChooseFiles = true
@@ -52,24 +59,21 @@ struct PinCreationView: View {
                     panel.canChooseDirectories = false
                     panel.allowsMultipleSelection = false
                     panel.canCreateDirectories = false
-
-                    guard panel.runModal() == .OK,
-                          let url = panel.urls.first else { return }
-                    newPinURL = url
+                    panel.begin { result in
+                        if result == .OK {
+                            if let url = panel.urls.first {
+                                newPinURL = url
+                            }
+                        }
+                    }
                 }
             }
-            if let newPinURL {
-                Text(newPinURL.prettyPath())
-                    .truncationMode(.middle)
-                    .lineLimit(2, reservesSpace: true)
-                    .help(newPinURL.prettyPath())
-            }
             HStack {
+                Spacer()
                 Button("create.cancel") {
                     dismiss()
                 }
                 .keyboardShortcut(.cancelAction)
-                .frame(maxWidth: .infinity, alignment: .trailing)
                 Button("pin.create") {
                     guard let newPinURL else { return }
 
@@ -97,77 +101,22 @@ struct PinCreationView: View {
             }
         }
         .onChange(of: newPinURL, initial: true) { oldValue, newValue in
-            guard newValue != nil else { return }
+            guard let newValue = newValue else { return }
 
             // Only reset newPinName if the textbox hasn't been modified
             if newPinName.isEmpty ||
                newPinName == oldValue?.deletingPathExtension().lastPathComponent {
 
-                newPinName = newValue?.deletingPathExtension().lastPathComponent ?? ""
+                newPinName = newValue.deletingPathExtension().lastPathComponent
             }
+
+            pinPath = newValue.prettyPath()
         }
         .padding()
         .frame(width: 400)
     }
 }
 
-struct PinButtonView: View {
-    let bottle: Bottle
-    @State private var newPinURL: URL?
-    @State private var opening: Bool = false
-    private let panel = NSOpenPanel()
-
-    var body: some View {
-        VStack {
-            Group {
-                Image(systemName: "app.dashed")
-                      .resizable()
-                      .overlay {
-                          Image(systemName: "plus")
-                              .resizable()
-                              .frame(width: 16, height: 16)
-                      }
-            }
-            .frame(width: 45, height: 45)
-            .scaleEffect(opening ? 2 : 1)
-            .opacity(opening ? 0 : 1)
-            Spacer()
-            Text("pin.help")
-                .multilineTextAlignment(.center)
-                .lineLimit(2, reservesSpace: true)
-        }
-        .frame(width: 90, height: 90)
-        .padding(10)
-        .onTapGesture(count: 1) {
-            panel.canChooseFiles = true
-            panel.allowedContentTypes = [UTType.exe,
-                                         UTType(exportedAs: "com.microsoft.msi-installer"),
-                                         UTType(exportedAs: "com.microsoft.bat")]
-            panel.directoryURL = bottle.url.appending(path: "drive_c")
-            panel.canChooseDirectories = false
-            panel.allowsMultipleSelection = false
-            panel.canCreateDirectories = false
-
-            choosePinURL()
-        }
-        .sheet(item: $newPinURL) { url in
-            PinCreationView(bottle: bottle, newPinURL: url)
-        }
-    }
-
-    func choosePinURL() {
-        withAnimation(.easeIn(duration: 0.25)) {
-            opening = true
-        } completion: {
-            withAnimation(.easeOut(duration: 0.1)) {
-                opening = false
-            }
-        }
-
-        Task {
-            guard await panel.runModal() == .OK,
-                  let url = await panel.urls.first else { return }
-            newPinURL = url
-        }
-    }
+#Preview {
+    PinCreationView(bottle: Bottle(bottleUrl: URL(filePath: "")))
 }

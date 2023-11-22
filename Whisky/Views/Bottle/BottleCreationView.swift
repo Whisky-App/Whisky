@@ -61,6 +61,8 @@ struct BottleCreationView: View {
                 Spacer()
                 Text(bottlePath)
                     .truncationMode(.middle)
+                    .lineLimit(2)
+                    .help(bottlePath)
                 Button("create.browse") {
                     let panel = NSOpenPanel()
                     panel.canChooseFiles = false
@@ -105,9 +107,6 @@ struct BottleCreationView: View {
     }
 }
 
-struct BottleCreationView_Previews: PreviewProvider {
-    @State private static var newlyCreatedBottleURL: URL?
-    static var previews: some View {
-        BottleCreationView(newlyCreatedBottleURL: $newlyCreatedBottleURL)
-    }
+#Preview {
+    BottleCreationView(newlyCreatedBottleURL: .constant(nil))
 }

@@ -1,5 +1,5 @@
 //
-//  PinsView.swift
+//  PinView.swift
 //  Whisky
 //
 //  This file is part of Whisky.
@@ -19,7 +19,7 @@
 import SwiftUI
 import WhiskyKit
 
-struct PinsView: View {
+struct PinView: View {
     @ObservedObject var bottle: Bottle
     @ObservedObject var program: Program
     @State var pin: PinnedProgram
