@@ -1009,8 +1009,8 @@
         },
         "pl" : {
           "stringUnit" : {
-            "state" : "needs_review",
-            "value" : "Pin"
+            "state" : "translated",
+            "value" : "Przypnij"
           }
         },
         "pt-BR" : {
@@ -2307,8 +2307,8 @@
         },
         "pl" : {
           "stringUnit" : {
-            "state" : "needs_review",
-            "value" : "Unpin"
+            "state" : "translated",
+            "value" : "Odepnij"
           }
         },
         "pt-BR" : {
@@ -4071,14 +4071,14 @@
         },
         "nl" : {
           "stringUnit" : {
-            "state" : "translated",
-            "value" : "Rodzaj synchronizacji"
+            "state" : "needs_review",
+            "value" : "Enhanced Sync"
           }
         },
         "pl" : {
           "stringUnit" : {
-            "state" : "needs_review",
-            "value" : "Enhanced Sync"
+            "state" : "translated",
+            "value" : "Rodzaj synchronizacji"
           }
         },
         "pt-BR" : {
@@ -4195,8 +4195,8 @@
         },
         "pl" : {
           "stringUnit" : {
-            "state" : "needs_review",
-            "value" : "None"
+            "state" : "translated",
+            "value" : "Brak"
           }
         },
         "pt-BR" : {
@@ -7027,8 +7027,8 @@
         },
         "pl" : {
           "stringUnit" : {
-            "state" : "needs_review",
-            "value" : "Add"
+            "state" : "translated",
+            "value" : "Dodaj"
           }
         },
         "pt-BR" : {
@@ -7145,8 +7145,8 @@
         },
         "pl" : {
           "stringUnit" : {
-            "state" : "needs_review",
-            "value" : "Remove"
+            "state" : "translated",
+            "value" : "Usuń"
           }
         },
         "pt-BR" : {
@@ -7499,8 +7499,8 @@
         },
         "pl" : {
           "stringUnit" : {
-            "state" : "needs_review",
-            "value" : "Website"
+            "state" : "translated",
+            "value" : "Strona internetowa"
           }
         },
         "pt-BR" : {
@@ -8562,8 +8562,8 @@
         },
         "pl" : {
           "stringUnit" : {
-            "state" : "needs_review",
-            "value" : "Pin"
+            "state" : "translated",
+            "value" : "Przypnij"
           }
         },
         "pt-BR" : {
@@ -8681,8 +8681,8 @@
         },
         "pl" : {
           "stringUnit" : {
-            "state" : "needs_review",
-            "value" : "\"%@\" is already pinned!"
+            "state" : "translated",
+            "value" : "\"%@\" jest już przypięty!"
           }
         },
         "pt-BR" : {
@@ -8799,8 +8799,8 @@
         },
         "pl" : {
           "stringUnit" : {
-            "state" : "needs_review",
-            "value" : "Error Pinning Program"
+            "state" : "translated",
+            "value" : "Błąd podczas przypinania programu"
           }
         },
         "pt-BR" : {
@@ -8917,8 +8917,8 @@
         },
         "pl" : {
           "stringUnit" : {
-            "state" : "needs_review",
-            "value" : "Pin Program"
+            "state" : "translated",
+            "value" : "Przypnij program"
           }
         },
         "pt-BR" : {
@@ -9035,8 +9035,8 @@
         },
         "pl" : {
           "stringUnit" : {
-            "state" : "needs_review",
-            "value" : "Pin name:"
+            "state" : "translated",
+            "value" : "Nazwa przypinki:"
           }
         },
         "pt-BR" : {
@@ -9153,8 +9153,8 @@
         },
         "pl" : {
           "stringUnit" : {
-            "state" : "needs_review",
-            "value" : "Program path:"
+            "state" : "translated",
+            "value" : "Ścieżka programu:"
           }
         },
         "pt-BR" : {
@@ -9271,8 +9271,8 @@
         },
         "pl" : {
           "stringUnit" : {
-            "state" : "needs_review",
-            "value" : "Pin Program"
+            "state" : "translated",
+            "value" : "Przypnij program"
           }
         },
         "pt-BR" : {
@@ -9507,8 +9507,8 @@
         },
         "pl" : {
           "stringUnit" : {
-            "state" : "needs_review",
-            "value" : "Add Selected to Blocklist"
+            "state" : "translated",
+            "value" : "Dodaj wybrane do czarnej listy"
           }
         },
         "pt-BR" : {
@@ -10215,8 +10215,8 @@
         },
         "pl" : {
           "stringUnit" : {
-            "state" : "needs_review",
-            "value" : "Remove Selected from Blocklist"
+            "state" : "translated",
+            "value" : "Usuń wybrane z czarnej listy"
           }
         },
         "pt-BR" : {
@@ -10333,8 +10333,8 @@
         },
         "pl" : {
           "stringUnit" : {
-            "state" : "needs_review",
-            "value" : "Settings"
+            "state" : "translated",
+            "value" : "Ustawienia"
           }
         },
         "pt-BR" : {
@@ -13283,8 +13283,8 @@
         },
         "pl" : {
           "stringUnit" : {
-            "state" : "needs_review",
-            "value" : "Retry"
+            "state" : "translated",
+            "value" : "Spróbuj ponownie"
           }
         },
         "pt-BR" : {
@@ -13519,8 +13519,8 @@
         },
         "pl" : {
           "stringUnit" : {
-            "state" : "needs_review",
-            "value" : "Rosetta 2 installation failed. Please install it manually."
+            "state" : "translated",
+            "value" : "Instalacja Rosetta 2 nie powiodła się. Proszę zainstaluj ją manualnie."
           }
         },
         "pt-BR" : {
@@ -15526,8 +15526,8 @@
         },
         "pl" : {
           "stringUnit" : {
-            "state" : "needs_review",
-            "value" : "Apps"
+            "state" : "translated",
+            "value" : "Aplikacje"
           }
         },
         "pt-BR" : {
@@ -15645,8 +15645,8 @@
         },
         "pl" : {
           "stringUnit" : {
-            "state" : "needs_review",
-            "value" : "Benchmarks"
+            "state" : "translated",
+            "value" : "Testy wydajnościowe (Benchmarki)"
           }
         },
         "pt-BR" : {
@@ -15764,8 +15764,8 @@
         },
         "pl" : {
           "stringUnit" : {
-            "state" : "needs_review",
-            "value" : "DLLs"
+            "state" : "translated",
+            "value" : "Biblioteki (DLL)"
           }
         },
         "pt-BR" : {
@@ -15883,8 +15883,8 @@
         },
         "pl" : {
           "stringUnit" : {
-            "state" : "needs_review",
-            "value" : "Fonts"
+            "state" : "translated",
+            "value" : "Czcionki"
           }
         },
         "pt-BR" : {
@@ -16002,8 +16002,8 @@
         },
         "pl" : {
           "stringUnit" : {
-            "state" : "needs_review",
-            "value" : "Games"
+            "state" : "translated",
+            "value" : "Gry"
           }
         },
         "pt-BR" : {
@@ -16121,8 +16121,8 @@
         },
         "pl" : {
           "stringUnit" : {
-            "state" : "needs_review",
-            "value" : "Settings"
+            "state" : "translated",
+            "value" : "Ustawienia"
           }
         },
         "pt-BR" : {
@@ -16239,8 +16239,8 @@
         },
         "pl" : {
           "stringUnit" : {
-            "state" : "needs_review",
-            "value" : "Description"
+            "state" : "translated",
+            "value" : "Opis"
           }
         },
         "pt-BR" : {
@@ -16357,8 +16357,8 @@
         },
         "pl" : {
           "stringUnit" : {
-            "state" : "needs_review",
-            "value" : "Command"
+            "state" : "translated",
+            "value" : "Komenda"
           }
         },
         "pt-BR" : {
