@@ -8652,7 +8652,7 @@
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "\"%@\" est déjà épingler!"
+            "value" : "\"%@\" est déjà épinglé !"
           }
         },
         "it" : {
@@ -8888,7 +8888,7 @@
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Épingler Programme"
+            "value" : "Épingler le Programme"
           }
         },
         "it" : {
@@ -9006,7 +9006,7 @@
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Nom de l'épingle:"
+            "value" : "Nom de l’épingle :"
           }
         },
         "it" : {
@@ -9124,7 +9124,7 @@
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Emplacement du programme:"
+            "value" : "Emplacement du programme :"
           }
         },
         "it" : {
@@ -9242,7 +9242,7 @@
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Épingler Programme"
+            "value" : "Épingler le Programme"
           }
         },
         "it" : {
