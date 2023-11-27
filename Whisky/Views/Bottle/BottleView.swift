@@ -37,7 +37,7 @@ struct BottleView: View {
         NavigationStack(path: $path) {
             ScrollView {
                 LazyVGrid(columns: gridLayout, alignment: .center) {
-                    ForEach(bottle.pinnedPrograms, id: \.id) { pinnedProgram in
+                    ForEach(bottle.pinnedPrograms, id: \.pin.url) { pinnedProgram in
                         PinView(
                             bottle: bottle, program: pinnedProgram.program, pin: pinnedProgram.pin, path: $path
                         )
@@ -77,35 +77,18 @@ struct BottleView: View {
                         showWinetricksSheet.toggle()
                     }
                     Button("button.run") {
-                        let panel = NSOpenPanel()
-                        panel.allowsMultipleSelection = false
-                        panel.canChooseDirectories = false
-                        panel.canChooseFiles = true
-                        panel.allowedContentTypes = [UTType.exe,
-                                                     UTType(exportedAs: "com.microsoft.msi-installer"),
-                                                     UTType(exportedAs: "com.microsoft.bat")]
-                        panel.directoryURL = bottle.url.appending(path: "drive_c")
-                        panel.begin { result in
-                            programLoading = true
-                            Task(priority: .userInitiated) {
-                                if result == .OK {
-                                    if let url = panel.urls.first {
-                                        do {
-                                            if url.pathExtension == "bat" {
-                                                try await Wine.runBatchFile(url: url, bottle: bottle)
-                                            } else {
-                                                try await Wine.runExternalProgram(url: url, bottle: bottle)
-                                            }
-                                        } catch {
-                                            print("Failed to run external program: \(error)")
-                                        }
-                                        programLoading = false
-                                    }
-                                } else {
-                                    programLoading = false
-                                }
+                        Task {
+                            guard let fileURL = await bottle.choseFileForRun() else { return }
+                            programLoading = false
+
+                            do {
+                                try await bottle.openFileForRun(url: fileURL)
                                 updateStartMenu()
+                            } catch {
+                                Bottle.logger.error("Failed to run external program: \(error)")
                             }
+
+                            programLoading = false
                         }
                     }
                     .disabled(programLoading)

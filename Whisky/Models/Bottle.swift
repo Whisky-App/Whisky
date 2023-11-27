@@ -19,8 +19,14 @@
 import Foundation
 import AppKit
 import WhiskyKit
+import UniformTypeIdentifiers
+import os.log
 
 extension Bottle {
+    static let logger = Logger(
+        subsystem: Bundle.main.bundleIdentifier ?? Bundle.wiskeyBundleIdentifier, category: "Bottle"
+    )
+
     func openCDrive() {
         NSWorkspace.shared.open(url.appending(path: "drive_c"))
     }
@@ -173,5 +179,34 @@ extension Bottle {
     @MainActor
     func rename(newName: String) {
         settings.name = newName
+    }
+
+    @MainActor
+    /// Open a panel to chose a file for running
+    /// - Returns: URL of the file we wish to run
+    public func choseFileForRun() async -> URL? {
+        let panel = NSOpenPanel()
+        panel.allowsMultipleSelection = false
+        panel.canChooseDirectories = false
+        panel.canChooseFiles = true
+        panel.allowedContentTypes = [
+            UTType.exe, UTType(exportedAs: "com.microsoft.msi-installer"),
+            UTType(exportedAs: "com.microsoft.bat")
+        ]
+        panel.directoryURL = url.appending(path: "drive_c")
+        let result = await panel.begin()
+        guard result == .OK else { return nil }
+        return panel.urls.first
+    }
+
+    @MainActor
+    /// Open an open panel, chose a file and attempt to run it
+    /// - Returns: true or false if a file was run
+    public func openFileForRun(url: URL) async throws {
+        if url.pathExtension == "bat" {
+            try await Wine.runBatchFile(url: url, bottle: self)
+        } else {
+            try await Wine.runExternalProgram(url: url, bottle: self)
+        }
     }
 }

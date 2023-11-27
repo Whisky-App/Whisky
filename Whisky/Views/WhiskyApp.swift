@@ -18,12 +18,13 @@
 
 import SwiftUI
 import Sparkle
+import WhiskyKit
 
 @main
 struct WhiskyApp: App {
-    @State var showSetup: Bool = false
-    @NSApplicationDelegateAdaptor(AppDelegate.self) var appDelegate
-    @Environment(\.openURL) var openURL
+    @State private var showSetup: Bool = false
+    @NSApplicationDelegateAdaptor(AppDelegate.self) private var appDelegate
+    @Environment(\.openURL) private var openURL
     private let updaterController: SPUStandardUpdaterController
 
     init() {
@@ -111,6 +112,11 @@ struct WhiskyApp: App {
         }
         Settings {
             SettingsView()
+        }
+
+        // MARK: - Menu bar
+        MenuBarExtra("menubar.title", image: "whisky.glass") {
+            WhiskyBarView()
         }
     }
 

@@ -41,12 +41,11 @@ public class Bottle: Hashable, Identifiable, ObservableObject {
     public var inFlight: Bool = false
     public var isActive: Bool = false
 
-    /// All pins with their associated programs
-    public var pinnedPrograms: [(pin: PinnedProgram, program: Program, // swiftlint:disable:this large_tuple
-                                 id: String)] {
-        return settings.pins.compactMap { pin in
-            guard let program = programs.first(where: { $0.url == pin.url }) else { return nil }
-            return (pin, program, "\(pin.name)//\(program.url)")
+    public var pinnedPrograms: [(pin: PinnedProgram, program: Program)] {
+        let pins = settings.pins
+        return programs.compactMap { program in
+            guard let pin = pins.first(where: { $0.url == program.url }) else { return nil }
+            return (pin, program)
         }
     }
 

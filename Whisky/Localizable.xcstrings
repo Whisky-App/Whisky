@@ -8144,6 +8144,36 @@
         }
       }
     },
+    "menubar.bottles" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Bottles"
+          }
+        }
+      }
+    },
+    "menubar.morePrograms" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "More..."
+          }
+        }
+      }
+    },
+    "menubar.title" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Whisky"
+          }
+        }
+      }
+    },
     "open.bottle" : {
       "localizations" : {
         "da" : {
