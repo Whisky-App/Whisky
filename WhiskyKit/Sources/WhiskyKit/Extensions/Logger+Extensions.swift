@@ -19,7 +19,7 @@
 import Foundation
 import os.log
 
-extension Logger {
+public extension Logger {
   /// A global logger for WineKit
   static let wineKit = Logger(
       subsystem: Bundle.whiskyBundleIdentifier, category: "WineKit"

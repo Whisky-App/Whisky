@@ -77,10 +77,7 @@ struct ProgramView: View {
                 }
                 Button("button.run") {
                     programLoading = true
-                    Task(priority: .userInitiated) {
-                        await program.run()
-                        programLoading = false
-                    }
+                    program.run()
                 }
                 .disabled(programLoading)
                 if programLoading {

@@ -166,9 +166,7 @@ struct ProgramItemView: View {
                 .foregroundStyle(.secondary)
                 .help("program.config")
                 Button("button.run", systemImage: "play") {
-                    Task {
-                        await program.run()
-                    }
+                    program.run()
                 }
                 .labelStyle(.iconOnly)
                 .buttonStyle(.plain)

@@ -1,5 +1,5 @@
 //
-//  Bottle.swift
+//  Bottle+Extensions.swift
 //  Whisky
 //
 //  This file is part of Whisky.

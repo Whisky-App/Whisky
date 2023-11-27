@@ -20,10 +20,16 @@ import Foundation
 import SemanticVersion
 
 public class GPTKInstaller {
-    public static let libraryFolder = FileManager.default.urls(for: .applicationSupportDirectory,
-                                                               in: .userDomainMask)[0]
-        .appending(path: Bundle.whiskyBundleIdentifier)
-        .appending(path: "Libraries")
+    /// The whisky application folder
+    public static let applicationFolder = FileManager.default.urls(
+        for: .applicationSupportDirectory, in: .userDomainMask
+        )[0].appending(path: Bundle.whiskyBundleIdentifier)
+
+    /// The folder of all the libfrary files
+    public static let libraryFolder = applicationFolder.appending(path: "Libraries")
+
+    /// URL to the installed `wine` `bin` directory
+    public static let binFolder: URL = libraryFolder.appending(path: "Wine").appending(path: "bin")
 
     public static func isGPTKInstalled() -> Bool {
         return FileManager.default.fileExists(atPath: libraryFolder.path)
@@ -31,25 +37,21 @@ public class GPTKInstaller {
 
     public static func install(from: URL) {
         do {
-            let whiskySupportFolder = FileManager.default.urls(for: .applicationSupportDirectory,
-                                                               in: .userDomainMask)[0]
-                .appending(path: Bundle.whiskyBundleIdentifier)
-
-            if !FileManager.default.fileExists(atPath: whiskySupportFolder.path) {
-                try FileManager.default.createDirectory(at: whiskySupportFolder, withIntermediateDirectories: true)
+            if !FileManager.default.fileExists(atPath: applicationFolder.path) {
+                try FileManager.default.createDirectory(at: applicationFolder, withIntermediateDirectories: true)
             } else {
                 // Recreate it
-                try FileManager.default.removeItem(at: whiskySupportFolder)
-                try FileManager.default.createDirectory(at: whiskySupportFolder, withIntermediateDirectories: true)
+                try FileManager.default.removeItem(at: applicationFolder)
+                try FileManager.default.createDirectory(at: applicationFolder, withIntermediateDirectories: true)
             }
 
-            try Tar.untar(tarBall: from, toURL: whiskySupportFolder)
+            try Tar.untar(tarBall: from, toURL: applicationFolder)
 
-            let tarFile = whiskySupportFolder
+            let tarFile = applicationFolder
                 .appending(path: "Libraries")
                 .appendingPathExtension("tar")
                 .appendingPathExtension("gz")
-            try Tar.untar(tarBall: tarFile, toURL: whiskySupportFolder)
+            try Tar.untar(tarBall: tarFile, toURL: applicationFolder)
             try FileManager.default.removeItem(at: tarFile)
         } catch {
             print("Failed to install GPTK: \(error)")
@@ -57,11 +59,6 @@ public class GPTKInstaller {
     }
 
     public static func uninstall() {
-        let libraryFolder = FileManager.default.urls(for: .applicationSupportDirectory,
-                                                           in: .userDomainMask)[0]
-            .appending(path: Bundle.whiskyBundleIdentifier)
-            .appending(path: "Libraries")
-
         do {
             try FileManager.default.removeItem(at: libraryFolder)
         } catch {

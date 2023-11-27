@@ -88,18 +88,17 @@ struct RosettaView: View {
     func checkOrInstall() async {
         if Rosetta2.isRosettaInstalled {
             installing = false
-
             sleep(2)
             await proceed()
         } else {
-            let result = await Rosetta2.installRosetta()
-
-            installing = false
-            successful = result
-
-            if result {
-                sleep(2)
+            do {
+                successful = try await Rosetta2.installRosetta()
+                installing = false
+                try await Task.sleep(for: .seconds(2))
                 await proceed()
+            } catch {
+                successful = false
+                installing = false
             }
         }
     }
