@@ -47,25 +47,28 @@ struct WinetricksView: View {
                         }
                     }
                 }
-                HStack {
-                    Spacer()
-                    Button("create.cancel") {
-                        dismiss()
-                    }
-                    Button("button.run") {
-                        guard let selectedTrick = selectedTrick else {
-                            return
+                .toolbar {
+                    ToolbarItem(placement: .cancellationAction) {
+                        Button("create.cancel") {
+                            dismiss()
                         }
-
-                        let trick = winetricks.flatMap { $0.verbs }.first(where: { $0.id == selectedTrick })
-                        if let trickName = trick?.name {
-                            Task.detached {
-                                await Winetricks.runCommand(command: trickName, bottle: bottle)
+                    }
+                    ToolbarItem(placement: .primaryAction) {
+                        Button("button.run") {
+                            guard let selectedTrick = selectedTrick else {
+                                return
                             }
+
+                            let trick = winetricks.flatMap { $0.verbs }.first(where: { $0.id == selectedTrick })
+                            if let trickName = trick?.name {
+                                Task.detached {
+                                    await Winetricks.runCommand(command: trickName, bottle: bottle)
+                                }
+                            }
+                            dismiss()
                         }
-                        dismiss()
+                        .buttonStyle(.borderedProminent)
                     }
-                    .buttonStyle(.borderedProminent)
                 }
             } else {
                 Spacer()
