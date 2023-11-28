@@ -60,7 +60,7 @@ public extension Process {
             pipe.fileHandleForReading.readabilityHandler = { pipe in
                 guard let line = pipe.nextLine() else { return }
                 continuation.yield(.message(line))
-                guard line.isEmpty else { return }
+                guard !line.isEmpty else { return }
                 Logger.wineKit.info("\(line, privacy: .public)")
                 fileHandle?.write(line: line)
             }
@@ -68,7 +68,7 @@ public extension Process {
             errorPipe.fileHandleForReading.readabilityHandler = { pipe in
                 guard let line = pipe.nextLine() else { return }
                 continuation.yield(.error(line))
-                guard line.isEmpty else { return }
+                guard !line.isEmpty else { return }
                 Logger.wineKit.warning("\(line, privacy: .public)")
                 fileHandle?.write(line: line)
             }
