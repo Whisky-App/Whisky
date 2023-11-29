@@ -237,6 +237,16 @@
         }
       }
     },
+    "button.cancel" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Cancel"
+          }
+        }
+      }
+    },
     "button.cDrive" : {
       "localizations" : {
         "da" : {
@@ -1051,8 +1061,8 @@
         },
         "zh-Hans" : {
           "stringUnit" : {
-            "state" : "needs_review",
-            "value" : "Pin"
+            "state" : "translated",
+            "value" : "固定"
           }
         },
         "zh-Hant" : {
@@ -2349,8 +2359,8 @@
         },
         "zh-Hans" : {
           "stringUnit" : {
-            "state" : "needs_review",
-            "value" : "Unpin"
+            "state" : "translated",
+            "value" : "取消固定"
           }
         },
         "zh-Hant" : {
@@ -4119,8 +4129,8 @@
         },
         "zh-Hans" : {
           "stringUnit" : {
-            "state" : "needs_review",
-            "value" : "Enhanced Sync"
+            "state" : "translated",
+            "value" : "增强 Sync"
           }
         },
         "zh-Hant" : {
@@ -4237,8 +4247,8 @@
         },
         "zh-Hans" : {
           "stringUnit" : {
-            "state" : "needs_review",
-            "value" : "None"
+            "state" : "translated",
+            "value" : "无"
           }
         },
         "zh-Hant" : {
@@ -7069,8 +7079,8 @@
         },
         "zh-Hans" : {
           "stringUnit" : {
-            "state" : "needs_review",
-            "value" : "Add"
+            "state" : "translated",
+            "value" : "加入"
           }
         },
         "zh-Hant" : {
@@ -7187,8 +7197,8 @@
         },
         "zh-Hans" : {
           "stringUnit" : {
-            "state" : "needs_review",
-            "value" : "Remove"
+            "state" : "translated",
+            "value" : "删掉"
           }
         },
         "zh-Hant" : {
@@ -7541,8 +7551,8 @@
         },
         "zh-Hans" : {
           "stringUnit" : {
-            "state" : "needs_review",
-            "value" : "Website"
+            "state" : "translated",
+            "value" : "网站"
           }
         },
         "zh-Hant" : {
@@ -8604,8 +8614,8 @@
         },
         "zh-Hans" : {
           "stringUnit" : {
-            "state" : "needs_review",
-            "value" : "Pin"
+            "state" : "translated",
+            "value" : "固定"
           }
         },
         "zh-Hant" : {
@@ -8723,8 +8733,8 @@
         },
         "zh-Hans" : {
           "stringUnit" : {
-            "state" : "needs_review",
-            "value" : "\"%@\" is already pinned!"
+            "state" : "translated",
+            "value" : "\"%@\" 已经固定了!"
           }
         },
         "zh-Hant" : {
@@ -8841,8 +8851,8 @@
         },
         "zh-Hans" : {
           "stringUnit" : {
-            "state" : "needs_review",
-            "value" : "Error Pinning Program"
+            "state" : "translated",
+            "value" : "无法固定程序"
           }
         },
         "zh-Hant" : {
@@ -8959,8 +8969,8 @@
         },
         "zh-Hans" : {
           "stringUnit" : {
-            "state" : "needs_review",
-            "value" : "Pin Program"
+            "state" : "translated",
+            "value" : "固定软解"
           }
         },
         "zh-Hant" : {
@@ -9077,8 +9087,8 @@
         },
         "zh-Hans" : {
           "stringUnit" : {
-            "state" : "needs_review",
-            "value" : "Pin name:"
+            "state" : "translated",
+            "value" : "固定名字:"
           }
         },
         "zh-Hant" : {
@@ -9195,8 +9205,8 @@
         },
         "zh-Hans" : {
           "stringUnit" : {
-            "state" : "needs_review",
-            "value" : "Program path:"
+            "state" : "translated",
+            "value" : "然姐路径:"
           }
         },
         "zh-Hant" : {
@@ -9313,8 +9323,8 @@
         },
         "zh-Hans" : {
           "stringUnit" : {
-            "state" : "needs_review",
-            "value" : "Pin Program"
+            "state" : "translated",
+            "value" : "固定软解"
           }
         },
         "zh-Hant" : {
@@ -9549,8 +9559,8 @@
         },
         "zh-Hans" : {
           "stringUnit" : {
-            "state" : "needs_review",
-            "value" : "Add Selected to Blocklist"
+            "state" : "translated",
+            "value" : "添加已选的到阻止列表"
           }
         },
         "zh-Hant" : {
@@ -10257,8 +10267,8 @@
         },
         "zh-Hans" : {
           "stringUnit" : {
-            "state" : "needs_review",
-            "value" : "Remove Selected from Blocklist"
+            "state" : "translated",
+            "value" : "从阻止列表中移除已选的"
           }
         },
         "zh-Hant" : {
@@ -10375,8 +10385,8 @@
         },
         "zh-Hans" : {
           "stringUnit" : {
-            "state" : "needs_review",
-            "value" : "Settings"
+            "state" : "translated",
+            "value" : "设置"
           }
         },
         "zh-Hant" : {
@@ -11319,8 +11329,8 @@
         },
         "zh-Hans" : {
           "stringUnit" : {
-            "state" : "needs_review",
-            "value" : "General"
+            "state" : "translated",
+            "value" : "通用"
           }
         },
         "zh-Hant" : {
@@ -11437,8 +11447,8 @@
         },
         "zh-Hans" : {
           "stringUnit" : {
-            "state" : "needs_review",
-            "value" : "Automatically check for GPTK updates"
+            "state" : "translated",
+            "value" : "自动检查 GPTK 更新"
           }
         },
         "zh-Hant" : {
@@ -11555,8 +11565,8 @@
         },
         "zh-Hans" : {
           "stringUnit" : {
-            "state" : "needs_review",
-            "value" : "Terminate Wine processes when Whisky closes"
+            "state" : "translated",
+            "value" : "当 Whisky 关闭时把 Wine 进程终止"
           }
         },
         "zh-Hant" : {
@@ -11673,8 +11683,8 @@
         },
         "zh-Hans" : {
           "stringUnit" : {
-            "state" : "needs_review",
-            "value" : "Automatically check for Whisky updates"
+            "state" : "translated",
+            "value" : "自动检查 Whisky 更新"
           }
         },
         "zh-Hant" : {
@@ -11791,8 +11801,8 @@
         },
         "zh-Hans" : {
           "stringUnit" : {
-            "state" : "needs_review",
-            "value" : "Updates"
+            "state" : "translated",
+            "value" : "更新"
           }
         },
         "zh-Hant" : {
@@ -13325,8 +13335,8 @@
         },
         "zh-Hans" : {
           "stringUnit" : {
-            "state" : "needs_review",
-            "value" : "Retry"
+            "state" : "translated",
+            "value" : "重试"
           }
         },
         "zh-Hant" : {
@@ -13561,8 +13571,8 @@
         },
         "zh-Hans" : {
           "stringUnit" : {
-            "state" : "needs_review",
-            "value" : "Rosetta 2 installation failed. Please install it manually."
+            "state" : "translated",
+            "value" : "无法自动安装 Rosetta 2。请手动安装。"
           }
         },
         "zh-Hant" : {
@@ -14989,6 +14999,132 @@
         }
       }
     },
+    "update.cancel" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ask Me Next Tme"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "下一次问"
+          }
+        }
+      }
+    },
+    "update.changeLog" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Change Log"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "更新日志"
+          }
+        }
+      }
+    },
+    "update.changeLogFailed" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Failed to get change log!"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "获取更新日志失败！"
+          }
+        }
+      }
+    },
+    "update.checkingForUpdates" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Whisky is checking for updates...."
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Whisky 正在检查更新..."
+          }
+        }
+      }
+    },
+    "update.description" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "You are running an outdated version of Whisky. Would you like to update?"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "您正在运行一个过时版本的Whisky。您想要下载更新吗？"
+          }
+        }
+      }
+    },
+    "update.descriptionLoaded" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "You are running an outdated version of Whisky. The latest version available is %2$@, you are running %1$@. Would you like to update?"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "您正在运行一个过时版本的Whisky。最新可用的版本是 %2$@，你在用 %1$@。您想要下载更新吗？"
+          }
+        }
+      }
+    },
+    "update.downloading" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Downloading Update..."
+          }
+        }
+      }
+    },
+    "update.error" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Update Error!"
+          }
+        }
+      }
+    },
+    "update.extracting" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Extracting Files..."
+          }
+        }
+      }
+    },
     "update.gptk.description" : {
       "localizations" : {
         "da" : {
@@ -15343,6 +15479,114 @@
         }
       }
     },
+    "update.initializating" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Initializing..."
+          }
+        }
+      }
+    },
+    "update.installing" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Finishing Up..."
+          }
+        }
+      }
+    },
+    "update.noUpdateFound" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "No Updates Available"
+          }
+        }
+      }
+    },
+    "update.noUpdateFound.description" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "No updates are available. You are on the latest version of Whisky."
+          }
+        }
+      }
+    },
+    "update.readyRelaunch" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Update Complete!"
+          }
+        }
+      }
+    },
+    "update.readyRelaunch.description" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Update Complete! Press \"OK\" to relaunch."
+          }
+        }
+      }
+    },
+    "update.retryChangeLog" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Retry"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "重试"
+          }
+        }
+      }
+    },
+    "update.title" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Update Available!"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "有更新了！"
+          }
+        }
+      }
+    },
+    "update.update" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Update"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "下载更新"
+          }
+        }
+      }
+    },
     "wine.clearShaderCaches" : {
       "localizations" : {
         "da" : {
@@ -15568,8 +15812,8 @@
         },
         "zh-Hans" : {
           "stringUnit" : {
-            "state" : "needs_review",
-            "value" : "Apps"
+            "state" : "translated",
+            "value" : "软解"
           }
         },
         "zh-Hant" : {
@@ -15687,8 +15931,8 @@
         },
         "zh-Hans" : {
           "stringUnit" : {
-            "state" : "needs_review",
-            "value" : "Benchmarks"
+            "state" : "translated",
+            "value" : "皆准测试"
           }
         },
         "zh-Hant" : {
@@ -15700,6 +15944,7 @@
       }
     },
     "winetricks.category.dlls" : {
+      "comment" : "It's best to write DLL",
       "extractionState" : "manual",
       "localizations" : {
         "da" : {
@@ -15806,8 +16051,8 @@
         },
         "zh-Hans" : {
           "stringUnit" : {
-            "state" : "needs_review",
-            "value" : "DLLs"
+            "state" : "translated",
+            "value" : "DLL"
           }
         },
         "zh-Hant" : {
@@ -15925,8 +16170,8 @@
         },
         "zh-Hans" : {
           "stringUnit" : {
-            "state" : "needs_review",
-            "value" : "Fonts"
+            "state" : "translated",
+            "value" : "字体"
           }
         },
         "zh-Hant" : {
@@ -16044,8 +16289,8 @@
         },
         "zh-Hans" : {
           "stringUnit" : {
-            "state" : "needs_review",
-            "value" : "Games"
+            "state" : "translated",
+            "value" : "游戏"
           }
         },
         "zh-Hant" : {
@@ -16163,8 +16408,8 @@
         },
         "zh-Hans" : {
           "stringUnit" : {
-            "state" : "needs_review",
-            "value" : "Settings"
+            "state" : "translated",
+            "value" : "设置"
           }
         },
         "zh-Hant" : {
@@ -16281,8 +16526,8 @@
         },
         "zh-Hans" : {
           "stringUnit" : {
-            "state" : "needs_review",
-            "value" : "Description"
+            "state" : "translated",
+            "value" : "描述"
           }
         },
         "zh-Hant" : {
@@ -16399,8 +16644,8 @@
         },
         "zh-Hans" : {
           "stringUnit" : {
-            "state" : "needs_review",
-            "value" : "Command"
+            "state" : "translated",
+            "value" : "命令"
           }
         },
         "zh-Hant" : {

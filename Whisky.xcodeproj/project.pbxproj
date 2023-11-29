@@ -56,6 +56,10 @@
 		8CB681E52AED7C6F0018D319 /* WhiskyKit in Resources */ = {isa = PBXBuildFile; fileRef = 8CB681E42AED7C6F0018D319 /* WhiskyKit */; };
 		8CB681E72AED7CD00018D319 /* WhiskyKit in Frameworks */ = {isa = PBXBuildFile; productRef = 8CB681E62AED7CD00018D319 /* WhiskyKit */; };
 		DB696FC82AFAE5DA0037EB2F /* PinCreationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB696FC72AFAE5DA0037EB2F /* PinCreationView.swift */; };
+		EB051A092B150F7100F5F5B7 /* UpdatePreviewView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB051A082B150F7100F5F5B7 /* UpdatePreviewView.swift */; };
+		EB051A0E2B16EA7E00F5F5B7 /* MarkdownUI in Frameworks */ = {isa = PBXBuildFile; productRef = EB051A0D2B16EA7E00F5F5B7 /* MarkdownUI */; };
+		EB051A102B1710A700F5F5B7 /* SparkleUpdaterEvents.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB051A0F2B1710A700F5F5B7 /* SparkleUpdaterEvents.swift */; };
+		EB051A132B17263300F5F5B7 /* UpdateControlerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB051A122B17263300F5F5B7 /* UpdateControlerView.swift */; };
 		EB58FB552A499896002DC184 /* SemanticVersion in Frameworks */ = {isa = PBXBuildFile; productRef = EB58FB542A499896002DC184 /* SemanticVersion */; };
 		EEA5A2462A31DD65008274AE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEA5A2452A31DD65008274AE /* AppDelegate.swift */; };
 /* End PBXBuildFile section */
@@ -151,6 +155,9 @@
 		8C73E1332AF472FC00B6FB45 /* ProgramMenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgramMenuView.swift; sourceTree = "<group>"; };
 		8CB681E42AED7C6F0018D319 /* WhiskyKit */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = WhiskyKit; sourceTree = "<group>"; };
 		DB696FC72AFAE5DA0037EB2F /* PinCreationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PinCreationView.swift; sourceTree = "<group>"; };
+		EB051A082B150F7100F5F5B7 /* UpdatePreviewView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdatePreviewView.swift; sourceTree = "<group>"; };
+		EB051A0F2B1710A700F5F5B7 /* SparkleUpdaterEvents.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SparkleUpdaterEvents.swift; sourceTree = "<group>"; };
+		EB051A122B17263300F5F5B7 /* UpdateControlerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateControlerView.swift; sourceTree = "<group>"; };
 		EEA5A2452A31DD65008274AE /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -162,6 +169,7 @@
 				8C2AEFC82AED79B700CB568F /* WhiskyKit in Frameworks */,
 				6E064B1229DD32A200D9A2D2 /* Sparkle in Frameworks */,
 				EB58FB552A499896002DC184 /* SemanticVersion in Frameworks */,
+				EB051A0E2B16EA7E00F5F5B7 /* MarkdownUI in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -226,8 +234,8 @@
 				6E40498029CCA8B0006E3F1B /* BottleView.swift */,
 				6E50D98429CDF25B008C39F6 /* BottleCreationView.swift */,
 				6EA2D47D29DDAE5E00C84668 /* BottleRenameView.swift */,
-				6E355E5729D78249002D83BE /* ConfigView.swift */,
 				6E182FC92B0BF64E00AADE81 /* WinetricksView.swift */,
+				6E355E5729D78249002D83BE /* ConfigView.swift */,
 				6E17B6422AF3FD6E00831173 /* Pins */,
 			);
 			path = Bottle;
@@ -302,6 +310,7 @@
 				6E40495729CCA19C006E3F1B /* ContentView.swift */,
 				6E064B1329DD331F00D9A2D2 /* SparkleView.swift */,
 				6E7C07BF2AAF570100F6E66B /* FileOpenView.swift */,
+				EB051A112B17261A00F5F5B7 /* Updater */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -329,6 +338,7 @@
 				6E621CEE2A5F631200C9AAB3 /* Winetricks.swift */,
 				6E70A4A02A9A280C007799E9 /* WhiskyCmd.swift */,
 				6E7C07BD2AAE7B0100F6E66B /* ProgramShortcut.swift */,
+				EB051A0F2B1710A700F5F5B7 /* SparkleUpdaterEvents.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -373,6 +383,15 @@
 			path = WhiskyThumbnail;
 			sourceTree = "<group>";
 		};
+		EB051A112B17261A00F5F5B7 /* Updater */ = {
+			isa = PBXGroup;
+			children = (
+				EB051A082B150F7100F5F5B7 /* UpdatePreviewView.swift */,
+				EB051A122B17263300F5F5B7 /* UpdateControlerView.swift */,
+			);
+			path = Updater;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -397,6 +416,7 @@
 				6E064B1129DD32A200D9A2D2 /* Sparkle */,
 				EB58FB542A499896002DC184 /* SemanticVersion */,
 				8C2AEFC72AED79B700CB568F /* WhiskyKit */,
+				EB051A0D2B16EA7E00F5F5B7 /* MarkdownUI */,
 			);
 			productName = Whisky;
 			productReference = 6E40495229CCA19C006E3F1B /* Whisky.app */;
@@ -501,6 +521,7 @@
 				6E95F66E2AB3F33C00D585D1 /* XCRemoteSwiftPackageReference "SwiftyTextTable" */,
 				6E95F6712AB3F67200D585D1 /* XCRemoteSwiftPackageReference "Progress" */,
 				8C2AEFC62AED79B700CB568F /* XCLocalSwiftPackageReference "WhiskyKit" */,
+				EB051A0C2B16EA2E00F5F5B7 /* XCRemoteSwiftPackageReference "swift-markdown-ui" */,
 			);
 			productRefGroup = 6E40495329CCA19C006E3F1B /* Products */;
 			projectDirPath = "";
@@ -570,14 +591,17 @@
 				DB696FC82AFAE5DA0037EB2F /* PinCreationView.swift in Sources */,
 				6E7C07BE2AAE7B0100F6E66B /* ProgramShortcut.swift in Sources */,
 				6E355E5829D78249002D83BE /* ConfigView.swift in Sources */,
+				EB051A102B1710A700F5F5B7 /* SparkleUpdaterEvents.swift in Sources */,
 				6EA2D47E29DDAE5E00C84668 /* BottleRenameView.swift in Sources */,
 				63FFDE862ADF0C7700178665 /* BottomBar.swift in Sources */,
+				EB051A092B150F7100F5F5B7 /* UpdatePreviewView.swift in Sources */,
 				6E6C0CF62A419A8300356232 /* GPTKDownloadView.swift in Sources */,
 				6E50D98529CDF25B008C39F6 /* BottleCreationView.swift in Sources */,
 				6E182FCA2B0BF64E00AADE81 /* WinetricksView.swift in Sources */,
 				6E17B6492AF4118F00831173 /* EnvironmentArgView.swift in Sources */,
 				6E6C0CF42A419A7600356232 /* RosettaView.swift in Sources */,
 				6E6C0CF82A419A8C00356232 /* GPTKInstallView.swift in Sources */,
+				EB051A132B17263300F5F5B7 /* UpdateControlerView.swift in Sources */,
 				6E40498329CCA91B006E3F1B /* Bottle+Extensions.swift in Sources */,
 				6E621CEF2A5F631300C9AAB3 /* Winetricks.swift in Sources */,
 				6E17B6462AF3FDC100831173 /* PinView.swift in Sources */,
@@ -813,7 +837,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.isaacmarovitz.Whisky;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
-				"PROVISIONING_PROFILE_SPECIFIER[sdk=macosx*]" = Whisky;
+"PROVISIONING_PROFILE_SPECIFIER[sdk=macosx*]" = Whisky;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 			};
@@ -1016,6 +1040,14 @@
 				minimumVersion = 0.4.0;
 			};
 		};
+		EB051A0C2B16EA2E00F5F5B7 /* XCRemoteSwiftPackageReference "swift-markdown-ui" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/gonzalezreal/swift-markdown-ui.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.2.0;
+			};
+		};
 		EB58FB532A499896002DC184 /* XCRemoteSwiftPackageReference "SemanticVersion" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/SwiftPackageIndex/SemanticVersion";
@@ -1064,6 +1096,11 @@
 		8CB681E62AED7CD00018D319 /* WhiskyKit */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = WhiskyKit;
+		};
+		EB051A0D2B16EA7E00F5F5B7 /* MarkdownUI */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = EB051A0C2B16EA2E00F5F5B7 /* XCRemoteSwiftPackageReference "swift-markdown-ui" */;
+			productName = MarkdownUI;
 		};
 		EB58FB542A499896002DC184 /* SemanticVersion */ = {
 			isa = XCSwiftPackageProductDependency;

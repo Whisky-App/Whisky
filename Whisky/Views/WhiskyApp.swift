@@ -23,19 +23,26 @@ import WhiskyKit
 @main
 struct WhiskyApp: App {
     @State var showSetup: Bool = false
+    @State var showUpdater = false
     @NSApplicationDelegateAdaptor(AppDelegate.self) var appDelegate
     @Environment(\.openURL) var openURL
-    private let updaterController: SPUStandardUpdaterController
+    private let updaterController: SPUUpdater
 
     init() {
-        updaterController = SPUStandardUpdaterController(startingUpdater: true,
-                                                         updaterDelegate: nil,
-                                                         userDriverDelegate: nil)
+        updaterController = SPUUpdater(
+            hostBundle: .main,
+            applicationBundle: .main,
+            userDriver: SparkleUpdaterEvents.shared,
+            delegate: nil)
+
+        do { try updaterController.start() } catch {
+            print(error)
+        }
     }
 
     var body: some Scene {
         WindowGroup {
-            ContentView(showSetup: $showSetup)
+            ContentView(updater: updaterController, showSetup: $showSetup)
                 .frame(minWidth: 550, minHeight: 250)
                 .environmentObject(BottleVM.shared)
                 .onAppear {
@@ -46,7 +53,7 @@ struct WhiskyApp: App {
         .handlesExternalEvents(matching: ["{same path of URL?}"])
         .commands {
             CommandGroup(after: .appInfo) {
-                SparkleView(updater: updaterController.updater)
+                SparkleView(updater: updaterController)
             }
             CommandGroup(before: .systemServices) {
                 Divider()
