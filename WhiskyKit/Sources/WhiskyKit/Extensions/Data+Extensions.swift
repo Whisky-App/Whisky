@@ -1,5 +1,5 @@
 //
-//  DataExtensions.swift
+//  Data+Extensions.swift
 //  WhiskyKit
 //
 //  This file is part of Whisky.

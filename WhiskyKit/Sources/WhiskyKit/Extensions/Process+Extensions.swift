@@ -31,7 +31,7 @@ public extension Process {
     func runStream(name: String, fileHandle: FileHandle?) throws -> AsyncStream<ProcessOutput> {
         let stream = makeStream(name: name, fileHandle: fileHandle)
         self.logProcessInfo(name: name)
-        try fileHandle?.writeInfo(for: self)
+        fileHandle?.writeInfo(for: self)
         try run()
         return stream
     }
@@ -60,7 +60,7 @@ public extension Process {
             pipe.fileHandleForReading.readabilityHandler = { pipe in
                 guard let line = pipe.nextLine() else { return }
                 continuation.yield(.message(line))
-                guard line.isEmpty else { return }
+                guard !line.isEmpty else { return }
                 Logger.wineKit.info("\(line, privacy: .public)")
                 fileHandle?.write(line: line)
             }
@@ -68,7 +68,7 @@ public extension Process {
             errorPipe.fileHandleForReading.readabilityHandler = { pipe in
                 guard let line = pipe.nextLine() else { return }
                 continuation.yield(.error(line))
-                guard line.isEmpty else { return }
+                guard !line.isEmpty else { return }
                 Logger.wineKit.warning("\(line, privacy: .public)")
                 fileHandle?.write(line: line)
             }
