@@ -75,10 +75,6 @@ struct UpdatePreviewView: View {
             .background(.ultraThickMaterial)
         }
         .frame(maxWidth: .infinity, maxHeight: .infinity)
-        .onAppear {
-            print("test:")
-            print(markdownText)
-        }
     }
 }
 
