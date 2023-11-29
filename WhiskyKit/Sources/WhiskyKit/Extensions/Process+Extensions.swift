@@ -31,7 +31,7 @@ public extension Process {
     func runStream(name: String, fileHandle: FileHandle?) throws -> AsyncStream<ProcessOutput> {
         let stream = makeStream(name: name, fileHandle: fileHandle)
         self.logProcessInfo(name: name)
-        try fileHandle?.writeInfo(for: self)
+        fileHandle?.writeInfo(for: self)
         try run()
         return stream
     }
