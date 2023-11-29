@@ -158,30 +158,22 @@ struct UpdateControlerView: View {
                     showCheckingForUpdates = false
                     showUpdatePreview = false
                     showUpdater = false
-                    displayPrompt(
-                        title: String(localized: "update.readyRelaunch"),
-                        description: String(localized: "update.readyRelaunch.description"),
-                        action: String(localized: "button.ok"),
-                        actionHandler: {
-                            // Kill all bottles
-                            await WhiskyApp.killBottles()
-                            // Relaunch
-                            relaunch(.install)
-                            // Actualy relaunch (I don't want to make a helper for this so.... you get...)
-                            let task = Process()
-                            task.launchPath = "/bin/sh"
-                            task.arguments = [
-                                "-c",
-                                """
-                                kill "\(ProcessInfo.processInfo.processName)";
-                                sleep 0.5; open "\(Bundle.main.bundlePath)"
-                                """
-                            ]
-                            task.launch()
-                            NSApp.terminate(nil)
-                            exit(0)
-                        }
-                    )
+                    WhiskyApp.killBottles()
+                    // Actualy relaunch (I don't want to make a helper for this so.... you get...)
+                    let task = Process()
+                    task.launchPath = "/bin/sh"
+                    task.arguments = [
+                        "-c",
+                        """
+                        kill "\(ProcessInfo.processInfo.processIdentifier)";
+                        sleep 0.5; open "\(Bundle.main.bundlePath)"
+                        """
+                    ]
+                    task.launch()
+                    // Relaunch
+                    relaunch(.install)
+                    NSApp.terminate(nil)
+                    exit(0)
                 }
             }
     }
