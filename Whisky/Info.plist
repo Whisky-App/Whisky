@@ -57,10 +57,6 @@
 	<string>https://data.getwhisky.app/appcast.xml</string>
 	<key>SUPublicEDKey</key>
 	<string>tnZFAvPUfCpM7Tr7Sx5gKRm6BUQQ6htJQeOMP44evms=</string>
-	<key>GithubRepoOwner</key>
-	<string>Whisky-App</string>
-	<key>GithubRepoName</key>
-	<string>Whisky</string>
 	<key>UTExportedTypeDeclarations</key>
 	<array>
 		<dict>
