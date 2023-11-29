@@ -20,10 +20,14 @@ import SwiftUI
 import UniformTypeIdentifiers
 import WhiskyKit
 import SemanticVersion
+import Sparkle
 
 struct ContentView: View {
     @AppStorage("selectedBottleURL") private var selectedBottleURL: URL?
     @EnvironmentObject var bottleVM: BottleVM
+
+    let updater: SPUUpdater?
+
     @Binding var showSetup: Bool
 
     @State private var selected: URL?
@@ -38,6 +42,9 @@ struct ContentView: View {
     @State private var bottleFilter = ""
 
     var body: some View {
+        if let updater {
+            UpdateControlerView(updater: updater)
+        }
         NavigationSplitView {
             sidebar
         } detail: {
@@ -206,6 +213,6 @@ struct ContentView: View {
 }
 
 #Preview {
-    ContentView(showSetup: .constant(false))
+    ContentView(updater: .none, showSetup: .constant(false))
         .environmentObject(BottleVM.shared)
 }

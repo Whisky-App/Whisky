@@ -249,6 +249,16 @@
         }
       }
     },
+    "button.cancel" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Cancel"
+          }
+        }
+      }
+    },
     "button.cDrive" : {
       "localizations" : {
         "da" : {
@@ -14636,13 +14646,117 @@
         "zh-Hans" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "已安装的程序"
+            "value" : "下一次问"
           }
-        },
-        "zh-Hant" : {
+        }
+      }
+    },
+    "update.changeLog" : {
+      "localizations" : {
+        "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "已安裝的程式"
+            "value" : "Change Log"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "更新日志"
+          }
+        }
+      }
+    },
+    "update.changeLogFailed" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Failed to get change log!"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "获取更新日志失败！"
+          }
+        }
+      }
+    },
+    "update.checkingForUpdates" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Whisky is checking for updates...."
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Whisky 正在检查更新..."
+          }
+        }
+      }
+    },
+    "update.description" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "You are running an outdated version of Whisky. Would you like to update?"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "您正在运行一个过时版本的Whisky。您想要下载更新吗？"
+          }
+        }
+      }
+    },
+    "update.descriptionLoaded" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "You are running an outdated version of Whisky. The latest version available is %2$@, you are running %1$@. Would you like to update?"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "您正在运行一个过时版本的Whisky。最新可用的版本是 %2$@，你在用 %1$@。您想要下载更新吗？"
+          }
+        }
+      }
+    },
+    "update.downloading" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Downloading Update..."
+          }
+        }
+      }
+    },
+    "update.error" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Update Error!"
+          }
+        }
+      }
+    },
+    "update.extracting" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Extracting Files..."
           }
         }
       }
@@ -14974,11 +15088,113 @@
             "state" : "translated",
             "value" : "更新"
           }
-        },
-        "zh-Hant" : {
+        }
+      }
+    },
+    "update.initializating" : {
+      "localizations" : {
+        "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "更新"
+            "value" : "Initializing..."
+          }
+        }
+      }
+    },
+    "update.installing" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Finishing Up..."
+          }
+        }
+      }
+    },
+    "update.noUpdateFound" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "No Updates Available"
+          }
+        }
+      }
+    },
+    "update.noUpdateFound.description" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "No updates are available. You are on the latest version of Whisky."
+          }
+        }
+      }
+    },
+    "update.readyRelaunch" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Update Complete!"
+          }
+        }
+      }
+    },
+    "update.readyRelaunch.description" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Update Complete! Press \"OK\" to relaunch."
+          }
+        }
+      }
+    },
+    "update.retryChangeLog" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Retry"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "重试"
+          }
+        }
+      }
+    },
+    "update.title" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Update Available!"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "有更新了！"
+          }
+        }
+      }
+    },
+    "update.update" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Update"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "下载更新"
           }
         }
       }
@@ -15304,6 +15520,7 @@
       }
     },
     "winetricks.category.dlls" : {
+      "comment" : "It's best to write DLL",
       "extractionState" : "manual",
       "localizations" : {
         "da" : {
