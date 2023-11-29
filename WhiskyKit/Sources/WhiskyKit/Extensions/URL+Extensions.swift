@@ -1,5 +1,5 @@
 //
-//  URLExtensions.swift
+//  URL+Extensions.swift
 //  WhiskyKit
 //
 //  This file is part of Whisky.
