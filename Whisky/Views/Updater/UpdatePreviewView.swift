@@ -21,20 +21,12 @@ import Sparkle
 import MarkdownUI
 
 struct UpdatePreviewView: View {
-//    enum MarkdownTextState {
-//        case loaded, error, loading
-//    }
-
     let dismiss: () -> Void
     let install: () -> Void
     @Binding var markdownText: String
     @Binding var nextVersion: String
 
-    // let updater = SparkleUpdaterEvents.shared
-    // @State var markdownTextState: MarkdownTextState = .loading
-    // @State var markdownText = "# Hello"
     let currentVersion = (Bundle.main.infoDictionary?["CFBundleShortVersionString"] as? String) ?? "(nil)"
-    // @State var nextVersion = ""
 
     var body: some View {
         HStack {
