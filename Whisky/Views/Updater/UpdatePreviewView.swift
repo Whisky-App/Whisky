@@ -21,18 +21,20 @@ import Sparkle
 import MarkdownUI
 
 struct UpdatePreviewView: View {
-    enum MarkdownTextState {
-        case loaded, error, loading
-    }
+//    enum MarkdownTextState {
+//        case loaded, error, loading
+//    }
 
     let dismiss: () -> Void
     let install: () -> Void
+    @Binding var markdownText: String
+    @Binding var nextVersion: String
 
-    let updater = SparkleUpdaterEvents.shared
-    @State var markdownTextState: MarkdownTextState = .loading
-    @State var markdownText = "# Hello"
-    @State var currentVersion = (Bundle.main.infoDictionary?["CFBundleShortVersionString"] as? String) ?? "(nil)"
-    @State var nextVersion = ""
+    // let updater = SparkleUpdaterEvents.shared
+    // @State var markdownTextState: MarkdownTextState = .loading
+    // @State var markdownText = "# Hello"
+    let currentVersion = (Bundle.main.infoDictionary?["CFBundleShortVersionString"] as? String) ?? "(nil)"
+    // @State var nextVersion = ""
 
     var body: some View {
         HStack {
@@ -40,11 +42,9 @@ struct UpdatePreviewView: View {
                 Text("update.title")
                     .font(.title)
                     .fontWeight(.bold)
-                Text(markdownTextState != .loaded
-                     ? String(localized: "update.description")
-                     : String(format: String(localized: "update.descriptionLoaded"),
-                              "v" + currentVersion,
-                              nextVersion))
+                Text(String(format: String(localized: "update.description"),
+                        "v" + currentVersion,
+                        nextVersion))
                 Spacer()
                 HStack {
                     Button("update.cancel") {
@@ -63,33 +63,20 @@ struct UpdatePreviewView: View {
             .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .leading)
             .padding(20)
             VStack {
-                if markdownTextState == .loading {
-                    ProgressView()
-                } else if markdownTextState == .error {
-                    VStack(spacing: 12) {
-                        Text("update.changeLogFailed")
-                        Button("update.retryChangeLog") {
-                            Task(priority: .userInitiated) {
-                                await getChangelog()
-                            }
-                        }
-                    }
-                } else {
-                    ScrollView {
-                        VStack(alignment: .leading) {
-                            Text("update.changeLog")
-                                .font(.title2)
-                                .fontWeight(.bold)
-                                .padding(.bottom, 12)
-                        }
-                        .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .leading)
-                        Markdown {
-                            markdownText
-                        }
-                        .markdownTheme(.basic)
+                ScrollView {
+                    VStack(alignment: .leading) {
+                        Text("update.changeLog")
+                            .font(.title2)
+                            .fontWeight(.bold)
+                            .padding(.bottom, 12)
                     }
                     .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .leading)
+                    Markdown {
+                        markdownText
+                    }
+                    .markdownTheme(.basic)
                 }
+                .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .leading)
             }
             .frame(maxWidth: .infinity, maxHeight: .infinity)
             .padding(20)
@@ -97,73 +84,13 @@ struct UpdatePreviewView: View {
         }
         .frame(maxWidth: .infinity, maxHeight: .infinity)
         .onAppear {
-            Task(priority: .userInitiated) {
-                await getChangelog()
-            }
-        }
-    }
-
-    func getChangelog() async {
-        withAnimation { markdownTextState = .loading }
-        let ghOwner = (Bundle.main.object(forInfoDictionaryKey: "GithubRepoOwner") as? String) ?? "Whisky-App"
-        let ghRepo = (Bundle.main.object(forInfoDictionaryKey: "GithubRepoName") as? String) ?? "Whisky"
-
-        // Make a request to the Github API to get the latest release
-        // Append path not using string interpolation to non-urlencoded paths
-        guard let url = URL(string: "https://api.github.com/")?
-            .appending(path: "repos")
-            .appending(path: ghOwner)
-            .appending(path: ghRepo)
-            .appending(path: "releases")
-            .appending(path: "latest")
-        else {
-            withAnimation { markdownTextState = .error }
-            return
-        }
-
-        var request = URLRequest(url: url)
-        request.setValue("application/vnd.github+json", forHTTPHeaderField: "Accept")
-        request.setValue("WhiskyApp", forHTTPHeaderField: "User-Agent")
-
-        let data: Data
-        do {
-            let (dataInfo, _) = try (await URLSession.shared.data(for: request))
-            data = dataInfo
-        } catch {
-            print("Changelog request failed: \(error)")
-            withAnimation { markdownTextState = .error }
-            return
-        }
-
-        // Decode the JSON
-        struct Release: Codable {
-            let body: String
-            let tagName: String
-
-            enum CodingKeys: String, CodingKey { // swiftlint:disable:this nesting
-                case body
-                case tagName = "tag_name"
-            }
-        }
-
-        let release: Release
-        do {
-            release = try JSONDecoder().decode(Release.self, from: data)
-        } catch {
-            print("Failed to decode release: \(error)")
-            withAnimation { markdownTextState = .error }
-            return
-        }
-
-        withAnimation {
-            markdownText = release.body
-            nextVersion = release.tagName
-            markdownTextState = .loaded
+            print("test:")
+            print(markdownText)
         }
     }
 }
 
 #Preview {
-    UpdatePreviewView(dismiss: {}, install: {})
+    UpdatePreviewView(dismiss: {}, install: {}, markdownText: .constant("# Hello"), nextVersion: .constant("v1.0.0"))
         .frame(width: 600, height: 400)
 }

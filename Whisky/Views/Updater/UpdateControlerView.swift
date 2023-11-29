@@ -29,6 +29,8 @@ struct UpdateControlerView: View {
     @State var showCheckingForUpdates = false
     @State var cancelCheckingForUpdates: (() -> Void)?
     @State var showUpdatePreview = false
+    @State var previewNextVersion: String = ""
+    @State var previewMarkdown: String = ""
     @State var updateUltimatum: ((Bool) -> Void)?
     @State var showUpdater = false
     @State var updateState: UpdateState = .initializating
@@ -48,14 +50,14 @@ struct UpdateControlerView: View {
                     .interactiveDismissDisabled()
             })
              .sheet(isPresented: $showUpdatePreview, content: {
-                UpdatePreviewView(dismiss: {
-                    showUpdatePreview = false
-                    updateUltimatum?(false)
-                    updateUltimatum = .none
-                }, install: {
-                    updateUltimatum?(true)
-                    updateUltimatum = .none
-                })
+                 UpdatePreviewView(dismiss: {
+                     showUpdatePreview = false
+                     updateUltimatum?(false)
+                     updateUltimatum = .none
+                 }, install: {
+                     updateUltimatum?(true)
+                     updateUltimatum = .none
+                 }, markdownText: $previewMarkdown, nextVersion: $previewNextVersion)
                     .interactiveDismissDisabled()
                     .frame(width: 600, height: 400)
             })
@@ -82,18 +84,19 @@ struct UpdateControlerView: View {
                     }
                     showCheckingForUpdates = true
                 }
-                SparkleUpdaterEvents.shared.updateFound = { _, _, reply in
+                SparkleUpdaterEvents.shared.updateFound = { appcastItem, _, reply in
                     showCheckingForUpdates = false
                     showUpdater = false
                     showUpdatePreview = false
                     updateUltimatum = { option in
                         if option {
-
                             reply(.install)
                         } else {
                             reply(.dismiss)
                         }
                     }
+                    previewNextVersion = appcastItem.displayVersionString
+                    previewMarkdown = appcastItem.itemDescription ?? String(localized: "update.noChangeLog")
                     showUpdatePreview = true
                 }
                 SparkleUpdaterEvents.shared.updateDismiss = {
@@ -172,7 +175,6 @@ struct UpdateControlerView: View {
                     task.launch()
                     // Relaunch
                     relaunch(.install)
-                    NSApp.terminate(nil)
                     exit(0)
                 }
             }
@@ -268,7 +270,7 @@ struct UpdateInstallingView: View {
         .frame(alignment: .leading)
         .onChange(of: downloadedBytes) {
             let currentTime = Date()
-            let elapsedTime = currentTime.timeIntervalSince(downloadStatedAt ?? currentTime)
+            let elapsedTime = currentTime.timeIntervalSince(downloadStatedAt)
             if downloadedBytes > 0 {
                 downloadSpeed = Double(downloadedBytes) / elapsedTime
             }
