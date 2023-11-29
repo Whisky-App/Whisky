@@ -256,6 +256,12 @@
             "state" : "translated",
             "value" : "Cancel"
           }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "取消"
+          }
         }
       }
     },
@@ -14738,6 +14744,12 @@
             "state" : "translated",
             "value" : "Downloading Update..."
           }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "正在下载更新..."
+          }
         }
       }
     },
@@ -14748,6 +14760,12 @@
             "state" : "translated",
             "value" : "Update Error!"
           }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "更新错误！"
+          }
         }
       }
     },
@@ -14757,6 +14775,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Extracting Files..."
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "正在解压文件..."
           }
         }
       }
@@ -15098,6 +15122,12 @@
             "state" : "translated",
             "value" : "Initializing..."
           }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "处理中..."
+          }
         }
       }
     },
@@ -15107,6 +15137,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Finishing Up..."
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "马上就完成..."
           }
         }
       }
@@ -15118,6 +15154,12 @@
             "state" : "translated",
             "value" : "No Updates Available"
           }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "没有更新"
+          }
         }
       }
     },
@@ -15128,25 +15170,11 @@
             "state" : "translated",
             "value" : "No updates are available. You are on the latest version of Whisky."
           }
-        }
-      }
-    },
-    "update.readyRelaunch" : {
-      "localizations" : {
-        "en" : {
+        },
+        "zh-Hans" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Update Complete!"
-          }
-        }
-      }
-    },
-    "update.readyRelaunch.description" : {
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Update Complete! Press \"OK\" to relaunch."
+            "value" : "没有更新了。你在用 Whisky 最新的版本。"
           }
         }
       }
