@@ -16375,8 +16375,8 @@
         },
         "ru" : {
           "stringUnit" : {
-            "state" : "needs_review",
-            "value" : "Command"
+            "state" : "translated",
+            "value" : "Команда"
           }
         },
         "tr" : {
