@@ -1027,8 +1027,8 @@
         },
         "ru" : {
           "stringUnit" : {
-            "state" : "needs_review",
-            "value" : "Pin"
+            "state" : "translated",
+            "value" : "Закрепить"
           }
         },
         "tr" : {
@@ -2325,8 +2325,8 @@
         },
         "ru" : {
           "stringUnit" : {
-            "state" : "needs_review",
-            "value" : "Unpin"
+            "state" : "translated",
+            "value" : "Открепить"
           }
         },
         "tr" : {
@@ -4095,8 +4095,8 @@
         },
         "ru" : {
           "stringUnit" : {
-            "state" : "needs_review",
-            "value" : "Enhanced Sync"
+            "state" : "translated",
+            "value" : "Улучшенная синхронизация"
           }
         },
         "tr" : {
@@ -4213,8 +4213,8 @@
         },
         "ru" : {
           "stringUnit" : {
-            "state" : "needs_review",
-            "value" : "None"
+            "state" : "translated",
+            "value" : "Не задана"
           }
         },
         "tr" : {
@@ -7045,8 +7045,8 @@
         },
         "ru" : {
           "stringUnit" : {
-            "state" : "needs_review",
-            "value" : "Add"
+            "state" : "translated",
+            "value" : "Добавить"
           }
         },
         "tr" : {
@@ -7163,8 +7163,8 @@
         },
         "ru" : {
           "stringUnit" : {
-            "state" : "needs_review",
-            "value" : "Remove"
+            "state" : "translated",
+            "value" : "Удалить"
           }
         },
         "tr" : {
@@ -7517,8 +7517,8 @@
         },
         "ru" : {
           "stringUnit" : {
-            "state" : "needs_review",
-            "value" : "Website"
+            "state" : "translated",
+            "value" : "Сайт"
           }
         },
         "tr" : {
@@ -8580,8 +8580,8 @@
         },
         "ru" : {
           "stringUnit" : {
-            "state" : "needs_review",
-            "value" : "Pin"
+            "state" : "translated",
+            "value" : "Закрепить"
           }
         },
         "tr" : {
@@ -8699,8 +8699,8 @@
         },
         "ru" : {
           "stringUnit" : {
-            "state" : "needs_review",
-            "value" : "\"%@\" is already pinned!"
+            "state" : "translated",
+            "value" : "\"%@\" уже закреплен!"
           }
         },
         "tr" : {
@@ -8817,8 +8817,8 @@
         },
         "ru" : {
           "stringUnit" : {
-            "state" : "needs_review",
-            "value" : "Error Pinning Program"
+            "state" : "translated",
+            "value" : "Произошла ошибка при закреплении программы"
           }
         },
         "tr" : {
@@ -8935,8 +8935,8 @@
         },
         "ru" : {
           "stringUnit" : {
-            "state" : "needs_review",
-            "value" : "Pin Program"
+            "state" : "translated",
+            "value" : "Закрепление программы"
           }
         },
         "tr" : {
@@ -9053,7 +9053,7 @@
         },
         "ru" : {
           "stringUnit" : {
-            "state" : "needs_review",
+            "state" : "translated",
             "value" : "Pin name:"
           }
         },
@@ -9171,8 +9171,8 @@
         },
         "ru" : {
           "stringUnit" : {
-            "state" : "needs_review",
-            "value" : "Program path:"
+            "state" : "translated",
+            "value" : "Путь к программе:"
           }
         },
         "tr" : {
@@ -9289,8 +9289,8 @@
         },
         "ru" : {
           "stringUnit" : {
-            "state" : "needs_review",
-            "value" : "Pin Program"
+            "state" : "translated",
+            "value" : "Закрепить программу"
           }
         },
         "tr" : {
@@ -9525,8 +9525,8 @@
         },
         "ru" : {
           "stringUnit" : {
-            "state" : "needs_review",
-            "value" : "Add Selected to Blocklist"
+            "state" : "translated",
+            "value" : "Добавить выделенное в черный список"
           }
         },
         "tr" : {
@@ -10233,8 +10233,8 @@
         },
         "ru" : {
           "stringUnit" : {
-            "state" : "needs_review",
-            "value" : "Remove Selected from Blocklist"
+            "state" : "translated",
+            "value" : "Убрать выделенное из черного списка"
           }
         },
         "tr" : {
@@ -10351,8 +10351,8 @@
         },
         "ru" : {
           "stringUnit" : {
-            "state" : "needs_review",
-            "value" : "Settings"
+            "state" : "translated",
+            "value" : "Настройки"
           }
         },
         "tr" : {
@@ -11295,8 +11295,8 @@
         },
         "ru" : {
           "stringUnit" : {
-            "state" : "needs_review",
-            "value" : "General"
+            "state" : "translated",
+            "value" : "Основные"
           }
         },
         "tr" : {
@@ -11413,8 +11413,8 @@
         },
         "ru" : {
           "stringUnit" : {
-            "state" : "needs_review",
-            "value" : "Automatically check for GPTK updates"
+            "state" : "translated",
+            "value" : "Автоматически проверять на наличие обновлений GPTK"
           }
         },
         "tr" : {
@@ -11531,8 +11531,8 @@
         },
         "ru" : {
           "stringUnit" : {
-            "state" : "needs_review",
-            "value" : "Terminate Wine processes when Whisky closes"
+            "state" : "translated",
+            "value" : "Закрывать процессы Wine при закрытии Whisky"
           }
         },
         "tr" : {
@@ -11649,8 +11649,8 @@
         },
         "ru" : {
           "stringUnit" : {
-            "state" : "needs_review",
-            "value" : "Automatically check for Whisky updates"
+            "state" : "translated",
+            "value" : "Автоматически проверять на наличие обновлений Whisky"
           }
         },
         "tr" : {
@@ -11767,8 +11767,8 @@
         },
         "ru" : {
           "stringUnit" : {
-            "state" : "needs_review",
-            "value" : "Updates"
+            "state" : "translated",
+            "value" : "Обновления"
           }
         },
         "tr" : {
@@ -13301,8 +13301,8 @@
         },
         "ru" : {
           "stringUnit" : {
-            "state" : "needs_review",
-            "value" : "Retry"
+            "state" : "translated",
+            "value" : "Повторить"
           }
         },
         "tr" : {
@@ -13537,8 +13537,8 @@
         },
         "ru" : {
           "stringUnit" : {
-            "state" : "needs_review",
-            "value" : "Rosetta 2 installation failed. Please install it manually."
+            "state" : "translated",
+            "value" : "Установка Rosetta 2 завершилась с ошибкой. Пожалуйста, выполните установку вручную."
           }
         },
         "tr" : {
@@ -15544,8 +15544,8 @@
         },
         "ru" : {
           "stringUnit" : {
-            "state" : "needs_review",
-            "value" : "Apps"
+            "state" : "translated",
+            "value" : "Приложения"
           }
         },
         "tr" : {
@@ -15663,8 +15663,8 @@
         },
         "ru" : {
           "stringUnit" : {
-            "state" : "needs_review",
-            "value" : "Benchmarks"
+            "state" : "translated",
+            "value" : "Тесты производительности"
           }
         },
         "tr" : {
@@ -15782,8 +15782,8 @@
         },
         "ru" : {
           "stringUnit" : {
-            "state" : "needs_review",
-            "value" : "DLLs"
+            "state" : "translated",
+            "value" : "Библиотеки"
           }
         },
         "tr" : {
@@ -15901,8 +15901,8 @@
         },
         "ru" : {
           "stringUnit" : {
-            "state" : "needs_review",
-            "value" : "Fonts"
+            "state" : "translated",
+            "value" : "Шрифты"
           }
         },
         "tr" : {
@@ -16020,8 +16020,8 @@
         },
         "ru" : {
           "stringUnit" : {
-            "state" : "needs_review",
-            "value" : "Games"
+            "state" : "translated",
+            "value" : "Игры"
           }
         },
         "tr" : {
@@ -16139,8 +16139,8 @@
         },
         "ru" : {
           "stringUnit" : {
-            "state" : "needs_review",
-            "value" : "Settings"
+            "state" : "translated",
+            "value" : "Настройки"
           }
         },
         "tr" : {
@@ -16257,8 +16257,8 @@
         },
         "ru" : {
           "stringUnit" : {
-            "state" : "needs_review",
-            "value" : "Description"
+            "state" : "translated",
+            "value" : "Описание"
           }
         },
         "tr" : {
