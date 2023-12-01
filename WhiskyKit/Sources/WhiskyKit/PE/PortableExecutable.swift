@@ -17,7 +17,9 @@
 //
 
 import Foundation
+#if canImport(AppKit)
 import AppKit
+#endif
 
 public struct PEError: Error {
     public let message: String
@@ -25,228 +27,9 @@ public struct PEError: Error {
     static let invalidPEFile = PEError(message: "Invalid PE file")
 }
 
-public struct PESection: Hashable {
-    public let name: String
-    public let virtualSize: UInt32
-    public let virtualAddress: UInt32
-    public let sizeOfRawData: UInt32
-    public let pointerToRawData: UInt32
-    public let pointerToRelocations: UInt32
-    public let pointerToLineNumbers: UInt32
-    public let numberOfRelocations: UInt16
-    public let numberOfLineNumbers: UInt16
-    public let characteristics: UInt32
-    // public let data: Data?
-
-    init?(handle: FileHandle, offset: Int) throws {
-        var offset = offset
-        try handle.seek(toOffset: UInt64(offset))
-        if let nameData = try handle.read(upToCount: 8) {
-            self.name = String(data: nameData, encoding: .utf8) ?? ""
-        } else {
-            self.name = ""
-        }
-        offset += 8
-        self.virtualSize = handle.extract(UInt32.self, offset: offset) ?? 0
-        offset += 4
-        self.virtualAddress = handle.extract(UInt32.self, offset: offset) ?? 0
-        offset += 4
-        self.sizeOfRawData = handle.extract(UInt32.self, offset: offset) ?? 0
-        offset += 4
-        self.pointerToRawData = handle.extract(UInt32.self, offset: offset) ?? 0
-        offset += 4
-        self.pointerToRelocations = handle.extract(UInt32.self, offset: offset) ?? 0
-        offset += 4
-        self.pointerToLineNumbers = handle.extract(UInt32.self, offset: offset) ?? 0
-        offset += 4
-        self.numberOfRelocations = handle.extract(UInt16.self, offset: offset) ?? 0
-        offset += 2
-        self.numberOfLineNumbers = handle.extract(UInt16.self, offset: offset) ?? 0
-        offset += 2
-        self.characteristics = handle.extract(UInt32.self, offset: offset) ?? 0
-        offset += 4
-//        if sizeOfRawData > 0 {
-//            let dataOffset = Int(pointerToRawData)
-//            self.data = data.subdata(in: dataOffset..<dataOffset+Int(sizeOfRawData))
-//        } else {
-//            self.data = nil
-//        }
-    }
-}
-
-public struct SectionTable: Hashable {
-    public let sections: [PESection]
-
-    init(handle: FileHandle, offset: Int, numberOfSections: Int) {
-        var sections = [PESection]()
-        var offset = offset
-        for _ in 0..<numberOfSections {
-            do {
-                if let section = try PESection(handle: handle, offset: offset) {
-                    sections.append(section)
-                }
-            } catch {
-                print("Failed to get section name!")
-            }
-            offset += 40
-        }
-        self.sections = sections
-    }
-}
-
-public struct COFFFileHeader: Hashable {
-    public let machine: UInt16
-    public let numberOfSections: UInt16
-    public let timeDateStamp: UInt32
-    public let pointerToSymbolTable: UInt32
-    public let numberOfSymbols: UInt32
-    public let sizeOfOptionalHeader: UInt16
-    public let characteristics: UInt16
-    public let sectionTable: SectionTable
-    public let optionalHeader: OptionalHeader
-
-    init(handle: FileHandle) throws {
-        var offset = 0x3C
-        let peOffset = handle.extract(UInt32.self, offset: offset) ?? 0
-        offset = Int(peOffset)
-
-        offset += 4
-        let machine = handle.extract(UInt16.self, offset: offset) ?? 0
-        offset += 2
-
-        let numberOfSections = handle.extract(UInt16.self, offset: offset) ?? 0
-        offset += 2
-
-        let timeDateStamp = handle.extract(UInt32.self, offset: offset) ?? 0
-        offset += 4
-
-        let pointerToSymbolTable = handle.extract(UInt32.self, offset: offset) ?? 0
-        offset += 4
-
-        let numberOfSymbols = handle.extract(UInt32.self, offset: offset) ?? 0
-        offset += 4
-
-        let sizeOfOptionalHeader = handle.extract(UInt16.self, offset: offset) ?? 0
-        offset += 2
-
-        let characteristics = handle.extract(UInt16.self, offset: offset) ?? 0
-        offset += 2
-
-        self.machine = machine
-        self.numberOfSections = numberOfSections
-        self.timeDateStamp = timeDateStamp
-        self.pointerToSymbolTable = pointerToSymbolTable
-        self.numberOfSymbols = numberOfSymbols
-        self.sizeOfOptionalHeader = sizeOfOptionalHeader
-        self.characteristics = characteristics
-
-        self.optionalHeader = OptionalHeader(handle: handle, offset: offset)
-        offset += Int(sizeOfOptionalHeader)
-
-        self.sectionTable = SectionTable(handle: handle, offset: offset, numberOfSections: Int(numberOfSections))
-    }
-}
-
-public struct OptionalHeader: Hashable {
-    public let magic: UInt16
-    public let majorLinkerVersion: UInt8
-    public let minorLinkerVersion: UInt8
-    public let sizeOfCode: UInt32
-    public let sizeOfInitializedData: UInt32
-    public let sizeOfUninitializedData: UInt32
-    public let addressOfEntryPoint: UInt32
-    public let baseOfCode: UInt32
-    public let baseOfData: UInt32
-    public let imageBase: UInt32
-    public let sectionAlignment: UInt32
-    public let fileAlignment: UInt32
-    public let majorOperatingSystemVersion: UInt16
-    public let minorOperatingSystemVersion: UInt16
-    public let majorImageVersion: UInt16
-    public let minorImageVersion: UInt16
-    public let majorSubsystemVersion: UInt16
-    public let minorSubsystemVersion: UInt16
-    public let win32VersionValue: UInt32
-    public let sizeOfImage: UInt32
-    public let sizeOfHeaders: UInt32
-    public let checkSum: UInt32
-    public let subsystem: UInt16
-    public let dllCharacteristics: UInt16
-    public let sizeOfStackReserve: UInt32
-    public let sizeOfStackCommit: UInt32
-    public let sizeOfHeapReserve: UInt32
-    public let sizeOfHeapCommit: UInt32
-    public let loaderFlags: UInt32
-    public let numberOfRvaAndSizes: UInt32
-
-    // swiftlint:disable:next function_body_length
-    init(handle: FileHandle, offset: Int) {
-        var offset = offset
-        self.magic = handle.extract(UInt16.self, offset: offset) ?? 0
-        offset += 2
-        self.majorLinkerVersion = handle.extract(UInt8.self, offset: offset) ?? 0
-        offset += 1
-        self.minorLinkerVersion = handle.extract(UInt8.self, offset: offset) ?? 0
-        offset += 1
-        self.sizeOfCode = handle.extract(UInt32.self, offset: offset) ?? 0
-        offset += 4
-        self.sizeOfInitializedData = handle.extract(UInt32.self, offset: offset) ?? 0
-        offset += 4
-        self.sizeOfUninitializedData = handle.extract(UInt32.self, offset: offset) ?? 0
-        offset += 4
-        self.addressOfEntryPoint = handle.extract(UInt32.self, offset: offset) ?? 0
-        offset += 4
-        self.baseOfCode = handle.extract(UInt32.self, offset: offset) ?? 0
-        offset += 4
-        self.baseOfData = handle.extract(UInt32.self, offset: offset) ?? 0
-        offset += 4
-        self.imageBase = handle.extract(UInt32.self, offset: offset) ?? 0
-        offset += 4
-        self.sectionAlignment = handle.extract(UInt32.self, offset: offset) ?? 0
-        offset += 4
-        self.fileAlignment = handle.extract(UInt32.self, offset: offset) ?? 0
-        offset += 4
-        self.majorOperatingSystemVersion = handle.extract(UInt16.self, offset: offset) ?? 0
-        offset += 2
-        self.minorOperatingSystemVersion = handle.extract(UInt16.self, offset: offset) ?? 0
-        offset += 2
-        self.majorImageVersion = handle.extract(UInt16.self, offset: offset) ?? 0
-        offset += 2
-        self.minorImageVersion = handle.extract(UInt16.self, offset: offset) ?? 0
-        offset += 2
-        self.majorSubsystemVersion = handle.extract(UInt16.self, offset: offset) ?? 0
-        offset += 2
-        self.minorSubsystemVersion = handle.extract(UInt16.self, offset: offset) ?? 0
-        offset += 2
-        self.win32VersionValue = handle.extract(UInt32.self, offset: offset) ?? 0
-        offset += 4
-        self.sizeOfImage = handle.extract(UInt32.self, offset: offset) ?? 0
-        offset += 4
-        self.sizeOfHeaders = handle.extract(UInt32.self, offset: offset) ?? 0
-        offset += 4
-        self.checkSum = handle.extract(UInt32.self, offset: offset) ?? 0
-        offset += 4
-        self.subsystem = handle.extract(UInt16.self, offset: offset) ?? 0
-        offset += 2
-        self.dllCharacteristics = handle.extract(UInt16.self, offset: offset) ?? 0
-        offset += 2
-        self.sizeOfStackReserve = handle.extract(UInt32.self, offset: offset) ?? 0
-        offset += 4
-        self.sizeOfStackCommit = handle.extract(UInt32.self, offset: offset) ?? 0
-        offset += 4
-        self.sizeOfHeapReserve = handle.extract(UInt32.self, offset: offset) ?? 0
-        offset += 4
-        self.sizeOfHeapCommit = handle.extract(UInt32.self, offset: offset) ?? 0
-        offset += 4
-        self.loaderFlags = handle.extract(UInt32.self, offset: offset) ?? 0
-        offset += 4
-        self.numberOfRvaAndSizes = handle.extract(UInt32.self, offset: offset) ?? 0
-    }
-}
-
-public enum Architecture: UInt16, Hashable {
-    case x32 = 0x010b
-    case x64 = 0x020b
+public enum Architecture: Hashable {
+    case x32
+    case x64
     case unknown
 
     public func toString() -> String? {
@@ -261,47 +44,149 @@ public enum Architecture: UInt16, Hashable {
     }
 }
 
-public struct PEFile: Hashable {
+/// Microsoft Portable Executable
+///
+/// https://learn.microsoft.com/en-us/windows/win32/debug/pe-format
+public struct PEFile: Hashable, Equatable {
+    /// URL to the file
+    public let url: URL
+    /// COFF File Header (Object and Image)
     public let coffFileHeader: COFFFileHeader
-    public var resourceSection: ResourceSection? {
-        do {
-            return try ResourceSection(handle: handle,
-                                       sectionTable: coffFileHeader.sectionTable,
-                                       imageBase: coffFileHeader.optionalHeader.imageBase)
-        } catch {
+    /// The Optional Header
+    public let optionalHeader: OptionalHeader?
+    /// The Section Table (Section Headers)
+    public let sections: [Section]
+
+    public init?(url: URL?) throws {
+        guard let url else { return nil }
+        try self.init(url: url)
+    }
+
+    public init(url: URL) throws {
+        self.url = url
+        let fileHandle = try FileHandle(forReadingFrom: url)
+        defer {
+            try? fileHandle.close()
+        }
+
+        // (0x3C) Pointer to PE Header
+        guard let peOffset = fileHandle.extract(UInt32.self, offset: 0x3C) else {
+            throw PEError.invalidPEFile
+        }
+        var offset = UInt64(peOffset)
+        guard let peHeader = fileHandle.extract(UInt32.self, offset: offset) else {
+            throw PEError.invalidPEFile
+        }
+        // Check signature ("PE\0\0")
+        guard peHeader.bigEndian == 0x50450000 else {
+            throw PEError.invalidPEFile
+        }
+
+        let coffFileHeader = COFFFileHeader(handle: fileHandle, offset: offset)
+        offset += 24 // Size of COFFHeader
+        self.coffFileHeader = coffFileHeader
+
+        if coffFileHeader.sizeOfOptionalHeader > 0 {
+            self.optionalHeader = OptionalHeader(handle: fileHandle, offset: offset)
+            offset += UInt64(coffFileHeader.sizeOfOptionalHeader)
+        } else {
+            self.optionalHeader = nil
+        }
+
+        var sections: [Section] = []
+        for _ in 0..<coffFileHeader.numberOfSections {
+            if let section = Section(handle: fileHandle, offset: offset) {
+                sections.append(section)
+            }
+            offset += 40 // Size of Section
+        }
+        self.sections = sections
+    }
+
+    /// The ``Architecture`` of the executable
+    public var architecture: Architecture {
+        switch optionalHeader?.magic {
+        case .pe32:
+            return .x32
+        case .pe32Plus:
+            return .x64
+        default:
+            return .unknown
+        }
+    }
+
+    /// Read the resource section
+    /// 
+    /// - Parameters:
+    ///   - handle: The `FileHandle` to read the resource table section from.
+    ///   - types: Only read entrys of the given types. Only applies to the root table. Default includes all types.
+    /// - Returns: The resource table section
+    private func rsrc(handle: FileHandle, types: [ResourceType] = ResourceType.allCases) -> ResourceDirectoryTable? {
+        if let resourceSection = sections.first(where: { $0.name == ".rsrc" }) {
+            return ResourceDirectoryTable(
+                handle: handle,
+                pointerToRawData: UInt64(resourceSection.pointerToRawData),
+                types: types
+            )
+        } else {
             return nil
         }
     }
-    public var architecture: Architecture {
-        Architecture(rawValue: coffFileHeader.optionalHeader.magic) ?? .unknown
-    }
-    private let handle: FileHandle
 
-    public init(url: URL) throws {
-        self.handle = try FileHandle(forReadingFrom: url)
-        // Verify it is a PE file by checking for the PE header
-        let offsetToPEHeader = handle.extract(UInt32.self, offset: 0x3C) ?? 0
-        let peHeader = handle.extract(UInt32.self, offset: Int(offsetToPEHeader))
-        guard peHeader == 0x4550 else {
-            throw PEError.invalidPEFile
+    /// The Resource Directory Table
+    public var rsrc: ResourceDirectoryTable? {
+        guard let handle = try? FileHandle(forReadingFrom: url) else {
+            return nil
         }
-        coffFileHeader = try COFFFileHeader(handle: handle)
+        defer {
+            try? handle.close()
+        }
+
+        return rsrc(handle: handle)
     }
 
+    #if canImport(AppKit)
+    /// The best icon for this executable
+    /// - Returns: An `NSImage` if there is a renderable icon in the resource directory table
     public func bestIcon() -> NSImage? {
-        var icons: [NSImage] = []
-        if let resourceSection = resourceSection {
-            for entries in resourceSection.allEntries where entries.icon.isValid {
-                icons.append(entries.icon)
+        guard let handle = try? FileHandle(forReadingFrom: url) else {
+            return nil
+        }
+        defer {
+            try? handle.close()
+        }
+
+        guard let rsrc = rsrc(handle: handle, types: [.icon]) else { return nil }
+        let icons = rsrc.allEntries
+            .compactMap { entry -> NSImage? in
+                guard let offset = entry.resolveRVA(sections: sections) else { return nil }
+                let bitmapInfo = BitmapInfoHeader(handle: handle, offset: UInt64(offset))
+                if bitmapInfo.size != 40 {
+                    do {
+                        try handle.seek(toOffset: UInt64(offset))
+                        if let iconData = try handle.read(upToCount: Int(entry.size)) {
+                            if let rep = NSBitmapImageRep(data: iconData) {
+                                let image =  NSImage(size: rep.size)
+                                image.addRepresentation(rep)
+                                return image
+                            }
+                        }
+                    } catch {
+                        print("Failed to get icon")
+                    }
+                } else if bitmapInfo.colorFormat != .unknown {
+                    return bitmapInfo.renderBitmap(handle: handle, offset: UInt64(offset + bitmapInfo.size))
+                }
+
+                return nil
             }
-        } else {
-            print("No resource section")
-        }
+            .filter { $0.isValid }
 
-        if icons.count > 0 {
+        if !icons.isEmpty {
             return icons.max(by: { $0.size.height < $1.size.height })
+        } else {
+            return NSImage()
         }
-
-        return NSImage()
     }
+    #endif
 }

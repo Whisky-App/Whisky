@@ -35,7 +35,7 @@ public struct BitmapInfoHeader: Hashable {
     public let originDirection: BitmapOriginDirection
     public let colorFormat: ColorFormat
 
-    init(handle: FileHandle, offset: Int) {
+    init(handle: FileHandle, offset: UInt64) {
         var offset = offset
         self.size = handle.extract(UInt32.self, offset: offset) ?? 0
         offset += 4
@@ -65,7 +65,7 @@ public struct BitmapInfoHeader: Hashable {
     }
 
     // swiftlint:disable:next cyclomatic_complexity function_body_length
-    func renderBitmap(handle: FileHandle, offset: Int) -> NSImage {
+    func renderBitmap(handle: FileHandle, offset: UInt64) -> NSImage? {
         var offset = offset
         let colorTable = buildColorTable(offset: &offset, handle: handle)
 
@@ -147,7 +147,7 @@ public struct BitmapInfoHeader: Hashable {
         return constructImage(pixels: pixels)
     }
 
-    func buildColorTable(offset: inout Int, handle: FileHandle) -> [ColorQuad] {
+    func buildColorTable(offset: inout UInt64, handle: FileHandle) -> [ColorQuad] {
         var colorTable: [ColorQuad] = []
 
         for _ in 0..<clrUsed {
@@ -167,10 +167,10 @@ public struct BitmapInfoHeader: Hashable {
         return colorTable
     }
 
-    func constructImage(pixels: [ColorQuad]) -> NSImage {
+    func constructImage(pixels: [ColorQuad]) -> NSImage? {
         var pixels = pixels
 
-        if pixels.count > 0 {
+        if !pixels.isEmpty {
             let bitmapInfo = CGBitmapInfo(rawValue: CGImageAlphaInfo.last.rawValue)
             let quadStride = MemoryLayout<ColorQuad>.stride
 
@@ -192,7 +192,7 @@ public struct BitmapInfoHeader: Hashable {
             }
         }
 
-        return NSImage()
+        return nil
     }
 }
 
