@@ -22,7 +22,7 @@ import UniformTypeIdentifiers
 
 struct ProgramView: View {
     @ObservedObject var program: Program
-    @State var image: NSImage?
+    @State var image: Image?
     @State var programLoading: Bool = false
     @AppStorage("configSectionExapnded") private var configSectionExpanded: Bool = true
 
@@ -94,7 +94,7 @@ struct ProgramView: View {
             ToolbarItem(placement: .navigation) {
                 Group {
                     if let icon = image {
-                        Image(nsImage: icon)
+                        icon
                             .resizable()
                             .frame(width: 25, height: 25)
                     } else {
@@ -106,10 +106,13 @@ struct ProgramView: View {
                 .padding(.trailing, 5)
             }
         }
-        .onAppear {
-            if let peFile = program.peFile {
-                image = peFile.bestIcon()
+        .task {
+            guard let peFile = program.peFile else { return }
+            let task = Task<Image?, Never>.detached {
+                guard let image = peFile.bestIcon() else { return nil }
+                return Image(nsImage: image)
             }
+            self.image = await task.value
         }
     }
 }
