@@ -26,8 +26,6 @@ struct ContentView: View {
     @AppStorage("selectedBottleURL") private var selectedBottleURL: URL?
     @EnvironmentObject var bottleVM: BottleVM
 
-    let updater: SPUUpdater?
-
     @Binding var showSetup: Bool
     @State var selected: URL?
     @State var showBottleCreation: Bool = false
@@ -39,9 +37,6 @@ struct ContentView: View {
     @State private var refreshAnimation: Angle = .degrees(0)
 
     var body: some View {
-        if let updater {
-            UpdateControlerView(updater: updater)
-        }
         NavigationSplitView {
             ScrollViewReader { proxy in
                 List(selection: $selected) {
@@ -291,6 +286,6 @@ struct BottleListEntry: View {
 }
 
 #Preview {
-    ContentView(updater: .none, showSetup: .constant(false))
+    ContentView(showSetup: .constant(false))
         .environmentObject(BottleVM.shared)
 }

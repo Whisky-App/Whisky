@@ -19,115 +19,231 @@
 import Foundation
 import Sparkle
 
-class SparkleUpdaterEvents: NSObject, SPUUserDriver {
+class SparkleUpdaterEvents: NSObject, SPUUserDriver, ObservableObject {
     static let shared = SparkleUpdaterEvents()
 
-    var checkingForUpdates: ((@escaping () -> Void) -> Void)?
-    var updateFound: ((SUAppcastItem, SPUUserUpdateState, @escaping (SPUUserUpdateChoice) -> Void) -> Void)?
-    var update: ((SPUDownloadData) -> Void)?
-    var updateError: ((NSError) -> Void)?
-    var updateDownloadState: (() -> Void)?
-    var updateExtractState: (() -> Void)?
-    var updateInstallState: (() -> Void)?
-    var updateReadyRelaunch: ((@escaping (SPUUserUpdateChoice) -> Void) -> Void)?
-    var updateDismiss: (() -> Void)?
-
-    var expectedContentLength: Double = 0
-    var receivedContentLength: Double = 0
-
-    var extractProgress: Double = 0
+    enum UpdaterState {
+        case idle, error, checking, updateFound, updateNotFound, initializing,
+             downloading, extracting, installing, readyToRelaunch
+    }
 
     enum UpdateOption {
         case install, dismiss
     }
 
-    func show(_ request: SPUUpdatePermissionRequest) async -> SUUpdatePermissionResponse {
+    @Published var state: UpdaterState = .idle
+    @Published var downloadBytesTotal: Double = 0
+    @Published var downloadBytesReceived: Double = 0
+    @Published var extractProgress: Double = 0
+
+    // Errors
+    var errorData: NSError?
+    private var errorAcknowledgementCallback: (() -> Void)?
+
+    // Checking for updates
+    private var checkingForUpdatesCancellationCallback: (() -> Void)?
+
+    // Update found
+    var appcastItem: SUAppcastItem?
+    private var updateFoundActionCallback: ((SPUUserUpdateChoice) -> Void)?
+
+    // Downloading
+    var downloadStartedAt: Date?
+    private var downloadingCancellationCallback: (() -> Void)?
+
+    // Ready to relaunch
+    private var updateReadyRelaunchCallback: ((SPUUserUpdateChoice) -> Void)?
+
+    /// Clear all callbacks
+    private func clearCallbacks() {
+        self.checkingForUpdatesCancellationCallback = .none
+        self.updateFoundActionCallback = .none
+        self.downloadingCancellationCallback = .none
+        self.updateReadyRelaunchCallback = .none
+    }
+
+    /// Implementation of `SPUUserDriver` protocol
+    internal func show(_ request: SPUUpdatePermissionRequest) async -> SUUpdatePermissionResponse {
         return .init(
             automaticUpdateChecks: false,
             sendSystemProfile: false
         )
     }
 
-    func showUserInitiatedUpdateCheck(cancellation: @escaping () -> Void) {
-        checkingForUpdates?(cancellation)
+    /// Implementation of `SPUUserDriver` protocol
+    internal func showUserInitiatedUpdateCheck(cancellation: @escaping () -> Void) {
+        state = .checking
+        self.checkingForUpdatesCancellationCallback = cancellation
     }
 
-    func showUpdateFound(
+    /// Cancel the update check
+    func cancelUpdateCheck() {
+        self.checkingForUpdatesCancellationCallback?()
+        clearCallbacks()
+        self.state = .idle
+    }
+
+    /// Implementation of `SPUUserDriver` protocol
+    internal func showUpdateFound(
         with appcastItem: SUAppcastItem,
         state: SPUUserUpdateState,
         reply: @escaping (SPUUserUpdateChoice) -> Void
     ) {
-        if let updateFound = updateFound {
-            updateFound(appcastItem, state, reply)
-        } else {
-            reply(.dismiss)
+        clearCallbacks()
+        self.appcastItem = appcastItem
+        self.updateFoundActionCallback = reply
+        self.state = .updateFound
+    }
+
+    /// Call to tell sparkle to download / dissmiss the update
+    func shouldUpdate(_ action: UpdateOption) {
+        guard let callback = self.updateFoundActionCallback else { return }
+        switch action {
+        case .install:
+            callback(.install)
+            self.state = .initializing
+        case .dismiss:
+            callback(.dismiss)
+            self.state = .idle
         }
+        // Reset callback
+        clearCallbacks()
     }
 
-    func showUpdateReleaseNotes(with downloadData: SPUDownloadData) {
-        update?(downloadData)
+    /// Implementation of `SPUUserDriver` protocol
+    internal func showUpdateReleaseNotes(with downloadData: SPUDownloadData) {
+        // Never needed
+        return
     }
 
-    func showUpdateReleaseNotesFailedToDownloadWithError(_ error: Error) {
-        updateError?(error as NSError)
+    /// Implementation of `SPUUserDriver` protocol
+    internal func showUpdateReleaseNotesFailedToDownloadWithError(_ error: Error) {
+        clearCallbacks()
+        self.errorData = error as NSError
+        self.state = .error
     }
 
-    func showUpdateNotFoundWithError(_ error: Error, acknowledgement: @escaping () -> Void) {
-        updateError?(error as NSError)
-
-        acknowledgement()
+    /// Implementation of `SPUUserDriver` protocol
+    internal func showUpdateNotFoundWithError(_ error: Error, acknowledgement: @escaping () -> Void) {
+        clearCallbacks()
+        self.errorData = error as NSError
+        self.errorAcknowledgementCallback = acknowledgement
+        self.state = .error
     }
 
-    func showUpdaterError(_ error: Error, acknowledgement: @escaping () -> Void) {
-        updateError?(error as NSError)
-
-        acknowledgement()
+    /// Implementation of `SPUUserDriver` protocol
+    internal func showUpdaterError(_ error: Error, acknowledgement: @escaping () -> Void) {
+        clearCallbacks()
+        self.errorData = error as NSError
+        self.errorAcknowledgementCallback = acknowledgement
+        self.state = .error
     }
 
-    func showDownloadInitiated(cancellation: @escaping () -> Void) {
-        updateDownloadState?()
+    /// Acknowledgement of the error
+    func errorAcknowledgement() {
+        self.errorAcknowledgementCallback?()
+        clearCallbacks()
+        self.errorData = .none
+        self.state = .idle
     }
 
-    func showDownloadDidReceiveExpectedContentLength(_ expectedContentLength: UInt64) {
-        self.expectedContentLength = Double(expectedContentLength)
-        updateDownloadState?()
+    /// Implementation of `SPUUserDriver` protocol
+    internal func showDownloadInitiated(cancellation: @escaping () -> Void) {
+        clearCallbacks()
+        self.downloadStartedAt = Date()
+        self.downloadingCancellationCallback = cancellation
+        self.state = .downloading
     }
 
-    func showDownloadDidReceiveData(ofLength length: UInt64) {
-        receivedContentLength += Double(length)
-        updateDownloadState?()
+    /// Cancel the download
+    func cancelDownload() {
+        self.downloadingCancellationCallback?()
+        // Reset download
+        clearCallbacks()
+        self.downloadBytesTotal = 0
+        self.downloadBytesReceived = 0
+        self.downloadStartedAt = .none
+        self.state = .idle
     }
 
-    func showDownloadDidStartExtractingUpdate() {
-        updateExtractState?()
+    /// Implementation of `SPUUserDriver` protocol
+    internal func showDownloadDidReceiveExpectedContentLength(_ expectedContentLength: UInt64) {
+        self.downloadBytesTotal = Double(expectedContentLength)
     }
 
-    func showExtractionReceivedProgress(_ progress: Double) {
-        extractProgress = progress
-        updateExtractState?()
+    /// Implementation of `SPUUserDriver` protocol
+    internal func showDownloadDidReceiveData(ofLength length: UInt64) {
+        self.downloadBytesReceived += Double(length)
     }
 
-    func showReady(toInstallAndRelaunch acknowledgement: @escaping (SPUUserUpdateChoice) -> Void) {
-        updateReadyRelaunch?(acknowledgement)
+    /// Implementation of `SPUUserDriver` protocol
+    internal func showDownloadDidStartExtractingUpdate() {
+        clearCallbacks()
+        // Reset download
+        self.downloadBytesTotal = 0
+        self.downloadBytesReceived = 0
+        self.downloadStartedAt = .none
+        self.state = .extracting
     }
 
-    func showInstallingUpdate(
+    /// Implementation of `SPUUserDriver` protocol
+    internal func showExtractionReceivedProgress(_ progress: Double) {
+        self.extractProgress = progress
+    }
+
+    /// Implementation of `SPUUserDriver` protocol
+    internal func showReady(toInstallAndRelaunch reply: @escaping (SPUUserUpdateChoice) -> Void) {
+        clearCallbacks()
+        self.updateReadyRelaunchCallback = reply
+        self.state = .readyToRelaunch
+    }
+
+    /// Call to tell sparkle to install the update
+    func relaunch(_ action: UpdateOption) {
+        guard let callback = self.updateReadyRelaunchCallback else { return }
+        switch action {
+        case .install:
+            callback(.install)
+            self.state = .installing
+        case .dismiss:
+            callback(.dismiss)
+            self.state = .idle
+        }
+        // Reset callback
+        clearCallbacks()
+    }
+
+    /// Implementation of `SPUUserDriver` protocol
+    internal func showInstallingUpdate(
         withApplicationTerminated applicationTerminated: Bool,
         retryTerminatingApplication: @escaping () -> Void
     ) {
-        updateInstallState?()
+        clearCallbacks()
+        // Reset extract
+        self.extractProgress = 0
+        self.state = .installing
     }
 
-    func showUpdateInstalledAndRelaunched(_ relaunched: Bool, acknowledgement: @escaping () -> Void) {
+    /// Implementation of `SPUUserDriver` protocol
+    internal func showUpdateInstalledAndRelaunched(_ relaunched: Bool, acknowledgement: @escaping () -> Void) {
+        clearCallbacks()
+        // Never used
         acknowledgement()
-    }
-
-    func showUpdateInFocus() {
         return
     }
 
-    func dismissUpdateInstallation() {
-        updateDismiss?()
+    /// Implementation of `SPUUserDriver` protocol
+    internal func showUpdateInFocus() {
+        // Never needed
         return
+    }
+
+    /// Implementation of `SPUUserDriver` protocol
+    internal func dismissUpdateInstallation() {
+        // If it is in the checking state, it means that there is no update available
+        if self.state == .checking {
+            clearCallbacks()
+            self.state = .updateNotFound
+        }
     }
 }

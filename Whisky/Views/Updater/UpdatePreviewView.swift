@@ -23,10 +23,10 @@ import MarkdownUI
 struct UpdatePreviewView: View {
     let dismiss: () -> Void
     let install: () -> Void
-    @Binding var markdownText: String
-    @Binding var nextVersion: String
+    let markdownText: String?
+    let nextVersion: String
 
-    let currentVersion = (Bundle.main.infoDictionary?["CFBundleShortVersionString"] as? String) ?? "(nil)"
+    private let currentVersion = (Bundle.main.infoDictionary?["CFBundleShortVersionString"] as? String) ?? "0.0.0"
 
     var body: some View {
         HStack {
@@ -36,7 +36,7 @@ struct UpdatePreviewView: View {
                     .fontWeight(.bold)
                 Text(String(format: String(localized: "update.description"),
                         "v" + currentVersion,
-                        nextVersion))
+                        "v" + nextVersion))
                 Spacer()
                 HStack {
                     Button("update.cancel") {
@@ -54,23 +54,22 @@ struct UpdatePreviewView: View {
             }
             .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .leading)
             .padding(20)
-            VStack {
-                ScrollView {
-                    VStack(alignment: .leading) {
-                        Text("update.changeLog")
-                            .font(.title2)
-                            .fontWeight(.bold)
-                            .padding(.bottom, 12)
-                    }
-                    .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .leading)
-                    Markdown {
-                        markdownText
-                    }
-                    .markdownTheme(.basic)
+            ScrollView {
+                VStack(alignment: .leading) {
+                    Text("update.changeLog")
+                        .font(.title2)
+                        .fontWeight(.bold)
+                        .padding(.bottom, 12)
                 }
                 .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .leading)
+                if let markdownText = markdownText {
+                    Markdown(markdownText)
+                        .padding(.bottom, 20)
+                } else {
+                    Text("update.noChangeLog")
+                }
             }
-            .frame(maxWidth: .infinity, maxHeight: .infinity)
+            .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .leading)
             .padding(20)
             .background(.ultraThickMaterial)
         }
@@ -79,6 +78,6 @@ struct UpdatePreviewView: View {
 }
 
 #Preview {
-    UpdatePreviewView(dismiss: {}, install: {}, markdownText: .constant("# Hello"), nextVersion: .constant("v1.0.0"))
-        .frame(width: 600, height: 400)
+    UpdatePreviewView(dismiss: {}, install: {}, markdownText: "# Hello", nextVersion: "v1.0.0")
+        .frame(width: 700, height: 400)
 }
