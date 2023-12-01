@@ -14678,7 +14678,23 @@
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Whisky is checking for updates...."
+            "value" : "Checking for updates..."
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "正在检查更新..."
+          }
+        }
+      }
+    },
+    "update.checkingForUpdates.description" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Whisky is checking for updates..."
           }
         },
         "zh-Hans" : {
@@ -14717,22 +14733,6 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "正在下载更新..."
-          }
-        }
-      }
-    },
-    "update.error" : {
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Update Error!"
-          }
-        },
-        "zh-Hans" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "更新错误！"
           }
         }
       }
@@ -15143,18 +15143,12 @@
         }
       }
     },
-    "update.noUpdateFound" : {
+    "update.noUpdatesFound" : {
       "localizations" : {
         "en" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "No Updates Available"
-          }
-        },
-        "pl" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Brak dostępnych aktualizacji"
           }
         },
         "zh-Hans" : {
@@ -15165,7 +15159,7 @@
         }
       }
     },
-    "update.noUpdateFound.description" : {
+    "update.noUpdatesFound.description" : {
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -15173,16 +15167,58 @@
             "value" : "No updates are available. You are on the latest version of Whisky."
           }
         },
-        "pl" : {
+        "zh-Hans" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Brak dostępnych aktualizacji. Posiadasz najnowszą wersję Whisky."
+            "value" : "没有更新了。你在用 Whisky 最新的版本。"
+          }
+        }
+      }
+    },
+    "update.readyToRelaunch" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Update Ready"
           }
         },
         "zh-Hans" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "没有更新了。你在用 Whisky 最新的版本。"
+            "value" : "更新已准备好"
+          }
+        }
+      }
+    },
+    "update.readyToRelaunch.description" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "The update is ready to be installed. Press \"Relaunch\" to install the update and relaunch Whisky."
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "更新已准备好安装。点击“重启”来安装更新并重启 Whisky。"
+          }
+        }
+      }
+    },
+    "update.relaunch" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Relaunch"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "重启"
           }
         }
       }
@@ -15227,6 +15263,22 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "下载更新"
+          }
+        }
+      }
+    },
+    "update.updaterError" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Update Error!"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "更新失败！"
           }
         }
       }

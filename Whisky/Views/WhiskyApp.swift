@@ -42,7 +42,8 @@ struct WhiskyApp: App {
 
     var body: some Scene {
         WindowGroup {
-            ContentView(updater: updaterController, showSetup: $showSetup)
+            ContentView(showSetup: $showSetup)
+                .updateController()
                 .frame(minWidth: 550, minHeight: 250)
                 .environmentObject(BottleVM.shared)
                 .onAppear {

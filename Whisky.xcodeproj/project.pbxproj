@@ -60,8 +60,9 @@
 		EB051A092B150F7100F5F5B7 /* UpdatePreviewView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB051A082B150F7100F5F5B7 /* UpdatePreviewView.swift */; };
 		EB051A0E2B16EA7E00F5F5B7 /* MarkdownUI in Frameworks */ = {isa = PBXBuildFile; productRef = EB051A0D2B16EA7E00F5F5B7 /* MarkdownUI */; };
 		EB051A102B1710A700F5F5B7 /* SparkleUpdaterEvents.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB051A0F2B1710A700F5F5B7 /* SparkleUpdaterEvents.swift */; };
-		EB051A132B17263300F5F5B7 /* UpdateControlerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB051A122B17263300F5F5B7 /* UpdateControlerView.swift */; };
+		EB051A132B17263300F5F5B7 /* UpdateControllerViewModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB051A122B17263300F5F5B7 /* UpdateControllerViewModifier.swift */; };
 		EB58FB552A499896002DC184 /* SemanticVersion in Frameworks */ = {isa = PBXBuildFile; productRef = EB58FB542A499896002DC184 /* SemanticVersion */; };
+		EBB21B662B198370000C3FA0 /* UpdateInstallingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBB21B652B198370000C3FA0 /* UpdateInstallingView.swift */; };
 		EEA5A2462A31DD65008274AE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEA5A2452A31DD65008274AE /* AppDelegate.swift */; };
 /* End PBXBuildFile section */
 
@@ -159,7 +160,8 @@
 		DB696FC72AFAE5DA0037EB2F /* PinCreationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PinCreationView.swift; sourceTree = "<group>"; };
 		EB051A082B150F7100F5F5B7 /* UpdatePreviewView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdatePreviewView.swift; sourceTree = "<group>"; };
 		EB051A0F2B1710A700F5F5B7 /* SparkleUpdaterEvents.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SparkleUpdaterEvents.swift; sourceTree = "<group>"; };
-		EB051A122B17263300F5F5B7 /* UpdateControlerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateControlerView.swift; sourceTree = "<group>"; };
+		EB051A122B17263300F5F5B7 /* UpdateControllerViewModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateControllerViewModifier.swift; sourceTree = "<group>"; };
+		EBB21B652B198370000C3FA0 /* UpdateInstallingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateInstallingView.swift; sourceTree = "<group>"; };
 		EEA5A2452A31DD65008274AE /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -399,7 +401,8 @@
 			isa = PBXGroup;
 			children = (
 				EB051A082B150F7100F5F5B7 /* UpdatePreviewView.swift */,
-				EB051A122B17263300F5F5B7 /* UpdateControlerView.swift */,
+				EB051A122B17263300F5F5B7 /* UpdateControllerViewModifier.swift */,
+				EBB21B652B198370000C3FA0 /* UpdateInstallingView.swift */,
 			);
 			path = Updater;
 			sourceTree = "<group>";
@@ -597,6 +600,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				EEA5A2462A31DD65008274AE /* AppDelegate.swift in Sources */,
+				EBB21B662B198370000C3FA0 /* UpdateInstallingView.swift in Sources */,
 				6E70A4A12A9A280C007799E9 /* WhiskyCmd.swift in Sources */,
 				6E40495829CCA19C006E3F1B /* ContentView.swift in Sources */,
 				6EF557982A410599001A4F09 /* SetupView.swift in Sources */,
@@ -617,7 +621,7 @@
 				6E6C0CF42A419A7600356232 /* RosettaView.swift in Sources */,
 				6E6C0CF82A419A8C00356232 /* GPTKInstallView.swift in Sources */,
 				6365C4C12B1AA69D00AAE1FD /* Animation+Extensions.swift in Sources */,
-				EB051A132B17263300F5F5B7 /* UpdateControlerView.swift in Sources */,
+				EB051A132B17263300F5F5B7 /* UpdateControllerViewModifier.swift in Sources */,
 				6E40498329CCA91B006E3F1B /* Bottle+Extensions.swift in Sources */,
 				6E621CEF2A5F631300C9AAB3 /* Winetricks.swift in Sources */,
 				6E17B6462AF3FDC100831173 /* PinView.swift in Sources */,
