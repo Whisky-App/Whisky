@@ -34,60 +34,13 @@ struct ContentView: View {
     @State var refresh: Bool = false
     @State private var refreshAnimation: Angle = .degrees(0)
 
+    @State private var bottleFilter = ""
+
     var body: some View {
         NavigationSplitView {
-            ScrollViewReader { proxy in
-                List(selection: $selected) {
-                    ForEach(bottleVM.bottles) { bottle in
-                        if bottle.inFlight {
-                            HStack {
-                                Text(bottle.settings.name)
-                                Spacer()
-                                ProgressView().controlSize(.small)
-                            }
-                            .opacity(0.5)
-                            .id(bottle.url)
-                        } else {
-                            BottleListEntry(bottle: bottle, selected: $selected, refresh: $refresh)
-                                .id(bottle.url)
-                                .selectionDisabled(!bottle.isActive)
-                        }
-                    }
-                }
-                .onChange(of: newlyCreatedBottleURL) { _, url in
-                    DispatchQueue.main.asyncAfter(deadline: .now() + 0.2) {
-                        selected = url
-                        withAnimation {
-                            proxy.scrollTo(url, anchor: .center)
-                        }
-                    }
-                }
-            }
+            sidebar
         } detail: {
-            if let bottle = selected {
-                if let bottle = bottleVM.bottles.first(where: { $0.url == bottle }) {
-                    BottleView(bottle: bottle)
-                    .disabled(bottle.inFlight)
-                    .id(bottle.url)
-                }
-            } else {
-                if (bottleVM.bottles.isEmpty || bottleVM.countActive() == 0) && bottlesLoaded {
-                    VStack {
-                        Text("main.createFirst")
-                        Button {
-                            showBottleCreation.toggle()
-                        } label: {
-                            HStack {
-                                Image(systemName: "plus")
-                                Text("button.createBottle")
-                            }
-                            .padding(6)
-                        }
-                        .buttonStyle(.borderedProminent)
-                        .tint(.accentColor)
-                    }
-                }
-            }
+            detail
         }
         .toolbar {
             ToolbarItem(placement: .primaryAction) {
@@ -135,7 +88,7 @@ struct ContentView: View {
         .onOpenURL { url in
             openedFileURL = url
         }
-        .onAppear {
+        .task {
             bottleVM.loadBottles()
             bottlesLoaded = true
 
@@ -150,29 +103,102 @@ struct ContentView: View {
             if !GPTKInstaller.isGPTKInstalled() {
                 showSetup = true
             }
-            Task.detached {
-                let updateInfo = await GPTKInstaller.shouldUpdateGPTK()
+            let task = Task.detached {
+                return await GPTKInstaller.shouldUpdateGPTK()
+            }
+            let updateInfo = await task.value
+            if updateInfo.0 {
+                let alert = NSAlert()
+                alert.messageText = String(localized: "update.gptk.title")
+                alert.informativeText = String(format: String(localized: "update.gptk.description"),
+                                               String(GPTKInstaller.gptkVersion() ?? SemanticVersion(0, 0, 0)),
+                                               String(updateInfo.1))
+                alert.alertStyle = .warning
+                alert.addButton(withTitle: String(localized: "update.gptk.update"))
+                alert.addButton(withTitle: String(localized: "button.removeAlert.cancel"))
 
-                if updateInfo.0 {
-                    await MainActor.run {
-                        let alert = NSAlert()
-                        alert.messageText = String(localized: "update.gptk.title")
-                        alert.informativeText = String(format: String(localized: "update.gptk.description"),
-                                                       String(GPTKInstaller.gptkVersion() ?? SemanticVersion(0, 0, 0)),
-                                                       String(updateInfo.1))
-                        alert.alertStyle = .warning
-                        alert.addButton(withTitle: String(localized: "update.gptk.update"))
-                        alert.addButton(withTitle: String(localized: "button.removeAlert.cancel"))
+                let response = alert.runModal()
 
-                        let response = alert.runModal()
+                if response == .alertFirstButtonReturn {
+                    GPTKInstaller.uninstall()
+                    showSetup = true
+                }
+            }
+        }
+    }
 
-                        if response == .alertFirstButtonReturn {
-                            GPTKInstaller.uninstall()
-                            showSetup = true
+    var sidebar: some View {
+        ScrollViewReader { proxy in
+            List(selection: $selected) {
+                Section {
+                    ForEach(filteredBottles) { bottle in
+                        Group {
+                            if bottle.inFlight {
+                                HStack {
+                                    Text(bottle.settings.name)
+                                    Spacer()
+                                    ProgressView().controlSize(.small)
+                                }
+                                .opacity(0.5)
+                            } else {
+                                BottleListEntry(bottle: bottle, selected: $selected, refresh: $refresh)
+                                    .selectionDisabled(!bottle.isActive)
+                            }
                         }
+                        .id(bottle.url)
+                        .padding(.vertical, 5)
                     }
                 }
             }
+            .animation(.default, value: bottleVM.bottles)
+            .animation(.default, value: bottleFilter)
+            .listStyle(.sidebar)
+            .searchable(text: $bottleFilter, placement: .sidebar)
+            .onChange(of: newlyCreatedBottleURL) { _, url in
+                DispatchQueue.main.asyncAfter(deadline: .now() + 0.2) {
+                    selected = url
+                    withAnimation {
+                        proxy.scrollTo(url, anchor: .center)
+                    }
+                }
+            }
+        }
+    }
+
+    @ViewBuilder
+    var detail: some View {
+        if let bottle = selected {
+            if let bottle = bottleVM.bottles.first(where: { $0.url == bottle }) {
+                BottleView(bottle: bottle)
+                    .disabled(bottle.inFlight)
+                    .id(bottle.url)
+            }
+        } else {
+            if (bottleVM.bottles.isEmpty || bottleVM.countActive() == 0) && bottlesLoaded {
+                VStack {
+                    Text("main.createFirst")
+                    Button {
+                        showBottleCreation.toggle()
+                    } label: {
+                        HStack {
+                            Image(systemName: "plus")
+                            Text("button.createBottle")
+                        }
+                        .padding(6)
+                    }
+                    .buttonStyle(.borderedProminent)
+                    .tint(.accentColor)
+                }
+            }
+        }
+    }
+
+    var filteredBottles: [Bottle] {
+        if bottleFilter.isEmpty {
+            bottleVM.bottles
+        } else {
+            bottleVM.bottles
+                .filter { $0.settings.name.localizedCaseInsensitiveContains(bottleFilter) }
         }
     }
 }
