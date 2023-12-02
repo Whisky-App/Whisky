@@ -25,6 +25,7 @@ struct ProgramView: View {
     @State var image: NSImage?
     @State var programLoading: Bool = false
     @AppStorage("configSectionExapnded") private var configSectionExpanded: Bool = true
+    @AppStorage("envArgsSectionExpanded") private var envArgsSectionExpanded: Bool = true
 
     var body: some View {
         Form {
@@ -45,9 +46,11 @@ struct ProgramView: View {
                         .labelsHidden()
                 }
             }
-            EnvironmentArgView(program: program)
+            EnvironmentArgView(program: program, isExpanded: $envArgsSectionExpanded)
         }
         .formStyle(.grouped)
+        .animation(.whiskyDefault, value: configSectionExpanded)
+        .animation(.whiskyDefault, value: envArgsSectionExpanded)
         .bottomBar {
             HStack {
                 Spacer()

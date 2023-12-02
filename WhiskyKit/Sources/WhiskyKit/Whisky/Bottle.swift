@@ -20,25 +20,14 @@ import Foundation
 import SwiftUI
 import os.log
 
-public class Bottle: Hashable, Identifiable, ObservableObject {
-    public static func == (lhs: Bottle, rhs: Bottle) -> Bool {
-        return lhs.url == rhs.url
-    }
-
-    public func hash(into hasher: inout Hasher) {
-        return hasher.combine(url)
-    }
-    public var id: URL {
-        self.url
-    }
-
+public class Bottle: ObservableObject, Equatable, Hashable, Identifiable, Comparable {
     public let url: URL
     private let metadataURL: URL
     @Published public var settings: BottleSettings {
         didSet { saveSettings() }
     }
     @Published public var programs: [Program] = []
-    public var inFlight: Bool = false
+    @Published public var inFlight: Bool = false
     public var isActive: Bool = false
 
     /// All pins with their associated programs
@@ -68,12 +57,12 @@ public class Bottle: Hashable, Identifiable, ObservableObject {
 
         // Get rid of duplicates and pins that reference removed files
         var found: Set<URL> = []
-        self.settings.pins = self.settings.pins.filter({ pin in
+        self.settings.pins = self.settings.pins.filter { pin in
             guard let url = pin.url else { return false }
             guard !found.contains(url) else { return false }
             found.insert(url)
             return FileManager.default.fileExists(atPath: url.path(percentEncoded: false))
-        })
+        }
     }
 
     /// Encode and save the bottle settings
@@ -86,14 +75,29 @@ public class Bottle: Hashable, Identifiable, ObservableObject {
             )
         }
     }
-}
 
-extension Array where Element == Bottle {
-    public mutating func sortByName() {
-        self.sort { $0.settings.name.lowercased() < $1.settings.name.lowercased() }
+    // MARK: - Equatable
+
+    public static func == (lhs: Bottle, rhs: Bottle) -> Bool {
+        return lhs.url == rhs.url
     }
-    public mutating func sortByActive() {
-        self.sort { $0.isActive && !$1.isActive }
+
+    // MARK: - Hashable
+
+    public func hash(into hasher: inout Hasher) {
+        return hasher.combine(url)
+    }
+
+    // MARK: - Identifiable
+
+    public var id: URL {
+        self.url
+    }
+
+    // MARK: - Comparable
+
+    public static func < (lhs: Bottle, rhs: Bottle) -> Bool {
+        lhs.settings.name.lowercased() < rhs.settings.name.lowercased()
     }
 }
 

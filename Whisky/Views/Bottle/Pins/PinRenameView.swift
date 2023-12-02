@@ -19,47 +19,42 @@
 import SwiftUI
 
 struct PinRenameView: View {
-    @State var newBottleName: String = ""
-    @State var nameValid: Bool = false
     @Binding var name: String
-    @Environment(\.dismiss) var dismiss
+
+    @State private var newPinName: String = ""
+    @Environment(\.dismiss) private var dismiss
 
     var body: some View {
-        VStack {
-            HStack {
-                Text("rename.pin.title")
-                    .bold()
-                Spacer()
+        NavigationStack {
+            Form {
+                TextField("rename.name", text: $newPinName)
             }
-            Divider()
-            HStack(alignment: .top) {
-                Text("rename.name")
-                Spacer()
-                TextField(String(), text: $newBottleName)
-                    .frame(width: 180)
-                    .onChange(of: newBottleName) { _, name in
-                        nameValid = !name.isEmpty
+            .formStyle(.grouped)
+            .navigationTitle("rename.pin.title")
+            .toolbar {
+                ToolbarItem(placement: .cancellationAction) {
+                    Button("create.cancel") {
+                        dismiss()
                     }
-            }
-            Spacer()
-            HStack {
-                Spacer()
-                Button("create.cancel") {
-                    dismiss()
+                    .keyboardShortcut(.cancelAction)
                 }
-                .keyboardShortcut(.cancelAction)
-                Button("rename.rename") {
-                    name = newBottleName
-                    dismiss()
+                ToolbarItem(placement: .primaryAction) {
+                    Button("rename.rename") {
+                        name = newPinName
+                        dismiss()
+                    }
+                    .keyboardShortcut(.defaultAction)
+                    .disabled(!isNameValid)
                 }
-                .keyboardShortcut(.defaultAction)
-                .disabled(!nameValid)
             }
         }
-        .padding()
-        .frame(width: 350, height: 150)
+        .frame(width: 350, height: 120)
         .onAppear {
-            newBottleName = name
+            newPinName = name
         }
+    }
+
+    var isNameValid: Bool {
+        !name.isEmpty
     }
 }

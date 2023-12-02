@@ -65,8 +65,6 @@ public struct BottleData: Codable {
             }
         }
 
-        bottles.sortByName()
-        bottles.sortByActive()
         return bottles
     }
 

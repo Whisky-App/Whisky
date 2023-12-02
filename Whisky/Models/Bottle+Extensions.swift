@@ -56,8 +56,8 @@ extension Bottle {
         }
 
         let userEnumerator = FileManager.default.enumerator(at: userStartMenu,
-                                                              includingPropertiesForKeys: [.isRegularFileKey],
-                                                              options: [.skipsHiddenFiles])
+                                                            includingPropertiesForKeys: [.isRegularFileKey],
+                                                            options: [.skipsHiddenFiles])
         while let url = userEnumerator?.nextObject() as? URL {
             if url.pathExtension == "lnk" {
                 linkURLs.append(url)

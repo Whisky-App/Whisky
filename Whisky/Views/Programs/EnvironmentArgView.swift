@@ -44,21 +44,20 @@ class Key: Identifiable {
 
 struct EnvironmentArgView: View {
     @ObservedObject var program: Program
+    @Binding var isExpanded: Bool
+
     @FocusState var focus: Focusable?
-    @State var environmentKeys: [Key] = []
-    @State var movedToIllegalKey = false
-    @AppStorage("envArgsSectionExpanded") private var envArgsSectionExpanded: Bool = true
+    @State private var environmentKeys: [Key] = []
+    @State private var movedToIllegalKey = false
 
     var body: some View {
-        Section(isExpanded: $envArgsSectionExpanded) {
-            VStack {
-                List(environmentKeys, id: \.id) { key in
-                    KeyItem(focus: _focus,
-                            environmentKeys: $environmentKeys,
-                            key: key)
-                }
-                .alternatingRowBackgrounds(.enabled)
+        Section(isExpanded: $isExpanded) {
+            List(environmentKeys, id: \.id) { key in
+                KeyItem(focus: _focus,
+                        environmentKeys: $environmentKeys,
+                        key: key)
             }
+            .alternatingRowBackgrounds(.enabled)
             .onAppear {
                 let keys = program.settings.environment.map { (key: String, value: String) in
                     return Key(key: key, value: value)
@@ -80,7 +79,7 @@ struct EnvironmentArgView: View {
                 }
                 .buttonStyle(.plain)
                 .labelStyle(.titleAndIcon)
-                .opacity(envArgsSectionExpanded ? 1 : 0)
+                .opacity(isExpanded ? 1 : 0)
             }
         }
         .onChange(of: focus) { oldValue, newValue in
