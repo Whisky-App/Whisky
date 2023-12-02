@@ -18,19 +18,38 @@
 
 import SwiftUI
 
-struct PinRenameView: View {
-    @Binding var name: String
+struct RenameView: View {
+    let title: Text
+    var renameAction: (String) -> Void
 
-    @State private var newPinName: String = ""
+    @State private var name: String = ""
     @Environment(\.dismiss) private var dismiss
+
+    init(_ title: Text, name: String, renameAction: @escaping (String) -> Void) {
+        self.title = title
+        self._name = State(initialValue: name)
+        self.renameAction = renameAction
+    }
+
+    init(_ title: LocalizedStringKey, name: String, renameAction: @escaping (String) -> Void) {
+        self.title = Text(title)
+        self._name = State(initialValue: name)
+        self.renameAction = renameAction
+    }
+
+    init(verbatim title: String, name: String, renameAction: @escaping (String) -> Void) {
+        self.title = Text(verbatim: title)
+        self._name = State(initialValue: name)
+        self.renameAction = renameAction
+    }
 
     var body: some View {
         NavigationStack {
             Form {
-                TextField("rename.name", text: $newPinName)
+                TextField("rename.name", text: $name)
             }
             .formStyle(.grouped)
-            .navigationTitle("rename.pin.title")
+            .navigationTitle(title)
             .toolbar {
                 ToolbarItem(placement: .cancellationAction) {
                     Button("create.cancel") {
@@ -40,7 +59,7 @@ struct PinRenameView: View {
                 }
                 ToolbarItem(placement: .primaryAction) {
                     Button("rename.rename") {
-                        name = newPinName
+                        renameAction(name)
                         dismiss()
                     }
                     .keyboardShortcut(.defaultAction)
@@ -49,9 +68,6 @@ struct PinRenameView: View {
             }
         }
         .frame(width: 350, height: 120)
-        .onAppear {
-            newPinName = name
-        }
     }
 
     var isNameValid: Bool {

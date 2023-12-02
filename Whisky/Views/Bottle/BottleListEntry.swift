@@ -35,7 +35,10 @@ struct BottleListEntry: View {
                 name = bottle.settings.name
             }
             .sheet(isPresented: $showBottleRename) {
-                BottleRenameView(bottle: bottle, name: $name)
+                RenameView("rename.bottle.title", name: name) { newName in
+                    name = newName
+                    bottle.rename(newName: newName)
+                }
             }
             .contextMenu {
                 Button("button.rename", systemImage: "pencil.line") {

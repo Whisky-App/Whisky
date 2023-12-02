@@ -78,7 +78,9 @@ struct PinView: View {
             runProgram()
         }
         .sheet(isPresented: $showRenameSheet) {
-            PinRenameView(name: $name)
+            RenameView("rename.pin.title", name: name) { newName in
+                name = newName
+            }
         }
         .onAppear {
             name = pin.name
