@@ -32,7 +32,7 @@ class BottleVM: ObservableObject {
     }
 
     func countActive() -> Int {
-        return bottles.filter { $0.isActive == true }.count
+        return bottles.filter { $0.isAvailable == true }.count
     }
 
     func createNewBottle(bottleName: String, winVersion: WinVersion, bottleURL: URL) -> URL {

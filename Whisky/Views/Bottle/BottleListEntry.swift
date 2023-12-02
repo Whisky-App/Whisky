@@ -30,7 +30,7 @@ struct BottleListEntry: View {
 
     var body: some View {
         Text(name)
-            .opacity(bottle.isActive ? 1.0 : 0.5)
+            .opacity(bottle.isAvailable ? 1.0 : 0.5)
             .onChange(of: refresh, initial: true) {
                 name = bottle.settings.name
             }
@@ -41,7 +41,7 @@ struct BottleListEntry: View {
                 Button("button.rename", systemImage: "pencil.line") {
                     showBottleRename.toggle()
                 }
-                .disabled(!bottle.isActive)
+                .disabled(!bottle.isAvailable)
                 .labelStyle(.titleAndIcon)
                 Button("button.removeAlert", systemImage: "trash") {
                     showRemoveAlert(bottle: bottle)
@@ -66,7 +66,7 @@ struct BottleListEntry: View {
                         }
                     }
                 }
-                .disabled(!bottle.isActive)
+                .disabled(!bottle.isAvailable)
                 .labelStyle(.titleAndIcon)
                 Button("button.exportBottle", systemImage: "arrowshape.turn.up.right") {
                     let panel = NSSavePanel()
@@ -85,13 +85,13 @@ struct BottleListEntry: View {
                         }
                     }
                 }
-                .disabled(!bottle.isActive)
+                .disabled(!bottle.isAvailable)
                 .labelStyle(.titleAndIcon)
                 Divider()
                 Button("button.showInFinder", systemImage: "folder") {
                     NSWorkspace.shared.activateFileViewerSelecting([bottle.url])
                 }
-                .disabled(!bottle.isActive)
+                .disabled(!bottle.isAvailable)
                 .labelStyle(.titleAndIcon)
             }
     }
@@ -107,7 +107,7 @@ struct BottleListEntry: View {
         let delete = alert.addButton(withTitle: String(localized: "button.removeAlert.delete"))
         delete.hasDestructiveAction = true
         alert.addButton(withTitle: String(localized: "button.removeAlert.cancel"))
-        if bottle.isActive {
+        if bottle.isAvailable {
             alert.accessoryView = checkbox
         }
 

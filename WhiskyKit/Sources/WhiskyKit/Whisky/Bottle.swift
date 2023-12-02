@@ -28,7 +28,7 @@ public class Bottle: ObservableObject, Equatable, Hashable, Identifiable, Compar
     }
     @Published public var programs: [Program] = []
     @Published public var inFlight: Bool = false
-    public var isActive: Bool = false
+    public var isAvailable: Bool = false
 
     /// All pins with their associated programs
     public var pinnedPrograms: [(pin: PinnedProgram, program: Program, // swiftlint:disable:this large_tuple
@@ -39,11 +39,11 @@ public class Bottle: ObservableObject, Equatable, Hashable, Identifiable, Compar
         }
     }
 
-    public init(bottleUrl: URL, inFlight: Bool = false, isActive: Bool = false) {
+    public init(bottleUrl: URL, inFlight: Bool = false, isAvailable: Bool = false) {
         let metadataURL = bottleUrl.appending(path: "Metadata").appendingPathExtension("plist")
         self.url = bottleUrl
         self.inFlight = inFlight
-        self.isActive = isActive
+        self.isAvailable = isAvailable
         self.metadataURL = metadataURL
 
         do {

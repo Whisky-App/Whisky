@@ -110,7 +110,7 @@ struct BottleView: View {
             .onAppear {
                 updateStartMenu()
             }
-            .disabled(!bottle.isActive)
+            .disabled(!bottle.isAvailable)
             .navigationTitle(bottle.settings.name)
             .sheet(isPresented: $showWinetricksSheet) {
                 WinetricksView(bottle: bottle)

@@ -94,7 +94,7 @@ struct ContentView: View {
             bottlesLoaded = true
 
             if !bottleVM.bottles.isEmpty || bottleVM.countActive() != 0 {
-                if let bottle = bottleVM.bottles.first(where: { $0.url == selectedBottleURL && $0.isActive }) {
+                if let bottle = bottleVM.bottles.first(where: { $0.url == selectedBottleURL && $0.isAvailable }) {
                     selected = bottle.url
                 } else {
                     selected = bottleVM.bottles[0].url
@@ -143,7 +143,7 @@ struct ContentView: View {
                                 .opacity(0.5)
                             } else {
                                 BottleListEntry(bottle: bottle, selected: $selected, refresh: $triggerRefresh)
-                                    .selectionDisabled(!bottle.isActive)
+                                    .selectionDisabled(!bottle.isAvailable)
                             }
                         }
                         .id(bottle.url)
