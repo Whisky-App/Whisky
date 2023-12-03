@@ -67,7 +67,7 @@ struct RenameView: View {
                 }
             }
         }
-        .frame(width: 350, height: 120)
+        .frame(minWidth: 350, minHeight: 115)
     }
 
     var isNameValid: Bool {

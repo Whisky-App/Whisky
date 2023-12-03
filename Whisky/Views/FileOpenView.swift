@@ -23,47 +23,41 @@ struct FileOpenView: View {
     var fileURL: URL
     var currentBottle: URL?
     var bottles: [Bottle]
-    @State var selection: URL = URL(filePath: "")
-    @Environment(\.dismiss) var dismiss
+
+    @State private var selection: URL = URL(filePath: "")
+    @Environment(\.dismiss) private var dismiss
 
     var body: some View {
-        VStack {
-            HStack {
-                Text(String(format: String(localized: "run.title"),
-                            fileURL.lastPathComponent))
-                    .bold()
-                Spacer()
-            }
-            Divider()
-            HStack {
-                Text("run.bottle")
-                Spacer()
-                Picker(String(), selection: $selection) {
+        NavigationStack {
+            Form {
+                Picker("run.bottle", selection: $selection) {
                     ForEach(bottles, id: \.self) {
                         Text($0.settings.name)
                             .tag($0.url)
                     }
                 }
-                .pickerStyle(.menu)
-                .frame(width: 200)
             }
-            Spacer()
-            HStack {
-                Spacer()
-                Button("create.cancel") {
-                    dismiss()
+            .frame(maxHeight: .infinity)
+            .formStyle(.grouped)
+            .navigationTitle("run.title")
+            .toolbar {
+                ToolbarItem(placement: .cancellationAction) {
+                    Button("create.cancel") {
+                        dismiss()
+                    }
+                    .keyboardShortcut(.cancelAction)
                 }
-                .keyboardShortcut(.cancelAction)
-                Button("button.run") {
-                    run()
+                ToolbarItem(placement: .primaryAction) {
+                    Button("button.run") {
+                        run()
+                    }
+                    .keyboardShortcut(.defaultAction)
                 }
-                .keyboardShortcut(.defaultAction)
             }
         }
-        .padding()
-        .frame(width: 400, height: 180)
+        .frame(minWidth: 400, minHeight: 115)
         .onAppear {
-            selection = bottles.first(where: {$0.url == currentBottle})?.url ?? bottles[0].url
+            selection = bottles.first(where: { $0.url == currentBottle })?.url ?? bottles[0].url
 
             if bottles.count <= 1 {
                 // If the user only has one bottle
