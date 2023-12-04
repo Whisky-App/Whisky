@@ -1,3 +1,6 @@
 export_languages:
   - da
-files: []
+files:
+  - source: /Whisky/Localizable.xcstrings
+    translation: /Whisky/Localizable.xcstrings
+    multilingual: 1
