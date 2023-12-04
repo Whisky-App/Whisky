@@ -1,21 +1,3 @@
 export_languages:
   - da
-files:
-  - source: /Whisky/Localizable.xcstrings
-    translation: /%original_path%/Crowdin-%two_letters_code%-%original_file_name%
-    translation_replace:
-      zh: da
-      nl: da
-      fi: da
-      fr: da
-      de: da
-      it: da
-      ja: da
-      ko: da
-      pl: da
-      pt: da
-      ru: da
-      es: da
-      tr: da
-      uk: da
-      vi: da
+files: []
