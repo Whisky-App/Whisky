@@ -17,9 +17,7 @@
 //
 
 import Foundation
-#if canImport(AppKit)
 import AppKit
-#endif
 
 public struct PEError: Error {
     public let message: String
@@ -145,7 +143,6 @@ public struct PEFile: Hashable, Equatable {
         return rsrc(handle: handle)
     }
 
-    #if canImport(AppKit)
     /// The best icon for this executable
     /// - Returns: An `NSImage` if there is a renderable icon in the resource directory table
     public func bestIcon() -> NSImage? {
@@ -166,7 +163,7 @@ public struct PEFile: Hashable, Equatable {
                         try handle.seek(toOffset: UInt64(offset))
                         if let iconData = try handle.read(upToCount: Int(entry.size)) {
                             if let rep = NSBitmapImageRep(data: iconData) {
-                                let image =  NSImage(size: rep.size)
+                                let image = NSImage(size: rep.size)
                                 image.addRepresentation(rep)
                                 return image
                             }
@@ -188,5 +185,4 @@ public struct PEFile: Hashable, Equatable {
             return NSImage()
         }
     }
-    #endif
 }
