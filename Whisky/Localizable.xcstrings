@@ -36,7 +36,7 @@
         "fr": {
           "stringUnit": {
             "state": "translated",
-            "value": "Erreur durant l'ouverture"
+            "value": "Échec de l'ouverture"
           }
         },
         "it": {
@@ -79,12 +79,6 @@
           "stringUnit": {
             "state": "translated",
             "value": "Falha ao abrir"
-          }
-        },
-        "ro": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Nu s-a putut deschide"
           }
         },
         "ru": {
@@ -205,12 +199,6 @@
             "value": "Falha ao abrir o programa!"
           }
         },
-        "ro": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Programul nu a putut fi deschis!"
-          }
-        },
         "ru": {
           "stringUnit": {
             "state": "translated",
@@ -251,12 +239,6 @@
     },
     "button.cDrive": {
       "localizations": {
-        "da": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Åbn C: Drev"
-          }
-        },
         "de": {
           "stringUnit": {
             "state": "translated",
@@ -321,18 +303,6 @@
           "stringUnit": {
             "state": "translated",
             "value": "Abrir disco C:"
-          }
-        },
-        "pt-PT": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Abrir C: Drive"
-          }
-        },
-        "ro": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Deschide C: Drive"
           }
         },
         "ru": {
@@ -426,7 +396,7 @@
         "nl": {
           "stringUnit": {
             "state": "translated",
-            "value": "Maak Fles"
+            "value": "Maak Bottle"
           }
         },
         "pl": {
@@ -445,12 +415,6 @@
           "stringUnit": {
             "state": "translated",
             "value": "Criar uma Bottle"
-          }
-        },
-        "ro": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Creează o Sticlă"
           }
         },
         "ru": {
@@ -559,18 +523,6 @@
             "value": "Criar atalho"
           }
         },
-        "pt-PT": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Criar Atalho"
-          }
-        },
-        "ro": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Creează o Scurtătură"
-          }
-        },
         "ru": {
           "stringUnit": {
             "state": "translated",
@@ -669,18 +621,6 @@
           "stringUnit": {
             "state": "translated",
             "value": "Exportar como arquivo..."
-          }
-        },
-        "pt-PT": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Exportar como Arquivo..."
-          }
-        },
-        "ro": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Exportă ca Arhivă..."
           }
         },
         "ru": {
@@ -783,18 +723,6 @@
             "value": "Mover..."
           }
         },
-        "pt-PT": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Mover..."
-          }
-        },
-        "ro": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Mutare..."
-          }
-        },
         "ru": {
           "stringUnit": {
             "state": "translated",
@@ -835,19 +763,7 @@
             "value": "OK"
           }
         },
-        "es": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "OK"
-          }
-        },
         "fr": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "OK"
-          }
-        },
-        "it": {
           "stringUnit": {
             "state": "translated",
             "value": "OK"
@@ -859,31 +775,7 @@
             "value": "확인"
           }
         },
-        "nl": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "OK"
-          }
-        },
-        "pl": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "OK"
-          }
-        },
         "pt-BR": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "OK"
-          }
-        },
-        "pt-PT": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "OK"
-          }
-        },
-        "ro": {
           "stringUnit": {
             "state": "translated",
             "value": "OK"
@@ -929,22 +821,10 @@
             "value": "Pin"
           }
         },
-        "es": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Anclar"
-          }
-        },
         "fr": {
           "stringUnit": {
             "state": "translated",
             "value": "Épingler"
-          }
-        },
-        "it": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Perno"
           }
         },
         "ko": {
@@ -963,18 +843,6 @@
           "stringUnit": {
             "state": "translated",
             "value": "Pin"
-          }
-        },
-        "pt-PT": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Fixar"
-          }
-        },
-        "ro": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Fixează"
           }
         },
         "ru": {
@@ -1063,12 +931,6 @@
           "stringUnit": {
             "state": "translated",
             "value": "Atualizar"
-          }
-        },
-        "ro": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Reîmprospătează"
           }
         },
         "ru": {
@@ -1183,18 +1045,6 @@
             "value": "Remover..."
           }
         },
-        "pt-PT": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Remover..."
-          }
-        },
-        "ro": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Eliminare..."
-          }
-        },
         "ru": {
           "stringUnit": {
             "state": "translated",
@@ -1299,18 +1149,6 @@
           "stringUnit": {
             "state": "translated",
             "value": "Cancelar"
-          }
-        },
-        "pt-PT": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Cancelar"
-          }
-        },
-        "ro": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Anulează"
           }
         },
         "ru": {
@@ -1419,18 +1257,6 @@
             "value": "Apagar arquivos do disco"
           }
         },
-        "pt-PT": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Eliminar ficheiros do disco"
-          }
-        },
-        "ro": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Șterge fișierele din disc"
-          }
-        },
         "ru": {
           "stringUnit": {
             "state": "translated",
@@ -1537,18 +1363,6 @@
             "value": "Remover"
           }
         },
-        "pt-PT": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Remover"
-          }
-        },
-        "ro": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Elimină"
-          }
-        },
         "ru": {
           "stringUnit": {
             "state": "translated",
@@ -1640,7 +1454,7 @@
         "nl": {
           "stringUnit": {
             "state": "translated",
-            "value": "Weet u zeker dat u deze fles wilt verwijderen? Deze actie is permanent."
+            "value": "Weet u zeker dat u deze Bottle wilt verwijderen? Deze actie is permanent."
           }
         },
         "pl": {
@@ -1653,18 +1467,6 @@
           "stringUnit": {
             "state": "translated",
             "value": "Remover esta bottle? Esta ação é permanente."
-          }
-        },
-        "pt-PT": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Tem certeza de que deseja apagar esta Bottle? Esta acção é permanente."
-          }
-        },
-        "ro": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Sunteți sigur că doriți să eliminați această sticlă? Această acțiune este permanentă."
           }
         },
         "ru": {
@@ -1773,18 +1575,6 @@
             "value": "Remover %@?"
           }
         },
-        "pt-PT": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Remover %@?"
-          }
-        },
-        "ro": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Eliminați %@?"
-          }
-        },
         "ru": {
           "stringUnit": {
             "state": "translated",
@@ -1883,18 +1673,6 @@
           "stringUnit": {
             "state": "translated",
             "value": "Renomear..."
-          }
-        },
-        "pt-PT": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Renomear..."
-          }
-        },
-        "ro": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Redenumire..."
           }
         },
         "ru": {
@@ -2007,12 +1785,6 @@
           "stringUnit": {
             "state": "translated",
             "value": "Executar..."
-          }
-        },
-        "ro": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Rulează..."
           }
         },
         "ru": {
@@ -2133,12 +1905,6 @@
             "value": "Abrir no Finder"
           }
         },
-        "ro": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Arată în Finder"
-          }
-        },
         "ru": {
           "stringUnit": {
             "state": "translated",
@@ -2185,22 +1951,10 @@
             "value": "Unpin"
           }
         },
-        "es": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Desanclar"
-          }
-        },
         "fr": {
           "stringUnit": {
             "state": "translated",
             "value": "Désépingler"
-          }
-        },
-        "it": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Rimuovi Pin"
           }
         },
         "ko": {
@@ -2221,18 +1975,6 @@
             "value": "Unpin"
           }
         },
-        "pt-PT": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Desafixar"
-          }
-        },
-        "ro": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Anulează fixarea"
-          }
-        },
         "ru": {
           "stringUnit": {
             "state": "translated",
@@ -2249,49 +1991,7 @@
             "value": "Winetricks..."
           }
         },
-        "es": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Winetricks..."
-          }
-        },
-        "fr": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Winetricks..."
-          }
-        },
-        "it": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Winetricks..."
-          }
-        },
-        "ko": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Winetricks..."
-          }
-        },
-        "pl": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Winetricks..."
-          }
-        },
         "pt-BR": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Winetricks..."
-          }
-        },
-        "pt-PT": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Winetricks..."
-          }
-        },
-        "ro": {
           "stringUnit": {
             "state": "translated",
             "value": "Winetricks..."
@@ -2389,12 +2089,6 @@
           "stringUnit": {
             "state": "translated",
             "value": "Verificar Actualizações..."
-          }
-        },
-        "ro": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Verifică Actualizări..."
           }
         },
         "ru": {
@@ -2507,12 +2201,6 @@
           "stringUnit": {
             "state": "translated",
             "value": "Versão da compilação"
-          }
-        },
-        "ro": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Versiune Compilare"
           }
         },
         "ru": {
@@ -2633,12 +2321,6 @@
             "value": "Abrir Painel de Controlo"
           }
         },
-        "ro": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Deschide Panoul de Control"
-          }
-        },
         "ru": {
           "stringUnit": {
             "state": "translated",
@@ -2715,12 +2397,6 @@
             "value": "Mise à l'échelle du PPP"
           }
         },
-        "it": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Scaling di DPI"
-          }
-        },
         "ja": {
           "stringUnit": {
             "state": "translated",
@@ -2755,12 +2431,6 @@
           "stringUnit": {
             "state": "translated",
             "value": "Escala de DPI"
-          }
-        },
-        "ro": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Scalare DPI"
           }
         },
         "ru": {
@@ -2809,19 +2479,7 @@
             "value": "DXVK"
           }
         },
-        "es": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "DXVK"
-          }
-        },
         "fr": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "DXVK"
-          }
-        },
-        "it": {
           "stringUnit": {
             "state": "translated",
             "value": "DXVK"
@@ -2833,31 +2491,7 @@
             "value": "DXVK を使用する"
           }
         },
-        "ko": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "DXVK"
-          }
-        },
-        "pl": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "DXVK"
-          }
-        },
         "pt-BR": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "DXVK"
-          }
-        },
-        "pt-PT": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "DXVK"
-          }
-        },
-        "ro": {
           "stringUnit": {
             "state": "translated",
             "value": "DXVK"
@@ -2891,12 +2525,6 @@
             "value": "DXVK Asincrono"
           }
         },
-        "ko": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "DXVK Async"
-          }
-        },
         "pl": {
           "stringUnit": {
             "state": "translated",
@@ -2907,18 +2535,6 @@
           "stringUnit": {
             "state": "translated",
             "value": "DXVK Async"
-          }
-        },
-        "pt-PT": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "DXVK Async"
-          }
-        },
-        "ro": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Async DXVK"
           }
         },
         "ru": {
@@ -2967,24 +2583,6 @@
             "value": "HUD DXVK"
           }
         },
-        "it": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "DXVK HUD"
-          }
-        },
-        "ko": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "DXVK HUD"
-          }
-        },
-        "pl": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "DXVK HUD"
-          }
-        },
         "pt-BR": {
           "stringUnit": {
             "state": "translated",
@@ -2992,12 +2590,6 @@
           }
         },
         "pt-PT": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "HUD DXVK"
-          }
-        },
-        "ro": {
           "stringUnit": {
             "state": "translated",
             "value": "HUD DXVK"
@@ -3037,22 +2629,10 @@
             "value": "IPS"
           }
         },
-        "it": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "FPS"
-          }
-        },
         "ja": {
           "stringUnit": {
             "state": "translated",
             "value": "FPS のみ"
-          }
-        },
-        "ko": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "FPS"
           }
         },
         "pl": {
@@ -3062,18 +2642,6 @@
           }
         },
         "pt-BR": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "FPS"
-          }
-        },
-        "pt-PT": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "FPS"
-          }
-        },
-        "ro": {
           "stringUnit": {
             "state": "translated",
             "value": "FPS"
@@ -3179,12 +2747,6 @@
             "value": "Completo"
           }
         },
-        "ro": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Complet"
-          }
-        },
         "ru": {
           "stringUnit": {
             "state": "translated",
@@ -3261,12 +2823,6 @@
             "value": "Désactivé"
           }
         },
-        "it": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Spento"
-          }
-        },
         "ja": {
           "stringUnit": {
             "state": "translated",
@@ -3301,12 +2857,6 @@
           "stringUnit": {
             "state": "translated",
             "value": "Desligado"
-          }
-        },
-        "ro": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Dezactivat"
           }
         },
         "ru": {
@@ -3427,12 +2977,6 @@
             "value": "Parcial"
           }
         },
-        "ro": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Parțial"
-          }
-        },
         "ru": {
           "stringUnit": {
             "state": "translated",
@@ -3479,49 +3023,13 @@
             "value": "ESync"
           }
         },
-        "es": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "ESync"
-          }
-        },
         "fr": {
           "stringUnit": {
             "state": "translated",
             "value": "ESync"
           }
         },
-        "it": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "ESync"
-          }
-        },
-        "ko": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "ESync"
-          }
-        },
-        "pl": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "ESync"
-          }
-        },
         "pt-BR": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "ESync"
-          }
-        },
-        "pt-PT": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "ESync"
-          }
-        },
-        "ro": {
           "stringUnit": {
             "state": "translated",
             "value": "ESync"
@@ -3537,49 +3045,13 @@
             "value": "MSync"
           }
         },
-        "es": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "MSync"
-          }
-        },
         "fr": {
           "stringUnit": {
             "state": "translated",
             "value": "MSync"
           }
         },
-        "it": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "MSync"
-          }
-        },
-        "ko": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "MSync"
-          }
-        },
-        "pl": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "MSync"
-          }
-        },
         "pt-BR": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "MSync"
-          }
-        },
-        "pt-PT": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "MSync"
-          }
-        },
-        "ro": {
           "stringUnit": {
             "state": "translated",
             "value": "MSync"
@@ -3595,22 +3067,10 @@
             "value": "Enhanced Sync"
           }
         },
-        "es": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Sincronización mejorada"
-          }
-        },
         "fr": {
           "stringUnit": {
             "state": "translated",
             "value": "Sync Avancée"
-          }
-        },
-        "it": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Enhanced Sync"
           }
         },
         "ko": {
@@ -3626,18 +3086,6 @@
           }
         },
         "pt-BR": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Enhanced Sync"
-          }
-        },
-        "pt-PT": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Sincronização melhorada"
-          }
-        },
-        "ro": {
           "stringUnit": {
             "state": "translated",
             "value": "Enhanced Sync"
@@ -3659,22 +3107,10 @@
             "value": "None"
           }
         },
-        "es": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Ninguna"
-          }
-        },
         "fr": {
           "stringUnit": {
             "state": "translated",
             "value": "Aucun"
-          }
-        },
-        "it": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Nessuno"
           }
         },
         "ko": {
@@ -3693,18 +3129,6 @@
           "stringUnit": {
             "state": "translated",
             "value": "None"
-          }
-        },
-        "pt-PT": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Nenhum"
-          }
-        },
-        "ro": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Niciunul"
           }
         },
         "ru": {
@@ -3795,12 +3219,6 @@
             "value": "Configurar..."
           }
         },
-        "ro": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Configurează..."
-          }
-        },
         "ru": {
           "stringUnit": {
             "state": "translated",
@@ -3847,34 +3265,10 @@
             "value": "Metal HUD"
           }
         },
-        "es": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Metal HUD"
-          }
-        },
         "fr": {
           "stringUnit": {
             "state": "translated",
             "value": "HUD Metal"
-          }
-        },
-        "it": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Metal HUD"
-          }
-        },
-        "ko": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Metal HUD"
-          }
-        },
-        "pl": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Metal HUD"
           }
         },
         "pt-BR": {
@@ -3887,12 +3281,6 @@
           "stringUnit": {
             "state": "translated",
             "value": "Hud Metal"
-          }
-        },
-        "ro": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "HUD Metal"
           }
         },
         "zh-Hant": {
@@ -3911,12 +3299,6 @@
             "value": "Metal Trace"
           }
         },
-        "es": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Metal Trace"
-          }
-        },
         "fi": {
           "stringUnit": {
             "state": "translated",
@@ -3929,22 +3311,10 @@
             "value": "Diagnostic de Metal"
           }
         },
-        "it": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Metal Trace"
-          }
-        },
         "ja": {
           "stringUnit": {
             "state": "translated",
             "value": "Metal トレース"
-          }
-        },
-        "ko": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Metal Trace"
           }
         },
         "pl": {
@@ -3963,12 +3333,6 @@
           "stringUnit": {
             "state": "translated",
             "value": "Diagnóstico Metal"
-          }
-        },
-        "ro": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Trace Metal"
           }
         },
         "ru": {
@@ -4083,12 +3447,6 @@
             "value": "Permite capturar a carga de trabalho da GPU no Xcode"
           }
         },
-        "ro": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Permite captarea sarcinii de lucru GPU în Xcode"
-          }
-        },
         "ru": {
           "stringUnit": {
             "state": "translated",
@@ -4165,12 +3523,6 @@
             "value": "N\/A"
           }
         },
-        "it": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "N\/D"
-          }
-        },
         "ko": {
           "stringUnit": {
             "state": "translated",
@@ -4193,12 +3545,6 @@
           "stringUnit": {
             "state": "translated",
             "value": "N\/D"
-          }
-        },
-        "ro": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Indisponibil"
           }
         },
         "ru": {
@@ -4319,12 +3665,6 @@
             "value": "Abrir Editor de Registo"
           }
         },
-        "ro": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Deschide Editorul de Registre"
-          }
-        },
         "ru": {
           "stringUnit": {
             "state": "translated",
@@ -4443,12 +3783,6 @@
             "value": "Modo Retina"
           }
         },
-        "ro": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Mod Retina"
-          }
-        },
         "ru": {
           "stringUnit": {
             "state": "translated",
@@ -4495,49 +3829,13 @@
             "value": "DXVK"
           }
         },
-        "es": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "DXVK"
-          }
-        },
         "fr": {
           "stringUnit": {
             "state": "translated",
             "value": "DXVK"
           }
         },
-        "it": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "DXVK"
-          }
-        },
-        "ko": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "DXVK"
-          }
-        },
-        "pl": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "DXVK"
-          }
-        },
         "pt-BR": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "DXVK"
-          }
-        },
-        "pt-PT": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "DXVK"
-          }
-        },
-        "ro": {
           "stringUnit": {
             "state": "translated",
             "value": "DXVK"
@@ -4553,49 +3851,13 @@
             "value": "Metal"
           }
         },
-        "es": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Metal"
-          }
-        },
         "fr": {
           "stringUnit": {
             "state": "translated",
             "value": "Metal"
           }
         },
-        "it": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Metal"
-          }
-        },
-        "ko": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Metal"
-          }
-        },
-        "pl": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Metal"
-          }
-        },
         "pt-BR": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Metal"
-          }
-        },
-        "pt-PT": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Metal"
-          }
-        },
-        "ro": {
           "stringUnit": {
             "state": "translated",
             "value": "Metal"
@@ -4611,49 +3873,13 @@
             "value": "Wine"
           }
         },
-        "es": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Wine"
-          }
-        },
         "fr": {
           "stringUnit": {
             "state": "translated",
             "value": "Wine"
           }
         },
-        "it": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Wine"
-          }
-        },
-        "ko": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Wine"
-          }
-        },
-        "pl": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Wine"
-          }
-        },
         "pt-BR": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Wine"
-          }
-        },
-        "pt-PT": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Wine"
-          }
-        },
-        "ro": {
           "stringUnit": {
             "state": "translated",
             "value": "Wine"
@@ -4739,12 +3965,6 @@
           "stringUnit": {
             "state": "translated",
             "value": "Abrir Configuração do Wine"
-          }
-        },
-        "ro": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Deschide Configurarea Wine"
           }
         },
         "ru": {
@@ -4853,12 +4073,6 @@
             "value": "Versão do Windows"
           }
         },
-        "ro": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Versiune Windows"
-          }
-        },
         "ru": {
           "stringUnit": {
             "state": "translated",
@@ -4905,49 +4119,13 @@
             "value": "DPI"
           }
         },
-        "es": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "DPI"
-          }
-        },
         "fr": {
           "stringUnit": {
             "state": "translated",
             "value": "PPP"
           }
         },
-        "it": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "DPI"
-          }
-        },
-        "ko": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "DPI"
-          }
-        },
-        "pl": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "DPI"
-          }
-        },
         "pt-BR": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "DPI"
-          }
-        },
-        "pt-PT": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "DPI"
-          }
-        },
-        "ro": {
           "stringUnit": {
             "state": "translated",
             "value": "DPI"
@@ -5033,12 +4211,6 @@
           "stringUnit": {
             "state": "translated",
             "value": "O texto ficará assim:"
-          }
-        },
-        "ro": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Textul va arăta astfel:"
           }
         },
         "ru": {
@@ -5153,12 +4325,6 @@
             "value": "A rápida raposa marrom pula sobre o cachorro preguiçoso."
           }
         },
-        "ro": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "A quick brown fox jumps over the lazy dog."
-          }
-        },
         "ru": {
           "stringUnit": {
             "state": "translated",
@@ -5269,12 +4435,6 @@
           "stringUnit": {
             "state": "translated",
             "value": "Configurações de DPI"
-          }
-        },
-        "ro": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Setări DPI"
           }
         },
         "ru": {
@@ -5395,12 +4555,6 @@
             "value": "Explorar"
           }
         },
-        "ro": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Răsfoire"
-          }
-        },
         "ru": {
           "stringUnit": {
             "state": "translated",
@@ -5517,12 +4671,6 @@
           "stringUnit": {
             "state": "translated",
             "value": "Cancelar"
-          }
-        },
-        "ro": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Anulează"
           }
         },
         "ru": {
@@ -5643,12 +4791,6 @@
             "value": "Criar"
           }
         },
-        "ro": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Creează"
-          }
-        },
         "ru": {
           "stringUnit": {
             "state": "translated",
@@ -5765,12 +4907,6 @@
           "stringUnit": {
             "state": "translated",
             "value": "Nome da Bottle:"
-          }
-        },
-        "ro": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Numele sticlei:"
           }
         },
         "ru": {
@@ -5891,12 +5027,6 @@
             "value": "Caminho do Bottle:"
           }
         },
-        "ro": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Locație sticlă:"
-          }
-        },
         "ru": {
           "stringUnit": {
             "state": "translated",
@@ -6015,12 +5145,6 @@
             "value": "Criar uma nova Bottle"
           }
         },
-        "ro": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Creează o sticlă nouă"
-          }
-        },
         "ru": {
           "stringUnit": {
             "state": "translated",
@@ -6133,12 +5257,6 @@
             "value": "Versão do Windows:"
           }
         },
-        "ro": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Versiune Windows:"
-          }
-        },
         "ru": {
           "stringUnit": {
             "state": "translated",
@@ -6185,22 +5303,10 @@
             "value": "Add"
           }
         },
-        "es": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Añadir"
-          }
-        },
         "fr": {
           "stringUnit": {
             "state": "translated",
             "value": "Ajouter"
-          }
-        },
-        "it": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Aggiungi"
           }
         },
         "ko": {
@@ -6221,18 +5327,6 @@
             "value": "Add"
           }
         },
-        "pt-PT": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Adicionar"
-          }
-        },
-        "ro": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Adăugați"
-          }
-        },
         "ru": {
           "stringUnit": {
             "state": "translated",
@@ -6249,22 +5343,10 @@
             "value": "Remove"
           }
         },
-        "es": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Eliminar"
-          }
-        },
         "fr": {
           "stringUnit": {
             "state": "translated",
             "value": "Supprimer"
-          }
-        },
-        "it": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Rimuovi"
           }
         },
         "ko": {
@@ -6285,18 +5367,6 @@
             "value": "Remove"
           }
         },
-        "pt-PT": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Remover"
-          }
-        },
-        "ro": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Eliminați"
-          }
-        },
         "ru": {
           "stringUnit": {
             "state": "translated",
@@ -6313,49 +5383,13 @@
             "value": "Discord"
           }
         },
-        "es": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Discord"
-          }
-        },
         "fr": {
           "stringUnit": {
             "state": "translated",
             "value": "Discord"
           }
         },
-        "it": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Discord"
-          }
-        },
-        "ko": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "디스코드"
-          }
-        },
-        "pl": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Discord"
-          }
-        },
         "pt-BR": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Discord"
-          }
-        },
-        "pt-PT": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Discord"
-          }
-        },
-        "ro": {
           "stringUnit": {
             "state": "translated",
             "value": "Discord"
@@ -6377,49 +5411,13 @@
             "value": "GitHub"
           }
         },
-        "es": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "GitHub"
-          }
-        },
         "fr": {
           "stringUnit": {
             "state": "translated",
             "value": "GitHub"
           }
         },
-        "it": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "GitHub"
-          }
-        },
-        "ko": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "깃허브"
-          }
-        },
-        "pl": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "GitHub"
-          }
-        },
         "pt-BR": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "GitHub"
-          }
-        },
-        "pt-PT": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "GitHub"
-          }
-        },
-        "ro": {
           "stringUnit": {
             "state": "translated",
             "value": "GitHub"
@@ -6441,22 +5439,10 @@
             "value": "Website"
           }
         },
-        "es": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Sitio Web"
-          }
-        },
         "fr": {
           "stringUnit": {
             "state": "translated",
             "value": "Site Web"
-          }
-        },
-        "it": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Sito Web"
           }
         },
         "ko": {
@@ -6475,18 +5461,6 @@
           "stringUnit": {
             "state": "translated",
             "value": "Website"
-          }
-        },
-        "pt-PT": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Página web"
-          }
-        },
-        "ro": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Pagină Web"
           }
         },
         "ru": {
@@ -6569,18 +5543,6 @@
           "stringUnit": {
             "state": "translated",
             "value": "Instalar o Whisky CLI..."
-          }
-        },
-        "pt-PT": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Instalar Whisky CLI..."
-          }
-        },
-        "ro": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Instalează CLI Whisky..."
           }
         },
         "ru": {
@@ -6695,12 +5657,6 @@
             "value": "Encerrar todas as Bottles..."
           }
         },
-        "ro": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Oprește Toate Sticlele"
-          }
-        },
         "ru": {
           "stringUnit": {
             "state": "translated",
@@ -6808,18 +5764,6 @@
             "value": "Automático"
           }
         },
-        "pt-PT": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Automático"
-          }
-        },
-        "ro": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Automat"
-          }
-        },
         "ru": {
           "stringUnit": {
             "state": "translated",
@@ -6918,12 +5862,6 @@
           "stringUnit": {
             "state": "translated",
             "value": "Locale"
-          }
-        },
-        "ro": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Localizare"
           }
         },
         "ru": {
@@ -7036,12 +5974,6 @@
           "stringUnit": {
             "state": "translated",
             "value": "Crie a sua primeira bottle para começar"
-          }
-        },
-        "ro": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Creaţi-vă prima sticlă pentru a începe"
           }
         },
         "ru": {
@@ -7162,12 +6094,6 @@
             "value": "Importar Bottle"
           }
         },
-        "ro": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Importă Sticlă"
-          }
-        },
         "ru": {
           "stringUnit": {
             "state": "translated",
@@ -7286,12 +6212,6 @@
             "value": "Abrir Pasta dos Logs"
           }
         },
-        "ro": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Deschide Folder-ul cu Jurnale"
-          }
-        },
         "ru": {
           "stringUnit": {
             "state": "translated",
@@ -7368,12 +6288,6 @@
             "value": "Configuration initiale..."
           }
         },
-        "it": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Configurazione..."
-          }
-        },
         "ja": {
           "stringUnit": {
             "state": "translated",
@@ -7408,12 +6322,6 @@
           "stringUnit": {
             "state": "translated",
             "value": "Configurar..."
-          }
-        },
-        "ro": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Configurare..."
           }
         },
         "ru": {
@@ -7462,28 +6370,10 @@
             "value": "Pin"
           }
         },
-        "es": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Anclar"
-          }
-        },
         "fr": {
           "stringUnit": {
             "state": "translated",
             "value": "Épingler"
-          }
-        },
-        "it": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Perno"
-          }
-        },
-        "ko": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "고정"
           }
         },
         "pl": {
@@ -7496,18 +6386,6 @@
           "stringUnit": {
             "state": "translated",
             "value": "Pin"
-          }
-        },
-        "pt-PT": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Fixar"
-          }
-        },
-        "ro": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Fixează"
           }
         },
         "ru": {
@@ -7527,28 +6405,10 @@
             "value": "\"%@\" is already pinned!"
           }
         },
-        "es": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "¡\"%@\" ya está anclado!"
-          }
-        },
         "fr": {
           "stringUnit": {
             "state": "translated",
             "value": "\"%@\" est déjà épinglé !"
-          }
-        },
-        "it": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "\"%@\" è già pinnato!"
-          }
-        },
-        "ko": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "\"%@\"은(는) 이미 고정되어 있습니다!"
           }
         },
         "pl": {
@@ -7561,18 +6421,6 @@
           "stringUnit": {
             "state": "translated",
             "value": "\"%@\" is already pinned!"
-          }
-        },
-        "pt-PT": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "\"%@\" já está fixado!"
-          }
-        },
-        "ro": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "\"%@\" este deja fixat!"
           }
         },
         "ru": {
@@ -7591,30 +6439,6 @@
             "value": "Error Pinning Program"
           }
         },
-        "es": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Error al fijar el programa"
-          }
-        },
-        "fr": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Erreur en épinglant le programme"
-          }
-        },
-        "it": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Errore nel Pinnare il Programma"
-          }
-        },
-        "ko": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "프로그램 고정 오류 발생"
-          }
-        },
         "pl": {
           "stringUnit": {
             "state": "translated",
@@ -7625,18 +6449,6 @@
           "stringUnit": {
             "state": "translated",
             "value": "Error Pinning Program"
-          }
-        },
-        "pt-PT": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Erro ao Fixar Programa"
-          }
-        },
-        "ro": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Nu s-a putut Fixa Programul"
           }
         },
         "ru": {
@@ -7655,28 +6467,10 @@
             "value": "Pin Program"
           }
         },
-        "es": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Anclar programa"
-          }
-        },
         "fr": {
           "stringUnit": {
             "state": "translated",
             "value": "Épingler le Programme"
-          }
-        },
-        "it": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Pinna Programma"
-          }
-        },
-        "ko": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "프로그램 고정"
           }
         },
         "pl": {
@@ -7689,18 +6483,6 @@
           "stringUnit": {
             "state": "translated",
             "value": "Pin Program"
-          }
-        },
-        "pt-PT": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Fixar Programa"
-          }
-        },
-        "ro": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Fixează Programul"
           }
         },
         "ru": {
@@ -7719,28 +6501,10 @@
             "value": "Pin name:"
           }
         },
-        "es": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Nombre del Anclaje:"
-          }
-        },
         "fr": {
           "stringUnit": {
             "state": "translated",
             "value": "Nom de l’épingle :"
-          }
-        },
-        "it": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Nome del Pin:"
-          }
-        },
-        "ko": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "이름:"
           }
         },
         "pl": {
@@ -7754,24 +6518,6 @@
             "state": "translated",
             "value": "Pin name:"
           }
-        },
-        "pt-PT": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Nome do Fixo:"
-          }
-        },
-        "ro": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Nume pix:"
-          }
-        },
-        "ru": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Закреплено:"
-          }
         }
       }
     },
@@ -7783,28 +6529,10 @@
             "value": "Program path:"
           }
         },
-        "es": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Ruta del programa:"
-          }
-        },
         "fr": {
           "stringUnit": {
             "state": "translated",
             "value": "Emplacement du programme :"
-          }
-        },
-        "it": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Percorso del programma:"
-          }
-        },
-        "ko": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "프로그램 경로:"
           }
         },
         "pl": {
@@ -7817,18 +6545,6 @@
           "stringUnit": {
             "state": "translated",
             "value": "Program path:"
-          }
-        },
-        "pt-PT": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Caminho do programa:"
-          }
-        },
-        "ro": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Locația programului:"
           }
         },
         "ru": {
@@ -7847,28 +6563,10 @@
             "value": "Pin Program"
           }
         },
-        "es": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Anclar programa"
-          }
-        },
         "fr": {
           "stringUnit": {
             "state": "translated",
             "value": "Épingler le Programme"
-          }
-        },
-        "it": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Pinna Programma"
-          }
-        },
-        "ko": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "프로그램 고정"
           }
         },
         "pl": {
@@ -7881,18 +6579,6 @@
           "stringUnit": {
             "state": "translated",
             "value": "Pin Program"
-          }
-        },
-        "pt-PT": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Fixar Programa"
-          }
-        },
-        "ro": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Fixează Programul"
           }
         },
         "ru": {
@@ -7971,18 +6657,6 @@
             "value": "Adicionar à lista de bloqueio"
           }
         },
-        "pt-PT": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Adicionar à Lista de Bloqueio"
-          }
-        },
-        "ro": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Adaugă la Lista Neagră"
-          }
-        },
         "ru": {
           "stringUnit": {
             "state": "translated",
@@ -8023,22 +6697,10 @@
             "value": "Add Selected to Blocklist"
           }
         },
-        "es": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Añadir seleccionado a la lista"
-          }
-        },
         "fr": {
           "stringUnit": {
             "state": "translated",
             "value": "Ajouter sélectionnés à la Blocklist"
-          }
-        },
-        "it": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Aggiungi Selezionati alla Blocklist"
           }
         },
         "ko": {
@@ -8057,18 +6719,6 @@
           "stringUnit": {
             "state": "translated",
             "value": "Add Selected to Blocklist"
-          }
-        },
-        "pt-PT": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Adicionar Selecionados à Lista de Bloqueio"
-          }
-        },
-        "ro": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Adăugați cele selectate la Lista de Blocare"
           }
         },
         "ru": {
@@ -8159,12 +6809,6 @@
             "value": "Argumentos"
           }
         },
-        "ro": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Parametrii"
-          }
-        },
         "ru": {
           "stringUnit": {
             "state": "translated",
@@ -8229,18 +6873,6 @@
             "value": "Estolista"
           }
         },
-        "fr": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Liste de programmes bloqués"
-          }
-        },
-        "it": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Blocklist"
-          }
-        },
         "ja": {
           "stringUnit": {
             "state": "translated",
@@ -8269,18 +6901,6 @@
           "stringUnit": {
             "state": "translated",
             "value": "Lista de bloqueio"
-          }
-        },
-        "pt-PT": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Lista de Bloqueio"
-          }
-        },
-        "ro": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Lista neagră"
           }
         },
         "ru": {
@@ -8393,12 +7013,6 @@
           "stringUnit": {
             "state": "translated",
             "value": "Configuração"
-          }
-        },
-        "ro": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Configurare"
           }
         },
         "ru": {
@@ -8519,12 +7133,6 @@
             "value": "Variáveis de Ambiente"
           }
         },
-        "ro": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Variabile de Mediu"
-          }
-        },
         "ru": {
           "stringUnit": {
             "state": "translated",
@@ -8631,18 +7239,6 @@
             "value": "Remover da lista de bloqueio"
           }
         },
-        "pt-PT": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Remover da Lista de bloqueio"
-          }
-        },
-        "ro": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Eliminați din Lista Neagră"
-          }
-        },
         "ru": {
           "stringUnit": {
             "state": "translated",
@@ -8683,22 +7279,10 @@
             "value": "Remove Selected from Blocklist"
           }
         },
-        "es": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Eliminar seleccionados de la lista"
-          }
-        },
         "fr": {
           "stringUnit": {
             "state": "translated",
             "value": "Enlever sélectionnés de la Blocklist"
-          }
-        },
-        "it": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Rimuovi Selezionati dalla Blocklist"
           }
         },
         "ko": {
@@ -8719,18 +7303,6 @@
             "value": "Remove Selected from Blocklist"
           }
         },
-        "pt-PT": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Remover Selecionados da Lista de Bloqueio"
-          }
-        },
-        "ro": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Eliminați cele selectate din Lista de Blocare"
-          }
-        },
         "ru": {
           "stringUnit": {
             "state": "translated",
@@ -8747,22 +7319,10 @@
             "value": "Settings"
           }
         },
-        "es": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Ajustes"
-          }
-        },
         "fr": {
           "stringUnit": {
             "state": "translated",
             "value": "Paramètres"
-          }
-        },
-        "it": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Impostazioni"
           }
         },
         "ko": {
@@ -8781,18 +7341,6 @@
           "stringUnit": {
             "state": "translated",
             "value": "Settings"
-          }
-        },
-        "pt-PT": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Definições"
-          }
-        },
-        "ro": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Setări"
           }
         },
         "ru": {
@@ -8869,18 +7417,6 @@
           "stringUnit": {
             "state": "translated",
             "value": "Todos os Programas"
-          }
-        },
-        "pt-PT": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Todos os programas"
-          }
-        },
-        "ro": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Toate programele"
           }
         },
         "ru": {
@@ -8981,18 +7517,6 @@
           "stringUnit": {
             "state": "translated",
             "value": "Renomear Bottle"
-          }
-        },
-        "pt-PT": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Renomear a Bottle"
-          }
-        },
-        "ro": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Redenumiţi sticla"
           }
         },
         "ru": {
@@ -9107,12 +7631,6 @@
             "value": "Novo nome:"
           }
         },
-        "ro": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Nume nou:"
-          }
-        },
         "ru": {
           "stringUnit": {
             "state": "translated",
@@ -9165,12 +7683,6 @@
             "value": "Rename pin"
           }
         },
-        "es": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Renombrar marcador"
-          }
-        },
         "fi": {
           "stringUnit": {
             "state": "translated",
@@ -9198,7 +7710,7 @@
         "ko": {
           "stringUnit": {
             "state": "translated",
-            "value": "이름 변경"
+            "value": "핀 이름 변경"
           }
         },
         "nl": {
@@ -9217,12 +7729,6 @@
           "stringUnit": {
             "state": "translated",
             "value": "Rename pin"
-          }
-        },
-        "ro": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Redenumire pin"
           }
         },
         "ru": {
@@ -9337,12 +7843,6 @@
             "value": "Alterar nome"
           }
         },
-        "ro": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Redenumiți"
-          }
-        },
         "ru": {
           "stringUnit": {
             "state": "translated",
@@ -9413,12 +7913,6 @@
             "value": "Bottiglia:"
           }
         },
-        "ko": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Bottle:"
-          }
-        },
         "pl": {
           "stringUnit": {
             "state": "translated",
@@ -9429,12 +7923,6 @@
           "stringUnit": {
             "state": "translated",
             "value": "Bottle:"
-          }
-        },
-        "ro": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Sticlă:"
           }
         },
         "ru": {
@@ -9531,12 +8019,6 @@
             "value": "Executar \"%@\""
           }
         },
-        "ro": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Rulează \"%@\""
-          }
-        },
         "ru": {
           "stringUnit": {
             "state": "translated",
@@ -9583,22 +8065,10 @@
             "value": "General"
           }
         },
-        "es": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "General"
-          }
-        },
         "fr": {
           "stringUnit": {
             "state": "translated",
             "value": "Général"
-          }
-        },
-        "it": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Generale"
           }
         },
         "ko": {
@@ -9614,12 +8084,6 @@
           }
         },
         "pt-BR": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "General"
-          }
-        },
-        "ro": {
           "stringUnit": {
             "state": "translated",
             "value": "General"
@@ -9647,22 +8111,10 @@
             "value": "Automatically check for GPTK updates"
           }
         },
-        "es": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Buscar actualizaciones de GPTK automáticamente"
-          }
-        },
         "fr": {
           "stringUnit": {
             "state": "translated",
             "value": "Rechercher automatiquement les mises à jour de GPTK"
-          }
-        },
-        "it": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Controlla automaticamente per gli aggiornamenti di GPTK"
           }
         },
         "ko": {
@@ -9681,12 +8133,6 @@
           "stringUnit": {
             "state": "translated",
             "value": "Automatically check for GPTK updates"
-          }
-        },
-        "ro": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Verifică automat pentru actualizări GPTK"
           }
         },
         "ru": {
@@ -9711,22 +8157,10 @@
             "value": "Terminate Wine processes when Whisky closes"
           }
         },
-        "es": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Terminar procesos de Wine cuando Whisky cierre"
-          }
-        },
         "fr": {
           "stringUnit": {
             "state": "translated",
             "value": "Terminer les processus de Wine à la fermeture de Whisky"
-          }
-        },
-        "it": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Termina i processi Wine quando Whisky chiude"
           }
         },
         "ko": {
@@ -9745,12 +8179,6 @@
           "stringUnit": {
             "state": "translated",
             "value": "Terminate Wine processes when Whisky closes"
-          }
-        },
-        "ro": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Închide procesele Wine atunci când Whisky se închide"
           }
         },
         "ru": {
@@ -9775,22 +8203,10 @@
             "value": "Automatically check for Whisky updates"
           }
         },
-        "es": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Buscar actualizaciones de Whiskey automáticamente"
-          }
-        },
         "fr": {
           "stringUnit": {
             "state": "translated",
             "value": "Rechercher automatiquement les mises à jour de Whisky"
-          }
-        },
-        "it": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Controlla automaticamente per gli aggiornamenti a Whisky"
           }
         },
         "ko": {
@@ -9811,12 +8227,6 @@
             "value": "Automatically check for Whisky updates"
           }
         },
-        "ro": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Verifică automat pentru actualizări Whisky"
-          }
-        },
         "ru": {
           "stringUnit": {
             "state": "translated",
@@ -9833,22 +8243,10 @@
             "value": "Updates"
           }
         },
-        "es": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Actualizaciones"
-          }
-        },
         "fr": {
           "stringUnit": {
             "state": "translated",
             "value": "Mises à jour"
-          }
-        },
-        "it": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Aggiornamenti"
           }
         },
         "ko": {
@@ -9867,12 +8265,6 @@
           "stringUnit": {
             "state": "translated",
             "value": "Updates"
-          }
-        },
-        "ro": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Actualizari"
           }
         },
         "ru": {
@@ -9955,12 +8347,6 @@
           "stringUnit": {
             "state": "translated",
             "value": "Feito"
-          }
-        },
-        "ro": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Finalizat"
           }
         },
         "ru": {
@@ -10073,12 +8459,6 @@
           "stringUnit": {
             "state": "translated",
             "value": "Transferindo Wine"
-          }
-        },
-        "ro": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Se descarcă GPTK"
           }
         },
         "ru": {
@@ -10199,12 +8579,6 @@
             "value": "As velocidades variam de acordo com a sua ligação de Internet."
           }
         },
-        "ro": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Viteza va depinde de conexiunea dvs. de internet."
-          }
-        },
         "ru": {
           "stringUnit": {
             "state": "translated",
@@ -10321,12 +8695,6 @@
           "stringUnit": {
             "state": "translated",
             "value": "- %@ em falta"
-          }
-        },
-        "ro": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "- A rămas %@"
           }
         },
         "ru": {
@@ -10447,12 +8815,6 @@
             "value": "Instalando Wine"
           }
         },
-        "ro": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Se instalează GPTK"
-          }
-        },
         "ru": {
           "stringUnit": {
             "state": "translated",
@@ -10569,12 +8931,6 @@
           "stringUnit": {
             "state": "translated",
             "value": "Quase lá. Não desligue ainda."
-          }
-        },
-        "ro": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Aproape terminat. Nu ieși deocamdată."
           }
         },
         "ru": {
@@ -10695,12 +9051,6 @@
             "value": "%@ de %@"
           }
         },
-        "ro": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "%@ din %@"
-          }
-        },
         "ru": {
           "stringUnit": {
             "state": "translated",
@@ -10817,12 +9167,6 @@
           "stringUnit": {
             "state": "translated",
             "value": "Verificando a instalação de %@..."
-          }
-        },
-        "ro": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Se verifică instalarea %@..."
           }
         },
         "ru": {
@@ -10943,12 +9287,6 @@
             "value": "%@ instalado"
           }
         },
-        "ro": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "%@ instalat"
-          }
-        },
         "ru": {
           "stringUnit": {
             "state": "translated",
@@ -11067,12 +9405,6 @@
             "value": "%@ não instalado"
           }
         },
-        "ro": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "%@ neinstalat"
-          }
-        },
         "ru": {
           "stringUnit": {
             "state": "translated",
@@ -11185,12 +9517,6 @@
             "value": "Seguinte"
           }
         },
-        "ro": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Următorul"
-          }
-        },
         "ru": {
           "stringUnit": {
             "state": "translated",
@@ -11297,12 +9623,6 @@
             "value": "Sair"
           }
         },
-        "ro": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Ieșire"
-          }
-        },
         "ru": {
           "stringUnit": {
             "state": "translated",
@@ -11343,28 +9663,10 @@
             "value": "Retry"
           }
         },
-        "es": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Reintentar"
-          }
-        },
         "fr": {
           "stringUnit": {
             "state": "translated",
             "value": "Réessayer"
-          }
-        },
-        "it": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Riprova"
-          }
-        },
-        "ko": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "다시 시도"
           }
         },
         "pl": {
@@ -11377,12 +9679,6 @@
           "stringUnit": {
             "state": "translated",
             "value": "Retry"
-          }
-        },
-        "ro": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Reîncearcă"
           }
         },
         "ru": {
@@ -11473,12 +9769,6 @@
             "value": "Instalando Rosetta"
           }
         },
-        "ro": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Se instalează Rosetta"
-          }
-        },
         "ru": {
           "stringUnit": {
             "state": "translated",
@@ -11525,28 +9815,10 @@
             "value": "Rosetta 2 installation failed. Please install it manually."
           }
         },
-        "es": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "La instalación de Rosetta 2 ha fallado. Por favor, instálala manualmente."
-          }
-        },
         "fr": {
           "stringUnit": {
             "state": "translated",
             "value": "Installation de Rosetta 2 a échoué. Veuillez l'installer manuellement."
-          }
-        },
-        "it": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Installazione di Rosetta 2 fallita. Si prega d'installarla manualmente."
-          }
-        },
-        "ko": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Rosetta 2 설치에 실패했습니다. 수동으로 설치해 주세요."
           }
         },
         "pl": {
@@ -11559,12 +9831,6 @@
           "stringUnit": {
             "state": "translated",
             "value": "Rosetta 2 installation failed. Please install it manually."
-          }
-        },
-        "ro": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Nu s-a putut instala Rosetta 2. Vă rugăm să o instalați manual."
           }
         },
         "ru": {
@@ -11653,12 +9919,6 @@
           "stringUnit": {
             "state": "translated",
             "value": "Rosetta permite que código x86, como o Wine, execute no seu Mac."
-          }
-        },
-        "ro": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Rosetta permite codului x86, ca de exemplu Wine, să ruleze pe Mac-ul dvs."
           }
         },
         "ru": {
@@ -11773,12 +10033,6 @@
             "value": "Gerir as dependências necessárias do Whisky."
           }
         },
-        "ro": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Gestionează dependențele cerute de Whisky."
-          }
-        },
         "ru": {
           "stringUnit": {
             "state": "translated",
@@ -11883,12 +10137,6 @@
           "stringUnit": {
             "state": "translated",
             "value": "Configuração de dependências"
-          }
-        },
-        "ro": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Configurare dependențe"
           }
         },
         "ru": {
@@ -12001,12 +10249,6 @@
           "stringUnit": {
             "state": "translated",
             "value": "Remover"
-          }
-        },
-        "ro": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Dezinstalează"
           }
         },
         "ru": {
@@ -12127,12 +10369,6 @@
             "value": "Bem-vindo ao Whisky"
           }
         },
-        "ro": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Bine ați venit la Whisky"
-          }
-        },
         "ru": {
           "stringUnit": {
             "state": "translated",
@@ -12251,12 +10487,6 @@
             "value": "Vamos prepará-lo. Isto não irá demorar um minuto."
           }
         },
-        "ro": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Hai să începem! Nu va lua mult."
-          }
-        },
         "ru": {
           "stringUnit": {
             "state": "translated",
@@ -12367,12 +10597,6 @@
           "stringUnit": {
             "state": "translated",
             "value": "Não Mover"
-          }
-        },
-        "ro": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Nu Muta"
           }
         },
         "ru": {
@@ -12493,12 +10717,6 @@
             "value": "Mover para Aplicações"
           }
         },
-        "ro": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Mutare în Aplicații"
-          }
-        },
         "ru": {
           "stringUnit": {
             "state": "translated",
@@ -12615,12 +10833,6 @@
           "stringUnit": {
             "state": "translated",
             "value": "Em alguns casos, o Whisky pode não funcionar corretamente numa pasta diferente"
-          }
-        },
-        "ro": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "În unele cazuri, Whisky nu va putea funcționa corect dintr-un folder diferit"
           }
         },
         "ru": {
@@ -12741,12 +10953,6 @@
             "value": "Gostaria de mover o Whisky para a pasta das Aplicações ?"
           }
         },
-        "ro": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Doriți să mutați Whisky în folder-ul dvs. Aplicații?"
-          }
-        },
         "ru": {
           "stringUnit": {
             "state": "translated",
@@ -12853,12 +11059,6 @@
             "value": "Configuração da Bottle"
           }
         },
-        "ro": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Configurare Sticlă"
-          }
-        },
         "ru": {
           "stringUnit": {
             "state": "translated",
@@ -12957,12 +11157,6 @@
           "stringUnit": {
             "state": "translated",
             "value": "Programas Instalados"
-          }
-        },
-        "ro": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Programe Instalate"
           }
         },
         "ru": {
@@ -13071,12 +11265,6 @@
             "value": "GPTK %@ está sendo usada, mas %@ está disponível. Atualizar?"
           }
         },
-        "ro": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Dvs. rulați GPTK %@, dar %@ este disponibil. Doriți să actualizați?"
-          }
-        },
         "ru": {
           "stringUnit": {
             "state": "translated",
@@ -13183,12 +11371,6 @@
             "value": "Nova versão do GPTK disponível"
           }
         },
-        "ro": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "O Nouă Versiune GPTK este Disponibilă"
-          }
-        },
         "ru": {
           "stringUnit": {
             "state": "translated",
@@ -13287,12 +11469,6 @@
           "stringUnit": {
             "state": "translated",
             "value": "Atualizar"
-          }
-        },
-        "ro": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Actualizare"
           }
         },
         "ru": {
@@ -13407,12 +11583,6 @@
             "value": "Limpar Cache de Shader"
           }
         },
-        "ro": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Golire Cache Shader"
-          }
-        },
         "ru": {
           "stringUnit": {
             "state": "translated",
@@ -13460,30 +11630,6 @@
             "value": "Apps"
           }
         },
-        "es": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Aplicaciones"
-          }
-        },
-        "fr": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Applications"
-          }
-        },
-        "it": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Applicazioni"
-          }
-        },
-        "ko": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "앱"
-          }
-        },
         "pl": {
           "stringUnit": {
             "state": "translated",
@@ -13494,12 +11640,6 @@
           "stringUnit": {
             "state": "translated",
             "value": "Apps"
-          }
-        },
-        "ro": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Aplicaţii"
           }
         },
         "ru": {
@@ -13519,30 +11659,6 @@
             "value": "Benchmarks"
           }
         },
-        "es": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Prueba de rendimiento"
-          }
-        },
-        "fr": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Benchmarks"
-          }
-        },
-        "it": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Benchmarks"
-          }
-        },
-        "ko": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "벤치마크"
-          }
-        },
         "pl": {
           "stringUnit": {
             "state": "translated",
@@ -13553,12 +11669,6 @@
           "stringUnit": {
             "state": "translated",
             "value": "Benchmarks"
-          }
-        },
-        "ro": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Evaluări"
           }
         },
         "ru": {
@@ -13578,30 +11688,6 @@
             "value": "DLLs"
           }
         },
-        "es": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "DLLs"
-          }
-        },
-        "fr": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "DLLs"
-          }
-        },
-        "it": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "DLLs"
-          }
-        },
-        "ko": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "DLLs"
-          }
-        },
         "pl": {
           "stringUnit": {
             "state": "translated",
@@ -13609,12 +11695,6 @@
           }
         },
         "pt-BR": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "DLLs"
-          }
-        },
-        "ro": {
           "stringUnit": {
             "state": "translated",
             "value": "DLLs"
@@ -13637,28 +11717,10 @@
             "value": "Fonts"
           }
         },
-        "es": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Fuentes"
-          }
-        },
         "fr": {
           "stringUnit": {
             "state": "translated",
             "value": "Polices"
-          }
-        },
-        "it": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Fonts"
-          }
-        },
-        "ko": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "글꼴"
           }
         },
         "pl": {
@@ -13671,12 +11733,6 @@
           "stringUnit": {
             "state": "translated",
             "value": "Fonts"
-          }
-        },
-        "ro": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Font-uri"
           }
         },
         "ru": {
@@ -13696,28 +11752,10 @@
             "value": "Games"
           }
         },
-        "es": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Juegos"
-          }
-        },
         "fr": {
           "stringUnit": {
             "state": "translated",
             "value": "Jeux"
-          }
-        },
-        "it": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Giochi"
-          }
-        },
-        "ko": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "게임"
           }
         },
         "pl": {
@@ -13730,12 +11768,6 @@
           "stringUnit": {
             "state": "translated",
             "value": "Games"
-          }
-        },
-        "ro": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Jocuri"
           }
         },
         "ru": {
@@ -13755,28 +11787,10 @@
             "value": "Settings"
           }
         },
-        "es": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Ajustes"
-          }
-        },
         "fr": {
           "stringUnit": {
             "state": "translated",
             "value": "Paramètres"
-          }
-        },
-        "it": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Impostazioni"
-          }
-        },
-        "ko": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "설정"
           }
         },
         "pl": {
@@ -13789,12 +11803,6 @@
           "stringUnit": {
             "state": "translated",
             "value": "Settings"
-          }
-        },
-        "ro": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Setări"
           }
         },
         "ru": {
@@ -13813,36 +11821,6 @@
             "value": "Description"
           }
         },
-        "es": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Descripción"
-          }
-        },
-        "fr": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Description "
-          }
-        },
-        "it": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Descrizione"
-          }
-        },
-        "ko": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "상세 설명"
-          }
-        },
-        "nl": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Omschrijving"
-          }
-        },
         "pl": {
           "stringUnit": {
             "state": "translated",
@@ -13853,12 +11831,6 @@
           "stringUnit": {
             "state": "translated",
             "value": "Description"
-          }
-        },
-        "ro": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Descriere"
           }
         },
         "ru": {
@@ -13877,28 +11849,10 @@
             "value": "Command"
           }
         },
-        "es": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Comando"
-          }
-        },
         "fr": {
           "stringUnit": {
             "state": "translated",
             "value": "Commande"
-          }
-        },
-        "it": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Comando"
-          }
-        },
-        "ko": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "명령어"
           }
         },
         "pl": {
@@ -13911,12 +11865,6 @@
           "stringUnit": {
             "state": "translated",
             "value": "Command"
-          }
-        },
-        "ro": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Comandă"
           }
         },
         "ru": {
@@ -14005,12 +11953,6 @@
           "stringUnit": {
             "state": "translated",
             "value": "Executar o comando Winetricks"
-          }
-        },
-        "ro": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Rulează comanda Winetricks"
           }
         },
         "ru": {
