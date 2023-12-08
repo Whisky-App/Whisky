@@ -503,6 +503,7 @@
 				vi,
 				da,
 				"pt-BR",
+				ro,
 			);
 			mainGroup = 6E40494929CCA19C006E3F1B;
 			packageReferences = (
