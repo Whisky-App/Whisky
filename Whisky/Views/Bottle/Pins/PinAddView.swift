@@ -28,12 +28,9 @@ struct PinAddView: View {
             Button {
                 showingSheet = true
             } label: {
-                Image(systemName: "plus")
+                Image(systemName: "plus.circle")
                     .resizable()
                     .foregroundStyle(.secondary)
-                    .padding(12)
-                    .background(.quaternary)
-                    .clipShape(Circle())
             }
             .buttonStyle(.plain)
             .frame(width: 45, height: 45)
