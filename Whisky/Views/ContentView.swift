@@ -147,7 +147,6 @@ struct ContentView: View {
                             }
                         }
                         .id(bottle.url)
-                        .padding(.vertical, 5)
                     }
                 }
             }
