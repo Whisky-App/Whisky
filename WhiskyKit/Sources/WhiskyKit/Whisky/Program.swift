@@ -20,15 +20,7 @@ import Foundation
 import SwiftUI
 import os.log
 
-public class Program: Hashable, ObservableObject {
-    public static func == (lhs: Program, rhs: Program) -> Bool {
-        lhs.url == rhs.url
-    }
-
-    public func hash(into hasher: inout Hasher) {
-        return hasher.combine(url)
-    }
-
+public class Program: ObservableObject, Equatable, Hashable, Identifiable {
     public let bottle: Bottle
     public let url: URL
     public let settingsURL: URL
@@ -42,19 +34,19 @@ public class Program: Hashable, ObservableObject {
     }
 
     @Published public var pinned: Bool {
-      didSet {
-        if pinned {
-            bottle.settings.pins.append(PinnedProgram(
-                name: name.replacingOccurrences(of: ".exe", with: ""),
-                url: url
-            ))
-        } else {
-            bottle.settings.pins.removeAll(where: { $0.url == url })
+        didSet {
+            if pinned {
+                bottle.settings.pins.append(PinnedProgram(
+                    name: name.replacingOccurrences(of: ".exe", with: ""),
+                    url: url
+                ))
+            } else {
+                bottle.settings.pins.removeAll(where: { $0.url == url })
+            }
         }
-      }
     }
 
-    public var peFile: PEFile?
+    public let peFile: PEFile?
 
     public init(url: URL, bottle: Bottle) {
         let name = url.lastPathComponent
@@ -106,5 +98,23 @@ public class Program: Hashable, ObservableObject {
         } catch {
             Logger.wineKit.error("Failed to save settings for `\(self.name)`: \(error)")
         }
+    }
+
+    // MARK: - Equatable
+
+    public static func == (lhs: Program, rhs: Program) -> Bool {
+        return lhs.url == rhs.url
+    }
+
+    // MARK: - Hashable
+
+    public func hash(into hasher: inout Hasher) {
+        return hasher.combine(url)
+    }
+
+    // MARK: - Identifiable
+
+    public var id: URL {
+        self.url
     }
 }

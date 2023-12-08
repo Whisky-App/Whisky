@@ -47,25 +47,14 @@ struct BottleView: View {
                 .padding()
                 Form {
                     NavigationLink(value: BottleStage.programs) {
-                        HStack {
-                            Image(systemName: "list.bullet")
-                                .resizable()
-                                .scaledToFit()
-                                .frame(width: 14, height: 14, alignment: .center)
-                            Text("tab.programs")
-                        }
+                        Label("tab.programs", systemImage: "list.bullet")
                     }
                     NavigationLink(value: BottleStage.config) {
-                        HStack {
-                            Image(systemName: "gearshape")
-                                .resizable()
-                                .scaledToFit()
-                                .frame(width: 14, height: 14, alignment: .center)
-                            Text("tab.config")
-                        }
+                        Label("tab.config", systemImage: "gearshape")
                     }
                 }
                 .formStyle(.grouped)
+                .scrollDisabled(true)
             }
             .bottomBar {
                 HStack {
@@ -121,16 +110,16 @@ struct BottleView: View {
             .onAppear {
                 updateStartMenu()
             }
-            .disabled(!bottle.isActive)
+            .disabled(!bottle.isAvailable)
             .navigationTitle(bottle.settings.name)
             .sheet(isPresented: $showWinetricksSheet) {
                 WinetricksView(bottle: bottle)
             }
-            .onChange(of: bottle.settings, { oldValue, newValue in
+            .onChange(of: bottle.settings) { oldValue, newValue in
                 guard oldValue != newValue else { return }
                 // Trigger a reload
                 BottleVM.shared.bottles = BottleVM.shared.bottles
-            })
+            }
             .navigationDestination(for: BottleStage.self) { stage in
                 switch stage {
                 case .config:

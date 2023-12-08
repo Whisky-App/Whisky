@@ -28,8 +28,9 @@ struct PinAddView: View {
             Button {
                 showingSheet = true
             } label: {
-                Image(systemName: "plus.app")
+                Image(systemName: "plus.circle")
                     .resizable()
+                    .foregroundStyle(.secondary)
             }
             .buttonStyle(.plain)
             .frame(width: 45, height: 45)
@@ -44,4 +45,8 @@ struct PinAddView: View {
             PinCreationView(bottle: bottle)
         }
     }
+}
+
+#Preview {
+    PinAddView(bottle: Bottle(bottleUrl: URL(filePath: "")))
 }

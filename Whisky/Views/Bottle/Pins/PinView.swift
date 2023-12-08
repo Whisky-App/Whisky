@@ -67,16 +67,20 @@ struct PinView: View {
 
             Button("button.rename", systemImage: "pencil.line") {
                 showRenameSheet.toggle()
-            }.labelStyle(.titleAndIcon)
+            }
+            .labelStyle(.titleAndIcon)
             Button("button.showInFinder", systemImage: "folder") {
                 NSWorkspace.shared.activateFileViewerSelecting([program.url])
-            }.labelStyle(.titleAndIcon)
+            }
+            .labelStyle(.titleAndIcon)
         }
         .onTapGesture(count: 2) {
             runProgram()
         }
         .sheet(isPresented: $showRenameSheet) {
-            PinRenameView(name: $name)
+            RenameView("rename.pin.title", name: name) { newName in
+                name = newName
+            }
         }
         .onAppear {
             name = pin.name

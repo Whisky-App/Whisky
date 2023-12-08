@@ -32,22 +32,21 @@ class BottleVM: ObservableObject {
     }
 
     func countActive() -> Int {
-        return bottles.filter { $0.isActive == true}.count
+        return bottles.filter { $0.isAvailable == true }.count
     }
 
     func createNewBottle(bottleName: String, winVersion: WinVersion, bottleURL: URL) -> URL {
         let newBottleDir = bottleURL.appending(path: UUID().uuidString)
 
         Task.detached { @MainActor in
-            var bottleId: Bottle? = .none
+            var bottleId: Bottle?
             do {
                 try FileManager.default.createDirectory(atPath: newBottleDir.path(percentEncoded: false),
                                                         withIntermediateDirectories: true)
                 let bottle = Bottle(bottleUrl: newBottleDir, inFlight: true)
-                bottleId = .some(bottle)
+                bottleId = bottle
 
                 self.bottles.append(bottle)
-                self.bottles.sortByName()
 
                 bottle.settings.windowsVersion = winVersion
                 bottle.settings.name = bottleName

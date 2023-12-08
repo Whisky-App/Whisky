@@ -59,14 +59,12 @@ public struct BottleData: Codable {
                 .path(percentEncoded: false)
 
             if FileManager.default.fileExists(atPath: bottleMetadata) {
-                bottles.append(Bottle(bottleUrl: path, isActive: true))
+                bottles.append(Bottle(bottleUrl: path, isAvailable: true))
             } else {
                 bottles.append(Bottle(bottleUrl: path))
             }
         }
 
-        bottles.sortByName()
-        bottles.sortByActive()
         return bottles
     }
 
