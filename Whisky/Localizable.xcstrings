@@ -493,12 +493,6 @@
     },
     "button.createShortcut": {
       "localizations": {
-        "da": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Opret genvej"
-          }
-        },
         "de": {
           "stringUnit": {
             "state": "translated",
@@ -611,12 +605,6 @@
     },
     "button.exportBottle": {
       "localizations": {
-        "da": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Eksporter som arkiv..."
-          }
-        },
         "de": {
           "stringUnit": {
             "state": "translated",
@@ -729,12 +717,6 @@
     },
     "button.moveBottle": {
       "localizations": {
-        "da": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Flyt..."
-          }
-        },
         "de": {
           "stringUnit": {
             "state": "translated",
@@ -847,12 +829,6 @@
     },
     "button.ok": {
       "localizations": {
-        "da": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "OK"
-          }
-        },
         "en": {
           "stringUnit": {
             "state": "translated",
@@ -947,12 +923,6 @@
     },
     "button.pin": {
       "localizations": {
-        "da": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Fastgør"
-          }
-        },
         "en": {
           "stringUnit": {
             "state": "translated",
@@ -1849,12 +1819,6 @@
     },
     "button.rename": {
       "localizations": {
-        "da": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Omdøb..."
-          }
-        },
         "de": {
           "stringUnit": {
             "state": "translated",
@@ -2215,12 +2179,6 @@
     },
     "button.unpin": {
       "localizations": {
-        "da": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Frigør"
-          }
-        },
         "en": {
           "stringUnit": {
             "state": "translated",
@@ -2285,12 +2243,6 @@
     },
     "button.winetricks": {
       "localizations": {
-        "da": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Winetricks..."
-          }
-        },
         "en": {
           "stringUnit": {
             "state": "translated",
@@ -2485,12 +2437,6 @@
     },
     "config.buildVersion": {
       "localizations": {
-        "da": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Build-version"
-          }
-        },
         "de": {
           "stringUnit": {
             "state": "translated",
@@ -2857,12 +2803,6 @@
     },
     "config.dxvk": {
       "localizations": {
-        "da": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "DXVK"
-          }
-        },
         "en": {
           "stringUnit": {
             "state": "translated",
@@ -2927,12 +2867,6 @@
     },
     "config.dxvk.async": {
       "localizations": {
-        "da": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "DXVK Async"
-          }
-        },
         "en": {
           "stringUnit": {
             "state": "translated",
@@ -3015,12 +2949,6 @@
     },
     "config.dxvkHud": {
       "localizations": {
-        "da": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "DXVK HUD"
-          }
-        },
         "en": {
           "stringUnit": {
             "state": "translated",
@@ -3091,12 +3019,6 @@
     },
     "config.dxvkHud.fps": {
       "localizations": {
-        "da": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "FPS"
-          }
-        },
         "en": {
           "stringUnit": {
             "state": "translated",
@@ -3551,12 +3473,6 @@
     },
     "config.enhacnedSync.esync": {
       "localizations": {
-        "da": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "ESync"
-          }
-        },
         "en": {
           "stringUnit": {
             "state": "translated",
