@@ -57,7 +57,7 @@ class ProgramShortcut {
                 <key>LSMinimumSystemVersion</key>
                 <string>14.0</string>
                 <key>LSApplicationCategoryType</key>
-                <string>public.app-category.games</string>
+                <string>public.app-category.music-games</string>
             </dict>
             </plist>
             """
