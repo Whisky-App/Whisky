@@ -22,6 +22,17 @@ import SwiftUI
 class AppDelegate: NSObject, NSApplicationDelegate {
     @AppStorage("hasShownMoveToApplicationsAlert") private var hasShownMoveToApplicationsAlert = false
 
+    func application(_ application: NSApplication, open urls: [URL]) {
+        // Test if automatic window tabbing is enabled
+        // as it is disabled when ContentView appears.
+        // Prevents crashing
+        if NSWindow.allowsAutomaticWindowTabbing, let url = urls.first {
+            // Reopen the file after Whisky has been opened
+            // so that the `onOpenURL` handler is actually called
+            NSWorkspace.shared.open(url)
+        }
+    }
+
     func applicationDidFinishLaunching(_ notification: Notification) {
         if !hasShownMoveToApplicationsAlert && !AppDelegate.insideAppsFolder {
             DispatchQueue.main.asyncAfter(deadline: .now()) {
