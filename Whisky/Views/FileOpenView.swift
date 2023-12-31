@@ -39,7 +39,7 @@ struct FileOpenView: View {
             }
             .frame(maxHeight: .infinity)
             .formStyle(.grouped)
-            .navigationTitle("run.title")
+            .navigationTitle(String(format: String(localized: "run.title"), fileURL.lastPathComponent))
             .toolbar {
                 ToolbarItem(placement: .cancellationAction) {
                     Button("create.cancel") {
