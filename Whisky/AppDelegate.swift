@@ -24,8 +24,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 
     func application(_ application: NSApplication, open urls: [URL]) {
         // Test if automatic window tabbing is enabled
-        // as it is disabled when ContentView appears.
-        // Prevents crashing
+        // as it is disabled when ContentView appears
         if NSWindow.allowsAutomaticWindowTabbing, let url = urls.first {
             // Reopen the file after Whisky has been opened
             // so that the `onOpenURL` handler is actually called
