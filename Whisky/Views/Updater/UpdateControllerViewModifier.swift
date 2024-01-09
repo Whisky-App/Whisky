@@ -81,32 +81,36 @@ struct UpdateControllerViewModifier: ViewModifier {
                 UpdateControllerErrorView(updater: updater)
             })
             .onChange(of: updater.state, { _, newValue in
-                // Dissmiss all old views
-                sheetCheckingUpdateViewPresented = false
-                sheetChangeLogViewPresented = false
-                sheetUpdateInstallingViewPresented = false
-                sheetUpdateReadyToRelaunchViewPresented = false
-                sheetUpdateErrorViewPresented = false
-                sheetUpdateNotFoundViewPresented = false
-
-                // Enable new view
-                switch newValue {
-                case .checking:
-                    sheetCheckingUpdateViewPresented = true
-                case .updateFound:
-                    sheetChangeLogViewPresented = true
-                case .initializing, .downloading, .extracting, .installing:
-                    sheetUpdateInstallingViewPresented = true
-                case .readyToRelaunch:
-                    sheetUpdateReadyToRelaunchViewPresented = true
-                case .error:
-                    sheetUpdateErrorViewPresented = true
-                case .updateNotFound:
-                    sheetUpdateNotFoundViewPresented = true
-                case .idle:
-                    break
-                }
+                updateViews(newState: newValue)
             })
+    }
+
+    func updateViews(newState: SparkleUpdaterEvents.UpdaterState) {
+        // Dissmiss all old views
+        sheetCheckingUpdateViewPresented = false
+        sheetChangeLogViewPresented = false
+        sheetUpdateInstallingViewPresented = false
+        sheetUpdateReadyToRelaunchViewPresented = false
+        sheetUpdateErrorViewPresented = false
+        sheetUpdateNotFoundViewPresented = false
+
+        // Enable new view
+        switch newState {
+        case .checking:
+            sheetCheckingUpdateViewPresented = true
+        case .updateFound:
+            sheetChangeLogViewPresented = true
+        case .initializing, .downloading, .extracting, .installing:
+            sheetUpdateInstallingViewPresented = true
+        case .readyToRelaunch:
+            sheetUpdateReadyToRelaunchViewPresented = true
+        case .error:
+            sheetUpdateErrorViewPresented = true
+        case .updateNotFound:
+            sheetUpdateNotFoundViewPresented = true
+        case .idle:
+            break
+        }
     }
 }
 

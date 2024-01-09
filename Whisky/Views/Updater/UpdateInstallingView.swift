@@ -63,7 +63,8 @@ struct UpdateInstallingView: View {
                                 + Text(String(" "))
                                 + (shouldShowEstimate ?
                                    Text(String(format: String(localized: "setup.gptk.eta"),
-                                               formatRemainingTime(remainingBytes: downloadableBytes - downloadedBytes)))
+                                               formatRemainingTime(
+                                                remainingBytes: downloadableBytes - downloadedBytes)))
                                    : Text(String()))
                                 Spacer()
                             }
