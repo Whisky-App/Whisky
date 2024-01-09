@@ -34,48 +34,17 @@ struct UpdateControllerViewModifier: ViewModifier {
     @State private var sheetUpdateNotFoundViewPresented = false
     @State private var sheetChangeLogViewPresented = false
     @State private var sheetUpdateInstallingViewPresented = false
-    @State private var sheetUpdateReadyRelaunchViewPresented = false
+    @State private var sheetUpdateReadyToRelaunchViewPresented = false
     @State private var sheetUpdateErrorViewPresented = false
     @ObservedObject private var updater = SparkleUpdaterEvents.shared
 
-    func body(content: Content) -> some View { // swiftlint:disable:this function_body_length
+    func body(content: Content) -> some View {
         content
             .sheet(isPresented: $sheetCheckingUpdateViewPresented, content: {
-                VStack(alignment: .leading, spacing: 12) {
-                    Text("update.checkingForUpdates")
-                        .fontWeight(.bold)
-                    Text("update.checkingForUpdates.description")
-                    ProgressView()
-                        .progressViewStyle(.linear)
-                    HStack {
-                        Spacer()
-                        Button("button.cancel") {
-                            updater.cancelUpdateCheck()
-                        }
-                        .buttonStyle(.borderedProminent)
-                        .keyboardShortcut(.defaultAction)
-                    }
-                }
-                .padding(20)
-                .frame(width: 500, alignment: .leading)
-                .interactiveDismissDisabled()
+                UpdateControllerCheckingForUpdatesView(updater: updater)
             })
             .sheet(isPresented: $sheetUpdateNotFoundViewPresented, content: {
-                VStack(alignment: .leading, spacing: 12) {
-                    Text("update.noUpdatesFound")
-                        .fontWeight(.bold)
-                    Text("update.noUpdatesFound.description")
-                    HStack {
-                        Spacer()
-                        Button("button.ok") {
-                            sheetUpdateNotFoundViewPresented = false
-                        }
-                        .buttonStyle(.borderedProminent)
-                        .keyboardShortcut(.defaultAction)
-                    }
-                }
-                .padding(20)
-                .frame(width: 500, alignment: .leading)
+                UpdateControllerUpdateNotFoundView(updater: updater)
             })
             .sheet(isPresented: $sheetChangeLogViewPresented, content: {
                  UpdatePreviewView(
@@ -86,10 +55,10 @@ struct UpdateControllerViewModifier: ViewModifier {
                         updater.shouldUpdate(.install)
                     },
                     markdownText: updater.appcastItem?.itemDescription,
-                    nextVersion: updater.appcastItem?.displayVersionString ?? "v1.0.0"
+                    nextVersion: updater.appcastItem?.displayVersionString ?? "1.0.0",
+                    nextVersionNumber: updater.appcastItem?.versionString ?? "0"
                  )
                     .interactiveDismissDisabled()
-                    .frame(width: 600, height: 400)
             })
             .sheet(isPresented: $sheetUpdateInstallingViewPresented, content: {
                 UpdateInstallingView(
@@ -105,47 +74,22 @@ struct UpdateControllerViewModifier: ViewModifier {
                     .interactiveDismissDisabled()
                     .frame(width: 500)
             })
-            .sheet(isPresented: $sheetUpdateReadyRelaunchViewPresented, content: {
-                VStack(alignment: .leading, spacing: 12) {
-                    Text("update.readyToRelaunch")
-                        .fontWeight(.bold)
-                    Text("update.readyToRelaunch.description")
-                    HStack {
-                        Spacer()
-                        Button("update.relaunch") {
-                            updater.relaunch(.install)
-                        }
-                        .buttonStyle(.borderedProminent)
-                        .keyboardShortcut(.defaultAction)
-                    }
-                }
-                .padding(20)
-                .frame(width: 500, alignment: .leading)
+            .sheet(isPresented: $sheetUpdateReadyToRelaunchViewPresented, content: {
+                UpdateControllerReadyToRelaunchView(updater: updater)
             })
             .sheet(isPresented: $sheetUpdateErrorViewPresented, content: {
-                VStack(alignment: .leading, spacing: 12) {
-                    Text("update.updaterError")
-                        .fontWeight(.bold)
-                    Text(updater.errorData?.localizedDescription ?? "")
-                    HStack {
-                        Spacer()
-                        Button("button.ok") {
-                            updater.errorAcknowledgement()
-                        }
-                        .buttonStyle(.borderedProminent)
-                        .keyboardShortcut(.defaultAction)
-                    }
-                }
-                .padding(20)
-                .frame(width: 500, alignment: .leading)
+                UpdateControllerErrorView(updater: updater)
             })
             .onChange(of: updater.state, { _, newValue in
+                // Dissmiss all old views
                 sheetCheckingUpdateViewPresented = false
                 sheetChangeLogViewPresented = false
                 sheetUpdateInstallingViewPresented = false
-                sheetUpdateReadyRelaunchViewPresented = false
+                sheetUpdateReadyToRelaunchViewPresented = false
                 sheetUpdateErrorViewPresented = false
                 sheetUpdateNotFoundViewPresented = false
+
+                // Enable new view
                 switch newValue {
                 case .checking:
                     sheetCheckingUpdateViewPresented = true
@@ -154,7 +98,7 @@ struct UpdateControllerViewModifier: ViewModifier {
                 case .initializing, .downloading, .extracting, .installing:
                     sheetUpdateInstallingViewPresented = true
                 case .readyToRelaunch:
-                    sheetUpdateReadyRelaunchViewPresented = true
+                    sheetUpdateReadyToRelaunchViewPresented = true
                 case .error:
                     sheetUpdateErrorViewPresented = true
                 case .updateNotFound:
@@ -163,5 +107,108 @@ struct UpdateControllerViewModifier: ViewModifier {
                     break
                 }
             })
+    }
+}
+
+struct UpdateControllerCheckingForUpdatesView: View {
+    let updater: SparkleUpdaterEvents
+
+    var body: some View {
+        HStack(alignment: .top, spacing: 20) {
+            BundleIcon().frame(width: 60, height: 60)
+            VStack(alignment: .leading, spacing: 12) {
+                Text("update.checkingForUpdates")
+                    .fontWeight(.bold)
+                Text("update.checkingForUpdates.description")
+                ProgressView()
+                    .progressViewStyle(.linear)
+                HStack {
+                    Spacer()
+                    Button("button.cancel") {
+                        updater.cancelUpdateCheck()
+                    }
+                    .buttonStyle(.borderedProminent)
+                    .keyboardShortcut(.defaultAction)
+                }
+            }
+        }
+        .padding(20)
+        .frame(width: 500, alignment: .leading)
+        .interactiveDismissDisabled()
+    }
+}
+
+struct UpdateControllerUpdateNotFoundView: View {
+    let updater: SparkleUpdaterEvents
+
+    var body: some View {
+        HStack(alignment: .top, spacing: 20) {
+            BundleIcon().frame(width: 60, height: 60)
+            VStack(alignment: .leading, spacing: 12) {
+                Text("update.noUpdatesFound")
+                    .fontWeight(.bold)
+                Text("update.noUpdatesFound.description")
+                HStack {
+                    Spacer()
+                    Button("button.ok") {
+                        updater.updateNotFoundAcknowledgement()
+                    }
+                    .buttonStyle(.borderedProminent)
+                    .keyboardShortcut(.defaultAction)
+                }
+            }
+        }
+        .padding(20)
+        .frame(width: 500, alignment: .leading)
+    }
+}
+
+struct UpdateControllerReadyToRelaunchView: View {
+    let updater: SparkleUpdaterEvents
+
+    var body: some View {
+        HStack(alignment: .top, spacing: 20) {
+            BundleIcon().frame(width: 60, height: 60)
+            VStack(alignment: .leading, spacing: 12) {
+                Text("update.readyToRelaunch")
+                    .fontWeight(.bold)
+                Text("update.readyToRelaunch.description")
+                HStack {
+                    Spacer()
+                    Button("update.relaunch") {
+                        updater.relaunch(.install)
+                    }
+                    .buttonStyle(.borderedProminent)
+                    .keyboardShortcut(.defaultAction)
+                }
+            }
+        }
+        .padding(20)
+        .frame(width: 500, alignment: .leading)
+    }
+}
+
+struct UpdateControllerErrorView: View {
+    let updater: SparkleUpdaterEvents
+
+    var body: some View {
+        HStack(alignment: .top, spacing: 20) {
+            BundleIcon().frame(width: 60, height: 60)
+            VStack(alignment: .leading, spacing: 12) {
+                Text("update.updaterError")
+                    .fontWeight(.bold)
+                Text(updater.errorData?.localizedDescription ?? "")
+                HStack {
+                    Spacer()
+                    Button("button.ok") {
+                        updater.errorAcknowledgement()
+                    }
+                    .buttonStyle(.borderedProminent)
+                    .keyboardShortcut(.defaultAction)
+                }
+            }
+        }
+        .padding(20)
+        .frame(width: 500, alignment: .leading)
     }
 }

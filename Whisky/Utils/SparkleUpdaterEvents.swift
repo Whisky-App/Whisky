@@ -47,6 +47,9 @@ class SparkleUpdaterEvents: NSObject, SPUUserDriver, ObservableObject {
     var appcastItem: SUAppcastItem?
     private var updateFoundActionCallback: ((SPUUserUpdateChoice) -> Void)?
 
+    // Update not found
+    private var updateNotFoundAcknowledgementCallback: (() -> Void)?
+
     // Downloading
     var downloadStartedAt: Date?
     private var downloadingCancellationCallback: (() -> Void)?
@@ -57,6 +60,7 @@ class SparkleUpdaterEvents: NSObject, SPUUserDriver, ObservableObject {
     /// Clear all callbacks
     private func clearCallbacks() {
         self.checkingForUpdatesCancellationCallback = .none
+        self.updateNotFoundAcknowledgementCallback = .none
         self.updateFoundActionCallback = .none
         self.downloadingCancellationCallback = .none
         self.updateReadyRelaunchCallback = .none
@@ -126,9 +130,15 @@ class SparkleUpdaterEvents: NSObject, SPUUserDriver, ObservableObject {
     /// Implementation of `SPUUserDriver` protocol
     internal func showUpdateNotFoundWithError(_ error: Error, acknowledgement: @escaping () -> Void) {
         clearCallbacks()
-        self.errorData = error as NSError
-        self.errorAcknowledgementCallback = acknowledgement
-        self.state = .error
+        self.updateNotFoundAcknowledgementCallback = acknowledgement
+        self.state = .updateNotFound
+    }
+
+    /// Acknowledgement of the update not being found
+    func updateNotFoundAcknowledgement() {
+        self.updateNotFoundAcknowledgementCallback?()
+        clearCallbacks()
+        self.state = .idle
     }
 
     /// Implementation of `SPUUserDriver` protocol

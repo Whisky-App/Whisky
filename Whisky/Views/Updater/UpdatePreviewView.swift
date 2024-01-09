@@ -25,46 +25,74 @@ struct UpdatePreviewView: View {
     let install: () -> Void
     let markdownText: String?
     let nextVersion: String
+    let nextVersionNumber: String
 
     private let currentVersion = (Bundle.main.infoDictionary?["CFBundleShortVersionString"] as? String) ?? "0.0.0"
+    private let currentVersionNumber = (Bundle.main.infoDictionary?["CFBundleVersion"] as? String) ?? "0"
 
     var body: some View {
         HStack {
-            VStack(alignment: .leading, spacing: 12) {
-                Text("update.title")
-                    .font(.title)
-                    .fontWeight(.bold)
+            VStack(alignment: .center, spacing: 12) {
+                BundleIcon().frame(width: 80, height: 80)
+                VStack(alignment: .center, spacing: 2) {
+                    Text("app.name")
+                        .font(.title)
+                        .fontWeight(.bold)
+                    Text(String(format: String(localized: "app.version"),
+                                "v" + currentVersion,
+                                currentVersionNumber))
+                    .opacity(0.8)
+                }
                 Text(String(format: String(localized: "update.description"),
                         "v" + currentVersion,
-                        "v" + nextVersion))
+                        currentVersionNumber,
+                        "v" + nextVersion,
+                        nextVersionNumber))
+                .opacity(0.8)
+                .multilineTextAlignment(.center)
                 Spacer()
-                HStack {
-                    Button("update.cancel") {
-                        dismiss()
-                    }
-                    Spacer()
-                    Button("update.update") {
+                    .frame(height: 8)
+                VStack(spacing: 12) {
+                    Button {
                         Task(priority: .userInitiated) {
                             install()
                         }
+                    } label: {
+                        Text("update.update")
+                            .padding(8)
+                            .frame(maxWidth: .infinity)
                     }
+                    .frame(maxWidth: .infinity)
                     .buttonStyle(.borderedProminent)
                     .keyboardShortcut(.defaultAction)
+                    Button {
+                        dismiss()
+                    } label: {
+                        Text("button.cancel")
+                            .padding(8)
+                            .frame(maxWidth: .infinity)
+                    }
+                    .buttonStyle(.borderless)
                 }
             }
-            .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .leading)
-            .padding(20)
+            .frame(maxHeight: .infinity, alignment: .center)
+            .frame(width: 200)
+            .padding(.horizontal, 40)
+            .padding(.vertical, 20)
             ScrollView {
                 VStack(alignment: .leading) {
-                    Text("update.changeLog")
+                    Text("update.newUpdate")
                         .font(.title2)
                         .fontWeight(.bold)
                         .padding(.bottom, 12)
                 }
                 .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .leading)
                 if let markdownText = markdownText {
-                    Markdown(markdownText)
-                        .padding(.bottom, 20)
+                    VStack(alignment: .leading) {
+                        Markdown(markdownText)
+                            .padding(.bottom, 20)
+                    }
+                    .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .leading)
                 } else {
                     Text("update.noChangeLog")
                 }
@@ -73,11 +101,10 @@ struct UpdatePreviewView: View {
             .padding(20)
             .background(.ultraThickMaterial)
         }
-        .frame(maxWidth: .infinity, maxHeight: .infinity)
+        .frame(width: 700, height: 400)
     }
 }
 
 #Preview {
-    UpdatePreviewView(dismiss: {}, install: {}, markdownText: "# Hello", nextVersion: "v1.0.0")
-        .frame(width: 700, height: 400)
+    UpdatePreviewView(dismiss: {}, install: {}, markdownText: "# Hello", nextVersion: "1.0.0", nextVersionNumber: "10")
 }

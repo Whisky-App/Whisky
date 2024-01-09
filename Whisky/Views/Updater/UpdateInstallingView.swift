@@ -32,55 +32,58 @@ struct UpdateInstallingView: View {
     @State private var shouldShowEstimate: Bool = false
 
     var body: some View {
-        VStack(alignment: .leading, spacing: 12) {
-            if state == .downloading {
-                Text("update.downloading")
-                    .fontWeight(.bold)
-            } else if state == .extracting {
-                Text("update.extracting")
-                    .fontWeight(.bold)
-            } else if state == .installing {
-                Text("update.installing")
-                    .fontWeight(.bold)
-            } else if state == .initializing {
-                Text("update.initializating")
-                    .fontWeight(.bold)
-            }
-            if state == .installing || state == .initializing {
-                ProgressView()
-                    .progressViewStyle(.linear)
-            } else if state == .downloading || state == .extracting {
-                VStack(spacing: 2) {
-                    ProgressView(value: fractionProgress, total: 1)
+        HStack(alignment: .top, spacing: 20) {
+            BundleIcon().frame(width: 60, height: 60)
+            VStack(alignment: .leading, spacing: 12) {
+                if state == .downloading {
+                    Text("update.downloading")
+                        .fontWeight(.bold)
+                } else if state == .extracting {
+                    Text("update.extracting")
+                        .fontWeight(.bold)
+                } else if state == .installing {
+                    Text("update.installing")
+                        .fontWeight(.bold)
+                } else if state == .initializing {
+                    Text("update.initializating")
+                        .fontWeight(.bold)
+                }
+                if state == .installing || state == .initializing {
+                    ProgressView()
                         .progressViewStyle(.linear)
+                } else if state == .downloading || state == .extracting {
+                    VStack(spacing: 2) {
+                        ProgressView(value: fractionProgress, total: 1)
+                            .progressViewStyle(.linear)
+                        if state == .downloading {
+                            HStack {
+                                Text(String(format: String(localized: "setup.gptk.progress"),
+                                            formatBytes(bytes: downloadedBytes),
+                                            formatBytes(bytes: downloadableBytes)))
+                                + Text(String(" "))
+                                + (shouldShowEstimate ?
+                                   Text(String(format: String(localized: "setup.gptk.eta"),
+                                               formatRemainingTime(remainingBytes: downloadableBytes - downloadedBytes)))
+                                   : Text(String()))
+                                Spacer()
+                            }
+                            .font(.subheadline)
+                            .monospacedDigit()
+                        }
+                    }
                     if state == .downloading {
                         HStack {
-                            Text(String(format: String(localized: "setup.gptk.progress"),
-                                        formatBytes(bytes: downloadedBytes),
-                                        formatBytes(bytes: downloadableBytes)))
-                            + Text(String(" "))
-                            + (shouldShowEstimate ?
-                               Text(String(format: String(localized: "setup.gptk.eta"),
-                                           formatRemainingTime(remainingBytes: downloadableBytes - downloadedBytes)))
-                               : Text(String()))
                             Spacer()
+                            Button("button.cancel") {
+                                cancelDownload()
+                            }
+                            .buttonStyle(.borderedProminent)
+                            .keyboardShortcut(.defaultAction)
+
                         }
                         .font(.subheadline)
                         .monospacedDigit()
                     }
-                }
-                if state == .downloading {
-                    HStack {
-                        Spacer()
-                        Button("button.cancel") {
-                            cancelDownload()
-                        }
-                        .buttonStyle(.borderedProminent)
-                        .keyboardShortcut(.defaultAction)
-
-                    }
-                    .font(.subheadline)
-                    .monospacedDigit()
                 }
             }
         }
