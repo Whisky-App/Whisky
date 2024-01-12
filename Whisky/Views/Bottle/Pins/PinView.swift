@@ -85,8 +85,8 @@ struct PinView: View {
         .task {
             name = pin.name
             guard let peFile = program.peFile else { return }
-            let task = Task<Image?, Never>.detached {
-                guard let image = peFile.bestIcon() else { return nil }
+            let task = Task.detached {
+                guard let image = peFile.bestIcon() else { return nil as Image? }
                 return Image(nsImage: image)
             }
             self.image = await task.value
