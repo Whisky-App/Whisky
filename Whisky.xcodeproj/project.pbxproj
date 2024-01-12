@@ -193,6 +193,7 @@
 		6365C4BF2B1AA69500AAE1FD /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				6E40498229CCA91B006E3F1B /* Bottle+Extensions.swift */,
 				6365C4C02B1AA69D00AAE1FD /* Animation+Extensions.swift */,
 			);
 			path = Extensions;
@@ -270,7 +271,6 @@
 			children = (
 				EEA5A2452A31DD65008274AE /* AppDelegate.swift */,
 				6365C4BF2B1AA69500AAE1FD /* Extensions */,
-				6E5197CF29D71FF900CF655E /* Models */,
 				6E5197D029D7200700CF655E /* Utils */,
 				6E5197CE29D71FE800CF655E /* View Models */,
 				6E5197CD29D71FCD00CF655E /* Views */,
@@ -321,14 +321,6 @@
 				6E50D98229CD6066008C39F6 /* BottleVM.swift */,
 			);
 			path = "View Models";
-			sourceTree = "<group>";
-		};
-		6E5197CF29D71FF900CF655E /* Models */ = {
-			isa = PBXGroup;
-			children = (
-				6E40498229CCA91B006E3F1B /* Bottle+Extensions.swift */,
-			);
-			path = Models;
 			sourceTree = "<group>";
 		};
 		6E5197D029D7200700CF655E /* Utils */ = {
