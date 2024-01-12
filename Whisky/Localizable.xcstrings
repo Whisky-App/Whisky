@@ -11061,6 +11061,16 @@
         }
       }
     },
+    "settings.path" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Default bottle path:"
+          }
+        }
+      }
+    },
     "settings.toggle.gptk.updates" : {
       "localizations" : {
         "da" : {
