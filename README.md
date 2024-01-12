@@ -7,12 +7,12 @@
   [![](https://img.shields.io/discord/1115955071549702235?style=for-the-badge)](https://discord.gg/CsqAfs9CnM)
 </div>
 
-<img width="650" alt="Screenshot 2023-03-31 at 17 14 00" src="https://user-images.githubusercontent.com/42140194/229232488-dbad85f4-cecb-45e1-a182-f737fe9d2b1f.png">
+<img width="650" alt="Config" src="https://github.com/Whisky-App/Whisky/assets/42140194/d0a405e8-76ee-48f0-92b5-165d184a576b">
 
 Familiar UI that integrates seamlessly with macOS
 
 <div align="right">
-  <img width="650" alt="Screenshot 2023-03-31 at 17 14 22" src="https://user-images.githubusercontent.com/42140194/229232557-07f78a79-f695-45f6-be45-15a5b2f3c053.png">
+  <img width="650" alt="New Bottle" src="https://github.com/Whisky-App/Whisky/assets/42140194/ed1a0d69-d8fb-442b-9330-6816ba8981ba">
 
   One-click bottle creation and management
 </div>
