@@ -18,11 +18,10 @@
 
 import Foundation
 import AppKit
-import WhiskyKit
 import os.log
 
 extension Program {
-    func run() {
+    public func run() {
         if NSEvent.modifierFlags.contains(.shift) {
             self.runInTerminal()
         } else {
@@ -47,11 +46,11 @@ extension Program {
         }
     }
 
-    func generateTerminalCommand() -> String {
+    public func generateTerminalCommand() -> String {
         return Wine.generateRunCommand(bottle: bottle, args: settings.arguments, environment: generateEnvironment())
     }
 
-    func runInTerminal() {
+    public func runInTerminal() {
         let wineCmd = generateTerminalCommand().replacingOccurrences(of: "\\", with: "\\\\")
 
         let script = """
