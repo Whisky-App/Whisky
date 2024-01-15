@@ -87,10 +87,7 @@ struct BottleCreationView: View {
                 }
                 ToolbarItem(placement: .primaryAction) {
                     Button("create.create") {
-                        newlyCreatedBottleURL = BottleVM.shared.createNewBottle(bottleName: newBottleName,
-                                                                                winVersion: newBottleVersion,
-                                                                                bottleURL: newBottleURL)
-                        dismiss()
+                        submit()
                     }
                     .keyboardShortcut(.defaultAction)
                     .disabled(!nameValid)
@@ -102,8 +99,18 @@ struct BottleCreationView: View {
             .onAppear {
                 bottlePath = newBottleURL.prettyPath()
             }
+            .onSubmit {
+                submit()
+            }
         }
         .frame(minWidth: 400, minHeight: 210)
+    }
+
+    func submit() {
+        newlyCreatedBottleURL = BottleVM.shared.createNewBottle(bottleName: newBottleName,
+                                                                winVersion: newBottleVersion,
+                                                                bottleURL: newBottleURL)
+        dismiss()
     }
 }
 

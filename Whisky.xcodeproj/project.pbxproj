@@ -233,11 +233,11 @@
 			isa = PBXGroup;
 			children = (
 				6E40498029CCA8B0006E3F1B /* BottleView.swift */,
+				6365C4C22B1AA8CD00AAE1FD /* BottleListEntry.swift */,
 				6E50D98429CDF25B008C39F6 /* BottleCreationView.swift */,
 				6E355E5729D78249002D83BE /* ConfigView.swift */,
 				6E182FC92B0BF64E00AADE81 /* WinetricksView.swift */,
 				6E17B6422AF3FD6E00831173 /* Pins */,
-				6365C4C22B1AA8CD00AAE1FD /* BottleListEntry.swift */,
 			);
 			path = Bottle;
 			sourceTree = "<group>";
