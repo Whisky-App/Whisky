@@ -46,8 +46,10 @@ class Winetricks {
         .appending(path: "winetricks")
 
     static func runCommand(command: String, bottle: Bottle) async {
+        guard let resourcesURL = Bundle.main.url(forResource: "cabextract", withExtension: nil)?
+            .deletingLastPathComponent() else { return }
         // swiftlint:disable:next line_length
-        let winetricksCmd = #"PATH=\"\#(GPTKInstaller.binFolder.path):$PATH\" WINE=wine64 WINEPREFIX=\"\#(bottle.url.path)\" \"\#(winetricksURL.path(percentEncoded: false))\" \#(command)"#
+        let winetricksCmd = #"PATH=\"\#(GPTKInstaller.binFolder.path):\#(resourcesURL.path(percentEncoded: false)):$PATH\" WINE=wine64 WINEPREFIX=\"\#(bottle.url.path)\" \"\#(winetricksURL.path(percentEncoded: false))\" \#(command)"#
 
         let script = """
         tell application "Terminal"
