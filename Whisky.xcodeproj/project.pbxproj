@@ -17,6 +17,7 @@
 		6E17B6492AF4118F00831173 /* EnvironmentArgView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E17B6482AF4118F00831173 /* EnvironmentArgView.swift */; };
 		6E182FCA2B0BF64E00AADE81 /* WinetricksView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E182FC92B0BF64E00AADE81 /* WinetricksView.swift */; };
 		6E2B25C12B0E20F50084A67A /* PinAddView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E2B25C02B0E20F50084A67A /* PinAddView.swift */; };
+		6E2FB15E2B589A7800E344C6 /* cabextract in Embed WhiskyCmd */ = {isa = PBXBuildFile; fileRef = 6E2FB15D2B589A7800E344C6 /* cabextract */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
 		6E355E5829D78249002D83BE /* ConfigView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E355E5729D78249002D83BE /* ConfigView.swift */; };
 		6E355E5A29D782B2002D83BE /* ProgramsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E355E5929D782B2002D83BE /* ProgramsView.swift */; };
 		6E355E5E29D7D85D002D83BE /* ProgramView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E355E5D29D7D85D002D83BE /* ProgramView.swift */; };
@@ -86,6 +87,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 7;
 			files = (
+				6E2FB15E2B589A7800E344C6 /* cabextract in Embed WhiskyCmd */,
 				6E95F66D2AB3EF3A00D585D1 /* WhiskyCmd in Embed WhiskyCmd */,
 			);
 			name = "Embed WhiskyCmd";
@@ -114,6 +116,7 @@
 		6E17B6482AF4118F00831173 /* EnvironmentArgView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnvironmentArgView.swift; sourceTree = "<group>"; };
 		6E182FC92B0BF64E00AADE81 /* WinetricksView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WinetricksView.swift; sourceTree = "<group>"; };
 		6E2B25C02B0E20F50084A67A /* PinAddView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PinAddView.swift; sourceTree = "<group>"; };
+		6E2FB15D2B589A7800E344C6 /* cabextract */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.executable"; path = cabextract; sourceTree = "<group>"; };
 		6E355E5729D78249002D83BE /* ConfigView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfigView.swift; sourceTree = "<group>"; };
 		6E355E5929D782B2002D83BE /* ProgramsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgramsView.swift; sourceTree = "<group>"; };
 		6E355E5D29D7D85D002D83BE /* ProgramView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgramView.swift; sourceTree = "<group>"; };
@@ -229,6 +232,14 @@
 			path = Programs;
 			sourceTree = "<group>";
 		};
+		6E2FB15F2B589A9000E344C6 /* Libraries */ = {
+			isa = PBXGroup;
+			children = (
+				6E2FB15D2B589A7800E344C6 /* cabextract */,
+			);
+			path = Libraries;
+			sourceTree = "<group>";
+		};
 		6E355E5629D78202002D83BE /* Bottle */ = {
 			isa = PBXGroup;
 			children = (
@@ -249,6 +260,7 @@
 				6E70A4992A9A2197007799E9 /* WhiskyCmd */,
 				6EFDF64F2AAE2DA800EF622F /* WhiskyThumbnail */,
 				8CB681E42AED7C6F0018D319 /* WhiskyKit */,
+				6E2FB15F2B589A9000E344C6 /* Libraries */,
 				6E40495329CCA19C006E3F1B /* Products */,
 				6E5967692A9A424900D64F70 /* Frameworks */,
 			);
