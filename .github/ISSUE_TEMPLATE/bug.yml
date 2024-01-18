@@ -28,7 +28,7 @@ body:
     id: logs
     attributes:
       label: Logs
-      description: Please provide the logs from the launched Wine process.
+      description: Please provide the logs from the launched Wine process. These can be found by pressing `CMD + L` in Whisky.
       render: bash
     validations:
       required: true

@@ -24,7 +24,8 @@ struct BottleCreationView: View {
 
     @State private var newBottleName: String = ""
     @State private var newBottleVersion: WinVersion = .win10
-    @State private var newBottleURL: URL = BottleData.defaultBottleDir
+    @State private var newBottleURL: URL = UserDefaults.standard.url(forKey: "defaultBottleLocation")
+                                           ?? BottleData.defaultBottleDir
     @State private var bottlePath: String = ""
     @State private var nameValid: Bool = false
 
@@ -86,10 +87,7 @@ struct BottleCreationView: View {
                 }
                 ToolbarItem(placement: .primaryAction) {
                     Button("create.create") {
-                        newlyCreatedBottleURL = BottleVM.shared.createNewBottle(bottleName: newBottleName,
-                                                                                winVersion: newBottleVersion,
-                                                                                bottleURL: newBottleURL)
-                        dismiss()
+                        submit()
                     }
                     .keyboardShortcut(.defaultAction)
                     .disabled(!nameValid)
@@ -101,8 +99,18 @@ struct BottleCreationView: View {
             .onAppear {
                 bottlePath = newBottleURL.prettyPath()
             }
+            .onSubmit {
+                submit()
+            }
         }
         .frame(minWidth: 400, minHeight: 210)
+    }
+
+    func submit() {
+        newlyCreatedBottleURL = BottleVM.shared.createNewBottle(bottleName: newBottleName,
+                                                                winVersion: newBottleVersion,
+                                                                bottleURL: newBottleURL)
+        dismiss()
     }
 }
 

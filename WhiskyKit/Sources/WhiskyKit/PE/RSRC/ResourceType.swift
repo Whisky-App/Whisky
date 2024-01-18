@@ -1,5 +1,5 @@
 //
-//  Data+Extensions.swift
+//  ResourceType.swift
 //  WhiskyKit
 //
 //  This file is part of Whisky.
@@ -18,17 +18,19 @@
 
 import Foundation
 
-extension FileHandle {
-    public func extract<T>(_ type: T.Type, offset: Int = 0) -> T? {
-        do {
-            try self.seek(toOffset: UInt64(offset))
-            if let data = try self.read(upToCount: MemoryLayout<T>.size) {
-                return data.withUnsafeBytes { $0.loadUnaligned(as: T.self)}
-            }
-        } catch {
-            return nil
-        }
+/// The type of the ``ResourceDirectoryEntry``
+///
+/// Only applicable to ``ResourceDirectoryEntry`` with an ID
+public enum ResourceType: UInt32, CaseIterable, Hashable, Equatable {
+    case unknown
+    // We only care about icon
+    case icon = 3
 
-        return nil
+    public init?(rawValue: UInt32?) {
+        if let rawValue, let value = ResourceType(rawValue: rawValue) {
+            self = value
+        } else {
+            self = .unknown
+        }
     }
 }

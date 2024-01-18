@@ -21,17 +21,17 @@ import AppKit
 
 public struct ShellLinkHeader {
     public static func getProgram(url: URL, handle: FileHandle, bottle: Bottle) -> Program? {
-        var offset: Int = 0
+        var offset: UInt64 = 0
         let headerSize = handle.extract(UInt32.self) ?? 0
         // Move past headerSize and linkCLSID
         offset += 4 + 16
         let rawLinkFlags = handle.extract(UInt32.self, offset: offset) ?? 0
         let linkFlags = LinkFlags(rawValue: rawLinkFlags)
 
-        offset = Int(headerSize)
+        offset = UInt64(headerSize)
         if linkFlags.contains(.hasLinkTargetIDList) {
             // We don't need this section so just get the size, and skip ahead
-            offset += Int(handle.extract(UInt16.self, offset: offset) ?? 0) + 2
+            offset += UInt64(handle.extract(UInt16.self, offset: offset) ?? 0) + 2
         }
 
         if linkFlags.contains(.hasLinkInfo) {
@@ -61,7 +61,7 @@ public struct LinkInfo: Hashable {
     public var linkInfoFlags: LinkInfoFlags
     public var program: Program?
 
-    public init(handle: FileHandle, bottle: Bottle, offset: inout Int) {
+    public init(handle: FileHandle, bottle: Bottle, offset: inout UInt64) {
         let startOfSection = offset
 
         let linkInfoSize = handle.extract(UInt32.self, offset: offset) ?? 0
@@ -77,7 +77,7 @@ public struct LinkInfo: Hashable {
             if linkInfoHeaderSize >= 0x00000024 {
                 offset += 20
                 let localBasePathOffsetUnicode = handle.extract(UInt32.self, offset: offset) ?? 0
-                let localPathOffset = startOfSection + Int(localBasePathOffsetUnicode)
+                let localPathOffset = startOfSection + UInt64(localBasePathOffsetUnicode)
 
                 program = getProgram(handle: handle,
                                      offset: localPathOffset,
@@ -86,7 +86,7 @@ public struct LinkInfo: Hashable {
             } else {
                 offset += 8
                 let localBasePathOffset = handle.extract(UInt32.self, offset: offset) ?? 0
-                let localPathOffset = startOfSection + Int(localBasePathOffset)
+                let localPathOffset = startOfSection + UInt64(localBasePathOffset)
 
                 program = getProgram(handle: handle,
                                      offset: localPathOffset,
@@ -95,12 +95,12 @@ public struct LinkInfo: Hashable {
             }
         }
 
-        offset = startOfSection + Int(linkInfoSize)
+        offset = startOfSection + UInt64(linkInfoSize)
     }
 
-    func getProgram(handle: FileHandle, offset: Int, bottle: Bottle, unicode: Bool) -> Program? {
+    func getProgram(handle: FileHandle, offset: UInt64, bottle: Bottle, unicode: Bool) -> Program? {
         do {
-            try handle.seek(toOffset: UInt64(offset))
+            try handle.seek(toOffset: offset)
             if let pathData = try handle.readToEnd() {
                 if let nullRange = pathData.firstIndex(of: 0) {
                     let encoding: String.Encoding = unicode ? .utf16 : .windowsCP1254

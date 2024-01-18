@@ -25,7 +25,7 @@ struct PinView: View {
     @State var pin: PinnedProgram
     @Binding var path: NavigationPath
 
-    @State private var image: NSImage?
+    @State private var image: Image?
     @State private var showRenameSheet = false
     @State private var name: String = ""
     @State private var opening: Bool = false
@@ -34,7 +34,7 @@ struct PinView: View {
         VStack {
             Group {
                 if let image = image {
-                    Image(nsImage: image)
+                    image
                         .resizable()
                 } else {
                     Image(systemName: "app.dashed")
@@ -82,13 +82,14 @@ struct PinView: View {
                 name = newName
             }
         }
-        .onAppear {
+        .task {
             name = pin.name
-            Task.detached { @MainActor in
-                if let peFile = program.peFile {
-                    image = peFile.bestIcon()
-                }
+            guard let peFile = program.peFile else { return }
+            let task = Task.detached {
+                guard let image = peFile.bestIcon() else { return nil as Image? }
+                return Image(nsImage: image)
             }
+            self.image = await task.value
         }
         .onChange(of: name) {
             if let index = bottle.settings.pins.firstIndex(where: { $0.url == pin.url }) {

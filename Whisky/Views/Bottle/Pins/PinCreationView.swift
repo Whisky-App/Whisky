@@ -79,20 +79,7 @@ struct PinCreationView: View {
                 }
                 ToolbarItem(placement: .primaryAction) {
                     Button("pin.create") {
-                        guard let newPinURL else { return }
-
-                        // Ensure this pin doesn't already exist
-                        guard !bottle.settings.pins.contains(where: { $0.url == newPinURL })
-                        else {
-                            isDuplicate = true
-                            return
-                        }
-
-                        bottle.settings.pins.append(PinnedProgram(name: newPinName, url: newPinURL))
-
-                        // Trigger a reload
-                        bottle.updateInstalledPrograms()
-                        dismiss()
+                        submit()
                     }
                     .keyboardShortcut(.defaultAction)
                     .disabled(newPinName.isEmpty || newPinURL == nil)
@@ -114,8 +101,28 @@ struct PinCreationView: View {
 
                 pinPath = newValue.prettyPath()
             }
+            .onSubmit {
+                submit()
+            }
         }
         .frame(minWidth: 400, minHeight: 170)
+    }
+
+    func submit() {
+        guard let newPinURL else { return }
+
+        // Ensure this pin doesn't already exist
+        guard !bottle.settings.pins.contains(where: { $0.url == newPinURL })
+        else {
+            isDuplicate = true
+            return
+        }
+
+        bottle.settings.pins.append(PinnedProgram(name: newPinName, url: newPinURL))
+
+        // Trigger a reload
+        bottle.updateInstalledPrograms()
+        dismiss()
     }
 }
 

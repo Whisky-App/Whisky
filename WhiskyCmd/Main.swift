@@ -32,7 +32,8 @@ struct Whisky: ParsableCommand {
                       Add.self,
 //                      Export.self,
                       Delete.self,
-                      Remove.self
+                      Remove.self,
+                      Run.self
                       /*Install.self,
                       Uninstall.self*/])
 }
@@ -153,6 +154,28 @@ extension Whisky {
             } else {
                 print("No bottle called \"\(name)\" found.")
             }
+        }
+    }
+
+    struct Run: ParsableCommand {
+        static var configuration = CommandConfiguration(abstract: "Run a program with Whisky.")
+
+        @Argument var bottleName: String
+        @Argument var path: String
+        @Argument var args: [String] = []
+
+        mutating func run() throws {
+            var bottlesList = BottleData()
+            let bottles = bottlesList.loadBottles()
+
+            guard let bottle = bottles.first(where: { $0.settings.name == bottleName }) else {
+                print("A bottle with that name doesn't exist.")
+                return
+            }
+
+            let url = URL(fileURLWithPath: path)
+            let program = Program(url: url, bottle: bottle)
+            program.runInTerminal()
         }
     }
 

@@ -1,5 +1,5 @@
 //
-//  PinRenameView.swift
+//  RenameView.swift
 //  Whisky
 //
 //  This file is part of Whisky.
@@ -25,20 +25,8 @@ struct RenameView: View {
     @State private var name: String = ""
     @Environment(\.dismiss) private var dismiss
 
-    init(_ title: Text, name: String, renameAction: @escaping (String) -> Void) {
-        self.title = title
-        self._name = State(initialValue: name)
-        self.renameAction = renameAction
-    }
-
     init(_ title: LocalizedStringKey, name: String, renameAction: @escaping (String) -> Void) {
         self.title = Text(title)
-        self._name = State(initialValue: name)
-        self.renameAction = renameAction
-    }
-
-    init(verbatim title: String, name: String, renameAction: @escaping (String) -> Void) {
-        self.title = Text(verbatim: title)
         self._name = State(initialValue: name)
         self.renameAction = renameAction
     }
@@ -59,12 +47,14 @@ struct RenameView: View {
                 }
                 ToolbarItem(placement: .primaryAction) {
                     Button("rename.rename") {
-                        renameAction(name)
-                        dismiss()
+                        submit()
                     }
                     .keyboardShortcut(.defaultAction)
                     .disabled(!isNameValid)
                 }
+            }
+            .onSubmit {
+                submit()
             }
         }
         .frame(minWidth: 350, minHeight: 115)
@@ -72,5 +62,10 @@ struct RenameView: View {
 
     var isNameValid: Bool {
         !name.isEmpty
+    }
+
+    func submit() {
+        renameAction(name)
+        dismiss()
     }
 }
