@@ -238,7 +238,7 @@
         "zh-Hans" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "无法打开程序！"
+            "value" : "无法打开软件！"
           }
         },
         "zh-Hant" : {
@@ -859,6 +859,12 @@
     },
     "button.ok" : {
       "localizations" : {
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "OK"
+          }
+        },
         "da" : {
           "stringUnit" : {
             "state" : "translated",
@@ -883,6 +889,12 @@
             "value" : "OK"
           }
         },
+        "fi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ok"
+          }
+        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -890,6 +902,12 @@
           }
         },
         "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "OK"
+          }
+        },
+        "ja" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "OK"
@@ -995,6 +1013,12 @@
             "value" : "Anclar"
           }
         },
+        "fi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Kiinnitä"
+          }
+        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -1005,6 +1029,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Perno"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "ピン留め"
           }
         },
         "ko" : {
@@ -2323,6 +2353,12 @@
             "value" : "Desanclar"
           }
         },
+        "fi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Poista kiinnitys"
+          }
+        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -2333,6 +2369,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Rimuovi Pin"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "ピン留めを解除"
           }
         },
         "ko" : {
@@ -2429,6 +2471,12 @@
             "value" : "Winetricks..."
           }
         },
+        "fi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Winetrickit..."
+          }
+        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -2436,6 +2484,12 @@
           }
         },
         "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Winetricks..."
+          }
+        },
+        "ja" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Winetricks..."
@@ -2550,7 +2604,7 @@
         "ja" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "更新を確認..."
+            "value" : "アップデートを確認..."
           }
         },
         "ko" : {
@@ -3025,6 +3079,12 @@
             "value" : "DXVK"
           }
         },
+        "fi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "DXVK"
+          }
+        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -3131,6 +3191,12 @@
             "value" : "DXVK Asíncrono"
           }
         },
+        "fi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "DXVK Async"
+          }
+        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -3141,6 +3207,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "DXVK Asincrono"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "DXVK Async"
           }
         },
         "ko" : {
@@ -3237,6 +3309,12 @@
             "value" : "Mostrar Info & Stats de DXVK"
           }
         },
+        "fi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "DXVK HUD"
+          }
+        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -3244,6 +3322,12 @@
           }
         },
         "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "DXVK HUD"
+          }
+        },
+        "ja" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "DXVK HUD"
@@ -3341,6 +3425,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "CPS"
+          }
+        },
+        "fi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "FPS"
           }
         },
         "fr" : {
@@ -3827,6 +3917,12 @@
             "value" : "ESync"
           }
         },
+        "fi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "ESync"
+          }
+        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -3834,6 +3930,12 @@
           }
         },
         "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "ESync"
+          }
+        },
+        "ja" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "ESync"
@@ -3927,6 +4029,12 @@
             "value" : "MSync"
           }
         },
+        "fi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "MSync"
+          }
+        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -3934,6 +4042,12 @@
           }
         },
         "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "MSync"
+          }
+        },
+        "ja" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "MSync"
@@ -4027,6 +4141,12 @@
             "value" : "Sincronización mejorada"
           }
         },
+        "fi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Parannettu Synkronointi"
+          }
+        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -4034,6 +4154,12 @@
           }
         },
         "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Enhanced Sync"
+          }
+        },
+        "ja" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Enhanced Sync"
@@ -4127,6 +4253,12 @@
             "value" : "Ninguna"
           }
         },
+        "fi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ei mitään"
+          }
+        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -4137,6 +4269,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Nessuno"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "なし"
           }
         },
         "ko" : {
@@ -4351,6 +4489,12 @@
             "value" : "Metal HUD"
           }
         },
+        "fi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Metal HUD"
+          }
+        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -4358,6 +4502,12 @@
           }
         },
         "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Metal HUD"
+          }
+        },
+        "ja" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Metal HUD"
@@ -4723,6 +4873,12 @@
             "value" : "N/D"
           }
         },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "存在しません"
+          }
+        },
         "ko" : {
           "stringUnit" : {
             "state" : "translated",
@@ -5071,6 +5227,12 @@
             "value" : "DXVK"
           }
         },
+        "fi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "DXVK"
+          }
+        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -5177,6 +5339,12 @@
             "value" : "Metal"
           }
         },
+        "fi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Metal"
+          }
+        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -5184,6 +5352,12 @@
           }
         },
         "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Metal"
+          }
+        },
+        "ja" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Metal"
@@ -5277,6 +5451,12 @@
             "value" : "Wine"
           }
         },
+        "fi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Wine"
+          }
+        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -5352,7 +5532,7 @@
         "zh-Hans" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "酒"
+            "value" : "Wine"
           }
         }
       }
@@ -5631,6 +5811,12 @@
             "value" : "DPI"
           }
         },
+        "fi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "DPI"
+          }
+        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -5638,6 +5824,12 @@
           }
         },
         "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "DPI"
+          }
+        },
+        "ja" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "DPI"
@@ -6959,6 +7151,12 @@
             "value" : "Añadir"
           }
         },
+        "fi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Lisää"
+          }
+        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -6969,6 +7167,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Aggiungi"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "追加"
           }
         },
         "ko" : {
@@ -7059,6 +7263,12 @@
             "value" : "Eliminar"
           }
         },
+        "fi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Poista"
+          }
+        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -7069,6 +7279,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Rimuovi"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "削除"
           }
         },
         "ko" : {
@@ -7154,6 +7370,12 @@
           }
         },
         "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Discord"
+          }
+        },
+        "fi" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Discord"
@@ -7265,6 +7487,12 @@
             "value" : "GitHub"
           }
         },
+        "fi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "GitHub"
+          }
+        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -7371,6 +7599,12 @@
             "value" : "Sitio Web"
           }
         },
+        "fi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Verkkosivu"
+          }
+        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -7381,6 +7615,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Sito Web"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Web サイト"
           }
         },
         "ko" : {
@@ -7965,7 +8205,7 @@
         "ja" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "最初の Bottle を作って、使い始めましょう"
+            "value" : "最初の Bottle を作りましょう"
           }
         },
         "ko" : {
@@ -8440,6 +8680,12 @@
             "value" : "Anclar"
           }
         },
+        "fi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Kiinnitä"
+          }
+        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -8450,6 +8696,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Perno"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "ピン留めする"
           }
         },
         "ko" : {
@@ -8541,6 +8793,12 @@
             "value" : "¡\"%@\" ya está anclado!"
           }
         },
+        "fi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "\"%@\" on jo kiinnitetty!"
+          }
+        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -8551,6 +8809,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "\"%@\" è già pinnato!"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%@ はすでにピン留めされています。"
           }
         },
         "ko" : {
@@ -8641,6 +8905,12 @@
             "value" : "Error al fijar el programa"
           }
         },
+        "fi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Virhe kiinnittäessä ohjelmaa"
+          }
+        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -8651,6 +8921,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Errore nel Pinnare il Programma"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "ピン留めに失敗しました"
           }
         },
         "ko" : {
@@ -8741,6 +9017,12 @@
             "value" : "Anclar programa"
           }
         },
+        "fi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Kiinnitä ohjelma"
+          }
+        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -8751,6 +9033,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Pinna Programma"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "新しくピン留め"
           }
         },
         "ko" : {
@@ -8841,6 +9129,12 @@
             "value" : "Nombre del Anclaje:"
           }
         },
+        "fi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Kiinnityksen nimi:"
+          }
+        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -8851,6 +9145,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Nome del Pin:"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "名前:"
           }
         },
         "ko" : {
@@ -8941,6 +9241,12 @@
             "value" : "Ruta del programa:"
           }
         },
+        "fi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ohjelman polku:"
+          }
+        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -8951,6 +9257,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Percorso del programma:"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "パス:"
           }
         },
         "ko" : {
@@ -9041,6 +9353,12 @@
             "value" : "Anclar programa"
           }
         },
+        "fi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Kiinnitä ohjelma"
+          }
+        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -9051,6 +9369,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Pinna Programma"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "プログラムをピン留め"
           }
         },
         "ko" : {
@@ -9259,6 +9583,12 @@
             "value" : "Añadir seleccionado a la lista"
           }
         },
+        "fi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Lisää valitut kieltolistalle"
+          }
+        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -9269,6 +9599,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Aggiungi Selezionati alla Blocklist"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "選択したものをブロックリストに追加"
           }
         },
         "ko" : {
@@ -9967,6 +10303,12 @@
             "value" : "Eliminar seleccionados de la lista"
           }
         },
+        "fi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Poista valitut estolistalta"
+          }
+        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -9977,6 +10319,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Rimuovi Selezionati dalla Blocklist"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "選択したものをブロックリストから削除"
           }
         },
         "ko" : {
@@ -10065,6 +10413,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Ajustes"
+          }
+        },
+        "fi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Asetukset"
           }
         },
         "fr" : {
@@ -10993,6 +11347,12 @@
             "value" : "General"
           }
         },
+        "fi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Yleinen"
+          }
+        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -11003,6 +11363,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Generale"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "全般"
           }
         },
         "ko" : {
@@ -11063,10 +11429,64 @@
     },
     "settings.path" : {
       "localizations" : {
+        "da" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Standard Bottle-sti:"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Standard Bottle-Pfad:"
+          }
+        },
         "en" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Default bottle path:"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ruta predeterminada de la botella:"
+          }
+        },
+        "fi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Pullon oletuspolku:"
+          }
+        },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "기본 Bottle 경로:"
+          }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Standaard bottle locatie:"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Путь к бутылке по умолчанию:"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "默认容器路径："
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "預設容器路徑："
           }
         }
       }
@@ -11097,6 +11517,12 @@
             "value" : "Buscar actualizaciones de GPTK automáticamente"
           }
         },
+        "fi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Automaattisesti tarkista GPTK päivityksien varalta"
+          }
+        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -11107,6 +11533,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Controlla automaticamente per gli aggiornamenti di GPTK"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "GPTK のアップデートを自動的に確認する"
           }
         },
         "ko" : {
@@ -11191,6 +11623,12 @@
             "value" : "Terminar procesos de Wine cuando Whisky cierre"
           }
         },
+        "fi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Sulje Wine-prosessit kun Whisky suljetaan"
+          }
+        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -11201,6 +11639,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Termina i processi Wine quando Whisky chiude"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Whisky の終了時に Wine の全プロセスを停止する"
           }
         },
         "ko" : {
@@ -11254,7 +11698,7 @@
         "zh-Hans" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "关闭Whisky时中止Wine进程"
+            "value" : "关闭 Whisky 时结束 Wine 进程"
           }
         }
       }
@@ -11285,6 +11729,12 @@
             "value" : "Buscar actualizaciones de Whiskey automáticamente"
           }
         },
+        "fi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Automaattisesti tarkista Whisky päivityksien varalta"
+          }
+        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -11295,6 +11745,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Controlla automaticamente per gli aggiornamenti a Whisky"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Whisky のアップデートを自動的に確認する"
           }
         },
         "ko" : {
@@ -11377,6 +11833,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Actualizaciones"
+          }
+        },
+        "fi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Päivitykset"
           }
         },
         "fr" : {
@@ -12931,6 +13393,12 @@
             "value" : "Reintentar"
           }
         },
+        "fi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Yritä uudelleen"
+          }
+        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -13155,6 +13623,12 @@
             "value" : "La instalación de Rosetta 2 ha fallado. Por favor, instálala manualmente."
           }
         },
+        "fi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Rosetta 2:n asennus epäonnistui. Asenna se manuaalisesti."
+          }
+        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -13165,6 +13639,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Installazione di Rosetta 2 fallita. Si prega d'installarla manualmente."
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Rosetta 2 のインストールに失敗しました。手動でインストールしてください。"
           }
         },
         "ko" : {
@@ -15144,6 +15624,12 @@
             "value" : "Aplicaciones"
           }
         },
+        "fi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Sovellukset"
+          }
+        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -15245,6 +15731,12 @@
             "value" : "Prueba de rendimiento"
           }
         },
+        "fi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Suorituskykytesti"
+          }
+        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -15255,6 +15747,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Benchmarks"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "ベンチマーク"
           }
         },
         "ko" : {
@@ -15340,6 +15838,12 @@
             "value" : "DLLs"
           }
         },
+        "fi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "DLLs"
+          }
+        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -15350,6 +15854,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "DLLs"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "DLL"
           }
         },
         "ko" : {
@@ -15433,6 +15943,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Fuentes"
+          }
+        },
+        "fi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Fontit"
           }
         },
         "fr" : {
@@ -15536,6 +16052,12 @@
             "value" : "Juegos"
           }
         },
+        "fi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Pelit"
+          }
+        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -15546,6 +16068,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Giochi"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "ゲーム"
           }
         },
         "ko" : {
@@ -15635,6 +16163,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Ajustes"
+          }
+        },
+        "fi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Asetukset"
           }
         },
         "fr" : {
@@ -15737,6 +16271,12 @@
             "value" : "Descripción"
           }
         },
+        "fi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Kuvaus"
+          }
+        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -15747,6 +16287,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Descrizione"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "説明"
           }
         },
         "ko" : {
@@ -15835,6 +16381,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Comando"
+          }
+        },
+        "fi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Komento"
           }
         },
         "fr" : {
