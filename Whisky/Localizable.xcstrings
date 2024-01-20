@@ -8158,6 +8158,16 @@
         }
       }
     },
+    "logs.deleteOld" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Delete Old Logs"
+          }
+        }
+      }
+    },
     "main.createFirst" : {
       "localizations" : {
         "da" : {

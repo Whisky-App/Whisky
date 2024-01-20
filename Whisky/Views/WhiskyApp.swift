@@ -40,6 +40,12 @@ struct WhiskyApp: App {
                 .environmentObject(BottleVM.shared)
                 .onAppear {
                     NSWindow.allowsAutomaticWindowTabbing = false
+
+                    // Delete logs older than 7 days
+                    Task.detached {
+                        let pastDate = Date().addingTimeInterval(-7 * 24 * 60 * 60)
+                        await WhiskyApp.deleteOldLogs(pastDate: pastDate)
+                    }
                 }
         }
         // Don't ask me how this works, it just does
@@ -83,6 +89,10 @@ struct WhiskyApp: App {
                     WhiskyApp.openLogsFolder()
                 }
                 .keyboardShortcut("L", modifiers: [.command])
+                Button("logs.deleteOld") {
+                    let pastDate = Date().addingTimeInterval(-7 * 24 * 60 * 60)
+                    WhiskyApp.deleteOldLogs(pastDate: pastDate)
+                }
                 Button("kill.bottles") {
                     WhiskyApp.killBottles()
                 }
@@ -127,6 +137,51 @@ struct WhiskyApp: App {
 
     static func openLogsFolder() {
         NSWorkspace.shared.selectFile(nil, inFileViewerRootedAtPath: Wine.logsFolder.path)
+    }
+
+    static func deleteOldLogs(pastDate: Date) {
+        // Get all files in the logs folder
+        let fileManager = FileManager.default
+        guard let files = try? fileManager.contentsOfDirectory(atPath: Wine.logsFolder.path) else {
+            return
+        }
+
+        // Convert them to URLs
+        let urls = files.map { URL(fileURLWithPath: Wine.logsFolder.path).appendingPathComponent($0) }
+
+        // Filter out the ones that are older than pastDate, are not `.log` files, or are not files
+        let oldLogs = urls.filter { url in
+            // Check is file (if fails, skip)
+            if url.isDirectory ?? true {
+                return false
+            }
+
+            // Check is log file
+            if url.pathExtension != "log" {
+                return false
+            }
+
+            // Strip the extension and convert to date
+            let stripped = url.deletingPathExtension().lastPathComponent
+
+            // Check the date
+            let dateFormatter = ISO8601DateFormatter()
+            guard let date = dateFormatter.date(from: stripped) else {
+                return false
+            }
+
+            // Check is older than pastDate
+            return date < pastDate
+        }
+
+        // 💣 the old logs
+        for log in oldLogs {
+            do {
+                try fileManager.removeItem(at: log)
+            } catch {
+                print("Failed to delete log: \(error)")
+            }
+        }
     }
 
     static func wipeShaderCaches() {
