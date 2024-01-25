@@ -9439,6 +9439,56 @@
         }
       }
     },
+    "process.table.executable" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Executable"
+          }
+        }
+      }
+    },
+    "process.table.kill" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Stop Process"
+          }
+        }
+      }
+    },
+    "process.table.loading" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Fetching Processes"
+          }
+        }
+      }
+    },
+    "process.table.pid" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Process ID"
+          }
+        }
+      }
+    },
+    "process.table.refresh" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Refresh"
+          }
+        }
+      }
+    },
     "program.add.blocklist" : {
       "localizations" : {
         "da" : {
@@ -15021,6 +15071,16 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "容器設定"
+          }
+        }
+      }
+    },
+    "tab.processes" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Running Processes"
           }
         }
       }
