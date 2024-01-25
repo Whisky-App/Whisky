@@ -48,7 +48,7 @@
         "ja" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "起動に失敗しました。"
+            "value" : "起動に失敗しました"
           }
         },
         "ko" : {
@@ -1152,7 +1152,7 @@
         "ja" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "再読み込み"
+            "value" : "リフレッシュ"
           }
         },
         "ko" : {
@@ -11509,18 +11509,6 @@
             "value" : "Pullon oletuspolku:"
           }
         },
-        "fr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Chemin par défaut de la bouteille :"
-          }
-        },
-        "ja" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Bottle の既定の保存場所:"
-          }
-        },
         "ko" : {
           "stringUnit" : {
             "state" : "translated",
@@ -11533,22 +11521,10 @@
             "value" : "Standaard bottle locatie:"
           }
         },
-        "pl" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Domyślna ścieżka butelki:"
-          }
-        },
         "ru" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Путь к бутылке по умолчанию:"
-          }
-        },
-        "uk" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Стандартний шлях до пляшки:"
           }
         },
         "zh-Hans" : {
