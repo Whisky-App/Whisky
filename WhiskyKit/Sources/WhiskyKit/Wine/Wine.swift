@@ -256,7 +256,7 @@ extension Wine {
         case desktop = #"HKCU\Control Panel\Desktop"#
     }
 
-    private static func addRegistyKey(
+    private static func addRegistryKey(
         bottle: Bottle, key: String, name: String, data: String, type: RegistryType
     ) async throws {
         try await runWine(
@@ -265,7 +265,7 @@ extension Wine {
         )
     }
 
-    private static func queryRegistyKey(
+    private static func queryRegistryKey(
         bottle: Bottle, key: String, name: String, type: RegistryType
     ) async throws -> String? {
         let output = try await runWine(["reg", "query", key, "-v", name], bottle: bottle)
@@ -278,9 +278,9 @@ extension Wine {
     }
 
     public static func changeBuildVersion(bottle: Bottle, version: Int) async throws {
-        try await addRegistyKey(bottle: bottle, key: RegistryKey.currentVersion.rawValue,
+        try await addRegistryKey(bottle: bottle, key: RegistryKey.currentVersion.rawValue,
                                 name: "CurrentBuild", data: "\(version)", type: .string)
-        try await addRegistyKey(bottle: bottle, key: RegistryKey.currentVersion.rawValue,
+        try await addRegistryKey(bottle: bottle, key: RegistryKey.currentVersion.rawValue,
                                 name: "CurrentBuildNumber", data: "\(version)", type: .string)
     }
 
@@ -300,7 +300,7 @@ extension Wine {
     }
 
     public static func buildVersion(bottle: Bottle) async throws -> String? {
-        return try await Wine.queryRegistyKey(
+        return try await Wine.queryRegistryKey(
             bottle: bottle, key: RegistryKey.currentVersion.rawValue,
             name: "CurrentBuild", type: .string
         )
@@ -308,7 +308,7 @@ extension Wine {
 
     public static func retinaMode(bottle: Bottle) async throws -> Bool {
         let values: Set<String> = ["y", "n"]
-        guard let output = try await Wine.queryRegistyKey(
+        guard let output = try await Wine.queryRegistryKey(
             bottle: bottle, key: RegistryKey.macDriver.rawValue, name: "RetinaMode", type: .string
         ), values.contains(output) else {
             try await changeRetinaMode(bottle: bottle, retinaMode: false)
@@ -318,14 +318,14 @@ extension Wine {
     }
 
     public static func changeRetinaMode(bottle: Bottle, retinaMode: Bool) async throws {
-        try await Wine.addRegistyKey(
+        try await Wine.addRegistryKey(
             bottle: bottle, key: RegistryKey.macDriver.rawValue, name: "RetinaMode", data: retinaMode ? "y" : "n",
             type: .string
         )
     }
 
     public static func dpiResolution(bottle: Bottle) async throws -> Int? {
-        guard let output = try await Wine.queryRegistyKey(bottle: bottle, key: RegistryKey.desktop.rawValue,
+        guard let output = try await Wine.queryRegistryKey(bottle: bottle, key: RegistryKey.desktop.rawValue,
                                                      name: "LogPixels", type: .dword
         ) else { return nil }
 
@@ -336,7 +336,7 @@ extension Wine {
     }
 
     public static func changeDpiResolution(bottle: Bottle, dpi: Int) async throws {
-        try await Wine.addRegistyKey(
+        try await Wine.addRegistryKey(
             bottle: bottle, key: RegistryKey.desktop.rawValue, name: "LogPixels", data: String(dpi),
             type: .dword
         )
