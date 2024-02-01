@@ -35,6 +35,7 @@ struct ConfigView: View {
     @State private var buildVersionLoadingState: LoadingState = .loading
     @State private var retinaModeLoadingState: LoadingState = .loading
     @State private var dpiConfigLoadingState: LoadingState = .loading
+    @State private var localeLoadingState: LoadingState = .loading
     @State private var dpiSheetPresented: Bool = false
     @AppStorage("wineSectionExpanded") private var wineSectionExpanded: Bool = true
     @AppStorage("dxvkSectionExpanded") private var dxvkSectionExpanded: Bool = true
@@ -97,6 +98,13 @@ struct ConfigView: View {
                             isRetinaMode: $retinaMode,
                             presented: $dpiSheetPresented
                         )
+                    }
+                }
+                SettingItemView(title: "config.locale", loadingState: localeLoadingState) {
+                    Picker("config.locale", selection: $bottle.settings.locale) {
+                        ForEach(getSystemLocales(), id: \.self) {
+                            Text($0)
+                        }
                     }
                 }
             }
@@ -166,6 +174,7 @@ struct ConfigView: View {
         .navigationTitle("tab.config")
         .onAppear {
             winVersionLoadingState = .success
+            localeLoadingState = .success
 
             loadBuildName()
 

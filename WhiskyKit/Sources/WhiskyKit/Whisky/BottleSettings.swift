@@ -109,6 +109,37 @@ public struct BottleMetalConfig: Codable, Equatable {
     }
 }
 
+public func getDefaultLocale() -> String {
+    if let lang = getenv("LANG"), let defaultLocale = String(cString: lang, encoding: .utf8) {
+        return defaultLocale
+    } else {
+        return "en_US.UTF-8"
+    }
+}
+public func getSystemLocales() -> [String] {
+    let localeDirectoryPath = "/usr/share/locale"
+
+    do {
+        let fileManager = FileManager.default
+        let contents = try fileManager.contentsOfDirectory(atPath: localeDirectoryPath)
+        let locales = contents.filter { $0.contains(".UTF-8") }.sorted()
+        return locales.compactMap { $0 }
+    } catch {
+        Logger.wineKit.error("Could not find system locales \(error.localizedDescription)")
+        return []
+    }
+}
+
+public struct EnvironmentConfig: Codable, Equatable {
+    var locale: String = ""
+    public init() {}
+
+    public init(from decoder: Decoder) throws {
+        let container = try decoder.container(keyedBy: CodingKeys.self)
+        self.locale = try container.decodeIfPresent(String.self, forKey: .locale) ?? getDefaultLocale()
+    }
+}
+
 public enum DXVKHUD: Codable, Equatable {
     case full, partial, fps, off
 }
@@ -136,12 +167,14 @@ public struct BottleSettings: Codable, Equatable {
     private var wineConfig: BottleWineConfig
     private var metalConfig: BottleMetalConfig
     private var dxvkConfig: BottleDXVKConfig
+    private var environmentConfig: EnvironmentConfig
 
     public init() {
         self.info = BottleInfo()
         self.wineConfig = BottleWineConfig()
         self.metalConfig = BottleMetalConfig()
         self.dxvkConfig = BottleDXVKConfig()
+        self.environmentConfig = EnvironmentConfig()
     }
 
     // swiftlint:disable line_length
@@ -152,6 +185,8 @@ public struct BottleSettings: Codable, Equatable {
         self.wineConfig = try container.decodeIfPresent(BottleWineConfig.self, forKey: .wineConfig) ?? BottleWineConfig()
         self.metalConfig = try container.decodeIfPresent(BottleMetalConfig.self, forKey: .metalConfig) ?? BottleMetalConfig()
         self.dxvkConfig = try container.decodeIfPresent(BottleDXVKConfig.self, forKey: .dxvkConfig) ?? BottleDXVKConfig()
+        self.environmentConfig = try container.decodeIfPresent(EnvironmentConfig.self, forKey: .environmentConfig) ?? EnvironmentConfig()
+
     }
     // swiftlint:enable line_length
 
@@ -213,6 +248,11 @@ public struct BottleSettings: Codable, Equatable {
     public var dxvkHud: DXVKHUD {
         get {  return dxvkConfig.dxvkHud }
         set { dxvkConfig.dxvkHud = newValue }
+    }
+
+    public var locale: String {
+        get { return environmentConfig.locale }
+        set { environmentConfig.locale = newValue }
     }
 
     @discardableResult
@@ -291,6 +331,10 @@ public struct BottleSettings: Codable, Equatable {
 
         if metalTrace {
             wineEnv.updateValue("1", forKey: "METAL_CAPTURE_ENABLED")
+        }
+
+        if locale != getDefaultLocale() {
+            wineEnv.updateValue(locale, forKey: "LC_ALL")
         }
     }
 }

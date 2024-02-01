@@ -4463,6 +4463,16 @@
         }
       }
     },
+    "config.locale" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Locale"
+          }
+        }
+      }
+    },
     "config.metalHud" : {
       "localizations" : {
         "da" : {
@@ -7802,6 +7812,9 @@
           }
         }
       }
+    },
+    "Key" : {
+      "extractionState" : "manual"
     },
     "kill.bottles" : {
       "localizations" : {
