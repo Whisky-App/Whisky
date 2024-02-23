@@ -2327,6 +2327,17 @@
         }
       }
     },
+    "button.terminal" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Terminal"
+          }
+        }
+      }
+    },
     "button.unpin" : {
       "localizations" : {
         "da" : {

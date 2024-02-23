@@ -19,10 +19,34 @@
 import Foundation
 import AppKit
 import WhiskyKit
+import os.log
 
 extension Bottle {
     func openCDrive() {
         NSWorkspace.shared.open(url.appending(path: "drive_c"))
+    }
+
+    func openTerminal() {
+        let cmd = Wine.generateTerminalEnvironmentCommand(bottle: self)
+
+        let script = """
+        tell application "Terminal"
+            activate
+            do script "\(cmd)"
+        end tell
+        """
+
+        Task.detached(priority: .userInitiated) {
+            var error: NSDictionary?
+            guard let appleScript = NSAppleScript(source: script) else { return }
+            appleScript.executeAndReturnError(&error)
+
+            if let error = error {
+                Logger.wineKit.error("Failed to run terminal script \(error)")
+                guard let description = error["NSAppleScriptErrorMessage"] as? String else { return }
+                await self.showRunError(message: String(describing: description))
+            }
+        }
     }
 
     @discardableResult
@@ -173,5 +197,16 @@ extension Bottle {
     @MainActor
     func rename(newName: String) {
         settings.name = newName
+    }
+
+    @MainActor private func showRunError(message: String) {
+        let alert = NSAlert()
+        alert.messageText = String(localized: "alert.message")
+        alert.informativeText = String(localized: "alert.info")
+        + " \(self.url.lastPathComponent): "
+        + message
+        alert.alertStyle = .critical
+        alert.addButton(withTitle: String(localized: "button.ok"))
+        alert.runModal()
     }
 }

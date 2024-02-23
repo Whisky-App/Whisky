@@ -115,10 +115,34 @@ public class Wine {
         var wineCmd = "\(wineBinary.esc) start /unix \(bottle.url.esc) \(args)"
         let env = constructWineEnvironment(for: bottle, environment: environment)
         for environment in env {
-            wineCmd = "\(environment.key)=\(environment.value) " + wineCmd
+            wineCmd = "\(environment.key)=\"\(environment.value)\" " + wineCmd
         }
 
         return wineCmd
+    }
+
+    public static func generateTerminalEnvironmentCommand(bottle: Bottle) -> String {
+        var cmd = """
+export PATH=\\\"\(GPTKInstaller.binFolder.path):$PATH\\\"
+export WINE=\\\"wine64\\\"
+alias wine=\\\"wine64\\\"
+alias winecfg=\\\"wine64 winecfg\\\"
+alias msiexec=\\\"wine64 msiexec\\\"
+alias regedit=\\\"wine64 regedit\\\"
+alias regsvr32=\\\"wine64 regsvr32\\\"
+alias wineboot=\\\"wine64 wineboot\\\"
+alias wineconsole=\\\"wine64 wineconsole\\\"
+alias winedbg=\\\"wine64 winedbg\\\"
+alias winefile=\\\"wine64 winefile\\\"
+alias winepath=\\\"wine64 winepath\\\"
+"""
+
+        let env = constructWineEnvironment(for: bottle, environment: constructWineEnvironment(for: bottle))
+        for environment in env {
+            cmd += "\nexport \(environment.key)=\\\"\(environment.value)\\\""
+        }
+
+        return cmd
     }
 
     /// Run a `wineserver` command with the given arguments and return the output result
