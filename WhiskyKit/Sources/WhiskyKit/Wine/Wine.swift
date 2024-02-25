@@ -123,23 +123,23 @@ public class Wine {
 
     public static func generateTerminalEnvironmentCommand(bottle: Bottle) -> String {
         var cmd = """
-export PATH=\\\"\(GPTKInstaller.binFolder.path):$PATH\\\"
-export WINE=\\\"wine64\\\"
-alias wine=\\\"wine64\\\"
-alias winecfg=\\\"wine64 winecfg\\\"
-alias msiexec=\\\"wine64 msiexec\\\"
-alias regedit=\\\"wine64 regedit\\\"
-alias regsvr32=\\\"wine64 regsvr32\\\"
-alias wineboot=\\\"wine64 wineboot\\\"
-alias wineconsole=\\\"wine64 wineconsole\\\"
-alias winedbg=\\\"wine64 winedbg\\\"
-alias winefile=\\\"wine64 winefile\\\"
-alias winepath=\\\"wine64 winepath\\\"
-"""
+        export PATH=\"\(GPTKInstaller.binFolder.path):$PATH\"
+        export WINE=\"wine64\"
+        alias wine=\"wine64\"
+        alias winecfg=\"wine64 winecfg\"
+        alias msiexec=\"wine64 msiexec\"
+        alias regedit=\"wine64 regedit\"
+        alias regsvr32=\"wine64 regsvr32\"
+        alias wineboot=\"wine64 wineboot\"
+        alias wineconsole=\"wine64 wineconsole\"
+        alias winedbg=\"wine64 winedbg\"
+        alias winefile=\"wine64 winefile\"
+        alias winepath=\"wine64 winepath\"
+        """
 
         let env = constructWineEnvironment(for: bottle, environment: constructWineEnvironment(for: bottle))
         for environment in env {
-            cmd += "\nexport \(environment.key)=\\\"\(environment.value)\\\""
+            cmd += "\nexport \(environment.key)=\"\(environment.value)\""
         }
 
         return cmd

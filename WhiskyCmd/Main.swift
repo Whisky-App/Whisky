@@ -33,7 +33,8 @@ struct Whisky: ParsableCommand {
 //                      Export.self,
                       Delete.self,
                       Remove.self,
-                      Run.self
+                      Run.self,
+                      Shellenv.self
                       /*Install.self,
                       Uninstall.self*/])
 }
@@ -132,7 +133,7 @@ extension Whisky {
                     print(error)
                 }
             } else {
-                print("No bottle called \"\(name)\" found.")
+                fputs("No bottle called \"\(name)\" found.\n", stderr)
             }
         }
     }
@@ -152,7 +153,7 @@ extension Whisky {
                 bottlesList.paths.removeAll(where: { $0 == bottleToRemove.url })
                 print("Removed \"\(name)\".")
             } else {
-                print("No bottle called \"\(name)\" found.")
+                fputs("No bottle called \"\(name)\" found.\n", stderr)
             }
         }
     }
@@ -169,13 +170,33 @@ extension Whisky {
             let bottles = bottlesList.loadBottles()
 
             guard let bottle = bottles.first(where: { $0.settings.name == bottleName }) else {
-                print("A bottle with that name doesn't exist.")
+                fputs("A bottle with that name doesn't exist.\n", stderr)
                 return
             }
 
             let url = URL(fileURLWithPath: path)
             let program = Program(url: url, bottle: bottle)
             program.runInTerminal()
+        }
+    }
+
+    struct Shellenv: ParsableCommand {
+        static var configuration = CommandConfiguration(abstract: "Prints export statements for a Bottle for eval.")
+
+        @Argument var bottleName: String
+
+        mutating func run() throws {
+            var bottlesList = BottleData()
+            let bottles = bottlesList.loadBottles()
+
+            guard let bottle = bottles.first(where: { $0.settings.name == bottleName }) else {
+                fputs("A bottle with that name doesn't exist.\n", stderr)
+                return
+            }
+
+            let envCmd = Wine.generateTerminalEnvironmentCommand(bottle: bottle)
+            print(envCmd)
+
         }
     }
 
