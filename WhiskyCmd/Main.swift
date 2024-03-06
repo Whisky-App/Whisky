@@ -84,7 +84,7 @@ extension Whisky {
                 bottlesList.paths.append(bottleURL)
                 print("Created new bottle \"\(name)\".")
             } catch {
-                print(error)
+                throw ValidationError("\(error)")
             }
         }
     }
@@ -132,7 +132,7 @@ extension Whisky {
                     print(error)
                 }
             } else {
-                print("No bottle called \"\(name)\" found.")
+                throw ValidationError("No bottle called \"\(name)\" found.")
             }
         }
     }
@@ -152,7 +152,7 @@ extension Whisky {
                 bottlesList.paths.removeAll(where: { $0 == bottleToRemove.url })
                 print("Removed \"\(name)\".")
             } else {
-                print("No bottle called \"\(name)\" found.")
+                throw ValidationError("No bottle called \"\(name)\" found.")
             }
         }
     }
@@ -169,8 +169,7 @@ extension Whisky {
             let bottles = bottlesList.loadBottles()
 
             guard let bottle = bottles.first(where: { $0.settings.name == bottleName }) else {
-                print("A bottle with that name doesn't exist.")
-                return
+                throw ValidationError("A bottle with that name doesn't exist.")
             }
 
             let url = URL(fileURLWithPath: path)
