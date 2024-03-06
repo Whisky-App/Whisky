@@ -136,8 +136,9 @@ struct WhiskyApp: App {
     static func deleteOldLogs() {
         let pastDate = Date().addingTimeInterval(-7 * 24 * 60 * 60)
 
-        guard let urls = try? FileManager.default.contentsOfDirectory(at: Wine.logsFolder,
-                                                                      includingPropertiesForKeys: [.creationDateKey]) else {
+        guard let urls = try? FileManager.default.contentsOfDirectory(
+            at: Wine.logsFolder,
+            includingPropertiesForKeys: [.creationDateKey]) else {
             return
         }
 
