@@ -71,10 +71,6 @@ extension URL {
                                                         with: newBottlePath)
         return URL(filePath: newPath)
     }
-
-    public var isDirectory: Bool? {
-        (try? resourceValues(forKeys: [.isDirectoryKey]))?.isDirectory
-    }
 }
 
 extension URL: Identifiable {
