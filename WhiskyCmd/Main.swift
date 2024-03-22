@@ -33,7 +33,8 @@ struct Whisky: ParsableCommand {
 //                      Export.self,
                       Delete.self,
                       Remove.self,
-                      Run.self
+                      Run.self,
+                      Shellenv.self
                       /*Install.self,
                       Uninstall.self*/])
 }
@@ -175,6 +176,25 @@ extension Whisky {
             let url = URL(fileURLWithPath: path)
             let program = Program(url: url, bottle: bottle)
             program.runInTerminal()
+        }
+    }
+
+    struct Shellenv: ParsableCommand {
+        static var configuration = CommandConfiguration(abstract: "Prints export statements for a Bottle for eval.")
+
+        @Argument var bottleName: String
+
+        mutating func run() throws {
+            var bottlesList = BottleData()
+            let bottles = bottlesList.loadBottles()
+
+            guard let bottle = bottles.first(where: { $0.settings.name == bottleName }) else {
+                throw ValidationError("A bottle with that name doesn't exist.")
+            }
+
+            let envCmd = Wine.generateTerminalEnvironmentCommand(bottle: bottle)
+            print(envCmd)
+
         }
     }
 
