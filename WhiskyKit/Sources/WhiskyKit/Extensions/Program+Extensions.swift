@@ -47,7 +47,7 @@ extension Program {
     }
 
     public func generateTerminalCommand() -> String {
-        return Wine.generateRunCommand(bottle: bottle, args: settings.arguments, environment: generateEnvironment())
+        return Wine.generateRunCommand(at: self.url, bottle: bottle, args: settings.arguments, environment: generateEnvironment())
     }
 
     public func runInTerminal() {
