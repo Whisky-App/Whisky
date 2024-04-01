@@ -53,9 +53,9 @@ struct BottleView: View {
                     NavigationLink(value: BottleStage.config) {
                         Label("tab.config", systemImage: "gearshape")
                     }
-                    NavigationLink(value: BottleStage.processes) {
-                        Label("tab.processes", systemImage: "hockey.puck.circle")
-                    }
+//                    NavigationLink(value: BottleStage.processes) {
+//                        Label("tab.processes", systemImage: "hockey.puck.circle")
+//                    }
                 }
                 .formStyle(.grouped)
                 .scrollDisabled(true)
