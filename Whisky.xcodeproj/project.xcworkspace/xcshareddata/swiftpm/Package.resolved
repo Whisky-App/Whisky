@@ -1,0 +1,50 @@
+{
+  "pins" : [
+    {
+      "identity" : "progress.swift",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/jkandzi/Progress.swift",
+      "state" : {
+        "revision" : "fed6598735d7982058690acf8f52a0a5fdaeb3e0",
+        "version" : "0.4.0"
+      }
+    },
+    {
+      "identity" : "semanticversion",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/SwiftPackageIndex/SemanticVersion",
+      "state" : {
+        "revision" : "a70840d5fca686ae3bd2fcf8aecc5ded0bd4f125",
+        "version" : "0.3.6"
+      }
+    },
+    {
+      "identity" : "sparkle",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/sparkle-project/Sparkle",
+      "state" : {
+        "branch" : "2.x",
+        "revision" : "b7b858dbf385cdd1fe1ab8a3f3ee8586fa850d5d"
+      }
+    },
+    {
+      "identity" : "swift-argument-parser",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/apple/swift-argument-parser.git",
+      "state" : {
+        "revision" : "8f4d2753f0e4778c76d5f05ad16c74f707390531",
+        "version" : "1.2.3"
+      }
+    },
+    {
+      "identity" : "swiftytexttable",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/scottrhoyt/SwiftyTextTable",
+      "state" : {
+        "revision" : "c6df6cf533d120716bff38f8ff9885e1ce2a4ac3",
+        "version" : "0.9.0"
+      }
+    }
+  ],
+  "version" : 2
+}

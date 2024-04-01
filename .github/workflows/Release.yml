@@ -1,0 +1,19 @@
+name: Release
+
+on:
+  release:
+    types: [published]
+
+jobs:
+  release:
+    name: Release
+    runs-on: ubuntu-latest
+    steps:
+      - name: Create Discord Embed
+        uses: tsickert/discord-webhook@v5.3.0
+        with:
+          webhook-url: ${{ secrets.WEBHOOK }}
+          embed-title: ${{ github.event.release.name }}
+          embed-url: https://github.com/Whisky-App/Whisky/releases/download/${{ github.event.release.tag_name }}/Whisky.zip
+          embed-description: ${{ github.event.release.body }}
+          embed-color: 9442302

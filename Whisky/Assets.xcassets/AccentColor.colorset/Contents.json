@@ -1,0 +1,15 @@
+{
+  "colors" : [
+    {
+      "color" : {
+        "platform" : "universal",
+        "reference" : "systemOrangeColor"
+      },
+      "idiom" : "universal"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  }
+}
