@@ -1,0 +1,29 @@
+name: Wiki
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - wiki/**
+
+env:
+  REPOSITORY_URL: https://${{ secrets.WIKI_TOKEN }}@github.com/${{ github.repository }}.wiki
+
+jobs:
+  Wiki:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Sync
+        run: |
+          mkdir _wiki
+          cd _wiki
+          git init
+          git config user.email ${{ github.actor }}@users.noreply.github.com
+          git config user.name ${{ github.actor }}
+          git pull $REPOSITORY_URL
+          rsync -av --delete ../wiki/ ../_wiki/ --exclude .git
+          git add .
+          git commit --allow-empty-message -m "${{ github.event.head_commit.message }}"
+          git push -f -u $REPOSITORY_URL master
