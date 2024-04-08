@@ -249,6 +249,36 @@
         }
       }
     },
+    "app.name" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Whisky"
+          }
+        }
+      }
+    },
+    "app.version" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%@ (%@)"
+          }
+        }
+      }
+    },
+    "button.cancel" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Cancel"
+          }
+        }
+      }
+    },
     "button.cDrive" : {
       "localizations" : {
         "da" : {
@@ -6664,7 +6694,7 @@
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Nom de la bouteille :"
+            "value" : "Nom de la bouteille :"
           }
         },
         "it" : {
@@ -10822,7 +10852,7 @@
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Nouveau nom :"
+            "value" : "Nouveau nom :"
           }
         },
         "it" : {
@@ -15197,6 +15227,56 @@
         }
       }
     },
+    "update.checkingForUpdates" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Checking for updates..."
+          }
+        }
+      }
+    },
+    "update.checkingForUpdates.description" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Whisky is checking for updates..."
+          }
+        }
+      }
+    },
+    "update.description" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "You're running %@ (%@). The latest available update is %@ (%@). Would you like to update?"
+          }
+        }
+      }
+    },
+    "update.downloading" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Downloading Update..."
+          }
+        }
+      }
+    },
+    "update.extracting" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Extracting Files..."
+          }
+        }
+      }
+    },
     "update.gptk.description" : {
       "localizations" : {
         "da" : {
@@ -15529,6 +15609,116 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "更新"
+          }
+        }
+      }
+    },
+    "update.initializating" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Initializing..."
+          }
+        }
+      }
+    },
+    "update.installing" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Installing update..."
+          }
+        }
+      }
+    },
+    "update.newUpdate" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Updates Available"
+          }
+        }
+      }
+    },
+    "update.noChangeLog" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "No change log available."
+          }
+        }
+      }
+    },
+    "update.noUpdatesFound" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "No Updates Available"
+          }
+        }
+      }
+    },
+    "update.noUpdatesFound.description" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Congrats! You are on the latest version of Whisky,"
+          }
+        }
+      }
+    },
+    "update.readyToRelaunch" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Update Ready"
+          }
+        }
+      }
+    },
+    "update.readyToRelaunch.description" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "The update is ready to be installed. Press \\\"Relaunch\\\" to install the update and relaunch Whisky."
+          }
+        }
+      }
+    },
+    "update.relaunch" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Relaunch"
+          }
+        }
+      }
+    },
+    "update.update" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Update"
+          }
+        }
+      }
+    },
+    "update.updaterError" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Failed to Update"
           }
         }
       }
