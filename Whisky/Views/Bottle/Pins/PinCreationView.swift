@@ -35,24 +35,36 @@ struct PinCreationView: View {
             Form {
                 TextField("pin.name", text: $newPinName)
 
-                HStack(alignment: .top) {
+                HStack {
                     VStack(alignment: .leading) {
                         Text("pin.path")
                             .foregroundStyle(.primary)
-                        if !pinPath.isEmpty {
-                            Text(pinPath)
-                                .font(.callout)
-                                .foregroundStyle(.secondary)
-                                .truncationMode(.middle)
-                                .lineLimit(2)
-                                .help(pinPath)
-                        }
+                        Text(pinPath)
+                            .foregroundStyle(.secondary)
+                            .truncationMode(.middle)
+                            .lineLimit(2)
+                            .help(pinPath)
                     }
 
                     Spacer()
 
                     Button("create.browse") {
-                        openPanel()
+                        let panel = NSOpenPanel()
+                        panel.canChooseFiles = true
+                        panel.allowedContentTypes = [UTType.exe,
+                                                     UTType(exportedAs: "com.microsoft.msi-installer"),
+                                                     UTType(exportedAs: "com.microsoft.bat")]
+                        panel.directoryURL = newPinURL ?? bottle.url.appending(path: "drive_c")
+                        panel.canChooseDirectories = false
+                        panel.allowsMultipleSelection = false
+                        panel.canCreateDirectories = false
+                        panel.begin { result in
+                            if result == .OK {
+                                if let url = panel.urls.first {
+                                    newPinURL = url
+                                }
+                            }
+                        }
                     }
                 }
             }
@@ -72,7 +84,6 @@ struct PinCreationView: View {
                     .keyboardShortcut(.defaultAction)
                     .disabled(newPinName.isEmpty || newPinURL == nil)
                     .alert("pin.error.title", isPresented: $isDuplicate) {
-                        // no actions
                     } message: {
                         Text("pin.error.duplicate.\(newPinURL?.lastPathComponent ?? "unknown")")
                     }
@@ -113,24 +124,6 @@ struct PinCreationView: View {
         // Trigger a reload
         bottle.updateInstalledPrograms()
         dismiss()
-    }
-
-    private func openPanel() {
-        let panel = NSOpenPanel()
-        panel.canChooseFiles = true
-        panel.allowedContentTypes = [
-            UTType.exe,
-            UTType(exportedAs: "com.microsoft.msi-installer"),
-            UTType(exportedAs: "com.microsoft.bat")]
-        panel.directoryURL = newPinURL ?? bottle.url.appending(path: "drive_c")
-        panel.canChooseDirectories = false
-        panel.allowsMultipleSelection = false
-        panel.canCreateDirectories = false
-        panel.begin { result in
-            if result == .OK, let url = panel.urls.first {
-                newPinURL = url
-            }
-        }
     }
 }
 
