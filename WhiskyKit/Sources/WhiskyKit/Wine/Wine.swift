@@ -21,11 +21,11 @@ import os.log
 
 public class Wine {
     /// URL to the installed `DXVK` folder
-    private static let dxvkFolder: URL = GPTKInstaller.libraryFolder.appending(path: "DXVK")
+    private static let dxvkFolder: URL = WhiskyWineInstaller.libraryFolder.appending(path: "DXVK")
     /// Path to the `wine64` binary
-    public static let wineBinary: URL = GPTKInstaller.binFolder.appending(path: "wine64")
+    public static let wineBinary: URL = WhiskyWineInstaller.binFolder.appending(path: "wine64")
     /// Parth to the `wineserver` binary
-    private static let wineserverBinary: URL = GPTKInstaller.binFolder.appending(path: "wineserver")
+    private static let wineserverBinary: URL = WhiskyWineInstaller.binFolder.appending(path: "wineserver")
 
     /// Run a process on a executable file given by the `executableURL`
     private static func runProcess(

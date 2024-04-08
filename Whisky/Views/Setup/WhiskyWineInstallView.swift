@@ -1,5 +1,5 @@
 //
-//  GPTKInstallView.swift
+//  WhiskyWineInstallView.swift
 //  Whisky
 //
 //  This file is part of Whisky.
@@ -19,7 +19,7 @@
 import SwiftUI
 import WhiskyKit
 
-struct GPTKInstallView: View {
+struct WhiskyWineInstallView: View {
     @State var installing: Bool = true
     @Binding var tarLocation: URL
     @Binding var path: [SetupStage]
@@ -52,7 +52,7 @@ struct GPTKInstallView: View {
         .frame(width: 400, height: 200)
         .onAppear {
             Task.detached {
-                GPTKInstaller.install(from: tarLocation)
+                WhiskyWineInstaller.install(from: tarLocation)
                 await MainActor.run {
                     installing = false
                 }

@@ -1,5 +1,5 @@
 //
-//  GPTKInstaller.swift
+//  WhiskyWineInstaller.swift
 //  WhiskyKit
 //
 //  This file is part of Whisky.
@@ -19,8 +19,8 @@
 import Foundation
 import SemanticVersion
 
-public class GPTKInstaller {
-    /// The whisky application folder
+public class WhiskyWineInstaller {
+    /// The Whisky application folder
     public static let applicationFolder = FileManager.default.urls(
         for: .applicationSupportDirectory, in: .userDomainMask
         )[0].appending(path: Bundle.whiskyBundleIdentifier)
@@ -31,7 +31,7 @@ public class GPTKInstaller {
     /// URL to the installed `wine` `bin` directory
     public static let binFolder: URL = libraryFolder.appending(path: "Wine").appending(path: "bin")
 
-    public static func isGPTKInstalled() -> Bool {
+    public static func isWhiskyWineInstalled() -> Bool {
         return FileManager.default.fileExists(atPath: libraryFolder.path)
     }
 
@@ -46,15 +46,9 @@ public class GPTKInstaller {
             }
 
             try Tar.untar(tarBall: from, toURL: applicationFolder)
-
-            let tarFile = applicationFolder
-                .appending(path: "Libraries")
-                .appendingPathExtension("tar")
-                .appendingPathExtension("gz")
-            try Tar.untar(tarBall: tarFile, toURL: applicationFolder)
-            try FileManager.default.removeItem(at: tarFile)
+            try FileManager.default.removeItem(at: from)
         } catch {
-            print("Failed to install GPTK: \(error)")
+            print("Failed to install WhiskyWine: \(error)")
         }
     }
 
@@ -62,13 +56,13 @@ public class GPTKInstaller {
         do {
             try FileManager.default.removeItem(at: libraryFolder)
         } catch {
-            print("Failed to uninstall GPTK: \(error)")
+            print("Failed to uninstall WhiskyWine: \(error)")
         }
     }
 
-    public static func shouldUpdateGPTK() async -> (Bool, SemanticVersion) {
-        if let localVersion = gptkVersion() {
-            let versionPlistURL = "https://data.getwhisky.app/GPTKVersion.plist"
+    public static func shouldUpdateWhiskyWine() async -> (Bool, SemanticVersion) {
+        if let localVersion = whiskyWineVersion() {
+            let versionPlistURL = "https://data.getwhisky.app/Wine/WhiskyWineVersion.plist"
 
             if let remoteUrl = URL(string: versionPlistURL) {
                 return await withCheckedContinuation { continuation in
@@ -76,10 +70,11 @@ public class GPTKInstaller {
                         do {
                             if error == nil, let data = data {
                                 let decoder = PropertyListDecoder()
-                                let remoteInfo = try decoder.decode(GPTKVersion.self, from: data)
+                                let remoteInfo = try decoder.decode(WhiskyWineVersion.self, from: data)
                                 let remoteVersion = remoteInfo.version
 
                                 let isRemoteNewer = remoteVersion > localVersion
+                                print(isRemoteNewer)
                                 continuation.resume(returning: (isRemoteNewer, remoteVersion))
                                 return
                             }
@@ -98,15 +93,15 @@ public class GPTKInstaller {
         return (false, SemanticVersion(0, 0, 0))
     }
 
-    public static func gptkVersion() -> SemanticVersion? {
+    public static func whiskyWineVersion() -> SemanticVersion? {
         do {
             let versionPlist = libraryFolder
-                .appending(path: "GPTKVersion")
+                .appending(path: "WhiskyWineVersion")
                 .appendingPathExtension("plist")
 
             let decoder = PropertyListDecoder()
             let data = try Data(contentsOf: versionPlist)
-            let info = try decoder.decode(GPTKVersion.self, from: data)
+            let info = try decoder.decode(WhiskyWineVersion.self, from: data)
             return info.version
         } catch {
             print(error)
@@ -115,6 +110,6 @@ public class GPTKInstaller {
     }
 }
 
-struct GPTKVersion: Codable {
+struct WhiskyWineVersion: Codable {
     var version: SemanticVersion = SemanticVersion(1, 0, 0)
 }

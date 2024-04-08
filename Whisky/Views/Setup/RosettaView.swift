@@ -105,8 +105,8 @@ struct RosettaView: View {
 
     @MainActor
     func proceed() {
-        if !GPTKInstaller.isGPTKInstalled() {
-            path.append(.gptkDownload)
+        if !WhiskyWineInstaller.isWhiskyWineInstalled() {
+            path.append(.whiskyWineDownload)
             return
         }
 

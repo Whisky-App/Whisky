@@ -1,5 +1,5 @@
 //
-//  GPTKDownloadView.swift
+//  WhiskyWineDownloadView.swift
 //  Whisky
 //
 //  This file is part of Whisky.
@@ -19,7 +19,7 @@
 import SwiftUI
 import WhiskyKit
 
-struct GPTKDownloadView: View {
+struct WhiskyWineDownloadView: View {
     @State private var fractionProgress: Double = 0
     @State private var completedBytes: Int64 = 0
     @State private var totalBytes: Int64 = 0
@@ -65,7 +65,7 @@ struct GPTKDownloadView: View {
         .frame(width: 400, height: 200)
         .onAppear {
             Task {
-                if let url: URL = URL(string: "https://data.getwhisky.app/Libraries.zip") {
+                if let url: URL = URL(string: "https://data.getwhisky.app/Wine/Libraries.tar.gz") {
                     downloadTask = URLSession.shared.downloadTask(with: url) { url, _, _ in
                         if let url = url {
                             tarLocation = url
@@ -119,6 +119,6 @@ struct GPTKDownloadView: View {
     }
 
     func proceed() {
-        path.append(.gptkInstall)
+        path.append(.whiskyWineInstall)
     }
 }

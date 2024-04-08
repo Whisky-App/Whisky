@@ -21,7 +21,7 @@ import WhiskyKit
 
 struct WelcomeView: View {
     @State var rosettaInstalled: Bool?
-    @State var gptkInstalled: Bool?
+    @State var whiskyWineInstalled: Bool?
     @State var shouldCheckInstallStatus: Bool = false
     @Binding var path: [SetupStage]
     @Binding var showSetup: Bool
@@ -52,10 +52,10 @@ struct WelcomeView: View {
                 InstallStatusView(isInstalled: $rosettaInstalled,
                                   shouldCheckInstallStatus: $shouldCheckInstallStatus,
                                   name: "Rosetta")
-                InstallStatusView(isInstalled: $gptkInstalled,
+                InstallStatusView(isInstalled: $whiskyWineInstalled,
                                   shouldCheckInstallStatus: $shouldCheckInstallStatus,
                                   showUninstall: true,
-                                  name: "GPTK")
+                                  name: "WhiskyWine")
             }
             .formStyle(.grouped)
             .scrollDisabled(true)
@@ -68,22 +68,22 @@ struct WelcomeView: View {
             Spacer()
             HStack {
                 if let rosettaInstalled = rosettaInstalled,
-                   let gptkInstalled = gptkInstalled {
-                    if !rosettaInstalled || !gptkInstalled {
+                   let whiskyWineInstalled = whiskyWineInstalled {
+                    if !rosettaInstalled || !whiskyWineInstalled {
                         Button("setup.quit") {
                             exit(0)
                         }
                         .keyboardShortcut(.cancelAction)
                     }
                     Spacer()
-                    Button(rosettaInstalled && gptkInstalled ? "setup.done" : "setup.next") {
+                    Button(rosettaInstalled && whiskyWineInstalled ? "setup.done" : "setup.next") {
                         if !rosettaInstalled {
                             path.append(.rosetta)
                             return
                         }
 
-                        if !gptkInstalled {
-                            path.append(.gptkDownload)
+                        if !whiskyWineInstalled {
+                            path.append(.whiskyWineDownload)
                             return
                         }
 
@@ -98,7 +98,7 @@ struct WelcomeView: View {
 
     func checkInstallStatus() {
         rosettaInstalled = Rosetta2.isRosettaInstalled
-        gptkInstalled = GPTKInstaller.isGPTKInstalled()
+        whiskyWineInstalled = WhiskyWineInstaller.isWhiskyWineInstalled()
     }
 }
 
@@ -145,8 +145,8 @@ struct InstallStatusView: View {
     }
 
     func uninstall() {
-        if name == "GPTK" {
-            GPTKInstaller.uninstall()
+        if name == "WhiskyWine" {
+            WhiskyWineInstaller.uninstall()
         }
 
         shouldCheckInstallStatus.toggle()
