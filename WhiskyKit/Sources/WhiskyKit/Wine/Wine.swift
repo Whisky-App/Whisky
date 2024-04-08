@@ -205,7 +205,11 @@ public class Wine {
     private static func constructWineEnvironment(
         for bottle: Bottle, environment: [String: String] = [:]
     ) -> [String: String] {
-        var result: [String: String] = ["WINEPREFIX": bottle.url.path, "WINEDEBUG": "fixme-all"]
+        var result: [String: String] = [
+            "WINEPREFIX": bottle.url.path,
+            "WINEDEBUG": "fixme-all",
+            "GST_DEBUG": "1"
+        ]
         bottle.settings.environmentVariables(wineEnv: &result)
         guard !environment.isEmpty else { return result }
         result.merge(environment, uniquingKeysWith: { $1 })
@@ -216,7 +220,11 @@ public class Wine {
     private static func constructWineServerEnvironment(
         for bottle: Bottle, environment: [String: String] = [:]
     ) -> [String: String] {
-        var result: [String: String] = ["WINEPREFIX": bottle.url.path, "WINEDEBUG": "fixme-all"]
+        var result: [String: String] = [
+            "WINEPREFIX": bottle.url.path,
+            "WINEDEBUG": "fixme-all",
+            "GST_DEBUG": "1"
+        ]
         guard !environment.isEmpty else { return result }
         result.merge(environment, uniquingKeysWith: { $1 })
         return result
