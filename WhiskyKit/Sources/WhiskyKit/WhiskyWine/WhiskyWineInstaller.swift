@@ -32,7 +32,7 @@ public class WhiskyWineInstaller {
     public static let binFolder: URL = libraryFolder.appending(path: "Wine").appending(path: "bin")
 
     public static func isWhiskyWineInstalled() -> Bool {
-        return FileManager.default.fileExists(atPath: libraryFolder.path)
+        return whiskyWineVersion() != nil
     }
 
     public static func install(from: URL) {
@@ -61,32 +61,38 @@ public class WhiskyWineInstaller {
     }
 
     public static func shouldUpdateWhiskyWine() async -> (Bool, SemanticVersion) {
-        if let localVersion = whiskyWineVersion() {
-            let versionPlistURL = "https://data.getwhisky.app/Wine/WhiskyWineVersion.plist"
+        let versionPlistURL = "https://data.getwhisky.app/Wine/WhiskyWineVersion.plist"
+        let localVersion = whiskyWineVersion()
 
-            if let remoteUrl = URL(string: versionPlistURL) {
-                return await withCheckedContinuation { continuation in
-                    URLSession.shared.dataTask(with: URLRequest(url: remoteUrl)) { data, _, error in
-                        do {
-                            if error == nil, let data = data {
-                                let decoder = PropertyListDecoder()
-                                let remoteInfo = try decoder.decode(WhiskyWineVersion.self, from: data)
-                                let remoteVersion = remoteInfo.version
+        var remoteVersion: SemanticVersion?
 
-                                let isRemoteNewer = remoteVersion > localVersion
-                                print(isRemoteNewer)
-                                continuation.resume(returning: (isRemoteNewer, remoteVersion))
-                                return
-                            }
-                            if let error = error {
-                                print(error)
-                            }
-                        } catch {
+        if let remoteUrl = URL(string: versionPlistURL) {
+            remoteVersion = await withCheckedContinuation { continuation in
+                URLSession.shared.dataTask(with: URLRequest(url: remoteUrl)) { data, _, error in
+                    do {
+                        if error == nil, let data = data {
+                            let decoder = PropertyListDecoder()
+                            let remoteInfo = try decoder.decode(WhiskyWineVersion.self, from: data)
+                            let remoteVersion = remoteInfo.version
+
+                            continuation.resume(returning: remoteVersion)
+                            return
+                        }
+                        if let error = error {
                             print(error)
                         }
-                        continuation.resume(returning: (false, SemanticVersion(0, 0, 0)))
-                    }.resume()
-                }
+                    } catch {
+                        print(error)
+                    }
+
+                    continuation.resume(returning: nil)
+                }.resume()
+            }
+        }
+
+        if let localVersion = localVersion, let remoteVersion = remoteVersion {
+            if localVersion < remoteVersion {
+                return (true, remoteVersion)
             }
         }
 
