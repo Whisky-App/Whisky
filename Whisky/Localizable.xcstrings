@@ -17424,6 +17424,16 @@
         }
       }
     },
+    "tab.processes" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Running Processes"
+          }
+        }
+      }
+    },
     "tab.programs" : {
       "localizations" : {
         "cs" : {
