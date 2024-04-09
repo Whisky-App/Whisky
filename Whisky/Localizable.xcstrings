@@ -1165,8 +1165,8 @@
         },
         "zh-Hant" : {
           "stringUnit" : {
-            "state" : "translated",
-            "value" : "釘選"
+            "state" : "new",
+            "value" : "Pin"
           }
         }
       }
@@ -2477,19 +2477,19 @@
         "cs" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Terminal"
+            "value" : "Terminal..."
           }
         },
         "da" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Terminal"
+            "value" : "Terminal..."
           }
         },
         "de" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Terminal"
+            "value" : "Terminal..."
           }
         },
         "en" : {
@@ -2501,103 +2501,103 @@
         "es" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Terminal"
+            "value" : "Terminal..."
           }
         },
         "fi" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Terminal"
+            "value" : "Terminal..."
           }
         },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Terminal"
+            "value" : "Terminal..."
           }
         },
         "it" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Terminal"
+            "value" : "Terminal..."
           }
         },
         "ja" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Terminal"
+            "value" : "Terminal..."
           }
         },
         "ko" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Terminal"
+            "value" : "Terminal..."
           }
         },
         "nl" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Terminal"
+            "value" : "Terminal..."
           }
         },
         "pl" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Terminal"
+            "value" : "Terminal..."
           }
         },
         "pt-BR" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Terminal"
+            "value" : "Terminal..."
           }
         },
         "pt-PT" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Terminal"
+            "value" : "Terminal..."
           }
         },
         "ro" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Terminal"
+            "value" : "Terminal..."
           }
         },
         "ru" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Terminal"
+            "value" : "Terminal..."
           }
         },
         "tr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Terminal"
+            "value" : "Terminal..."
           }
         },
         "uk" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Terminal"
+            "value" : "Terminal..."
           }
         },
         "vi" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Terminal"
+            "value" : "Terminal..."
           }
         },
         "zh-Hans" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "终端⋯"
+            "value" : "Terminal..."
           }
         },
         "zh-Hant" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "終端機⋯"
+            "value" : "Terminal..."
           }
         }
       }
@@ -2726,8 +2726,8 @@
         },
         "zh-Hant" : {
           "stringUnit" : {
-            "state" : "translated",
-            "value" : "取消釘選"
+            "state" : "new",
+            "value" : "Unpin"
           }
         }
       }
@@ -2856,8 +2856,8 @@
         },
         "zh-Hant" : {
           "stringUnit" : {
-            "state" : "translated",
-            "value" : "Winetricks⋯"
+            "state" : "new",
+            "value" : "Winetricks..."
           }
         }
       }
@@ -3506,7 +3506,7 @@
         },
         "zh-Hant" : {
           "stringUnit" : {
-            "state" : "translated",
+            "state" : "new",
             "value" : "DXVK"
           }
         }
@@ -3766,7 +3766,7 @@
         },
         "zh-Hant" : {
           "stringUnit" : {
-            "state" : "translated",
+            "state" : "new",
             "value" : "DXVK HUD"
           }
         }
@@ -4416,7 +4416,7 @@
         },
         "zh-Hant" : {
           "stringUnit" : {
-            "state" : "translated",
+            "state" : "new",
             "value" : "ESync"
           }
         }
@@ -4546,7 +4546,7 @@
         },
         "zh-Hant" : {
           "stringUnit" : {
-            "state" : "translated",
+            "state" : "new",
             "value" : "MSync"
           }
         }
@@ -4676,8 +4676,8 @@
         },
         "zh-Hant" : {
           "stringUnit" : {
-            "state" : "translated",
-            "value" : "增強同步"
+            "state" : "new",
+            "value" : "Enhanced Sync"
           }
         }
       }
@@ -4806,8 +4806,8 @@
         },
         "zh-Hant" : {
           "stringUnit" : {
-            "state" : "translated",
-            "value" : "無"
+            "state" : "new",
+            "value" : "None"
           }
         }
       }
@@ -5846,7 +5846,7 @@
         },
         "zh-Hant" : {
           "stringUnit" : {
-            "state" : "translated",
+            "state" : "new",
             "value" : "DXVK"
           }
         }
@@ -5976,7 +5976,7 @@
         },
         "zh-Hant" : {
           "stringUnit" : {
-            "state" : "translated",
+            "state" : "new",
             "value" : "Metal"
           }
         }
@@ -6106,7 +6106,7 @@
         },
         "zh-Hant" : {
           "stringUnit" : {
-            "state" : "translated",
+            "state" : "new",
             "value" : "Wine"
           }
         }
@@ -6496,7 +6496,7 @@
         },
         "zh-Hant" : {
           "stringUnit" : {
-            "state" : "translated",
+            "state" : "new",
             "value" : "DPI"
           }
         }
@@ -7926,8 +7926,8 @@
         },
         "zh-Hant" : {
           "stringUnit" : {
-            "state" : "translated",
-            "value" : "加入"
+            "state" : "new",
+            "value" : "Add"
           }
         }
       }
@@ -8056,8 +8056,8 @@
         },
         "zh-Hant" : {
           "stringUnit" : {
-            "state" : "translated",
-            "value" : "移除"
+            "state" : "new",
+            "value" : "Remove"
           }
         }
       }
@@ -8186,7 +8186,7 @@
         },
         "zh-Hant" : {
           "stringUnit" : {
-            "state" : "translated",
+            "state" : "new",
             "value" : "Discord"
           }
         }
@@ -8316,7 +8316,7 @@
         },
         "zh-Hant" : {
           "stringUnit" : {
-            "state" : "translated",
+            "state" : "new",
             "value" : "GitHub"
           }
         }
@@ -8446,8 +8446,8 @@
         },
         "zh-Hant" : {
           "stringUnit" : {
-            "state" : "translated",
-            "value" : "網站"
+            "state" : "new",
+            "value" : "Website"
           }
         }
       }
@@ -9617,8 +9617,8 @@
         },
         "zh-Hant" : {
           "stringUnit" : {
-            "state" : "translated",
-            "value" : "釘選"
+            "state" : "new",
+            "value" : "Pin"
           }
         }
       }
@@ -9748,8 +9748,8 @@
         },
         "zh-Hant" : {
           "stringUnit" : {
-            "state" : "translated",
-            "value" : "「%@」已經釘選！"
+            "state" : "new",
+            "value" : "\"%@\" is already pinned!"
           }
         }
       }
@@ -9878,8 +9878,8 @@
         },
         "zh-Hant" : {
           "stringUnit" : {
-            "state" : "translated",
-            "value" : "釘選程式時發生錯誤"
+            "state" : "new",
+            "value" : "Error Pinning Program"
           }
         }
       }
@@ -10008,8 +10008,8 @@
         },
         "zh-Hant" : {
           "stringUnit" : {
-            "state" : "translated",
-            "value" : "釘選程式"
+            "state" : "new",
+            "value" : "Pin Program"
           }
         }
       }
@@ -10138,8 +10138,8 @@
         },
         "zh-Hant" : {
           "stringUnit" : {
-            "state" : "translated",
-            "value" : "釘選名稱："
+            "state" : "new",
+            "value" : "Pin name:"
           }
         }
       }
@@ -17420,6 +17420,16 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "正在執行進程"
+          }
+        }
+      }
+    },
+    "tab.processes" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Running Processes"
           }
         }
       }
