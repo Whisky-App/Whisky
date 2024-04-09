@@ -101,18 +101,19 @@ struct ContentView: View {
                 }
             }
 
-            if !GPTKInstaller.isGPTKInstalled() {
+            if !WhiskyWineInstaller.isWhiskyWineInstalled() {
                 showSetup = true
             }
             let task = Task.detached {
-                return await GPTKInstaller.shouldUpdateGPTK()
+                return await WhiskyWineInstaller.shouldUpdateWhiskyWine()
             }
             let updateInfo = await task.value
             if updateInfo.0 {
                 let alert = NSAlert()
                 alert.messageText = String(localized: "update.gptk.title")
                 alert.informativeText = String(format: String(localized: "update.gptk.description"),
-                                               String(GPTKInstaller.gptkVersion() ?? SemanticVersion(0, 0, 0)),
+                                               String(WhiskyWineInstaller.whiskyWineVersion()
+                                                      ?? SemanticVersion(0, 0, 0)),
                                                String(updateInfo.1))
                 alert.alertStyle = .warning
                 alert.addButton(withTitle: String(localized: "update.gptk.update"))
@@ -121,7 +122,7 @@ struct ContentView: View {
                 let response = alert.runModal()
 
                 if response == .alertFirstButtonReturn {
-                    GPTKInstaller.uninstall()
+                    WhiskyWineInstaller.uninstall()
                     showSetup = true
                 }
             }

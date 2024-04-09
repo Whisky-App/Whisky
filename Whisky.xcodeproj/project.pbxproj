@@ -35,8 +35,8 @@
 		6E621CEF2A5F631300C9AAB3 /* Winetricks.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E621CEE2A5F631200C9AAB3 /* Winetricks.swift */; };
 		6E6C0CF22A419A6800356232 /* WelcomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E6C0CF12A419A6800356232 /* WelcomeView.swift */; };
 		6E6C0CF42A419A7600356232 /* RosettaView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E6C0CF32A419A7600356232 /* RosettaView.swift */; };
-		6E6C0CF62A419A8300356232 /* GPTKDownloadView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E6C0CF52A419A8300356232 /* GPTKDownloadView.swift */; };
-		6E6C0CF82A419A8C00356232 /* GPTKInstallView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E6C0CF72A419A8C00356232 /* GPTKInstallView.swift */; };
+		6E6C0CF62A419A8300356232 /* WhiskyWineDownloadView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E6C0CF52A419A8300356232 /* WhiskyWineDownloadView.swift */; };
+		6E6C0CF82A419A8C00356232 /* WhiskyWineInstallView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E6C0CF72A419A8C00356232 /* WhiskyWineInstallView.swift */; };
 		6E70A49B2A9A2197007799E9 /* Main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E70A49A2A9A2197007799E9 /* Main.swift */; };
 		6E70A4A12A9A280C007799E9 /* WhiskyCmd.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E70A4A02A9A280C007799E9 /* WhiskyCmd.swift */; };
 		6E7C07BE2AAE7B0100F6E66B /* ProgramShortcut.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E7C07BD2AAE7B0100F6E66B /* ProgramShortcut.swift */; };
@@ -56,6 +56,7 @@
 		8C73E1342AF472FC00B6FB45 /* ProgramMenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C73E1332AF472FC00B6FB45 /* ProgramMenuView.swift */; };
 		8CB681E52AED7C6F0018D319 /* WhiskyKit in Resources */ = {isa = PBXBuildFile; fileRef = 8CB681E42AED7C6F0018D319 /* WhiskyKit */; };
 		8CB681E72AED7CD00018D319 /* WhiskyKit in Frameworks */ = {isa = PBXBuildFile; productRef = 8CB681E62AED7CD00018D319 /* WhiskyKit */; };
+		AB0BCABD2B61036E00E21C31 /* RunningProcessesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB0BCABC2B61036E00E21C31 /* RunningProcessesView.swift */; };
 		DB696FC82AFAE5DA0037EB2F /* PinCreationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB696FC72AFAE5DA0037EB2F /* PinCreationView.swift */; };
 		EB58FB552A499896002DC184 /* SemanticVersion in Frameworks */ = {isa = PBXBuildFile; productRef = EB58FB542A499896002DC184 /* SemanticVersion */; };
 		EEA5A2462A31DD65008274AE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEA5A2452A31DD65008274AE /* AppDelegate.swift */; };
@@ -134,8 +135,8 @@
 		6E621CEE2A5F631200C9AAB3 /* Winetricks.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Winetricks.swift; sourceTree = "<group>"; };
 		6E6C0CF12A419A6800356232 /* WelcomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeView.swift; sourceTree = "<group>"; };
 		6E6C0CF32A419A7600356232 /* RosettaView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RosettaView.swift; sourceTree = "<group>"; };
-		6E6C0CF52A419A8300356232 /* GPTKDownloadView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GPTKDownloadView.swift; sourceTree = "<group>"; };
-		6E6C0CF72A419A8C00356232 /* GPTKInstallView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GPTKInstallView.swift; sourceTree = "<group>"; };
+		6E6C0CF52A419A8300356232 /* WhiskyWineDownloadView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WhiskyWineDownloadView.swift; sourceTree = "<group>"; };
+		6E6C0CF72A419A8C00356232 /* WhiskyWineInstallView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WhiskyWineInstallView.swift; sourceTree = "<group>"; };
 		6E70A4982A9A2197007799E9 /* WhiskyCmd */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = WhiskyCmd; sourceTree = BUILT_PRODUCTS_DIR; };
 		6E70A49A2A9A2197007799E9 /* Main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Main.swift; sourceTree = "<group>"; };
 		6E70A4A02A9A280C007799E9 /* WhiskyCmd.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WhiskyCmd.swift; sourceTree = "<group>"; };
@@ -153,6 +154,7 @@
 		6EFDF6652AAE303300EF622F /* Icons.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Icons.xcassets; sourceTree = "<group>"; };
 		8C73E1332AF472FC00B6FB45 /* ProgramMenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgramMenuView.swift; sourceTree = "<group>"; };
 		8CB681E42AED7C6F0018D319 /* WhiskyKit */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = WhiskyKit; sourceTree = "<group>"; };
+		AB0BCABC2B61036E00E21C31 /* RunningProcessesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RunningProcessesView.swift; sourceTree = "<group>"; };
 		DB696FC72AFAE5DA0037EB2F /* PinCreationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PinCreationView.swift; sourceTree = "<group>"; };
 		EEA5A2452A31DD65008274AE /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -248,6 +250,7 @@
 				6E50D98429CDF25B008C39F6 /* BottleCreationView.swift */,
 				6E355E5729D78249002D83BE /* ConfigView.swift */,
 				6E182FC92B0BF64E00AADE81 /* WinetricksView.swift */,
+				AB0BCABC2B61036E00E21C31 /* RunningProcessesView.swift */,
 				6E17B6422AF3FD6E00831173 /* Pins */,
 			);
 			path = Bottle;
@@ -360,8 +363,8 @@
 				6EF557972A410599001A4F09 /* SetupView.swift */,
 				6E6C0CF12A419A6800356232 /* WelcomeView.swift */,
 				6E6C0CF32A419A7600356232 /* RosettaView.swift */,
-				6E6C0CF52A419A8300356232 /* GPTKDownloadView.swift */,
-				6E6C0CF72A419A8C00356232 /* GPTKInstallView.swift */,
+				6E6C0CF52A419A8300356232 /* WhiskyWineDownloadView.swift */,
+				6E6C0CF72A419A8C00356232 /* WhiskyWineInstallView.swift */,
 			);
 			path = Setup;
 			sourceTree = "<group>";
@@ -567,7 +570,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "if [[ -z \"$FASTLANE\" ]]; then\n    export PATH=\"$PATH:/opt/homebrew/bin\"\n    if which swiftlint > /dev/null; then\n        swiftlint --autocorrect\n    else\n        echo \"error: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\n        exit -1\n    fi\nfi\n";
+			shellScript = "export PATH=\"$PATH:/opt/homebrew/bin\"\nif which swiftlint > /dev/null; then\n    echo \"Running SwiftLint\"\n    swiftlint --strict\nelse\n    echo \"error: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\n    exit -1\nfi\n";
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -585,14 +588,16 @@
 				6E7C07BE2AAE7B0100F6E66B /* ProgramShortcut.swift in Sources */,
 				6E355E5829D78249002D83BE /* ConfigView.swift in Sources */,
 				63FFDE862ADF0C7700178665 /* BottomBar.swift in Sources */,
-				6E6C0CF62A419A8300356232 /* GPTKDownloadView.swift in Sources */,
+				6E6C0CF62A419A8300356232 /* WhiskyWineDownloadView.swift in Sources */,
 				6365C4C32B1AA8CD00AAE1FD /* BottleListEntry.swift in Sources */,
 				6E50D98529CDF25B008C39F6 /* BottleCreationView.swift in Sources */,
 				6E182FCA2B0BF64E00AADE81 /* WinetricksView.swift in Sources */,
 				6330DD962B1B0EA4007A625A /* RenameView.swift in Sources */,
+				AB0BCABD2B61036E00E21C31 /* RunningProcessesView.swift in Sources */,
 				6E17B6492AF4118F00831173 /* EnvironmentArgView.swift in Sources */,
 				6E6C0CF42A419A7600356232 /* RosettaView.swift in Sources */,
-				6E6C0CF82A419A8C00356232 /* GPTKInstallView.swift in Sources */,
+				6E6C0CF82A419A8C00356232 /* WhiskyWineInstallView.swift in Sources */,
+				6E08FC3B2BBAE42800FA622A /* BottleDuplicationView.swift in Sources */,
 				6365C4C12B1AA69D00AAE1FD /* Animation+Extensions.swift in Sources */,
 				6E40498329CCA91B006E3F1B /* Bottle+Extensions.swift in Sources */,
 				6E621CEF2A5F631300C9AAB3 /* Winetricks.swift in Sources */,
@@ -767,7 +772,7 @@
 				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Developer ID Application";
 				CODE_SIGN_STYLE = Manual;
 				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = 35;
+				CURRENT_PROJECT_VERSION = 37;
 				DEVELOPMENT_ASSET_PATHS = "\"Whisky/Preview Content\"";
 				DEVELOPMENT_TEAM = "";
 				"DEVELOPMENT_TEAM[sdk=macosx*]" = 92S3SG4PTH;
@@ -785,7 +790,7 @@
 					"@executable_path/../Frameworks",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 14.0;
-				MARKETING_VERSION = 2.2.2;
+				MARKETING_VERSION = 2.2.4;
 				PRODUCT_BUNDLE_IDENTIFIER = com.isaacmarovitz.Whisky;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -805,7 +810,7 @@
 				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Developer ID Application";
 				CODE_SIGN_STYLE = Manual;
 				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = 35;
+				CURRENT_PROJECT_VERSION = 37;
 				DEVELOPMENT_ASSET_PATHS = "\"Whisky/Preview Content\"";
 				DEVELOPMENT_TEAM = "";
 				"DEVELOPMENT_TEAM[sdk=macosx*]" = 92S3SG4PTH;
@@ -823,7 +828,7 @@
 					"@executable_path/../Frameworks",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 14.0;
-				MARKETING_VERSION = 2.2.2;
+				MARKETING_VERSION = 2.2.4;
 				PRODUCT_BUNDLE_IDENTIFIER = com.isaacmarovitz.Whisky;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -889,7 +894,7 @@
 				CODE_SIGN_ENTITLEMENTS = WhiskyThumbnail/WhiskyThumbnail.entitlements;
 				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Developer ID Application";
 				CODE_SIGN_STYLE = Manual;
-				CURRENT_PROJECT_VERSION = 35;
+				CURRENT_PROJECT_VERSION = 37;
 				DEVELOPMENT_TEAM = "";
 				"DEVELOPMENT_TEAM[sdk=macosx*]" = 92S3SG4PTH;
 				ENABLE_HARDENED_RUNTIME = YES;
@@ -905,7 +910,7 @@
 					"@executable_path/../../../../Frameworks",
 				);
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
-				MARKETING_VERSION = 2.2.2;
+				MARKETING_VERSION = 2.2.4;
 				PRODUCT_BUNDLE_IDENTIFIER = com.isaacmarovitz.Whisky.WhiskyThumbnail;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -923,7 +928,7 @@
 				CODE_SIGN_ENTITLEMENTS = WhiskyThumbnail/WhiskyThumbnail.entitlements;
 				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Developer ID Application";
 				CODE_SIGN_STYLE = Manual;
-				CURRENT_PROJECT_VERSION = 35;
+				CURRENT_PROJECT_VERSION = 37;
 				DEVELOPMENT_TEAM = "";
 				"DEVELOPMENT_TEAM[sdk=macosx*]" = 92S3SG4PTH;
 				ENABLE_HARDENED_RUNTIME = YES;
@@ -939,7 +944,7 @@
 					"@executable_path/../../../../Frameworks",
 				);
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
-				MARKETING_VERSION = 2.2.2;
+				MARKETING_VERSION = 2.2.4;
 				PRODUCT_BUNDLE_IDENTIFIER = com.isaacmarovitz.Whisky.WhiskyThumbnail;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";

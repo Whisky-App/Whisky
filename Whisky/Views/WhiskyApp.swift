@@ -40,6 +40,10 @@ struct WhiskyApp: App {
                 .environmentObject(BottleVM.shared)
                 .onAppear {
                     NSWindow.allowsAutomaticWindowTabbing = false
+
+                    Task.detached {
+                        await WhiskyApp.deleteOldLogs()
+                    }
                 }
         }
         // Don't ask me how this works, it just does
@@ -127,6 +131,38 @@ struct WhiskyApp: App {
 
     static func openLogsFolder() {
         NSWorkspace.shared.selectFile(nil, inFileViewerRootedAtPath: Wine.logsFolder.path)
+    }
+
+    static func deleteOldLogs() {
+        let pastDate = Date().addingTimeInterval(-7 * 24 * 60 * 60)
+
+        guard let urls = try? FileManager.default.contentsOfDirectory(
+            at: Wine.logsFolder,
+            includingPropertiesForKeys: [.creationDateKey]) else {
+            return
+        }
+
+        let logs = urls.filter { url in
+            url.pathExtension == "log"
+        }
+
+        let oldLogs = logs.filter { url in
+            do {
+                let resourceValues = try url.resourceValues(forKeys: [.creationDateKey])
+
+                return resourceValues.creationDate ?? Date() < pastDate
+            } catch {
+                return false
+            }
+        }
+
+        for log in oldLogs {
+            do {
+                try FileManager.default.removeItem(at: log)
+            } catch {
+                print("Failed to delete log: \(error)")
+            }
+        }
     }
 
     static func wipeShaderCaches() {

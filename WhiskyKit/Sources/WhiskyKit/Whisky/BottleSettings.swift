@@ -279,6 +279,10 @@ public struct BottleSettings: Codable, Equatable {
             wineEnv.updateValue("1", forKey: "WINEESYNC")
         case .msync:
             wineEnv.updateValue("1", forKey: "WINEMSYNC")
+            // D3DM detects ESYNC and changes behaviour accordingly
+            // so we have to lie to it so that it doesn't break
+            // under MSYNC. Values hardcoded in lid3dshared.dylib
+            wineEnv.updateValue("1", forKey: "WINEESYNC")
         }
 
         if metalHud {

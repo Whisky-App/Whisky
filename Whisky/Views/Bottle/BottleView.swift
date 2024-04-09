@@ -23,6 +23,7 @@ import WhiskyKit
 enum BottleStage {
     case config
     case programs
+    case processes
 }
 
 struct BottleView: View {
@@ -52,6 +53,9 @@ struct BottleView: View {
                     NavigationLink(value: BottleStage.config) {
                         Label("tab.config", systemImage: "gearshape")
                     }
+//                    NavigationLink(value: BottleStage.processes) {
+//                        Label("tab.processes", systemImage: "hockey.puck.circle")
+//                    }
                 }
                 .formStyle(.grouped)
                 .scrollDisabled(true)
@@ -61,6 +65,9 @@ struct BottleView: View {
                     Spacer()
                     Button("button.cDrive") {
                         bottle.openCDrive()
+                    }
+                    Button("button.terminal") {
+                        bottle.openTerminal()
                     }
                     Button("button.winetricks") {
                         showWinetricksSheet.toggle()
@@ -128,6 +135,8 @@ struct BottleView: View {
                     ProgramsView(
                         bottle: bottle, path: $path
                     )
+                case .processes:
+                    RunningProcessesView(bottle: bottle)
                 }
             }
             .navigationDestination(for: Program.self) { program in
