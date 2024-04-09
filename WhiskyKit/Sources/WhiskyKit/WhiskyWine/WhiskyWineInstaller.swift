@@ -68,7 +68,7 @@ public class WhiskyWineInstaller {
 
         if let remoteUrl = URL(string: versionPlistURL) {
             remoteVersion = await withCheckedContinuation { continuation in
-                URLSession.shared.dataTask(with: URLRequest(url: remoteUrl)) { data, _, error in
+                URLSession(configuration: .ephemeral).dataTask(with: URLRequest(url: remoteUrl)) { data, _, error in
                     do {
                         if error == nil, let data = data {
                             let decoder = PropertyListDecoder()
