@@ -1165,8 +1165,8 @@
         },
         "zh-Hant" : {
           "stringUnit" : {
-            "state" : "new",
-            "value" : "Pin"
+            "state" : "translated",
+            "value" : "釘選"
           }
         }
       }
@@ -2591,13 +2591,13 @@
         "zh-Hans" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Terminal"
+            "value" : "终端⋯"
           }
         },
         "zh-Hant" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Terminal"
+            "value" : "終端機⋯"
           }
         }
       }
@@ -2726,8 +2726,8 @@
         },
         "zh-Hant" : {
           "stringUnit" : {
-            "state" : "new",
-            "value" : "Unpin"
+            "state" : "translated",
+            "value" : "取消釘選"
           }
         }
       }
@@ -2856,8 +2856,8 @@
         },
         "zh-Hant" : {
           "stringUnit" : {
-            "state" : "new",
-            "value" : "Winetricks..."
+            "state" : "translated",
+            "value" : "Winetricks⋯"
           }
         }
       }
@@ -3506,7 +3506,7 @@
         },
         "zh-Hant" : {
           "stringUnit" : {
-            "state" : "new",
+            "state" : "translated",
             "value" : "DXVK"
           }
         }
@@ -3766,7 +3766,7 @@
         },
         "zh-Hant" : {
           "stringUnit" : {
-            "state" : "new",
+            "state" : "translated",
             "value" : "DXVK HUD"
           }
         }
@@ -4416,7 +4416,7 @@
         },
         "zh-Hant" : {
           "stringUnit" : {
-            "state" : "new",
+            "state" : "translated",
             "value" : "ESync"
           }
         }
@@ -4546,7 +4546,7 @@
         },
         "zh-Hant" : {
           "stringUnit" : {
-            "state" : "new",
+            "state" : "translated",
             "value" : "MSync"
           }
         }
@@ -4676,8 +4676,8 @@
         },
         "zh-Hant" : {
           "stringUnit" : {
-            "state" : "new",
-            "value" : "Enhanced Sync"
+            "state" : "translated",
+            "value" : "增強同步"
           }
         }
       }
@@ -4806,8 +4806,8 @@
         },
         "zh-Hant" : {
           "stringUnit" : {
-            "state" : "new",
-            "value" : "None"
+            "state" : "translated",
+            "value" : "無"
           }
         }
       }
@@ -5846,7 +5846,7 @@
         },
         "zh-Hant" : {
           "stringUnit" : {
-            "state" : "new",
+            "state" : "translated",
             "value" : "DXVK"
           }
         }
@@ -5976,7 +5976,7 @@
         },
         "zh-Hant" : {
           "stringUnit" : {
-            "state" : "new",
+            "state" : "translated",
             "value" : "Metal"
           }
         }
@@ -6106,7 +6106,7 @@
         },
         "zh-Hant" : {
           "stringUnit" : {
-            "state" : "new",
+            "state" : "translated",
             "value" : "Wine"
           }
         }
@@ -6496,7 +6496,7 @@
         },
         "zh-Hant" : {
           "stringUnit" : {
-            "state" : "new",
+            "state" : "translated",
             "value" : "DPI"
           }
         }
@@ -7926,8 +7926,8 @@
         },
         "zh-Hant" : {
           "stringUnit" : {
-            "state" : "new",
-            "value" : "Add"
+            "state" : "translated",
+            "value" : "加入"
           }
         }
       }
@@ -8056,8 +8056,8 @@
         },
         "zh-Hant" : {
           "stringUnit" : {
-            "state" : "new",
-            "value" : "Remove"
+            "state" : "translated",
+            "value" : "移除"
           }
         }
       }
@@ -8186,7 +8186,7 @@
         },
         "zh-Hant" : {
           "stringUnit" : {
-            "state" : "new",
+            "state" : "translated",
             "value" : "Discord"
           }
         }
@@ -8316,7 +8316,7 @@
         },
         "zh-Hant" : {
           "stringUnit" : {
-            "state" : "new",
+            "state" : "translated",
             "value" : "GitHub"
           }
         }
@@ -8446,8 +8446,8 @@
         },
         "zh-Hant" : {
           "stringUnit" : {
-            "state" : "new",
-            "value" : "Website"
+            "state" : "translated",
+            "value" : "網站"
           }
         }
       }
@@ -9617,8 +9617,8 @@
         },
         "zh-Hant" : {
           "stringUnit" : {
-            "state" : "new",
-            "value" : "Pin"
+            "state" : "translated",
+            "value" : "釘選"
           }
         }
       }
@@ -9748,8 +9748,8 @@
         },
         "zh-Hant" : {
           "stringUnit" : {
-            "state" : "new",
-            "value" : "\"%@\" is already pinned!"
+            "state" : "translated",
+            "value" : "「%@」已經釘選！"
           }
         }
       }
@@ -9878,8 +9878,8 @@
         },
         "zh-Hant" : {
           "stringUnit" : {
-            "state" : "new",
-            "value" : "Error Pinning Program"
+            "state" : "translated",
+            "value" : "釘選程式時發生錯誤"
           }
         }
       }
@@ -10008,8 +10008,8 @@
         },
         "zh-Hant" : {
           "stringUnit" : {
-            "state" : "new",
-            "value" : "Pin Program"
+            "state" : "translated",
+            "value" : "釘選程式"
           }
         }
       }
@@ -10138,8 +10138,8 @@
         },
         "zh-Hant" : {
           "stringUnit" : {
-            "state" : "new",
-            "value" : "Pin name:"
+            "state" : "translated",
+            "value" : "釘選名稱："
           }
         }
       }
@@ -17420,16 +17420,6 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "正在執行進程"
-          }
-        }
-      }
-    },
-    "tab.processes" : {
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Running Processes"
           }
         }
       }
