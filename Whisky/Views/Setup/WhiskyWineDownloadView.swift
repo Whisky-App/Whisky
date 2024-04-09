@@ -32,10 +32,10 @@ struct WhiskyWineDownloadView: View {
     var body: some View {
         VStack {
             VStack {
-                Text("setup.gptk.download")
+                Text("setup.whiskywine.download")
                     .font(.title)
                     .fontWeight(.bold)
-                Text("setup.gptk.download.subtitle")
+                Text("setup.whiskywine.download.subtitle")
                     .font(.subheadline)
                     .foregroundStyle(.secondary)
                 Spacer()
@@ -43,12 +43,12 @@ struct WhiskyWineDownloadView: View {
                     ProgressView(value: fractionProgress, total: 1)
                     HStack {
                         HStack {
-                            Text(String(format: String(localized: "setup.gptk.progress"),
+                            Text(String(format: String(localized: "setup.whiskywine.progress"),
                                         formatBytes(bytes: completedBytes),
                                         formatBytes(bytes: totalBytes)))
                             + Text(String(" "))
                             + (shouldShowEstimate() ?
-                               Text(String(format: String(localized: "setup.gptk.eta"),
+                               Text(String(format: String(localized: "setup.whiskywine.eta"),
                                            formatRemainingTime(remainingBytes: totalBytes - completedBytes)))
                                : Text(String()))
                             Spacer()

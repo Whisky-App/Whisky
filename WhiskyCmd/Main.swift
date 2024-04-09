@@ -199,48 +199,20 @@ extension Whisky {
     }
 
     struct Install: ParsableCommand {
-        static var configuration = CommandConfiguration(abstract: "Install Whisky dependencies.")
-
-        @Flag(name: [.long, .short], help: "Download & Install GPTK") var gptk = false
+        static var configuration = CommandConfiguration(abstract: "Install WhiskyWine.")
 
         mutating func run() throws {
-//            if gptk {
-//                let semaphore = DispatchSemaphore(value: 0)
-//
-//                Task {
-//                    if let info = await GPTKDownloader.getLatestGPTKURL(),
-//                       let url = info.directURL {
-//                        print("Downloading GPTK from \(url)")
-//                        var progress = ProgressBar(count: info.totalByteCount)
-//                        let downloadTask = URLSession.shared.downloadTask(with: url) { url, _, _ in
-//                            if let url = url {
-//                                // tarLocation = url
-//                            }
-//                            semaphore.signal()
-//                        }
-//                        var observation = downloadTask.observe(\.countOfBytesReceived) { task, _ in
-//                            progress.setValue(Int(task.countOfBytesReceived))
-//                        }
-//                        downloadTask.resume()
-//                    }
-//                }
-//
-//                semaphore.wait()
-//            }
+
         }
     }
 
     struct Uninstall: ParsableCommand {
-        static var configuration = CommandConfiguration(abstract: "Uninstall Whisky dependencies.",
-                                                        discussion: "Uninstalling Wine implicitly uninstalls GPTK.")
+        static var configuration = CommandConfiguration(abstract: "Uninstall WhiskyWine.")
 
-        @Flag(name: [.long, .short], help: "Uninstall GPTK") var gptk = false
+        @Flag(name: [.long, .short], help: "Uninstall WhiskyWine") var whiskyWine = false
 
         mutating func run() throws {
-//            if gptk {
-//                GPTKInstaller.uninstall()
-//                print("GPTK uninstalled.")
-//            }
+
         }
     }
 }

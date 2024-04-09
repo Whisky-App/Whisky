@@ -13394,84 +13394,84 @@
         }
       }
     },
-    "settings.toggle.gptk.updates" : {
+    "settings.toggle.whiskywine.updates" : {
       "localizations" : {
         "cs" : {
           "stringUnit" : {
             "state" : "new",
-            "value" : "Automatically check for GPTK updates"
+            "value" : "Automatically check for WhiskyWine updates"
           }
         },
         "da" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Søg automatisk efter GPTK-opdateringer"
+            "value" : "Søg automatisk efter WhiskyWine-opdateringer"
           }
         },
         "de" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Automatisch nach Updates für GPTK suchen"
+            "value" : "Automatisch nach Updates für WhiskyWine suchen"
           }
         },
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Automatically check for GPTK updates"
+            "value" : "Automatically check for WhiskyWine updates"
           }
         },
         "es" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Buscar actualizaciones de GPTK automáticamente"
+            "value" : "Buscar actualizaciones de WhiskyWine automáticamente"
           }
         },
         "fi" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Automaattisesti tarkista GPTK päivityksien varalta"
+            "value" : "Automaattisesti tarkista WhiskyWine päivityksien varalta"
           }
         },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Rechercher automatiquement les mises à jour de GPTK"
+            "value" : "Rechercher automatiquement les mises à jour de WhiskyWine"
           }
         },
         "it" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Controlla automaticamente aggiornamenti di GPTK"
+            "value" : "Controlla automaticamente aggiornamenti di WhiskyWine"
           }
         },
         "ja" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "GPTK のアップデートを自動的に確認する"
+            "value" : "WhiskyWine のアップデートを自動的に確認する"
           }
         },
         "ko" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "GPTK 업데이트를 자동으로 확인"
+            "value" : "WhiskyWine 업데이트를 자동으로 확인"
           }
         },
         "nl" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Automatisch controleren op GPTK updates"
+            "value" : "Automatisch controleren op WhiskyWine updates"
           }
         },
         "pl" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Automatycznie sprawdzaj dostępność aktualizacji GPTK"
+            "value" : "Automatycznie sprawdzaj dostępność aktualizacji WhiskyWine"
           }
         },
         "pt-BR" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Automatically check for GPTK updates"
+            "value" : "Automatically check for WhiskyWine updates"
           }
         },
         "pt-PT" : {
@@ -13483,13 +13483,13 @@
         "ro" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Verifică automat pentru actualizări GPTK"
+            "value" : "Verifică automat pentru actualizări WhiskyWine"
           }
         },
         "ru" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Автоматически проверять на наличие обновлений GPTK"
+            "value" : "Автоматически проверять на наличие обновлений WhiskyWine"
           }
         },
         "tr" : {
@@ -13501,25 +13501,25 @@
         "uk" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Автоматично перевіряти оновлення GPTK"
+            "value" : "Автоматично перевіряти оновлення WhiskyWine"
           }
         },
         "vi" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Tự động kiểm tra bản cập nhật GPTK"
+            "value" : "Tự động kiểm tra bản cập nhật WhiskyWine"
           }
         },
         "zh-Hans" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "自动检查GPTK更新"
+            "value" : "自动检查WhiskyWine更新"
           }
         },
         "zh-Hant" : {
           "stringUnit" : {
             "state" : "new",
-            "value" : "Automatically check for GPTK updates"
+            "value" : "Automatically check for WhiskyWine updates"
           }
         }
       }
@@ -14044,12 +14044,12 @@
         }
       }
     },
-    "setup.gptk.download" : {
+    "setup.whiskywine.download" : {
       "localizations" : {
         "cs" : {
           "stringUnit" : {
             "state" : "new",
-            "value" : "Downloading GPTK"
+            "value" : "Downloading WhiskyWine"
           }
         },
         "da" : {
@@ -14061,31 +14061,31 @@
         "de" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "GPTK herunterladen"
+            "value" : "WhiskyWine herunterladen"
           }
         },
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Downloading GPTK"
+            "value" : "Downloading WhiskyWine"
           }
         },
         "es" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Descargando GPTK"
+            "value" : "Descargando WhiskyWine"
           }
         },
         "fi" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Ladataan GPTK"
+            "value" : "Ladataan WhiskyWine"
           }
         },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Téléchargement de GPTK"
+            "value" : "Téléchargement de WhiskyWine"
           }
         },
         "it" : {
@@ -14097,13 +14097,13 @@
         "ja" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "GPTK をダウンロード中"
+            "value" : "WhiskyWine をダウンロード中"
           }
         },
         "ko" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "GPTK를 다운로드 중입니다."
+            "value" : "WhiskyWine를 다운로드 중입니다."
           }
         },
         "nl" : {
@@ -14115,7 +14115,7 @@
         "pl" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Pobieranie GPTK"
+            "value" : "Pobieranie WhiskyWine"
           }
         },
         "pt-BR" : {
@@ -14133,13 +14133,13 @@
         "ro" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Se descarcă GPTK"
+            "value" : "Se descarcă WhiskyWine"
           }
         },
         "ru" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Скачивание GPTK"
+            "value" : "Скачивание WhiskyWine"
           }
         },
         "tr" : {
@@ -14151,7 +14151,7 @@
         "uk" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Завантаження GPTK"
+            "value" : "Завантаження WhiskyWine"
           }
         },
         "vi" : {
@@ -14163,18 +14163,18 @@
         "zh-Hans" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "正在下载 GPTK"
+            "value" : "正在下载 WhiskyWine"
           }
         },
         "zh-Hant" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "正在下載 GPTK"
+            "value" : "正在下載 WhiskyWine"
           }
         }
       }
     },
-    "setup.gptk.download.subtitle" : {
+    "setup.whiskywine.download.subtitle" : {
       "localizations" : {
         "cs" : {
           "stringUnit" : {
@@ -14304,7 +14304,7 @@
         }
       }
     },
-    "setup.gptk.eta" : {
+    "setup.whiskywine.eta" : {
       "localizations" : {
         "cs" : {
           "stringUnit" : {
@@ -14434,12 +14434,12 @@
         }
       }
     },
-    "setup.gptk.install" : {
+    "setup.whiskywine.install" : {
       "localizations" : {
         "cs" : {
           "stringUnit" : {
             "state" : "new",
-            "value" : "Installing GPTK"
+            "value" : "Installing WhiskyWine"
           }
         },
         "da" : {
@@ -14451,49 +14451,49 @@
         "de" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "GPTK wird installiert"
+            "value" : "WhiskyWine wird installiert"
           }
         },
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Installing GPTK"
+            "value" : "Installing WhiskyWine"
           }
         },
         "es" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Instalando GPTK"
+            "value" : "Instalando WhiskyWine"
           }
         },
         "fi" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Asennetaan GPTK"
+            "value" : "Asennetaan WhiskyWine"
           }
         },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Installation de GPTK"
+            "value" : "Installation de WhiskyWine"
           }
         },
         "it" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Installazione di GPTK"
+            "value" : "Installazione di WhiskyWine"
           }
         },
         "ja" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "GPTK をインストール中"
+            "value" : "WhiskyWine をインストール中"
           }
         },
         "ko" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "GPTK 설치 중"
+            "value" : "WhiskyWine 설치 중"
           }
         },
         "nl" : {
@@ -14505,7 +14505,7 @@
         "pl" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Instalowanie GPTK"
+            "value" : "Instalowanie WhiskyWine"
           }
         },
         "pt-BR" : {
@@ -14523,13 +14523,13 @@
         "ro" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Se instalează GPTK"
+            "value" : "Se instalează WhiskyWine"
           }
         },
         "ru" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Установка GPTK"
+            "value" : "Установка WhiskyWine"
           }
         },
         "tr" : {
@@ -14541,7 +14541,7 @@
         "uk" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Встановлення GPTK"
+            "value" : "Встановлення WhiskyWine"
           }
         },
         "vi" : {
@@ -14553,18 +14553,18 @@
         "zh-Hans" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "正在安装 GPTK"
+            "value" : "正在安装 WhiskyWine"
           }
         },
         "zh-Hant" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "正在安裝 GPTK"
+            "value" : "正在安裝 WhiskyWine"
           }
         }
       }
     },
-    "setup.gptk.install.subtitle" : {
+    "setup.whiskywine.install.subtitle" : {
       "localizations" : {
         "cs" : {
           "stringUnit" : {
@@ -14694,7 +14694,7 @@
         }
       }
     },
-    "setup.gptk.progress" : {
+    "setup.whiskywine.progress" : {
       "localizations" : {
         "cs" : {
           "stringUnit" : {
@@ -17295,6 +17295,7 @@
       }
     },
     "tab.processes" : {
+      "extractionState" : "stale",
       "localizations" : {
         "cs" : {
           "stringUnit" : {
@@ -17420,16 +17421,6 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "正在執行進程"
-          }
-        }
-      }
-    },
-    "tab.processes" : {
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Running Processes"
           }
         }
       }
@@ -17564,267 +17555,267 @@
         }
       }
     },
-    "update.gptk.description" : {
+    "update.whiskywine.description" : {
       "localizations" : {
         "cs" : {
           "stringUnit" : {
             "state" : "new",
-            "value" : "You are running GPTK %@, but %@ is available. Would you like to update?"
+            "value" : "You are running WhiskyWine %@, but %@ is available. Would you like to update?"
           }
         },
         "da" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Du kører GPTK %@, men %@ er tilgængelig. Ønsker du at opdatere?"
+            "value" : "Du kører WhiskyWine %@, men %@ er tilgængelig. Ønsker du at opdatere?"
           }
         },
         "de" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Sie verwenden GPTK %@, die aktuelle Version ist %@. Möchten Sie GPTK aktualisieren?"
+            "value" : "Sie verwenden WhiskyWine %@, die aktuelle Version ist %@. Möchten Sie WhiskyWine aktualisieren?"
           }
         },
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "You are running GPTK %@, but %@ is available. Would you like to update?"
+            "value" : "You are running WhiskyWine %@, but %@ is available. Would you like to update?"
           }
         },
         "es" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Estás ejecutando GPTK %@, pero %@ está disponible. ¿Quieres actualizar?"
+            "value" : "Estás ejecutando WhiskyWine %@, pero %@ está disponible. ¿Quieres actualizar?"
           }
         },
         "fi" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Käytössäsi on GPTK %@, mutta %@ on saatavilla. Haluatko päivittää sen?"
+            "value" : "Käytössäsi on WhiskyWine %@, mutta %@ on saatavilla. Haluatko päivittää sen?"
           }
         },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Vous utilisez GPTK %@, mais %@ est disponible. Voulez-vous le mettre à jour ?"
+            "value" : "Vous utilisez WhiskyWine %@, mais %@ est disponible. Voulez-vous le mettre à jour ?"
           }
         },
         "it" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Stai utilizzando GPTK %@, ma %@ è disponibile. Vuoi aggiornare?"
+            "value" : "Stai utilizzando WhiskyWine %@, ma %@ è disponibile. Vuoi aggiornare?"
           }
         },
         "ja" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "現在 GPTK %@ を使用していますが、 %@ を利用可能です。アップデートしますか？"
+            "value" : "現在 WhiskyWine %@ を使用していますが、 %@ を利用可能です。アップデートしますか？"
           }
         },
         "ko" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "GPTK %@ 버전을 사용 중이지만 %@ 버전을 사용할 수 있습니다. 업데이트하시겠습니까?"
+            "value" : "WhiskyWine %@ 버전을 사용 중이지만 %@ 버전을 사용할 수 있습니다. 업데이트하시겠습니까?"
           }
         },
         "nl" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "U gebruikt GPTK %@, maar %@ is beschikbaar. Wilt u updaten?"
+            "value" : "U gebruikt WhiskyWine %@, maar %@ is beschikbaar. Wilt u updaten?"
           }
         },
         "pl" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Używasz GPTK %@, lecz nowsza wersja %@ jest dostępna. Czy chcesz zaktualizować?"
+            "value" : "Używasz WhiskyWine %@, lecz nowsza wersja %@ jest dostępna. Czy chcesz zaktualizować?"
           }
         },
         "pt-BR" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "GPTK %@ está sendo usada, mas %@ está disponível. Atualizar?"
+            "value" : "WhiskyWine %@ está sendo usada, mas %@ está disponível. Atualizar?"
           }
         },
         "pt-PT" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Está a usar o GPTK %@, mas o %@ está disponível. Gostaria de atualizar?"
+            "value" : "Está a usar o WhiskyWine %@, mas o %@ está disponível. Gostaria de atualizar?"
           }
         },
         "ro" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Dvs. rulați GPTK %@, dar %@ este disponibil. Doriți să actualizați?"
+            "value" : "Dvs. rulați WhiskyWine %@, dar %@ este disponibil. Doriți să actualizați?"
           }
         },
         "ru" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Вы используете GPTK %@, но %@ доступен. Желаете обновить?"
+            "value" : "Вы используете WhiskyWine %@, но %@ доступен. Желаете обновить?"
           }
         },
         "tr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "GPTK %@ versiyonu kullanıyorsunuz ama %@ versiyonu mevcut. Güncellemek ister misiniz?"
+            "value" : "WhiskyWine %@ versiyonu kullanıyorsunuz ama %@ versiyonu mevcut. Güncellemek ister misiniz?"
           }
         },
         "uk" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Ви використовуєте GPTK %@, але доступна версія %@. Оновити?"
+            "value" : "Ви використовуєте WhiskyWine %@, але доступна версія %@. Оновити?"
           }
         },
         "vi" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Bạn đang sử dụng GPTK phiên bản %@, nhưng phiên bản%@ đã được phát hành. Bạn có muốn cập nhật không?"
+            "value" : "Bạn đang sử dụng WhiskyWine phiên bản %@, nhưng phiên bản%@ đã được phát hành. Bạn có muốn cập nhật không?"
           }
         },
         "zh-Hans" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "您正在运行 GPTK %@，但 %@ 可用。您想要更新吗？"
+            "value" : "您正在运行 WhiskyWine %@，但 %@ 可用。您想要更新吗？"
           }
         },
         "zh-Hant" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "您正在使用GPTK %@, %@已可更新 請問是否要更新?"
+            "value" : "您正在使用WhiskyWine %@, %@已可更新 請問是否要更新?"
           }
         }
       }
     },
-    "update.gptk.title" : {
+    "update.whiskywine.title" : {
       "localizations" : {
         "cs" : {
           "stringUnit" : {
             "state" : "new",
-            "value" : "New Version of GPTK Available"
+            "value" : "New Version of WhiskyWine Available"
           }
         },
         "da" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Ny version af GPTK tilgængelig"
+            "value" : "Ny version af WhiskyWine tilgængelig"
           }
         },
         "de" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Eine neue GPTK Version ist verfügbar"
+            "value" : "Eine neue WhiskyWine Version ist verfügbar"
           }
         },
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "New Version of GPTK Available"
+            "value" : "New Version of WhiskyWine Available"
           }
         },
         "es" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Nueva versión de GPTK disponible"
+            "value" : "Nueva versión de WhiskyWine disponible"
           }
         },
         "fi" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Uusi GPTK versio on saatavilla"
+            "value" : "Uusi WhiskyWine versio on saatavilla"
           }
         },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Nouvelle version de GPTK disponible"
+            "value" : "Nouvelle version de WhiskyWine disponible"
           }
         },
         "it" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Nuova versione di GPTK disponibile"
+            "value" : "Nuova versione di WhiskyWine disponibile"
           }
         },
         "ja" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "GPTK の新しいバージョンがあります"
+            "value" : "WhiskyWine の新しいバージョンがあります"
           }
         },
         "ko" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "새로운 버전의 GPTK를 사용할 수 있습니다"
+            "value" : "새로운 버전의 WhiskyWine를 사용할 수 있습니다"
           }
         },
         "nl" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Nieuwe GPTK versie is beschikbaar"
+            "value" : "Nieuwe WhiskyWine versie is beschikbaar"
           }
         },
         "pl" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Nowa wersja GPTK jest dostępna"
+            "value" : "Nowa wersja WhiskyWine jest dostępna"
           }
         },
         "pt-BR" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Nova versão do GPTK disponível"
+            "value" : "Nova versão do WhiskyWine disponível"
           }
         },
         "pt-PT" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Nova versão do GPTK disponível"
+            "value" : "Nova versão do WhiskyWine disponível"
           }
         },
         "ro" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "O Nouă Versiune GPTK este Disponibilă"
+            "value" : "O Nouă Versiune WhiskyWine este Disponibilă"
           }
         },
         "ru" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Доступна новая версия GPTK"
+            "value" : "Доступна новая версия WhiskyWine"
           }
         },
         "tr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "GPTK'nin yeni versiyonu mevcut"
+            "value" : "WhiskyWine'nin yeni versiyonu mevcut"
           }
         },
         "uk" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Доступна нова версія GPTK"
+            "value" : "Доступна нова версія WhiskyWine"
           }
         },
         "vi" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Phiên bản mới của GPTK đã được phát hành"
+            "value" : "Phiên bản mới của WhiskyWine đã được phát hành"
           }
         },
         "zh-Hans" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "可用的 GPTK 新版本"
+            "value" : "可用的 WhiskyWine 新版本"
           }
         },
         "zh-Hant" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "有新的GPTK版本可供安裝"
+            "value" : "有新的WhiskyWine版本可供安裝"
           }
         }
       }
     },
-    "update.gptk.update" : {
+    "update.whiskywine.update" : {
       "localizations" : {
         "cs" : {
           "stringUnit" : {

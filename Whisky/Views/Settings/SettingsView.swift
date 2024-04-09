@@ -22,7 +22,7 @@ import WhiskyKit
 struct SettingsView: View {
     @AppStorage("SUEnableAutomaticChecks") var whiskyUpdate = true
     @AppStorage("killOnTerminate") var killOnTerminate = true
-    @AppStorage("checkGPTKUpdates") var checkGPTKUpdates = true
+    @AppStorage("checkWhiskyWineUpdates") var checkWhiskyWineUpdates = true
     @AppStorage("defaultBottleLocation") var defaultBottleLocation = BottleData.defaultBottleDir
 
     @State private var bottlePath: String = ""
@@ -64,7 +64,7 @@ struct SettingsView: View {
             }
             Section("settings.updates") {
                 Toggle("settings.toggle.whisky.updates", isOn: $whiskyUpdate)
-                Toggle("settings.toggle.gptk.updates", isOn: $checkGPTKUpdates)
+                Toggle("settings.toggle.whiskywine.updates", isOn: $checkWhiskyWineUpdates)
             }
         }
         .formStyle(.grouped)

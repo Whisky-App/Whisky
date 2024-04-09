@@ -28,10 +28,10 @@ struct WhiskyWineInstallView: View {
     var body: some View {
         VStack {
             VStack {
-                Text("setup.gptk.install")
+                Text("setup.whiskywine.install")
                     .font(.title)
                     .fontWeight(.bold)
-                Text("setup.gptk.install.subtitle")
+                Text("setup.whiskywine.install.subtitle")
                     .font(.subheadline)
                     .foregroundStyle(.secondary)
                 Spacer()
