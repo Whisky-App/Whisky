@@ -31,19 +31,22 @@ struct SettingsView: View {
         Form {
             Section("settings.general") {
                 Toggle("settings.toggle.kill.on.terminate", isOn: $killOnTerminate)
-                HStack {
+                HStack(alignment: .top) {
                     VStack(alignment: .leading) {
                         Text("settings.path")
                             .foregroundStyle(.primary)
-                        Text(bottlePath)
-                            .foregroundStyle(.secondary)
-                            .truncationMode(.middle)
-                            .lineLimit(2)
-                            .help(bottlePath)
+                        if !bottlePath.isEmpty {
+                            Text(bottlePath)
+                                .font(.callout)
+                                .foregroundStyle(.secondary)
+                                .truncationMode(.middle)
+                                .lineLimit(2)
+                                .help(bottlePath)
+                        }
                     }
 
                     Spacer()
-                    Button {
+                    Button("create.browse") {
                         let panel = NSOpenPanel()
                         panel.canChooseFiles = false
                         panel.canChooseDirectories = true
@@ -57,8 +60,6 @@ struct SettingsView: View {
                                 }
                             }
                         }
-                    } label: {
-                        Text("create.browse")
                     }
                 }
             }

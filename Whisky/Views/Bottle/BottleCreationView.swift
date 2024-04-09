@@ -45,19 +45,22 @@ struct BottleCreationView: View {
                     }
                 }
 
-                HStack {
+                HStack(alignment: .top) {
                     VStack(alignment: .leading) {
                         Text("create.path")
                             .foregroundStyle(.primary)
-                        Text(bottlePath)
-                            .foregroundStyle(.secondary)
-                            .truncationMode(.middle)
-                            .lineLimit(2)
-                            .help(bottlePath)
+                        if !bottlePath.isEmpty {
+                            Text(bottlePath)
+                                .font(.callout)
+                                .foregroundStyle(.secondary)
+                                .truncationMode(.middle)
+                                .lineLimit(2)
+                                .help(bottlePath)
+                        }
                     }
 
                     Spacer()
-                    Button {
+                    Button("create.browse") {
                         let panel = NSOpenPanel()
                         panel.canChooseFiles = false
                         panel.canChooseDirectories = true
@@ -71,8 +74,6 @@ struct BottleCreationView: View {
                                 }
                             }
                         }
-                    } label: {
-                        Text("create.browse")
                     }
                 }
             }

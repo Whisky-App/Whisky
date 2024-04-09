@@ -35,15 +35,18 @@ struct PinCreationView: View {
             Form {
                 TextField("pin.name", text: $newPinName)
 
-                HStack {
+                HStack(alignment: .top) {
                     VStack(alignment: .leading) {
                         Text("pin.path")
                             .foregroundStyle(.primary)
-                        Text(pinPath)
-                            .foregroundStyle(.secondary)
-                            .truncationMode(.middle)
-                            .lineLimit(2)
-                            .help(pinPath)
+                        if !pinPath.isEmpty {
+                            Text(pinPath)
+                                .font(.callout)
+                                .foregroundStyle(.secondary)
+                                .truncationMode(.middle)
+                                .lineLimit(2)
+                                .help(pinPath)
+                        }
                     }
 
                     Spacer()
