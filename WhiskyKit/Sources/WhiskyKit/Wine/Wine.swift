@@ -125,7 +125,7 @@ public class Wine {
 
     public static func generateTerminalEnvironmentCommand(bottle: Bottle) -> String {
         var cmd = """
-        export PATH=\"\(GPTKInstaller.binFolder.path):$PATH\"
+        export PATH=\"\(WhiskyWineInstaller.binFolder.path):$PATH\"
         export WINE=\"wine64\"
         alias wine=\"wine64\"
         alias winecfg=\"wine64 winecfg\"
