@@ -18,11 +18,8 @@
 
 import Foundation
 
-enum Constant {
-    // swiftlint:disable:next type_name
-    enum width {
-        static let small: Double = 400
-        static let medium: Double = 500
-        static let large: Double = 600
-    }
+enum ViewWidth {
+    static let small: Double = 400
+    static let medium: Double = 500
+    static let large: Double = 600
 }

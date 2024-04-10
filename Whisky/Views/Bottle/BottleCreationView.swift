@@ -84,7 +84,7 @@ struct BottleCreationView: View {
             }
         }
         .fixedVerticalSize()
-        .frame(width: Constant.width.small)
+        .frame(width: ViewWidth.small)
     }
 
     func submit() {

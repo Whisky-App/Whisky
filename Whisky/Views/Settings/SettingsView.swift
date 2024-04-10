@@ -54,7 +54,7 @@ struct SettingsView: View {
         }
         .formStyle(.grouped)
         .fixedVerticalSize()
-        .frame(width: Constant.width.medium)
+        .frame(width: ViewWidth.medium)
     }
 }
 

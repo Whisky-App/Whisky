@@ -58,7 +58,7 @@ struct RenameView: View {
             }
         }
         .fixedVerticalSize()
-        .frame(minWidth: Constant.width.small)
+        .frame(minWidth: ViewWidth.small)
     }
 
     var isNameValid: Bool {
