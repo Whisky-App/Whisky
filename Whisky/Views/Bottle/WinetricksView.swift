@@ -84,6 +84,6 @@ struct WinetricksView: View {
                 winetricks = await Winetricks.parseVerbs()
             }
         }
-        .frame(minWidth: 600, minHeight: 400)
+        .frame(minWidth: Constant.width.large, minHeight: 400)
     }
 }

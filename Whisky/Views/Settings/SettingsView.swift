@@ -53,7 +53,8 @@ struct SettingsView: View {
             }
         }
         .formStyle(.grouped)
-        .frame(width: 500, height: 250)
+        .fixedVerticalSize()
+        .frame(width: Constant.width.medium)
     }
 }
 
