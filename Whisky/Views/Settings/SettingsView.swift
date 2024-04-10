@@ -25,40 +25,25 @@ struct SettingsView: View {
     @AppStorage("checkWhiskyWineUpdates") var checkWhiskyWineUpdates = true
     @AppStorage("defaultBottleLocation") var defaultBottleLocation = BottleData.defaultBottleDir
 
-    @State private var bottlePath: String = ""
-
     var body: some View {
         Form {
             Section("settings.general") {
                 Toggle("settings.toggle.kill.on.terminate", isOn: $killOnTerminate)
-                HStack {
-                    VStack(alignment: .leading) {
-                        Text("settings.path")
-                            .foregroundStyle(.primary)
-                        Text(bottlePath)
-                            .foregroundStyle(.secondary)
-                            .truncationMode(.middle)
-                            .lineLimit(2)
-                            .help(bottlePath)
-                    }
-
-                    Spacer()
-                    Button {
-                        let panel = NSOpenPanel()
-                        panel.canChooseFiles = false
-                        panel.canChooseDirectories = true
-                        panel.allowsMultipleSelection = false
-                        panel.canCreateDirectories = true
-                        panel.directoryURL = BottleData.containerDir
-                        panel.begin { result in
-                            if result == .OK {
-                                if let url = panel.urls.first {
-                                    defaultBottleLocation = url
-                                }
-                            }
+                ActionView(
+                    text: "settings.path",
+                    subtitle: defaultBottleLocation.prettyPath(),
+                    actionName: "create.browse"
+                ) {
+                    let panel = NSOpenPanel()
+                    panel.canChooseFiles = false
+                    panel.canChooseDirectories = true
+                    panel.allowsMultipleSelection = false
+                    panel.canCreateDirectories = true
+                    panel.directoryURL = BottleData.containerDir
+                    panel.begin { result in
+                        if result == .OK, let url = panel.urls.first {
+                            defaultBottleLocation = url
                         }
-                    } label: {
-                        Text("create.browse")
                     }
                 }
             }
@@ -69,12 +54,6 @@ struct SettingsView: View {
         }
         .formStyle(.grouped)
         .frame(width: 500, height: 250)
-        .onChange(of: defaultBottleLocation) {
-            bottlePath = defaultBottleLocation.prettyPath()
-        }
-        .onAppear {
-            bottlePath = defaultBottleLocation.prettyPath()
-        }
     }
 }
 
