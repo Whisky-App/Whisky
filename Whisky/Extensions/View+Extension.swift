@@ -19,10 +19,6 @@
 import SwiftUI
 
 extension View {
-    func fixedHorizontalSize() -> some View {
-        self.fixedSize(horizontal: true, vertical: false)
-    }
-
     func fixedVerticalSize() -> some View {
         self.fixedSize(horizontal: false, vertical: true)
     }
