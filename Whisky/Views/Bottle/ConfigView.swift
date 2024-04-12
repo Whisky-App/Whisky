@@ -301,7 +301,7 @@ struct DPIConfigSheetView: View {
             }
         }
         .padding()
-        .frame(width: 500, height: 240)
+        .frame(width: ViewWidth.medium, height: 240)
     }
 }
 

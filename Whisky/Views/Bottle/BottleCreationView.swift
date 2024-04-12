@@ -83,7 +83,8 @@ struct BottleCreationView: View {
                 submit()
             }
         }
-        .frame(minWidth: 400, minHeight: 210)
+        .fixedSize(horizontal: false, vertical: true)
+        .frame(width: ViewWidth.small)
     }
 
     func submit() {

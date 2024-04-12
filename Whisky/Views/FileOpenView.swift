@@ -55,7 +55,8 @@ struct FileOpenView: View {
                 }
             }
         }
-        .frame(minWidth: 400, minHeight: 115)
+        .fixedSize(horizontal: false, vertical: true)
+        .frame(width: ViewWidth.small)
         .onAppear {
             // Makes sure there are more than 0 bottles.
             // Otherwise, it will crash on the nil cascade

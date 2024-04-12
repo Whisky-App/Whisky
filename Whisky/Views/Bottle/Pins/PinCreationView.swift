@@ -94,7 +94,7 @@ struct PinCreationView: View {
             }
         }
         .fixedSize(horizontal: false, vertical: true)
-        .frame(minWidth: 400)
+        .frame(minWidth: ViewWidth.small)
     }
 
     func submit() {
