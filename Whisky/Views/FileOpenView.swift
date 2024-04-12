@@ -55,7 +55,7 @@ struct FileOpenView: View {
                 }
             }
         }
-        .fixedVerticalSize()
+        .fixedSize(horizontal: false, vertical: true)
         .frame(width: ViewWidth.small)
         .onAppear {
             // Makes sure there are more than 0 bottles.
