@@ -57,6 +57,7 @@ public enum WinVersion: String, CaseIterable, Codable {
     case win8 = "win8"
     case win81 = "win81"
     case win10 = "win10"
+    case win11 = "win11"
 
     public func pretty() -> String {
         switch self {
@@ -70,6 +71,8 @@ public enum WinVersion: String, CaseIterable, Codable {
             return "Windows 8.1"
         case .win10:
             return "Windows 10"
+        case .win11:
+            return "Windows 11"
         }
     }
 }
