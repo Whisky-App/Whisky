@@ -76,11 +76,6 @@ public class Program: ObservableObject, Equatable, Hashable, Identifiable {
         } catch {
             self.peFile = nil
         }
-
-        // Dirty 'fix' for Steam with DXVK
-        if name.contains("steam") {
-            settings.environment["WINEDLLOVERRIDES"] = "dxgi,d3d9,d3d10core,d3d11=b"
-        }
     }
 
     public func generateEnvironment() -> [String: String] {
