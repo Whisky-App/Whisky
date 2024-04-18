@@ -395,8 +395,8 @@
       "localizations" : {
         "cs" : {
           "stringUnit" : {
-            "state" : "translated",
-            "value" : "Vytvořit láhev"
+            "state" : "new",
+            "value" : "Create Bottle"
           }
         },
         "da" : {
@@ -525,8 +525,8 @@
       "localizations" : {
         "cs" : {
           "stringUnit" : {
-            "state" : "translated",
-            "value" : "Vytvořit zástupce"
+            "state" : "new",
+            "value" : "Create Shortcut"
           }
         },
         "da" : {
@@ -655,8 +655,8 @@
       "localizations" : {
         "cs" : {
           "stringUnit" : {
-            "state" : "translated",
-            "value" : "Exportovat jako archiv..."
+            "state" : "new",
+            "value" : "Export as Archive..."
           }
         },
         "da" : {
@@ -776,7 +776,7 @@
         "zh-Hant" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "匯出為封存檔⋯"
+            "value" : "匯出為封存..."
           }
         }
       }
@@ -785,8 +785,8 @@
       "localizations" : {
         "cs" : {
           "stringUnit" : {
-            "state" : "translated",
-            "value" : "Přesunout..."
+            "state" : "new",
+            "value" : "Move..."
           }
         },
         "da" : {
@@ -906,7 +906,7 @@
         "zh-Hant" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "移動⋯"
+            "value" : "移動..."
           }
         }
       }
@@ -1045,8 +1045,8 @@
       "localizations" : {
         "cs" : {
           "stringUnit" : {
-            "state" : "translated",
-            "value" : "Připnout"
+            "state" : "new",
+            "value" : "Pin"
           }
         },
         "da" : {
@@ -1165,8 +1165,8 @@
         },
         "zh-Hant" : {
           "stringUnit" : {
-            "state" : "translated",
-            "value" : "釘選"
+            "state" : "new",
+            "value" : "Pin"
           }
         }
       }
@@ -1175,8 +1175,8 @@
       "localizations" : {
         "cs" : {
           "stringUnit" : {
-            "state" : "translated",
-            "value" : "Obnovit"
+            "state" : "new",
+            "value" : "Refresh"
           }
         },
         "da" : {
@@ -1305,8 +1305,8 @@
       "localizations" : {
         "cs" : {
           "stringUnit" : {
-            "state" : "translated",
-            "value" : "Odstranit..."
+            "state" : "new",
+            "value" : "Remove..."
           }
         },
         "da" : {
@@ -1426,7 +1426,7 @@
         "zh-Hant" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "移除⋯"
+            "value" : "移除..."
           }
         }
       }
@@ -1435,8 +1435,8 @@
       "localizations" : {
         "cs" : {
           "stringUnit" : {
-            "state" : "translated",
-            "value" : "Zrušit"
+            "state" : "new",
+            "value" : "Cancel"
           }
         },
         "da" : {
@@ -1565,8 +1565,8 @@
       "localizations" : {
         "cs" : {
           "stringUnit" : {
-            "state" : "translated",
-            "value" : "Odstranit soubory z disku"
+            "state" : "new",
+            "value" : "Delete files from disk"
           }
         },
         "da" : {
@@ -1695,8 +1695,8 @@
       "localizations" : {
         "cs" : {
           "stringUnit" : {
-            "state" : "translated",
-            "value" : "Odebrat"
+            "state" : "new",
+            "value" : "Remove"
           }
         },
         "da" : {
@@ -2076,7 +2076,7 @@
         "zh-Hant" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "移除 %@？"
+            "value" : "移除 %@?"
           }
         }
       }
@@ -2085,8 +2085,8 @@
       "localizations" : {
         "cs" : {
           "stringUnit" : {
-            "state" : "translated",
-            "value" : "Přejmenovat..."
+            "state" : "new",
+            "value" : "Rename..."
           }
         },
         "da" : {
@@ -2206,7 +2206,7 @@
         "zh-Hant" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "重新命名⋯"
+            "value" : "重新命名..."
           }
         }
       }
@@ -2215,8 +2215,8 @@
       "localizations" : {
         "cs" : {
           "stringUnit" : {
-            "state" : "translated",
-            "value" : "Spustit..."
+            "state" : "new",
+            "value" : "Run..."
           }
         },
         "da" : {
@@ -2336,7 +2336,7 @@
         "zh-Hant" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "執行⋯"
+            "value" : "執行..."
           }
         }
       }
@@ -2345,8 +2345,8 @@
       "localizations" : {
         "cs" : {
           "stringUnit" : {
-            "state" : "translated",
-            "value" : "Zobrazit ve Finderu"
+            "state" : "new",
+            "value" : "Show in Finder"
           }
         },
         "da" : {
@@ -2477,19 +2477,19 @@
         "cs" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Terminal"
+            "value" : "Terminal..."
           }
         },
         "da" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Terminal"
+            "value" : "Terminal..."
           }
         },
         "de" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Terminal"
+            "value" : "Terminal..."
           }
         },
         "en" : {
@@ -2501,103 +2501,103 @@
         "es" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Terminal"
+            "value" : "Terminal..."
           }
         },
         "fi" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Terminal"
+            "value" : "Terminal..."
           }
         },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Terminal"
+            "value" : "Terminal..."
           }
         },
         "it" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Terminal"
+            "value" : "Terminal..."
           }
         },
         "ja" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "ターミナル..."
+            "value" : "Terminal..."
           }
         },
         "ko" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Terminal"
+            "value" : "Terminal..."
           }
         },
         "nl" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Terminal"
+            "value" : "Terminal..."
           }
         },
         "pl" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Terminal"
+            "value" : "Terminal..."
           }
         },
         "pt-BR" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Terminal"
+            "value" : "Terminal..."
           }
         },
         "pt-PT" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Terminal"
+            "value" : "Terminal..."
           }
         },
         "ro" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Terminal"
+            "value" : "Terminal..."
           }
         },
         "ru" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Терминал..."
+            "value" : "Terminal..."
           }
         },
         "tr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Terminal"
+            "value" : "Terminal..."
           }
         },
         "uk" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Terminal"
+            "value" : "Terminal..."
           }
         },
         "vi" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Terminal"
+            "value" : "Terminal..."
           }
         },
         "zh-Hans" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "终端..."
+            "value" : "Terminal..."
           }
         },
         "zh-Hant" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "終端機⋯"
+            "value" : "Terminal..."
           }
         }
       }
@@ -2606,8 +2606,8 @@
       "localizations" : {
         "cs" : {
           "stringUnit" : {
-            "state" : "translated",
-            "value" : "Odepnout"
+            "state" : "new",
+            "value" : "Unpin"
           }
         },
         "da" : {
@@ -2726,8 +2726,8 @@
         },
         "zh-Hant" : {
           "stringUnit" : {
-            "state" : "translated",
-            "value" : "取消釘選"
+            "state" : "new",
+            "value" : "Unpin"
           }
         }
       }
@@ -2856,8 +2856,8 @@
         },
         "zh-Hant" : {
           "stringUnit" : {
-            "state" : "translated",
-            "value" : "Winetricks⋯"
+            "state" : "new",
+            "value" : "Winetricks..."
           }
         }
       }
@@ -2866,8 +2866,8 @@
       "localizations" : {
         "cs" : {
           "stringUnit" : {
-            "state" : "translated",
-            "value" : "Vyhledat aktualizace..."
+            "state" : "new",
+            "value" : "Check for Updates..."
           }
         },
         "da" : {
@@ -2987,7 +2987,7 @@
         "zh-Hant" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "檢查更新⋯"
+            "value" : "檢查更新..."
           }
         }
       }
@@ -2996,8 +2996,8 @@
       "localizations" : {
         "cs" : {
           "stringUnit" : {
-            "state" : "translated",
-            "value" : "Build verze"
+            "state" : "new",
+            "value" : "Build Version"
           }
         },
         "da" : {
@@ -3256,8 +3256,8 @@
       "localizations" : {
         "cs" : {
           "stringUnit" : {
-            "state" : "translated",
-            "value" : "DPI škálování"
+            "state" : "new",
+            "value" : "DPI Scaling"
           }
         },
         "da" : {
@@ -3386,7 +3386,7 @@
       "localizations" : {
         "cs" : {
           "stringUnit" : {
-            "state" : "translated",
+            "state" : "new",
             "value" : "DXVK"
           }
         },
@@ -3506,7 +3506,7 @@
         },
         "zh-Hant" : {
           "stringUnit" : {
-            "state" : "translated",
+            "state" : "new",
             "value" : "DXVK"
           }
         }
@@ -3516,7 +3516,7 @@
       "localizations" : {
         "cs" : {
           "stringUnit" : {
-            "state" : "translated",
+            "state" : "new",
             "value" : "DXVK Async"
           }
         },
@@ -3646,7 +3646,7 @@
       "localizations" : {
         "cs" : {
           "stringUnit" : {
-            "state" : "translated",
+            "state" : "new",
             "value" : "DXVK HUD"
           }
         },
@@ -3766,7 +3766,7 @@
         },
         "zh-Hant" : {
           "stringUnit" : {
-            "state" : "translated",
+            "state" : "new",
             "value" : "DXVK HUD"
           }
         }
@@ -3776,7 +3776,7 @@
       "localizations" : {
         "cs" : {
           "stringUnit" : {
-            "state" : "translated",
+            "state" : "new",
             "value" : "FPS"
           }
         },
@@ -3891,7 +3891,7 @@
         "zh-Hans" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "FPS"
+            "value" : "帧率"
           }
         },
         "zh-Hant" : {
@@ -4416,7 +4416,7 @@
         },
         "zh-Hant" : {
           "stringUnit" : {
-            "state" : "translated",
+            "state" : "new",
             "value" : "ESync"
           }
         }
@@ -4546,7 +4546,7 @@
         },
         "zh-Hant" : {
           "stringUnit" : {
-            "state" : "translated",
+            "state" : "new",
             "value" : "MSync"
           }
         }
@@ -4676,8 +4676,8 @@
         },
         "zh-Hant" : {
           "stringUnit" : {
-            "state" : "translated",
-            "value" : "增強同步"
+            "state" : "new",
+            "value" : "Enhanced Sync"
           }
         }
       }
@@ -4806,8 +4806,8 @@
         },
         "zh-Hant" : {
           "stringUnit" : {
-            "state" : "translated",
-            "value" : "無"
+            "state" : "new",
+            "value" : "None"
           }
         }
       }
@@ -4937,7 +4937,7 @@
         "zh-Hant" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "設定⋯"
+            "value" : "設定..."
           }
         }
       }
@@ -5327,7 +5327,7 @@
         "zh-Hant" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "允許在 Xcode 中擷取 GPU 工作負載"
+            "value" : "允許你在 Xcode 中獲取 GPU 工作負載"
           }
         }
       }
@@ -5336,7 +5336,7 @@
       "localizations" : {
         "cs" : {
           "stringUnit" : {
-            "state" : "translated",
+            "state" : "new",
             "value" : "N/A"
           }
         },
@@ -5726,7 +5726,7 @@
       "localizations" : {
         "cs" : {
           "stringUnit" : {
-            "state" : "translated",
+            "state" : "new",
             "value" : "DXVK"
           }
         },
@@ -5846,7 +5846,7 @@
         },
         "zh-Hant" : {
           "stringUnit" : {
-            "state" : "translated",
+            "state" : "new",
             "value" : "DXVK"
           }
         }
@@ -5856,7 +5856,7 @@
       "localizations" : {
         "cs" : {
           "stringUnit" : {
-            "state" : "translated",
+            "state" : "new",
             "value" : "Metal"
           }
         },
@@ -5976,7 +5976,7 @@
         },
         "zh-Hant" : {
           "stringUnit" : {
-            "state" : "translated",
+            "state" : "new",
             "value" : "Metal"
           }
         }
@@ -5986,7 +5986,7 @@
       "localizations" : {
         "cs" : {
           "stringUnit" : {
-            "state" : "translated",
+            "state" : "new",
             "value" : "Wine"
           }
         },
@@ -6106,7 +6106,7 @@
         },
         "zh-Hant" : {
           "stringUnit" : {
-            "state" : "translated",
+            "state" : "new",
             "value" : "Wine"
           }
         }
@@ -6116,8 +6116,8 @@
       "localizations" : {
         "cs" : {
           "stringUnit" : {
-            "state" : "translated",
-            "value" : "Otevřít konfiguraci Wine"
+            "state" : "new",
+            "value" : "Open Wine Configuration"
           }
         },
         "da" : {
@@ -6246,8 +6246,8 @@
       "localizations" : {
         "cs" : {
           "stringUnit" : {
-            "state" : "translated",
-            "value" : "Verze Windows"
+            "state" : "new",
+            "value" : "Windows Version"
           }
         },
         "da" : {
@@ -6376,7 +6376,7 @@
       "localizations" : {
         "cs" : {
           "stringUnit" : {
-            "state" : "translated",
+            "state" : "new",
             "value" : "DPI"
           }
         },
@@ -6496,7 +6496,7 @@
         },
         "zh-Hant" : {
           "stringUnit" : {
-            "state" : "translated",
+            "state" : "new",
             "value" : "DPI"
           }
         }
@@ -6506,8 +6506,8 @@
       "localizations" : {
         "cs" : {
           "stringUnit" : {
-            "state" : "translated",
-            "value" : "Text bude vypadat takto:"
+            "state" : "new",
+            "value" : "Text will look like this:"
           }
         },
         "da" : {
@@ -6636,8 +6636,8 @@
       "localizations" : {
         "cs" : {
           "stringUnit" : {
-            "state" : "translated",
-            "value" : "Příliš žluťoučký kůň úpěl ďábelské ódy."
+            "state" : "new",
+            "value" : "The quick brown fox jumps over the lazy dog."
           }
         },
         "da" : {
@@ -6766,8 +6766,8 @@
       "localizations" : {
         "cs" : {
           "stringUnit" : {
-            "state" : "translated",
-            "value" : "Nastavení DPI"
+            "state" : "new",
+            "value" : "DPI Settings"
           }
         },
         "da" : {
@@ -6896,8 +6896,8 @@
       "localizations" : {
         "cs" : {
           "stringUnit" : {
-            "state" : "translated",
-            "value" : "Procházet"
+            "state" : "new",
+            "value" : "Browse"
           }
         },
         "da" : {
@@ -7026,8 +7026,8 @@
       "localizations" : {
         "cs" : {
           "stringUnit" : {
-            "state" : "translated",
-            "value" : "Zrušit"
+            "state" : "new",
+            "value" : "Cancel"
           }
         },
         "da" : {
@@ -7156,8 +7156,8 @@
       "localizations" : {
         "cs" : {
           "stringUnit" : {
-            "state" : "translated",
-            "value" : "Vytořit"
+            "state" : "new",
+            "value" : "Create"
           }
         },
         "da" : {
@@ -7286,8 +7286,8 @@
       "localizations" : {
         "cs" : {
           "stringUnit" : {
-            "state" : "translated",
-            "value" : "Název láhve:"
+            "state" : "new",
+            "value" : "Bottle name:"
           }
         },
         "da" : {
@@ -7416,8 +7416,8 @@
       "localizations" : {
         "cs" : {
           "stringUnit" : {
-            "state" : "translated",
-            "value" : "Cesta k lahvi:"
+            "state" : "new",
+            "value" : "Bottle path:"
           }
         },
         "da" : {
@@ -7546,8 +7546,8 @@
       "localizations" : {
         "cs" : {
           "stringUnit" : {
-            "state" : "translated",
-            "value" : "Vytvořit novou láhev"
+            "state" : "new",
+            "value" : "Create a new bottle"
           }
         },
         "da" : {
@@ -7676,8 +7676,8 @@
       "localizations" : {
         "cs" : {
           "stringUnit" : {
-            "state" : "translated",
-            "value" : "Verze Windows:"
+            "state" : "new",
+            "value" : "Windows version:"
           }
         },
         "da" : {
@@ -7806,8 +7806,8 @@
       "localizations" : {
         "cs" : {
           "stringUnit" : {
-            "state" : "translated",
-            "value" : "Přidat"
+            "state" : "new",
+            "value" : "Add"
           }
         },
         "da" : {
@@ -7926,8 +7926,8 @@
         },
         "zh-Hant" : {
           "stringUnit" : {
-            "state" : "translated",
-            "value" : "新增"
+            "state" : "new",
+            "value" : "Add"
           }
         }
       }
@@ -7936,8 +7936,8 @@
       "localizations" : {
         "cs" : {
           "stringUnit" : {
-            "state" : "translated",
-            "value" : "Odebrat"
+            "state" : "new",
+            "value" : "Remove"
           }
         },
         "da" : {
@@ -8056,8 +8056,8 @@
         },
         "zh-Hant" : {
           "stringUnit" : {
-            "state" : "translated",
-            "value" : "移除"
+            "state" : "new",
+            "value" : "Remove"
           }
         }
       }
@@ -8066,7 +8066,7 @@
       "localizations" : {
         "cs" : {
           "stringUnit" : {
-            "state" : "translated",
+            "state" : "new",
             "value" : "Discord"
           }
         },
@@ -8186,7 +8186,7 @@
         },
         "zh-Hant" : {
           "stringUnit" : {
-            "state" : "translated",
+            "state" : "new",
             "value" : "Discord"
           }
         }
@@ -8196,7 +8196,7 @@
       "localizations" : {
         "cs" : {
           "stringUnit" : {
-            "state" : "translated",
+            "state" : "new",
             "value" : "GitHub"
           }
         },
@@ -8316,7 +8316,7 @@
         },
         "zh-Hant" : {
           "stringUnit" : {
-            "state" : "translated",
+            "state" : "new",
             "value" : "GitHub"
           }
         }
@@ -8326,8 +8326,8 @@
       "localizations" : {
         "cs" : {
           "stringUnit" : {
-            "state" : "translated",
-            "value" : "Webové stránky"
+            "state" : "new",
+            "value" : "Website"
           }
         },
         "da" : {
@@ -8446,8 +8446,8 @@
         },
         "zh-Hant" : {
           "stringUnit" : {
-            "state" : "translated",
-            "value" : "網站"
+            "state" : "new",
+            "value" : "Website"
           }
         }
       }
@@ -8577,7 +8577,7 @@
         "zh-Hant" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "安裝Whisky CLI⋯"
+            "value" : "安裝Whisky CLI..."
           }
         }
       }
@@ -9367,8 +9367,8 @@
       "localizations" : {
         "cs" : {
           "stringUnit" : {
-            "state" : "translated",
-            "value" : "Nastavení..."
+            "state" : "new",
+            "value" : "Setup..."
           }
         },
         "da" : {
@@ -9488,7 +9488,7 @@
         "zh-Hant" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "配置⋯"
+            "value" : "設置..."
           }
         }
       }
@@ -9497,8 +9497,8 @@
       "localizations" : {
         "cs" : {
           "stringUnit" : {
-            "state" : "translated",
-            "value" : "Připnout"
+            "state" : "new",
+            "value" : "Pin"
           }
         },
         "da" : {
@@ -9617,8 +9617,8 @@
         },
         "zh-Hant" : {
           "stringUnit" : {
-            "state" : "translated",
-            "value" : "釘選"
+            "state" : "new",
+            "value" : "Pin"
           }
         }
       }
@@ -9748,8 +9748,8 @@
         },
         "zh-Hant" : {
           "stringUnit" : {
-            "state" : "translated",
-            "value" : "「%@」已經釘選！"
+            "state" : "new",
+            "value" : "\"%@\" is already pinned!"
           }
         }
       }
@@ -9878,8 +9878,8 @@
         },
         "zh-Hant" : {
           "stringUnit" : {
-            "state" : "translated",
-            "value" : "釘選程式時發生錯誤"
+            "state" : "new",
+            "value" : "Error Pinning Program"
           }
         }
       }
@@ -10008,8 +10008,8 @@
         },
         "zh-Hant" : {
           "stringUnit" : {
-            "state" : "translated",
-            "value" : "釘選程式"
+            "state" : "new",
+            "value" : "Pin Program"
           }
         }
       }
@@ -10138,8 +10138,8 @@
         },
         "zh-Hant" : {
           "stringUnit" : {
-            "state" : "translated",
-            "value" : "釘選名稱："
+            "state" : "new",
+            "value" : "Pin name:"
           }
         }
       }
@@ -10268,8 +10268,8 @@
         },
         "zh-Hant" : {
           "stringUnit" : {
-            "state" : "translated",
-            "value" : "程式路徑："
+            "state" : "new",
+            "value" : "Program path:"
           }
         }
       }
@@ -10398,8 +10398,8 @@
         },
         "zh-Hant" : {
           "stringUnit" : {
-            "state" : "translated",
-            "value" : "釘選程式"
+            "state" : "new",
+            "value" : "Pin Program"
           }
         }
       }
@@ -10492,8 +10492,8 @@
         },
         "ro" : {
           "stringUnit" : {
-            "state" : "translated",
-            "value" : "Executabil"
+            "state" : "new",
+            "value" : "Executable"
           }
         },
         "ru" : {
@@ -10538,8 +10538,8 @@
       "localizations" : {
         "cs" : {
           "stringUnit" : {
-            "state" : "translated",
-            "value" : "Zastavit proces"
+            "state" : "new",
+            "value" : "Stop Process"
           }
         },
         "da" : {
@@ -10798,8 +10798,8 @@
       "localizations" : {
         "cs" : {
           "stringUnit" : {
-            "state" : "translated",
-            "value" : "ID procesu"
+            "state" : "new",
+            "value" : "Process ID"
           }
         },
         "da" : {
@@ -10928,8 +10928,8 @@
       "localizations" : {
         "cs" : {
           "stringUnit" : {
-            "state" : "translated",
-            "value" : "Obnovit"
+            "state" : "new",
+            "value" : "Refresh"
           }
         },
         "da" : {
@@ -11308,8 +11308,8 @@
         },
         "zh-Hant" : {
           "stringUnit" : {
-            "state" : "translated",
-            "value" : "將選擇項目加入至黑名單"
+            "state" : "new",
+            "value" : "Add Selected to Blocklist"
           }
         }
       }
@@ -11318,8 +11318,8 @@
       "localizations" : {
         "cs" : {
           "stringUnit" : {
-            "state" : "translated",
-            "value" : "Argumenty"
+            "state" : "new",
+            "value" : "Arguments"
           }
         },
         "da" : {
@@ -11578,8 +11578,8 @@
       "localizations" : {
         "cs" : {
           "stringUnit" : {
-            "state" : "translated",
-            "value" : "Konfigurace"
+            "state" : "new",
+            "value" : "Config"
           }
         },
         "da" : {
@@ -11838,8 +11838,8 @@
       "localizations" : {
         "cs" : {
           "stringUnit" : {
-            "state" : "translated",
-            "value" : "Odstranit z blokovaných"
+            "state" : "new",
+            "value" : "Remove from Blocklist"
           }
         },
         "da" : {
@@ -11968,8 +11968,8 @@
       "localizations" : {
         "cs" : {
           "stringUnit" : {
-            "state" : "translated",
-            "value" : "Odstranit vybrané ze seznamu"
+            "state" : "new",
+            "value" : "Remove Selected from Blocklist"
           }
         },
         "da" : {
@@ -12088,8 +12088,8 @@
         },
         "zh-Hant" : {
           "stringUnit" : {
-            "state" : "translated",
-            "value" : "將選擇項目移除出黑名單"
+            "state" : "new",
+            "value" : "Remove Selected from Blocklist"
           }
         }
       }
@@ -12098,8 +12098,8 @@
       "localizations" : {
         "cs" : {
           "stringUnit" : {
-            "state" : "translated",
-            "value" : "Nastavení"
+            "state" : "new",
+            "value" : "Settings"
           }
         },
         "da" : {
@@ -12218,8 +12218,8 @@
         },
         "zh-Hant" : {
           "stringUnit" : {
-            "state" : "translated",
-            "value" : "設定"
+            "state" : "new",
+            "value" : "Settings"
           }
         }
       }
@@ -12228,8 +12228,8 @@
       "localizations" : {
         "cs" : {
           "stringUnit" : {
-            "state" : "translated",
-            "value" : "Všechny programy"
+            "state" : "new",
+            "value" : "All Programs"
           }
         },
         "da" : {
@@ -12358,8 +12358,8 @@
       "localizations" : {
         "cs" : {
           "stringUnit" : {
-            "state" : "translated",
-            "value" : "Přejmenovat lahev"
+            "state" : "new",
+            "value" : "Rename bottle"
           }
         },
         "da" : {
@@ -12488,8 +12488,8 @@
       "localizations" : {
         "cs" : {
           "stringUnit" : {
-            "state" : "translated",
-            "value" : "Nové jméno:"
+            "state" : "new",
+            "value" : "New name:"
           }
         },
         "da" : {
@@ -12748,8 +12748,8 @@
       "localizations" : {
         "cs" : {
           "stringUnit" : {
-            "state" : "translated",
-            "value" : "Přejmenovat"
+            "state" : "new",
+            "value" : "Rename"
           }
         },
         "da" : {
@@ -12956,8 +12956,8 @@
         },
         "pt-PT" : {
           "stringUnit" : {
-            "state" : "translated",
-            "value" : "Garrafa:"
+            "state" : "new",
+            "value" : "Bottle:"
           }
         },
         "ro" : {
@@ -13258,8 +13258,8 @@
         },
         "zh-Hant" : {
           "stringUnit" : {
-            "state" : "translated",
-            "value" : "一般"
+            "state" : "new",
+            "value" : "General"
           }
         }
       }
@@ -13346,8 +13346,8 @@
         },
         "pt-PT" : {
           "stringUnit" : {
-            "state" : "translated",
-            "value" : "Caminho padrão da garrafa:"
+            "state" : "new",
+            "value" : "Default bottle path:"
           }
         },
         "ro" : {
@@ -13470,7 +13470,7 @@
         },
         "pt-BR" : {
           "stringUnit" : {
-            "state" : "new",
+            "state" : "translated",
             "value" : "Automatically check for WhiskyWine updates"
           }
         },
@@ -13513,13 +13513,13 @@
         "zh-Hans" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "自动检查 WhiskyWine 更新"
+            "value" : "自动检查WhiskyWine更新"
           }
         },
         "zh-Hant" : {
           "stringUnit" : {
-            "state" : "translated",
-            "value" : "自動檢查 WhiskyWine 更新"
+            "state" : "new",
+            "value" : "Automatically check for WhiskyWine updates"
           }
         }
       }
@@ -13648,8 +13648,8 @@
         },
         "zh-Hant" : {
           "stringUnit" : {
-            "state" : "translated",
-            "value" : "Whisky 關閉時終止 Wine 進程"
+            "state" : "new",
+            "value" : "Terminate Wine processes when Whisky closes"
           }
         }
       }
@@ -13658,8 +13658,8 @@
       "localizations" : {
         "cs" : {
           "stringUnit" : {
-            "state" : "translated",
-            "value" : "Automaticky kontrolovat Whisky aktualizace"
+            "state" : "new",
+            "value" : "Automatically check for Whisky updates"
           }
         },
         "da" : {
@@ -13778,8 +13778,8 @@
         },
         "zh-Hant" : {
           "stringUnit" : {
-            "state" : "translated",
-            "value" : "自動檢查 Whisky 更新"
+            "state" : "new",
+            "value" : "Automatically check for Whisky updates"
           }
         }
       }
@@ -13788,8 +13788,8 @@
       "localizations" : {
         "cs" : {
           "stringUnit" : {
-            "state" : "translated",
-            "value" : "Aktualizace"
+            "state" : "new",
+            "value" : "Updates"
           }
         },
         "da" : {
@@ -13908,8 +13908,8 @@
         },
         "zh-Hant" : {
           "stringUnit" : {
-            "state" : "translated",
-            "value" : "更新"
+            "state" : "new",
+            "value" : "Updates"
           }
         }
       }
@@ -13918,8 +13918,8 @@
       "localizations" : {
         "cs" : {
           "stringUnit" : {
-            "state" : "translated",
-            "value" : "Hotovo"
+            "state" : "new",
+            "value" : "Done"
           }
         },
         "da" : {
@@ -14048,8 +14048,8 @@
       "localizations" : {
         "cs" : {
           "stringUnit" : {
-            "state" : "translated",
-            "value" : "Stahování WhiskyWine"
+            "state" : "new",
+            "value" : "Downloading WhiskyWine"
           }
         },
         "da" : {
@@ -14308,8 +14308,8 @@
       "localizations" : {
         "cs" : {
           "stringUnit" : {
-            "state" : "translated",
-            "value" : "- zbývá %@"
+            "state" : "new",
+            "value" : "- %@ remaining"
           }
         },
         "da" : {
@@ -14438,8 +14438,8 @@
       "localizations" : {
         "cs" : {
           "stringUnit" : {
-            "state" : "translated",
-            "value" : "Instalace WhiskyWine"
+            "state" : "new",
+            "value" : "Installing WhiskyWine"
           }
         },
         "da" : {
@@ -14568,8 +14568,8 @@
       "localizations" : {
         "cs" : {
           "stringUnit" : {
-            "state" : "translated",
-            "value" : "Už to bude. Zatím nezavírejte."
+            "state" : "new",
+            "value" : "Almost there. Don't tune out yet."
           }
         },
         "da" : {
@@ -14698,8 +14698,8 @@
       "localizations" : {
         "cs" : {
           "stringUnit" : {
-            "state" : "translated",
-            "value" : "%@ z %@"
+            "state" : "new",
+            "value" : "%@ of %@"
           }
         },
         "da" : {
@@ -14949,7 +14949,7 @@
         "zh-Hant" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "正在檢查 %@ 安裝⋯⋯"
+            "value" : "正在檢查  %@ 安裝…"
           }
         }
       }
@@ -14958,8 +14958,8 @@
       "localizations" : {
         "cs" : {
           "stringUnit" : {
-            "state" : "translated",
-            "value" : "%@ nainstalováno"
+            "state" : "new",
+            "value" : "%@ installed"
           }
         },
         "da" : {
@@ -15088,8 +15088,8 @@
       "localizations" : {
         "cs" : {
           "stringUnit" : {
-            "state" : "translated",
-            "value" : "%@ není nainstalováno"
+            "state" : "new",
+            "value" : "%@ not installed"
           }
         },
         "da" : {
@@ -15218,8 +15218,8 @@
       "localizations" : {
         "cs" : {
           "stringUnit" : {
-            "state" : "translated",
-            "value" : "Další"
+            "state" : "new",
+            "value" : "Next"
           }
         },
         "da" : {
@@ -15348,8 +15348,8 @@
       "localizations" : {
         "cs" : {
           "stringUnit" : {
-            "state" : "translated",
-            "value" : "Ukončit"
+            "state" : "new",
+            "value" : "Quit"
           }
         },
         "da" : {
@@ -15478,8 +15478,8 @@
       "localizations" : {
         "cs" : {
           "stringUnit" : {
-            "state" : "translated",
-            "value" : "Opakovat"
+            "state" : "new",
+            "value" : "Retry"
           }
         },
         "da" : {
@@ -15598,8 +15598,8 @@
         },
         "zh-Hant" : {
           "stringUnit" : {
-            "state" : "translated",
-            "value" : "重試"
+            "state" : "new",
+            "value" : "Retry"
           }
         }
       }
@@ -15608,8 +15608,8 @@
       "localizations" : {
         "cs" : {
           "stringUnit" : {
-            "state" : "translated",
-            "value" : "Instalování Rosetta"
+            "state" : "new",
+            "value" : "Installing Rosetta"
           }
         },
         "da" : {
@@ -15738,8 +15738,8 @@
       "localizations" : {
         "cs" : {
           "stringUnit" : {
-            "state" : "translated",
-            "value" : "Instalace Rosetta 2 se nezdařila. Nainstalujte ji prosím ručně."
+            "state" : "new",
+            "value" : "Rosetta 2 installation failed. Please install it manually."
           }
         },
         "da" : {
@@ -15858,8 +15858,8 @@
         },
         "zh-Hant" : {
           "stringUnit" : {
-            "state" : "translated",
-            "value" : "Rosetta 2 安裝失敗。請手動安裝。"
+            "state" : "new",
+            "value" : "Rosetta 2 installation failed. Please install it manually."
           }
         }
       }
@@ -15868,8 +15868,8 @@
       "localizations" : {
         "cs" : {
           "stringUnit" : {
-            "state" : "translated",
-            "value" : "Rosetta umožňuje x86 kódu, jakým je Wine, běžet na vašem Macu."
+            "state" : "new",
+            "value" : "Rosetta allows x86 code, like Wine, to run on your Mac."
           }
         },
         "da" : {
@@ -16258,8 +16258,8 @@
       "localizations" : {
         "cs" : {
           "stringUnit" : {
-            "state" : "translated",
-            "value" : "Odinstalování"
+            "state" : "new",
+            "value" : "Uninstall"
           }
         },
         "da" : {
@@ -16388,8 +16388,8 @@
       "localizations" : {
         "cs" : {
           "stringUnit" : {
-            "state" : "translated",
-            "value" : "Vítejte ve Whisky"
+            "state" : "new",
+            "value" : "Welcome to Whisky"
           }
         },
         "da" : {
@@ -16648,8 +16648,8 @@
       "localizations" : {
         "cs" : {
           "stringUnit" : {
-            "state" : "translated",
-            "value" : "Nepřesouvat"
+            "state" : "new",
+            "value" : "Don't Move"
           }
         },
         "da" : {
@@ -16778,8 +16778,8 @@
       "localizations" : {
         "cs" : {
           "stringUnit" : {
-            "state" : "translated",
-            "value" : "Přesunout do složky Aplikace"
+            "state" : "new",
+            "value" : "Move to Applications"
           }
         },
         "da" : {
@@ -16908,8 +16908,8 @@
       "localizations" : {
         "cs" : {
           "stringUnit" : {
-            "state" : "translated",
-            "value" : "V některých případech nemusí být Whisky schopna správně fungovat z jiné složky"
+            "state" : "new",
+            "value" : "In some cases, Whisky wont't be able to function properly from a different folder"
           }
         },
         "da" : {
@@ -17168,8 +17168,8 @@
       "localizations" : {
         "cs" : {
           "stringUnit" : {
-            "state" : "translated",
-            "value" : "Konfigurace lahve"
+            "state" : "new",
+            "value" : "Bottle Configuration"
           }
         },
         "da" : {
@@ -17299,8 +17299,8 @@
       "localizations" : {
         "cs" : {
           "stringUnit" : {
-            "state" : "translated",
-            "value" : "Spuštěné procesy"
+            "state" : "new",
+            "value" : "Running Processes"
           }
         },
         "da" : {
@@ -17429,8 +17429,8 @@
       "localizations" : {
         "cs" : {
           "stringUnit" : {
-            "state" : "translated",
-            "value" : "Nainstalované programy"
+            "state" : "new",
+            "value" : "Installed Programs"
           }
         },
         "da" : {
@@ -17559,8 +17559,8 @@
       "localizations" : {
         "cs" : {
           "stringUnit" : {
-            "state" : "translated",
-            "value" : "Máte spuštěnou %@, ale %@ není k dispozici. Chcete aktualizovat?"
+            "state" : "new",
+            "value" : "You are running WhiskyWine %@, but %@ is available. Would you like to update?"
           }
         },
         "da" : {
@@ -17689,8 +17689,8 @@
       "localizations" : {
         "cs" : {
           "stringUnit" : {
-            "state" : "translated",
-            "value" : "K dispozici je nová verze WhiskyWine"
+            "state" : "new",
+            "value" : "New Version of WhiskyWine Available"
           }
         },
         "da" : {
@@ -17804,7 +17804,7 @@
         "zh-Hans" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "有更新的 WhiskyWine 版本可用"
+            "value" : "可用的 WhiskyWine 新版本"
           }
         },
         "zh-Hant" : {
@@ -17819,8 +17819,8 @@
       "localizations" : {
         "cs" : {
           "stringUnit" : {
-            "state" : "translated",
-            "value" : "Aktualizovat"
+            "state" : "new",
+            "value" : "Update"
           }
         },
         "da" : {
@@ -17880,7 +17880,7 @@
         "nl" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Updaten"
+            "value" : "Update"
           }
         },
         "pl" : {
@@ -17949,8 +17949,8 @@
       "localizations" : {
         "cs" : {
           "stringUnit" : {
-            "state" : "translated",
-            "value" : "Vyčistit Shader Cache"
+            "state" : "new",
+            "value" : "Clear Shader Caches"
           }
         },
         "da" : {
@@ -18080,8 +18080,8 @@
       "localizations" : {
         "cs" : {
           "stringUnit" : {
-            "state" : "translated",
-            "value" : "Aplikace"
+            "state" : "new",
+            "value" : "Apps"
           }
         },
         "da" : {
@@ -18158,8 +18158,8 @@
         },
         "pt-PT" : {
           "stringUnit" : {
-            "state" : "translated",
-            "value" : "Aplicações"
+            "state" : "new",
+            "value" : "Apps"
           }
         },
         "ro" : {
@@ -18200,8 +18200,8 @@
         },
         "zh-Hant" : {
           "stringUnit" : {
-            "state" : "translated",
-            "value" : "應用程式"
+            "state" : "new",
+            "value" : "Apps"
           }
         }
       }
@@ -18211,8 +18211,8 @@
       "localizations" : {
         "cs" : {
           "stringUnit" : {
-            "state" : "translated",
-            "value" : "Benchmark"
+            "state" : "new",
+            "value" : "Benchmarks"
           }
         },
         "da" : {
@@ -18289,8 +18289,8 @@
         },
         "pt-PT" : {
           "stringUnit" : {
-            "state" : "translated",
-            "value" : "Valores de Referência"
+            "state" : "new",
+            "value" : "Benchmarks"
           }
         },
         "ro" : {
@@ -18331,8 +18331,8 @@
         },
         "zh-Hant" : {
           "stringUnit" : {
-            "state" : "translated",
-            "value" : "效能評測"
+            "state" : "new",
+            "value" : "Benchmarks"
           }
         }
       }
@@ -18342,7 +18342,7 @@
       "localizations" : {
         "cs" : {
           "stringUnit" : {
-            "state" : "translated",
+            "state" : "new",
             "value" : "DLLs"
           }
         },
@@ -18462,7 +18462,7 @@
         },
         "zh-Hant" : {
           "stringUnit" : {
-            "state" : "translated",
+            "state" : "new",
             "value" : "DLLs"
           }
         }
@@ -18473,8 +18473,8 @@
       "localizations" : {
         "cs" : {
           "stringUnit" : {
-            "state" : "translated",
-            "value" : "Písmo"
+            "state" : "new",
+            "value" : "Fonts"
           }
         },
         "da" : {
@@ -18593,8 +18593,8 @@
         },
         "zh-Hant" : {
           "stringUnit" : {
-            "state" : "translated",
-            "value" : "字型"
+            "state" : "new",
+            "value" : "Fonts"
           }
         }
       }
@@ -18604,8 +18604,8 @@
       "localizations" : {
         "cs" : {
           "stringUnit" : {
-            "state" : "translated",
-            "value" : "Hry"
+            "state" : "new",
+            "value" : "Games"
           }
         },
         "da" : {
@@ -18735,8 +18735,8 @@
       "localizations" : {
         "cs" : {
           "stringUnit" : {
-            "state" : "translated",
-            "value" : "Nastavení"
+            "state" : "new",
+            "value" : "Settings"
           }
         },
         "da" : {
@@ -18855,8 +18855,8 @@
         },
         "zh-Hant" : {
           "stringUnit" : {
-            "state" : "translated",
-            "value" : "設定"
+            "state" : "new",
+            "value" : "Settings"
           }
         }
       }
@@ -18865,8 +18865,8 @@
       "localizations" : {
         "cs" : {
           "stringUnit" : {
-            "state" : "translated",
-            "value" : "Popis"
+            "state" : "new",
+            "value" : "Description"
           }
         },
         "da" : {
@@ -18995,8 +18995,8 @@
       "localizations" : {
         "cs" : {
           "stringUnit" : {
-            "state" : "translated",
-            "value" : "Příkaz"
+            "state" : "new",
+            "value" : "Command"
           }
         },
         "da" : {
@@ -19125,8 +19125,8 @@
       "localizations" : {
         "cs" : {
           "stringUnit" : {
-            "state" : "translated",
-            "value" : "Spustit Winetricks příkaz"
+            "state" : "new",
+            "value" : "Run Winetricks Command"
           }
         },
         "da" : {
