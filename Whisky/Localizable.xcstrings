@@ -395,8 +395,8 @@
       "localizations" : {
         "cs" : {
           "stringUnit" : {
-            "state" : "translated",
-            "value" : "Vytvořit láhev"
+            "state" : "new",
+            "value" : "Create Bottle"
           }
         },
         "da" : {
@@ -525,8 +525,8 @@
       "localizations" : {
         "cs" : {
           "stringUnit" : {
-            "state" : "translated",
-            "value" : "Vytvořit zástupce"
+            "state" : "new",
+            "value" : "Create Shortcut"
           }
         },
         "da" : {
@@ -655,8 +655,8 @@
       "localizations" : {
         "cs" : {
           "stringUnit" : {
-            "state" : "translated",
-            "value" : "Exportovat jako archiv..."
+            "state" : "new",
+            "value" : "Export as Archive..."
           }
         },
         "da" : {
@@ -776,7 +776,7 @@
         "zh-Hant" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "匯出為封存檔⋯"
+            "value" : "匯出為封存..."
           }
         }
       }
@@ -785,8 +785,8 @@
       "localizations" : {
         "cs" : {
           "stringUnit" : {
-            "state" : "translated",
-            "value" : "Přesunout..."
+            "state" : "new",
+            "value" : "Move..."
           }
         },
         "da" : {
@@ -906,7 +906,7 @@
         "zh-Hant" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "移動⋯"
+            "value" : "移動..."
           }
         }
       }
@@ -1045,8 +1045,8 @@
       "localizations" : {
         "cs" : {
           "stringUnit" : {
-            "state" : "translated",
-            "value" : "Připnout"
+            "state" : "new",
+            "value" : "Pin"
           }
         },
         "da" : {
@@ -1165,8 +1165,8 @@
         },
         "zh-Hant" : {
           "stringUnit" : {
-            "state" : "translated",
-            "value" : "釘選"
+            "state" : "new",
+            "value" : "Pin"
           }
         }
       }
@@ -1175,8 +1175,8 @@
       "localizations" : {
         "cs" : {
           "stringUnit" : {
-            "state" : "translated",
-            "value" : "Obnovit"
+            "state" : "new",
+            "value" : "Refresh"
           }
         },
         "da" : {
@@ -1305,8 +1305,8 @@
       "localizations" : {
         "cs" : {
           "stringUnit" : {
-            "state" : "translated",
-            "value" : "Odstranit..."
+            "state" : "new",
+            "value" : "Remove..."
           }
         },
         "da" : {
@@ -1390,7 +1390,7 @@
         "ro" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Elimină..."
+            "value" : "Eliminare..."
           }
         },
         "ru" : {
@@ -1426,7 +1426,7 @@
         "zh-Hant" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "移除⋯"
+            "value" : "移除..."
           }
         }
       }
@@ -1435,8 +1435,8 @@
       "localizations" : {
         "cs" : {
           "stringUnit" : {
-            "state" : "translated",
-            "value" : "Zrušit"
+            "state" : "new",
+            "value" : "Cancel"
           }
         },
         "da" : {
@@ -1565,8 +1565,8 @@
       "localizations" : {
         "cs" : {
           "stringUnit" : {
-            "state" : "translated",
-            "value" : "Odstranit soubory z disku"
+            "state" : "new",
+            "value" : "Delete files from disk"
           }
         },
         "da" : {
@@ -1650,7 +1650,7 @@
         "ro" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Șterge fișierele de pe disc"
+            "value" : "Șterge fișierele din disc"
           }
         },
         "ru" : {
@@ -1695,8 +1695,8 @@
       "localizations" : {
         "cs" : {
           "stringUnit" : {
-            "state" : "translated",
-            "value" : "Odebrat"
+            "state" : "new",
+            "value" : "Remove"
           }
         },
         "da" : {
@@ -1910,7 +1910,7 @@
         "ro" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Sunteți sigur că doriți să eliminați această sticlă? Această acțiune este definitivă."
+            "value" : "Sunteți sigur că doriți să eliminați această sticlă? Această acțiune este permanentă."
           }
         },
         "ru" : {
@@ -2040,7 +2040,7 @@
         "ro" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Elimină %@?"
+            "value" : "Eliminați %@?"
           }
         },
         "ru" : {
@@ -2076,7 +2076,7 @@
         "zh-Hant" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "移除 %@？"
+            "value" : "移除 %@?"
           }
         }
       }
@@ -2085,8 +2085,8 @@
       "localizations" : {
         "cs" : {
           "stringUnit" : {
-            "state" : "translated",
-            "value" : "Přejmenovat..."
+            "state" : "new",
+            "value" : "Rename..."
           }
         },
         "da" : {
@@ -2206,7 +2206,7 @@
         "zh-Hant" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "重新命名⋯"
+            "value" : "重新命名..."
           }
         }
       }
@@ -2215,8 +2215,8 @@
       "localizations" : {
         "cs" : {
           "stringUnit" : {
-            "state" : "translated",
-            "value" : "Spustit..."
+            "state" : "new",
+            "value" : "Run..."
           }
         },
         "da" : {
@@ -2300,7 +2300,7 @@
         "ro" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Executare..."
+            "value" : "Rulează..."
           }
         },
         "ru" : {
@@ -2336,7 +2336,7 @@
         "zh-Hant" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "執行⋯"
+            "value" : "執行..."
           }
         }
       }
@@ -2345,8 +2345,8 @@
       "localizations" : {
         "cs" : {
           "stringUnit" : {
-            "state" : "translated",
-            "value" : "Zobrazit ve Finderu"
+            "state" : "new",
+            "value" : "Show in Finder"
           }
         },
         "da" : {
@@ -2525,7 +2525,7 @@
         "ja" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "ターミナル..."
+            "value" : "Terminal..."
           }
         },
         "ko" : {
@@ -2567,7 +2567,7 @@
         "ru" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Терминал..."
+            "value" : "Terminal..."
           }
         },
         "tr" : {
@@ -2591,13 +2591,13 @@
         "zh-Hans" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "终端..."
+            "value" : "Terminal..."
           }
         },
         "zh-Hant" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "終端機⋯"
+            "value" : "Terminal..."
           }
         }
       }
@@ -2606,8 +2606,8 @@
       "localizations" : {
         "cs" : {
           "stringUnit" : {
-            "state" : "translated",
-            "value" : "Odepnout"
+            "state" : "new",
+            "value" : "Unpin"
           }
         },
         "da" : {
@@ -2726,8 +2726,8 @@
         },
         "zh-Hant" : {
           "stringUnit" : {
-            "state" : "translated",
-            "value" : "取消釘選"
+            "state" : "new",
+            "value" : "Unpin"
           }
         }
       }
@@ -2856,8 +2856,8 @@
         },
         "zh-Hant" : {
           "stringUnit" : {
-            "state" : "translated",
-            "value" : "Winetricks⋯"
+            "state" : "new",
+            "value" : "Winetricks..."
           }
         }
       }
@@ -2866,8 +2866,8 @@
       "localizations" : {
         "cs" : {
           "stringUnit" : {
-            "state" : "translated",
-            "value" : "Vyhledat aktualizace..."
+            "state" : "new",
+            "value" : "Check for Updates..."
           }
         },
         "da" : {
@@ -2987,7 +2987,7 @@
         "zh-Hant" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "檢查更新⋯"
+            "value" : "檢查更新..."
           }
         }
       }
@@ -2996,8 +2996,8 @@
       "localizations" : {
         "cs" : {
           "stringUnit" : {
-            "state" : "translated",
-            "value" : "Build verze"
+            "state" : "new",
+            "value" : "Build Version"
           }
         },
         "da" : {
@@ -3081,7 +3081,7 @@
         "ro" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Versiunea"
+            "value" : "Versiune Compilare"
           }
         },
         "ru" : {
@@ -3256,8 +3256,8 @@
       "localizations" : {
         "cs" : {
           "stringUnit" : {
-            "state" : "translated",
-            "value" : "DPI škálování"
+            "state" : "new",
+            "value" : "DPI Scaling"
           }
         },
         "da" : {
@@ -3386,7 +3386,7 @@
       "localizations" : {
         "cs" : {
           "stringUnit" : {
-            "state" : "translated",
+            "state" : "new",
             "value" : "DXVK"
           }
         },
@@ -3506,7 +3506,7 @@
         },
         "zh-Hant" : {
           "stringUnit" : {
-            "state" : "translated",
+            "state" : "new",
             "value" : "DXVK"
           }
         }
@@ -3516,7 +3516,7 @@
       "localizations" : {
         "cs" : {
           "stringUnit" : {
-            "state" : "translated",
+            "state" : "new",
             "value" : "DXVK Async"
           }
         },
@@ -3646,7 +3646,7 @@
       "localizations" : {
         "cs" : {
           "stringUnit" : {
-            "state" : "translated",
+            "state" : "new",
             "value" : "DXVK HUD"
           }
         },
@@ -3766,7 +3766,7 @@
         },
         "zh-Hant" : {
           "stringUnit" : {
-            "state" : "translated",
+            "state" : "new",
             "value" : "DXVK HUD"
           }
         }
@@ -3776,7 +3776,7 @@
       "localizations" : {
         "cs" : {
           "stringUnit" : {
-            "state" : "translated",
+            "state" : "new",
             "value" : "FPS"
           }
         },
@@ -3891,7 +3891,7 @@
         "zh-Hans" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "FPS"
+            "value" : "帧率"
           }
         },
         "zh-Hant" : {
@@ -4416,7 +4416,7 @@
         },
         "zh-Hant" : {
           "stringUnit" : {
-            "state" : "translated",
+            "state" : "new",
             "value" : "ESync"
           }
         }
@@ -4546,7 +4546,7 @@
         },
         "zh-Hant" : {
           "stringUnit" : {
-            "state" : "translated",
+            "state" : "new",
             "value" : "MSync"
           }
         }
@@ -4676,8 +4676,8 @@
         },
         "zh-Hant" : {
           "stringUnit" : {
-            "state" : "translated",
-            "value" : "增強同步"
+            "state" : "new",
+            "value" : "Enhanced Sync"
           }
         }
       }
@@ -4806,8 +4806,8 @@
         },
         "zh-Hant" : {
           "stringUnit" : {
-            "state" : "translated",
-            "value" : "無"
+            "state" : "new",
+            "value" : "None"
           }
         }
       }
@@ -4937,7 +4937,7 @@
         "zh-Hant" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "設定⋯"
+            "value" : "設定..."
           }
         }
       }
@@ -5327,7 +5327,7 @@
         "zh-Hant" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "允許在 Xcode 中擷取 GPU 工作負載"
+            "value" : "允許你在 Xcode 中獲取 GPU 工作負載"
           }
         }
       }
@@ -5336,7 +5336,7 @@
       "localizations" : {
         "cs" : {
           "stringUnit" : {
-            "state" : "translated",
+            "state" : "new",
             "value" : "N/A"
           }
         },
@@ -5421,7 +5421,7 @@
         "ro" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "N/A"
+            "value" : "Indisponibil"
           }
         },
         "ru" : {
@@ -5726,7 +5726,7 @@
       "localizations" : {
         "cs" : {
           "stringUnit" : {
-            "state" : "translated",
+            "state" : "new",
             "value" : "DXVK"
           }
         },
@@ -5846,7 +5846,7 @@
         },
         "zh-Hant" : {
           "stringUnit" : {
-            "state" : "translated",
+            "state" : "new",
             "value" : "DXVK"
           }
         }
@@ -5854,15 +5854,9 @@
     },
     "config.title.metal" : {
       "localizations" : {
-        "ar" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Metal"
-          }
-        },
         "cs" : {
           "stringUnit" : {
-            "state" : "translated",
+            "state" : "new",
             "value" : "Metal"
           }
         },
@@ -5982,7 +5976,7 @@
         },
         "zh-Hant" : {
           "stringUnit" : {
-            "state" : "translated",
+            "state" : "new",
             "value" : "Metal"
           }
         }
@@ -5992,7 +5986,7 @@
       "localizations" : {
         "cs" : {
           "stringUnit" : {
-            "state" : "translated",
+            "state" : "new",
             "value" : "Wine"
           }
         },
@@ -6112,7 +6106,7 @@
         },
         "zh-Hant" : {
           "stringUnit" : {
-            "state" : "translated",
+            "state" : "new",
             "value" : "Wine"
           }
         }
@@ -6122,8 +6116,8 @@
       "localizations" : {
         "cs" : {
           "stringUnit" : {
-            "state" : "translated",
-            "value" : "Otevřít konfiguraci Wine"
+            "state" : "new",
+            "value" : "Open Wine Configuration"
           }
         },
         "da" : {
@@ -6252,8 +6246,8 @@
       "localizations" : {
         "cs" : {
           "stringUnit" : {
-            "state" : "translated",
-            "value" : "Verze Windows"
+            "state" : "new",
+            "value" : "Windows Version"
           }
         },
         "da" : {
@@ -6382,7 +6376,7 @@
       "localizations" : {
         "cs" : {
           "stringUnit" : {
-            "state" : "translated",
+            "state" : "new",
             "value" : "DPI"
           }
         },
@@ -6502,7 +6496,7 @@
         },
         "zh-Hant" : {
           "stringUnit" : {
-            "state" : "translated",
+            "state" : "new",
             "value" : "DPI"
           }
         }
@@ -6512,8 +6506,8 @@
       "localizations" : {
         "cs" : {
           "stringUnit" : {
-            "state" : "translated",
-            "value" : "Text bude vypadat takto:"
+            "state" : "new",
+            "value" : "Text will look like this:"
           }
         },
         "da" : {
@@ -6642,8 +6636,8 @@
       "localizations" : {
         "cs" : {
           "stringUnit" : {
-            "state" : "translated",
-            "value" : "Příliš žluťoučký kůň úpěl ďábelské ódy."
+            "state" : "new",
+            "value" : "The quick brown fox jumps over the lazy dog."
           }
         },
         "da" : {
@@ -6727,7 +6721,7 @@
         "ro" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "The quick brown fox jumps over the lazy dog."
+            "value" : "A quick brown fox jumps over the lazy dog."
           }
         },
         "ru" : {
@@ -6772,8 +6766,8 @@
       "localizations" : {
         "cs" : {
           "stringUnit" : {
-            "state" : "translated",
-            "value" : "Nastavení DPI"
+            "state" : "new",
+            "value" : "DPI Settings"
           }
         },
         "da" : {
@@ -6902,8 +6896,8 @@
       "localizations" : {
         "cs" : {
           "stringUnit" : {
-            "state" : "translated",
-            "value" : "Procházet"
+            "state" : "new",
+            "value" : "Browse"
           }
         },
         "da" : {
@@ -6987,7 +6981,7 @@
         "ro" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Caută"
+            "value" : "Răsfoire"
           }
         },
         "ru" : {
@@ -7032,8 +7026,8 @@
       "localizations" : {
         "cs" : {
           "stringUnit" : {
-            "state" : "translated",
-            "value" : "Zrušit"
+            "state" : "new",
+            "value" : "Cancel"
           }
         },
         "da" : {
@@ -7162,8 +7156,8 @@
       "localizations" : {
         "cs" : {
           "stringUnit" : {
-            "state" : "translated",
-            "value" : "Vytořit"
+            "state" : "new",
+            "value" : "Create"
           }
         },
         "da" : {
@@ -7292,8 +7286,8 @@
       "localizations" : {
         "cs" : {
           "stringUnit" : {
-            "state" : "translated",
-            "value" : "Název láhve:"
+            "state" : "new",
+            "value" : "Bottle name:"
           }
         },
         "da" : {
@@ -7422,8 +7416,8 @@
       "localizations" : {
         "cs" : {
           "stringUnit" : {
-            "state" : "translated",
-            "value" : "Cesta k lahvi:"
+            "state" : "new",
+            "value" : "Bottle path:"
           }
         },
         "da" : {
@@ -7507,7 +7501,7 @@
         "ro" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Locația sticlei:"
+            "value" : "Locație sticlă:"
           }
         },
         "ru" : {
@@ -7552,8 +7546,8 @@
       "localizations" : {
         "cs" : {
           "stringUnit" : {
-            "state" : "translated",
-            "value" : "Vytvořit novou láhev"
+            "state" : "new",
+            "value" : "Create a new bottle"
           }
         },
         "da" : {
@@ -7682,8 +7676,8 @@
       "localizations" : {
         "cs" : {
           "stringUnit" : {
-            "state" : "translated",
-            "value" : "Verze Windows:"
+            "state" : "new",
+            "value" : "Windows version:"
           }
         },
         "da" : {
@@ -7812,8 +7806,8 @@
       "localizations" : {
         "cs" : {
           "stringUnit" : {
-            "state" : "translated",
-            "value" : "Přidat"
+            "state" : "new",
+            "value" : "Add"
           }
         },
         "da" : {
@@ -7932,8 +7926,8 @@
         },
         "zh-Hant" : {
           "stringUnit" : {
-            "state" : "translated",
-            "value" : "新增"
+            "state" : "new",
+            "value" : "Add"
           }
         }
       }
@@ -7942,8 +7936,8 @@
       "localizations" : {
         "cs" : {
           "stringUnit" : {
-            "state" : "translated",
-            "value" : "Odebrat"
+            "state" : "new",
+            "value" : "Remove"
           }
         },
         "da" : {
@@ -8062,8 +8056,8 @@
         },
         "zh-Hant" : {
           "stringUnit" : {
-            "state" : "translated",
-            "value" : "移除"
+            "state" : "new",
+            "value" : "Remove"
           }
         }
       }
@@ -8072,7 +8066,7 @@
       "localizations" : {
         "cs" : {
           "stringUnit" : {
-            "state" : "translated",
+            "state" : "new",
             "value" : "Discord"
           }
         },
@@ -8192,7 +8186,7 @@
         },
         "zh-Hant" : {
           "stringUnit" : {
-            "state" : "translated",
+            "state" : "new",
             "value" : "Discord"
           }
         }
@@ -8202,7 +8196,7 @@
       "localizations" : {
         "cs" : {
           "stringUnit" : {
-            "state" : "translated",
+            "state" : "new",
             "value" : "GitHub"
           }
         },
@@ -8322,7 +8316,7 @@
         },
         "zh-Hant" : {
           "stringUnit" : {
-            "state" : "translated",
+            "state" : "new",
             "value" : "GitHub"
           }
         }
@@ -8332,8 +8326,8 @@
       "localizations" : {
         "cs" : {
           "stringUnit" : {
-            "state" : "translated",
-            "value" : "Webové stránky"
+            "state" : "new",
+            "value" : "Website"
           }
         },
         "da" : {
@@ -8452,8 +8446,8 @@
         },
         "zh-Hant" : {
           "stringUnit" : {
-            "state" : "translated",
-            "value" : "網站"
+            "state" : "new",
+            "value" : "Website"
           }
         }
       }
@@ -8583,7 +8577,7 @@
         "zh-Hant" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "安裝Whisky CLI⋯"
+            "value" : "安裝Whisky CLI..."
           }
         }
       }
@@ -9328,7 +9322,7 @@
         "ro" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Deschide Folder-ul Logs"
+            "value" : "Deschide Folder-ul cu Jurnale"
           }
         },
         "ru" : {
@@ -9373,8 +9367,8 @@
       "localizations" : {
         "cs" : {
           "stringUnit" : {
-            "state" : "translated",
-            "value" : "Nastavení..."
+            "state" : "new",
+            "value" : "Setup..."
           }
         },
         "da" : {
@@ -9494,7 +9488,7 @@
         "zh-Hant" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "配置⋯"
+            "value" : "設置..."
           }
         }
       }
@@ -9503,8 +9497,8 @@
       "localizations" : {
         "cs" : {
           "stringUnit" : {
-            "state" : "translated",
-            "value" : "Připnout"
+            "state" : "new",
+            "value" : "Pin"
           }
         },
         "da" : {
@@ -9623,8 +9617,8 @@
         },
         "zh-Hant" : {
           "stringUnit" : {
-            "state" : "translated",
-            "value" : "釘選"
+            "state" : "new",
+            "value" : "Pin"
           }
         }
       }
@@ -9754,8 +9748,8 @@
         },
         "zh-Hant" : {
           "stringUnit" : {
-            "state" : "translated",
-            "value" : "「%@」已經釘選！"
+            "state" : "new",
+            "value" : "\"%@\" is already pinned!"
           }
         }
       }
@@ -9849,7 +9843,7 @@
         "ro" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Nu s-a Putut Fixa Programul"
+            "value" : "Nu s-a putut Fixa Programul"
           }
         },
         "ru" : {
@@ -9884,8 +9878,8 @@
         },
         "zh-Hant" : {
           "stringUnit" : {
-            "state" : "translated",
-            "value" : "釘選程式時發生錯誤"
+            "state" : "new",
+            "value" : "Error Pinning Program"
           }
         }
       }
@@ -10014,8 +10008,8 @@
         },
         "zh-Hant" : {
           "stringUnit" : {
-            "state" : "translated",
-            "value" : "釘選程式"
+            "state" : "new",
+            "value" : "Pin Program"
           }
         }
       }
@@ -10109,7 +10103,7 @@
         "ro" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Nume pin:"
+            "value" : "Nume pix:"
           }
         },
         "ru" : {
@@ -10144,8 +10138,8 @@
         },
         "zh-Hant" : {
           "stringUnit" : {
-            "state" : "translated",
-            "value" : "釘選名稱："
+            "state" : "new",
+            "value" : "Pin name:"
           }
         }
       }
@@ -10274,8 +10268,8 @@
         },
         "zh-Hant" : {
           "stringUnit" : {
-            "state" : "translated",
-            "value" : "程式路徑："
+            "state" : "new",
+            "value" : "Program path:"
           }
         }
       }
@@ -10404,8 +10398,8 @@
         },
         "zh-Hant" : {
           "stringUnit" : {
-            "state" : "translated",
-            "value" : "釘選程式"
+            "state" : "new",
+            "value" : "Pin Program"
           }
         }
       }
@@ -10498,8 +10492,8 @@
         },
         "ro" : {
           "stringUnit" : {
-            "state" : "translated",
-            "value" : "Executabil"
+            "state" : "new",
+            "value" : "Executable"
           }
         },
         "ru" : {
@@ -10544,8 +10538,8 @@
       "localizations" : {
         "cs" : {
           "stringUnit" : {
-            "state" : "translated",
-            "value" : "Zastavit proces"
+            "state" : "new",
+            "value" : "Stop Process"
           }
         },
         "da" : {
@@ -10628,8 +10622,8 @@
         },
         "ro" : {
           "stringUnit" : {
-            "state" : "translated",
-            "value" : "Oprește Procesul"
+            "state" : "new",
+            "value" : "Stop Process"
           }
         },
         "ru" : {
@@ -10758,8 +10752,8 @@
         },
         "ro" : {
           "stringUnit" : {
-            "state" : "translated",
-            "value" : "Preluare Procese"
+            "state" : "new",
+            "value" : "Fetching Processes"
           }
         },
         "ru" : {
@@ -10804,8 +10798,8 @@
       "localizations" : {
         "cs" : {
           "stringUnit" : {
-            "state" : "translated",
-            "value" : "ID procesu"
+            "state" : "new",
+            "value" : "Process ID"
           }
         },
         "da" : {
@@ -10888,8 +10882,8 @@
         },
         "ro" : {
           "stringUnit" : {
-            "state" : "translated",
-            "value" : "ID Proces"
+            "state" : "new",
+            "value" : "Process ID"
           }
         },
         "ru" : {
@@ -10934,8 +10928,8 @@
       "localizations" : {
         "cs" : {
           "stringUnit" : {
-            "state" : "translated",
-            "value" : "Obnovit"
+            "state" : "new",
+            "value" : "Refresh"
           }
         },
         "da" : {
@@ -11018,8 +11012,8 @@
         },
         "ro" : {
           "stringUnit" : {
-            "state" : "translated",
-            "value" : "Reîmprospătează"
+            "state" : "new",
+            "value" : "Refresh"
           }
         },
         "ru" : {
@@ -11149,7 +11143,7 @@
         "ro" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Adaugă la Blocklist"
+            "value" : "Adaugă la Lista Neagră"
           }
         },
         "ru" : {
@@ -11279,7 +11273,7 @@
         "ro" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Adăugați cele selectate la Blocklist"
+            "value" : "Adăugați cele selectate la Lista de Blocare"
           }
         },
         "ru" : {
@@ -11314,8 +11308,8 @@
         },
         "zh-Hant" : {
           "stringUnit" : {
-            "state" : "translated",
-            "value" : "將選擇項目加入至黑名單"
+            "state" : "new",
+            "value" : "Add Selected to Blocklist"
           }
         }
       }
@@ -11324,8 +11318,8 @@
       "localizations" : {
         "cs" : {
           "stringUnit" : {
-            "state" : "translated",
-            "value" : "Argumenty"
+            "state" : "new",
+            "value" : "Arguments"
           }
         },
         "da" : {
@@ -11409,7 +11403,7 @@
         "ro" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Parametri"
+            "value" : "Parametrii"
           }
         },
         "ru" : {
@@ -11539,7 +11533,7 @@
         "ro" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Blocklist"
+            "value" : "Lista neagră"
           }
         },
         "ru" : {
@@ -11584,8 +11578,8 @@
       "localizations" : {
         "cs" : {
           "stringUnit" : {
-            "state" : "translated",
-            "value" : "Konfigurace"
+            "state" : "new",
+            "value" : "Config"
           }
         },
         "da" : {
@@ -11844,8 +11838,8 @@
       "localizations" : {
         "cs" : {
           "stringUnit" : {
-            "state" : "translated",
-            "value" : "Odstranit z blokovaných"
+            "state" : "new",
+            "value" : "Remove from Blocklist"
           }
         },
         "da" : {
@@ -11929,7 +11923,7 @@
         "ro" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Eliminați din Blocklist"
+            "value" : "Eliminați din Lista Neagră"
           }
         },
         "ru" : {
@@ -11974,8 +11968,8 @@
       "localizations" : {
         "cs" : {
           "stringUnit" : {
-            "state" : "translated",
-            "value" : "Odstranit vybrané ze seznamu"
+            "state" : "new",
+            "value" : "Remove Selected from Blocklist"
           }
         },
         "da" : {
@@ -12059,7 +12053,7 @@
         "ro" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Eliminați cele selectate din Blocklist"
+            "value" : "Eliminați cele selectate din Lista de Blocare"
           }
         },
         "ru" : {
@@ -12094,8 +12088,8 @@
         },
         "zh-Hant" : {
           "stringUnit" : {
-            "state" : "translated",
-            "value" : "將選擇項目移除出黑名單"
+            "state" : "new",
+            "value" : "Remove Selected from Blocklist"
           }
         }
       }
@@ -12104,8 +12098,8 @@
       "localizations" : {
         "cs" : {
           "stringUnit" : {
-            "state" : "translated",
-            "value" : "Nastavení"
+            "state" : "new",
+            "value" : "Settings"
           }
         },
         "da" : {
@@ -12224,8 +12218,8 @@
         },
         "zh-Hant" : {
           "stringUnit" : {
-            "state" : "translated",
-            "value" : "設定"
+            "state" : "new",
+            "value" : "Settings"
           }
         }
       }
@@ -12234,8 +12228,8 @@
       "localizations" : {
         "cs" : {
           "stringUnit" : {
-            "state" : "translated",
-            "value" : "Všechny programy"
+            "state" : "new",
+            "value" : "All Programs"
           }
         },
         "da" : {
@@ -12319,7 +12313,7 @@
         "ro" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Toate Programele"
+            "value" : "Toate programele"
           }
         },
         "ru" : {
@@ -12364,8 +12358,8 @@
       "localizations" : {
         "cs" : {
           "stringUnit" : {
-            "state" : "translated",
-            "value" : "Přejmenovat lahev"
+            "state" : "new",
+            "value" : "Rename bottle"
           }
         },
         "da" : {
@@ -12494,8 +12488,8 @@
       "localizations" : {
         "cs" : {
           "stringUnit" : {
-            "state" : "translated",
-            "value" : "Nové jméno:"
+            "state" : "new",
+            "value" : "New name:"
           }
         },
         "da" : {
@@ -12754,8 +12748,8 @@
       "localizations" : {
         "cs" : {
           "stringUnit" : {
-            "state" : "translated",
-            "value" : "Přejmenovat"
+            "state" : "new",
+            "value" : "Rename"
           }
         },
         "da" : {
@@ -12962,8 +12956,8 @@
         },
         "pt-PT" : {
           "stringUnit" : {
-            "state" : "translated",
-            "value" : "Garrafa:"
+            "state" : "new",
+            "value" : "Bottle:"
           }
         },
         "ro" : {
@@ -13264,8 +13258,8 @@
         },
         "zh-Hant" : {
           "stringUnit" : {
-            "state" : "translated",
-            "value" : "一般"
+            "state" : "new",
+            "value" : "General"
           }
         }
       }
@@ -13352,14 +13346,14 @@
         },
         "pt-PT" : {
           "stringUnit" : {
-            "state" : "translated",
-            "value" : "Caminho padrão da garrafa:"
+            "state" : "new",
+            "value" : "Default bottle path:"
           }
         },
         "ro" : {
           "stringUnit" : {
-            "state" : "translated",
-            "value" : "Cale implicită a sticlelor:"
+            "state" : "new",
+            "value" : "Default bottle path:"
           }
         },
         "ru" : {
@@ -13396,6 +13390,136 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "預設容器路徑："
+          }
+        }
+      }
+    },
+    "settings.toggle.whiskywine.updates" : {
+      "localizations" : {
+        "cs" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Automatically check for WhiskyWine updates"
+          }
+        },
+        "da" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Søg automatisk efter WhiskyWine-opdateringer"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Automatisch nach Updates für WhiskyWine suchen"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Automatically check for WhiskyWine updates"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Buscar actualizaciones de WhiskyWine automáticamente"
+          }
+        },
+        "fi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Automaattisesti tarkista WhiskyWine päivityksien varalta"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Rechercher automatiquement les mises à jour de WhiskyWine"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Controlla automaticamente aggiornamenti di WhiskyWine"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "WhiskyWine のアップデートを自動的に確認する"
+          }
+        },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "WhiskyWine 업데이트를 자동으로 확인"
+          }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Automatisch controleren op WhiskyWine updates"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Automatycznie sprawdzaj dostępność aktualizacji WhiskyWine"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Automatically check for WhiskyWine updates"
+          }
+        },
+        "pt-PT" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Procurar atualizações automaticamente"
+          }
+        },
+        "ro" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Verifică automat pentru actualizări WhiskyWine"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Автоматически проверять на наличие обновлений WhiskyWine"
+          }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Güncellemeleri otomatik olarak kontrol et"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Автоматично перевіряти оновлення WhiskyWine"
+          }
+        },
+        "vi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tự động kiểm tra bản cập nhật WhiskyWine"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "自动检查WhiskyWine更新"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Automatically check for WhiskyWine updates"
           }
         }
       }
@@ -13524,8 +13648,8 @@
         },
         "zh-Hant" : {
           "stringUnit" : {
-            "state" : "translated",
-            "value" : "Whisky 關閉時終止 Wine 進程"
+            "state" : "new",
+            "value" : "Terminate Wine processes when Whisky closes"
           }
         }
       }
@@ -13534,8 +13658,8 @@
       "localizations" : {
         "cs" : {
           "stringUnit" : {
-            "state" : "translated",
-            "value" : "Automaticky kontrolovat Whisky aktualizace"
+            "state" : "new",
+            "value" : "Automatically check for Whisky updates"
           }
         },
         "da" : {
@@ -13654,138 +13778,8 @@
         },
         "zh-Hant" : {
           "stringUnit" : {
-            "state" : "translated",
-            "value" : "自動檢查 Whisky 更新"
-          }
-        }
-      }
-    },
-    "settings.toggle.whiskywine.updates" : {
-      "localizations" : {
-        "cs" : {
-          "stringUnit" : {
             "state" : "new",
-            "value" : "Automatically check for WhiskyWine updates"
-          }
-        },
-        "da" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Søg automatisk efter WhiskyWine-opdateringer"
-          }
-        },
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Automatisch nach Updates für WhiskyWine suchen"
-          }
-        },
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Automatically check for WhiskyWine updates"
-          }
-        },
-        "es" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Buscar actualizaciones de WhiskyWine automáticamente"
-          }
-        },
-        "fi" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Automaattisesti tarkista WhiskyWine päivityksien varalta"
-          }
-        },
-        "fr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Rechercher automatiquement les mises à jour de WhiskyWine"
-          }
-        },
-        "it" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Controlla automaticamente aggiornamenti di WhiskyWine"
-          }
-        },
-        "ja" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "WhiskyWine のアップデートを自動的に確認する"
-          }
-        },
-        "ko" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "WhiskyWine 업데이트를 자동으로 확인"
-          }
-        },
-        "nl" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Automatisch controleren op WhiskyWine updates"
-          }
-        },
-        "pl" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Automatycznie sprawdzaj dostępność aktualizacji WhiskyWine"
-          }
-        },
-        "pt-BR" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : "Automatically check for WhiskyWine updates"
-          }
-        },
-        "pt-PT" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Procurar atualizações automaticamente"
-          }
-        },
-        "ro" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Verifică automat pentru actualizări WhiskyWine"
-          }
-        },
-        "ru" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Автоматически проверять на наличие обновлений WhiskyWine"
-          }
-        },
-        "tr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Güncellemeleri otomatik olarak kontrol et"
-          }
-        },
-        "uk" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Автоматично перевіряти оновлення WhiskyWine"
-          }
-        },
-        "vi" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Tự động kiểm tra bản cập nhật WhiskyWine"
-          }
-        },
-        "zh-Hans" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "自动检查 WhiskyWine 更新"
-          }
-        },
-        "zh-Hant" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "自動檢查 WhiskyWine 更新"
+            "value" : "Automatically check for Whisky updates"
           }
         }
       }
@@ -13794,8 +13788,8 @@
       "localizations" : {
         "cs" : {
           "stringUnit" : {
-            "state" : "translated",
-            "value" : "Aktualizace"
+            "state" : "new",
+            "value" : "Updates"
           }
         },
         "da" : {
@@ -13879,7 +13873,7 @@
         "ro" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Actualizări"
+            "value" : "Actualizari"
           }
         },
         "ru" : {
@@ -13914,8 +13908,8 @@
         },
         "zh-Hant" : {
           "stringUnit" : {
-            "state" : "translated",
-            "value" : "更新"
+            "state" : "new",
+            "value" : "Updates"
           }
         }
       }
@@ -13924,8 +13918,8 @@
       "localizations" : {
         "cs" : {
           "stringUnit" : {
-            "state" : "translated",
-            "value" : "Hotovo"
+            "state" : "new",
+            "value" : "Done"
           }
         },
         "da" : {
@@ -14046,6 +14040,786 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "完成"
+          }
+        }
+      }
+    },
+    "setup.whiskywine.download" : {
+      "localizations" : {
+        "cs" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Downloading WhiskyWine"
+          }
+        },
+        "da" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Downloader Wine"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "WhiskyWine herunterladen"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Downloading WhiskyWine"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Descargando WhiskyWine"
+          }
+        },
+        "fi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ladataan WhiskyWine"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Téléchargement de WhiskyWine"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Scarico Wine"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "WhiskyWine をダウンロード中"
+          }
+        },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "WhiskyWine를 다운로드 중입니다."
+          }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Wine downloaden"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Pobieranie WhiskyWine"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Baixando Wine"
+          }
+        },
+        "pt-PT" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Transferindo Wine"
+          }
+        },
+        "ro" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Se descarcă WhiskyWine"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Скачивание WhiskyWine"
+          }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Wine İndiriliyor"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Завантаження WhiskyWine"
+          }
+        },
+        "vi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Đang tải xuống Wine"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "正在下载 WhiskyWine"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "正在下載 WhiskyWine"
+          }
+        }
+      }
+    },
+    "setup.whiskywine.download.subtitle" : {
+      "localizations" : {
+        "cs" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Speeds will vary on your internet connection."
+          }
+        },
+        "da" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Hastigheden vil variere ud fra din internethastighed."
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Die Geschwindigkeit variiert je nach Internetverbindung."
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Speeds will vary on your internet connection."
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "La velocidad de descarga varía según tu conexión a Internet."
+          }
+        },
+        "fi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Nopeus vaihtelee internetyhteytesi mukaan."
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "La vitesse de téléchargement peut varier selon votre connexion Internet."
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "La velocità di download varia in base alla tua connessione internet."
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "速度はインターネット環境によって変化します。"
+          }
+        },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "속도는 인터넷 연결 상태에 따라 달라질 수 있습니다."
+          }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Snelheden zullen variëren gebaseerd op je internet connectie."
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Prędkości będą się różnić w zależności od połączenia internetowego."
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "As velocidades irão variar de acordo com sua internet."
+          }
+        },
+        "pt-PT" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "As velocidades variam de acordo com a sua ligação de Internet."
+          }
+        },
+        "ro" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Viteza va depinde de conexiunea dvs. de internet."
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Скорость скачивания зависит от вашего подключения к Интернету."
+          }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Yükleme hızı internet bağlantınıza göre değişecektir."
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Швидкість залежить від швидкості Вашого підключення до Інтернету."
+          }
+        },
+        "vi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tốc độ tải xuống sẽ phụ thuộc vào kết nối Internet của bạn."
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "下载速度受您的网络质量影响。"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "速度會因你的網路頻寬而有所不同。"
+          }
+        }
+      }
+    },
+    "setup.whiskywine.eta" : {
+      "localizations" : {
+        "cs" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "- %@ remaining"
+          }
+        },
+        "da" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "- %@ tilbage"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "- %@ verbleibend"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "- %@ remaining"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "- %@ restante"
+          }
+        },
+        "fi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "- %@ jäljellä"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "- %@ restantes"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "- %@ rimanenti"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "- 残り %@"
+          }
+        },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "- %@ 남음"
+          }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "- %@ resterend"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "- pozostało %@"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "- %@ restantes"
+          }
+        },
+        "pt-PT" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "- %@ em falta"
+          }
+        },
+        "ro" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "- A rămas %@"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "- осталось %@"
+          }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "-%@ kaldı"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "- залишилось %@"
+          }
+        },
+        "vi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "- %@ còn lại"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "- 剩余 %@"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "- 剩餘%@"
+          }
+        }
+      }
+    },
+    "setup.whiskywine.install" : {
+      "localizations" : {
+        "cs" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Installing WhiskyWine"
+          }
+        },
+        "da" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Installere Wine"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "WhiskyWine wird installiert"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Installing WhiskyWine"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Instalando WhiskyWine"
+          }
+        },
+        "fi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Asennetaan WhiskyWine"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Installation de WhiskyWine"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Installazione di WhiskyWine"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "WhiskyWine をインストール中"
+          }
+        },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "WhiskyWine 설치 중"
+          }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Wine installeren"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Instalowanie WhiskyWine"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Instalando Wine"
+          }
+        },
+        "pt-PT" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Instalando Wine"
+          }
+        },
+        "ro" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Se instalează WhiskyWine"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Установка WhiskyWine"
+          }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Wine Yükleniyor"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Встановлення WhiskyWine"
+          }
+        },
+        "vi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Đang cài đặt Wine"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "正在安装 WhiskyWine"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "正在安裝 WhiskyWine"
+          }
+        }
+      }
+    },
+    "setup.whiskywine.install.subtitle" : {
+      "localizations" : {
+        "cs" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Almost there. Don't tune out yet."
+          }
+        },
+        "da" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Er der næsten. Luk ikke programmet endnu."
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Fast fertig. Noch nicht abbrechen."
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Almost there. Don't tune out yet."
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Un momento, ya casi está."
+          }
+        },
+        "fi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Melkein valmista. Älä karkaa vielä."
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Vous y êtes presque. Veuillez patienter s'il vous plaît."
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Quasi fatto. Non disconnetterti adesso."
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "あと少しです。そのままお待ち下さい。"
+          }
+        },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "거의 다 왔어요. 아직 끄지 마세요."
+          }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Bijna daar. Nog niet weg gaan."
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Prawie gotowe. Jeszcze nie wyłączaj."
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Quase lá. Por favor, aguarde."
+          }
+        },
+        "pt-PT" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Quase lá. Não desligue ainda."
+          }
+        },
+        "ro" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Aproape terminat. Nu ieși deocamdată."
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Почти закончили. Не отключайтесь."
+          }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Bitmek üzere. Lütfen Kapatmayınız."
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Майже готово."
+          }
+        },
+        "vi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Cài đặt sắp hoàn tất."
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "就快完成了，请不要退出。"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "快完成了。請不要退出。"
+          }
+        }
+      }
+    },
+    "setup.whiskywine.progress" : {
+      "localizations" : {
+        "cs" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "%@ of %@"
+          }
+        },
+        "da" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%@ af %@"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%@ von %@"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%@ of %@"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%@ de %@"
+          }
+        },
+        "fi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%@ / %@"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%@ sur %@"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%@ di %@"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%@ / %@"
+          }
+        },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%2$@ 중 %1$@"
+          }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%@ van de %@"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%@ z %@"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%@ de %@"
+          }
+        },
+        "pt-PT" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%@ de %@"
+          }
+        },
+        "ro" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%@ din %@"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%@ из %@"
+          }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%@'nin %@'si"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%@ з %@"
+          }
+        },
+        "vi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%@ của %@"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%2$@ 中的 %1$@"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%2$@ 中的 %1$@"
           }
         }
       }
@@ -14175,7 +14949,7 @@
         "zh-Hant" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "正在檢查 %@ 安裝⋯⋯"
+            "value" : "正在檢查  %@ 安裝…"
           }
         }
       }
@@ -14184,8 +14958,8 @@
       "localizations" : {
         "cs" : {
           "stringUnit" : {
-            "state" : "translated",
-            "value" : "%@ nainstalováno"
+            "state" : "new",
+            "value" : "%@ installed"
           }
         },
         "da" : {
@@ -14314,8 +15088,8 @@
       "localizations" : {
         "cs" : {
           "stringUnit" : {
-            "state" : "translated",
-            "value" : "%@ není nainstalováno"
+            "state" : "new",
+            "value" : "%@ not installed"
           }
         },
         "da" : {
@@ -14444,8 +15218,8 @@
       "localizations" : {
         "cs" : {
           "stringUnit" : {
-            "state" : "translated",
-            "value" : "Další"
+            "state" : "new",
+            "value" : "Next"
           }
         },
         "da" : {
@@ -14574,8 +15348,8 @@
       "localizations" : {
         "cs" : {
           "stringUnit" : {
-            "state" : "translated",
-            "value" : "Ukončit"
+            "state" : "new",
+            "value" : "Quit"
           }
         },
         "da" : {
@@ -14704,8 +15478,8 @@
       "localizations" : {
         "cs" : {
           "stringUnit" : {
-            "state" : "translated",
-            "value" : "Opakovat"
+            "state" : "new",
+            "value" : "Retry"
           }
         },
         "da" : {
@@ -14824,8 +15598,8 @@
         },
         "zh-Hant" : {
           "stringUnit" : {
-            "state" : "translated",
-            "value" : "重試"
+            "state" : "new",
+            "value" : "Retry"
           }
         }
       }
@@ -14834,8 +15608,8 @@
       "localizations" : {
         "cs" : {
           "stringUnit" : {
-            "state" : "translated",
-            "value" : "Instalování Rosetta"
+            "state" : "new",
+            "value" : "Installing Rosetta"
           }
         },
         "da" : {
@@ -14964,8 +15738,8 @@
       "localizations" : {
         "cs" : {
           "stringUnit" : {
-            "state" : "translated",
-            "value" : "Instalace Rosetta 2 se nezdařila. Nainstalujte ji prosím ručně."
+            "state" : "new",
+            "value" : "Rosetta 2 installation failed. Please install it manually."
           }
         },
         "da" : {
@@ -15084,8 +15858,8 @@
         },
         "zh-Hant" : {
           "stringUnit" : {
-            "state" : "translated",
-            "value" : "Rosetta 2 安裝失敗。請手動安裝。"
+            "state" : "new",
+            "value" : "Rosetta 2 installation failed. Please install it manually."
           }
         }
       }
@@ -15094,8 +15868,8 @@
       "localizations" : {
         "cs" : {
           "stringUnit" : {
-            "state" : "translated",
-            "value" : "Rosetta umožňuje x86 kódu, jakým je Wine, běžet na vašem Macu."
+            "state" : "new",
+            "value" : "Rosetta allows x86 code, like Wine, to run on your Mac."
           }
         },
         "da" : {
@@ -15439,7 +16213,7 @@
         "ro" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Configurare Dependențe"
+            "value" : "Configurare dependențe"
           }
         },
         "ru" : {
@@ -15484,8 +16258,8 @@
       "localizations" : {
         "cs" : {
           "stringUnit" : {
-            "state" : "translated",
-            "value" : "Odinstalování"
+            "state" : "new",
+            "value" : "Uninstall"
           }
         },
         "da" : {
@@ -15614,8 +16388,8 @@
       "localizations" : {
         "cs" : {
           "stringUnit" : {
-            "state" : "translated",
-            "value" : "Vítejte ve Whisky"
+            "state" : "new",
+            "value" : "Welcome to Whisky"
           }
         },
         "da" : {
@@ -15870,792 +16644,12 @@
         }
       }
     },
-    "setup.whiskywine.download" : {
-      "localizations" : {
-        "cs" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Stahování WhiskyWine"
-          }
-        },
-        "da" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Downloader Wine"
-          }
-        },
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "WhiskyWine herunterladen"
-          }
-        },
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Downloading WhiskyWine"
-          }
-        },
-        "es" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Descargando WhiskyWine"
-          }
-        },
-        "fi" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Ladataan WhiskyWine"
-          }
-        },
-        "fr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Téléchargement de WhiskyWine"
-          }
-        },
-        "it" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Scarico Wine"
-          }
-        },
-        "ja" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "WhiskyWine をダウンロード中"
-          }
-        },
-        "ko" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "WhiskyWine를 다운로드 중입니다."
-          }
-        },
-        "nl" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Wine downloaden"
-          }
-        },
-        "pl" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Pobieranie WhiskyWine"
-          }
-        },
-        "pt-BR" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Baixando Wine"
-          }
-        },
-        "pt-PT" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Transferindo Wine"
-          }
-        },
-        "ro" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Se descarcă WhiskyWine"
-          }
-        },
-        "ru" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Скачивание WhiskyWine"
-          }
-        },
-        "tr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Wine İndiriliyor"
-          }
-        },
-        "uk" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Завантаження WhiskyWine"
-          }
-        },
-        "vi" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Đang tải xuống Wine"
-          }
-        },
-        "zh-Hans" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "正在下载 WhiskyWine"
-          }
-        },
-        "zh-Hant" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "正在下載 WhiskyWine"
-          }
-        }
-      }
-    },
-    "setup.whiskywine.download.subtitle" : {
-      "localizations" : {
-        "cs" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : "Speeds will vary on your internet connection."
-          }
-        },
-        "da" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Hastigheden vil variere ud fra din internethastighed."
-          }
-        },
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Die Geschwindigkeit variiert je nach Internetverbindung."
-          }
-        },
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Speeds will vary on your internet connection."
-          }
-        },
-        "es" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "La velocidad de descarga varía según tu conexión a Internet."
-          }
-        },
-        "fi" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Nopeus vaihtelee internetyhteytesi mukaan."
-          }
-        },
-        "fr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "La vitesse de téléchargement peut varier selon votre connexion Internet."
-          }
-        },
-        "it" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "La velocità di download varia in base alla tua connessione internet."
-          }
-        },
-        "ja" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "速度はインターネット環境によって変化します。"
-          }
-        },
-        "ko" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "속도는 인터넷 연결 상태에 따라 달라질 수 있습니다."
-          }
-        },
-        "nl" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Snelheden zullen variëren gebaseerd op je internet connectie."
-          }
-        },
-        "pl" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Prędkości będą się różnić w zależności od połączenia internetowego."
-          }
-        },
-        "pt-BR" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "As velocidades irão variar de acordo com sua internet."
-          }
-        },
-        "pt-PT" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "As velocidades variam de acordo com a sua ligação de Internet."
-          }
-        },
-        "ro" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Viteza va depinde de conexiunea dvs. de internet."
-          }
-        },
-        "ru" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Скорость скачивания зависит от вашего подключения к Интернету."
-          }
-        },
-        "tr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Yükleme hızı internet bağlantınıza göre değişecektir."
-          }
-        },
-        "uk" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Швидкість залежить від швидкості Вашого підключення до Інтернету."
-          }
-        },
-        "vi" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Tốc độ tải xuống sẽ phụ thuộc vào kết nối Internet của bạn."
-          }
-        },
-        "zh-Hans" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "下载速度受您的网络质量影响。"
-          }
-        },
-        "zh-Hant" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "速度會因你的網路頻寬而有所不同。"
-          }
-        }
-      }
-    },
-    "setup.whiskywine.eta" : {
-      "localizations" : {
-        "cs" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "- zbývá %@"
-          }
-        },
-        "da" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "- %@ tilbage"
-          }
-        },
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "- %@ verbleibend"
-          }
-        },
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "- %@ remaining"
-          }
-        },
-        "es" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "- %@ restante"
-          }
-        },
-        "fi" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "- %@ jäljellä"
-          }
-        },
-        "fr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "- %@ restantes"
-          }
-        },
-        "it" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "- %@ rimanenti"
-          }
-        },
-        "ja" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "- 残り %@"
-          }
-        },
-        "ko" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "- %@ 남음"
-          }
-        },
-        "nl" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "- %@ resterend"
-          }
-        },
-        "pl" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "- pozostało %@"
-          }
-        },
-        "pt-BR" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "- %@ restantes"
-          }
-        },
-        "pt-PT" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "- %@ em falta"
-          }
-        },
-        "ro" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "- A rămas %@"
-          }
-        },
-        "ru" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "- осталось %@"
-          }
-        },
-        "tr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "-%@ kaldı"
-          }
-        },
-        "uk" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "- залишилось %@"
-          }
-        },
-        "vi" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "- %@ còn lại"
-          }
-        },
-        "zh-Hans" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "- 剩余 %@"
-          }
-        },
-        "zh-Hant" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "- 剩餘%@"
-          }
-        }
-      }
-    },
-    "setup.whiskywine.install" : {
-      "localizations" : {
-        "cs" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Instalace WhiskyWine"
-          }
-        },
-        "da" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Installere Wine"
-          }
-        },
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "WhiskyWine wird installiert"
-          }
-        },
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Installing WhiskyWine"
-          }
-        },
-        "es" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Instalando WhiskyWine"
-          }
-        },
-        "fi" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Asennetaan WhiskyWine"
-          }
-        },
-        "fr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Installation de WhiskyWine"
-          }
-        },
-        "it" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Installazione di WhiskyWine"
-          }
-        },
-        "ja" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "WhiskyWine をインストール中"
-          }
-        },
-        "ko" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "WhiskyWine 설치 중"
-          }
-        },
-        "nl" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Wine installeren"
-          }
-        },
-        "pl" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Instalowanie WhiskyWine"
-          }
-        },
-        "pt-BR" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Instalando Wine"
-          }
-        },
-        "pt-PT" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Instalando Wine"
-          }
-        },
-        "ro" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Se instalează WhiskyWine"
-          }
-        },
-        "ru" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Установка WhiskyWine"
-          }
-        },
-        "tr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Wine Yükleniyor"
-          }
-        },
-        "uk" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Встановлення WhiskyWine"
-          }
-        },
-        "vi" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Đang cài đặt Wine"
-          }
-        },
-        "zh-Hans" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "正在安装 WhiskyWine"
-          }
-        },
-        "zh-Hant" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "正在安裝 WhiskyWine"
-          }
-        }
-      }
-    },
-    "setup.whiskywine.install.subtitle" : {
-      "localizations" : {
-        "cs" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Už to bude. Zatím nezavírejte."
-          }
-        },
-        "da" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Er der næsten. Luk ikke programmet endnu."
-          }
-        },
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Fast fertig. Noch nicht abbrechen."
-          }
-        },
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Almost there. Don't tune out yet."
-          }
-        },
-        "es" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Un momento, ya casi está."
-          }
-        },
-        "fi" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Melkein valmista. Älä karkaa vielä."
-          }
-        },
-        "fr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Vous y êtes presque. Veuillez patienter s'il vous plaît."
-          }
-        },
-        "it" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Quasi fatto. Non disconnetterti adesso."
-          }
-        },
-        "ja" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "あと少しです。そのままお待ち下さい。"
-          }
-        },
-        "ko" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "거의 다 왔어요. 아직 끄지 마세요."
-          }
-        },
-        "nl" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Bijna daar. Nog niet weg gaan."
-          }
-        },
-        "pl" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Prawie gotowe. Jeszcze nie wyłączaj."
-          }
-        },
-        "pt-BR" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Quase lá. Por favor, aguarde."
-          }
-        },
-        "pt-PT" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Quase lá. Não desligue ainda."
-          }
-        },
-        "ro" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Aproape terminat. Nu ieși deocamdată."
-          }
-        },
-        "ru" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Почти закончили. Не отключайтесь."
-          }
-        },
-        "tr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Bitmek üzere. Lütfen Kapatmayınız."
-          }
-        },
-        "uk" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Майже готово."
-          }
-        },
-        "vi" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Cài đặt sắp hoàn tất."
-          }
-        },
-        "zh-Hans" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "就快完成了，请不要退出。"
-          }
-        },
-        "zh-Hant" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "快完成了。請不要退出。"
-          }
-        }
-      }
-    },
-    "setup.whiskywine.progress" : {
-      "localizations" : {
-        "cs" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "%@ z %@"
-          }
-        },
-        "da" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "%@ af %@"
-          }
-        },
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "%@ von %@"
-          }
-        },
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "%@ of %@"
-          }
-        },
-        "es" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "%@ de %@"
-          }
-        },
-        "fi" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "%@ / %@"
-          }
-        },
-        "fr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "%@ sur %@"
-          }
-        },
-        "it" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "%@ di %@"
-          }
-        },
-        "ja" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "%@ / %@"
-          }
-        },
-        "ko" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "%2$@ 중 %1$@"
-          }
-        },
-        "nl" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "%@ van de %@"
-          }
-        },
-        "pl" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "%@ z %@"
-          }
-        },
-        "pt-BR" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "%@ de %@"
-          }
-        },
-        "pt-PT" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "%@ de %@"
-          }
-        },
-        "ro" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "%@ din %@"
-          }
-        },
-        "ru" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "%@ из %@"
-          }
-        },
-        "tr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "%@'nin %@'si"
-          }
-        },
-        "uk" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "%@ з %@"
-          }
-        },
-        "vi" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "%@ của %@"
-          }
-        },
-        "zh-Hans" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "%2$@ 中的 %1$@"
-          }
-        },
-        "zh-Hant" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "%2$@ 中的 %1$@"
-          }
-        }
-      }
-    },
     "showAlertOnFirstLaunch.button.dontMove" : {
       "localizations" : {
         "cs" : {
           "stringUnit" : {
-            "state" : "translated",
-            "value" : "Nepřesouvat"
+            "state" : "new",
+            "value" : "Don't Move"
           }
         },
         "da" : {
@@ -16784,8 +16778,8 @@
       "localizations" : {
         "cs" : {
           "stringUnit" : {
-            "state" : "translated",
-            "value" : "Přesunout do složky Aplikace"
+            "state" : "new",
+            "value" : "Move to Applications"
           }
         },
         "da" : {
@@ -16914,8 +16908,8 @@
       "localizations" : {
         "cs" : {
           "stringUnit" : {
-            "state" : "translated",
-            "value" : "V některých případech nemusí být Whisky schopna správně fungovat z jiné složky"
+            "state" : "new",
+            "value" : "In some cases, Whisky wont't be able to function properly from a different folder"
           }
         },
         "da" : {
@@ -17174,8 +17168,8 @@
       "localizations" : {
         "cs" : {
           "stringUnit" : {
-            "state" : "translated",
-            "value" : "Konfigurace lahve"
+            "state" : "new",
+            "value" : "Bottle Configuration"
           }
         },
         "da" : {
@@ -17305,8 +17299,8 @@
       "localizations" : {
         "cs" : {
           "stringUnit" : {
-            "state" : "translated",
-            "value" : "Spuštěné procesy"
+            "state" : "new",
+            "value" : "Running Processes"
           }
         },
         "da" : {
@@ -17389,8 +17383,8 @@
         },
         "ro" : {
           "stringUnit" : {
-            "state" : "translated",
-            "value" : "Procese Active"
+            "state" : "new",
+            "value" : "Running Processes"
           }
         },
         "ru" : {
@@ -17435,8 +17429,8 @@
       "localizations" : {
         "cs" : {
           "stringUnit" : {
-            "state" : "translated",
-            "value" : "Nainstalované programy"
+            "state" : "new",
+            "value" : "Installed Programs"
           }
         },
         "da" : {
@@ -17565,8 +17559,8 @@
       "localizations" : {
         "cs" : {
           "stringUnit" : {
-            "state" : "translated",
-            "value" : "Máte spuštěnou %@, ale %@ není k dispozici. Chcete aktualizovat?"
+            "state" : "new",
+            "value" : "You are running WhiskyWine %@, but %@ is available. Would you like to update?"
           }
         },
         "da" : {
@@ -17695,8 +17689,8 @@
       "localizations" : {
         "cs" : {
           "stringUnit" : {
-            "state" : "translated",
-            "value" : "K dispozici je nová verze WhiskyWine"
+            "state" : "new",
+            "value" : "New Version of WhiskyWine Available"
           }
         },
         "da" : {
@@ -17810,7 +17804,7 @@
         "zh-Hans" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "有更新的 WhiskyWine 版本可用"
+            "value" : "可用的 WhiskyWine 新版本"
           }
         },
         "zh-Hant" : {
@@ -17825,8 +17819,8 @@
       "localizations" : {
         "cs" : {
           "stringUnit" : {
-            "state" : "translated",
-            "value" : "Aktualizovat"
+            "state" : "new",
+            "value" : "Update"
           }
         },
         "da" : {
@@ -17886,7 +17880,7 @@
         "nl" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Updaten"
+            "value" : "Update"
           }
         },
         "pl" : {
@@ -17955,8 +17949,8 @@
       "localizations" : {
         "cs" : {
           "stringUnit" : {
-            "state" : "translated",
-            "value" : "Vyčistit Shader Cache"
+            "state" : "new",
+            "value" : "Clear Shader Caches"
           }
         },
         "da" : {
@@ -18086,8 +18080,8 @@
       "localizations" : {
         "cs" : {
           "stringUnit" : {
-            "state" : "translated",
-            "value" : "Aplikace"
+            "state" : "new",
+            "value" : "Apps"
           }
         },
         "da" : {
@@ -18164,8 +18158,8 @@
         },
         "pt-PT" : {
           "stringUnit" : {
-            "state" : "translated",
-            "value" : "Aplicações"
+            "state" : "new",
+            "value" : "Apps"
           }
         },
         "ro" : {
@@ -18206,8 +18200,8 @@
         },
         "zh-Hant" : {
           "stringUnit" : {
-            "state" : "translated",
-            "value" : "應用程式"
+            "state" : "new",
+            "value" : "Apps"
           }
         }
       }
@@ -18217,8 +18211,8 @@
       "localizations" : {
         "cs" : {
           "stringUnit" : {
-            "state" : "translated",
-            "value" : "Benchmark"
+            "state" : "new",
+            "value" : "Benchmarks"
           }
         },
         "da" : {
@@ -18295,14 +18289,14 @@
         },
         "pt-PT" : {
           "stringUnit" : {
-            "state" : "translated",
-            "value" : "Valores de Referência"
+            "state" : "new",
+            "value" : "Benchmarks"
           }
         },
         "ro" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Benchmark-uri"
+            "value" : "Evaluări"
           }
         },
         "ru" : {
@@ -18337,8 +18331,8 @@
         },
         "zh-Hant" : {
           "stringUnit" : {
-            "state" : "translated",
-            "value" : "效能評測"
+            "state" : "new",
+            "value" : "Benchmarks"
           }
         }
       }
@@ -18348,7 +18342,7 @@
       "localizations" : {
         "cs" : {
           "stringUnit" : {
-            "state" : "translated",
+            "state" : "new",
             "value" : "DLLs"
           }
         },
@@ -18433,7 +18427,7 @@
         "ro" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "DLL-uri"
+            "value" : "DLLs"
           }
         },
         "ru" : {
@@ -18468,7 +18462,7 @@
         },
         "zh-Hant" : {
           "stringUnit" : {
-            "state" : "translated",
+            "state" : "new",
             "value" : "DLLs"
           }
         }
@@ -18479,8 +18473,8 @@
       "localizations" : {
         "cs" : {
           "stringUnit" : {
-            "state" : "translated",
-            "value" : "Písmo"
+            "state" : "new",
+            "value" : "Fonts"
           }
         },
         "da" : {
@@ -18564,7 +18558,7 @@
         "ro" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Fonturi"
+            "value" : "Font-uri"
           }
         },
         "ru" : {
@@ -18599,8 +18593,8 @@
         },
         "zh-Hant" : {
           "stringUnit" : {
-            "state" : "translated",
-            "value" : "字型"
+            "state" : "new",
+            "value" : "Fonts"
           }
         }
       }
@@ -18610,8 +18604,8 @@
       "localizations" : {
         "cs" : {
           "stringUnit" : {
-            "state" : "translated",
-            "value" : "Hry"
+            "state" : "new",
+            "value" : "Games"
           }
         },
         "da" : {
@@ -18741,8 +18735,8 @@
       "localizations" : {
         "cs" : {
           "stringUnit" : {
-            "state" : "translated",
-            "value" : "Nastavení"
+            "state" : "new",
+            "value" : "Settings"
           }
         },
         "da" : {
@@ -18861,8 +18855,8 @@
         },
         "zh-Hant" : {
           "stringUnit" : {
-            "state" : "translated",
-            "value" : "設定"
+            "state" : "new",
+            "value" : "Settings"
           }
         }
       }
@@ -18871,8 +18865,8 @@
       "localizations" : {
         "cs" : {
           "stringUnit" : {
-            "state" : "translated",
-            "value" : "Popis"
+            "state" : "new",
+            "value" : "Description"
           }
         },
         "da" : {
@@ -19001,8 +18995,8 @@
       "localizations" : {
         "cs" : {
           "stringUnit" : {
-            "state" : "translated",
-            "value" : "Příkaz"
+            "state" : "new",
+            "value" : "Command"
           }
         },
         "da" : {
@@ -19131,8 +19125,8 @@
       "localizations" : {
         "cs" : {
           "stringUnit" : {
-            "state" : "translated",
-            "value" : "Spustit Winetricks příkaz"
+            "state" : "new",
+            "value" : "Run Winetricks Command"
           }
         },
         "da" : {
