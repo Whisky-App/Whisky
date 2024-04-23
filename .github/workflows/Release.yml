@@ -17,3 +17,10 @@ jobs:
           embed-url: https://github.com/Whisky-App/Whisky/releases/download/${{ github.event.release.tag_name }}/Whisky.zip
           embed-description: ${{ github.event.release.body }}
           embed-color: 9442302
+
+      - name: Update Homebrew Cask
+        uses: macauley/action-homebrew-bump-cask@v1
+        with:
+          token: ${{secrets.BREW_TOKEN}}
+          org: Whisky-App
+          cask: whisky
