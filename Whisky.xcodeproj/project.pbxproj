@@ -515,6 +515,7 @@
 				"pt-BR",
 				ro,
 				cs,
+				ar,
 			);
 			mainGroup = 6E40494929CCA19C006E3F1B;
 			packageReferences = (
