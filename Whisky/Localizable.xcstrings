@@ -3,6 +3,12 @@
   "strings" : {
     "alert.info" : {
       "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Failed to open"
+          }
+        },
         "cs" : {
           "stringUnit" : {
             "state" : "translated",
@@ -133,6 +139,12 @@
     },
     "alert.message" : {
       "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Failed to open program!"
+          }
+        },
         "cs" : {
           "stringUnit" : {
             "state" : "translated",
@@ -263,6 +275,12 @@
     },
     "button.cDrive" : {
       "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Open C: Drive"
+          }
+        },
         "cs" : {
           "stringUnit" : {
             "state" : "translated",
@@ -393,6 +411,12 @@
     },
     "button.createBottle" : {
       "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Create Bottle"
+          }
+        },
         "cs" : {
           "stringUnit" : {
             "state" : "translated",
@@ -523,6 +547,12 @@
     },
     "button.createShortcut" : {
       "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Create Shortcut"
+          }
+        },
         "cs" : {
           "stringUnit" : {
             "state" : "translated",
@@ -653,6 +683,12 @@
     },
     "button.exportBottle" : {
       "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Export as Archive..."
+          }
+        },
         "cs" : {
           "stringUnit" : {
             "state" : "translated",
@@ -783,6 +819,12 @@
     },
     "button.moveBottle" : {
       "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Move..."
+          }
+        },
         "cs" : {
           "stringUnit" : {
             "state" : "translated",
@@ -913,6 +955,12 @@
     },
     "button.ok" : {
       "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "OK"
+          }
+        },
         "cs" : {
           "stringUnit" : {
             "state" : "translated",
@@ -1043,6 +1091,12 @@
     },
     "button.pin" : {
       "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Pin"
+          }
+        },
         "cs" : {
           "stringUnit" : {
             "state" : "translated",
@@ -1173,6 +1227,12 @@
     },
     "button.refresh" : {
       "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Refresh"
+          }
+        },
         "cs" : {
           "stringUnit" : {
             "state" : "translated",
@@ -1303,6 +1363,12 @@
     },
     "button.removeAlert" : {
       "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Remove..."
+          }
+        },
         "cs" : {
           "stringUnit" : {
             "state" : "translated",
@@ -1433,6 +1499,12 @@
     },
     "button.removeAlert.cancel" : {
       "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Cancel"
+          }
+        },
         "cs" : {
           "stringUnit" : {
             "state" : "translated",
@@ -1563,6 +1635,12 @@
     },
     "button.removeAlert.checkbox" : {
       "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Delete files from disk"
+          }
+        },
         "cs" : {
           "stringUnit" : {
             "state" : "translated",
@@ -1693,6 +1771,12 @@
     },
     "button.removeAlert.delete" : {
       "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Remove"
+          }
+        },
         "cs" : {
           "stringUnit" : {
             "state" : "translated",
@@ -1823,10 +1907,16 @@
     },
     "button.removeAlert.info" : {
       "localizations" : {
-        "cs" : {
+        "ar" : {
           "stringUnit" : {
             "state" : "new",
             "value" : "Are you sure you want to remove this bottle? This action is permanent."
+          }
+        },
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Opravdu chcete ostranit tento balíček? Tato akce je nenavrátitelná."
           }
         },
         "da" : {
@@ -1953,10 +2043,16 @@
     },
     "button.removeAlert.msg" : {
       "localizations" : {
-        "cs" : {
+        "ar" : {
           "stringUnit" : {
             "state" : "new",
             "value" : "Remove %@?"
+          }
+        },
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Odebrat %@?"
           }
         },
         "da" : {
@@ -2083,6 +2179,12 @@
     },
     "button.rename" : {
       "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Rename..."
+          }
+        },
         "cs" : {
           "stringUnit" : {
             "state" : "translated",
@@ -2213,6 +2315,12 @@
     },
     "button.run" : {
       "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Run..."
+          }
+        },
         "cs" : {
           "stringUnit" : {
             "state" : "translated",
@@ -2343,6 +2451,12 @@
     },
     "button.showInFinder" : {
       "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Show in Finder"
+          }
+        },
         "cs" : {
           "stringUnit" : {
             "state" : "translated",
@@ -2474,6 +2588,12 @@
     "button.terminal" : {
       "extractionState" : "manual",
       "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Terminal..."
+          }
+        },
         "cs" : {
           "stringUnit" : {
             "state" : "translated",
@@ -2604,6 +2724,12 @@
     },
     "button.unpin" : {
       "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Unpin"
+          }
+        },
         "cs" : {
           "stringUnit" : {
             "state" : "translated",
@@ -2734,9 +2860,15 @@
     },
     "button.winetricks" : {
       "localizations" : {
-        "cs" : {
+        "ar" : {
           "stringUnit" : {
             "state" : "new",
+            "value" : "Winetricks..."
+          }
+        },
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
             "value" : "Winetricks..."
           }
         },
@@ -2864,6 +2996,12 @@
     },
     "check.updates" : {
       "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Check for Updates..."
+          }
+        },
         "cs" : {
           "stringUnit" : {
             "state" : "translated",
@@ -2994,6 +3132,12 @@
     },
     "config.buildVersion" : {
       "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Build Version"
+          }
+        },
         "cs" : {
           "stringUnit" : {
             "state" : "translated",
@@ -3124,10 +3268,16 @@
     },
     "config.controlPanel" : {
       "localizations" : {
-        "cs" : {
+        "ar" : {
           "stringUnit" : {
             "state" : "new",
             "value" : "Open Control Panel"
+          }
+        },
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Otevřít Ovládací Panel"
           }
         },
         "da" : {
@@ -3254,6 +3404,12 @@
     },
     "config.dpi" : {
       "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "DPI Scaling"
+          }
+        },
         "cs" : {
           "stringUnit" : {
             "state" : "translated",
@@ -3384,6 +3540,12 @@
     },
     "config.dxvk" : {
       "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "DXVK"
+          }
+        },
         "cs" : {
           "stringUnit" : {
             "state" : "translated",
@@ -3514,6 +3676,12 @@
     },
     "config.dxvk.async" : {
       "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "DXVK Async"
+          }
+        },
         "cs" : {
           "stringUnit" : {
             "state" : "translated",
@@ -3644,6 +3812,12 @@
     },
     "config.dxvkHud" : {
       "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "DXVK HUD"
+          }
+        },
         "cs" : {
           "stringUnit" : {
             "state" : "translated",
@@ -3774,6 +3948,12 @@
     },
     "config.dxvkHud.fps" : {
       "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "FPS"
+          }
+        },
         "cs" : {
           "stringUnit" : {
             "state" : "translated",
@@ -3904,6 +4084,12 @@
     },
     "config.dxvkHud.full" : {
       "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Full"
+          }
+        },
         "cs" : {
           "stringUnit" : {
             "state" : "new",
@@ -4034,10 +4220,16 @@
     },
     "config.dxvkHud.off" : {
       "localizations" : {
-        "cs" : {
+        "ar" : {
           "stringUnit" : {
             "state" : "new",
             "value" : "Off"
+          }
+        },
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Vypnuto"
           }
         },
         "da" : {
@@ -4164,10 +4356,16 @@
     },
     "config.dxvkHud.partial" : {
       "localizations" : {
-        "cs" : {
+        "ar" : {
           "stringUnit" : {
             "state" : "new",
             "value" : "Partial"
+          }
+        },
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Částečný"
           }
         },
         "da" : {
@@ -4294,9 +4492,15 @@
     },
     "config.enhacnedSync.esync" : {
       "localizations" : {
-        "cs" : {
+        "ar" : {
           "stringUnit" : {
             "state" : "new",
+            "value" : "ESync"
+          }
+        },
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
             "value" : "ESync"
           }
         },
@@ -4424,9 +4628,15 @@
     },
     "config.enhacnedSync.msync" : {
       "localizations" : {
-        "cs" : {
+        "ar" : {
           "stringUnit" : {
             "state" : "new",
+            "value" : "MSync"
+          }
+        },
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
             "value" : "MSync"
           }
         },
@@ -4554,9 +4764,15 @@
     },
     "config.enhancedSync" : {
       "localizations" : {
-        "cs" : {
+        "ar" : {
           "stringUnit" : {
             "state" : "new",
+            "value" : "Enhanced Sync"
+          }
+        },
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
             "value" : "Enhanced Sync"
           }
         },
@@ -4684,10 +4900,16 @@
     },
     "config.enhancedSync.none" : {
       "localizations" : {
-        "cs" : {
+        "ar" : {
           "stringUnit" : {
             "state" : "new",
             "value" : "None"
+          }
+        },
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Žádný"
           }
         },
         "da" : {
@@ -4814,10 +5036,16 @@
     },
     "config.inspect" : {
       "localizations" : {
-        "cs" : {
+        "ar" : {
           "stringUnit" : {
             "state" : "new",
             "value" : "Configure..."
+          }
+        },
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Konfigurovat..."
           }
         },
         "da" : {
@@ -4944,9 +5172,15 @@
     },
     "config.metalHud" : {
       "localizations" : {
-        "cs" : {
+        "ar" : {
           "stringUnit" : {
             "state" : "new",
+            "value" : "Metal HUD"
+          }
+        },
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
             "value" : "Metal HUD"
           }
         },
@@ -5074,10 +5308,16 @@
     },
     "config.metalTrace" : {
       "localizations" : {
-        "cs" : {
+        "ar" : {
           "stringUnit" : {
             "state" : "new",
             "value" : "Metal Trace"
+          }
+        },
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Trasa Metal"
           }
         },
         "da" : {
@@ -5204,10 +5444,16 @@
     },
     "config.metalTrace.info" : {
       "localizations" : {
-        "cs" : {
+        "ar" : {
           "stringUnit" : {
             "state" : "new",
             "value" : "Allows you to capture GPU workload in Xcode"
+          }
+        },
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Umožňuje ti zachytit zatížení GPU v Xcode"
           }
         },
         "da" : {
@@ -5334,6 +5580,12 @@
     },
     "config.notAvailable" : {
       "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "N/A"
+          }
+        },
         "cs" : {
           "stringUnit" : {
             "state" : "translated",
@@ -5464,10 +5716,16 @@
     },
     "config.regedit" : {
       "localizations" : {
-        "cs" : {
+        "ar" : {
           "stringUnit" : {
             "state" : "new",
             "value" : "Open Registry Editor"
+          }
+        },
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Otevřít editor databáze registrů"
           }
         },
         "da" : {
@@ -5594,10 +5852,16 @@
     },
     "config.retinaMode" : {
       "localizations" : {
-        "cs" : {
+        "ar" : {
           "stringUnit" : {
             "state" : "new",
             "value" : "Retina Mode"
+          }
+        },
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Režim Retina"
           }
         },
         "da" : {
@@ -5724,6 +5988,12 @@
     },
     "config.title.dxvk" : {
       "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "DXVK"
+          }
+        },
         "cs" : {
           "stringUnit" : {
             "state" : "translated",
@@ -5856,7 +6126,7 @@
       "localizations" : {
         "ar" : {
           "stringUnit" : {
-            "state" : "translated",
+            "state" : "new",
             "value" : "Metal"
           }
         },
@@ -5990,6 +6260,12 @@
     },
     "config.title.wine" : {
       "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Wine"
+          }
+        },
         "cs" : {
           "stringUnit" : {
             "state" : "translated",
@@ -6120,6 +6396,12 @@
     },
     "config.winecfg" : {
       "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Open Wine Configuration"
+          }
+        },
         "cs" : {
           "stringUnit" : {
             "state" : "translated",
@@ -6250,6 +6532,12 @@
     },
     "config.winVersion" : {
       "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Windows Version"
+          }
+        },
         "cs" : {
           "stringUnit" : {
             "state" : "translated",
@@ -6380,6 +6668,12 @@
     },
     "configDpi.dpi" : {
       "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "DPI"
+          }
+        },
         "cs" : {
           "stringUnit" : {
             "state" : "translated",
@@ -6510,6 +6804,12 @@
     },
     "configDpi.preview" : {
       "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Text will look like this:"
+          }
+        },
         "cs" : {
           "stringUnit" : {
             "state" : "translated",
@@ -6640,6 +6940,12 @@
     },
     "configDpi.previewText" : {
       "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "The quick brown fox jumps over the lazy dog."
+          }
+        },
         "cs" : {
           "stringUnit" : {
             "state" : "translated",
@@ -6770,6 +7076,12 @@
     },
     "configDpi.title" : {
       "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "DPI Settings"
+          }
+        },
         "cs" : {
           "stringUnit" : {
             "state" : "translated",
@@ -6900,6 +7212,12 @@
     },
     "create.browse" : {
       "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Browse"
+          }
+        },
         "cs" : {
           "stringUnit" : {
             "state" : "translated",
@@ -7030,6 +7348,12 @@
     },
     "create.cancel" : {
       "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Cancel"
+          }
+        },
         "cs" : {
           "stringUnit" : {
             "state" : "translated",
@@ -7160,6 +7484,12 @@
     },
     "create.create" : {
       "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Create"
+          }
+        },
         "cs" : {
           "stringUnit" : {
             "state" : "translated",
@@ -7290,6 +7620,12 @@
     },
     "create.name" : {
       "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Bottle name:"
+          }
+        },
         "cs" : {
           "stringUnit" : {
             "state" : "translated",
@@ -7420,6 +7756,12 @@
     },
     "create.path" : {
       "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Bottle path:"
+          }
+        },
         "cs" : {
           "stringUnit" : {
             "state" : "translated",
@@ -7550,6 +7892,12 @@
     },
     "create.title" : {
       "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Create a new bottle"
+          }
+        },
         "cs" : {
           "stringUnit" : {
             "state" : "translated",
@@ -7680,6 +8028,12 @@
     },
     "create.win" : {
       "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Windows version:"
+          }
+        },
         "cs" : {
           "stringUnit" : {
             "state" : "translated",
@@ -7810,6 +8164,12 @@
     },
     "environment.add" : {
       "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Add"
+          }
+        },
         "cs" : {
           "stringUnit" : {
             "state" : "translated",
@@ -7940,6 +8300,12 @@
     },
     "environment.remove" : {
       "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Remove"
+          }
+        },
         "cs" : {
           "stringUnit" : {
             "state" : "translated",
@@ -8070,6 +8436,12 @@
     },
     "help.discord" : {
       "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Discord"
+          }
+        },
         "cs" : {
           "stringUnit" : {
             "state" : "translated",
@@ -8200,6 +8572,12 @@
     },
     "help.github" : {
       "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "GitHub"
+          }
+        },
         "cs" : {
           "stringUnit" : {
             "state" : "translated",
@@ -8330,6 +8708,12 @@
     },
     "help.website" : {
       "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Website"
+          }
+        },
         "cs" : {
           "stringUnit" : {
             "state" : "translated",
@@ -8460,10 +8844,16 @@
     },
     "install.cli" : {
       "localizations" : {
-        "cs" : {
+        "ar" : {
           "stringUnit" : {
             "state" : "new",
             "value" : "Install Whisky CLI..."
+          }
+        },
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Nainstalovat Whisky CLI..."
           }
         },
         "da" : {
@@ -8590,10 +8980,16 @@
     },
     "kill.bottles" : {
       "localizations" : {
-        "cs" : {
+        "ar" : {
           "stringUnit" : {
             "state" : "new",
             "value" : "Kill All Bottles"
+          }
+        },
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ukončit všechny lahve"
           }
         },
         "da" : {
@@ -8721,6 +9117,12 @@
     "locale.auto" : {
       "extractionState" : "manual",
       "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Automatic"
+          }
+        },
         "cs" : {
           "stringUnit" : {
             "state" : "new",
@@ -8851,6 +9253,12 @@
     },
     "locale.title" : {
       "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Locale"
+          }
+        },
         "cs" : {
           "stringUnit" : {
             "state" : "new",
@@ -8981,10 +9389,16 @@
     },
     "main.createFirst" : {
       "localizations" : {
-        "cs" : {
+        "ar" : {
           "stringUnit" : {
             "state" : "new",
             "value" : "Create your first bottle to get started"
+          }
+        },
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Pro začátek musíte vytvořit svou první láhev"
           }
         },
         "da" : {
@@ -9111,10 +9525,16 @@
     },
     "open.bottle" : {
       "localizations" : {
-        "cs" : {
+        "ar" : {
           "stringUnit" : {
             "state" : "new",
             "value" : "Import Bottle"
+          }
+        },
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Importovat láhev"
           }
         },
         "da" : {
@@ -9241,10 +9661,16 @@
     },
     "open.logs" : {
       "localizations" : {
-        "cs" : {
+        "ar" : {
           "stringUnit" : {
             "state" : "new",
             "value" : "Open Logs Folder"
+          }
+        },
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Otevřít složku s logy"
           }
         },
         "da" : {
@@ -9371,6 +9797,12 @@
     },
     "open.setup" : {
       "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Setup..."
+          }
+        },
         "cs" : {
           "stringUnit" : {
             "state" : "translated",
@@ -9501,6 +9933,12 @@
     },
     "pin.create" : {
       "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Pin"
+          }
+        },
         "cs" : {
           "stringUnit" : {
             "state" : "translated",
@@ -9632,10 +10070,16 @@
     "pin.error.duplicate.%@" : {
       "extractionState" : "manual",
       "localizations" : {
-        "cs" : {
+        "ar" : {
           "stringUnit" : {
             "state" : "new",
             "value" : "\"%@\" is already pinned!"
+          }
+        },
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "\"%@\" je již připnut!"
           }
         },
         "da" : {
@@ -9762,10 +10206,16 @@
     },
     "pin.error.title" : {
       "localizations" : {
-        "cs" : {
+        "ar" : {
           "stringUnit" : {
             "state" : "new",
             "value" : "Error Pinning Program"
+          }
+        },
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Chyba v připínání programu"
           }
         },
         "da" : {
@@ -9892,10 +10342,16 @@
     },
     "pin.help" : {
       "localizations" : {
-        "cs" : {
+        "ar" : {
           "stringUnit" : {
             "state" : "new",
             "value" : "Pin Program"
+          }
+        },
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Připnout program"
           }
         },
         "da" : {
@@ -10022,10 +10478,16 @@
     },
     "pin.name" : {
       "localizations" : {
-        "cs" : {
+        "ar" : {
           "stringUnit" : {
             "state" : "new",
             "value" : "Pin name:"
+          }
+        },
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Název připínáčku:"
           }
         },
         "da" : {
@@ -10152,10 +10614,16 @@
     },
     "pin.path" : {
       "localizations" : {
-        "cs" : {
+        "ar" : {
           "stringUnit" : {
             "state" : "new",
             "value" : "Program path:"
+          }
+        },
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Cesta k programu:"
           }
         },
         "da" : {
@@ -10282,10 +10750,16 @@
     },
     "pin.title" : {
       "localizations" : {
-        "cs" : {
+        "ar" : {
           "stringUnit" : {
             "state" : "new",
             "value" : "Pin Program"
+          }
+        },
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Připnout program"
           }
         },
         "da" : {
@@ -10412,10 +10886,16 @@
     },
     "process.table.executable" : {
       "localizations" : {
-        "cs" : {
+        "ar" : {
           "stringUnit" : {
             "state" : "new",
             "value" : "Executable"
+          }
+        },
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Spustitelný soubor"
           }
         },
         "da" : {
@@ -10542,6 +11022,12 @@
     },
     "process.table.kill" : {
       "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Stop Process"
+          }
+        },
         "cs" : {
           "stringUnit" : {
             "state" : "translated",
@@ -10672,10 +11158,16 @@
     },
     "process.table.loading" : {
       "localizations" : {
-        "cs" : {
+        "ar" : {
           "stringUnit" : {
             "state" : "new",
             "value" : "Fetching Processes"
+          }
+        },
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Získávám seznam procesů"
           }
         },
         "da" : {
@@ -10802,6 +11294,12 @@
     },
     "process.table.pid" : {
       "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Process ID"
+          }
+        },
         "cs" : {
           "stringUnit" : {
             "state" : "translated",
@@ -10932,6 +11430,12 @@
     },
     "process.table.refresh" : {
       "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Refresh"
+          }
+        },
         "cs" : {
           "stringUnit" : {
             "state" : "translated",
@@ -11062,10 +11566,16 @@
     },
     "program.add.blocklist" : {
       "localizations" : {
-        "cs" : {
+        "ar" : {
           "stringUnit" : {
             "state" : "new",
             "value" : "Add to Blocklist"
+          }
+        },
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Přidat na listinu blokovaných"
           }
         },
         "da" : {
@@ -11192,10 +11702,16 @@
     },
     "program.add.selected.blocklist" : {
       "localizations" : {
-        "cs" : {
+        "ar" : {
           "stringUnit" : {
             "state" : "new",
             "value" : "Add Selected to Blocklist"
+          }
+        },
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Přidat označené na listinu blokovaných"
           }
         },
         "da" : {
@@ -11322,6 +11838,12 @@
     },
     "program.args" : {
       "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Arguments"
+          }
+        },
         "cs" : {
           "stringUnit" : {
             "state" : "translated",
@@ -11452,10 +11974,16 @@
     },
     "program.blocklist" : {
       "localizations" : {
-        "cs" : {
+        "ar" : {
           "stringUnit" : {
             "state" : "new",
             "value" : "Blocklist"
+          }
+        },
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Listina blokovaných"
           }
         },
         "da" : {
@@ -11582,6 +12110,12 @@
     },
     "program.config" : {
       "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Config"
+          }
+        },
         "cs" : {
           "stringUnit" : {
             "state" : "translated",
@@ -11712,10 +12246,16 @@
     },
     "program.env" : {
       "localizations" : {
-        "cs" : {
+        "ar" : {
           "stringUnit" : {
             "state" : "new",
             "value" : "Environment Variables"
+          }
+        },
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Proměnné prostředí"
           }
         },
         "da" : {
@@ -11842,6 +12382,12 @@
     },
     "program.remove.blocklist" : {
       "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Remove from Blocklist"
+          }
+        },
         "cs" : {
           "stringUnit" : {
             "state" : "translated",
@@ -11972,6 +12518,12 @@
     },
     "program.remove.selected.blocklist" : {
       "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Remove Selected from Blocklist"
+          }
+        },
         "cs" : {
           "stringUnit" : {
             "state" : "translated",
@@ -12102,6 +12654,12 @@
     },
     "program.settings" : {
       "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Settings"
+          }
+        },
         "cs" : {
           "stringUnit" : {
             "state" : "translated",
@@ -12232,6 +12790,12 @@
     },
     "program.title" : {
       "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "All Programs"
+          }
+        },
         "cs" : {
           "stringUnit" : {
             "state" : "translated",
@@ -12362,6 +12926,12 @@
     },
     "rename.bottle.title" : {
       "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Rename bottle"
+          }
+        },
         "cs" : {
           "stringUnit" : {
             "state" : "translated",
@@ -12492,6 +13062,12 @@
     },
     "rename.name" : {
       "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "New name:"
+          }
+        },
         "cs" : {
           "stringUnit" : {
             "state" : "translated",
@@ -12622,10 +13198,16 @@
     },
     "rename.pin.title" : {
       "localizations" : {
-        "cs" : {
+        "ar" : {
           "stringUnit" : {
             "state" : "new",
             "value" : "Rename pin"
+          }
+        },
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Přejmenovat připínáček"
           }
         },
         "da" : {
@@ -12752,6 +13334,12 @@
     },
     "rename.rename" : {
       "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Rename"
+          }
+        },
         "cs" : {
           "stringUnit" : {
             "state" : "translated",
@@ -12882,10 +13470,16 @@
     },
     "run.bottle" : {
       "localizations" : {
-        "cs" : {
+        "ar" : {
           "stringUnit" : {
             "state" : "new",
             "value" : "Bottle:"
+          }
+        },
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Láhev:"
           }
         },
         "da" : {
@@ -13012,10 +13606,16 @@
     },
     "run.title" : {
       "localizations" : {
-        "cs" : {
+        "ar" : {
           "stringUnit" : {
             "state" : "new",
             "value" : "Run \"%@\""
+          }
+        },
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Spustit \"%@\""
           }
         },
         "da" : {
@@ -13142,10 +13742,16 @@
     },
     "settings.general" : {
       "localizations" : {
-        "cs" : {
+        "ar" : {
           "stringUnit" : {
             "state" : "new",
             "value" : "General"
+          }
+        },
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Obecné"
           }
         },
         "da" : {
@@ -13272,10 +13878,16 @@
     },
     "settings.path" : {
       "localizations" : {
-        "cs" : {
+        "ar" : {
           "stringUnit" : {
             "state" : "new",
             "value" : "Default bottle path:"
+          }
+        },
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Výchozí cesta láhve:"
           }
         },
         "da" : {
@@ -13402,10 +14014,16 @@
     },
     "settings.toggle.kill.on.terminate" : {
       "localizations" : {
-        "cs" : {
+        "ar" : {
           "stringUnit" : {
             "state" : "new",
             "value" : "Terminate Wine processes when Whisky closes"
+          }
+        },
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ukončit Wine procesy při uzavření Whisky"
           }
         },
         "da" : {
@@ -13532,6 +14150,12 @@
     },
     "settings.toggle.whisky.updates" : {
       "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Automatically check for Whisky updates"
+          }
+        },
         "cs" : {
           "stringUnit" : {
             "state" : "translated",
@@ -13662,10 +14286,16 @@
     },
     "settings.toggle.whiskywine.updates" : {
       "localizations" : {
-        "cs" : {
+        "ar" : {
           "stringUnit" : {
             "state" : "new",
             "value" : "Automatically check for WhiskyWine updates"
+          }
+        },
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Automaticky vyhledávat WhiskyWine aktualizace"
           }
         },
         "da" : {
@@ -13792,6 +14422,12 @@
     },
     "settings.updates" : {
       "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Updates"
+          }
+        },
         "cs" : {
           "stringUnit" : {
             "state" : "translated",
@@ -13922,6 +14558,12 @@
     },
     "setup.done" : {
       "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Done"
+          }
+        },
         "cs" : {
           "stringUnit" : {
             "state" : "translated",
@@ -14052,10 +14694,16 @@
     },
     "setup.install.checking" : {
       "localizations" : {
-        "cs" : {
+        "ar" : {
           "stringUnit" : {
             "state" : "new",
             "value" : "Checking %@ installation..."
+          }
+        },
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Kontrola instalace %@..."
           }
         },
         "da" : {
@@ -14182,6 +14830,12 @@
     },
     "setup.install.installed" : {
       "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "%@ installed"
+          }
+        },
         "cs" : {
           "stringUnit" : {
             "state" : "translated",
@@ -14312,6 +14966,12 @@
     },
     "setup.install.notInstalled" : {
       "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "%@ not installed"
+          }
+        },
         "cs" : {
           "stringUnit" : {
             "state" : "translated",
@@ -14442,6 +15102,12 @@
     },
     "setup.next" : {
       "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Next"
+          }
+        },
         "cs" : {
           "stringUnit" : {
             "state" : "translated",
@@ -14572,6 +15238,12 @@
     },
     "setup.quit" : {
       "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Quit"
+          }
+        },
         "cs" : {
           "stringUnit" : {
             "state" : "translated",
@@ -14702,6 +15374,12 @@
     },
     "setup.retry" : {
       "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Retry"
+          }
+        },
         "cs" : {
           "stringUnit" : {
             "state" : "translated",
@@ -14832,6 +15510,12 @@
     },
     "setup.rosetta" : {
       "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Installing Rosetta"
+          }
+        },
         "cs" : {
           "stringUnit" : {
             "state" : "translated",
@@ -14962,6 +15646,12 @@
     },
     "setup.rosetta.fail" : {
       "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Rosetta 2 installation failed. Please install it manually."
+          }
+        },
         "cs" : {
           "stringUnit" : {
             "state" : "translated",
@@ -15092,6 +15782,12 @@
     },
     "setup.rosetta.subtitle" : {
       "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Rosetta allows x86 code, like Wine, to run on your Mac."
+          }
+        },
         "cs" : {
           "stringUnit" : {
             "state" : "translated",
@@ -15222,10 +15918,16 @@
     },
     "setup.subtitle" : {
       "localizations" : {
-        "cs" : {
+        "ar" : {
           "stringUnit" : {
             "state" : "new",
             "value" : "Manage Whisky's required dependencies."
+          }
+        },
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Spravovat požadované závislosti Whisky."
           }
         },
         "da" : {
@@ -15352,10 +16054,16 @@
     },
     "setup.title" : {
       "localizations" : {
-        "cs" : {
+        "ar" : {
           "stringUnit" : {
             "state" : "new",
             "value" : "Dependencies Setup"
+          }
+        },
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Nastavení závislostí"
           }
         },
         "da" : {
@@ -15482,6 +16190,12 @@
     },
     "setup.uninstall" : {
       "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Uninstall"
+          }
+        },
         "cs" : {
           "stringUnit" : {
             "state" : "translated",
@@ -15612,6 +16326,12 @@
     },
     "setup.welcome" : {
       "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Welcome to Whisky"
+          }
+        },
         "cs" : {
           "stringUnit" : {
             "state" : "translated",
@@ -15742,10 +16462,16 @@
     },
     "setup.welcome.subtitle" : {
       "localizations" : {
-        "cs" : {
+        "ar" : {
           "stringUnit" : {
             "state" : "new",
             "value" : "Let's get you set up. This won't take a minute."
+          }
+        },
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Pojďme to nastavit. Nedube to trvat ani minutu."
           }
         },
         "da" : {
@@ -15872,6 +16598,12 @@
     },
     "setup.whiskywine.download" : {
       "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Downloading WhiskyWine"
+          }
+        },
         "cs" : {
           "stringUnit" : {
             "state" : "translated",
@@ -16002,10 +16734,16 @@
     },
     "setup.whiskywine.download.subtitle" : {
       "localizations" : {
-        "cs" : {
+        "ar" : {
           "stringUnit" : {
             "state" : "new",
             "value" : "Speeds will vary on your internet connection."
+          }
+        },
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Rychlost stahování se bude lišit v závislosti na vašem internetovém připojení."
           }
         },
         "da" : {
@@ -16132,6 +16870,12 @@
     },
     "setup.whiskywine.eta" : {
       "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "- %@ remaining"
+          }
+        },
         "cs" : {
           "stringUnit" : {
             "state" : "translated",
@@ -16262,6 +17006,12 @@
     },
     "setup.whiskywine.install" : {
       "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Installing WhiskyWine"
+          }
+        },
         "cs" : {
           "stringUnit" : {
             "state" : "translated",
@@ -16392,6 +17142,12 @@
     },
     "setup.whiskywine.install.subtitle" : {
       "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Almost there. Don't tune out yet."
+          }
+        },
         "cs" : {
           "stringUnit" : {
             "state" : "translated",
@@ -16522,6 +17278,12 @@
     },
     "setup.whiskywine.progress" : {
       "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "%@ of %@"
+          }
+        },
         "cs" : {
           "stringUnit" : {
             "state" : "translated",
@@ -16652,6 +17414,12 @@
     },
     "showAlertOnFirstLaunch.button.dontMove" : {
       "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Don't Move"
+          }
+        },
         "cs" : {
           "stringUnit" : {
             "state" : "translated",
@@ -16782,6 +17550,12 @@
     },
     "showAlertOnFirstLaunch.button.moveToApplications" : {
       "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Move to Applications"
+          }
+        },
         "cs" : {
           "stringUnit" : {
             "state" : "translated",
@@ -16912,6 +17686,12 @@
     },
     "showAlertOnFirstLaunch.informativeText" : {
       "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "In some cases, Whisky wont't be able to function properly from a different folder"
+          }
+        },
         "cs" : {
           "stringUnit" : {
             "state" : "translated",
@@ -17042,10 +17822,16 @@
     },
     "showAlertOnFirstLaunch.messageText" : {
       "localizations" : {
-        "cs" : {
+        "ar" : {
           "stringUnit" : {
             "state" : "new",
             "value" : "Would you like to move Whisky to your Applications folder?"
+          }
+        },
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Chtěli byste přesunout Whisky do složky s aplikacemi?"
           }
         },
         "da" : {
@@ -17172,6 +17958,12 @@
     },
     "tab.config" : {
       "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Bottle Configuration"
+          }
+        },
         "cs" : {
           "stringUnit" : {
             "state" : "translated",
@@ -17303,6 +18095,12 @@
     "tab.processes" : {
       "extractionState" : "stale",
       "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Running Processes"
+          }
+        },
         "cs" : {
           "stringUnit" : {
             "state" : "translated",
@@ -17433,6 +18231,12 @@
     },
     "tab.programs" : {
       "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Installed Programs"
+          }
+        },
         "cs" : {
           "stringUnit" : {
             "state" : "translated",
@@ -17563,6 +18367,12 @@
     },
     "update.whiskywine.description" : {
       "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "You are running WhiskyWine %@, but %@ is available. Would you like to update?"
+          }
+        },
         "cs" : {
           "stringUnit" : {
             "state" : "translated",
@@ -17693,6 +18503,12 @@
     },
     "update.whiskywine.title" : {
       "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "New Version of WhiskyWine Available"
+          }
+        },
         "cs" : {
           "stringUnit" : {
             "state" : "translated",
@@ -17823,6 +18639,12 @@
     },
     "update.whiskywine.update" : {
       "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Update"
+          }
+        },
         "cs" : {
           "stringUnit" : {
             "state" : "translated",
@@ -17953,6 +18775,12 @@
     },
     "wine.clearShaderCaches" : {
       "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Clear Shader Caches"
+          }
+        },
         "cs" : {
           "stringUnit" : {
             "state" : "translated",
@@ -18084,6 +18912,12 @@
     "winetricks.category.apps" : {
       "extractionState" : "manual",
       "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Apps"
+          }
+        },
         "cs" : {
           "stringUnit" : {
             "state" : "translated",
@@ -18215,6 +19049,12 @@
     "winetricks.category.benchmarks" : {
       "extractionState" : "manual",
       "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Benchmarks"
+          }
+        },
         "cs" : {
           "stringUnit" : {
             "state" : "translated",
@@ -18346,6 +19186,12 @@
     "winetricks.category.dlls" : {
       "extractionState" : "manual",
       "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "DLLs"
+          }
+        },
         "cs" : {
           "stringUnit" : {
             "state" : "translated",
@@ -18477,6 +19323,12 @@
     "winetricks.category.fonts" : {
       "extractionState" : "manual",
       "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Fonts"
+          }
+        },
         "cs" : {
           "stringUnit" : {
             "state" : "translated",
@@ -18608,6 +19460,12 @@
     "winetricks.category.games" : {
       "extractionState" : "manual",
       "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Games"
+          }
+        },
         "cs" : {
           "stringUnit" : {
             "state" : "translated",
@@ -18739,6 +19597,12 @@
     "winetricks.category.settings" : {
       "extractionState" : "manual",
       "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Settings"
+          }
+        },
         "cs" : {
           "stringUnit" : {
             "state" : "translated",
@@ -18869,6 +19733,12 @@
     },
     "winetricks.table.description" : {
       "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Description"
+          }
+        },
         "cs" : {
           "stringUnit" : {
             "state" : "translated",
@@ -18908,7 +19778,7 @@
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Description "
+            "value" : "Description"
           }
         },
         "it" : {
@@ -18999,6 +19869,12 @@
     },
     "winetricks.table.name" : {
       "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Command"
+          }
+        },
         "cs" : {
           "stringUnit" : {
             "state" : "translated",
@@ -19129,6 +20005,12 @@
     },
     "winetricks.title" : {
       "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Run Winetricks Command"
+          }
+        },
         "cs" : {
           "stringUnit" : {
             "state" : "translated",
