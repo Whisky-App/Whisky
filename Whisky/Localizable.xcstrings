@@ -6398,8 +6398,8 @@
       "localizations" : {
         "ar" : {
           "stringUnit" : {
-            "state" : "translated",
-            "value" : "فتح تكوين Wine"
+            "state" : "new",
+            "value" : "Open Wine Configuration"
           }
         },
         "cs" : {
@@ -6534,8 +6534,8 @@
       "localizations" : {
         "ar" : {
           "stringUnit" : {
-            "state" : "translated",
-            "value" : "إصدار Windows"
+            "state" : "new",
+            "value" : "Windows Version"
           }
         },
         "cs" : {
@@ -6670,8 +6670,8 @@
       "localizations" : {
         "ar" : {
           "stringUnit" : {
-            "state" : "translated",
-            "value" : "العمق"
+            "state" : "new",
+            "value" : "DPI"
           }
         },
         "cs" : {
@@ -7214,8 +7214,8 @@
       "localizations" : {
         "ar" : {
           "stringUnit" : {
-            "state" : "translated",
-            "value" : "تصفح"
+            "state" : "new",
+            "value" : "Browse"
           }
         },
         "cs" : {
@@ -7350,8 +7350,8 @@
       "localizations" : {
         "ar" : {
           "stringUnit" : {
-            "state" : "translated",
-            "value" : "إلغاء"
+            "state" : "new",
+            "value" : "Cancel"
           }
         },
         "cs" : {
@@ -7486,8 +7486,8 @@
       "localizations" : {
         "ar" : {
           "stringUnit" : {
-            "state" : "translated",
-            "value" : "إنشاء"
+            "state" : "new",
+            "value" : "Create"
           }
         },
         "cs" : {
@@ -7622,8 +7622,8 @@
       "localizations" : {
         "ar" : {
           "stringUnit" : {
-            "state" : "translated",
-            "value" : "اسم القارورة:"
+            "state" : "new",
+            "value" : "Bottle name:"
           }
         },
         "cs" : {
@@ -7758,8 +7758,8 @@
       "localizations" : {
         "ar" : {
           "stringUnit" : {
-            "state" : "translated",
-            "value" : "مسار القارورة:"
+            "state" : "new",
+            "value" : "Bottle path:"
           }
         },
         "cs" : {
@@ -7894,8 +7894,8 @@
       "localizations" : {
         "ar" : {
           "stringUnit" : {
-            "state" : "translated",
-            "value" : "إنشاء قارورة جديدة"
+            "state" : "new",
+            "value" : "Create a new bottle"
           }
         },
         "cs" : {
@@ -8030,8 +8030,8 @@
       "localizations" : {
         "ar" : {
           "stringUnit" : {
-            "state" : "translated",
-            "value" : "إصدار Windows:"
+            "state" : "new",
+            "value" : "Windows version:"
           }
         },
         "cs" : {
@@ -8166,8 +8166,8 @@
       "localizations" : {
         "ar" : {
           "stringUnit" : {
-            "state" : "translated",
-            "value" : "إضافة"
+            "state" : "new",
+            "value" : "Add"
           }
         },
         "cs" : {
@@ -8302,8 +8302,8 @@
       "localizations" : {
         "ar" : {
           "stringUnit" : {
-            "state" : "translated",
-            "value" : "إزالة"
+            "state" : "new",
+            "value" : "Remove"
           }
         },
         "cs" : {
@@ -8438,7 +8438,7 @@
       "localizations" : {
         "ar" : {
           "stringUnit" : {
-            "state" : "translated",
+            "state" : "new",
             "value" : "Discord"
           }
         },
@@ -8574,8 +8574,8 @@
       "localizations" : {
         "ar" : {
           "stringUnit" : {
-            "state" : "translated",
-            "value" : "Github"
+            "state" : "new",
+            "value" : "GitHub"
           }
         },
         "cs" : {
@@ -8710,8 +8710,8 @@
       "localizations" : {
         "ar" : {
           "stringUnit" : {
-            "state" : "translated",
-            "value" : "الموقع الالكتروني"
+            "state" : "new",
+            "value" : "Website"
           }
         },
         "cs" : {
@@ -8846,8 +8846,8 @@
       "localizations" : {
         "ar" : {
           "stringUnit" : {
-            "state" : "translated",
-            "value" : "تثبيت Whisky CLI..."
+            "state" : "new",
+            "value" : "Install Whisky CLI..."
           }
         },
         "cs" : {
@@ -8982,8 +8982,8 @@
       "localizations" : {
         "ar" : {
           "stringUnit" : {
-            "state" : "translated",
-            "value" : "اقتل جميع القوارير"
+            "state" : "new",
+            "value" : "Kill All Bottles"
           }
         },
         "cs" : {
@@ -9119,8 +9119,8 @@
       "localizations" : {
         "ar" : {
           "stringUnit" : {
-            "state" : "translated",
-            "value" : "تلقائي"
+            "state" : "new",
+            "value" : "Automatic"
           }
         },
         "cs" : {
@@ -9255,8 +9255,8 @@
       "localizations" : {
         "ar" : {
           "stringUnit" : {
-            "state" : "translated",
-            "value" : "محلي"
+            "state" : "new",
+            "value" : "Locale"
           }
         },
         "cs" : {
@@ -9391,8 +9391,8 @@
       "localizations" : {
         "ar" : {
           "stringUnit" : {
-            "state" : "translated",
-            "value" : "قم بإنشاء قارورتك الأولى للبدء"
+            "state" : "new",
+            "value" : "Create your first bottle to get started"
           }
         },
         "cs" : {
@@ -9527,8 +9527,8 @@
       "localizations" : {
         "ar" : {
           "stringUnit" : {
-            "state" : "translated",
-            "value" : "استيراد قارورة"
+            "state" : "new",
+            "value" : "Import Bottle"
           }
         },
         "cs" : {
@@ -9663,8 +9663,8 @@
       "localizations" : {
         "ar" : {
           "stringUnit" : {
-            "state" : "translated",
-            "value" : "فتح مجلد السجلات"
+            "state" : "new",
+            "value" : "Open Logs Folder"
           }
         },
         "cs" : {
@@ -9799,8 +9799,8 @@
       "localizations" : {
         "ar" : {
           "stringUnit" : {
-            "state" : "translated",
-            "value" : "إعداد..."
+            "state" : "new",
+            "value" : "Setup..."
           }
         },
         "cs" : {
@@ -9935,8 +9935,8 @@
       "localizations" : {
         "ar" : {
           "stringUnit" : {
-            "state" : "translated",
-            "value" : "تثبيت"
+            "state" : "new",
+            "value" : "Pin"
           }
         },
         "cs" : {
@@ -10072,8 +10072,8 @@
       "localizations" : {
         "ar" : {
           "stringUnit" : {
-            "state" : "translated",
-            "value" : "\"%@\" مثبت بالفعل!"
+            "state" : "new",
+            "value" : "\"%@\" is already pinned!"
           }
         },
         "cs" : {
@@ -10208,8 +10208,8 @@
       "localizations" : {
         "ar" : {
           "stringUnit" : {
-            "state" : "translated",
-            "value" : "خطأ في تدبيس البرنامج"
+            "state" : "new",
+            "value" : "Error Pinning Program"
           }
         },
         "cs" : {
@@ -10344,8 +10344,8 @@
       "localizations" : {
         "ar" : {
           "stringUnit" : {
-            "state" : "translated",
-            "value" : "تدبيس البرنامج"
+            "state" : "new",
+            "value" : "Pin Program"
           }
         },
         "cs" : {
@@ -10480,8 +10480,8 @@
       "localizations" : {
         "ar" : {
           "stringUnit" : {
-            "state" : "translated",
-            "value" : "اسم الدبوس:"
+            "state" : "new",
+            "value" : "Pin name:"
           }
         },
         "cs" : {
@@ -10616,8 +10616,8 @@
       "localizations" : {
         "ar" : {
           "stringUnit" : {
-            "state" : "translated",
-            "value" : "مسار البرنامج:"
+            "state" : "new",
+            "value" : "Program path:"
           }
         },
         "cs" : {
@@ -10752,8 +10752,8 @@
       "localizations" : {
         "ar" : {
           "stringUnit" : {
-            "state" : "translated",
-            "value" : "تدبيس البرنامج"
+            "state" : "new",
+            "value" : "Pin Program"
           }
         },
         "cs" : {
@@ -10888,8 +10888,8 @@
       "localizations" : {
         "ar" : {
           "stringUnit" : {
-            "state" : "translated",
-            "value" : "قابل للتنفيذ"
+            "state" : "new",
+            "value" : "Executable"
           }
         },
         "cs" : {
@@ -11024,8 +11024,8 @@
       "localizations" : {
         "ar" : {
           "stringUnit" : {
-            "state" : "translated",
-            "value" : "إيقاف العملية"
+            "state" : "new",
+            "value" : "Stop Process"
           }
         },
         "cs" : {
@@ -11160,8 +11160,8 @@
       "localizations" : {
         "ar" : {
           "stringUnit" : {
-            "state" : "translated",
-            "value" : "جلب العمليات"
+            "state" : "new",
+            "value" : "Fetching Processes"
           }
         },
         "cs" : {
@@ -11296,8 +11296,8 @@
       "localizations" : {
         "ar" : {
           "stringUnit" : {
-            "state" : "translated",
-            "value" : "معرّف العملية"
+            "state" : "new",
+            "value" : "Process ID"
           }
         },
         "cs" : {
@@ -11432,8 +11432,8 @@
       "localizations" : {
         "ar" : {
           "stringUnit" : {
-            "state" : "translated",
-            "value" : "تحديث"
+            "state" : "new",
+            "value" : "Refresh"
           }
         },
         "cs" : {
@@ -11568,8 +11568,8 @@
       "localizations" : {
         "ar" : {
           "stringUnit" : {
-            "state" : "translated",
-            "value" : "إضافة إلى القائمة السوداء"
+            "state" : "new",
+            "value" : "Add to Blocklist"
           }
         },
         "cs" : {
@@ -11704,8 +11704,8 @@
       "localizations" : {
         "ar" : {
           "stringUnit" : {
-            "state" : "translated",
-            "value" : "إضافة المحدد إلى القائمة السوداء"
+            "state" : "new",
+            "value" : "Add Selected to Blocklist"
           }
         },
         "cs" : {
@@ -11840,8 +11840,8 @@
       "localizations" : {
         "ar" : {
           "stringUnit" : {
-            "state" : "translated",
-            "value" : "الأوامر"
+            "state" : "new",
+            "value" : "Arguments"
           }
         },
         "cs" : {
@@ -11976,8 +11976,8 @@
       "localizations" : {
         "ar" : {
           "stringUnit" : {
-            "state" : "translated",
-            "value" : "القائمة السوداء"
+            "state" : "new",
+            "value" : "Blocklist"
           }
         },
         "cs" : {
@@ -12112,8 +12112,8 @@
       "localizations" : {
         "ar" : {
           "stringUnit" : {
-            "state" : "translated",
-            "value" : "تهيئة"
+            "state" : "new",
+            "value" : "Config"
           }
         },
         "cs" : {
@@ -12248,8 +12248,8 @@
       "localizations" : {
         "ar" : {
           "stringUnit" : {
-            "state" : "translated",
-            "value" : "متغيرات البيئة"
+            "state" : "new",
+            "value" : "Environment Variables"
           }
         },
         "cs" : {
