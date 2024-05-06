@@ -1825,8 +1825,8 @@
       "localizations" : {
         "cs" : {
           "stringUnit" : {
-            "state" : "translated",
-            "value" : "Opravdu chcete ostranit tento balíček? Tato akce je nenavrátitelná."
+            "state" : "new",
+            "value" : "Are you sure you want to remove this bottle? This action is permanent."
           }
         },
         "da" : {
@@ -1955,8 +1955,8 @@
       "localizations" : {
         "cs" : {
           "stringUnit" : {
-            "state" : "translated",
-            "value" : "Odebrat %@?"
+            "state" : "new",
+            "value" : "Remove %@?"
           }
         },
         "da" : {
@@ -2736,7 +2736,7 @@
       "localizations" : {
         "cs" : {
           "stringUnit" : {
-            "state" : "translated",
+            "state" : "new",
             "value" : "Winetricks..."
           }
         },
@@ -3126,8 +3126,8 @@
       "localizations" : {
         "cs" : {
           "stringUnit" : {
-            "state" : "translated",
-            "value" : "Otevřít Ovládací Panel"
+            "state" : "new",
+            "value" : "Open Control Panel"
           }
         },
         "da" : {
@@ -4036,8 +4036,8 @@
       "localizations" : {
         "cs" : {
           "stringUnit" : {
-            "state" : "translated",
-            "value" : "Vypnuto"
+            "state" : "new",
+            "value" : "Off"
           }
         },
         "da" : {
@@ -4166,8 +4166,8 @@
       "localizations" : {
         "cs" : {
           "stringUnit" : {
-            "state" : "translated",
-            "value" : "Částečný"
+            "state" : "new",
+            "value" : "Partial"
           }
         },
         "da" : {
@@ -4296,7 +4296,7 @@
       "localizations" : {
         "cs" : {
           "stringUnit" : {
-            "state" : "translated",
+            "state" : "new",
             "value" : "ESync"
           }
         },
@@ -4426,7 +4426,7 @@
       "localizations" : {
         "cs" : {
           "stringUnit" : {
-            "state" : "translated",
+            "state" : "new",
             "value" : "MSync"
           }
         },
@@ -4556,7 +4556,7 @@
       "localizations" : {
         "cs" : {
           "stringUnit" : {
-            "state" : "translated",
+            "state" : "new",
             "value" : "Enhanced Sync"
           }
         },
@@ -4686,8 +4686,8 @@
       "localizations" : {
         "cs" : {
           "stringUnit" : {
-            "state" : "translated",
-            "value" : "Žádný"
+            "state" : "new",
+            "value" : "None"
           }
         },
         "da" : {
@@ -4816,8 +4816,8 @@
       "localizations" : {
         "cs" : {
           "stringUnit" : {
-            "state" : "translated",
-            "value" : "Konfigurovat..."
+            "state" : "new",
+            "value" : "Configure..."
           }
         },
         "da" : {
@@ -4946,7 +4946,7 @@
       "localizations" : {
         "cs" : {
           "stringUnit" : {
-            "state" : "translated",
+            "state" : "new",
             "value" : "Metal HUD"
           }
         },
@@ -5076,8 +5076,8 @@
       "localizations" : {
         "cs" : {
           "stringUnit" : {
-            "state" : "translated",
-            "value" : "Trasa Metal"
+            "state" : "new",
+            "value" : "Metal Trace"
           }
         },
         "da" : {
@@ -5206,8 +5206,8 @@
       "localizations" : {
         "cs" : {
           "stringUnit" : {
-            "state" : "translated",
-            "value" : "Umožňuje ti zachytit zatížení GPU v Xcode"
+            "state" : "new",
+            "value" : "Allows you to capture GPU workload in Xcode"
           }
         },
         "da" : {
@@ -5466,8 +5466,8 @@
       "localizations" : {
         "cs" : {
           "stringUnit" : {
-            "state" : "translated",
-            "value" : "Otevřít editor databáze registrů"
+            "state" : "new",
+            "value" : "Open Registry Editor"
           }
         },
         "da" : {
@@ -5596,8 +5596,8 @@
       "localizations" : {
         "cs" : {
           "stringUnit" : {
-            "state" : "translated",
-            "value" : "Režim Retina"
+            "state" : "new",
+            "value" : "Retina Mode"
           }
         },
         "da" : {
@@ -5854,6 +5854,12 @@
     },
     "config.title.metal" : {
       "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Metal"
+          }
+        },
         "cs" : {
           "stringUnit" : {
             "state" : "translated",
@@ -8456,8 +8462,8 @@
       "localizations" : {
         "cs" : {
           "stringUnit" : {
-            "state" : "translated",
-            "value" : "Nainstalovat Whisky CLI..."
+            "state" : "new",
+            "value" : "Install Whisky CLI..."
           }
         },
         "da" : {
@@ -8586,8 +8592,8 @@
       "localizations" : {
         "cs" : {
           "stringUnit" : {
-            "state" : "translated",
-            "value" : "Ukončit všechny lahve"
+            "state" : "new",
+            "value" : "Kill All Bottles"
           }
         },
         "da" : {
@@ -8977,8 +8983,8 @@
       "localizations" : {
         "cs" : {
           "stringUnit" : {
-            "state" : "translated",
-            "value" : "Pro začátek musíte vytvořit svou první láhev"
+            "state" : "new",
+            "value" : "Create your first bottle to get started"
           }
         },
         "da" : {
@@ -9107,8 +9113,8 @@
       "localizations" : {
         "cs" : {
           "stringUnit" : {
-            "state" : "translated",
-            "value" : "Importovat láhev"
+            "state" : "new",
+            "value" : "Import Bottle"
           }
         },
         "da" : {
@@ -9237,8 +9243,8 @@
       "localizations" : {
         "cs" : {
           "stringUnit" : {
-            "state" : "translated",
-            "value" : "Otevřít složku s logy"
+            "state" : "new",
+            "value" : "Open Logs Folder"
           }
         },
         "da" : {
@@ -9628,8 +9634,8 @@
       "localizations" : {
         "cs" : {
           "stringUnit" : {
-            "state" : "translated",
-            "value" : "\"%@\" je již připnut!"
+            "state" : "new",
+            "value" : "\"%@\" is already pinned!"
           }
         },
         "da" : {
@@ -9758,8 +9764,8 @@
       "localizations" : {
         "cs" : {
           "stringUnit" : {
-            "state" : "translated",
-            "value" : "Chyba v připínání programu"
+            "state" : "new",
+            "value" : "Error Pinning Program"
           }
         },
         "da" : {
@@ -9888,8 +9894,8 @@
       "localizations" : {
         "cs" : {
           "stringUnit" : {
-            "state" : "translated",
-            "value" : "Připnout program"
+            "state" : "new",
+            "value" : "Pin Program"
           }
         },
         "da" : {
@@ -10018,8 +10024,8 @@
       "localizations" : {
         "cs" : {
           "stringUnit" : {
-            "state" : "translated",
-            "value" : "Název připínáčku:"
+            "state" : "new",
+            "value" : "Pin name:"
           }
         },
         "da" : {
@@ -10148,8 +10154,8 @@
       "localizations" : {
         "cs" : {
           "stringUnit" : {
-            "state" : "translated",
-            "value" : "Cesta k programu:"
+            "state" : "new",
+            "value" : "Program path:"
           }
         },
         "da" : {
@@ -10278,8 +10284,8 @@
       "localizations" : {
         "cs" : {
           "stringUnit" : {
-            "state" : "translated",
-            "value" : "Připnout program"
+            "state" : "new",
+            "value" : "Pin Program"
           }
         },
         "da" : {
@@ -10408,8 +10414,8 @@
       "localizations" : {
         "cs" : {
           "stringUnit" : {
-            "state" : "translated",
-            "value" : "Spustitelný soubor"
+            "state" : "new",
+            "value" : "Executable"
           }
         },
         "da" : {
@@ -10668,8 +10674,8 @@
       "localizations" : {
         "cs" : {
           "stringUnit" : {
-            "state" : "translated",
-            "value" : "Získávám seznam procesů"
+            "state" : "new",
+            "value" : "Fetching Processes"
           }
         },
         "da" : {
@@ -11058,8 +11064,8 @@
       "localizations" : {
         "cs" : {
           "stringUnit" : {
-            "state" : "translated",
-            "value" : "Přidat na listinu blokovaných"
+            "state" : "new",
+            "value" : "Add to Blocklist"
           }
         },
         "da" : {
@@ -11188,8 +11194,8 @@
       "localizations" : {
         "cs" : {
           "stringUnit" : {
-            "state" : "translated",
-            "value" : "Přidat označené na listinu blokovaných"
+            "state" : "new",
+            "value" : "Add Selected to Blocklist"
           }
         },
         "da" : {
@@ -11448,8 +11454,8 @@
       "localizations" : {
         "cs" : {
           "stringUnit" : {
-            "state" : "translated",
-            "value" : "Listina blokovaných"
+            "state" : "new",
+            "value" : "Blocklist"
           }
         },
         "da" : {
@@ -11708,8 +11714,8 @@
       "localizations" : {
         "cs" : {
           "stringUnit" : {
-            "state" : "translated",
-            "value" : "Proměnné prostředí"
+            "state" : "new",
+            "value" : "Environment Variables"
           }
         },
         "da" : {
@@ -12618,8 +12624,8 @@
       "localizations" : {
         "cs" : {
           "stringUnit" : {
-            "state" : "translated",
-            "value" : "Přejmenovat připínáček"
+            "state" : "new",
+            "value" : "Rename pin"
           }
         },
         "da" : {
@@ -12878,8 +12884,8 @@
       "localizations" : {
         "cs" : {
           "stringUnit" : {
-            "state" : "translated",
-            "value" : "Láhev:"
+            "state" : "new",
+            "value" : "Bottle:"
           }
         },
         "da" : {
@@ -13008,8 +13014,8 @@
       "localizations" : {
         "cs" : {
           "stringUnit" : {
-            "state" : "translated",
-            "value" : "Spustit \"%@\""
+            "state" : "new",
+            "value" : "Run \"%@\""
           }
         },
         "da" : {
@@ -13138,8 +13144,8 @@
       "localizations" : {
         "cs" : {
           "stringUnit" : {
-            "state" : "translated",
-            "value" : "Obecné"
+            "state" : "new",
+            "value" : "General"
           }
         },
         "da" : {
@@ -13268,8 +13274,8 @@
       "localizations" : {
         "cs" : {
           "stringUnit" : {
-            "state" : "translated",
-            "value" : "Výchozí cesta láhve:"
+            "state" : "new",
+            "value" : "Default bottle path:"
           }
         },
         "da" : {
@@ -13398,8 +13404,8 @@
       "localizations" : {
         "cs" : {
           "stringUnit" : {
-            "state" : "translated",
-            "value" : "Ukončit Wine procesy při uzavření Whisky"
+            "state" : "new",
+            "value" : "Terminate Wine processes when Whisky closes"
           }
         },
         "da" : {
@@ -13658,8 +13664,8 @@
       "localizations" : {
         "cs" : {
           "stringUnit" : {
-            "state" : "translated",
-            "value" : "Automaticky vyhledávat WhiskyWine aktualizace"
+            "state" : "new",
+            "value" : "Automatically check for WhiskyWine updates"
           }
         },
         "da" : {
@@ -14048,8 +14054,8 @@
       "localizations" : {
         "cs" : {
           "stringUnit" : {
-            "state" : "translated",
-            "value" : "Kontrola instalace %@..."
+            "state" : "new",
+            "value" : "Checking %@ installation..."
           }
         },
         "da" : {
@@ -15218,8 +15224,8 @@
       "localizations" : {
         "cs" : {
           "stringUnit" : {
-            "state" : "translated",
-            "value" : "Spravovat požadované závislosti Whisky."
+            "state" : "new",
+            "value" : "Manage Whisky's required dependencies."
           }
         },
         "da" : {
@@ -15348,8 +15354,8 @@
       "localizations" : {
         "cs" : {
           "stringUnit" : {
-            "state" : "translated",
-            "value" : "Nastavení závislostí"
+            "state" : "new",
+            "value" : "Dependencies Setup"
           }
         },
         "da" : {
@@ -15738,8 +15744,8 @@
       "localizations" : {
         "cs" : {
           "stringUnit" : {
-            "state" : "translated",
-            "value" : "Pojďme to nastavit. Nedube to trvat ani minutu."
+            "state" : "new",
+            "value" : "Let's get you set up. This won't take a minute."
           }
         },
         "da" : {
@@ -15998,8 +16004,8 @@
       "localizations" : {
         "cs" : {
           "stringUnit" : {
-            "state" : "translated",
-            "value" : "Rychlost stahování se bude lišit v závislosti na vašem internetovém připojení."
+            "state" : "new",
+            "value" : "Speeds will vary on your internet connection."
           }
         },
         "da" : {
@@ -17038,8 +17044,8 @@
       "localizations" : {
         "cs" : {
           "stringUnit" : {
-            "state" : "translated",
-            "value" : "Chtěli byste přesunout Whisky do složky s aplikacemi?"
+            "state" : "new",
+            "value" : "Would you like to move Whisky to your Applications folder?"
           }
         },
         "da" : {
@@ -18902,7 +18908,7 @@
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Description"
+            "value" : "Description "
           }
         },
         "it" : {
