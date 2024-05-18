@@ -16872,8 +16872,8 @@
       "localizations" : {
         "ar" : {
           "stringUnit" : {
-            "state" : "new",
-            "value" : "- %@ remaining"
+            "state" : "translated",
+            "value" : "- %@ متبقي"
           }
         },
         "cs" : {
