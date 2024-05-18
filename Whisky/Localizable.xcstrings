@@ -5,8 +5,8 @@
       "localizations" : {
         "ar" : {
           "stringUnit" : {
-            "state" : "new",
-            "value" : "Failed to open"
+            "state" : "translated",
+            "value" : "فشل في الفتح"
           }
         },
         "cs" : {
@@ -141,8 +141,8 @@
       "localizations" : {
         "ar" : {
           "stringUnit" : {
-            "state" : "new",
-            "value" : "Failed to open program!"
+            "state" : "translated",
+            "value" : "فشل في فتح البرنامج!"
           }
         },
         "cs" : {
@@ -277,8 +277,8 @@
       "localizations" : {
         "ar" : {
           "stringUnit" : {
-            "state" : "new",
-            "value" : "Open C: Drive"
+            "state" : "translated",
+            "value" : "افتح قرص C:"
           }
         },
         "cs" : {
@@ -413,8 +413,8 @@
       "localizations" : {
         "ar" : {
           "stringUnit" : {
-            "state" : "new",
-            "value" : "Create Bottle"
+            "state" : "translated",
+            "value" : "قم بإنشاء زجاجة"
           }
         },
         "cs" : {
@@ -549,8 +549,8 @@
       "localizations" : {
         "ar" : {
           "stringUnit" : {
-            "state" : "new",
-            "value" : "Create Shortcut"
+            "state" : "translated",
+            "value" : "إنشاء اختصار"
           }
         },
         "cs" : {
@@ -685,8 +685,8 @@
       "localizations" : {
         "ar" : {
           "stringUnit" : {
-            "state" : "new",
-            "value" : "Export as Archive..."
+            "state" : "translated",
+            "value" : "التصدير كأرشيف..."
           }
         },
         "cs" : {
@@ -821,8 +821,8 @@
       "localizations" : {
         "ar" : {
           "stringUnit" : {
-            "state" : "new",
-            "value" : "Move..."
+            "state" : "translated",
+            "value" : "انتقل..."
           }
         },
         "cs" : {
@@ -957,8 +957,8 @@
       "localizations" : {
         "ar" : {
           "stringUnit" : {
-            "state" : "new",
-            "value" : "OK"
+            "state" : "translated",
+            "value" : "حسنا"
           }
         },
         "cs" : {
@@ -1093,8 +1093,8 @@
       "localizations" : {
         "ar" : {
           "stringUnit" : {
-            "state" : "new",
-            "value" : "Pin"
+            "state" : "translated",
+            "value" : "دبس"
           }
         },
         "cs" : {
@@ -1229,8 +1229,8 @@
       "localizations" : {
         "ar" : {
           "stringUnit" : {
-            "state" : "new",
-            "value" : "Refresh"
+            "state" : "translated",
+            "value" : "تحديث"
           }
         },
         "cs" : {
@@ -1365,8 +1365,8 @@
       "localizations" : {
         "ar" : {
           "stringUnit" : {
-            "state" : "new",
-            "value" : "Remove..."
+            "state" : "translated",
+            "value" : "إزالة..."
           }
         },
         "cs" : {
@@ -1501,8 +1501,8 @@
       "localizations" : {
         "ar" : {
           "stringUnit" : {
-            "state" : "new",
-            "value" : "Cancel"
+            "state" : "translated",
+            "value" : "إلغاء"
           }
         },
         "cs" : {
@@ -1637,8 +1637,8 @@
       "localizations" : {
         "ar" : {
           "stringUnit" : {
-            "state" : "new",
-            "value" : "Delete files from disk"
+            "state" : "translated",
+            "value" : "احذف الملفات من القرص"
           }
         },
         "cs" : {
@@ -1773,8 +1773,8 @@
       "localizations" : {
         "ar" : {
           "stringUnit" : {
-            "state" : "new",
-            "value" : "Remove"
+            "state" : "translated",
+            "value" : "إزالة"
           }
         },
         "cs" : {
@@ -1909,8 +1909,8 @@
       "localizations" : {
         "ar" : {
           "stringUnit" : {
-            "state" : "new",
-            "value" : "Are you sure you want to remove this bottle? This action is permanent."
+            "state" : "translated",
+            "value" : "هل أنت متأكد من أنك تريد إزالة هذه الزجاجة؟ هذا الإجراء دائم."
           }
         },
         "cs" : {
@@ -2045,8 +2045,8 @@
       "localizations" : {
         "ar" : {
           "stringUnit" : {
-            "state" : "new",
-            "value" : "Remove %@?"
+            "state" : "translated",
+            "value" : "إزالة %@؟"
           }
         },
         "cs" : {
@@ -2181,8 +2181,8 @@
       "localizations" : {
         "ar" : {
           "stringUnit" : {
-            "state" : "new",
-            "value" : "Rename..."
+            "state" : "translated",
+            "value" : "إعادة تسمية..."
           }
         },
         "cs" : {
@@ -2317,8 +2317,8 @@
       "localizations" : {
         "ar" : {
           "stringUnit" : {
-            "state" : "new",
-            "value" : "Run..."
+            "state" : "translated",
+            "value" : "تشغيل..."
           }
         },
         "cs" : {
@@ -2453,8 +2453,8 @@
       "localizations" : {
         "ar" : {
           "stringUnit" : {
-            "state" : "new",
-            "value" : "Show in Finder"
+            "state" : "translated",
+            "value" : "أظهر في Finder"
           }
         },
         "cs" : {
@@ -2590,8 +2590,8 @@
       "localizations" : {
         "ar" : {
           "stringUnit" : {
-            "state" : "new",
-            "value" : "Terminal..."
+            "state" : "translated",
+            "value" : "Trminal..."
           }
         },
         "cs" : {
@@ -2726,8 +2726,8 @@
       "localizations" : {
         "ar" : {
           "stringUnit" : {
-            "state" : "new",
-            "value" : "Unpin"
+            "state" : "translated",
+            "value" : "إزالة التثبيت"
           }
         },
         "cs" : {
@@ -2862,7 +2862,7 @@
       "localizations" : {
         "ar" : {
           "stringUnit" : {
-            "state" : "new",
+            "state" : "translated",
             "value" : "Winetricks..."
           }
         },
@@ -2998,8 +2998,8 @@
       "localizations" : {
         "ar" : {
           "stringUnit" : {
-            "state" : "new",
-            "value" : "Check for Updates..."
+            "state" : "translated",
+            "value" : "تحقق من التحديثات..."
           }
         },
         "cs" : {
@@ -3134,8 +3134,8 @@
       "localizations" : {
         "ar" : {
           "stringUnit" : {
-            "state" : "new",
-            "value" : "Build Version"
+            "state" : "translated",
+            "value" : "نسخة الإصدار"
           }
         },
         "cs" : {
@@ -3270,8 +3270,8 @@
       "localizations" : {
         "ar" : {
           "stringUnit" : {
-            "state" : "new",
-            "value" : "Open Control Panel"
+            "state" : "translated",
+            "value" : "افتح لوحة التحكم"
           }
         },
         "cs" : {
@@ -3406,8 +3406,8 @@
       "localizations" : {
         "ar" : {
           "stringUnit" : {
-            "state" : "new",
-            "value" : "DPI Scaling"
+            "state" : "translated",
+            "value" : "تحجيم DPI"
           }
         },
         "cs" : {
@@ -3542,7 +3542,7 @@
       "localizations" : {
         "ar" : {
           "stringUnit" : {
-            "state" : "new",
+            "state" : "translated",
             "value" : "DXVK"
           }
         },
@@ -3678,8 +3678,8 @@
       "localizations" : {
         "ar" : {
           "stringUnit" : {
-            "state" : "new",
-            "value" : "DXVK Async"
+            "state" : "translated",
+            "value" : "DXVK غير متزامن"
           }
         },
         "cs" : {
@@ -3814,7 +3814,7 @@
       "localizations" : {
         "ar" : {
           "stringUnit" : {
-            "state" : "new",
+            "state" : "translated",
             "value" : "DXVK HUD"
           }
         },
@@ -3950,7 +3950,7 @@
       "localizations" : {
         "ar" : {
           "stringUnit" : {
-            "state" : "new",
+            "state" : "translated",
             "value" : "FPS"
           }
         },
@@ -4086,8 +4086,8 @@
       "localizations" : {
         "ar" : {
           "stringUnit" : {
-            "state" : "new",
-            "value" : "Full"
+            "state" : "translated",
+            "value" : "كامل"
           }
         },
         "cs" : {
@@ -4222,8 +4222,8 @@
       "localizations" : {
         "ar" : {
           "stringUnit" : {
-            "state" : "new",
-            "value" : "Off"
+            "state" : "translated",
+            "value" : "إيقاف"
           }
         },
         "cs" : {
@@ -4358,8 +4358,8 @@
       "localizations" : {
         "ar" : {
           "stringUnit" : {
-            "state" : "new",
-            "value" : "Partial"
+            "state" : "translated",
+            "value" : "جزئي"
           }
         },
         "cs" : {
@@ -4494,7 +4494,7 @@
       "localizations" : {
         "ar" : {
           "stringUnit" : {
-            "state" : "new",
+            "state" : "translated",
             "value" : "ESync"
           }
         },
@@ -4630,7 +4630,7 @@
       "localizations" : {
         "ar" : {
           "stringUnit" : {
-            "state" : "new",
+            "state" : "translated",
             "value" : "MSync"
           }
         },
@@ -4766,8 +4766,8 @@
       "localizations" : {
         "ar" : {
           "stringUnit" : {
-            "state" : "new",
-            "value" : "Enhanced Sync"
+            "state" : "translated",
+            "value" : "المزامنة المحسنة"
           }
         },
         "cs" : {
@@ -4902,8 +4902,8 @@
       "localizations" : {
         "ar" : {
           "stringUnit" : {
-            "state" : "new",
-            "value" : "None"
+            "state" : "translated",
+            "value" : "لا شيء"
           }
         },
         "cs" : {
@@ -5038,8 +5038,8 @@
       "localizations" : {
         "ar" : {
           "stringUnit" : {
-            "state" : "new",
-            "value" : "Configure..."
+            "state" : "translated",
+            "value" : "تكوين..."
           }
         },
         "cs" : {
@@ -5174,8 +5174,8 @@
       "localizations" : {
         "ar" : {
           "stringUnit" : {
-            "state" : "new",
-            "value" : "Metal HUD"
+            "state" : "translated",
+            "value" : "معدن HUD"
           }
         },
         "cs" : {
@@ -5310,8 +5310,8 @@
       "localizations" : {
         "ar" : {
           "stringUnit" : {
-            "state" : "new",
-            "value" : "Metal Trace"
+            "state" : "translated",
+            "value" : "معدن Trace"
           }
         },
         "cs" : {
@@ -5446,8 +5446,8 @@
       "localizations" : {
         "ar" : {
           "stringUnit" : {
-            "state" : "new",
-            "value" : "Allows you to capture GPU workload in Xcode"
+            "state" : "translated",
+            "value" : "يسمح لك بالتقاط عبء عمل GPU في Xcode"
           }
         },
         "cs" : {
@@ -5582,8 +5582,8 @@
       "localizations" : {
         "ar" : {
           "stringUnit" : {
-            "state" : "new",
-            "value" : "N/A"
+            "state" : "translated",
+            "value" : "لا يوجد"
           }
         },
         "cs" : {
@@ -5718,8 +5718,8 @@
       "localizations" : {
         "ar" : {
           "stringUnit" : {
-            "state" : "new",
-            "value" : "Open Registry Editor"
+            "state" : "translated",
+            "value" : "افتح محرر التسجيل"
           }
         },
         "cs" : {
@@ -5854,8 +5854,8 @@
       "localizations" : {
         "ar" : {
           "stringUnit" : {
-            "state" : "new",
-            "value" : "Retina Mode"
+            "state" : "translated",
+            "value" : "وضع شبكية العين"
           }
         },
         "cs" : {
@@ -5990,7 +5990,7 @@
       "localizations" : {
         "ar" : {
           "stringUnit" : {
-            "state" : "new",
+            "state" : "translated",
             "value" : "DXVK"
           }
         },
@@ -6126,8 +6126,8 @@
       "localizations" : {
         "ar" : {
           "stringUnit" : {
-            "state" : "new",
-            "value" : "Metal"
+            "state" : "translated",
+            "value" : "معدن"
           }
         },
         "cs" : {
@@ -6262,7 +6262,7 @@
       "localizations" : {
         "ar" : {
           "stringUnit" : {
-            "state" : "new",
+            "state" : "translated",
             "value" : "Wine"
           }
         },
@@ -6398,8 +6398,8 @@
       "localizations" : {
         "ar" : {
           "stringUnit" : {
-            "state" : "new",
-            "value" : "Open Wine Configuration"
+            "state" : "translated",
+            "value" : "فتح تكوين Wine"
           }
         },
         "cs" : {
@@ -6534,8 +6534,8 @@
       "localizations" : {
         "ar" : {
           "stringUnit" : {
-            "state" : "new",
-            "value" : "Windows Version"
+            "state" : "translated",
+            "value" : "نسخة Windows"
           }
         },
         "cs" : {
@@ -6670,7 +6670,7 @@
       "localizations" : {
         "ar" : {
           "stringUnit" : {
-            "state" : "new",
+            "state" : "translated",
             "value" : "DPI"
           }
         },
@@ -6806,8 +6806,8 @@
       "localizations" : {
         "ar" : {
           "stringUnit" : {
-            "state" : "new",
-            "value" : "Text will look like this:"
+            "state" : "translated",
+            "value" : "سيبدو النص هكذا:"
           }
         },
         "cs" : {
@@ -6942,8 +6942,8 @@
       "localizations" : {
         "ar" : {
           "stringUnit" : {
-            "state" : "new",
-            "value" : "The quick brown fox jumps over the lazy dog."
+            "state" : "translated",
+            "value" : "يقفز الثعلب البني السريع فوق الكلب الكسول."
           }
         },
         "cs" : {
@@ -7078,8 +7078,8 @@
       "localizations" : {
         "ar" : {
           "stringUnit" : {
-            "state" : "new",
-            "value" : "DPI Settings"
+            "state" : "translated",
+            "value" : "إعدادات DPI"
           }
         },
         "cs" : {
@@ -7214,8 +7214,8 @@
       "localizations" : {
         "ar" : {
           "stringUnit" : {
-            "state" : "new",
-            "value" : "Browse"
+            "state" : "translated",
+            "value" : "تصفح"
           }
         },
         "cs" : {
@@ -7350,8 +7350,8 @@
       "localizations" : {
         "ar" : {
           "stringUnit" : {
-            "state" : "new",
-            "value" : "Cancel"
+            "state" : "translated",
+            "value" : "إلغاء"
           }
         },
         "cs" : {
@@ -7486,8 +7486,8 @@
       "localizations" : {
         "ar" : {
           "stringUnit" : {
-            "state" : "new",
-            "value" : "Create"
+            "state" : "translated",
+            "value" : "إنشاء"
           }
         },
         "cs" : {
@@ -7622,8 +7622,8 @@
       "localizations" : {
         "ar" : {
           "stringUnit" : {
-            "state" : "new",
-            "value" : "Bottle name:"
+            "state" : "translated",
+            "value" : "اسم الزجاجة:"
           }
         },
         "cs" : {
@@ -7758,8 +7758,8 @@
       "localizations" : {
         "ar" : {
           "stringUnit" : {
-            "state" : "new",
-            "value" : "Bottle path:"
+            "state" : "translated",
+            "value" : "مسار الزجاجة:"
           }
         },
         "cs" : {
@@ -7894,8 +7894,8 @@
       "localizations" : {
         "ar" : {
           "stringUnit" : {
-            "state" : "new",
-            "value" : "Create a new bottle"
+            "state" : "translated",
+            "value" : "قم بإنشاء زجاجة جديدة"
           }
         },
         "cs" : {
@@ -8030,8 +8030,8 @@
       "localizations" : {
         "ar" : {
           "stringUnit" : {
-            "state" : "new",
-            "value" : "Windows version:"
+            "state" : "translated",
+            "value" : "إصدار Windows:"
           }
         },
         "cs" : {
@@ -8166,8 +8166,8 @@
       "localizations" : {
         "ar" : {
           "stringUnit" : {
-            "state" : "new",
-            "value" : "Add"
+            "state" : "translated",
+            "value" : "أضف"
           }
         },
         "cs" : {
@@ -8302,8 +8302,8 @@
       "localizations" : {
         "ar" : {
           "stringUnit" : {
-            "state" : "new",
-            "value" : "Remove"
+            "state" : "translated",
+            "value" : "إزالة"
           }
         },
         "cs" : {
@@ -8438,7 +8438,7 @@
       "localizations" : {
         "ar" : {
           "stringUnit" : {
-            "state" : "new",
+            "state" : "translated",
             "value" : "Discord"
           }
         },
@@ -8574,7 +8574,7 @@
       "localizations" : {
         "ar" : {
           "stringUnit" : {
-            "state" : "new",
+            "state" : "translated",
             "value" : "GitHub"
           }
         },
@@ -8710,8 +8710,8 @@
       "localizations" : {
         "ar" : {
           "stringUnit" : {
-            "state" : "new",
-            "value" : "Website"
+            "state" : "translated",
+            "value" : "موقع ويب"
           }
         },
         "cs" : {
@@ -8846,8 +8846,8 @@
       "localizations" : {
         "ar" : {
           "stringUnit" : {
-            "state" : "new",
-            "value" : "Install Whisky CLI..."
+            "state" : "translated",
+            "value" : "قم بتثبيت Whisky CLI..."
           }
         },
         "cs" : {
@@ -8982,8 +8982,8 @@
       "localizations" : {
         "ar" : {
           "stringUnit" : {
-            "state" : "new",
-            "value" : "Kill All Bottles"
+            "state" : "translated",
+            "value" : "عطل كل الزجاجات"
           }
         },
         "cs" : {
@@ -9119,8 +9119,8 @@
       "localizations" : {
         "ar" : {
           "stringUnit" : {
-            "state" : "new",
-            "value" : "Automatic"
+            "state" : "translated",
+            "value" : "تلقائي"
           }
         },
         "cs" : {
@@ -9255,8 +9255,8 @@
       "localizations" : {
         "ar" : {
           "stringUnit" : {
-            "state" : "new",
-            "value" : "Locale"
+            "state" : "translated",
+            "value" : "محلي"
           }
         },
         "cs" : {
@@ -9391,8 +9391,8 @@
       "localizations" : {
         "ar" : {
           "stringUnit" : {
-            "state" : "new",
-            "value" : "Create your first bottle to get started"
+            "state" : "translated",
+            "value" : "قم بإنشاء أول زجاجة لك للبدء"
           }
         },
         "cs" : {
@@ -9527,8 +9527,8 @@
       "localizations" : {
         "ar" : {
           "stringUnit" : {
-            "state" : "new",
-            "value" : "Import Bottle"
+            "state" : "translated",
+            "value" : "استيراد زجاجة"
           }
         },
         "cs" : {
@@ -9663,8 +9663,8 @@
       "localizations" : {
         "ar" : {
           "stringUnit" : {
-            "state" : "new",
-            "value" : "Open Logs Folder"
+            "state" : "translated",
+            "value" : "افتح مجلد السجلات"
           }
         },
         "cs" : {
@@ -9799,8 +9799,8 @@
       "localizations" : {
         "ar" : {
           "stringUnit" : {
-            "state" : "new",
-            "value" : "Setup..."
+            "state" : "translated",
+            "value" : "الإعداد..."
           }
         },
         "cs" : {
@@ -9935,8 +9935,8 @@
       "localizations" : {
         "ar" : {
           "stringUnit" : {
-            "state" : "new",
-            "value" : "Pin"
+            "state" : "translated",
+            "value" : "دبس"
           }
         },
         "cs" : {
@@ -10072,8 +10072,8 @@
       "localizations" : {
         "ar" : {
           "stringUnit" : {
-            "state" : "new",
-            "value" : "\"%@\" is already pinned!"
+            "state" : "translated",
+            "value" : "\"%@\" مثبت بالفعل!"
           }
         },
         "cs" : {
@@ -10208,8 +10208,8 @@
       "localizations" : {
         "ar" : {
           "stringUnit" : {
-            "state" : "new",
-            "value" : "Error Pinning Program"
+            "state" : "translated",
+            "value" : "خطأ تثبيت البرنامج"
           }
         },
         "cs" : {
@@ -10344,8 +10344,8 @@
       "localizations" : {
         "ar" : {
           "stringUnit" : {
-            "state" : "new",
-            "value" : "Pin Program"
+            "state" : "translated",
+            "value" : "ثبت البرنامج"
           }
         },
         "cs" : {
@@ -10480,8 +10480,8 @@
       "localizations" : {
         "ar" : {
           "stringUnit" : {
-            "state" : "new",
-            "value" : "Pin name:"
+            "state" : "translated",
+            "value" : "اسم الدبوس:"
           }
         },
         "cs" : {
@@ -10616,8 +10616,8 @@
       "localizations" : {
         "ar" : {
           "stringUnit" : {
-            "state" : "new",
-            "value" : "Program path:"
+            "state" : "translated",
+            "value" : "مسار البرنامج:"
           }
         },
         "cs" : {
@@ -10752,8 +10752,8 @@
       "localizations" : {
         "ar" : {
           "stringUnit" : {
-            "state" : "new",
-            "value" : "Pin Program"
+            "state" : "translated",
+            "value" : "ثبت البرنامج"
           }
         },
         "cs" : {
@@ -10888,8 +10888,8 @@
       "localizations" : {
         "ar" : {
           "stringUnit" : {
-            "state" : "new",
-            "value" : "Executable"
+            "state" : "translated",
+            "value" : "قابل للتنفيذ"
           }
         },
         "cs" : {
@@ -11024,8 +11024,8 @@
       "localizations" : {
         "ar" : {
           "stringUnit" : {
-            "state" : "new",
-            "value" : "Stop Process"
+            "state" : "translated",
+            "value" : "أوقف العملية"
           }
         },
         "cs" : {
@@ -11160,8 +11160,8 @@
       "localizations" : {
         "ar" : {
           "stringUnit" : {
-            "state" : "new",
-            "value" : "Fetching Processes"
+            "state" : "translated",
+            "value" : "عمليات الاستدعاء"
           }
         },
         "cs" : {
@@ -11296,8 +11296,8 @@
       "localizations" : {
         "ar" : {
           "stringUnit" : {
-            "state" : "new",
-            "value" : "Process ID"
+            "state" : "translated",
+            "value" : "معرف العملية"
           }
         },
         "cs" : {
@@ -11432,8 +11432,8 @@
       "localizations" : {
         "ar" : {
           "stringUnit" : {
-            "state" : "new",
-            "value" : "Refresh"
+            "state" : "translated",
+            "value" : "تحديث"
           }
         },
         "cs" : {
@@ -11568,8 +11568,8 @@
       "localizations" : {
         "ar" : {
           "stringUnit" : {
-            "state" : "new",
-            "value" : "Add to Blocklist"
+            "state" : "translated",
+            "value" : "أضف إلى قائمة الحظر"
           }
         },
         "cs" : {
@@ -11704,8 +11704,8 @@
       "localizations" : {
         "ar" : {
           "stringUnit" : {
-            "state" : "new",
-            "value" : "Add Selected to Blocklist"
+            "state" : "translated",
+            "value" : "أضف المحدد إلى قائمة الحظر"
           }
         },
         "cs" : {
@@ -11840,7 +11840,7 @@
       "localizations" : {
         "ar" : {
           "stringUnit" : {
-            "state" : "new",
+            "state" : "translated",
             "value" : "Arguments"
           }
         },
@@ -11976,8 +11976,8 @@
       "localizations" : {
         "ar" : {
           "stringUnit" : {
-            "state" : "new",
-            "value" : "Blocklist"
+            "state" : "translated",
+            "value" : "قائمة الحظر"
           }
         },
         "cs" : {
@@ -12112,8 +12112,8 @@
       "localizations" : {
         "ar" : {
           "stringUnit" : {
-            "state" : "new",
-            "value" : "Config"
+            "state" : "translated",
+            "value" : "تكوين"
           }
         },
         "cs" : {
@@ -12248,8 +12248,8 @@
       "localizations" : {
         "ar" : {
           "stringUnit" : {
-            "state" : "new",
-            "value" : "Environment Variables"
+            "state" : "translated",
+            "value" : "متغيرات البيئة"
           }
         },
         "cs" : {
@@ -12384,8 +12384,8 @@
       "localizations" : {
         "ar" : {
           "stringUnit" : {
-            "state" : "new",
-            "value" : "Remove from Blocklist"
+            "state" : "translated",
+            "value" : "قم بالإزالة من قائمة الحظر"
           }
         },
         "cs" : {
@@ -12520,8 +12520,8 @@
       "localizations" : {
         "ar" : {
           "stringUnit" : {
-            "state" : "new",
-            "value" : "Remove Selected from Blocklist"
+            "state" : "translated",
+            "value" : "قم بإزالة المحدد من قائمة الحظر"
           }
         },
         "cs" : {
@@ -12656,8 +12656,8 @@
       "localizations" : {
         "ar" : {
           "stringUnit" : {
-            "state" : "new",
-            "value" : "Settings"
+            "state" : "translated",
+            "value" : "الإعدادات"
           }
         },
         "cs" : {
@@ -12792,8 +12792,8 @@
       "localizations" : {
         "ar" : {
           "stringUnit" : {
-            "state" : "new",
-            "value" : "All Programs"
+            "state" : "translated",
+            "value" : "جميع البرامج"
           }
         },
         "cs" : {
@@ -12928,8 +12928,8 @@
       "localizations" : {
         "ar" : {
           "stringUnit" : {
-            "state" : "new",
-            "value" : "Rename bottle"
+            "state" : "translated",
+            "value" : "إعادة تسمية الزجاجة"
           }
         },
         "cs" : {
@@ -13064,8 +13064,8 @@
       "localizations" : {
         "ar" : {
           "stringUnit" : {
-            "state" : "new",
-            "value" : "New name:"
+            "state" : "translated",
+            "value" : "اسم جديد:"
           }
         },
         "cs" : {
@@ -13200,8 +13200,8 @@
       "localizations" : {
         "ar" : {
           "stringUnit" : {
-            "state" : "new",
-            "value" : "Rename pin"
+            "state" : "translated",
+            "value" : "إعادة تسمية دبوس"
           }
         },
         "cs" : {
@@ -13336,8 +13336,8 @@
       "localizations" : {
         "ar" : {
           "stringUnit" : {
-            "state" : "new",
-            "value" : "Rename"
+            "state" : "translated",
+            "value" : "إعادة تسمية"
           }
         },
         "cs" : {
@@ -13472,8 +13472,8 @@
       "localizations" : {
         "ar" : {
           "stringUnit" : {
-            "state" : "new",
-            "value" : "Bottle:"
+            "state" : "translated",
+            "value" : "الزجاجة:"
           }
         },
         "cs" : {
@@ -13608,8 +13608,8 @@
       "localizations" : {
         "ar" : {
           "stringUnit" : {
-            "state" : "new",
-            "value" : "Run \"%@\""
+            "state" : "translated",
+            "value" : "تشغيل \"%@\""
           }
         },
         "cs" : {
@@ -13744,8 +13744,8 @@
       "localizations" : {
         "ar" : {
           "stringUnit" : {
-            "state" : "new",
-            "value" : "General"
+            "state" : "translated",
+            "value" : "عام"
           }
         },
         "cs" : {
@@ -13880,8 +13880,8 @@
       "localizations" : {
         "ar" : {
           "stringUnit" : {
-            "state" : "new",
-            "value" : "Default bottle path:"
+            "state" : "translated",
+            "value" : "مسار الزجاجة الافتراضي:"
           }
         },
         "cs" : {
@@ -14016,8 +14016,8 @@
       "localizations" : {
         "ar" : {
           "stringUnit" : {
-            "state" : "new",
-            "value" : "Terminate Wine processes when Whisky closes"
+            "state" : "translated",
+            "value" : "إنهاء عمليات Wine عند إغلاق Whisky"
           }
         },
         "cs" : {
@@ -14152,8 +14152,8 @@
       "localizations" : {
         "ar" : {
           "stringUnit" : {
-            "state" : "new",
-            "value" : "Automatically check for Whisky updates"
+            "state" : "translated",
+            "value" : "تحقق تلقائيا من تحديثات Whisky"
           }
         },
         "cs" : {
@@ -14288,8 +14288,8 @@
       "localizations" : {
         "ar" : {
           "stringUnit" : {
-            "state" : "new",
-            "value" : "Automatically check for WhiskyWine updates"
+            "state" : "translated",
+            "value" : "تحقق تلقائيا من تحديثات WhiskyWine"
           }
         },
         "cs" : {
@@ -14424,8 +14424,8 @@
       "localizations" : {
         "ar" : {
           "stringUnit" : {
-            "state" : "new",
-            "value" : "Updates"
+            "state" : "translated",
+            "value" : "التحديثات"
           }
         },
         "cs" : {
@@ -14560,8 +14560,8 @@
       "localizations" : {
         "ar" : {
           "stringUnit" : {
-            "state" : "new",
-            "value" : "Done"
+            "state" : "translated",
+            "value" : "تم"
           }
         },
         "cs" : {
@@ -14696,8 +14696,8 @@
       "localizations" : {
         "ar" : {
           "stringUnit" : {
-            "state" : "new",
-            "value" : "Checking %@ installation..."
+            "state" : "translated",
+            "value" : "التحقق من تثبيت %@ ..."
           }
         },
         "cs" : {
@@ -14832,8 +14832,8 @@
       "localizations" : {
         "ar" : {
           "stringUnit" : {
-            "state" : "new",
-            "value" : "%@ installed"
+            "state" : "translated",
+            "value" : "%@ مثبت"
           }
         },
         "cs" : {
@@ -14968,8 +14968,8 @@
       "localizations" : {
         "ar" : {
           "stringUnit" : {
-            "state" : "new",
-            "value" : "%@ not installed"
+            "state" : "translated",
+            "value" : "%@ غير مثبت"
           }
         },
         "cs" : {
@@ -15104,8 +15104,8 @@
       "localizations" : {
         "ar" : {
           "stringUnit" : {
-            "state" : "new",
-            "value" : "Next"
+            "state" : "translated",
+            "value" : "التالي"
           }
         },
         "cs" : {
@@ -15240,8 +15240,8 @@
       "localizations" : {
         "ar" : {
           "stringUnit" : {
-            "state" : "new",
-            "value" : "Quit"
+            "state" : "translated",
+            "value" : "إنهاء"
           }
         },
         "cs" : {
@@ -15376,8 +15376,8 @@
       "localizations" : {
         "ar" : {
           "stringUnit" : {
-            "state" : "new",
-            "value" : "Retry"
+            "state" : "translated",
+            "value" : "أعد المحاولة"
           }
         },
         "cs" : {
@@ -15512,8 +15512,8 @@
       "localizations" : {
         "ar" : {
           "stringUnit" : {
-            "state" : "new",
-            "value" : "Installing Rosetta"
+            "state" : "translated",
+            "value" : "تثبيت Rosetta"
           }
         },
         "cs" : {
@@ -15648,8 +15648,8 @@
       "localizations" : {
         "ar" : {
           "stringUnit" : {
-            "state" : "new",
-            "value" : "Rosetta 2 installation failed. Please install it manually."
+            "state" : "translated",
+            "value" : "فشل تثبيت Rosetta 2. يرجى تثبيته يدويا."
           }
         },
         "cs" : {
@@ -15784,8 +15784,8 @@
       "localizations" : {
         "ar" : {
           "stringUnit" : {
-            "state" : "new",
-            "value" : "Rosetta allows x86 code, like Wine, to run on your Mac."
+            "state" : "translated",
+            "value" : "تسمح Rosetta بتشغيل كود x86، مثل Wine، على جهاز Mac الخاص بك."
           }
         },
         "cs" : {
@@ -15920,8 +15920,8 @@
       "localizations" : {
         "ar" : {
           "stringUnit" : {
-            "state" : "new",
-            "value" : "Manage Whisky's required dependencies."
+            "state" : "translated",
+            "value" : "إدارة تبعيات Whisky المطلوبة."
           }
         },
         "cs" : {
@@ -16056,8 +16056,8 @@
       "localizations" : {
         "ar" : {
           "stringUnit" : {
-            "state" : "new",
-            "value" : "Dependencies Setup"
+            "state" : "translated",
+            "value" : "إعداد التبعيات"
           }
         },
         "cs" : {
@@ -16192,8 +16192,8 @@
       "localizations" : {
         "ar" : {
           "stringUnit" : {
-            "state" : "new",
-            "value" : "Uninstall"
+            "state" : "translated",
+            "value" : "إلغاء التثبيت"
           }
         },
         "cs" : {
@@ -16328,8 +16328,8 @@
       "localizations" : {
         "ar" : {
           "stringUnit" : {
-            "state" : "new",
-            "value" : "Welcome to Whisky"
+            "state" : "translated",
+            "value" : "مرحبا بك في Whisky"
           }
         },
         "cs" : {
@@ -16464,8 +16464,8 @@
       "localizations" : {
         "ar" : {
           "stringUnit" : {
-            "state" : "new",
-            "value" : "Let's get you set up. This won't take a minute."
+            "state" : "translated",
+            "value" : "دعنا نجهزك. لن يستغرق هذا دقيقة واحدة."
           }
         },
         "cs" : {
@@ -16600,8 +16600,8 @@
       "localizations" : {
         "ar" : {
           "stringUnit" : {
-            "state" : "new",
-            "value" : "Downloading WhiskyWine"
+            "state" : "translated",
+            "value" : "تنزيل WhiskyWine"
           }
         },
         "cs" : {
@@ -16736,8 +16736,8 @@
       "localizations" : {
         "ar" : {
           "stringUnit" : {
-            "state" : "new",
-            "value" : "Speeds will vary on your internet connection."
+            "state" : "translated",
+            "value" : "ستختلف السرعات على اتصالك بالإنترنت."
           }
         },
         "cs" : {
@@ -17008,8 +17008,8 @@
       "localizations" : {
         "ar" : {
           "stringUnit" : {
-            "state" : "new",
-            "value" : "Installing WhiskyWine"
+            "state" : "translated",
+            "value" : "تثبيت WhiskyWine"
           }
         },
         "cs" : {
@@ -17144,8 +17144,8 @@
       "localizations" : {
         "ar" : {
           "stringUnit" : {
-            "state" : "new",
-            "value" : "Almost there. Don't tune out yet."
+            "state" : "translated",
+            "value" : "أوشكت على الاقتراب. لابتداء بالتشتت."
           }
         },
         "cs" : {
@@ -17280,8 +17280,8 @@
       "localizations" : {
         "ar" : {
           "stringUnit" : {
-            "state" : "new",
-            "value" : "%@ of %@"
+            "state" : "translated",
+            "value" : "%@ من %@"
           }
         },
         "cs" : {
@@ -17416,8 +17416,8 @@
       "localizations" : {
         "ar" : {
           "stringUnit" : {
-            "state" : "new",
-            "value" : "Don't Move"
+            "state" : "translated",
+            "value" : "لا تحرك"
           }
         },
         "cs" : {
@@ -17552,8 +17552,8 @@
       "localizations" : {
         "ar" : {
           "stringUnit" : {
-            "state" : "new",
-            "value" : "Move to Applications"
+            "state" : "translated",
+            "value" : "انتقل إلى التطبيقات"
           }
         },
         "cs" : {
@@ -17688,8 +17688,8 @@
       "localizations" : {
         "ar" : {
           "stringUnit" : {
-            "state" : "new",
-            "value" : "In some cases, Whisky wont't be able to function properly from a different folder"
+            "state" : "translated",
+            "value" : "في بعض الحالات، لن يتمكن Whisky من العمل بشكل صحيح من مجلد مختلف"
           }
         },
         "cs" : {
@@ -17824,8 +17824,8 @@
       "localizations" : {
         "ar" : {
           "stringUnit" : {
-            "state" : "new",
-            "value" : "Would you like to move Whisky to your Applications folder?"
+            "state" : "translated",
+            "value" : "هل ترغب في نقل Whisky إلى مجلد التطبيقات الخاص بك؟"
           }
         },
         "cs" : {
@@ -17960,8 +17960,8 @@
       "localizations" : {
         "ar" : {
           "stringUnit" : {
-            "state" : "new",
-            "value" : "Bottle Configuration"
+            "state" : "translated",
+            "value" : "تكوين الزجاجة"
           }
         },
         "cs" : {
@@ -18097,8 +18097,8 @@
       "localizations" : {
         "ar" : {
           "stringUnit" : {
-            "state" : "new",
-            "value" : "Running Processes"
+            "state" : "translated",
+            "value" : "عمليات التشغيل"
           }
         },
         "cs" : {
@@ -18233,8 +18233,8 @@
       "localizations" : {
         "ar" : {
           "stringUnit" : {
-            "state" : "new",
-            "value" : "Installed Programs"
+            "state" : "translated",
+            "value" : "البرامج المثبتة"
           }
         },
         "cs" : {
@@ -18369,8 +18369,8 @@
       "localizations" : {
         "ar" : {
           "stringUnit" : {
-            "state" : "new",
-            "value" : "You are running WhiskyWine %@, but %@ is available. Would you like to update?"
+            "state" : "translated",
+            "value" : "أنت تستخدم WhiskyWine %@, لاكن %@ iمتاح. هل ترغب في التحديث؟"
           }
         },
         "cs" : {
@@ -18505,8 +18505,8 @@
       "localizations" : {
         "ar" : {
           "stringUnit" : {
-            "state" : "new",
-            "value" : "New Version of WhiskyWine Available"
+            "state" : "translated",
+            "value" : "يتوفر إصدار جديد من WhiskyWine"
           }
         },
         "cs" : {
@@ -18641,8 +18641,8 @@
       "localizations" : {
         "ar" : {
           "stringUnit" : {
-            "state" : "new",
-            "value" : "Update"
+            "state" : "translated",
+            "value" : "تحديث"
           }
         },
         "cs" : {
@@ -18777,8 +18777,8 @@
       "localizations" : {
         "ar" : {
           "stringUnit" : {
-            "state" : "new",
-            "value" : "Clear Shader Caches"
+            "state" : "translated",
+            "value" : "محواة التخزين المؤقت للتظليل"
           }
         },
         "cs" : {
@@ -18914,8 +18914,8 @@
       "localizations" : {
         "ar" : {
           "stringUnit" : {
-            "state" : "new",
-            "value" : "Apps"
+            "state" : "translated",
+            "value" : "التطبيقات"
           }
         },
         "cs" : {
@@ -19051,8 +19051,8 @@
       "localizations" : {
         "ar" : {
           "stringUnit" : {
-            "state" : "new",
-            "value" : "Benchmarks"
+            "state" : "translated",
+            "value" : "معيار الأداء "
           }
         },
         "cs" : {
@@ -19188,7 +19188,7 @@
       "localizations" : {
         "ar" : {
           "stringUnit" : {
-            "state" : "new",
+            "state" : "translated",
             "value" : "DLLs"
           }
         },
@@ -19325,8 +19325,8 @@
       "localizations" : {
         "ar" : {
           "stringUnit" : {
-            "state" : "new",
-            "value" : "Fonts"
+            "state" : "translated",
+            "value" : "الخطوط"
           }
         },
         "cs" : {
@@ -19462,8 +19462,8 @@
       "localizations" : {
         "ar" : {
           "stringUnit" : {
-            "state" : "new",
-            "value" : "Games"
+            "state" : "translated",
+            "value" : "ألعاب"
           }
         },
         "cs" : {
@@ -19599,8 +19599,8 @@
       "localizations" : {
         "ar" : {
           "stringUnit" : {
-            "state" : "new",
-            "value" : "Settings"
+            "state" : "translated",
+            "value" : "الإعدادات"
           }
         },
         "cs" : {
@@ -19735,8 +19735,8 @@
       "localizations" : {
         "ar" : {
           "stringUnit" : {
-            "state" : "new",
-            "value" : "Description"
+            "state" : "translated",
+            "value" : "الوصف"
           }
         },
         "cs" : {
@@ -19871,8 +19871,8 @@
       "localizations" : {
         "ar" : {
           "stringUnit" : {
-            "state" : "new",
-            "value" : "Command"
+            "state" : "translated",
+            "value" : "لأوامر"
           }
         },
         "cs" : {
@@ -20007,8 +20007,8 @@
       "localizations" : {
         "ar" : {
           "stringUnit" : {
-            "state" : "new",
-            "value" : "Run Winetricks Command"
+            "state" : "translated",
+            "value" : "تشغيل أمر Winetricks"
           }
         },
         "cs" : {
