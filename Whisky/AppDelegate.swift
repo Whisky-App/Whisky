@@ -56,7 +56,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         Bundle.main.resourceURL?.deletingLastPathComponent().deletingLastPathComponent()
     }
 
-    private static var expectedUrl = URL(fileURLWithPath: "/Applications/Whisky.app")
+    private static let expectedUrl = URL(fileURLWithPath: "/Applications/Whisky.app")
 
     private static var insideAppsFolder: Bool {
         if let url = appUrl {
@@ -65,6 +65,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         return false
     }
 
+    @MainActor
     private func showAlertOnFirstLaunch() {
         let alert = NSAlert()
         alert.messageText = String(localized: "showAlertOnFirstLaunch.messageText")

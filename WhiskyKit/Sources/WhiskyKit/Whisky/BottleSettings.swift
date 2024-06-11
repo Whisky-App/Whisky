@@ -17,7 +17,7 @@
 //
 
 import Foundation
-import SemanticVersion
+@preconcurrency import SemanticVersion
 import os.log
 
 public struct PinnedProgram: Codable, Hashable, Equatable {
@@ -51,7 +51,7 @@ public struct BottleInfo: Codable, Equatable {
     }
 }
 
-public enum WinVersion: String, CaseIterable, Codable {
+public enum WinVersion: String, CaseIterable, Codable, Sendable {
     case winXP = "winxp64"
     case win7 = "win7"
     case win8 = "win8"

@@ -121,7 +121,8 @@ struct BottleListEntry: View {
                 if selected == bottle.url {
                     selected = nil
                 }
-                await bottle.remove(delete: checkbox.state == .on)
+
+                bottle.remove(delete: checkbox.state == .on)
             }
         }
     }

@@ -22,7 +22,7 @@ extension PEFile {
     /// COFF File Header (Object and Image)
     ///
     /// https://learn.microsoft.com/en-us/windows/win32/debug/pe-format#coff-file-header-object-and-image
-    public struct COFFFileHeader: Hashable, Equatable {
+    public struct COFFFileHeader: Hashable, Equatable, Sendable {
         public let machine: UInt16
         public let numberOfSections: UInt16
         public let timeDateStamp: Date

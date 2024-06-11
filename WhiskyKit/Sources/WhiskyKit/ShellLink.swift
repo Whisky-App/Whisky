@@ -45,7 +45,7 @@ public struct ShellLinkHeader {
     }
 }
 
-public struct LinkFlags: OptionSet, Hashable {
+public struct LinkFlags: OptionSet, Hashable, Sendable {
     public let rawValue: UInt32
 
     public init(rawValue: UInt32) {
@@ -121,7 +121,7 @@ public struct LinkInfo: Hashable {
     }
 }
 
-public struct LinkInfoFlags: OptionSet, Hashable {
+public struct LinkInfoFlags: OptionSet, Hashable, Sendable {
     public let rawValue: UInt32
 
     public init(rawValue: UInt32) {

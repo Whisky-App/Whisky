@@ -20,7 +20,9 @@ import Foundation
 import SwiftUI
 import os.log
 
-public class Program: ObservableObject, Equatable, Hashable, Identifiable {
+// swiftlint:disable:next todo
+// TODO: Should not be unchecked!
+public final class Program: ObservableObject, Equatable, Hashable, Identifiable, @unchecked Sendable {
     public let bottle: Bottle
     public let url: URL
     public let settingsURL: URL

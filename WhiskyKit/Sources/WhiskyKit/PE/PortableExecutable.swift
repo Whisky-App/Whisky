@@ -45,7 +45,7 @@ public enum Architecture: Hashable {
 /// Microsoft Portable Executable
 ///
 /// https://learn.microsoft.com/en-us/windows/win32/debug/pe-format
-public struct PEFile: Hashable, Equatable {
+public struct PEFile: Hashable, Equatable, Sendable {
     /// URL to the file
     public let url: URL
     /// COFF File Header (Object and Image)

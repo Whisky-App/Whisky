@@ -73,6 +73,6 @@ extension URL {
     }
 }
 
-extension URL: Identifiable {
+extension URL: @retroactive Identifiable {
     public var id: URL { self }
 }

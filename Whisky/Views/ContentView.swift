@@ -19,7 +19,7 @@
 import SwiftUI
 import UniformTypeIdentifiers
 import WhiskyKit
-import SemanticVersion
+@preconcurrency import SemanticVersion
 
 struct ContentView: View {
     @AppStorage("selectedBottleURL") private var selectedBottleURL: URL?

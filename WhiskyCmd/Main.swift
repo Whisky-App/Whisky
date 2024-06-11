@@ -17,15 +17,15 @@
 //
 
 import Foundation
-import ArgumentParser
 import WhiskyKit
 import SwiftyTextTable
 import Progress
 import SemanticVersion
+@preconcurrency import ArgumentParser
 
 @main
 struct Whisky: ParsableCommand {
-    static var configuration = CommandConfiguration(
+    static let configuration = CommandConfiguration(
         abstract: "A CLI interface for Whisky.",
         subcommands: [List.self,
                       Create.self,
@@ -41,7 +41,7 @@ struct Whisky: ParsableCommand {
 
 extension Whisky {
     struct List: ParsableCommand {
-        static var configuration = CommandConfiguration(abstract: "List existing bottles.")
+        static let configuration = CommandConfiguration(abstract: "List existing bottles.")
 
         mutating func run() throws {
             var bottlesList = BottleData()
@@ -63,7 +63,7 @@ extension Whisky {
     }
 
     struct Create: ParsableCommand {
-        static var configuration = CommandConfiguration(abstract: "Create a new bottle.")
+        static let configuration = CommandConfiguration(abstract: "Create a new bottle.")
 
         @Argument var name: String
 
@@ -91,7 +91,7 @@ extension Whisky {
     }
 
     struct Add: ParsableCommand {
-        static var configuration = CommandConfiguration(abstract: "Add an existing bottle.")
+        static let configuration = CommandConfiguration(abstract: "Add an existing bottle.")
 
         @Argument var path: String
 
@@ -106,7 +106,7 @@ extension Whisky {
     }
 
     struct Export: ParsableCommand {
-        static var configuration = CommandConfiguration(abstract: "Export an existing bottle.")
+        static let configuration = CommandConfiguration(abstract: "Export an existing bottle.")
 
         mutating func run() throws {
 //            print("Create a bottle")
@@ -114,7 +114,7 @@ extension Whisky {
     }
 
     struct Delete: ParsableCommand {
-        static var configuration = CommandConfiguration(abstract: "Delete an existing bottle from disk.")
+        static let configuration = CommandConfiguration(abstract: "Delete an existing bottle from disk.")
 
         @Argument var name: String
 
@@ -139,7 +139,7 @@ extension Whisky {
     }
 
     struct Remove: ParsableCommand {
-        static var configuration = CommandConfiguration(abstract: "Remove an existing bottle from Whisky.",
+        static let configuration = CommandConfiguration(abstract: "Remove an existing bottle from Whisky.",
                                                         discussion: "This will not remove the bottle from disk.")
 
         @Argument var name: String
@@ -159,7 +159,7 @@ extension Whisky {
     }
 
     struct Run: ParsableCommand {
-        static var configuration = CommandConfiguration(abstract: "Run a program with Whisky.")
+        static let configuration = CommandConfiguration(abstract: "Run a program with Whisky.")
 
         @Argument var bottleName: String
         @Argument var path: String
@@ -180,7 +180,7 @@ extension Whisky {
     }
 
     struct Shellenv: ParsableCommand {
-        static var configuration = CommandConfiguration(abstract: "Prints export statements for a Bottle for eval.")
+        static let configuration = CommandConfiguration(abstract: "Prints export statements for a Bottle for eval.")
 
         @Argument var bottleName: String
 
@@ -199,7 +199,7 @@ extension Whisky {
     }
 
     struct Install: ParsableCommand {
-        static var configuration = CommandConfiguration(abstract: "Install WhiskyWine.")
+        static let configuration = CommandConfiguration(abstract: "Install WhiskyWine.")
 
         mutating func run() throws {
 
@@ -207,7 +207,7 @@ extension Whisky {
     }
 
     struct Uninstall: ParsableCommand {
-        static var configuration = CommandConfiguration(abstract: "Uninstall WhiskyWine.")
+        static let configuration = CommandConfiguration(abstract: "Uninstall WhiskyWine.")
 
         @Flag(name: [.long, .short], help: "Uninstall WhiskyWine") var whiskyWine = false
 

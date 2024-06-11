@@ -89,13 +89,13 @@ struct RosettaView: View {
         if Rosetta2.isRosettaInstalled {
             installing = false
             sleep(2)
-            await proceed()
+            proceed()
         } else {
             do {
                 successful = try await Rosetta2.installRosetta()
                 installing = false
                 try await Task.sleep(for: .seconds(2))
-                await proceed()
+                proceed()
             } catch {
                 successful = false
                 installing = false

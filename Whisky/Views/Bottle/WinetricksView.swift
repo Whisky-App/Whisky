@@ -81,7 +81,11 @@ struct WinetricksView: View {
         .padding()
         .onAppear {
             Task.detached {
-                winetricks = await Winetricks.parseVerbs()
+                let tricks = await Winetricks.parseVerbs()
+
+                await MainActor.run {
+                    winetricks = tricks
+                }
             }
         }
         .frame(minWidth: ViewWidth.large, minHeight: 400)
