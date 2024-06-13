@@ -203,11 +203,11 @@ struct BlocklistItemView: View {
             Text(blockedUrl.prettyPath(bottle))
             Spacer()
             if showButtons {
-                Button("program.remove.blocklist", systemImage: "xmark.circle") {
+                Button("program.remove.blocklist", systemImage: "xmark") {
                     bottle.settings.blocklist.removeAll { $0 == blockedUrl }
                 }
                 .labelStyle(.iconOnly)
-                .symbolVariant(.fill)
+                .symbolVariant(.fill.circle)
                 .buttonStyle(.plain)
                 .foregroundColor(.secondary)
                 .help("program.remove.blocklist")
