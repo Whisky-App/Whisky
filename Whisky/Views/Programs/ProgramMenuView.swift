@@ -38,11 +38,11 @@ struct ProgramMenuView: View {
             ? String(localized: "button.unpin")
             : String(localized: "button.pin")
 
-            let iconName = program.pinned ? "pin.slash" : "pin"
-            Button(buttonName, systemImage: iconName) {
+            Button(buttonName, systemImage: "pin") {
                 program.pinned.toggle()
             }
             .labelStyle(.titleAndIcon)
+            .symbolVariant(program.pinned ? .slash : .none)
         }
     }
 }

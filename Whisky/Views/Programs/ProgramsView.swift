@@ -59,7 +59,8 @@ struct ProgramsView: View {
                             Button("program.add.selected.blocklist", systemImage: "hand.raised") {
                                 bottle.settings.blocklist.append(contentsOf: selectedPrograms.map { $0.url })
                                 blocklist = bottle.settings.blocklist
-                            }.labelStyle(.titleAndIcon)
+                            }
+                            .labelStyle(.titleAndIcon)
                         } else {
                             ProgramMenuView(program: program, path: $path)
 
@@ -67,7 +68,8 @@ struct ProgramsView: View {
                                 Button("program.add.blocklist", systemImage: "hand.raised") {
                                     bottle.settings.blocklist.append(program.url)
                                     blocklist = bottle.settings.blocklist
-                                }.labelStyle(.titleAndIcon)
+                                }
+                                .labelStyle(.titleAndIcon)
                             }
                         }
                     }
@@ -82,15 +84,19 @@ struct ProgramsView: View {
                     )
                     .contextMenu {
                         if selectedBlockitems.contains(blockedUrl) {
-                            Button("program.remove.selected.blocklist", systemImage: "hand.raised.slash") {
+                            Button("program.remove.selected.blocklist", systemImage: "hand.raised") {
                                 bottle.settings.blocklist.removeAll(where: { selectedBlockitems.contains($0) })
                                 blocklist = bottle.settings.blocklist
-                            }.labelStyle(.titleAndIcon)
+                            }
+                            .labelStyle(.titleAndIcon)
+                            .symbolVariant(.slash)
                         } else {
-                            Button("program.remove.blocklist", systemImage: "hand.raised.slash") {
+                            Button("program.remove.blocklist", systemImage: "hand.raised") {
                                 bottle.settings.blocklist.removeAll(where: { $0 == blockedUrl })
                                 blocklist = bottle.settings.blocklist
-                            }.labelStyle(.titleAndIcon)
+                            }
+                            .labelStyle(.titleAndIcon)
+                            .symbolVariant(.slash)
                         }
                     }
                 }
@@ -140,10 +146,12 @@ struct ProgramItemView: View {
             Button {
                 program.pinned.toggle()
             } label: {
-                Image(systemName: program.pinned ? pinHovered ? "pin.slash.fill" : "pin.fill" : "pin")
+                Image(systemName: "pin")
                     .onHover { hover in
                         pinHovered = hover
                     }
+                    .symbolVariant(program.pinned ? pinHovered ? .slash.fill : .fill : .none)
+                    .contentTransition(.symbolEffect(.replace))
             }
             .buttonStyle(.plain)
             .foregroundColor(program.pinned ? .accentColor : .secondary)
@@ -195,10 +203,11 @@ struct BlocklistItemView: View {
             Text(blockedUrl.prettyPath(bottle))
             Spacer()
             if showButtons {
-                Button("program.remove.blocklist", systemImage: "xmark.circle.fill") {
+                Button("program.remove.blocklist", systemImage: "xmark.circle") {
                     bottle.settings.blocklist.removeAll { $0 == blockedUrl }
                 }
                 .labelStyle(.iconOnly)
+                .symbolVariant(.fill)
                 .buttonStyle(.plain)
                 .foregroundColor(.secondary)
                 .help("program.remove.blocklist")
