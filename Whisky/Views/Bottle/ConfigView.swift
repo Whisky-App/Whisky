@@ -101,7 +101,16 @@ struct ConfigView: View {
                 }
                 if #available(macOS 15, *) {
                     Toggle(isOn: $bottle.settings.avxEnabled) {
-                        Text("config.avx")
+                        VStack(alignment: .leading) {
+                            Text("config.avx")
+                            HStack {
+                                Image(systemName: "exclamationmark.triangle")
+                                    .font(.subheadline)
+                                Text("config.avx.warning")
+                                    .fontWeight(.light)
+                                    .font(.subheadline)
+                            }
+                        }
                     }
                 }
             }

@@ -3140,6 +3140,16 @@
         }
       }
     },
+    "config.avx.warning" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "This option may impact emulation performance"
+          }
+        }
+      }
+    },
     "config.buildVersion" : {
       "localizations" : {
         "ar" : {
