@@ -3130,6 +3130,26 @@
         }
       }
     },
+    "config.avx" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "AVX Emulation"
+          }
+        }
+      }
+    },
+    "config.avx.warning" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Significantly impacts performance"
+          }
+        }
+      }
+    },
     "config.buildVersion" : {
       "localizations" : {
         "ar" : {

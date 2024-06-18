@@ -99,6 +99,20 @@ struct ConfigView: View {
                         )
                     }
                 }
+                if #available(macOS 15, *) {
+                    Toggle(isOn: $bottle.settings.avxEnabled) {
+                        VStack(alignment: .leading) {
+                            Text("config.avx")
+                            HStack(alignment: .firstTextBaseline) {
+                                Image(systemName: "exclamationmark.triangle")
+                                    .font(.subheadline)
+                                Text("config.avx.warning")
+                                    .fontWeight(.light)
+                                    .font(.subheadline)
+                            }
+                        }
+                    }
+                }
             }
             Section("config.title.dxvk", isExpanded: $dxvkSectionExpanded) {
                 Toggle(isOn: $bottle.settings.dxvk) {
