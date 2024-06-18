@@ -99,8 +99,10 @@ struct ConfigView: View {
                         )
                     }
                 }
-                Toggle(isOn: $bottle.settings.avxEnabled) {
-                    Text("config.avx")
+                if #available(macOS 15, *) {
+                    Toggle(isOn: $bottle.settings.avxEnabled) {
+                        Text("config.avx")
+                    }
                 }
             }
             Section("config.title.dxvk", isExpanded: $dxvkSectionExpanded) {
