@@ -3145,7 +3145,7 @@
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "This option may impact emulation performance"
+            "value" : "This option significantly impacts emulation performance"
           }
         }
       }
