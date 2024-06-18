@@ -3130,6 +3130,16 @@
         }
       }
     },
+    "config.avx" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "AVX Support"
+          }
+        }
+      }
+    },
     "config.buildVersion" : {
       "localizations" : {
         "ar" : {
