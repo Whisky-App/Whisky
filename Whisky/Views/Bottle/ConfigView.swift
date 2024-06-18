@@ -99,6 +99,9 @@ struct ConfigView: View {
                         )
                     }
                 }
+                Toggle(isOn: $bottle.settings.avxEnabled) {
+                    Text("config.avx")
+                }
             }
             Section("config.title.dxvk", isExpanded: $dxvkSectionExpanded) {
                 Toggle(isOn: $bottle.settings.dxvk) {
