@@ -190,6 +190,9 @@ struct ProgramItemView: View {
         .onHover { hover in
             showButtons = hover
         }
+        .onTapGesture(count: 2) {
+            program.run()
+        }
     }
 }
 
