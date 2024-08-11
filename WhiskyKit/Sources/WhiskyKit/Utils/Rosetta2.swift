@@ -23,7 +23,11 @@ public class Rosetta2 {
     private static let rosetta2RuntimeBin = "/Library/Apple/usr/libexec/oah/libRosettaRuntime"
 
     public static let isRosettaInstalled: Bool = {
+        #if arch(arm64)
         return FileManager.default.fileExists(atPath: rosetta2RuntimeBin)
+        #else // Intel
+        return true
+        #endif
     }()
 
     public static func installRosetta() async throws -> Bool {
