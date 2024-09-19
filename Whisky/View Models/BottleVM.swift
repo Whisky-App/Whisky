@@ -40,7 +40,7 @@ final class BottleVM: ObservableObject, @unchecked Sendable {
     func createNewBottle(bottleName: String, winVersion: WinVersion, bottleURL: URL) -> URL {
         let newBottleDir = bottleURL.appending(path: UUID().uuidString)
 
-        Task.detached { @MainActor in
+        Task.detached {
             var bottleId: Bottle?
             do {
                 try FileManager.default.createDirectory(atPath: newBottleDir.path(percentEncoded: false),
@@ -48,7 +48,9 @@ final class BottleVM: ObservableObject, @unchecked Sendable {
                 let bottle = Bottle(bottleUrl: newBottleDir, inFlight: true)
                 bottleId = bottle
 
-                self.bottles.append(bottle)
+                await MainActor.run {
+                    self.bottles.append(bottle)
+                }
 
                 bottle.settings.windowsVersion = winVersion
                 bottle.settings.name = bottleName
@@ -56,13 +58,17 @@ final class BottleVM: ObservableObject, @unchecked Sendable {
                 let wineVer = try await Wine.wineVersion()
                 bottle.settings.wineVersion = SemanticVersion(wineVer) ?? SemanticVersion(0, 0, 0)
                 // Add record
-                self.bottlesList.paths.append(newBottleDir)
-                self.loadBottles()
+                await MainActor.run {
+                    self.bottlesList.paths.append(newBottleDir)
+                    self.loadBottles()
+                }
             } catch {
                 print("Failed to create new bottle: \(error)")
                 if let bottle = bottleId {
-                    if let index = self.bottles.firstIndex(of: bottle) {
-                        self.bottles.remove(at: index)
+                    await MainActor.run {
+                        if let index = self.bottles.firstIndex(of: bottle) {
+                            self.bottles.remove(at: index)
+                        }
                     }
                 }
             }

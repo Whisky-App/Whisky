@@ -17,7 +17,7 @@
 //
 
 import Foundation
-@preconcurrency import SemanticVersion
+import SemanticVersion
 import os.log
 
 public struct PinnedProgram: Codable, Hashable, Equatable {

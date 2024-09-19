@@ -21,7 +21,7 @@ import WhiskyKit
 import SwiftyTextTable
 import Progress
 import SemanticVersion
-@preconcurrency import ArgumentParser
+import ArgumentParser
 
 @main
 struct Whisky: ParsableCommand {

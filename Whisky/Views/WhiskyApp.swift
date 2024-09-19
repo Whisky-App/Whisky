@@ -179,14 +179,14 @@ struct WhiskyApp: App {
         getconf.waitUntilExit()
 
         let getconfOutput = pipe.fileHandleForReading.readDataToEndOfFile()
-        let getconfOutputString = String(decoding: getconfOutput, as: UTF8.self)
-
-        let d3dmPath = URL(fileURLWithPath: getconfOutputString.trimmingCharacters(in: .whitespacesAndNewlines))
-            .appending(path: "d3dm").path
-        do {
-            try FileManager.default.removeItem(atPath: d3dmPath)
-        } catch {
-            return
+        if let getconfOutputString = String(data: getconfOutput, encoding: .utf8) {
+            let d3dmPath = URL(fileURLWithPath: getconfOutputString.trimmingCharacters(in: .whitespacesAndNewlines))
+                .appending(path: "d3dm").path
+            do {
+                try FileManager.default.removeItem(atPath: d3dmPath)
+            } catch {
+                return
+            }
         }
     }
 }

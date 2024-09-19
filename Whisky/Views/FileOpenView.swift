@@ -79,7 +79,7 @@ struct FileOpenView: View {
         if let bottle = bottles.first(where: { $0.url == selection }) {
             Task.detached(priority: .userInitiated) {
                 do {
-                    if await fileURL.pathExtension == "bat" {
+                    if fileURL.pathExtension == "bat" {
                         try await Wine.runBatchFile(url: fileURL,
                                                     bottle: bottle)
                     } else {

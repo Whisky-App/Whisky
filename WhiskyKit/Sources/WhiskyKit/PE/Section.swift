@@ -40,7 +40,7 @@ extension PEFile {
             do {
                 try handle.seek(toOffset: UInt64(offset))
                 if let data = try handle.read(upToCount: 8) {
-                    let string = String(decoding: data, as: UTF8.self)
+                    let string = String(data: data, encoding: .utf8) ?? ""
                     self.name = string.replacingOccurrences(of: "\0", with: "")
                 } else {
                     self.name = ""

@@ -17,7 +17,7 @@
 //
 
 import Foundation
-@preconcurrency import SemanticVersion
+import SemanticVersion
 
 public struct BottleData: Codable {
     public static let containerDir = FileManager.default.homeDirectoryForCurrentUser
