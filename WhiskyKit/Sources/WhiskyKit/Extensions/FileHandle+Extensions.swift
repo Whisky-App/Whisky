@@ -18,6 +18,7 @@
 
 import Foundation
 import os.log
+import SemanticVersion
 
 extension FileHandle {
     func extract<T>(_ type: T.Type, offset: UInt64 = 0) -> T? {
@@ -73,7 +74,9 @@ extension FileHandle {
         header += "Bottle Name: \(bottle.settings.name)\n"
         header += "Bottle URL: \(bottle.url.path)\n\n"
 
-        header += "Wine Version: \(bottle.settings.wineVersion)\n"
+        if let version = WhiskyWineInstaller.whiskyWineVersion() {
+            header += "WhiskyWine Version: \(version.major).\(version.minor).\(version.patch)\n"
+        }
         header += "Windows Version: \(bottle.settings.windowsVersion)\n"
         header += "Enhanced Sync: \(bottle.settings.enhancedSync)\n\n"
 
