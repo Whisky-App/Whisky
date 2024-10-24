@@ -3135,7 +3135,7 @@
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "AVX Emulation"
+            "value" : "Advertise AVX Support"
           }
         }
       }
@@ -3145,7 +3145,7 @@
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Significantly impacts performance"
+            "value" : "May negatively impact performance"
           }
         }
       }

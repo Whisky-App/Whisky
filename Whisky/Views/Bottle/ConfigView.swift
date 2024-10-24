@@ -103,12 +103,15 @@ struct ConfigView: View {
                     Toggle(isOn: $bottle.settings.avxEnabled) {
                         VStack(alignment: .leading) {
                             Text("config.avx")
-                            HStack(alignment: .firstTextBaseline) {
-                                Image(systemName: "exclamationmark.triangle")
-                                    .font(.subheadline)
-                                Text("config.avx.warning")
-                                    .fontWeight(.light)
-                                    .font(.subheadline)
+                            if bottle.settings.avxEnabled {
+                                HStack(alignment: .firstTextBaseline) {
+                                    Image(systemName: "exclamationmark.triangle.fill")
+                                        .symbolRenderingMode(.multicolor)
+                                        .font(.subheadline)
+                                    Text("config.avx.warning")
+                                        .fontWeight(.light)
+                                        .font(.subheadline)
+                                }
                             }
                         }
                     }
