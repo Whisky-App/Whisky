@@ -141,6 +141,15 @@ struct ConfigView: View {
                     Text("config.metalTrace")
                     Text("config.metalTrace.info")
                 }
+                if let device = MTLCreateSystemDefaultDevice() {
+                    // Represents the Apple family 9 GPU features that correspond to the Apple A17, M3, and M4 GPUs.
+                    if device.supportsFamily(.apple9) {
+                        Toggle(isOn: $bottle.settings.dxrEnabled) {
+                            Text("config.dxr")
+                            Text("config.dxr.info")
+                        }
+                    }
+                }
             }
         }
         .formStyle(.grouped)

@@ -3558,6 +3558,28 @@
         }
       }
     },
+    "config.dxr" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "DirectX Raytracing"
+          }
+        }
+      }
+    },
+    "config.dxr.info" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Enables raytracing support in DirectX 12 titles "
+          }
+        }
+      }
+    },
     "config.dxvk" : {
       "localizations" : {
         "ar" : {

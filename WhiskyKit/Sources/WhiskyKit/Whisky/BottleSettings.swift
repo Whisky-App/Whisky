@@ -104,6 +104,7 @@ public struct BottleWineConfig: Codable, Equatable {
 public struct BottleMetalConfig: Codable, Equatable {
     var metalHud: Bool = false
     var metalTrace: Bool = false
+    var dxrEnabled: Bool = false
 
     public init() {}
 
@@ -111,6 +112,7 @@ public struct BottleMetalConfig: Codable, Equatable {
         let container = try decoder.container(keyedBy: CodingKeys.self)
         self.metalHud = try container.decodeIfPresent(Bool.self, forKey: .metalHud) ?? false
         self.metalTrace = try container.decodeIfPresent(Bool.self, forKey: .metalTrace) ?? false
+        self.dxrEnabled = try container.decodeIfPresent(Bool.self, forKey: .dxrEnabled) ?? false
     }
 }
 
@@ -178,6 +180,11 @@ public struct BottleSettings: Codable, Equatable {
         set { wineConfig.windowsVersion = newValue }
     }
 
+    public var avxEnabled: Bool {
+        get { return wineConfig.avxEnabled }
+        set { wineConfig.avxEnabled = newValue }
+    }
+
     /// The pinned programs on this bottle
     public var pins: [PinnedProgram] {
         get { return info.pins }
@@ -205,6 +212,11 @@ public struct BottleSettings: Codable, Equatable {
         set { metalConfig.metalTrace = newValue }
     }
 
+    public var dxrEnabled: Bool {
+        get { return metalConfig.dxrEnabled }
+        set { metalConfig.dxrEnabled = newValue }
+    }
+
     public var dxvk: Bool {
         get { return dxvkConfig.dxvk }
         set { dxvkConfig.dxvk = newValue }
@@ -218,11 +230,6 @@ public struct BottleSettings: Codable, Equatable {
     public var dxvkHud: DXVKHUD {
         get {  return dxvkConfig.dxvkHud }
         set { dxvkConfig.dxvkHud = newValue }
-    }
-
-    public var avxEnabled: Bool {
-        get { return wineConfig.avxEnabled }
-        set { wineConfig.avxEnabled = newValue }
     }
 
     @discardableResult
@@ -305,6 +312,10 @@ public struct BottleSettings: Codable, Equatable {
 
         if avxEnabled {
             wineEnv.updateValue("1", forKey: "ROSETTA_ADVERTISE_AVX")
+        }
+
+        if dxrEnabled {
+            wineEnv.updateValue("1", forKey: "D3DM_SUPPORT_DXR")
         }
     }
 }
