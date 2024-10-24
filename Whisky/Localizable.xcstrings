@@ -3130,6 +3130,26 @@
         }
       }
     },
+    "config.avx" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Advertise AVX Support"
+          }
+        }
+      }
+    },
+    "config.avx.warning" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "May negatively impact performance"
+          }
+        }
+      }
+    },
     "config.buildVersion" : {
       "localizations" : {
         "ar" : {

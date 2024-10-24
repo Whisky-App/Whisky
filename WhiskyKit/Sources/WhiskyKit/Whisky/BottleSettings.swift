@@ -86,6 +86,7 @@ public struct BottleWineConfig: Codable, Equatable {
     var wineVersion: SemanticVersion = Self.defaultWineVersion
     var windowsVersion: WinVersion = .win10
     var enhancedSync: EnhancedSync = .msync
+    var avxEnabled: Bool = false
 
     public init() {}
 
@@ -95,6 +96,7 @@ public struct BottleWineConfig: Codable, Equatable {
         self.wineVersion = try container.decodeIfPresent(SemanticVersion.self, forKey: .wineVersion) ?? Self.defaultWineVersion
         self.windowsVersion = try container.decodeIfPresent(WinVersion.self, forKey: .windowsVersion) ?? .win10
         self.enhancedSync = try container.decodeIfPresent(EnhancedSync.self, forKey: .enhancedSync) ?? .msync
+        self.avxEnabled = try container.decodeIfPresent(Bool.self, forKey: .avxEnabled) ?? false
     }
     // swiftlint:enable line_length
 }
@@ -218,6 +220,11 @@ public struct BottleSettings: Codable, Equatable {
         set { dxvkConfig.dxvkHud = newValue }
     }
 
+    public var avxEnabled: Bool {
+        get { return wineConfig.avxEnabled }
+        set { wineConfig.avxEnabled = newValue }
+    }
+
     @discardableResult
     public static func decode(from metadataURL: URL) throws -> BottleSettings {
         guard FileManager.default.fileExists(atPath: metadataURL.path(percentEncoded: false)) else {
@@ -294,6 +301,10 @@ public struct BottleSettings: Codable, Equatable {
 
         if metalTrace {
             wineEnv.updateValue("1", forKey: "METAL_CAPTURE_ENABLED")
+        }
+
+        if avxEnabled {
+            wineEnv.updateValue("1", forKey: "ROSETTA_ADVERTISE_AVX")
         }
     }
 }
