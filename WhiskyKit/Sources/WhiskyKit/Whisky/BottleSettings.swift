@@ -86,6 +86,7 @@ public struct BottleWineConfig: Codable, Equatable {
     var wineVersion: SemanticVersion = Self.defaultWineVersion
     var windowsVersion: WinVersion = .win10
     var enhancedSync: EnhancedSync = .msync
+    var avxEnabled: Bool = false
 
     public init() {}
 
@@ -95,6 +96,7 @@ public struct BottleWineConfig: Codable, Equatable {
         self.wineVersion = try container.decodeIfPresent(SemanticVersion.self, forKey: .wineVersion) ?? Self.defaultWineVersion
         self.windowsVersion = try container.decodeIfPresent(WinVersion.self, forKey: .windowsVersion) ?? .win10
         self.enhancedSync = try container.decodeIfPresent(EnhancedSync.self, forKey: .enhancedSync) ?? .msync
+        self.avxEnabled = try container.decodeIfPresent(Bool.self, forKey: .avxEnabled) ?? false
     }
     // swiftlint:enable line_length
 }
@@ -102,6 +104,7 @@ public struct BottleWineConfig: Codable, Equatable {
 public struct BottleMetalConfig: Codable, Equatable {
     var metalHud: Bool = false
     var metalTrace: Bool = false
+    var dxrEnabled: Bool = false
 
     public init() {}
 
@@ -109,6 +112,7 @@ public struct BottleMetalConfig: Codable, Equatable {
         let container = try decoder.container(keyedBy: CodingKeys.self)
         self.metalHud = try container.decodeIfPresent(Bool.self, forKey: .metalHud) ?? false
         self.metalTrace = try container.decodeIfPresent(Bool.self, forKey: .metalTrace) ?? false
+        self.dxrEnabled = try container.decodeIfPresent(Bool.self, forKey: .dxrEnabled) ?? false
     }
 }
 
@@ -176,6 +180,11 @@ public struct BottleSettings: Codable, Equatable {
         set { wineConfig.windowsVersion = newValue }
     }
 
+    public var avxEnabled: Bool {
+        get { return wineConfig.avxEnabled }
+        set { wineConfig.avxEnabled = newValue }
+    }
+
     /// The pinned programs on this bottle
     public var pins: [PinnedProgram] {
         get { return info.pins }
@@ -201,6 +210,11 @@ public struct BottleSettings: Codable, Equatable {
     public var metalTrace: Bool {
         get { return metalConfig.metalTrace }
         set { metalConfig.metalTrace = newValue }
+    }
+
+    public var dxrEnabled: Bool {
+        get { return metalConfig.dxrEnabled }
+        set { metalConfig.dxrEnabled = newValue }
     }
 
     public var dxvk: Bool {
@@ -294,6 +308,14 @@ public struct BottleSettings: Codable, Equatable {
 
         if metalTrace {
             wineEnv.updateValue("1", forKey: "METAL_CAPTURE_ENABLED")
+        }
+
+        if avxEnabled {
+            wineEnv.updateValue("1", forKey: "ROSETTA_ADVERTISE_AVX")
+        }
+
+        if dxrEnabled {
+            wineEnv.updateValue("1", forKey: "D3DM_SUPPORT_DXR")
         }
     }
 }

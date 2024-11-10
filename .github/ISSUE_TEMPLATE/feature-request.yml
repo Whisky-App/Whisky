@@ -1,7 +1,6 @@
 name: Feature Request
 description: Request a new feature.
-title: "[Feature]: "
-labels: ["enhancement"]
+type: "Enhancement"
 body:
   - type: textarea
     id: related-to-problem

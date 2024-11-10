@@ -99,6 +99,23 @@ struct ConfigView: View {
                         )
                     }
                 }
+                if #available(macOS 15, *) {
+                    Toggle(isOn: $bottle.settings.avxEnabled) {
+                        VStack(alignment: .leading) {
+                            Text("config.avx")
+                            if bottle.settings.avxEnabled {
+                                HStack(alignment: .firstTextBaseline) {
+                                    Image(systemName: "exclamationmark.triangle.fill")
+                                        .symbolRenderingMode(.multicolor)
+                                        .font(.subheadline)
+                                    Text("config.avx.warning")
+                                        .fontWeight(.light)
+                                        .font(.subheadline)
+                                }
+                            }
+                        }
+                    }
+                }
             }
             Section("config.title.dxvk", isExpanded: $dxvkSectionExpanded) {
                 Toggle(isOn: $bottle.settings.dxvk) {
@@ -123,6 +140,15 @@ struct ConfigView: View {
                 Toggle(isOn: $bottle.settings.metalTrace) {
                     Text("config.metalTrace")
                     Text("config.metalTrace.info")
+                }
+                if let device = MTLCreateSystemDefaultDevice() {
+                    // Represents the Apple family 9 GPU features that correspond to the Apple A17, M3, and M4 GPUs.
+                    if device.supportsFamily(.apple9) {
+                        Toggle(isOn: $bottle.settings.dxrEnabled) {
+                            Text("config.dxr")
+                            Text("config.dxr.info")
+                        }
+                    }
                 }
             }
         }
