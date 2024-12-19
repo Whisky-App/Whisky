@@ -176,6 +176,7 @@ extension Whisky {
             let url = URL(fileURLWithPath: path)
             let program = Program(url: url, bottle: bottle)
             program.runInTerminal()
+            RunLoop.main.run()
         }
     }
 
