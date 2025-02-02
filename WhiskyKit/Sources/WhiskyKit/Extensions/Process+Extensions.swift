@@ -121,6 +121,9 @@ public extension Process {
 
 extension FileHandle {
     func nextLine() -> String? {
+        while availableData.isEmpty {
+            Thread.sleep(forTimeInterval: 0.2)
+        }
         if let line = String(data: availableData, encoding: .utf8) {
             guard !line.isEmpty else { return nil }
             return line
