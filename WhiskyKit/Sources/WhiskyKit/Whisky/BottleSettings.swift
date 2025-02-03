@@ -32,8 +32,7 @@ public struct PinnedProgram: Codable, Hashable, Equatable {
             let volume = try url.resourceValues(forKeys: [.volumeURLKey]).volume
             self.removable = try !(volume?.resourceValues(forKeys: [.volumeIsInternalKey]).volumeIsInternal ?? false)
         } catch {
-            print("error: \(error)")
-            self.removable = true
+            self.removable = false
         }
     }
 
