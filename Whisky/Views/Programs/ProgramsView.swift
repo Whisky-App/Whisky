@@ -123,13 +123,18 @@ struct ProgramsView: View {
 
     private func loadData() {
         loadPrograms()
-        blocklist = bottle.settings.blocklist
+        blocklist = bottle.settings.blocklist.filter({
+            return FileManager.default.fileExists(atPath: $0.path(percentEncoded: false))
+        })
     }
 
     private func loadPrograms() {
+        let programs = bottle.programs.filter({
+            return FileManager.default.fileExists(atPath: $0.url.path(percentEncoded: false))
+        })
         sortedPrograms = [
-            bottle.programs.pinned.sorted { $0.name < $1.name },
-            bottle.programs.unpinned.sorted { $0.name < $1.name }
+            programs.pinned.sorted { $0.name < $1.name },
+            programs.unpinned.sorted { $0.name < $1.name }
         ].flatMap { $0 }
     }
 }
