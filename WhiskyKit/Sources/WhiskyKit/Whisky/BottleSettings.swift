@@ -40,7 +40,7 @@ public struct PinnedProgram: Codable, Hashable, Equatable {
         let container = try decoder.container(keyedBy: CodingKeys.self)
         self.name = try container.decodeIfPresent(String.self, forKey: .name) ?? ""
         self.url = try container.decodeIfPresent(URL.self, forKey: .url)
-        self.removable = try container.decodeIfPresent(Bool.self, forKey: .removable) ?? true
+        self.removable = try container.decodeIfPresent(Bool.self, forKey: .removable) ?? false
     }
 }
 
