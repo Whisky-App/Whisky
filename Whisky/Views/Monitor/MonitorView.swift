@@ -140,14 +140,80 @@ enum SysctlHelper {
             index += 1
         }
 
+        arguments.removeFirst()
         return arguments
     }
 }
 
 struct ProcessInfo: Identifiable {
     let id: PID
+    let appNameAndConfig: (String, [String])?
     let workingDirectory: String?
     let command: [String]?
+}
+
+struct ProcessInfoView: View {
+    let processInfo: ProcessInfo
+
+    var body: some View {
+        VStack(alignment: .leading, spacing: 15) {
+            let boxTitle = Text(processInfo.appNameAndConfig?.0 ?? "Anonymous Wine Process")
+                .font(.title)
+            if processInfo.appNameAndConfig == nil {
+                boxTitle
+            } else {
+                boxTitle.fontWeight(.bold)
+            }
+
+            Divider()
+
+            Text("Process ID: \(processInfo.id)")
+                .font(.subheadline)
+            if let workingDirectory = processInfo.workingDirectory {
+                Text("Working Directory: \(workingDirectory)")
+                    .font(.body)
+            }
+
+            if let config = processInfo.appNameAndConfig?.1 {
+                ProcessConfigView(config: config)
+            }
+
+        }
+        .padding()
+        .background(
+            RoundedRectangle(cornerRadius: 15)
+                .fill(Color.clear)
+                .stroke(Color.black)
+                .shadow(radius: 5)
+        )
+        .padding()
+    }
+}
+
+struct ProcessConfigView: View {
+    let config: [String]
+
+    var body: some View {
+        VStack(alignment: .leading, spacing: 10) {
+            ForEach(config, id: \.self) { flag in
+                let flag = Array(flag.split(separator: "=", maxSplits: 2, omittingEmptySubsequences: false))
+                let flagName = flag[0]
+                let flagValue = flag.count == 1 ? "" : flag[1]
+
+                HStack {
+                    Text(flagName)
+                        .font(.body)
+                        .fontWeight(.semibold)
+                    Text(flagValue)
+                        .font(.body)
+                        .foregroundColor(.gray)
+                    Spacer()
+                }
+                .padding(.horizontal)
+                Divider()
+            }
+        }
+    }
 }
 
 private func fetchProcesses() -> [ProcessInfo]? {
@@ -156,11 +222,22 @@ private func fetchProcesses() -> [ProcessInfo]? {
     }
 
     var processes: [ProcessInfo] = []
+
     for id in pids {
+        let workingDirectory = SysctlHelper.workingDirectory(for: id)
+        let command = SysctlHelper.commandLine(for: id)
+        let appNameAndConfig: (String, [String])? = command.flatMap {
+            if $0.count <= 1 {
+                return nil
+            } else {
+                return ($0[1], Array($0.suffix(from: 2)))
+            }
+        }
         let process = ProcessInfo(
             id: id,
-            workingDirectory: SysctlHelper.workingDirectory(for: id),
-            command: SysctlHelper.commandLine(for: id)
+            appNameAndConfig: appNameAndConfig,
+            workingDirectory: workingDirectory,
+            command: command
         )
         processes.append(process)
     }
@@ -222,22 +299,9 @@ struct MonitorView: View {
         VStack(alignment: .leading) {
             Text("why.monitor")
             List(monitor.processes) { process in
-                VStack {
-                    Text("PID: " + process.id.description)
-                    if let directory = process.workingDirectory {
-                        Text("D: " + directory)
-                            .selectionDisabled(false)
-                    }
-                    if let command = process.command {
-                        Text("C: " + command.description)
-                            .selectionDisabled(false)
-                    }
-                }
-                .selectionDisabled(false)
+                ProcessInfoView(processInfo: process)
             }
-            .selectionDisabled(false)
         }
-        .selectionDisabled(false)
         .padding()
         .bottomBar {
             HStack {

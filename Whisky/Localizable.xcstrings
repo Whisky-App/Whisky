@@ -11430,6 +11430,16 @@
         }
       }
     },
+    "Process ID: %d" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Process Id: %d"
+          }
+        }
+      }
+    },
     "process.table.executable" : {
       "localizations" : {
         "ar" : {
@@ -19331,7 +19341,14 @@
       }
     },
     "Whisky Monitor" : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Whisky Monitor"
+          }
+        }
+      }
     },
     "why.monitor" : {
       "extractionState" : "manual",
@@ -20706,6 +20723,16 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "執行Winetricks指令"
+          }
+        }
+      }
+    },
+    "Working Directory: %@" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Working Directory: %@"
           }
         }
       }

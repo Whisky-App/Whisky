@@ -129,7 +129,7 @@ struct WhiskyApp: App {
 
         Window("Whisky Monitor", id: monitorWindowId) {
             MonitorView()
-        }
+        }.defaultSize(width: 500, height: 400)
     }
 
     static func killBottles() {
