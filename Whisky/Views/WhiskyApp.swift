@@ -25,7 +25,11 @@ struct WhiskyApp: App {
     @State var showSetup: Bool = false
     @NSApplicationDelegateAdaptor(AppDelegate.self) var appDelegate
     @Environment(\.openURL) var openURL
+    @Environment(\.openWindow) var openWindow
+
     private let updaterController: SPUStandardUpdaterController
+
+    private let monitorWindowId = "wine-process-monitor"
 
     init() {
         updaterController = SPUStandardUpdaterController(startingUpdater: true,
@@ -95,6 +99,11 @@ struct WhiskyApp: App {
                     WhiskyApp.killBottles() // Better not make things more complicated for ourselves
                     WhiskyApp.wipeShaderCaches()
                 }
+
+                Button("view.monitor") {
+                    openWindow(id: monitorWindowId)
+                }
+                .keyboardShortcut("M", modifiers: [.command, .shift])
             }
             CommandGroup(replacing: .help) {
                 Button("help.website") {
@@ -116,6 +125,10 @@ struct WhiskyApp: App {
         }
         Settings {
             SettingsView()
+        }
+
+        Window("Whisky Monitor", id: monitorWindowId) {
+            MonitorView()
         }
     }
 

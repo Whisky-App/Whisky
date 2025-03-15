@@ -19319,6 +19319,31 @@
         }
       }
     },
+    "view.monitor" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "View Wine Process Monitor"
+          }
+        }
+      }
+    },
+    "Whisky Monitor" : {
+
+    },
+    "why.monitor" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Wine processes are always named wine64-preloader, making it hard to know what's what in the system monitor. This monitor allows you to see the apps each process corresponds to."
+          }
+        }
+      }
+    },
     "wine.clearShaderCaches" : {
       "localizations" : {
         "ar" : {
