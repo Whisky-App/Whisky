@@ -17,57 +17,152 @@
 //
 
 import Foundation
+import Darwin
 import SwiftUI
 
-struct ProcessInfo: Identifiable {
-    let id: Int
-    let name: String
-    let message: String
-}
+typealias PID = Int32
 
-private func fetchProcesses() -> [ProcessInfo]? {
-    var processes: [ProcessInfo] = []
+// ethan: sysctl my beloved
+enum SysctlHelper {
+    static func getWine64PreloaderPids() -> [PID]? {
+        var sysctlName = [CTL_KERN, KERN_PROC, KERN_PROC_ALL]
+        var size = 0
 
-    // sysctl my beloved
-    var name: [Int32] = [CTL_KERN, KERN_PROC, KERN_PROC_ALL]
-    var size = 0
-
-    let sysctlForSizeResult = sysctl(&name, UInt32(name.count), nil, &size, nil, 0)
-    if sysctlForSizeResult != 0 {
-        print("Error getting size of process list")
-        return nil
-    }
-
-    let processCount = size / MemoryLayout<kinfo_proc>.stride
-    let processListStart = UnsafeMutablePointer<kinfo_proc>.allocate(capacity: processCount)
-    defer { processListStart.deallocate() }
-
-    let sysctlForListResult = sysctl(&name, UInt32(name.count), processListStart, &size, nil, 0)
-    if sysctlForListResult != 0 {
-        print("Error getting process list")
-        return nil
-    }
-
-    let processList = UnsafeBufferPointer(start: processListStart, count: processCount)
-
-    for rawProcessInfo in processList {
-        let comm = withUnsafePointer(to: rawProcessInfo.kp_proc.p_comm) {
-            $0.withMemoryRebound(to: CChar.self, capacity: Int(MAXCOMLEN)) {
-                String(cString: $0)
-            }
+        let sysctlForSizeResult = sysctl(&sysctlName, UInt32(sysctlName.count), nil, &size, nil, 0)
+        if sysctlForSizeResult != 0 {
+            print("Error getting size of process list")
+            return nil
         }
 
-        if comm == "wine64-preloader" {
-            let id = Int(rawProcessInfo.kp_proc.p_pid)
+        let processCount = size / MemoryLayout<kinfo_proc>.stride
+        let processListStart = UnsafeMutablePointer<kinfo_proc>.allocate(capacity: processCount)
+        defer { processListStart.deallocate() }
 
-            let message = withUnsafePointer(to: rawProcessInfo.kp_proc.p_wmesg) {
-                $0.withMemoryRebound(to: CChar.self, capacity: Int(100)) {
+        let sysctlForListResult = sysctl(&sysctlName, UInt32(sysctlName.count), processListStart, &size, nil, 0)
+        if sysctlForListResult != 0 {
+            print("Error getting process list")
+            return nil
+        }
+
+        let processList = UnsafeBufferPointer(start: processListStart, count: processCount)
+        var ids: [PID] = []
+
+        for rawProcessInfo in processList {
+            let name = withUnsafePointer(to: rawProcessInfo.kp_proc.p_comm) {
+                $0.withMemoryRebound(to: CChar.self, capacity: Int(MAXCOMLEN)) {
                     String(cString: $0)
                 }
             }
 
-            processes.append(ProcessInfo(id: id, name: comm, message: message))
+            if name == "wine64-preloader" {
+                ids.append(rawProcessInfo.kp_proc.p_pid)
+            }
         }
+
+        return ids
+    }
+
+    static func workingDirectory(for pid: PID) -> String? {
+        var vnodeInfo = proc_vnodepathinfo()
+        let size = MemoryLayout<proc_vnodepathinfo>.size
+        let resultingSize = proc_pidinfo(pid, PROC_PIDVNODEPATHINFO, 0, &vnodeInfo, Int32(size))
+
+        guard resultingSize == Int32(size) else {
+            print("proc_pidinfo failed for pid \(pid) with result \(resultingSize)")
+            return nil
+        }
+
+        let workingDirectory: String = withUnsafePointer(to: &vnodeInfo.pvi_cdir.vip_path) { ptr in
+            ptr.withMemoryRebound(to: CChar.self, capacity: Int(MAXPATHLEN)) {
+                String(cString: $0)
+            }
+        }
+
+        return workingDirectory
+    }
+
+    static func commandLine(for pid: PID) -> [String]? {
+        var sysctlName = [CTL_KERN, KERN_PROCARGS2, Int32(pid)]
+
+        var size = 0
+        if sysctl(&sysctlName, UInt32(sysctlName.count), nil, &size, nil, 0) != 0 {
+            print("Failed to get size of sysctl output buffer for process command")
+            return nil
+        }
+
+        if size == 0 {
+            return nil
+        }
+
+        var buffer = [CChar](repeating: 0, count: size)
+        if sysctl(&sysctlName, UInt32(sysctlName.count), &buffer, &size, nil, 0) != 0 {
+            perror("Failed to invoke sysctl to write to output buffer for process command")
+            return nil
+        }
+
+        // todo(ethan): Idk how endianness works here.
+        // I'm just gonna take the first byte and pray that there are less than 256 arguments.
+        let argc = CUnsignedChar(bitPattern: buffer[0])
+
+        guard argc > 0 else { return nil }
+
+        return parseSysctlArguments(argc: argc, buffer: buffer)
+    }
+
+    private static func parseSysctlArguments(argc: CUnsignedChar, buffer: [CChar]) -> [String]? {
+        var index = MemoryLayout<CInt>.size // skip past argc
+
+        guard index < buffer.count else { return nil }
+
+        var arguments: [String] = []
+        for _ in 0 ..< argc {
+            guard index < buffer.count else { break }
+            let argumentStart = index
+
+            if buffer[argumentStart] == 0 {
+                index += 1
+                continue
+            }
+
+            while index < buffer.count && buffer[index] != 0 {
+                index += 1
+            }
+            guard let argument = buffer.withUnsafeBufferPointer({ ptr -> String? in
+                if let base = ptr.baseAddress {
+                    return String(cString: base.advanced(by: argumentStart))
+                } else {
+                    return nil
+                }
+            }) else {
+                return nil
+            }
+            arguments.append(argument)
+            index += 1
+        }
+
+        return arguments
+    }
+}
+
+struct ProcessInfo: Identifiable {
+    let id: PID
+    let workingDirectory: String?
+    let command: [String]?
+}
+
+private func fetchProcesses() -> [ProcessInfo]? {
+    guard let pids = SysctlHelper.getWine64PreloaderPids() else {
+        return nil
+    }
+
+    var processes: [ProcessInfo] = []
+    for id in pids {
+        let process = ProcessInfo(
+            id: id,
+            workingDirectory: SysctlHelper.workingDirectory(for: id),
+            command: SysctlHelper.commandLine(for: id)
+        )
+        processes.append(process)
     }
 
     return processes
@@ -77,6 +172,7 @@ private func fetchProcesses() -> [ProcessInfo]? {
 class ProcessMonitor: ObservableObject {
     @Published var processes: [ProcessInfo] = []
 
+    // todo(ethan): can't get timer to work
 //    private var timer: DispatchSourceTimer?
 //    private let timerQueue = DispatchQueue(label: "processmonitor", attributes: .concurrent)
 
@@ -126,12 +222,16 @@ struct MonitorView: View {
         VStack(alignment: .leading) {
             Text("why.monitor")
             List(monitor.processes) { process in
-                HStack {
-                    Text(process.id.description)
-                        .frame(width: 100, alignment: .leading)
-                        .selectionDisabled(false)
-                    Text(process.name)
-                        .selectionDisabled(false)
+                VStack {
+                    Text("PID: " + process.id.description)
+                    if let directory = process.workingDirectory {
+                        Text("D: " + directory)
+                            .selectionDisabled(false)
+                    }
+                    if let command = process.command {
+                        Text("C: " + command.description)
+                            .selectionDisabled(false)
+                    }
                 }
                 .selectionDisabled(false)
             }
