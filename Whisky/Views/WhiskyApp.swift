@@ -29,7 +29,7 @@ struct WhiskyApp: App {
 
     private let updaterController: SPUStandardUpdaterController
 
-    private let monitorWindowId = "wine-process-monitor"
+//    private let monitorWindowId = "wine-process-monitor"
 
     init() {
         updaterController = SPUStandardUpdaterController(startingUpdater: true,
@@ -100,10 +100,10 @@ struct WhiskyApp: App {
                     WhiskyApp.wipeShaderCaches()
                 }
 
-                Button("view.monitor") {
-                    openWindow(id: monitorWindowId)
-                }
-                .keyboardShortcut("M", modifiers: [.command, .shift])
+//                Button("view.monitor") {
+//                    openWindow(id: monitorWindowId)
+//                }
+//                .keyboardShortcut("M", modifiers: [.command, .shift])
             }
             CommandGroup(replacing: .help) {
                 Button("help.website") {
@@ -126,10 +126,6 @@ struct WhiskyApp: App {
         Settings {
             SettingsView()
         }
-
-        Window("Whisky Monitor", id: monitorWindowId) {
-            MonitorView()
-        }.defaultSize(width: 500, height: 400)
     }
 
     static func killBottles() {

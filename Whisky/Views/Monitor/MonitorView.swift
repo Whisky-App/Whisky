@@ -19,6 +19,7 @@
 import Foundation
 import Darwin
 import SwiftUI
+import WhiskyKit
 
 typealias PID = Int32
 
@@ -145,75 +146,15 @@ enum SysctlHelper {
     }
 }
 
-struct ProcessInfo: Identifiable {
+struct ProcessInfo: Identifiable, Equatable {
+    static func == (lhs: ProcessInfo, rhs: ProcessInfo) -> Bool {
+        lhs.id == rhs.id
+    }
+
     let id: PID
     let appNameAndConfig: (String, [String])?
     let workingDirectory: String?
     let command: [String]?
-}
-
-struct ProcessInfoView: View {
-    let processInfo: ProcessInfo
-
-    var body: some View {
-        VStack(alignment: .leading, spacing: 15) {
-            let boxTitle = Text(processInfo.appNameAndConfig?.0 ?? "Anonymous Wine Process")
-                .font(.title)
-            if processInfo.appNameAndConfig == nil {
-                boxTitle
-            } else {
-                boxTitle.fontWeight(.bold)
-            }
-
-            Divider()
-
-            Text("Process ID: \(processInfo.id)")
-                .font(.subheadline)
-            if let workingDirectory = processInfo.workingDirectory {
-                Text("Working Directory: \(workingDirectory)")
-                    .font(.body)
-            }
-
-            if let config = processInfo.appNameAndConfig?.1 {
-                ProcessConfigView(config: config)
-            }
-
-        }
-        .padding()
-        .background(
-            RoundedRectangle(cornerRadius: 15)
-                .fill(Color.clear)
-                .stroke(Color.black)
-                .shadow(radius: 5)
-        )
-        .padding()
-    }
-}
-
-struct ProcessConfigView: View {
-    let config: [String]
-
-    var body: some View {
-        VStack(alignment: .leading, spacing: 10) {
-            ForEach(config, id: \.self) { flag in
-                let flag = Array(flag.split(separator: "=", maxSplits: 2, omittingEmptySubsequences: false))
-                let flagName = flag[0]
-                let flagValue = flag.count == 1 ? "" : flag[1]
-
-                HStack {
-                    Text(flagName)
-                        .font(.body)
-                        .fontWeight(.semibold)
-                    Text(flagValue)
-                        .font(.body)
-                        .foregroundColor(.gray)
-                    Spacer()
-                }
-                .padding(.horizontal)
-                Divider()
-            }
-        }
-    }
 }
 
 private func fetchProcesses() -> [ProcessInfo]? {
@@ -245,84 +186,214 @@ private func fetchProcesses() -> [ProcessInfo]? {
     return processes
 }
 
+enum AppInfo {
+    case app(String, PEFile?, [ProcessInfo])
+    case anonymous(ProcessInfo)
+}
+
+extension AppInfo: Comparable {
+    static func < (lhs: AppInfo, rhs: AppInfo) -> Bool {
+        switch (lhs, rhs) {
+        case (.app(let name1, _, _), .app(let name2, _, _)):
+            return name1 < name2
+        case (.anonymous(let process1), .anonymous(let process2)):
+            return process1.id < process2.id
+        case (.app, .anonymous):
+            return true
+        case (.anonymous, .app):
+            return false
+        }
+    }
+}
+
+extension AppInfo: Identifiable {
+    var id: String {
+        switch self {
+        case .app(let name, _, _):
+            return name
+        case .anonymous(let processInfo):
+            return processInfo.id.description
+        }
+    }
+}
+
+struct AppInfoView: View {
+    let appInfo: AppInfo
+    @State var image: Image?
+
+    var body: some View {
+        VStack(alignment: .leading, spacing: 15) {
+            switch appInfo {
+            case .app(let name, let icon, let processInfos):
+                CollapsibleView(header: {
+                    HStack {
+                        if let icon = image {
+                            icon
+                                .resizable()
+                                .frame(width: 25, height: 25)
+                        } else {
+                            Image(systemName: "app.dashed")
+                                .resizable()
+                                .frame(width: 25, height: 25)
+                        }
+                        Text(name)
+                            .font(.title)
+                            .fontWeight(.bold)
+                    }
+                }, content: {
+                    ForEach(processInfos) { processInfo in
+                        CollapsibleView(header:
+                                            { Text("Process ID: \(processInfo.id)")
+                            .font(.body)}
+                                        , content: {
+                            VStack {
+                                if let workingDirectory = processInfo.workingDirectory {
+                                    Text("Working Directory: \(workingDirectory)")
+                                        .font(.body)
+                                }
+
+                                if let config = processInfo.appNameAndConfig?.1 {
+                                    AppConfigView(config: config)
+                                }
+                            }
+                        })
+                    }
+                })
+
+            case .anonymous(let processInfo):
+                CollapsibleView(header:
+                                    {Text("Anonymous Wine Process")
+                    .font(.title)}, content: {
+                        CollapsibleView(header:
+                                            {Text("Process ID: \(processInfo.id)")
+                            .font(.body)}, content: {
+                                VStack {
+                                    if let workingDirectory = processInfo.workingDirectory {
+                                        Text("Working Directory: \(workingDirectory)")
+                                            .font(.body)
+                                    }
+
+                                    if let config = processInfo.appNameAndConfig?.1 {
+                                        AppConfigView(config: config)
+                                    }
+                                }
+                            })
+                    })
+            }
+        }
+        .task {
+            switch appInfo {
+            case .app(let string, let peFile, let array):
+                guard let peFile = peFile else { return }
+                let task = Task.detached {
+                    guard let image = peFile.bestIcon() else { return nil as Image? }
+                    return Image(nsImage: image)
+                }
+                self.image = await task.value
+            default:
+                break
+            }
+        }
+        .padding()
+    }
+}
+
+struct AppConfigView: View {
+    let config: [String]
+
+    var body: some View {
+        VStack(alignment: .leading, spacing: 10) {
+            ForEach(config, id: \.self) { flag in
+                let flag = Array(flag.split(separator: "=", maxSplits: 2, omittingEmptySubsequences: false))
+                let flagName = flag[0]
+                let flagValue = flag.count == 1 ? "" : flag[1]
+
+                HStack {
+                    Text(flagName)
+                        .font(.body)
+                        .fontWeight(.semibold)
+                    Text(flagValue)
+                        .font(.body)
+                        .foregroundColor(.gray)
+                    Spacer()
+                }
+                .padding(.horizontal)
+                Divider()
+            }
+        }
+    }
+}
+
 @MainActor
 class ProcessMonitor: ObservableObject {
+    let prefixFilter: String
+    let programs: [Program]
     @Published var processes: [ProcessInfo] = []
-
+    @Published var organizedView: [AppInfo] = []
     // todo(ethan): can't get timer to work
-//    private var timer: DispatchSourceTimer?
-//    private let timerQueue = DispatchQueue(label: "processmonitor", attributes: .concurrent)
 
-    init() {
+    init(bottle: Bottle) {
+        self.prefixFilter = bottle.url.path()
+        self.programs = bottle.programs
         manualUpdate()
-    }
-
-    func startFetching() {
-//        if timer != nil { return }
-//
-//        timer = DispatchSource.makeTimerSource(queue: timerQueue)
-//        timer?.schedule(deadline: .now(), repeating: 5.0)
-//        timer?.setEventHandler {
-//            if let newProcesses = fetchProcesses() {
-//                print(newProcesses)
-//            }
-//        }
-//        timer?.resume()
-    }
-
-    // Stop the timer
-    func stopFetching() {
-//        print("stopFetching")
-//        timer?.cancel()
-//        timer = nil
     }
 
     func manualUpdate() {
         Task.detached(priority: .userInitiated) {
             if let newProcesses = fetchProcesses() {
                 await MainActor.run {
-                    self.processes = newProcesses
+                    self.processes = newProcesses.filter { ($0.workingDirectory ?? "").starts(with: self.prefixFilter) }
+                    self.organizeProcesses()
                 }
             }
         }
     }
 
-    deinit {
-//        timer?.cancel()
+    func organizeProcesses() {
+        var named = [String: [ProcessInfo]]()
+        var unnamed = [ProcessInfo]()
+        for process in processes {
+            if let name = process.appNameAndConfig?.0 {
+                if named[name] == nil {
+                    named[name] = []
+                }
+                named[name]?.append(process)
+            } else {
+                unnamed.append(process)
+            }
+        }
+
+        organizedView = []
+        for named in named {
+            organizedView.append(AppInfo.app(named.key, programs.first(where: {
+                return $0.url.path().hasSuffix(
+                    named.key.replacingOccurrences(of: "C:", with: "").replacingOccurrences(of: "\\", with: "/"))
+            })?.peFile, named.value))
+        }
+        for unnamed in unnamed {
+            organizedView.append(.anonymous(unnamed))
+        }
+        organizedView.sort()
     }
 }
 
 struct MonitorView: View {
-    @StateObject private var monitor = ProcessMonitor()
+    @StateObject private var monitor: ProcessMonitor
+
+    init(bottle: Bottle) {
+        _monitor = StateObject(wrappedValue: ProcessMonitor(bottle: bottle))
+    }
 
     var body: some View {
         VStack(alignment: .leading) {
             Text("why.monitor")
-            List(monitor.processes) { process in
-                ProcessInfoView(processInfo: process)
+            Button("Manual Debug Refresh") {
+                monitor.manualUpdate()
+            }
+            ForEach(monitor.organizedView) { appInfo in
+                AppInfoView(appInfo: appInfo)
             }
         }
         .padding()
-        .bottomBar {
-            HStack {
-                Spacer()
-                Button("button.refresh") {
-                    monitor.manualUpdate()
-                }
-            }
-            .padding()
-        }
-//        .onAppear {
-//            print("onAppear")
-//            monitor.startFetching()
-//        }
-//        .onDisappear {
-//            print("onDisappear")
-//            monitor.stopFetching()
-//        }
     }
-}
-
-#Preview {
-    MonitorView()
 }

@@ -35,6 +35,10 @@ struct BottleView: View {
     private let gridLayout = [GridItem(.adaptive(minimum: 100, maximum: .infinity))]
 
     var body: some View {
+//        Window("Whisky Monitor", id: "whisky-monitor-" + bottle.settings.name) {
+//            MonitorView(bottle: bottle)
+//        }.defaultSize(width: 500, height: 400)
+
         NavigationStack(path: $path) {
             ScrollView {
                 LazyVGrid(columns: gridLayout, alignment: .center) {
@@ -59,6 +63,9 @@ struct BottleView: View {
                 }
                 .formStyle(.grouped)
                 .scrollDisabled(true)
+
+                Text("Bottle Monitor").font(.headline)
+                MonitorView(bottle: bottle)
             }
             .bottomBar {
                 HStack {
