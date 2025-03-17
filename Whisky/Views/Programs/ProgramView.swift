@@ -22,7 +22,6 @@ import UniformTypeIdentifiers
 
 struct ProgramView: View {
     @ObservedObject var program: Program
-    @State var image: Image?
     @State var programLoading: Bool = false
     @AppStorage("configSectionExapnded") private var configSectionExpanded: Bool = true
     @AppStorage("envArgsSectionExpanded") private var envArgsSectionExpanded: Bool = true
@@ -48,9 +47,6 @@ struct ProgramView: View {
             }
             EnvironmentArgView(program: program, isExpanded: $envArgsSectionExpanded)
         }
-        .formStyle(.grouped)
-        .animation(.whiskyDefault, value: configSectionExpanded)
-        .animation(.whiskyDefault, value: envArgsSectionExpanded)
         .bottomBar {
             HStack {
                 Spacer()
@@ -93,29 +89,8 @@ struct ProgramView: View {
             .padding()
         }
         .navigationTitle(program.name)
-        .toolbar {
-            ToolbarItem(placement: .navigation) {
-                Group {
-                    if let icon = image {
-                        icon
-                            .resizable()
-                            .frame(width: 25, height: 25)
-                    } else {
-                        Image(systemName: "app.dashed")
-                            .resizable()
-                            .frame(width: 25, height: 25)
-                    }
-                }
-                .padding(.trailing, 5)
-            }
-        }
-        .task {
-            guard let peFile = program.peFile else { return }
-            let task = Task.detached {
-                guard let image = peFile.bestIcon() else { return nil as Image? }
-                return Image(nsImage: image)
-            }
-            self.image = await task.value
-        }
+        .formStyle(.grouped)
+        .animation(.whiskyDefault, value: configSectionExpanded)
+        .animation(.whiskyDefault, value: envArgsSectionExpanded)
     }
 }

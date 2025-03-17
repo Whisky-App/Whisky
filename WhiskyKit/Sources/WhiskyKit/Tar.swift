@@ -33,7 +33,7 @@ public class Tar {
         try process.run()
 
         if let output = try pipe.fileHandleForReading.readToEnd() {
-            let outputString = String(data: output, encoding: .utf8) ?? ""
+            let outputString = String(decoding: output, as: UTF8.self)
             process.waitUntilExit()
             let status = process.terminationStatus
             if status != 0 {
@@ -54,7 +54,7 @@ public class Tar {
         try process.run()
 
         if let output = try pipe.fileHandleForReading.readToEnd() {
-            let outputString = String(data: output, encoding: .utf8) ?? ""
+            let outputString = String(decoding: output, as: UTF8.self)
             process.waitUntilExit()
             let status = process.terminationStatus
             if status != 0 {
