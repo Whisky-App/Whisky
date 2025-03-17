@@ -121,7 +121,7 @@ public extension Process {
 
 extension FileHandle {
     func nextLine() -> String? {
-        guard let line = String(bytes: availableData, encoding: .utf8) else {return nil}
+        guard let line = String(data: availableData, encoding: .utf8) else {return nil}
         if !line.isEmpty {
             return line
         } else {

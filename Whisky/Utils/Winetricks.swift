@@ -86,7 +86,7 @@ class Winetricks {
         let verbs: String = await {() async -> String in
             do {
                 let (data, _) = try await URLSession.shared.data(from: verbsURL)
-                return String(bytes: data, encoding: .utf8) ?? String()
+                return String(data: data, encoding: .utf8) ?? String()
             } catch {
                 return String()
             }}()

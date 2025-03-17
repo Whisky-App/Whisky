@@ -188,7 +188,7 @@ struct WhiskyApp: App {
                 return pipe.fileHandleForReading.readDataToEndOfFile()
             }
         }()
-        guard let getconfOutputString = String(bytes: getconfOutput, encoding: .utf8) else {return}
+        guard let getconfOutputString = String(data: getconfOutput, encoding: .utf8) else {return}
         let d3dmPath = URL(fileURLWithPath: getconfOutputString.trimmingCharacters(in: .whitespacesAndNewlines))
             .appending(path: "d3dm").path
         do {
