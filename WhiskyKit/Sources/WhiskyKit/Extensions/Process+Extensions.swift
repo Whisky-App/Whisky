@@ -121,11 +121,11 @@ public extension Process {
 
 extension FileHandle {
     func nextLine() -> String? {
-        if let line = String(data: availableData, encoding: .utf8) {
-            guard !line.isEmpty else { return nil }
+        guard let line = String(data: availableData, encoding: .utf8) else { return nil }
+        if !line.isEmpty {
             return line
+        } else {
+            return nil
         }
-
-        return nil
     }
 }

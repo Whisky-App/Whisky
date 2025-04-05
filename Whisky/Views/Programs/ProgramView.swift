@@ -22,8 +22,8 @@ import UniformTypeIdentifiers
 
 struct ProgramView: View {
     @ObservedObject var program: Program
-    @State var image: Image?
     @State var programLoading: Bool = false
+    @State var cachedIconImage: Image?
     @AppStorage("configSectionExapnded") private var configSectionExpanded: Bool = true
     @AppStorage("envArgsSectionExpanded") private var envArgsSectionExpanded: Bool = true
 
@@ -48,9 +48,6 @@ struct ProgramView: View {
             }
             EnvironmentArgView(program: program, isExpanded: $envArgsSectionExpanded)
         }
-        .formStyle(.grouped)
-        .animation(.whiskyDefault, value: configSectionExpanded)
-        .animation(.whiskyDefault, value: envArgsSectionExpanded)
         .bottomBar {
             HStack {
                 Spacer()
@@ -92,30 +89,29 @@ struct ProgramView: View {
             }
             .padding()
         }
-        .navigationTitle(program.name)
         .toolbar {
-            ToolbarItem(placement: .navigation) {
-                Group {
-                    if let icon = image {
-                        icon
-                            .resizable()
-                            .frame(width: 25, height: 25)
-                    } else {
-                        Image(systemName: "app.dashed")
-                            .resizable()
-                            .frame(width: 25, height: 25)
-                    }
+            if let image = cachedIconImage {
+                ToolbarItem(id: "ProgramViewIcon", placement: .navigation) {
+                    image
+                        .resizable()
+                        .frame(width: 25, height: 25)
+                        .padding(.trailing, 5)
                 }
-                .padding(.trailing, 5)
+            } else {
+                ToolbarItem(id: "ProgramViewIcon", placement: .navigation) {
+                    Image(systemName: "app.dashed")
+                        .resizable()
+                        .frame(width: 25, height: 25)
+                        .padding(.trailing, 5)
+                }
             }
         }
+        .navigationTitle(program.name)
+        .formStyle(.grouped)
+        .animation(.whiskyDefault, value: configSectionExpanded)
+        .animation(.whiskyDefault, value: envArgsSectionExpanded)
         .task {
-            guard let peFile = program.peFile else { return }
-            let task = Task.detached {
-                guard let image = peFile.bestIcon() else { return nil as Image? }
-                return Image(nsImage: image)
-            }
-            self.image = await task.value
+            if let fetchedImage = program.peFile?.bestIcon() { self.cachedIconImage = Image(nsImage: fetchedImage) }
         }
     }
 }
