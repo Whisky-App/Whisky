@@ -83,13 +83,14 @@ class Winetricks {
     static func parseVerbs() async -> [WinetricksCategory] {
         // Grab the verbs file
         let verbsURL = WhiskyWineInstaller.libraryFolder.appending(path: "verbs.txt")
-        let verbs: String = await {() async -> String in
+        let verbs: String = await { () async -> String in
             do {
                 let (data, _) = try await URLSession.shared.data(from: verbsURL)
                 return String(data: data, encoding: .utf8) ?? String()
             } catch {
                 return String()
-            }}()
+            }
+        }()
 
         // Read the file line by line
         let lines = verbs.components(separatedBy: "\n")
