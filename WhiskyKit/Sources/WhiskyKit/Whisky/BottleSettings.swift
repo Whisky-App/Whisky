@@ -23,16 +23,24 @@ import os.log
 public struct PinnedProgram: Codable, Hashable, Equatable {
     public var name: String
     public var url: URL?
+    public var removable: Bool
 
     public init(name: String, url: URL) {
         self.name = name
         self.url = url
+        do {
+            let volume = try url.resourceValues(forKeys: [.volumeURLKey]).volume
+            self.removable = try !(volume?.resourceValues(forKeys: [.volumeIsInternalKey]).volumeIsInternal ?? false)
+        } catch {
+            self.removable = false
+        }
     }
 
     public init(from decoder: Decoder) throws {
         let container = try decoder.container(keyedBy: CodingKeys.self)
         self.name = try container.decodeIfPresent(String.self, forKey: .name) ?? ""
         self.url = try container.decodeIfPresent(URL.self, forKey: .url)
+        self.removable = try container.decodeIfPresent(Bool.self, forKey: .removable) ?? false
     }
 }
 
