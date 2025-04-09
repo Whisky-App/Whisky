@@ -42,9 +42,12 @@ Translated on [Crowdin](https://crowdin.com/project/whisky).
 Whisky is on homebrew! Install with 
 `brew install --cask whisky`.
 
-## My game isn't working!
+## I need more help!
 
-Some games need special steps to get working. Check out the [wiki](https://github.com/IsaacMarovitz/Whisky/wiki/Game-Support).
+Some games need special steps to get working. Advanced setup has to be done manually. Check out these resources: 
+
+- [Whisky Wiki](https://github.com/Whisky-App/Whisky/wiki)
+- [Whisky Documentation](https://docs.getwhisky.app/)
 
 ---
 
