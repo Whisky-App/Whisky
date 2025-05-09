@@ -75,6 +75,8 @@ public extension Process {
 
             terminationHandler = { (process: Process) in
                 do {
+                    pipe.fileHandleForReading.readabilityHandler = nil
+                    errorPipe.fileHandleForReading.readabilityHandler = nil
                     _ = try pipe.fileHandleForReading.readToEnd()
                     _ = try errorPipe.fileHandleForReading.readToEnd()
                     try fileHandle?.close()
