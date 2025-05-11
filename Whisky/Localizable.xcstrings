@@ -404,7 +404,7 @@
         "zh-Hant" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "開啟 C: 槽"
+            "value" : "打開 C: 槽"
           }
         }
       }
@@ -1946,13 +1946,13 @@
         "fi" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Oletko varma, että haluat poistaa tämän pullon? Tämä toiminto on pysyvä."
+            "value" : "Oletko varma, että haluat poistaa tämän pullon? Tämä toiminto ei ole peruutettavissa."
           }
         },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Êtes-vous sûr de vouloir supprimer cette bouteille ? Vous ne pouvez pas annuler cette action."
+            "value" : "Êtes-vous sûr de vouloir supprimer cette bouteille ? Cette action est irréversible."
           }
         },
         "it" : {
@@ -2082,7 +2082,7 @@
         "fi" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Poista %@?"
+            "value" : "Poistetaanko %@?"
           }
         },
         "fr" : {
@@ -2627,7 +2627,7 @@
         "fi" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Terminal..."
+            "value" : "Pääte..."
           }
         },
         "fr" : {
@@ -3170,8 +3170,8 @@
         },
         "fi" : {
           "stringUnit" : {
-            "state" : "new",
-            "value" : "Advertise AVX Support"
+            "state" : "translated",
+            "value" : "Advertise AVX-tukea"
           }
         },
         "fr" : {
@@ -3230,8 +3230,8 @@
         },
         "ru" : {
           "stringUnit" : {
-            "state" : "new",
-            "value" : "Advertise AVX Support"
+            "state" : "translated",
+            "value" : "Заявлять поддержку AVX"
           }
         },
         "tr" : {
@@ -3242,8 +3242,8 @@
         },
         "uk" : {
           "stringUnit" : {
-            "state" : "new",
-            "value" : "Advertise AVX Support"
+            "state" : "translated",
+            "value" : "Оголошення підтримки AVX"
           }
         },
         "vi" : {
@@ -3255,13 +3255,13 @@
         "zh-Hans" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "查看 AVX 支持"
+            "value" : "声明 AVX 支持"
           }
         },
         "zh-Hant" : {
           "stringUnit" : {
-            "state" : "new",
-            "value" : "Advertise AVX Support"
+            "state" : "translated",
+            "value" : "宣傳AVX支持"
           }
         }
       }
@@ -3306,14 +3306,14 @@
         },
         "fi" : {
           "stringUnit" : {
-            "state" : "new",
-            "value" : "May negatively impact performance"
+            "state" : "translated",
+            "value" : "Saattaa vaikuttaa suorituskykyyn haitallsiesti"
           }
         },
         "fr" : {
           "stringUnit" : {
-            "state" : "new",
-            "value" : "May negatively impact performance"
+            "state" : "translated",
+            "value" : "Peut avoir un impact négatif sur les performances"
           }
         },
         "it" : {
@@ -3336,8 +3336,8 @@
         },
         "nl" : {
           "stringUnit" : {
-            "state" : "new",
-            "value" : "May negatively impact performance"
+            "state" : "translated",
+            "value" : "Kan prestaties negatief beïnvloeden"
           }
         },
         "pl" : {
@@ -3378,8 +3378,8 @@
         },
         "uk" : {
           "stringUnit" : {
-            "state" : "new",
-            "value" : "May negatively impact performance"
+            "state" : "translated",
+            "value" : "Може негативно вплинути на продуктивність"
           }
         },
         "vi" : {
@@ -3396,8 +3396,8 @@
         },
         "zh-Hant" : {
           "stringUnit" : {
-            "state" : "new",
-            "value" : "May negatively impact performance"
+            "state" : "translated",
+            "value" : "這可能會影響其效能"
           }
         }
       }
@@ -3715,7 +3715,7 @@
         "fi" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "DPI skaalaus"
+            "value" : "DPI-skaalaus"
           }
         },
         "fr" : {
@@ -3851,8 +3851,8 @@
         },
         "fi" : {
           "stringUnit" : {
-            "state" : "new",
-            "value" : "DirectX Raytracing"
+            "state" : "translated",
+            "value" : "DirectX Säteenseuranta"
           }
         },
         "fr" : {
@@ -3881,7 +3881,7 @@
         },
         "nl" : {
           "stringUnit" : {
-            "state" : "new",
+            "state" : "translated",
             "value" : "DirectX Raytracing"
           }
         },
@@ -3911,8 +3911,8 @@
         },
         "ru" : {
           "stringUnit" : {
-            "state" : "new",
-            "value" : "DirectX Raytracing"
+            "state" : "translated",
+            "value" : "Трассировка лучей DirectX"
           }
         },
         "tr" : {
@@ -3923,8 +3923,8 @@
         },
         "uk" : {
           "stringUnit" : {
-            "state" : "new",
-            "value" : "DirectX Raytracing"
+            "state" : "translated",
+            "value" : "Трасування променів DirectX"
           }
         },
         "vi" : {
@@ -3941,8 +3941,8 @@
         },
         "zh-Hant" : {
           "stringUnit" : {
-            "state" : "new",
-            "value" : "DirectX Raytracing"
+            "state" : "translated",
+            "value" : "DirectX 光線追蹤"
           }
         }
       }
@@ -3988,8 +3988,8 @@
         },
         "fi" : {
           "stringUnit" : {
-            "state" : "new",
-            "value" : "Enables raytracing support in DirectX 12 titles "
+            "state" : "translated",
+            "value" : "Laittaa päälle säteenseurannan tuen DirectX 12 -peleissä "
           }
         },
         "fr" : {
@@ -4007,7 +4007,7 @@
         "ja" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "DirectX 12 のタイトルでレイトレーシングを有効にする "
+            "value" : "DirectX 12 のタイトルでレイトレーシングを有効にします "
           }
         },
         "ko" : {
@@ -4018,8 +4018,8 @@
         },
         "nl" : {
           "stringUnit" : {
-            "state" : "new",
-            "value" : "Enables raytracing support in DirectX 12 titles "
+            "state" : "translated",
+            "value" : "Maakt raytracing-ondersteuning mogelijk in DirectX 12-titels "
           }
         },
         "pl" : {
@@ -4060,8 +4060,8 @@
         },
         "uk" : {
           "stringUnit" : {
-            "state" : "new",
-            "value" : "Enables raytracing support in DirectX 12 titles "
+            "state" : "translated",
+            "value" : "Вмикає трасування променів DirectX 12 у підтримуваних додатках "
           }
         },
         "vi" : {
@@ -4078,8 +4078,8 @@
         },
         "zh-Hant" : {
           "stringUnit" : {
-            "state" : "new",
-            "value" : "Enables raytracing support in DirectX 12 titles "
+            "state" : "translated",
+            "value" : "在DirectX 12遊戲中啟用光線追蹤 "
           }
         }
       }
@@ -4669,7 +4669,7 @@
         "fi" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Koko"
+            "value" : "Täysi"
           }
         },
         "fr" : {
@@ -5349,7 +5349,7 @@
         "fi" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Parannettu Synkronointi"
+            "value" : "Parannettu synkronointi"
           }
         },
         "fr" : {
@@ -5893,7 +5893,7 @@
         "fi" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Metal Jäljitin"
+            "value" : "Metal Trace"
           }
         },
         "fr" : {
@@ -6029,7 +6029,7 @@
         "fi" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Mahdollistaa GPU työn nappaamisen Xcodessa"
+            "value" : "Mahdollistaa GPU-työn tarkastelun Xcodessa"
           }
         },
         "fr" : {
@@ -6219,7 +6219,7 @@
         "ro" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "N/A"
+            "value" : "Indisponibil"
           }
         },
         "ru" : {
@@ -6301,7 +6301,7 @@
         "fi" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Avaa rekisterin muokkain"
+            "value" : "Avaa rekisteri editori"
           }
         },
         "fr" : {
@@ -6981,7 +6981,7 @@
         "fi" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Avaa Wine konfiguraatio"
+            "value" : "Avaa Wine-konfiguraatio"
           }
         },
         "fr" : {
@@ -7117,7 +7117,7 @@
         "fi" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Windows versio"
+            "value" : "Windows-versio"
           }
         },
         "fr" : {
@@ -7661,7 +7661,7 @@
         "fi" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "DPI asetukset"
+            "value" : "DPI-asetukset"
           }
         },
         "fr" : {
@@ -7963,7 +7963,7 @@
         "nl" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Annuleren"
+            "value" : "Annuleer"
           }
         },
         "pl" : {
@@ -8613,7 +8613,7 @@
         "fi" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Windows versio:"
+            "value" : "Windows-versio:"
           }
         },
         "fr" : {
@@ -8915,7 +8915,7 @@
         "nl" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Verwijderen"
+            "value" : "Verwijder"
           }
         },
         "pl" : {
@@ -9565,7 +9565,7 @@
         "fi" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Tapa kaikki pullot"
+            "value" : "Sulje kaikki pullot"
           }
         },
         "fr" : {
@@ -9956,7 +9956,7 @@
         "de" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Erstellen Sie Ihre erste Flasche, um loszulegen"
+            "value" : "Erstellen Sie Ihre erste Bottle, um loszulegen"
           }
         },
         "en" : {
@@ -9974,7 +9974,7 @@
         "fi" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Luo ensimmäinen pullo, jotta voit aloittaa"
+            "value" : "Luo ensimmäinen pullo aloittaaksesi"
           }
         },
         "fr" : {
@@ -10092,7 +10092,7 @@
         "de" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Flasche importieren"
+            "value" : "Bottle importieren"
           }
         },
         "en" : {
@@ -10246,7 +10246,7 @@
         "fi" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Avaa log kansio"
+            "value" : "Avaa loki-ansio"
           }
         },
         "fr" : {
@@ -10548,7 +10548,7 @@
         "nl" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Vastpinnen"
+            "value" : "Pin"
           }
         },
         "pl" : {
@@ -12045,7 +12045,7 @@
         "nl" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Vernieuwen"
+            "value" : "Vernieuw"
           }
         },
         "pl" : {
@@ -13541,7 +13541,7 @@
         "nl" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Bottle hernoemen"
+            "value" : "Hernoem bottle"
           }
         },
         "pl" : {
@@ -13813,7 +13813,7 @@
         "nl" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Pin hernoemen"
+            "value" : "Hernoem pin"
           }
         },
         "pl" : {
@@ -14599,7 +14599,7 @@
         "fi" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Sulje Wine-prosessit kun Whisky suljetaan"
+            "value" : "Sulje Wine-prosessit, kun Whisky suljetaan"
           }
         },
         "fr" : {
@@ -14735,7 +14735,7 @@
         "fi" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Automaattisesti tarkista Whisky päivityksien varalta"
+            "value" : "Automaattisesti tarkista Whisky-päivityksien varalta"
           }
         },
         "fr" : {
@@ -14871,7 +14871,7 @@
         "fi" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Automaattisesti tarkista WhiskyWine päivityksien varalta"
+            "value" : "Automaattisesti tarkista WhiskyWine-päivityksien varalta"
           }
         },
         "fr" : {
@@ -15415,7 +15415,7 @@
         "fi" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "%@ asennettu"
+            "value" : "%@ on asennettu"
           }
         },
         "fr" : {
@@ -15551,7 +15551,7 @@
         "fi" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "%@ ei asennettu"
+            "value" : "%@ ei ole asennettu"
           }
         },
         "fr" : {
@@ -16231,7 +16231,7 @@
         "fi" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Rosetta 2:n asennus epäonnistui. Asenna se manuaalisesti."
+            "value" : "Rosetta 2 -asennus epäonnistui. Asenna se manuaalisesti."
           }
         },
         "fr" : {
@@ -16367,7 +16367,7 @@
         "fi" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Rosetta, kuten Wine, mahdollistaa x86 koodin käyttämisen Macilläsi."
+            "value" : "Rosetta, kuten Wine, mahdollistaa x86-koodin suorittamisen Macilläsi."
           }
         },
         "fr" : {
@@ -16503,7 +16503,7 @@
         "fi" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Hallitse Whiskyn tarvittavia riippuvuuksia."
+            "value" : "Hallitse Whiskyn pakollisia riippuvuuksia."
           }
         },
         "fr" : {
@@ -17319,7 +17319,7 @@
         "fi" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Nopeus vaihtelee internetyhteytesi mukaan."
+            "value" : "Nopeus vaihtelee internet-yhteytesi mukaan."
           }
         },
         "fr" : {
@@ -18135,7 +18135,7 @@
         "fi" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Siirrä Applikaatioihin"
+            "value" : "Siirrä applikaatioihin"
           }
         },
         "fr" : {
@@ -18271,7 +18271,7 @@
         "fi" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Joissakin tapauksissa, Whiskyn ei ole mahdollista toimia kunnolla muista kansioista"
+            "value" : "Joissakin tapauksissa Whiskyn ei ole mahdollista toimia kunnolla muista kansioista"
           }
         },
         "fr" : {
@@ -18525,7 +18525,7 @@
         "de" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Bottle Konfiguration"
+            "value" : "Bottle-Konfiguration"
           }
         },
         "en" : {
@@ -19088,7 +19088,7 @@
         "fi" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Uusi WhiskyWine versio on saatavilla"
+            "value" : "Uusi WhiskyWine-versio on saatavilla"
           }
         },
         "fr" : {
@@ -19360,7 +19360,7 @@
         "fi" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Tyhjennä Varjostin-välimuistit"
+            "value" : "Tyhjennä varjostin-välimuistit"
           }
         },
         "fr" : {
@@ -19527,7 +19527,7 @@
         "nl" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Applicaties"
+            "value" : "Apps"
           }
         },
         "pl" : {
@@ -19634,7 +19634,7 @@
         "fi" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Suorituskykytesti"
+            "value" : "Suorituskyky-testi"
           }
         },
         "fr" : {
@@ -20590,7 +20590,7 @@
         "fi" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Suorita Winetricks komento"
+            "value" : "Suorita Winetricks-komento"
           }
         },
         "fr" : {
